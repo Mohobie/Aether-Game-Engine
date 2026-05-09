@@ -43,16 +43,24 @@ void AudioEngine::Shutdown() {
 void AudioEngine::PlaySound(const std::string& file) {
     if (!initialized) return;
     
+    std::string fullPath = "assets/sounds/" + file;
+    
     // Check if file exists
-    std::ifstream test(file);
+    std::ifstream test(fullPath);
     if (!test.good()) {
-        std::cerr << "[Audio] Sound file not found: " << file << std::endl;
-        return;
+        // Try without prefix
+        test.close();
+        test.open(file);
+        if (!test.good()) {
+            std::cerr << "[Audio] Sound file not found: " << fullPath << std::endl;
+            return;
+        }
+        fullPath = file;
     }
     test.close();
     
-    // Play using aplay in background
-    std::string cmd = "aplay -q \"" + file + "\" &";
+    // Play using aplay in background (suppress output)
+    std::string cmd = "aplay -q \"" + fullPath + "\" > /dev/null 2>&1 &";
     system(cmd.c_str());
 }
 

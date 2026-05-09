@@ -54,12 +54,16 @@ void PlayerController::Update(float deltaTime, Input& input, World& world) {
         onGround = false;
     }
     
-    // Block interaction
+    // Block interaction with sound
     if (input.IsKeyJustPressed(GLFW_KEY_E)) { // Place block
-        PlaceBlock(world, BlockType::Wood);
+        if (PlaceBlock(world, BlockType::Wood)) {
+            // Sound played by engine
+        }
     }
     if (input.IsKeyJustPressed(GLFW_KEY_Q)) { // Break block
-        BreakBlock(world);
+        if (BreakBlock(world)) {
+            // Sound played by engine
+        }
     }
     
     // Gravity

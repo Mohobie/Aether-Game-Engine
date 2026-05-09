@@ -171,6 +171,18 @@ void Engine::Update(float dt) {
     // Update player with real input
     player->Update(dt, *input, *world);
     
+    // Block interaction with sound effects
+    if (input->IsKeyJustPressed(GLFW_KEY_E)) { // Place block
+        if (player->PlaceBlock(*world, BlockType::Wood)) {
+            audioEngine->PlaySound("place.wav");
+        }
+    }
+    if (input->IsKeyJustPressed(GLFW_KEY_Q)) { // Break block
+        if (player->BreakBlock(*world)) {
+            audioEngine->PlaySound("dig.wav");
+        }
+    }
+    
     // Update camera to follow player
     Vec3 playerPos = player->GetPosition();
     camera->SetPosition(playerPos + Vec3(0, 1.6f, 0));
