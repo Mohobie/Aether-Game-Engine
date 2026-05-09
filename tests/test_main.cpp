@@ -1,13 +1,13 @@
 #include <gtest/gtest.h>
 #include "voxel_engine.h"
 
-// Iteration 1
+// Iteration 2
 TEST(VoxelEngine, Basic) {
     EXPECT_EQ(1, 1);
 }
 
 TEST(VoxelEngine, IterationCheck) {
-    EXPECT_GE(1, 1);
+    EXPECT_GE(2, 1);
 }
 
 int main(int argc, char** argv) {

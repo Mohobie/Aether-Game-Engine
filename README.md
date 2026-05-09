@@ -2,7 +2,7 @@
 
 A high-performance C++ voxel engine with modern rendering capabilities.
 
-## Current Iteration: 1
+## Current Iteration: 2
 
 ## Features
 
