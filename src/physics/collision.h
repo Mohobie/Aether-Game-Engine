@@ -1,17 +1,14 @@
 #pragma once
-
 #include "math/vec3.h"
 
-namespace VoxelEngine {
-    struct AABB {
-        Vec3 min;
-        Vec3 max;
-        bool Intersects(const AABB& other);
-    };
-    
-    class PhysicsWorld {
-    public:
-        void Update(float deltaTime);
-        bool Raycast(const Vec3& origin, const Vec3& direction, float maxDistance);
-    };
+namespace vge {
+struct AABB {
+    Vec3 min, max;
+    bool Intersects(const AABB& other) const;
+};
+
+class Physics {
+public:
+    static bool RayCast(const Vec3& origin, const Vec3& direction, float maxDistance, Vec3& hitPoint);
+};
 }
