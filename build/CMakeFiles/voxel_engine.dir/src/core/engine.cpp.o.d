@@ -251,6 +251,7 @@ CMakeFiles/voxel_engine.dir/src/core/engine.cpp.o: \
  /usr/include/c++/11/bits/fstream.tcc \
  /home/mohobie/projects/aether-game-engine/src/core/config.h \
  /home/mohobie/projects/aether-game-engine/src/ui/console.h \
+ /home/mohobie/projects/aether-game-engine/src/core/player_controller.h \
  /usr/include/c++/11/iostream /usr/include/c++/11/chrono \
  /usr/include/c++/11/ratio /usr/include/c++/11/ctime \
  /usr/include/c++/11/bits/parse_numbers.h

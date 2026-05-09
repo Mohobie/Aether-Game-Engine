@@ -17,6 +17,8 @@ class MenuSystem;
 class TimeSystem;
 class AchievementManager;
 
+class PlayerController;
+
 class Engine {
 private:
     Window* window;
@@ -32,6 +34,7 @@ private:
     MenuSystem* menuSystem;
     TimeSystem* timeSystem;
     AchievementManager* achievementManager;
+    PlayerController* player;
     
     bool running;
     float deltaTime;

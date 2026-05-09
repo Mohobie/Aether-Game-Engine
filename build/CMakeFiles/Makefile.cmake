@@ -45,5 +45,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/voxel_test.dir/DependInfo.cmake"
   "CMakeFiles/world_test.dir/DependInfo.cmake"
+  "CMakeFiles/save_test.dir/DependInfo.cmake"
   "CMakeFiles/voxel_engine.dir/DependInfo.cmake"
   )

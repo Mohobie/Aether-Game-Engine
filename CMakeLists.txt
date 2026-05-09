@@ -54,6 +54,9 @@ add_executable(voxel_test src/test_main.cpp ${CORE_SOURCES})
 # World generation test
 add_executable(world_test src/world_test.cpp ${CORE_SOURCES})
 
+# Save/load test
+add_executable(save_test src/save_test.cpp ${CORE_SOURCES})
+
 target_include_directories(voxel_test PRIVATE 
     src
     /usr/include
@@ -70,7 +73,14 @@ target_include_directories(world_test PRIVATE
 if(UNIX AND NOT APPLE)
     target_link_libraries(voxel_test PRIVATE pthread dl)
     target_link_libraries(world_test PRIVATE pthread dl)
+    target_link_libraries(save_test PRIVATE pthread dl)
 endif()
+
+target_include_directories(save_test PRIVATE 
+    src
+    /usr/include
+    /usr/local/include
+)
 
 # Build as many files as possible even without all dependencies
 set(ALL_SOURCES ${CORE_SOURCES})

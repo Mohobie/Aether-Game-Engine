@@ -18,12 +18,18 @@ private:
     float radius;
     bool onGround;
     
+    Vec3 GetLookDirection() const;
+    
 public:
     PlayerController();
     ~PlayerController();
     
     void Update(float deltaTime, Input& input, World& world);
     bool CheckCollision(const Vec3& pos, World& world);
+    
+    // Block interaction
+    bool PlaceBlock(World& world, BlockType type);
+    bool BreakBlock(World& world);
     
     Vec3 GetPosition() const;
     void SetPosition(const Vec3& pos);

@@ -7,7 +7,6 @@
 #include "core/raycast.h"
 #include <iostream>
 
-// Stub implementation
 namespace vge {
 
 PlayerController::PlayerController() 
@@ -55,6 +54,14 @@ void PlayerController::Update(float deltaTime, Input& input, World& world) {
         onGround = false;
     }
     
+    // Block interaction
+    if (input.IsKeyJustPressed(GLFW_KEY_E)) { // Place block
+        PlaceBlock(world, BlockType::Wood);
+    }
+    if (input.IsKeyJustPressed(GLFW_KEY_Q)) { // Break block
+        BreakBlock(world);
+    }
+    
     // Gravity
     velocity.y -= 20.0f * deltaTime;
     
@@ -92,6 +99,30 @@ bool PlayerController::CheckCollision(const Vec3& pos, World& world) {
     }
     
     return false;
+}
+
+bool PlayerController::PlaceBlock(World& world, BlockType type) {
+    Vec3 eyePos = position + Vec3(0, 1.6f, 0);
+    Vec3 lookDir = GetLookDirection();
+    
+    Raycast raycast;
+    return raycast.PlaceBlock(eyePos, lookDir, world, type);
+}
+
+bool PlayerController::BreakBlock(World& world) {
+    Vec3 eyePos = position + Vec3(0, 1.6f, 0);
+    Vec3 lookDir = GetLookDirection();
+    
+    Raycast raycast;
+    return raycast.RemoveBlock(eyePos, lookDir, world);
+}
+
+Vec3 PlayerController::GetLookDirection() const {
+    Vec3 dir;
+    dir.x = cosf(yaw * 3.14159f / 180.0f) * cosf(pitch * 3.14159f / 180.0f);
+    dir.y = sinf(pitch * 3.14159f / 180.0f);
+    dir.z = sinf(yaw * 3.14159f / 180.0f) * cosf(pitch * 3.14159f / 180.0f);
+    return dir.normalize();
 }
 
 Vec3 PlayerController::GetPosition() const {

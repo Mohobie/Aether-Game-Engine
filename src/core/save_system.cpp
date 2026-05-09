@@ -12,16 +12,42 @@ bool SaveSystem::SaveWorld(const World& world, const std::string& path) {
         return false;
     }
     
+    // Count chunks
+    uint32_t chunkCount = 0;
+    for (int x = -100; x <= 100; x++) {
+        for (int y = -10; y <= 10; y++) {
+            for (int z = -100; z <= 100; z++) {
+                Chunk* chunk = const_cast<World&>(world).GetChunk(x, y, z);
+                if (chunk && chunk->loaded) {
+                    chunkCount++;
+                }
+            }
+        }
+    }
+    
     // Write header
     SaveHeader header;
     header.magic = SAVE_MAGIC;
     header.version = SAVE_VERSION;
-    header.chunkCount = 0; // Would count actual chunks
+    header.chunkCount = chunkCount;
     
     file.write(reinterpret_cast<const char*>(&header), sizeof(header));
     
-    // TODO: Iterate chunks and write them
-    std::cout << "[Save] World saved to: " << path << std::endl;
+    // Write each chunk
+    uint32_t savedChunks = 0;
+    for (int x = -100; x <= 100; x++) {
+        for (int y = -10; y <= 10; y++) {
+            for (int z = -100; z <= 100; z++) {
+                Chunk* chunk = const_cast<World&>(world).GetChunk(x, y, z);
+                if (chunk && chunk->loaded) {
+                    SaveChunk(*chunk, file);
+                    savedChunks++;
+                }
+            }
+        }
+    }
+    
+    std::cout << "[Save] World saved to: " << path << " (" << savedChunks << " chunks)" << std::endl;
     return true;
 }
 
@@ -45,50 +71,68 @@ bool SaveSystem::LoadWorld(World& world, const std::string& path) {
         return false;
     }
     
+    // Load each chunk
+    for (uint32_t i = 0; i < header.chunkCount; i++) {
+        // Read chunk coordinates first
+        int cx, cy, cz;
+        file.read(reinterpret_cast<char*>(&cx), sizeof(int));
+        file.read(reinterpret_cast<char*>(&cy), sizeof(int));
+        file.read(reinterpret_cast<char*>(&cz), sizeof(int));
+        
+        // Seek back to read full chunk
+        file.seekg(-static_cast<int>(sizeof(int) * 3), std::ios::cur);
+        
+        Chunk* chunk = world.GetOrCreateChunk(cx, cy, cz);
+        if (chunk) {
+            LoadChunk(*chunk, file);
+        }
+    }
+    
     std::cout << "[Save] World loaded from: " << path << " (" << header.chunkCount << " chunks)" << std::endl;
     return true;
 }
 
 bool SaveSystem::SaveChunk(const Chunk& chunk, std::ofstream& file) {
-    ChunkData data;
-    data.chunkX = chunk.GetChunkX();
-    data.chunkY = chunk.GetChunkY();
-    data.chunkZ = chunk.GetChunkZ();
+    // Write chunk coordinates first
+    int cx = chunk.GetChunkX();
+    int cy = chunk.GetChunkY();
+    int cz = chunk.GetChunkZ();
+    file.write(reinterpret_cast<const char*>(&cx), sizeof(int));
+    file.write(reinterpret_cast<const char*>(&cy), sizeof(int));
+    file.write(reinterpret_cast<const char*>(&cz), sizeof(int));
     
-    // Copy block data
+    // Write block data
     for (int x = 0; x < CHUNK_SIZE; ++x) {
         for (int y = 0; y < CHUNK_SIZE; ++y) {
             for (int z = 0; z < CHUNK_SIZE; ++z) {
-                data.blocks[x][y][z] = static_cast<uint8_t>(chunk.GetBlock(x, y, z));
+                uint8_t block = static_cast<uint8_t>(chunk.GetBlock(x, y, z));
+                file.write(reinterpret_cast<const char*>(&block), sizeof(uint8_t));
             }
         }
     }
-    
-    file.write(reinterpret_cast<const char*>(&data), sizeof(data));
     return true;
 }
 
 bool SaveSystem::LoadChunk(Chunk& chunk, std::ifstream& file) {
-    ChunkData data;
-    file.read(reinterpret_cast<char*>(&data), sizeof(data));
+    // Read chunk coordinates (already read in LoadWorld for verification)
+    int cx, cy, cz;
+    file.read(reinterpret_cast<char*>(&cx), sizeof(int));
+    file.read(reinterpret_cast<char*>(&cy), sizeof(int));
+    file.read(reinterpret_cast<char*>(&cz), sizeof(int));
     
-    // Verify chunk coordinates match
-    if (data.chunkX != chunk.GetChunkX() || 
-        data.chunkY != chunk.GetChunkY() || 
-        data.chunkZ != chunk.GetChunkZ()) {
-        std::cerr << "[Save] Chunk coordinate mismatch" << std::endl;
-        return false;
-    }
-    
-    // Copy block data
+    // Read block data
     for (int x = 0; x < CHUNK_SIZE; ++x) {
         for (int y = 0; y < CHUNK_SIZE; ++y) {
             for (int z = 0; z < CHUNK_SIZE; ++z) {
-                chunk.SetBlock(x, y, z, static_cast<BlockType>(data.blocks[x][y][z]));
+                uint8_t block;
+                file.read(reinterpret_cast<char*>(&block), sizeof(uint8_t));
+                chunk.SetBlock(x, y, z, static_cast<BlockType>(block));
             }
         }
     }
     
+    chunk.loaded = true;
+    chunk.dirty = false;
     return true;
 }
 

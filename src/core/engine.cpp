@@ -21,6 +21,7 @@
 #include "core/config.h"
 #include "ui/console.h"
 #include "ui/imgui_wrapper.h"
+#include "core/player_controller.h"
 #include <iostream>
 #include <chrono>
 
@@ -31,7 +32,7 @@ Engine::Engine()
       world(nullptr), worldGenerator(nullptr), chunkManager(nullptr),
       worldRenderer(nullptr), audioEngine(nullptr), soundManager(nullptr),
       menuSystem(nullptr), timeSystem(nullptr), achievementManager(nullptr),
-      running(false), deltaTime(0.016f) {}
+      player(nullptr), running(false), deltaTime(0.016f) {}
 
 Engine::~Engine() {
     Shutdown();
@@ -52,6 +53,7 @@ bool Engine::Initialize() {
     menuSystem = new MenuSystem();
     timeSystem = new TimeSystem();
     achievementManager = new AchievementManager();
+    player = new PlayerController();
     
     if (!window->Initialize(1280, 720, "Voxel Engine")) {
         Logger::Error("Failed to create window");
@@ -84,7 +86,9 @@ bool Engine::Initialize() {
     achievementManager->Initialize();
     timeSystem = new TimeSystem();
     
-    camera->SetPosition(Vec3(0, 40, 0));
+    // Set player and camera position
+    player->SetPosition(Vec3(0, 40, 0));
+    camera->SetPosition(Vec3(0, 41.6f, 0));
     camera->SetRotation(0, -20, 0);
     
     Logger::Info("Engine initialized successfully");
@@ -95,6 +99,7 @@ bool Engine::Initialize() {
 void Engine::Shutdown() {
     Logger::Info("Engine shutting down...");
     
+    delete player;
     delete achievementManager;
     delete timeSystem;
     delete menuSystem;
@@ -143,6 +148,14 @@ void Engine::Run() {
 void Engine::Update(float dt) {
     timeSystem->Update(dt);
     menuSystem->Update(dt);
+    
+    // Update player with dummy input (no real input yet)
+    // player->Update(dt, input, *world);
+    
+    // Update camera to follow player
+    Vec3 playerPos = player->GetPosition();
+    camera->SetPosition(playerPos + Vec3(0, 1.6f, 0));
+    camera->SetRotation(player->GetYaw(), player->GetPitch(), 0);
 }
 
 void Engine::Render() {
