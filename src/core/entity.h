@@ -57,6 +57,7 @@ public:
     
     void SetPosition(const Vec3& pos) { position = pos; }
     Vec3 GetPosition() const { return position; }
+    void Render(); // Declaration only
     
     // Factory methods
     static Entity* CreatePlayer(const Vec3& position);

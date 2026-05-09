@@ -1,7 +1,11 @@
 #include "scripting/lua_engine.h"
+#include "core/logger.h"
 #include <iostream>
+#include <dlfcn.h>
 
 // Stub implementation when Lua is not available
+// Tries to load liblua dynamically if present
+
 namespace vge {
 
 LuaEngine::LuaEngine() : L(nullptr), initialized(false) {}
@@ -11,8 +15,21 @@ LuaEngine::~LuaEngine() {
 }
 
 bool LuaEngine::Initialize() {
+    // Try to load Lua dynamically
+    void* luaLib = dlopen("liblua5.3.so.0", RTLD_LAZY);
+    if (!luaLib) {
+        luaLib = dlopen("liblua5.1.so.0", RTLD_LAZY);
+    }
+    
+    if (luaLib) {
+        std::cout << "[Lua] Found Lua library, but dynamic loading not yet implemented" << std::endl;
+        dlclose(luaLib);
+    }
+    
     std::cout << "[Lua] Stub - would initialize Lua 5.4" << std::endl;
-    initialized = true;
+    std::cout << "[Lua] Install lua5.4-dev for real scripting support" << std::endl;
+    
+    initialized = true; // Mark as initialized even though it's stubbed
     return true;
 }
 

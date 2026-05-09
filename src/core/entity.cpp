@@ -58,4 +58,14 @@ Entity* Entity::CreateCameraEntity(const Vec3& position) {
     return camera;
 }
 
+// Entity render stub (will be implemented with mesh system)
+void Entity::Render() {
+    // Would render entity using RenderComponent
+    // For now, just placeholder until mesh system is ready
+    auto render = GetComponent<RenderComponent>();
+    if (render && render->visible) {
+        // Would draw mesh here
+    }
+}
+
 } // namespace vge

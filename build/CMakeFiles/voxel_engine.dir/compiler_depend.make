@@ -5784,6 +5784,7 @@ CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.o: ../src/scripting/lua
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
+  ../src/core/logger.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/ios \
@@ -5812,7 +5813,10 @@ CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.o: ../src/scripting/lua
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc
+  /usr/include/c++/11/bits/istream.tcc \
+  /usr/include/dlfcn.h \
+  /usr/include/x86_64-linux-gnu/bits/dlfcn.h \
+  /usr/include/x86_64-linux-gnu/bits/dl_find_object.h
 
 CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.o: ../src/scripting/script_engine.cpp \
   /usr/include/stdc-predef.h \
@@ -8369,11 +8373,15 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 
 ../src/scripting/script_engine.cpp:
 
+/usr/include/x86_64-linux-gnu/bits/dl_find_object.h:
+
 ../src/scripting/lua_engine.h:
 
 ../src/rendering/texture.h:
 
 ../src/rendering/texture.cpp:
+
+/usr/include/dlfcn.h:
 
 ../src/rendering/renderer.cpp:
 
@@ -9092,6 +9100,8 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 /usr/include/x86_64-linux-gnu/bits/iscanonical.h:
 
 /usr/include/c++/11/sstream:
+
+/usr/include/x86_64-linux-gnu/bits/dlfcn.h:
 
 /usr/include/c++/11/bits/atomic_lockfree_defines.h:
 

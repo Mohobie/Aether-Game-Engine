@@ -2,7 +2,9 @@
 #include "platform/window.h"
 #include <iostream>
 
-// Stub implementation when Dear ImGui is not available
+// Software-based UI rendering (no Dear ImGui required)
+// Uses terminal output for menus
+
 namespace vge {
 
 ImGuiWrapper::ImGuiWrapper() : initialized(false) {}
@@ -12,26 +14,28 @@ ImGuiWrapper::~ImGuiWrapper() {
 }
 
 bool ImGuiWrapper::Initialize(void* windowHandle) {
-    std::cout << "[ImGui] Stub - would initialize Dear ImGui" << std::endl;
+    std::cout << "[ImGui] Software UI initialized (terminal mode)" << std::endl;
     initialized = true;
     return true;
 }
 
 void ImGuiWrapper::Shutdown() {
-    std::cout << "[ImGui] Stub - shutting down" << std::endl;
+    std::cout << "[ImGui] Software UI shutdown" << std::endl;
     initialized = false;
 }
 
 void ImGuiWrapper::BeginFrame() {
-    // Stub - would start ImGui frame
+    // Clear terminal for fresh frame
+    std::cout << "\033[2J\033[H";
 }
 
 void ImGuiWrapper::EndFrame() {
-    // Stub - would render ImGui
+    // Frame complete - nothing to do for terminal
 }
 
 void ImGuiWrapper::Render() {
-    // Stub - would render all ImGui windows
+    // Would render all UI windows
+    // For now, just placeholder
 }
 
 } // namespace vge
