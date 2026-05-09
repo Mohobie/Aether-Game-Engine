@@ -1,7 +1,8 @@
 #pragma once
-#include <unordered_map>
+#include <cstring>
+#include <cstdint>
 
-// GLFW key constants (when GLFW is not available)
+// GLFW key constants (embedded for standalone use)
 #define GLFW_KEY_SPACE              32
 #define GLFW_KEY_APOSTROPHE         39
 #define GLFW_KEY_COMMA              44
@@ -91,19 +92,35 @@
 #define GLFW_KEY_RIGHT_SUPER        347
 
 namespace vge {
+
 class Input {
+private:
     bool keys[512];
     bool prevKeys[512];
     bool mouseButtons[8];
     bool prevMouseButtons[8];
     double mouseX, mouseY;
     void* window;
+    
+    // Terminal input state
+    bool terminalMode;
+    int stdin_fd;
+    
 public:
     Input();
+    ~Input();
+    
     void Update(void* windowHandle);
     bool IsKeyPressed(int key) const;
     bool IsKeyJustPressed(int key) const;
+    bool IsKeyReleased(int key) const;
     bool IsMouseButtonPressed(int button) const;
     void GetMousePosition(double& x, double& y) const;
+    
+    // Terminal-specific
+    void EnableTerminalMode();
+    void DisableTerminalMode();
 };
-}
+
+} // namespace vge
+

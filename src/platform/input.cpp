@@ -5,11 +5,14 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/select.h>
+#include <cstring>
 
 // Terminal-based input implementation (no GLFW needed)
+// Supports both press and hold modes
+
 namespace vge {
 
-Input::Input() : window(nullptr) {
+Input::Input() : window(nullptr), terminalMode(false), stdin_fd(STDIN_FILENO) {
     // Initialize key states
     for (int i = 0; i < 512; ++i) {
         keys[i] = false;
@@ -20,15 +23,39 @@ Input::Input() : window(nullptr) {
         prevMouseButtons[i] = false;
     }
     mouseX = mouseY = 0;
+}
+
+Input::~Input() {
+    if (terminalMode) {
+        DisableTerminalMode();
+    }
+}
+
+void Input::EnableTerminalMode() {
+    if (terminalMode) return;
     
-    // Set terminal to non-blocking mode
     struct termios tty;
-    tcgetattr(STDIN_FILENO, &tty);
+    tcgetattr(stdin_fd, &tty);
     tty.c_lflag &= ~(ICANON | ECHO);
-    tcsetattr(STDIN_FILENO, TCSANOW, &tty);
+    tcsetattr(stdin_fd, TCSANOW, &tty);
     
-    int flags = fcntl(STDIN_FILENO, F_GETFL, 0);
-    fcntl(STDIN_FILENO, F_SETFL, flags | O_NONBLOCK);
+    int flags = fcntl(stdin_fd, F_GETFL, 0);
+    fcntl(stdin_fd, F_SETFL, flags | O_NONBLOCK);
+    
+    terminalMode = true;
+    std::cout << "[Input] Terminal mode enabled" << std::endl;
+}
+
+void Input::DisableTerminalMode() {
+    if (!terminalMode) return;
+    
+    struct termios tty;
+    tcgetattr(stdin_fd, &tty);
+    tty.c_lflag |= (ICANON | ECHO);
+    tcsetattr(stdin_fd, TCSANOW, &tty);
+    
+    terminalMode = false;
+    std::cout << "[Input] Terminal mode disabled" << std::endl;
 }
 
 void Input::Update(void* windowHandle) {
@@ -40,47 +67,70 @@ void Input::Update(void* windowHandle) {
         prevMouseButtons[i] = mouseButtons[i];
     }
     
+    // Enable terminal mode on first update
+    if (!terminalMode) {
+        EnableTerminalMode();
+    }
+    
     // Read keyboard input from terminal
     char c;
-    while (read(STDIN_FILENO, &c, 1) > 0) {
+    bool keyPressedThisFrame[512] = {false};
+    
+    while (read(stdin_fd, &c, 1) > 0) {
+        int keyCode = -1;
+        
         switch (c) {
-            case 'w': case 'W': keys[GLFW_KEY_W] = true; break;
-            case 'a': case 'A': keys[GLFW_KEY_A] = true; break;
-            case 's': case 'S': keys[GLFW_KEY_S] = true; break;
-            case 'd': case 'D': keys[GLFW_KEY_D] = true; break;
-            case ' ': keys[GLFW_KEY_SPACE] = true; break;
-            case 'e': case 'E': keys[GLFW_KEY_E] = true; break;
-            case 'q': case 'Q': keys[GLFW_KEY_Q] = true; break;
-            case 27: // Escape
-                // Check for arrow keys (escape sequences)
+            case 'w': case 'W': keyCode = GLFW_KEY_W; break;
+            case 'a': case 'A': keyCode = GLFW_KEY_A; break;
+            case 's': case 'S': keyCode = GLFW_KEY_S; break;
+            case 'd': case 'D': keyCode = GLFW_KEY_D; break;
+            case ' ': keyCode = GLFW_KEY_SPACE; break;
+            case 'e': case 'E': keyCode = GLFW_KEY_E; break;
+            case 'q': case 'Q': keyCode = GLFW_KEY_Q; break;
+            case 27: // Escape or arrow key sequence
                 char seq[2];
-                if (read(STDIN_FILENO, &seq[0], 1) > 0) {
-                    if (read(STDIN_FILENO, &seq[1], 1) > 0) {
+                if (read(stdin_fd, &seq[0], 1) > 0) {
+                    if (read(stdin_fd, &seq[1], 1) > 0) {
                         if (seq[0] == '[') {
                             switch (seq[1]) {
-                                case 'A': keys[GLFW_KEY_UP] = true; break;    // Up
-                                case 'B': keys[GLFW_KEY_DOWN] = true; break;  // Down
-                                case 'C': keys[GLFW_KEY_RIGHT] = true; break; // Right
-                                case 'D': keys[GLFW_KEY_LEFT] = true; break;  // Left
+                                case 'A': keyCode = GLFW_KEY_UP; break;
+                                case 'B': keyCode = GLFW_KEY_DOWN; break;
+                                case 'C': keyCode = GLFW_KEY_RIGHT; break;
+                                case 'D': keyCode = GLFW_KEY_LEFT; break;
                             }
                         }
                     } else {
-                        keys[GLFW_KEY_ESCAPE] = true;
+                        keyCode = GLFW_KEY_ESCAPE;
                     }
                 } else {
-                    keys[GLFW_KEY_ESCAPE] = true;
+                    keyCode = GLFW_KEY_ESCAPE;
                 }
                 break;
         }
+        
+        if (keyCode >= 0 && keyCode < 512) {
+            keys[keyCode] = true;
+            keyPressedThisFrame[keyCode] = true;
+        }
     }
     
-    // Auto-release keys (since terminal doesn't send key-up events)
-    // We'll release them on the next frame unless pressed again
-    // This creates a "press once per frame" behavior
+    // For keys not pressed this frame, keep them pressed if they were held
+    // But allow release detection by checking if they were in prevKeys
+    // This is a compromise - we can't detect true key release in terminal
+    // So we auto-release after a short delay (simulated by frame count)
+    static int keyHoldFrames[512] = {0};
     for (int i = 0; i < 512; ++i) {
-        if (keys[i] && !prevKeys[i]) {
-            // Key was just pressed, schedule release
-            keys[i] = false; // Auto-release for next frame
+        if (keys[i]) {
+            if (keyPressedThisFrame[i]) {
+                keyHoldFrames[i] = 0; // Reset on new press
+            } else {
+                keyHoldFrames[i]++;
+                // Auto-release after 5 frames (about 83ms at 60fps)
+                if (keyHoldFrames[i] > 5) {
+                    keys[i] = false;
+                    keyHoldFrames[i] = 0;
+                }
+            }
         }
     }
 }
@@ -95,6 +145,13 @@ bool Input::IsKeyPressed(int key) const {
 bool Input::IsKeyJustPressed(int key) const {
     if (key >= 0 && key < 512) {
         return keys[key] && !prevKeys[key];
+    }
+    return false;
+}
+
+bool Input::IsKeyReleased(int key) const {
+    if (key >= 0 && key < 512) {
+        return !keys[key] && prevKeys[key];
     }
     return false;
 }

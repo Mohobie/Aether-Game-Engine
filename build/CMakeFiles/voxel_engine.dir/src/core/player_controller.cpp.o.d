@@ -163,10 +163,7 @@ CMakeFiles/voxel_engine.dir/src/core/player_controller.cpp.o: \
  /home/mohobie/projects/aether-game-engine/src/voxel/block_registry.h \
  /home/mohobie/projects/aether-game-engine/src/physics/collision.h \
  /home/mohobie/projects/aether-game-engine/src/platform/input.h \
- /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
- /usr/include/c++/11/bits/hashtable_policy.h \
- /usr/include/c++/11/bits/enable_special_members.h \
- /usr/include/c++/11/bits/unordered_map.h \
+ /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
  /home/mohobie/projects/aether-game-engine/src/core/raycast.h \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
  /usr/include/c++/11/ios /usr/include/c++/11/bits/char_traits.h \

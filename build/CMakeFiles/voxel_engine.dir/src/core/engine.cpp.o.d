@@ -133,17 +133,7 @@ CMakeFiles/voxel_engine.dir/src/core/engine.cpp.o: \
  /home/mohobie/projects/aether-game-engine/src/core/logger.h \
  /home/mohobie/projects/aether-game-engine/src/platform/window.h \
  /home/mohobie/projects/aether-game-engine/src/platform/input.h \
- /usr/include/c++/11/unordered_map \
- /usr/include/c++/11/ext/aligned_buffer.h \
- /usr/include/c++/11/bits/hashtable.h \
- /usr/include/c++/11/bits/hashtable_policy.h /usr/include/c++/11/tuple \
- /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
- /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
- /usr/include/c++/11/bits/invoke.h \
- /usr/include/c++/11/bits/enable_special_members.h \
- /usr/include/c++/11/bits/node_handle.h \
- /usr/include/c++/11/bits/unordered_map.h \
- /usr/include/c++/11/bits/erase_if.h \
+ /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
  /home/mohobie/projects/aether-game-engine/src/rendering/renderer.h \
  /home/mohobie/projects/aether-game-engine/src/rendering/mesh.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
@@ -181,9 +171,16 @@ CMakeFiles/voxel_engine.dir/src/core/engine.cpp.o: \
  /home/mohobie/projects/aether-game-engine/src/voxel/chunk.h \
  /home/mohobie/projects/aether-game-engine/src/voxel/block.h \
  /home/mohobie/projects/aether-game-engine/src/core/types.h \
- /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
- /usr/include/c++/11/bits/stl_map.h \
- /usr/include/c++/11/bits/stl_multimap.h /usr/include/c++/11/memory \
+ /usr/include/c++/11/array /usr/include/c++/11/utility \
+ /usr/include/c++/11/bits/stl_relops.h /usr/include/c++/11/map \
+ /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/memory \
  /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
  /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
@@ -209,6 +206,10 @@ CMakeFiles/voxel_engine.dir/src/core/engine.cpp.o: \
  /usr/include/c++/11/bits/stl_numeric.h \
  /usr/include/c++/11/pstl/glue_numeric_defs.h \
  /home/mohobie/projects/aether-game-engine/src/voxel/chunk_manager.h \
+ /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
+ /usr/include/c++/11/bits/hashtable_policy.h \
+ /usr/include/c++/11/bits/enable_special_members.h \
+ /usr/include/c++/11/bits/unordered_map.h \
  /home/mohobie/projects/aether-game-engine/src/voxel/world_renderer.h \
  /home/mohobie/projects/aether-game-engine/src/audio/audio_engine.h \
  /home/mohobie/projects/aether-game-engine/src/audio/sound_manager.h \
