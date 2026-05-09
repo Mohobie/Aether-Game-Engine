@@ -4,12 +4,24 @@
 
 namespace vge {
     class Console {
-    public:
-        void Log(const std::string& msg);
-        void ExecuteCommand(const std::string& cmd);
-        std::vector<std::string> GetHistory();
-        void Clear();
     private:
-        std::vector<std::string> history;
+        std::vector<std::string> lines;
+        bool visible;
+        int maxLines;
+        
+    public:
+        Console();
+        ~Console();
+        
+        void Initialize();
+        void Shutdown();
+        
+        void AddLine(const std::string& line);
+        void Clear();
+        void Render();
+        void Toggle();
+        
+        void ExecuteCommand(const std::string& cmd);
+        bool IsVisible() const { return visible; }
     };
 }

@@ -4,14 +4,32 @@
 
 namespace vge {
     class Camera {
-    public:
+    private:
         Vec3 position;
-        Vec3 forward;
-        Vec3 up;
+        Vec3 rotation;
+        float fov;
+        float aspectRatio;
+        float nearPlane;
+        float farPlane;
+        
+    public:
+        Camera();
+        ~Camera();
+        
+        void SetPosition(const Vec3& pos);
+        void Move(const Vec3& delta);
+        
+        void SetRotation(float yaw, float pitch, float roll);
+        void Rotate(float deltaYaw, float deltaPitch, float deltaRoll);
         
         Mat4 GetViewMatrix() const;
-        Mat4 GetProjectionMatrix(float fov, float aspect, float near, float far) const;
-        void Move(const Vec3& delta);
-        void Rotate(float yaw, float pitch);
+        Mat4 GetProjectionMatrix() const;
+        
+        Vec3 GetForward() const;
+        Vec3 GetRight() const;
+        Vec3 GetUp() const;
+        
+        Vec3 GetPosition() const { return position; }
+        Vec3 GetRotation() const { return rotation; }
     };
 }

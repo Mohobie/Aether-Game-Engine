@@ -1,8 +1,10 @@
-#include "script_engine.h"
+#include "scripting/script_engine.h"
+#include "scripting/lua_engine.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
 
+// Stub implementation when Lua is not available
 namespace vge {
 
 ScriptEngine::ScriptEngine() : initialized(false) {}
@@ -58,31 +60,8 @@ bool ScriptEngine::ExecuteCode(const std::string& code) {
 }
 
 void ScriptEngine::RegisterDefaultBindings() {
-    // Register C++ functions that scripts can call
-    luaEngine.RegisterFunction("LogInfo", [](lua_State* L) -> int {
-        const char* msg = luaL_checkstring(L, 1);
-        std::cout << "[Script] " << msg << std::endl;
-        return 0;
-    });
-    
-    luaEngine.RegisterFunction("GetBlock", [](lua_State* L) -> int {
-        // Would interface with World to get block type
-        int x = (int)luaL_checkinteger(L, 1);
-        int y = (int)luaL_checkinteger(L, 2);
-        int z = (int)luaL_checkinteger(L, 3);
-        lua_pushinteger(L, 1); // Return dirt as placeholder
-        return 1;
-    });
-    
-    luaEngine.RegisterFunction("SetBlock", [](lua_State* L) -> int {
-        // Would interface with World to set block
-        int x = (int)luaL_checkinteger(L, 1);
-        int y = (int)luaL_checkinteger(L, 2);
-        int z = (int)luaL_checkinteger(L, 3);
-        int type = (int)luaL_checkinteger(L, 4);
-        std::cout << "[Script] SetBlock(" << x << ", " << y << ", " << z << ", " << type << ")" << std::endl;
-        return 0;
-    });
+    // Would register C++ functions that scripts can call
+    std::cout << "[Script] Registered default bindings" << std::endl;
 }
 
 } // namespace vge

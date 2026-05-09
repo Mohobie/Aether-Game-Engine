@@ -1,14 +1,21 @@
 #pragma once
-#include <string>
 
 namespace vge {
+
 class ImGuiWrapper {
+private:
+    bool initialized;
+    
 public:
-    bool Initialize(void* window);
+    ImGuiWrapper();
+    ~ImGuiWrapper();
+    
+    bool Initialize(void* windowHandle);
     void Shutdown();
-    void NewFrame();
+    
+    void BeginFrame();
+    void EndFrame();
     void Render();
-    void Text(const std::string& text);
-    bool Button(const std::string& label);
 };
-}
+
+} // namespace vge

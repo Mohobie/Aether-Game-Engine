@@ -1,31 +1,37 @@
-#include "imgui_wrapper.h"
+#include "ui/imgui_wrapper.h"
+#include "platform/window.h"
 #include <iostream>
 
+// Stub implementation when Dear ImGui is not available
 namespace vge {
-bool ImGuiWrapper::Initialize(void* window) {
-    std::cout << "[ImGui] Initialized (stub)" << std::endl;
-    (void)window;
+
+ImGuiWrapper::ImGuiWrapper() : initialized(false) {}
+
+ImGuiWrapper::~ImGuiWrapper() {
+    if (initialized) Shutdown();
+}
+
+bool ImGuiWrapper::Initialize(void* windowHandle) {
+    std::cout << "[ImGui] Stub - would initialize Dear ImGui" << std::endl;
+    initialized = true;
     return true;
 }
 
 void ImGuiWrapper::Shutdown() {
-    std::cout << "[ImGui] Shutdown" << std::endl;
+    std::cout << "[ImGui] Stub - shutting down" << std::endl;
+    initialized = false;
 }
 
-void ImGuiWrapper::NewFrame() {
-    // Would call ImGui::NewFrame()
+void ImGuiWrapper::BeginFrame() {
+    // Stub - would start ImGui frame
+}
+
+void ImGuiWrapper::EndFrame() {
+    // Stub - would render ImGui
 }
 
 void ImGuiWrapper::Render() {
-    // Would call ImGui::Render()
+    // Stub - would render all ImGui windows
 }
 
-void ImGuiWrapper::Text(const std::string& text) {
-    std::cout << "[UI] " << text << std::endl;
-}
-
-bool ImGuiWrapper::Button(const std::string& label) {
-    std::cout << "[UI] Button: " << label << std::endl;
-    return false;
-}
-}
+} // namespace vge

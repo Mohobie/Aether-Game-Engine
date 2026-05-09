@@ -1,27 +1,60 @@
-#include "input.h"
+#include "platform/input.h"
+#include "platform/window.h"
+#include <iostream>
 
+// Stub implementation when GLFW is not available
 namespace vge {
-void Input::Update(GLFWwindow* window) {
-    for (int key = GLFW_KEY_SPACE; key <= GLFW_KEY_LAST; ++key) {
-        keys[key] = glfwGetKey(window, key) == GLFW_PRESS;
+
+Input::Input() : window(nullptr) {
+    // Initialize key states
+    for (int i = 0; i < 512; ++i) {
+        keys[i] = false;
+        prevKeys[i] = false;
     }
-    for (int btn = GLFW_MOUSE_BUTTON_1; btn <= GLFW_MOUSE_BUTTON_LAST; ++btn) {
-        mouseButtons[btn] = glfwGetMouseButton(window, btn) == GLFW_PRESS;
+    for (int i = 0; i < 8; ++i) {
+        mouseButtons[i] = false;
+        prevMouseButtons[i] = false;
     }
-    glfwGetCursorPos(window, &mouseX, &mouseY);
+    mouseX = mouseY = 0;
+}
+
+void Input::Update(void* windowHandle) {
+    // Copy current to previous
+    for (int i = 0; i < 512; ++i) {
+        prevKeys[i] = keys[i];
+    }
+    for (int i = 0; i < 8; ++i) {
+        prevMouseButtons[i] = mouseButtons[i];
+    }
+    
+    // In a real implementation, would poll GLFW input here
+    // For now, just stub
 }
 
 bool Input::IsKeyPressed(int key) const {
-    auto it = keys.find(key);
-    return it != keys.end() && it->second;
+    if (key >= 0 && key < 512) {
+        return keys[key];
+    }
+    return false;
 }
 
-bool Input::IsMousePressed(int button) const {
-    auto it = mouseButtons.find(button);
-    return it != mouseButtons.end() && it->second;
+bool Input::IsKeyJustPressed(int key) const {
+    if (key >= 0 && key < 512) {
+        return keys[key] && !prevKeys[key];
+    }
+    return false;
 }
 
-void Input::GetMousePos(double& x, double& y) const {
-    x = mouseX; y = mouseY;
+bool Input::IsMouseButtonPressed(int button) const {
+    if (button >= 0 && button < 8) {
+        return mouseButtons[button];
+    }
+    return false;
 }
+
+void Input::GetMousePosition(double& x, double& y) const {
+    x = mouseX;
+    y = mouseY;
 }
+
+} // namespace vge

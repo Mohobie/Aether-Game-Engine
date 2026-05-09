@@ -1,11 +1,13 @@
-#include "player_controller.h"
+#include "core/player_controller.h"
 #include "voxel/world.h"
 #include "voxel/block.h"
+#include "voxel/block_registry.h"
 #include "physics/collision.h"
 #include "platform/input.h"
 #include "core/raycast.h"
 #include <iostream>
 
+// Stub implementation
 namespace vge {
 
 PlayerController::PlayerController() 
@@ -17,14 +19,10 @@ PlayerController::~PlayerController() {}
 
 void PlayerController::Update(float deltaTime, Input& input, World& world) {
     // Mouse look
-    if (input.IsMouseButtonPressed(0)) { // Left button for look
-        // In real implementation, would use mouse delta
-        // For now, arrow keys control look
-        if (input.IsKeyPressed(GLFW_KEY_UP)) pitch += 2.0f;
-        if (input.IsKeyPressed(GLFW_KEY_DOWN)) pitch -= 2.0f;
-        if (input.IsKeyPressed(GLFW_KEY_LEFT)) yaw -= 2.0f;
-        if (input.IsKeyPressed(GLFW_KEY_RIGHT)) yaw += 2.0f;
-    }
+    if (input.IsKeyPressed(GLFW_KEY_UP)) pitch += 2.0f;
+    if (input.IsKeyPressed(GLFW_KEY_DOWN)) pitch -= 2.0f;
+    if (input.IsKeyPressed(GLFW_KEY_LEFT)) yaw -= 2.0f;
+    if (input.IsKeyPressed(GLFW_KEY_RIGHT)) yaw += 2.0f;
     
     // Clamp pitch
     if (pitch > 89.0f) pitch = 89.0f;
@@ -35,10 +33,9 @@ void PlayerController::Update(float deltaTime, Input& input, World& world) {
     forward.x = cosf(yaw * 3.14159f / 180.0f) * cosf(pitch * 3.14159f / 180.0f);
     forward.y = sinf(pitch * 3.14159f / 180.0f);
     forward.z = sinf(yaw * 3.14159f / 180.0f) * cosf(pitch * 3.14159f / 180.0f);
-    forward = forward.Normalized();
+    forward = forward.normalize();
     
-    Vec3 right = forward.Cross(Vec3(0, 1, 0)).Normalized();
-    Vec3 up(0, 1, 0);
+    Vec3 right = forward.cross(Vec3(0, 1, 0)).normalize();
     
     // Movement
     Vec3 moveDir(0, 0, 0);
@@ -48,69 +45,34 @@ void PlayerController::Update(float deltaTime, Input& input, World& world) {
     if (input.IsKeyPressed(GLFW_KEY_D)) moveDir = moveDir + right;
     
     // Normalize and apply speed
-    if (moveDir.Length() > 0) {
-        moveDir = moveDir.Normalized() * speed * deltaTime;
+    if (moveDir.length() > 0) {
+        moveDir = moveDir.normalize() * speed * deltaTime;
     }
     
     // Jump
-    if (input.IsKeyPressed(GLFW_KEY_SPACE) && onGround) {
+    if (input.IsKeyJustPressed(GLFW_KEY_SPACE) && onGround) {
         velocity.y = jumpForce;
         onGround = false;
     }
     
     // Gravity
-    velocity.y -= 20.0f * deltaTime; // Gravity
+    velocity.y -= 20.0f * deltaTime;
     
     // Apply velocity
     moveDir.y = velocity.y * deltaTime;
     
-    // Try to move, with collision
+    // Try to move
     Vec3 newPos = position + moveDir;
-    
-    // Simple collision check
     if (!CheckCollision(newPos, world)) {
         position = newPos;
         onGround = false;
     } else {
-        // Try moving only horizontally
-        Vec3 horizontalMove(moveDir.x, 0, moveDir.z);
-        Vec3 horizontalPos = position + horizontalMove;
-        if (!CheckCollision(horizontalPos, world)) {
-            position = horizontalPos;
-        }
-        
-        // Check if on ground
-        if (velocity.y < 0) {
-            Vec3 groundCheck = position + Vec3(0, -0.1f, 0);
-            if (CheckCollision(groundCheck, world)) {
-                onGround = true;
-                velocity.y = 0;
-            }
-        }
-    }
-    
-    // Block interaction
-    if (input.IsKeyJustPressed(GLFW_KEY_E)) {
-        // Place block
-        Raycast raycast;
-        Vec3 lookDir = forward;
-        if (raycast.PlaceBlock(position, lookDir, world, BlockType::Stone)) {
-            std::cout << "[Player] Placed block" << std::endl;
-        }
-    }
-    
-    if (input.IsKeyJustPressed(GLFW_KEY_Q)) {
-        // Remove block
-        Raycast raycast;
-        Vec3 lookDir = forward;
-        if (raycast.RemoveBlock(position, lookDir, world)) {
-            std::cout << "[Player] Removed block" << std::endl;
-        }
+        velocity.y = 0;
+        onGround = true;
     }
 }
 
 bool PlayerController::CheckCollision(const Vec3& pos, World& world) {
-    // Check if the player's bounding box intersects with any solid blocks
     int minX = (int)(pos.x - radius);
     int maxX = (int)(pos.x + radius);
     int minY = (int)(pos.y);
@@ -123,7 +85,7 @@ bool PlayerController::CheckCollision(const Vec3& pos, World& world) {
             for (int z = minZ; z <= maxZ; ++z) {
                 BlockType block = world.GetBlock(x, y, z);
                 if (block != BlockType::Air && BlockRegistry::GetInstance().GetBlock(block).IsSolid()) {
-                    return true; // Collision
+                    return true;
                 }
             }
         }

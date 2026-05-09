@@ -1,7 +1,8 @@
-#include "lighting.h"
+#include "rendering/lighting.h"
 #include "voxel/chunk.h"
 #include "voxel/world.h"
 #include "voxel/block.h"
+#include "voxel/block_registry.h"
 #include <algorithm>
 
 namespace vge {
@@ -64,8 +65,6 @@ void LightEngine::PropagateBlockLight(Chunk* chunk) {
 
 void LightEngine::PropagateLightFromSource(Chunk* chunk, int sourceX, int sourceY, int sourceZ, int intensity) {
     // Simple flood fill for light propagation
-    // In a real implementation, this would use a queue-based BFS
-    
     int range = intensity - 1;
     
     for (int dx = -range; dx <= range; ++dx) {
@@ -98,7 +97,6 @@ int LightEngine::GetBlockLightEmission(BlockType type) const {
         case BlockType::Glowstone: return 15;
         case BlockType::Torch: return 14;
         case BlockType::Lava: return 15;
-        case BlockType::Fire: return 15;
         default: return 0;
     }
 }

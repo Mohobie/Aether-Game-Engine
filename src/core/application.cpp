@@ -1,33 +1,52 @@
-#include "application.h"
-#include <chrono>
+#include "core/application.h"
+#include "core/engine.h"
+#include "core/logger.h"
 #include <iostream>
 
+// Stub implementation
 namespace vge {
-    void Application::Initialize(int argc, char** argv) {
-        std::cout << "Application initializing..." << std::endl;
-        running = true;
-    }
-    
-    void Application::Run() {
-        auto lastTime = std::chrono::high_resolution_clock::now();
-        
-        while (running) {
-            auto currentTime = std::chrono::high_resolution_clock::now();
-            deltaTime = std::chrono::duration<float>(currentTime - lastTime).count();
-            lastTime = currentTime;
-        }
-    }
-    
-    void Application::Shutdown() {
-        std::cout << "Application shutting down..." << std::endl;
-        running = false;
-    }
-    
-    bool Application::IsRunning() const {
-        return running;
-    }
-    
-    float Application::GetDeltaTime() const {
-        return deltaTime;
-    }
+
+Application::Application() : engine(nullptr), initialized(false), running(false) {}
+
+Application::~Application() {
+    Shutdown();
 }
+
+bool Application::Initialize() {
+    Logger::Info("Application initializing...");
+    
+    engine = new Engine();
+    if (!engine->Initialize()) {
+        Logger::Error("Failed to initialize engine");
+        return false;
+    }
+    
+    initialized = true;
+    running = true;
+    Logger::Info("Application initialized");
+    return true;
+}
+
+void Application::Shutdown() {
+    if (engine) {
+        engine->Shutdown();
+        delete engine;
+        engine = nullptr;
+    }
+    
+    initialized = false;
+    running = false;
+    Logger::Info("Application shutdown");
+}
+
+void Application::Run() {
+    if (!initialized || !engine) {
+        Logger::Error("Cannot run - not initialized");
+        return;
+    }
+    
+    engine->Run();
+    running = false;
+}
+
+} // namespace vge

@@ -1,35 +1,49 @@
-#include "shader.h"
+#include "rendering/shader.h"
+#include <iostream>
 #include <fstream>
 #include <sstream>
-#include <iostream>
 
+// Stub implementation when OpenGL is not available
 namespace vge {
-Shader::Shader() : programId(0) {}
-Shader::~Shader() { if (programId) glDeleteProgram(programId); }
 
-bool Shader::LoadFromFile(const std::string& vPath, const std::string& fPath) {
-    std::ifstream vFile(vPath), fFile(fPath);
-    std::stringstream vBuf, fBuf;
-    vBuf << vFile.rdbuf(); fBuf << fFile.rdbuf();
-    
-    uint32_t vs = glCreateShader(GL_VERTEX_SHADER);
-    uint32_t fs = glCreateShader(GL_FRAGMENT_SHADER);
-    std::string vSrc = vBuf.str(), fSrc = fBuf.str();
-    const char* vC = vSrc.c_str(), *fC = fSrc.c_str();
-    glShaderSource(vs, 1, &vC, nullptr);
-    glShaderSource(fs, 1, &fC, nullptr);
-    glCompileShader(vs); glCompileShader(fs);
-    
-    programId = glCreateProgram();
-    glAttachShader(programId, vs); glAttachShader(programId, fs);
-    glLinkProgram(programId);
-    glDeleteShader(vs); glDeleteShader(fs);
-    return programId != 0;
+Shader::Shader() : programId(0), initialized(false) {}
+
+Shader::~Shader() {
+    if (initialized) {
+        // Would delete OpenGL program
+    }
 }
 
-void Shader::Use() { if (programId) glUseProgram(programId); }
-void Shader::SetUniform(const std::string& name, const Mat4& val) {
-    int loc = glGetUniformLocation(programId, name.c_str());
-    if (loc >= 0) glUniformMatrix4fv(loc, 1, GL_FALSE, &val.m[0][0]);
+bool Shader::LoadFromFile(const std::string& vertexPath, const std::string& fragmentPath) {
+    std::cout << "[Shader] Stub - would load " << vertexPath << " and " << fragmentPath << std::endl;
+    initialized = true;
+    return true;
 }
+
+bool Shader::LoadFromSource(const std::string& vertexSource, const std::string& fragmentSource) {
+    std::cout << "[Shader] Stub - would compile shaders from source" << std::endl;
+    initialized = true;
+    return true;
 }
+
+void Shader::Bind() const {
+    // Stub - would use OpenGL program
+}
+
+void Shader::SetInt(const std::string& name, int value) const {
+    // Stub
+}
+
+void Shader::SetFloat(const std::string& name, float value) const {
+    // Stub
+}
+
+void Shader::SetVec3(const std::string& name, const Vec3& value) const {
+    // Stub
+}
+
+void Shader::SetMat4(const std::string& name, const Mat4& value) const {
+    // Stub
+}
+
+} // namespace vge

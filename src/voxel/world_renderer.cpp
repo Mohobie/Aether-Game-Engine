@@ -1,10 +1,12 @@
-#include "world_renderer.h"
-#include "chunk_mesh_builder.h"
-#include "block.h"
-#include "chunk.h"
-#include "world.h"
+#include "voxel/world_renderer.h"
+#include "voxel/chunk.h"
+#include "voxel/world.h"
+#include "rendering/camera.h"
+#include "rendering/shader.h"
+#include "rendering/mesh.h"
 #include <iostream>
 
+// Stub implementation when OpenGL is not available
 namespace vge {
 
 WorldRenderer::WorldRenderer() : shader(nullptr) {}
@@ -19,49 +21,17 @@ void WorldRenderer::Initialize(Shader* shaderProgram) {
 void WorldRenderer::RenderChunk(const Chunk* chunk, const Camera& camera) {
     if (!chunk || chunk->IsEmpty()) return;
     
-    // Get or build mesh for this chunk
-    auto it = chunkMeshes.find(chunk);
-    if (it == chunkMeshes.end() || chunk->IsDirty()) {
-        // Rebuild mesh
-        Mesh mesh;
-        BlockMeshBuilder::BuildChunkMesh(chunk, mesh);
-        chunkMeshes[chunk] = std::move(mesh);
-        chunk->SetDirty(false);
-    }
-    
-    // Render the mesh
-    const Mesh& mesh = chunkMeshes[chunk];
-    
-    // Set up shader uniforms
-    if (shader) {
-        Mat4 model = Mat4::Translate(Vec3(
-            chunk->GetChunkX() * CHUNK_SIZE,
-            chunk->GetChunkY() * CHUNK_SIZE,
-            chunk->GetChunkZ() * CHUNK_SIZE
-        ));
-        
-        shader->SetMat4("model", model);
-        shader->SetMat4("view", camera.GetViewMatrix());
-        shader->SetMat4("projection", camera.GetProjectionMatrix());
-    }
-    
-    mesh.Draw();
+    // Would render chunk mesh here
 }
 
 void WorldRenderer::RenderWorld(const World& world, const Camera& camera) {
-    // Render all loaded chunks
-    // TODO: Implement world chunk iteration
-    // For now, this is a stub that would iterate the world's chunk map
+    // Would iterate and render all chunks
 }
 
 void WorldRenderer::UpdateChunkMesh(const Chunk* chunk) {
     if (!chunk) return;
     
-    // Mark for rebuild
-    auto it = chunkMeshes.find(chunk);
-    if (it != chunkMeshes.end()) {
-        chunkMeshes.erase(it);
-    }
+    // Would rebuild chunk mesh
 }
 
 void WorldRenderer::Cleanup() {

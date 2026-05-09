@@ -1,16 +1,16 @@
 #pragma once
 #include <vector>
-#include "math/vec3.h"
+#include "rendering/mesh.h"
 
 namespace vge {
-struct Vertex {
-    Vec3 position;
-    Vec3 color;
-};
 
 class Chunk;
+
 class BlockMeshBuilder {
 public:
-    static std::vector<Vertex> BuildChunkMesh(const Chunk* chunk);
+    static void BuildChunkMesh(const Chunk* chunk, Mesh& mesh);
+    static void AddCube(Mesh& mesh, const Vec3& position, const Vec3& color);
+    static void AddFace(Mesh& mesh, const Vec3& position, const Vec3& normal, const Vec3& color);
 };
-}
+
+} // namespace vge

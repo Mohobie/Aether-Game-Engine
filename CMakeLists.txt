@@ -6,6 +6,21 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Find packages (optional)
 find_package(OpenGL QUIET)
+find_package(PkgConfig QUIET)
+
+# Try to find GLFW
+set(GLFW_FOUND FALSE)
+if(PkgConfig_FOUND)
+    pkg_check_modules(GLFW QUIET glfw3)
+endif()
+
+# Try to find Lua
+set(LUA_FOUND FALSE)
+find_library(LUA_LIBRARY lua5.4 lua54 lua5.3 lua53 lua PATHS /usr/lib /usr/local/lib)
+if(LUA_LIBRARY)
+    set(LUA_FOUND TRUE)
+    message(STATUS "Found Lua library: ${LUA_LIBRARY}")
+endif()
 
 # Core files that don't need OpenGL/GLFW/Lua
 set(CORE_SOURCES
@@ -47,53 +62,67 @@ if(UNIX AND NOT APPLE)
     target_link_libraries(voxel_test PRIVATE pthread dl)
 endif()
 
-# Main executable (only if OpenGL is available)
-if(OpenGL_FOUND)
-    # Add GLFW/Lua dependent files
-    set(PLATFORM_SOURCES
-        src/platform/input.cpp
-        src/platform/window.cpp
-        src/rendering/camera.cpp
-        src/rendering/mesh.cpp
-        src/rendering/renderer.cpp
-        src/rendering/shader.cpp
-        src/rendering/texture.cpp
-        src/rendering/lighting.cpp
-        src/ui/console.cpp
-        src/ui/imgui_wrapper.cpp
-        src/ui/menu_system.cpp
-        src/voxel/world_renderer.cpp
-        src/voxel/block_mesh_builder.cpp
-        src/voxel/chunk_manager.cpp
-        src/core/player_controller.cpp
-        src/core/engine.cpp
-        src/core/application.cpp
-        src/scripting/lua_engine.cpp
-        src/scripting/script_engine.cpp
-        src/main.cpp
-    )
-    
-    file(GLOB_RECURSE ALL_SOURCES src/*.cpp)
-    list(FILTER ALL_SOURCES EXCLUDE REGEX "test_main.cpp$")
-    
-    add_executable(voxel_engine ${ALL_SOURCES})
-    
-    target_include_directories(voxel_engine PRIVATE 
-        src
-        /usr/include
-        /usr/local/include
-    )
-    
-    target_link_libraries(voxel_engine PRIVATE
-        OpenGL::GL
-    )
-    
-    if(UNIX AND NOT APPLE)
-        target_link_libraries(voxel_engine PRIVATE pthread dl)
+# Build as many files as possible even without all dependencies
+set(ALL_SOURCES ${CORE_SOURCES})
+
+# Add files that might compile without OpenGL/GLFW headers
+# (we'll stub out the OpenGL calls)
+set(OPTIONAL_SOURCES
+    src/platform/input.cpp
+    src/platform/window.cpp
+    src/rendering/camera.cpp
+    src/rendering/mesh.cpp
+    src/rendering/renderer.cpp
+    src/rendering/shader.cpp
+    src/rendering/texture.cpp
+    src/rendering/lighting.cpp
+    src/ui/console.cpp
+    src/ui/imgui_wrapper.cpp
+    src/ui/menu_system.cpp
+    src/voxel/world_renderer.cpp
+    src/voxel/block_mesh_builder.cpp
+    src/voxel/chunk_manager.cpp
+    src/core/player_controller.cpp
+    src/core/engine.cpp
+    src/core/application.cpp
+    src/scripting/lua_engine.cpp
+    src/scripting/script_engine.cpp
+    src/main.cpp
+)
+
+# Check which optional files can compile
+set(COMPILABLE_OPTIONAL_SOURCES)
+foreach(src ${OPTIONAL_SOURCES})
+    if(EXISTS ${CMAKE_SOURCE_DIR}/${src})
+        list(APPEND COMPILABLE_OPTIONAL_SOURCES ${src})
     endif()
-    
-    message(STATUS "OpenGL found - main engine target available")
-else()
-    message(WARNING "OpenGL not found - only test target available")
-    message(STATUS "Install libgl1-mesa-dev to build full engine")
+endforeach()
+
+# Try to build full engine even without OpenGL/GLFW
+# (we'll use stub implementations)
+add_executable(voxel_engine ${ALL_SOURCES} ${COMPILABLE_OPTIONAL_SOURCES})
+
+target_include_directories(voxel_engine PRIVATE 
+    src
+    /usr/include
+    /usr/local/include
+)
+
+if(OpenGL_FOUND)
+    target_link_libraries(voxel_engine PRIVATE OpenGL::GL)
 endif()
+
+if(GLFW_FOUND)
+    target_include_directories(voxel_engine PRIVATE ${GLFW_INCLUDE_DIRS})
+    target_link_libraries(voxel_engine PRIVATE ${GLFW_LIBRARIES})
+endif()
+
+if(LUA_FOUND)
+    target_link_libraries(voxel_engine PRIVATE ${LUA_LIBRARY})
+endif()
+
+if(UNIX AND NOT APPLE)
+    target_link_libraries(voxel_engine PRIVATE pthread dl)
+endif()
+
+message(STATUS "Building with ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}")

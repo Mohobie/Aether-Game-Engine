@@ -1,123 +1,48 @@
-#include "renderer.h"
-#include <glad/gl.h>
+#include "rendering/renderer.h"
+#include "rendering/shader.h"
+#include "rendering/camera.h"
+#include "rendering/mesh.h"
 #include <iostream>
 
+// Stub implementation when OpenGL is not available
 namespace vge {
 
-Renderer::Renderer() : vao(0), vbo(0), ebo(0), shaderProgram(0) {}
+Renderer::Renderer() : initialized(false), width(1280), height(720) {}
 
 Renderer::~Renderer() {
-    Cleanup();
+    if (initialized) Shutdown();
 }
 
 bool Renderer::Initialize() {
-    glEnable(GL_DEPTH_TEST);
-    glEnable(GL_CULL_FACE);
-    glCullFace(GL_BACK);
-    glFrontFace(GL_CCW);
-    
-    shaderProgram = CreateDefaultShader();
-    if (!shaderProgram) {
-        std::cerr << "Failed to create default shader" << std::endl;
-        return false;
-    }
-    
-    glGenVertexArrays(1, &vao);
-    glGenBuffers(1, &vbo);
-    glGenBuffers(1, &ebo);
-    
+    std::cout << "[Renderer] Stub - would initialize OpenGL" << std::endl;
+    initialized = true;
     return true;
 }
 
 void Renderer::Shutdown() {
-    Cleanup();
+    std::cout << "[Renderer] Stub - shutting down" << std::endl;
+    initialized = false;
 }
 
 void Renderer::BeginFrame() {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    // Stub - would clear screen
 }
 
-void Renderer::EndFrame() {}
+void Renderer::EndFrame() {
+    // Stub - would swap buffers
+}
 
 void Renderer::SetClearColor(float r, float g, float b, float a) {
-    glClearColor(r, g, b, a);
+    // Stub - would set OpenGL clear color
 }
 
-void Renderer::SetViewport(int x, int y, int width, int height) {
-    glViewport(x, y, width, height);
+void Renderer::SetViewport(int x, int y, int w, int h) {
+    width = w;
+    height = h;
 }
 
-void Renderer::Cleanup() {
-    if (vao) { glDeleteVertexArrays(1, &vao); vao = 0; }
-    if (vbo) { glDeleteBuffers(1, &vbo); vbo = 0; }
-    if (ebo) { glDeleteBuffers(1, &ebo); ebo = 0; }
-    if (shaderProgram) { glDeleteProgram(shaderProgram); shaderProgram = 0; }
-}
-
-uint32_t Renderer::CreateDefaultShader() {
-    const char* vertexSource = R"(
-        #version 330 core
-        layout (location = 0) in vec3 aPos;
-        layout (location = 1) in vec3 aColor;
-        uniform mat4 mvp;
-        out vec3 vertexColor;
-        void main() {
-            gl_Position = mvp * vec4(aPos, 1.0);
-            vertexColor = aColor;
-        }
-    )";
-    
-    const char* fragmentSource = R"(
-        #version 330 core
-        in vec3 vertexColor;
-        out vec4 FragColor;
-        void main() {
-            FragColor = vec4(vertexColor, 1.0);
-        }
-    )";
-    
-    uint32_t vs = CompileShader(vertexSource, GL_VERTEX_SHADER);
-    uint32_t fs = CompileShader(fragmentSource, GL_FRAGMENT_SHADER);
-    
-    if (!vs || !fs) return 0;
-    
-    uint32_t program = glCreateProgram();
-    glAttachShader(program, vs);
-    glAttachShader(program, fs);
-    glLinkProgram(program);
-    
-    glDeleteShader(vs);
-    glDeleteShader(fs);
-    
-    int success;
-    glGetProgramiv(program, GL_LINK_STATUS, &success);
-    if (!success) {
-        char infoLog[512];
-        glGetProgramInfoLog(program, 512, nullptr, infoLog);
-        std::cerr << "Shader link error: " << infoLog << std::endl;
-        glDeleteProgram(program);
-        return 0;
-    }
-    
-    return program;
-}
-
-uint32_t Renderer::CompileShader(const char* source, uint32_t type) {
-    uint32_t shader = glCreateShader(type);
-    glShaderSource(shader, 1, &source, nullptr);
-    glCompileShader(shader);
-    
-    int success;
-    glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
-    if (!success) {
-        char infoLog[512];
-        glGetShaderInfoLog(shader, 512, nullptr, infoLog);
-        std::cerr << "Shader compile error: " << infoLog << std::endl;
-        glDeleteShader(shader);
-        return 0;
-    }
-    
-    return shader;
+void Renderer::RenderMesh(const Mesh& mesh, const Shader& shader, const Camera& camera) {
+    // Stub - would render mesh
 }
 
 } // namespace vge

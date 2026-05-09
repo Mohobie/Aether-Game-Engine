@@ -1,70 +1,40 @@
-#include "window.h"
-#include <GLFW/glfw3.h>
+#include "platform/window.h"
 #include <iostream>
 
+// Stub implementation when GLFW is not available
 namespace vge {
 
-Window::Window() : window(nullptr), width(1280), height(720), title("Voxel Engine") {}
+Window::Window() : window(nullptr), width(1280), height(720), shouldClose(false) {}
 
 Window::~Window() {
     Shutdown();
 }
 
-bool Window::Initialize(int w, int h, const std::string& t) {
+bool Window::Initialize(int w, int h, const std::string& title) {
     width = w;
     height = h;
-    title = t;
-    
-    if (!glfwInit()) {
-        std::cerr << "Failed to initialize GLFW" << std::endl;
-        return false;
-    }
-    
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    
-    window = glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr);
-    if (!window) {
-        std::cerr << "Failed to create GLFW window" << std::endl;
-        glfwTerminate();
-        return false;
-    }
-    
-    glfwMakeContextCurrent(window);
-    glfwSetWindowUserPointer(window, this);
-    glfwSwapInterval(1);
-    
+    std::cout << "[Window] Stub - would create " << w << "x" << h << " window" << std::endl;
     return true;
 }
 
 void Window::Shutdown() {
-    if (window) {
-        glfwDestroyWindow(window);
-        window = nullptr;
-    }
-    glfwTerminate();
-}
-
-bool Window::ShouldClose() const {
-    return window ? glfwWindowShouldClose(window) : true;
-}
-
-void Window::SwapBuffers() {
-    if (window) glfwSwapBuffers(window);
+    std::cout << "[Window] Stub - shutting down" << std::endl;
 }
 
 void Window::PollEvents() {
-    glfwPollEvents();
+    // Stub - no events without GLFW
 }
 
-void Window::GetSize(int& w, int& h) const {
-    w = width;
-    h = height;
+void Window::SwapBuffers() {
+    // Stub - no buffer swapping without GLFW
 }
 
-bool Window::IsKeyPressed(int key) const {
-    return window ? glfwGetKey(window, key) == GLFW_PRESS : false;
+bool Window::ShouldClose() const {
+    return shouldClose;
+}
+
+void* Window::GetHandle() const {
+    return window;
 }
 
 } // namespace vge

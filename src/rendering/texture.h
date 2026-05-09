@@ -1,17 +1,21 @@
 #pragma once
 #include <string>
-#include <glad/gl.h>
+#include <cstdint>
 
 namespace vge {
 class Texture {
     uint32_t textureId;
-    int width, height;
+    int width, height, channels;
+    bool loaded;
 public:
     Texture();
     ~Texture();
     bool LoadFromFile(const std::string& path);
-    void Bind(uint32_t slot = 0);
+    bool LoadFromData(const unsigned char* data, int w, int h, int channels);
+    void Bind(int slot = 0) const;
+    void Unbind() const;
     int GetWidth() const { return width; }
     int GetHeight() const { return height; }
+    bool IsLoaded() const { return loaded; }
 };
 }
