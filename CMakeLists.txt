@@ -1,22 +1,19 @@
 cmake_minimum_required(VERSION 3.16)
-project(VoxelEngine VERSION 0.1.7 LANGUAGES CXX C)
+project(VoxelEngine VERSION 0.1.0 LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-option(BUILD_EDITOR "Build the editor" ON)
-option(BUILD_TESTS "Build tests" ON)
-option(BUILD_SHARED "Build as shared library" OFF)
-
-find_package(Threads REQUIRED)
+# Find packages
 find_package(OpenGL REQUIRED)
 
+# Fetch dependencies
 include(FetchContent)
 
 FetchContent_Declare(
-    spdlog
-    GIT_REPOSITORY https://github.com/gabime/spdlog.git
-    GIT_TAG v1.12.0
+    glfw
+    GIT_REPOSITORY https://github.com/glfw/glfw.git
+    GIT_TAG 3.3.8
 )
 
 FetchContent_Declare(
@@ -26,28 +23,39 @@ FetchContent_Declare(
 )
 
 FetchContent_Declare(
+    glad
+    GIT_REPOSITORY https://github.com/Dav1dde/glad.git
+    GIT_TAG v0.1.36
+)
+
+FetchContent_MakeAvailable(glfw glm)
+
+# glad is special - we need to generate it
+# For now, assume glad is in third_party/
+
+# Source files
+file(GLOB_RECURSE SOURCES 
+    src/*.cpp
+)
+
+# Create executable
+add_executable(voxel_engine ${SOURCES})
+
+target_include_directories(voxel_engine PRIVATE 
+    src
+    ${glad_SOURCE_DIR}/include
+)
+
+target_link_libraries(voxel_engine PRIVATE
     glfw
-    GIT_REPOSITORY https://github.com/glfw/glfw.git
-    GIT_TAG 3.3.8
+    OpenGL::GL
+    glm::glm
 )
 
-FetchContent_MakeAvailable(spdlog glm glfw)
-
-add_subdirectory(src)
-
-if(BUILD_EDITOR)
-    add_subdirectory(tools/editor)
+# Platform specific
+if(WIN32)
+    target_link_libraries(voxel_engine PRIVATE opengl32)
 endif()
 
-if(BUILD_TESTS)
-    enable_testing()
-    add_subdirectory(tests)
-endif()
-
-install(TARGETS VoxelEngine
-    LIBRARY DESTINATION lib
-    ARCHIVE DESTINATION lib
-    RUNTIME DESTINATION bin
-)
-
-install(DIRECTORY include/ DESTINATION include)
+# Copy shaders
+file(COPY shaders DESTINATION ${CMAKE_BINARY_DIR})
