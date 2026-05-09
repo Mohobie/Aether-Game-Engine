@@ -149,12 +149,23 @@ void Renderer::RenderWorld(const World& world, const Camera& camera) {
                 Chunk* chunk = const_cast<World&>(world).GetChunk(cx, cy, cz);
                 if (!chunk || !chunk->loaded) continue;
                 
-                // Render each block in chunk
-                for (int x = 0; x < CHUNK_SIZE; x += 2) { // Skip every other for performance
+                // Render each visible block in chunk
+                for (int x = 0; x < CHUNK_SIZE; x += 2) {
                     for (int y = 0; y < CHUNK_SIZE; y += 2) {
                         for (int z = 0; z < CHUNK_SIZE; z += 2) {
                             BlockType block = chunk->GetBlock(x, y, z);
                             if (block == BlockType::Air) continue;
+                            
+                            // Optimization: only draw if at least one face is exposed to air
+                            bool visible = false;
+                            if (x == 0 || chunk->GetBlock(x-1, y, z) == BlockType::Air) visible = true;
+                            if (x == CHUNK_SIZE-1 || chunk->GetBlock(x+1, y, z) == BlockType::Air) visible = true;
+                            if (y == 0 || chunk->GetBlock(x, y-1, z) == BlockType::Air) visible = true;
+                            if (y == CHUNK_SIZE-1 || chunk->GetBlock(x, y+1, z) == BlockType::Air) visible = true;
+                            if (z == 0 || chunk->GetBlock(x, y, z-1) == BlockType::Air) visible = true;
+                            if (z == CHUNK_SIZE-1 || chunk->GetBlock(x, y, z+1) == BlockType::Air) visible = true;
+                            
+                            if (!visible) continue; // Skip hidden blocks
                             
                             // World position
                             Vec3 worldPos(
