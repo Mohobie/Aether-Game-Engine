@@ -1,16 +1,13 @@
 #pragma once
-#include "chunk.h"
-#include <vector>
+#include <unordered_map>
 #include <memory>
+#include "chunk.h"
 
-namespace VoxelEngine {
-    class ChunkManager {
-    public:
-        void LoadChunk(ChunkCoord x, ChunkCoord y, ChunkCoord z);
-        void UnloadChunk(ChunkCoord x, ChunkCoord y, ChunkCoord z);
-        void Update(float deltaTime);
-        size_t GetLoadedChunkCount() const;
-    private:
-        std::vector<std::unique_ptr<Chunk>> loadedChunks;
-    };
+namespace vge {
+class ChunkManager {
+    std::unordered_map<uint64_t, std::unique_ptr<Chunk>> chunks;
+public:
+    Chunk* GetChunk(int x, int y, int z);
+    void UnloadDistantChunks(int centerX, int centerY, int centerZ, int radius);
+};
 }
