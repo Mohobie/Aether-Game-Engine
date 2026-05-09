@@ -1,18 +1,17 @@
 #pragma once
 #include <string>
+#include <glad/gl.h>
 
-namespace VoxelEngine {
-    class Texture {
-    public:
-        bool Load(const std::string& path);
-        void Bind(unsigned int slot);
-        void Unbind();
-        int GetWidth() const;
-        int GetHeight() const;
-        unsigned int GetID() const;
-    private:
-        unsigned int id = 0;
-        int width = 0;
-        int height = 0;
-    };
+namespace vge {
+class Texture {
+    uint32_t textureId;
+    int width, height;
+public:
+    Texture();
+    ~Texture();
+    bool LoadFromFile(const std::string& path);
+    void Bind(uint32_t slot = 0);
+    int GetWidth() const { return width; }
+    int GetHeight() const { return height; }
+};
 }
