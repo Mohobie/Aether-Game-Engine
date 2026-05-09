@@ -1,0 +1,74 @@
+[
+  {
+    "title": "CRITICAL: GLFW/Window System Missing - No Real Window Creation",
+    "body": "Window creation is completely stubbed. No actual GLFW window is created.\n\n**Impact:** Cannot run with real graphics - only ASCII renderer works\n\n**File:** `src/platform/window.cpp`\n\n**Fix Required:**\n- Install libglfw3-dev package\n- Or implement SDL2 fallback\n- Or create software framebuffer window\n\n**Current Behavior:**\n```\n[Window] Stub - would create 1280x720 window\n```\n\n**Expected:** Actual window with OpenGL context",
+    "labels": ["critical", "graphics", "help wanted"]
+  },
+  {
+    "title": "CRITICAL: OpenGL Rendering All Stubs - Mesh/Shader/Texture",
+    "body": "All OpenGL code is stubbed. Cannot upload meshes, compile shaders, or load textures.\n\n**Impact:** ASCII renderer is the only option\n\n**Files Affected:**\n- `src/rendering/mesh.cpp` - No VAO/VBO upload\n- `src/rendering/shader.cpp` - No shader compilation\n- `src/rendering/texture.cpp` - No texture loading\n- `src/rendering/renderer.cpp` - No GL calls\n\n**Fix Required:**\n- Install OpenGL headers (libgl1-mesa-dev)\n- Implement actual GL calls\n- Add shader sources (vertex/fragment)\n\n**Dependencies:** Issue #1 (GLFW window)",
+    "labels": ["critical", "graphics", "rendering"]
+  },
+  {
+    "title": "HIGH: Input System - No Key Release Detection",
+    "body": "Terminal-based input cannot detect key releases. Keys auto-release each frame.\n\n**Impact:**\n- Movement is jittery\n- Cannot hold keys for smooth movement\n- Only single-press actions work\n\n**File:** `src/platform/input.cpp`\n\n**Current Behavior:**\n```cpp
+// Auto-release keys (since terminal doesn't send key-up events)
+for (int i = 0; i < 512; ++i) {
+    if (keys[i] && !prevKeys[i]) {
+        keys[i] = false; // Auto-release for next frame
+    }
+}
+```\n\n**Fix Options:**\n1. Use GLFW (needs Issue #1)\n2. Use SDL2\n3. Implement raw terminal mode with proper escape sequences\n4. Use Linux input event system (/dev/input/event*)",
+    "labels": ["high", "input", "controls"]
+  },
+  {
+    "title": "MEDIUM: Lua Scripting Completely Stubbed",
+    "body": "Lua engine is completely stubbed. No scripting support.\n\n**Impact:**\n- No modding support\n- No custom game logic\n- No plugin system\n\n**Files:**\n- `src/scripting/lua_engine.cpp`\n- `src/scripting/script_engine.cpp`\n\n**Current Behavior:**\n```\n[Lua] Stub - would initialize Lua 5.4\n[Lua] Would execute: print('Hello')...\n```\n\n**Fix Required:**\n- Install lua5.4-dev package\n- Link against liblua5.4\n- Implement Lua C API calls\n- Register engine functions to Lua",
+    "labels": ["medium", "scripting", "lua"]
+  },
+  {
+    "title": "MEDIUM: Physics Raycast Uses Simple Stepping",
+    "body": "Raycast collision uses simple forward stepping, not proper ray-march or ray-AABB intersection.\n\n**Impact:**\n- May miss thin objects\n- Inaccurate hit detection at edges\n- Worse performance than proper raycast\n\n**File:** `src/physics/collision.cpp`\n\n**Current Code:**\n```cpp
+float stepSize = 0.1f; // Small steps for accuracy
+for (float dist = 0; dist < maxDistance; dist += stepSize) {
+    pos = origin + (dir * dist);
+    // Check block at position...
+}
+```\n\n**Fix Required:**\nImplement proper ray-AABB intersection algorithm (slab method or Amanatides-Woo grid traversal)",
+    "labels": ["medium", "physics", "collision"]
+  },
+  {
+    "title": "MEDIUM: Block Mesh Builder Only Placeholder",
+    "body": "Mesh builder generates placeholder cubes without face culling.\n\n**Impact:**\n- Inefficient rendering when OpenGL enabled\n- Renders hidden faces\n- More vertices than needed\n\n**File:** `src/voxel/block_mesh_builder.cpp`\n\n**Current Behavior:**\n```cpp
+void BlockMeshBuilder::AddCube(Mesh& mesh, const Vec3& position, const Vec3& color) {
+    // Would add cube vertices to mesh
+    // For now, just a stub
+}
+```\n\n**Fix Required:**\n- Implement face culling (only generate faces adjacent to air)\n- Consider greedy meshing for optimization\n- Generate proper vertex normals and UVs",
+    "labels": ["medium", "mesh", "optimization"]
+  },
+  {
+    "title": "MEDIUM: No Sound Assets - Silent Game",
+    "body": "Audio engine works but no sound files exist in the repository.\n\n**Impact:**\n- Completely silent game\n- No feedback for actions\n- Missing atmosphere\n\n**File:** `assets/sounds/` (directory doesn't exist)\n\n**Current Behavior:**\n```\n[Audio] Sound file not found: assets/sounds/step.wav\n```\n\n**Fix Required:**\n- Create assets/sounds/ directory\n- Add placeholder WAV files:\n  - step.wav (footsteps)\n  - dig.wav (block break)\n  - place.wav (block place)\n  - ambient.wav (background)\n- Or generate procedural sounds",
+    "labels": ["medium", "audio", "assets"]
+  },
+  {
+    "title": "LOW: World Renderer Stubbed",
+    "body": "World renderer is stubbed, uses ASCII renderer instead.\n\n**Impact:** None - ASCII renderer works fine\n\n**File:** `src/voxel/world_renderer.cpp`\n\n**Note:** This is low priority since the ASCII renderer handles world rendering. Fix after OpenGL rendering (Issue #2) is implemented.",
+    "labels": ["low", "rendering", "deferred"]
+  },
+  {
+    "title": "LOW: Chunk Manager Missing Unload",
+    "body": "Chunk manager has stub methods for unloading chunks.\n\n**Impact:**\n- Memory grows indefinitely as player explores\n- No distance-based chunk unloading\n\n**File:** `src/voxel/chunk_manager.cpp`\n\n**Current Behavior:**\n```cpp
+void ChunkManager::UnloadChunk(int x, int y, int z) {
+    // Would remove chunk from memory
+}
+```\n\n**Fix Required:**\n- Implement distance-based unloading\n- Add chunk cache with LRU eviction\n- Save modified chunks before unloading",
+    "labels": ["low", "memory", "chunks"]
+  },
+  {
+    "title": "LOW: Entity Render Component Stubbed",
+    "body": "Entity system render component is stubbed.\n\n**Impact:** No entity rendering (mobs, items, etc.)\n\n**File:** `src/core/entity.h`\n\n**Note:** Low priority since entities aren't used yet. Fix when entity system is fully implemented.",
+    "labels": ["low", "entity", "rendering"]
+  }
+]
