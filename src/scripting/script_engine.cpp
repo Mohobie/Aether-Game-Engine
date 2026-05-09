@@ -7,15 +7,18 @@
 // Stub implementation when Lua is not available
 namespace vge {
 
-ScriptEngine::ScriptEngine() : initialized(false) {}
+ScriptEngine::ScriptEngine() : luaEngine(nullptr), initialized(false) {}
 
 ScriptEngine::~ScriptEngine() {
     if (initialized) Shutdown();
 }
 
 bool ScriptEngine::Initialize() {
-    if (!luaEngine.Initialize()) {
+    luaEngine = new LuaEngine();
+    if (!luaEngine->Initialize()) {
         std::cerr << "[Script] Failed to initialize Lua engine" << std::endl;
+        delete luaEngine;
+        luaEngine = nullptr;
         return false;
     }
     
@@ -27,41 +30,35 @@ bool ScriptEngine::Initialize() {
 }
 
 void ScriptEngine::Shutdown() {
-    luaEngine.Shutdown();
+    if (luaEngine) {
+        luaEngine->Shutdown();
+        delete luaEngine;
+        luaEngine = nullptr;
+    }
     initialized = false;
     std::cout << "[Script] Engine shutdown" << std::endl;
 }
 
 bool ScriptEngine::LoadScript(const std::string& path) {
-    if (!initialized) {
-        std::cerr << "[Script] Engine not initialized" << std::endl;
-        return false;
-    }
-    
-    std::ifstream file(path);
-    if (!file.is_open()) {
-        std::cerr << "[Script] Failed to open: " << path << std::endl;
-        return false;
-    }
-    
-    std::stringstream buffer;
-    buffer << file.rdbuf();
-    
-    return luaEngine.ExecuteString(buffer.str());
+    if (!initialized || !luaEngine) return false;
+    return luaEngine->ExecuteFile(path);
 }
 
 bool ScriptEngine::ExecuteCode(const std::string& code) {
-    if (!initialized) {
-        std::cerr << "[Script] Engine not initialized" << std::endl;
-        return false;
-    }
-    
-    return luaEngine.ExecuteString(code);
+    if (!initialized || !luaEngine) return false;
+    return luaEngine->ExecuteString(code);
+}
+
+void ScriptEngine::RegisterFunction(const std::string& name, std::function<void()> func) {
+    // Would register C++ function to Lua
 }
 
 void ScriptEngine::RegisterDefaultBindings() {
-    // Would register C++ functions that scripts can call
-    std::cout << "[Script] Registered default bindings" << std::endl;
+    // Would register engine API to Lua
+}
+
+void ScriptEngine::Update(float deltaTime) {
+    // Would update any script callbacks
 }
 
 } // namespace vge
