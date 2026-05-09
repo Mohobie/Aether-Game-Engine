@@ -30,6 +30,8 @@ public:
     
     void AddVertex(const Vertex& v);
     void AddIndex(uint32_t i);
+    uint32_t GetVertexCount() const { return vertices.size(); }
+    uint32_t GetIndexCount() const { return indices.size(); }
     void UploadToGPU();
     void Draw() const;
     void Clear();

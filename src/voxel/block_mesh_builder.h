@@ -11,6 +11,7 @@ public:
     static void BuildChunkMesh(const Chunk* chunk, Mesh& mesh);
     static void AddCube(Mesh& mesh, const Vec3& position, const Vec3& color);
     static void AddFace(Mesh& mesh, const Vec3& position, const Vec3& normal, const Vec3& color);
+    static Vec3 GetBlockColor(int type);
 };
 
 } // namespace vge
