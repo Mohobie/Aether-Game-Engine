@@ -1,13 +1,12 @@
 #pragma once
-
 #include <string>
 
-namespace VoxelEngine {
-    class AudioEngine {
-    public:
-        void Initialize();
-        void PlaySound(const std::string& path);
-        void PlayMusic(const std::string& path);
-        void Shutdown();
-    };
+namespace vge {
+class AudioEngine {
+public:
+    bool Initialize();
+    void Shutdown();
+    void PlaySound(const std::string& file);
+    void SetMasterVolume(float volume);
+};
 }
