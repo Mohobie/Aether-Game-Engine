@@ -68,6 +68,7 @@ void MenuSystem::RenderMainMenu() {
     std::cout << "  2. Multiplayer" << std::endl;
     std::cout << "  3. Settings" << std::endl;
     std::cout << "  4. Quit" << std::endl;
+    std::cout << "\nPress 1 to start game..." << std::endl;
 }
 
 void MenuSystem::RenderSettings() {

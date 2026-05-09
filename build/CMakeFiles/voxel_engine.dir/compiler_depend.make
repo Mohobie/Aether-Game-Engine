@@ -153,6 +153,24 @@ CMakeFiles/voxel_engine.dir/src/audio/audio_engine.cpp.o: ../src/audio/audio_eng
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
+  ../src/audio/sound_manager.h \
+  /usr/include/c++/11/unordered_map \
+  /usr/include/c++/11/ext/aligned_buffer.h \
+  /usr/include/c++/11/bits/hashtable.h \
+  /usr/include/c++/11/bits/hashtable_policy.h \
+  /usr/include/c++/11/tuple \
+  /usr/include/c++/11/utility \
+  /usr/include/c++/11/bits/stl_relops.h \
+  /usr/include/c++/11/array \
+  /usr/include/c++/11/bits/uses_allocator.h \
+  /usr/include/c++/11/bits/invoke.h \
+  /usr/include/c++/11/bits/enable_special_members.h \
+  /usr/include/c++/11/bits/node_handle.h \
+  /usr/include/c++/11/bits/unordered_map.h \
+  /usr/include/c++/11/bits/erase_if.h \
+  ../src/voxel/block.h \
+  ../src/core/types.h \
+  ../src/core/logger.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/ios \
@@ -181,7 +199,15 @@ CMakeFiles/voxel_engine.dir/src/audio/audio_engine.cpp.o: ../src/audio/audio_eng
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc
+  /usr/include/c++/11/bits/istream.tcc \
+  /usr/include/c++/11/fstream \
+  /usr/include/c++/11/bits/codecvt.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
+  /usr/include/c++/11/bits/fstream.tcc \
+  /usr/include/c++/11/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h
 
 CMakeFiles/voxel_engine.dir/src/audio/sound_manager.cpp.o: ../src/audio/sound_manager.cpp \
   /usr/include/stdc-predef.h \
@@ -4222,7 +4248,34 @@ CMakeFiles/voxel_engine.dir/src/platform/input.cpp.o: ../src/platform/input.cpp 
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc
+  /usr/include/c++/11/bits/istream.tcc \
+  /usr/include/termios.h \
+  /usr/include/x86_64-linux-gnu/bits/termios.h \
+  /usr/include/x86_64-linux-gnu/bits/termios-struct.h \
+  /usr/include/x86_64-linux-gnu/bits/termios-c_cc.h \
+  /usr/include/x86_64-linux-gnu/bits/termios-c_iflag.h \
+  /usr/include/x86_64-linux-gnu/bits/termios-c_oflag.h \
+  /usr/include/x86_64-linux-gnu/bits/termios-baud.h \
+  /usr/include/x86_64-linux-gnu/bits/termios-c_cflag.h \
+  /usr/include/x86_64-linux-gnu/bits/termios-c_lflag.h \
+  /usr/include/x86_64-linux-gnu/bits/termios-tcflow.h \
+  /usr/include/x86_64-linux-gnu/bits/termios-misc.h \
+  /usr/include/x86_64-linux-gnu/sys/ttydefaults.h \
+  /usr/include/unistd.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/linux/close_range.h \
+  /usr/include/fcntl.h \
+  /usr/include/x86_64-linux-gnu/bits/fcntl.h \
+  /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
+  /usr/include/linux/falloc.h \
+  /usr/include/x86_64-linux-gnu/bits/stat.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_stat.h
 
 CMakeFiles/voxel_engine.dir/src/platform/window.cpp.o: ../src/platform/window.cpp \
   /usr/include/stdc-predef.h \
@@ -8335,6 +8388,38 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 
 ../src/platform/window.cpp:
 
+/usr/include/x86_64-linux-gnu/bits/struct_stat.h:
+
+/usr/include/x86_64-linux-gnu/bits/stat.h:
+
+/usr/include/x86_64-linux-gnu/bits/fcntl-linux.h:
+
+/usr/include/x86_64-linux-gnu/bits/fcntl.h:
+
+/usr/include/linux/close_range.h:
+
+/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
+
+/usr/include/x86_64-linux-gnu/bits/termios-misc.h:
+
+/usr/include/x86_64-linux-gnu/bits/termios-c_lflag.h:
+
+/usr/include/x86_64-linux-gnu/bits/termios-baud.h:
+
+/usr/include/x86_64-linux-gnu/bits/termios-c_oflag.h:
+
+/usr/include/x86_64-linux-gnu/bits/termios-c_iflag.h:
+
+/usr/include/x86_64-linux-gnu/bits/termios.h:
+
+/usr/include/termios.h:
+
 ../src/platform/input.cpp:
 
 ../src/physics/rigidbody.h:
@@ -8346,8 +8431,6 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 ../src/main.cpp:
 
 ../src/core/time_system.cpp:
-
-/usr/include/strings.h:
 
 ../src/scripting/lua_engine.cpp:
 
@@ -8433,6 +8516,8 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 
 ../src/rendering/shader.h:
 
+/usr/include/fcntl.h:
+
 ../src/rendering/mesh.h:
 
 ../src/rendering/renderer.h:
@@ -8453,6 +8538,10 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 
 /usr/include/c++/11/tr1/modified_bessel_func.tcc:
 
+/usr/include/c++/11/tr1/hypergeometric.tcc:
+
+/usr/include/c++/11/tr1/exp_integral.tcc:
+
 /usr/include/stdlib.h:
 
 /usr/include/c++/11/bits/string_view.tcc:
@@ -8462,6 +8551,8 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 /usr/include/c++/11/fstream:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+
+/usr/include/strings.h:
 
 /usr/include/c++/11/cstdlib:
 
@@ -8491,6 +8582,8 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 
 ../src/core/engine.h:
 
+/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
+
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
 /usr/include/time.h:
@@ -8504,6 +8597,8 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 /usr/include/c++/11/bits/shared_ptr_base.h:
 
 /usr/include/c++/11/bits/basic_string.h:
+
+/usr/include/x86_64-linux-gnu/bits/termios-c_cc.h:
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
@@ -8535,8 +8630,6 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 
 /usr/include/c++/11/bits/localefwd.h:
 
-/usr/include/c++/11/tr1/hypergeometric.tcc:
-
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
@@ -8560,6 +8653,8 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 /usr/include/c++/11/bits/functexcept.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h:
+
+/usr/include/unistd.h:
 
 /usr/include/c++/11/bits/stl_algobase.h:
 
@@ -8597,6 +8692,8 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
+
 /usr/include/c++/11/bits/memoryfwd.h:
 
 /usr/include/c++/11/bits/stl_function.h:
@@ -8609,9 +8706,13 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 
 /usr/include/c++/11/ext/numeric_traits.h:
 
+/usr/include/x86_64-linux-gnu/bits/termios-struct.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
 /usr/include/c++/11/string:
+
+/usr/include/x86_64-linux-gnu/bits/environments.h:
 
 /usr/include/c++/11/bits/exception_defines.h:
 
@@ -8632,8 +8733,6 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 /usr/include/c++/11/bits/shared_ptr.h:
 
 /usr/include/c++/11/bits/stl_construct.h:
-
-/usr/include/c++/11/tr1/exp_integral.tcc:
 
 ../src/audio/audio_engine.h:
 
@@ -8660,6 +8759,12 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
+
+/usr/include/c++/11/tr1/legendre_function.tcc:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/c++/11/functional:
 
@@ -8740,6 +8845,8 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 /usr/include/c++/11/bits/concept_check.h:
 
 ../src/core/json.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/termios-tcflow.h:
 
 /usr/include/c++/11/bits/sstream.tcc:
 
@@ -8835,6 +8942,40 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 
 /usr/include/c++/11/bits/basic_string.tcc:
 
+/usr/include/x86_64-linux-gnu/bits/termios-c_cflag.h:
+
+../src/audio/sound_manager.h:
+
+/usr/include/c++/11/bits/locale_classes.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/include/c++/11/tr1/gamma.tcc:
+
+/usr/include/c++/11/bits/hashtable.h:
+
+/usr/include/c++/11/bits/hashtable_policy.h:
+
+/usr/include/c++/11/bits/stl_relops.h:
+
+/usr/include/c++/11/bits/uses_allocator.h:
+
+/usr/include/endian.h:
+
+/usr/include/stdint.h:
+
+/usr/include/c++/11/bits/ptr_traits.h:
+
+/usr/include/c++/11/bits/erase_if.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
+
+../src/core/logger.h:
+
+/usr/include/c++/11/bits/stl_algo.h:
+
+/usr/include/x86_64-linux-gnu/bits/math-vector.h:
+
 /usr/include/c++/11/ostream:
 
 /usr/include/c++/11/exception:
@@ -8848,14 +8989,6 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 /usr/include/c++/11/bits/ios_base.h:
 
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
-
-/usr/include/c++/11/bits/locale_classes.h:
-
-../src/audio/sound_manager.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
-
-/usr/include/c++/11/tr1/gamma.tcc:
 
 ../src/voxel/biome.cpp:
 
@@ -8881,10 +9014,6 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 
 /usr/include/c++/11/stdexcept:
 
-/usr/include/string.h:
-
-/usr/include/c++/11/bits/streambuf.tcc:
-
 /usr/include/c++/11/tr1/bessel_function.tcc:
 
 /usr/include/c++/11/bits/uniform_int_dist.h:
@@ -8909,6 +9038,14 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 
 /usr/include/c++/11/bits/locale_facets.tcc:
 
+/usr/include/x86_64-linux-gnu/c++/11/bits/opt_random.h:
+
+/usr/include/c++/11/bits/codecvt.h:
+
+/usr/include/c++/11/bits/enable_special_members.h:
+
+/usr/include/c++/11/bits/basic_ios.tcc:
+
 /usr/include/c++/11/istream:
 
 ../src/rendering/shader.cpp:
@@ -8919,29 +9056,15 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 
 /usr/include/c++/11/bits/istream.tcc:
 
-/usr/include/c++/11/bits/hashtable.h:
+/usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
 
-/usr/include/c++/11/bits/hashtable_policy.h:
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
 
-/usr/include/c++/11/bits/stl_relops.h:
+/usr/include/c++/11/bits/fstream.tcc:
 
-/usr/include/c++/11/bits/uses_allocator.h:
+/usr/include/c++/11/bits/streambuf.tcc:
 
-/usr/include/x86_64-linux-gnu/c++/11/bits/opt_random.h:
-
-/usr/include/c++/11/bits/codecvt.h:
-
-/usr/include/c++/11/bits/basic_ios.tcc:
-
-/usr/include/c++/11/bits/enable_special_members.h:
-
-/usr/include/endian.h:
-
-/usr/include/stdint.h:
-
-/usr/include/c++/11/bits/ptr_traits.h:
-
-/usr/include/c++/11/bits/erase_if.h:
+/usr/include/string.h:
 
 ../src/core/achievements.cpp:
 
@@ -8959,14 +9082,6 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 
 /usr/include/c++/11/bits/refwrap.h:
 
-/usr/include/c++/11/bits/stl_algo.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
-
-../src/core/logger.h:
-
-/usr/include/x86_64-linux-gnu/bits/math-vector.h:
-
 /usr/include/c++/11/pstl/execution_defs.h:
 
 /usr/include/c++/11/bits/algorithmfwd.h:
@@ -8980,12 +9095,6 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 /usr/include/x86_64-linux-gnu/bits/iscanonical.h:
 
 /usr/include/c++/11/sstream:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
-
-/usr/include/c++/11/bits/fstream.tcc:
 
 /usr/include/c++/11/bits/atomic_lockfree_defines.h:
 
@@ -9001,11 +9110,13 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 
 ../src/core/crafting.h:
 
-/usr/include/c++/11/cstring:
-
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
+/usr/include/c++/11/cstring:
+
 /usr/include/math.h:
+
+/usr/include/x86_64-linux-gnu/sys/ttydefaults.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
 
@@ -9018,6 +9129,8 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
+/usr/include/linux/falloc.h:
 
 /usr/include/c++/11/bits/postypes.h:
 
@@ -9032,9 +9145,3 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_r
 /usr/include/c++/11/array:
 
 /usr/include/c++/11/tr1/beta_function.tcc:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
-
-/usr/include/c++/11/tr1/legendre_function.tcc:

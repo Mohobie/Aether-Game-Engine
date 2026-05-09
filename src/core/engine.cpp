@@ -32,7 +32,7 @@ Engine::Engine()
       world(nullptr), worldGenerator(nullptr), chunkManager(nullptr),
       worldRenderer(nullptr), audioEngine(nullptr), soundManager(nullptr),
       menuSystem(nullptr), timeSystem(nullptr), achievementManager(nullptr),
-      player(nullptr), running(false), deltaTime(0.016f) {}
+      player(nullptr), input(nullptr), running(false), deltaTime(0.016f) {}
 
 Engine::~Engine() {
     Shutdown();
@@ -54,6 +54,7 @@ bool Engine::Initialize() {
     timeSystem = new TimeSystem();
     achievementManager = new AchievementManager();
     player = new PlayerController();
+    input = new Input();
     
     if (!window->Initialize(1280, 720, "Voxel Engine")) {
         Logger::Error("Failed to create window");
@@ -99,6 +100,7 @@ bool Engine::Initialize() {
 void Engine::Shutdown() {
     Logger::Info("Engine shutting down...");
     
+    delete input;
     delete player;
     delete achievementManager;
     delete timeSystem;
@@ -121,6 +123,15 @@ void Engine::Run() {
     auto lastTime = std::chrono::high_resolution_clock::now();
     int frameCount = 0;
     
+    std::cout << "\n=== CONTROLS ===" << std::endl;
+    std::cout << "WASD = Move" << std::endl;
+    std::cout << "Arrow Keys = Look around" << std::endl;
+    std::cout << "Space = Jump" << std::endl;
+    std::cout << "E = Place block" << std::endl;
+    std::cout << "Q = Break block" << std::endl;
+    std::cout << "ESC = Quit" << std::endl;
+    std::cout << "================\n" << std::endl;
+    
     while (running) {
         auto currentTime = std::chrono::high_resolution_clock::now();
         deltaTime = std::chrono::duration<float>(currentTime - lastTime).count();
@@ -133,13 +144,21 @@ void Engine::Run() {
             break;
         }
         
+        // Update input
+        input->Update(window->GetHandle());
+        
+        // Check quit
+        if (input->IsKeyPressed(GLFW_KEY_ESCAPE)) {
+            running = false;
+            break;
+        }
+        
         Update(deltaTime);
         Render();
         
         frameCount++;
-        if (frameCount >= 10) {
-            std::cout << "\n[Engine] Rendered 10 frames. Press Enter to continue..." << std::endl;
-            std::cin.get();
+        if (frameCount >= 60) { // Render 60 frames then exit
+            std::cout << "\n[Engine] Rendered 60 frames. Exiting..." << std::endl;
             running = false;
         }
     }
@@ -149,8 +168,8 @@ void Engine::Update(float dt) {
     timeSystem->Update(dt);
     menuSystem->Update(dt);
     
-    // Update player with dummy input (no real input yet)
-    // player->Update(dt, input, *world);
+    // Update player with real input
+    player->Update(dt, *input, *world);
     
     // Update camera to follow player
     Vec3 playerPos = player->GetPosition();

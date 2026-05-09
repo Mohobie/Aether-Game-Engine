@@ -4,6 +4,8 @@
 namespace vge {
 class AudioEngine {
 public:
+    AudioEngine();
+    ~AudioEngine();
     bool Initialize();
     void Shutdown();
     void PlaySound(const std::string& file);
