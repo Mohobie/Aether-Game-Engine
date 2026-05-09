@@ -1,6 +1,7 @@
 #include "raycast.h"
 #include "voxel/world.h"
 #include "voxel/block.h"
+#include "voxel/block_registry.h"
 #include <iostream>
 
 namespace vge {
@@ -13,7 +14,7 @@ RaycastHit Raycast::Cast(const Vec3& origin, const Vec3& direction, World& world
     hit.distance = maxDistance;
     
     // Normalize direction
-    Vec3 dir = direction.Normalized();
+    Vec3 dir = direction.normalize();
     
     // Step through the grid
     Vec3 pos = origin;

@@ -1,5 +1,4 @@
-#include "network_manager.h"
-#include "client.h"
+#include "network/packet.h"
 #include <cstring>
 #include <iostream>
 

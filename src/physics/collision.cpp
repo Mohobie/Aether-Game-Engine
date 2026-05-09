@@ -1,4 +1,5 @@
-#include "physics.h"
+#include "collision.h"
+#include "math/vec3.h"
 
 namespace vge {
 bool AABB::Intersects(const AABB& other) const {

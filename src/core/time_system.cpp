@@ -1,6 +1,6 @@
-#include "time_system.h"
-#include "world.h"
-#include "biome.h"
+#include "core/time_system.h"
+#include "voxel/world.h"
+#include "voxel/biome.h"
 #include <cmath>
 
 namespace vge {
@@ -106,20 +106,20 @@ void TimeSystem::SetTime(int time) {
 
 void TimeSystem::ChangeWeather() {
     // Random weather
-    float rand = (float)rand() / RAND_MAX;
+    float r = (float)rand() / RAND_MAX;
     
-    if (rand < 0.5f) {
+    if (r < 0.5f) {
         weather = WeatherType::Clear;
         weatherDuration = 0;
-    } else if (rand < 0.7f) {
+    } else if (r < 0.7f) {
         weather = WeatherType::Rain;
-        weatherDuration = 300.0f + (rand * 600.0f); // 5-15 minutes
-    } else if (rand < 0.85f) {
+        weatherDuration = 300.0f + (r * 600.0f); // 5-15 minutes
+    } else if (r < 0.85f) {
         weather = WeatherType::Storm;
-        weatherDuration = 120.0f + (rand * 300.0f); // 2-7 minutes
+        weatherDuration = 120.0f + (r * 300.0f); // 2-7 minutes
     } else {
         weather = WeatherType::Snow;
-        weatherDuration = 300.0f + (rand * 600.0f); // 5-15 minutes
+        weatherDuration = 300.0f + (r * 600.0f); // 5-15 minutes
     }
 }
 

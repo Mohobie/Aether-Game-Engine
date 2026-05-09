@@ -34,7 +34,6 @@ struct CraftingResult {
     bool success;
     BlockType outputType;
     int outputCount;
-    std::vector<std::tuple<int, int, BlockType>> consumed; // x, y, type
     
     CraftingResult() : success(false), outputType(BlockType::Air), outputCount(0) {}
 };

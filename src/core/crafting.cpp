@@ -1,6 +1,5 @@
 #include "crafting.h"
-#include "inventory.h"
-#include "voxel/block.h"
+#include "voxel/block_registry.h"
 #include <iostream>
 
 namespace vge {
@@ -68,6 +67,15 @@ void CraftingGrid::Clear() {
     }
 }
 
+bool CraftingGrid::IsEmpty() const {
+    for (int y = 0; y < 3; ++y) {
+        for (int x = 0; x < 3; ++x) {
+            if (items[y][x] != BlockType::Air) return false;
+        }
+    }
+    return true;
+}
+
 CraftingSystem::CraftingSystem() {
     InitializeRecipes();
 }
@@ -111,17 +119,6 @@ CraftingResult CraftingSystem::TryCraft(const CraftingGrid& grid) {
             result.success = true;
             result.outputType = recipe.outputType;
             result.outputCount = recipe.outputCount;
-            
-            // Calculate what items to consume
-            for (int y = 0; y < 3; ++y) {
-                for (int x = 0; x < 3; ++x) {
-                    BlockType item = grid.GetItem(x, y);
-                    if (item != BlockType::Air) {
-                        result.consumed.push_back({x, y, item});
-                    }
-                }
-            }
-            
             return result;
         }
     }

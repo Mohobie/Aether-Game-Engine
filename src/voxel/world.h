@@ -1,16 +1,39 @@
 #pragma once
-
-#include "chunk.h"
-#include <unordered_map>
+#include "voxel/chunk.h"
+#include <map>
+#include <memory>
 
 namespace vge {
-    class World {
-    public:
-        Chunk* GetChunk(ChunkCoord x, ChunkCoord y, ChunkCoord z);
-        Block GetBlock(int x, int y, int z);
-        void SetBlock(int x, int y, int z, Block block);
-        void Update(float deltaTime);
-    private:
-        std::unordered_map<uint64_t, Chunk> chunks;
-    };
-}
+
+struct ChunkCoord {
+    int x, y, z;
+    
+    bool operator<(const ChunkCoord& other) const {
+        if (x != other.x) return x < other.x;
+        if (y != other.y) return y < other.y;
+        return z < other.z;
+    }
+};
+
+class World {
+private:
+    std::map<ChunkCoord, std::unique_ptr<Chunk>> chunks;
+    int seed;
+    
+public:
+    World();
+    ~World();
+    
+    void Clear();
+    
+    Chunk* GetChunk(int x, int y, int z);
+    Chunk* GetOrCreateChunk(int x, int y, int z);
+    
+    BlockType GetBlock(int x, int y, int z) const;
+    void SetBlock(int x, int y, int z, BlockType type);
+    
+    int GetSeed() const { return seed; }
+    void SetSeed(int s) { seed = s; }
+};
+
+} // namespace vge

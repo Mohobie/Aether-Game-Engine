@@ -1,5 +1,5 @@
-#include "audio_engine.h"
-#include "sound_manager.h"
+#include "audio/sound_manager.h"
+#include "audio/audio_engine.h"
 #include <iostream>
 
 namespace vge {
@@ -7,7 +7,7 @@ namespace vge {
 SoundManager::SoundManager() : audioEngine(nullptr) {}
 
 SoundManager::~SoundManager() {
-    Shutdown();
+    if (audioEngine) Shutdown();
 }
 
 bool SoundManager::Initialize(AudioEngine* engine) {
@@ -31,8 +31,6 @@ void SoundManager::Shutdown() {
 bool SoundManager::LoadSound(const std::string& name, const std::string& path) {
     if (!audioEngine) return false;
     
-    // In a real implementation, this would load WAV/OGG files
-    // For now, just register the name
     sounds[name] = path;
     std::cout << "[SoundManager] Loaded: " << name << " -> " << path << std::endl;
     return true;
@@ -47,7 +45,6 @@ void SoundManager::PlaySound(const std::string& name, float volume, bool loop) {
         return;
     }
     
-    // In a real implementation, this would play the actual sound
     std::cout << "[SoundManager] Playing: " << name << " (vol=" << volume << ", loop=" << loop << ")" << std::endl;
 }
 

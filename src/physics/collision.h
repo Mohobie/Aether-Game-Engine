@@ -4,6 +4,10 @@
 namespace vge {
 struct AABB {
     Vec3 min, max;
+    
+    AABB() : min(0, 0, 0), max(0, 0, 0) {}
+    AABB(const Vec3& min, const Vec3& max) : min(min), max(max) {}
+    
     bool Intersects(const AABB& other) const;
 };
 

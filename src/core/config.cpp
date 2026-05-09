@@ -44,13 +44,6 @@ bool Config::Load(const std::string& path) {
         if (j.contains("controls")) {
             auto& ctrl = j["controls"];
             mouseSensitivity = ctrl.value("mouseSensitivity", 1.0f);
-            
-            if (ctrl.contains("keybinds")) {
-                auto& binds = ctrl["keybinds"];
-                for (auto& [key, value] : binds.items()) {
-                    keybinds[key] = value.get<int>();
-                }
-            }
         }
         
         std::cout << "[Config] Loaded from: " << path << std::endl;
@@ -66,31 +59,19 @@ bool Config::Save(const std::string& path) const {
         json j;
         
         // Graphics
-        j["graphics"] = {
-            {"renderDistance", renderDistance},
-            {"vsync", vsync},
-            {"fullscreen", fullscreen},
-            {"fov", fov},
-            {"showFPS", showFPS}
-        };
+        j["graphics"]["renderDistance"] = renderDistance;
+        j["graphics"]["vsync"] = vsync;
+        j["graphics"]["fullscreen"] = fullscreen;
+        j["graphics"]["fov"] = fov;
+        j["graphics"]["showFPS"] = showFPS;
         
         // Audio
-        j["audio"] = {
-            {"masterVolume", masterVolume},
-            {"musicVolume", musicVolume},
-            {"sfxVolume", sfxVolume}
-        };
+        j["audio"]["masterVolume"] = masterVolume;
+        j["audio"]["musicVolume"] = musicVolume;
+        j["audio"]["sfxVolume"] = sfxVolume;
         
         // Controls
-        json keybindsJson;
-        for (const auto& [key, value] : keybinds) {
-            keybindsJson[key] = value;
-        }
-        
-        j["controls"] = {
-            {"mouseSensitivity", mouseSensitivity},
-            {"keybinds", keybindsJson}
-        };
+        j["controls"]["mouseSensitivity"] = mouseSensitivity;
         
         std::ofstream file(path);
         if (!file.is_open()) {

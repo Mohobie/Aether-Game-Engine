@@ -1,37 +1,8 @@
 #pragma once
+#include "block.h"
 #include "math/vec3.h"
 
 namespace vge {
-
-enum class BlockType : uint8_t {
-    Air = 0,
-    Stone,
-    Dirt,
-    Grass,
-    Sand,
-    Water,
-    Wood,
-    Leaves,
-    Glass,
-    Planks,
-    CraftingTable,
-    Furnace,
-    Torch,
-    Glowstone,
-    Bedrock,
-    CoalOre,
-    IronOre,
-    GoldOre,
-    DiamondOre,
-    Snow,
-    Ice,
-    Cactus,
-    Flower,
-    TallGrass,
-    Lava,
-    Stick,
-    Count
-};
 
 struct BlockInfo {
     BlockType type;

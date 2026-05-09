@@ -1,4 +1,5 @@
 #include "inventory.h"
+#include "voxel/block_registry.h"
 #include <iostream>
 
 namespace vge {

@@ -3,6 +3,7 @@
 #include <fstream>
 #include <chrono>
 #include <iomanip>
+#include <sstream>
 
 namespace vge {
 
@@ -13,9 +14,7 @@ Logger& Logger::GetInstance() {
 
 Logger::Logger() : logLevel(LogLevel::Debug), logToFile(false) {}
 
-Logger::~Logger() {
-    if (logFile.is_open()) logFile.close();
-}
+Logger::~Logger() {}
 
 void Logger::SetLogLevel(LogLevel level) {
     logLevel = level;
@@ -41,6 +40,18 @@ void Logger::Log(LogLevel level, const std::string& message) {
        << prefix << " " << message;
     
     std::cout << ss.str() << std::endl;
+}
+
+void Logger::Info(const std::string& msg) {
+    GetInstance().Log(LogLevel::Info, msg);
+}
+
+void Logger::Error(const std::string& msg) {
+    GetInstance().Log(LogLevel::Error, msg);
+}
+
+void Logger::Debug(const std::string& msg) {
+    GetInstance().Log(LogLevel::Debug, msg);
 }
 
 } // namespace vge
