@@ -1,6 +1,6 @@
 #pragma once
 
-// Iteration 1
+// Iteration 2
 namespace VoxelEngine {
     class Window {
     public:
