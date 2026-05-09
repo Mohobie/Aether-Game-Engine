@@ -51,7 +51,16 @@ set(CORE_SOURCES
 # Test executable (no OpenGL/GLFW required)
 add_executable(voxel_test src/test_main.cpp ${CORE_SOURCES})
 
+# World generation test
+add_executable(world_test src/world_test.cpp ${CORE_SOURCES})
+
 target_include_directories(voxel_test PRIVATE 
+    src
+    /usr/include
+    /usr/local/include
+)
+
+target_include_directories(world_test PRIVATE 
     src
     /usr/include
     /usr/local/include
@@ -60,6 +69,7 @@ target_include_directories(voxel_test PRIVATE
 # Platform specific
 if(UNIX AND NOT APPLE)
     target_link_libraries(voxel_test PRIVATE pthread dl)
+    target_link_libraries(world_test PRIVATE pthread dl)
 endif()
 
 # Build as many files as possible even without all dependencies

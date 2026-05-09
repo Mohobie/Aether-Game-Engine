@@ -130,6 +130,19 @@ voxel_test/fast:
 .PHONY : voxel_test/fast
 
 #=============================================================================
+# Target rules for targets named world_test
+
+# Build rule for target.
+world_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 world_test
+.PHONY : world_test
+
+# fast build rule for target.
+world_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/build
+.PHONY : world_test/fast
+
+#=============================================================================
 # Target rules for targets named voxel_engine
 
 # Build rule for target.
@@ -148,6 +161,7 @@ src/audio/audio_engine.o: src/audio/audio_engine.cpp.o
 # target to build an object file
 src/audio/audio_engine.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/audio/audio_engine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/audio/audio_engine.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_engine.cpp.o
 .PHONY : src/audio/audio_engine.cpp.o
 
@@ -157,6 +171,7 @@ src/audio/audio_engine.i: src/audio/audio_engine.cpp.i
 # target to preprocess a source file
 src/audio/audio_engine.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/audio/audio_engine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/audio/audio_engine.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_engine.cpp.i
 .PHONY : src/audio/audio_engine.cpp.i
 
@@ -166,6 +181,7 @@ src/audio/audio_engine.s: src/audio/audio_engine.cpp.s
 # target to generate assembly for a file
 src/audio/audio_engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/audio/audio_engine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/audio/audio_engine.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_engine.cpp.s
 .PHONY : src/audio/audio_engine.cpp.s
 
@@ -175,6 +191,7 @@ src/audio/sound_manager.o: src/audio/sound_manager.cpp.o
 # target to build an object file
 src/audio/sound_manager.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/audio/sound_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/audio/sound_manager.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/sound_manager.cpp.o
 .PHONY : src/audio/sound_manager.cpp.o
 
@@ -184,6 +201,7 @@ src/audio/sound_manager.i: src/audio/sound_manager.cpp.i
 # target to preprocess a source file
 src/audio/sound_manager.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/audio/sound_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/audio/sound_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/sound_manager.cpp.i
 .PHONY : src/audio/sound_manager.cpp.i
 
@@ -193,6 +211,7 @@ src/audio/sound_manager.s: src/audio/sound_manager.cpp.s
 # target to generate assembly for a file
 src/audio/sound_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/audio/sound_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/audio/sound_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/sound_manager.cpp.s
 .PHONY : src/audio/sound_manager.cpp.s
 
@@ -202,6 +221,7 @@ src/core/achievements.o: src/core/achievements.cpp.o
 # target to build an object file
 src/core/achievements.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/achievements.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/achievements.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/achievements.cpp.o
 .PHONY : src/core/achievements.cpp.o
 
@@ -211,6 +231,7 @@ src/core/achievements.i: src/core/achievements.cpp.i
 # target to preprocess a source file
 src/core/achievements.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/achievements.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/achievements.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/achievements.cpp.i
 .PHONY : src/core/achievements.cpp.i
 
@@ -220,6 +241,7 @@ src/core/achievements.s: src/core/achievements.cpp.s
 # target to generate assembly for a file
 src/core/achievements.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/achievements.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/achievements.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/achievements.cpp.s
 .PHONY : src/core/achievements.cpp.s
 
@@ -253,6 +275,7 @@ src/core/config.o: src/core/config.cpp.o
 # target to build an object file
 src/core/config.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/config.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/config.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/config.cpp.o
 .PHONY : src/core/config.cpp.o
 
@@ -262,6 +285,7 @@ src/core/config.i: src/core/config.cpp.i
 # target to preprocess a source file
 src/core/config.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/config.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/config.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/config.cpp.i
 .PHONY : src/core/config.cpp.i
 
@@ -271,6 +295,7 @@ src/core/config.s: src/core/config.cpp.s
 # target to generate assembly for a file
 src/core/config.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/config.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/config.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/config.cpp.s
 .PHONY : src/core/config.cpp.s
 
@@ -280,6 +305,7 @@ src/core/crafting.o: src/core/crafting.cpp.o
 # target to build an object file
 src/core/crafting.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/crafting.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/crafting.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/crafting.cpp.o
 .PHONY : src/core/crafting.cpp.o
 
@@ -289,6 +315,7 @@ src/core/crafting.i: src/core/crafting.cpp.i
 # target to preprocess a source file
 src/core/crafting.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/crafting.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/crafting.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/crafting.cpp.i
 .PHONY : src/core/crafting.cpp.i
 
@@ -298,6 +325,7 @@ src/core/crafting.s: src/core/crafting.cpp.s
 # target to generate assembly for a file
 src/core/crafting.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/crafting.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/crafting.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/crafting.cpp.s
 .PHONY : src/core/crafting.cpp.s
 
@@ -331,6 +359,7 @@ src/core/entity.o: src/core/entity.cpp.o
 # target to build an object file
 src/core/entity.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/entity.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/entity.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/entity.cpp.o
 .PHONY : src/core/entity.cpp.o
 
@@ -340,6 +369,7 @@ src/core/entity.i: src/core/entity.cpp.i
 # target to preprocess a source file
 src/core/entity.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/entity.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/entity.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/entity.cpp.i
 .PHONY : src/core/entity.cpp.i
 
@@ -349,6 +379,7 @@ src/core/entity.s: src/core/entity.cpp.s
 # target to generate assembly for a file
 src/core/entity.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/entity.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/entity.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/entity.cpp.s
 .PHONY : src/core/entity.cpp.s
 
@@ -358,6 +389,7 @@ src/core/inventory.o: src/core/inventory.cpp.o
 # target to build an object file
 src/core/inventory.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/inventory.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/inventory.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/inventory.cpp.o
 .PHONY : src/core/inventory.cpp.o
 
@@ -367,6 +399,7 @@ src/core/inventory.i: src/core/inventory.cpp.i
 # target to preprocess a source file
 src/core/inventory.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/inventory.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/inventory.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/inventory.cpp.i
 .PHONY : src/core/inventory.cpp.i
 
@@ -376,6 +409,7 @@ src/core/inventory.s: src/core/inventory.cpp.s
 # target to generate assembly for a file
 src/core/inventory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/inventory.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/inventory.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/inventory.cpp.s
 .PHONY : src/core/inventory.cpp.s
 
@@ -385,6 +419,7 @@ src/core/logger.o: src/core/logger.cpp.o
 # target to build an object file
 src/core/logger.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/logger.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/logger.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/logger.cpp.o
 .PHONY : src/core/logger.cpp.o
 
@@ -394,6 +429,7 @@ src/core/logger.i: src/core/logger.cpp.i
 # target to preprocess a source file
 src/core/logger.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/logger.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/logger.cpp.i
 .PHONY : src/core/logger.cpp.i
 
@@ -403,6 +439,7 @@ src/core/logger.s: src/core/logger.cpp.s
 # target to generate assembly for a file
 src/core/logger.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/logger.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/logger.cpp.s
 .PHONY : src/core/logger.cpp.s
 
@@ -436,6 +473,7 @@ src/core/raycast.o: src/core/raycast.cpp.o
 # target to build an object file
 src/core/raycast.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/raycast.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/raycast.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/raycast.cpp.o
 .PHONY : src/core/raycast.cpp.o
 
@@ -445,6 +483,7 @@ src/core/raycast.i: src/core/raycast.cpp.i
 # target to preprocess a source file
 src/core/raycast.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/raycast.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/raycast.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/raycast.cpp.i
 .PHONY : src/core/raycast.cpp.i
 
@@ -454,6 +493,7 @@ src/core/raycast.s: src/core/raycast.cpp.s
 # target to generate assembly for a file
 src/core/raycast.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/raycast.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/raycast.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/raycast.cpp.s
 .PHONY : src/core/raycast.cpp.s
 
@@ -463,6 +503,7 @@ src/core/save_system.o: src/core/save_system.cpp.o
 # target to build an object file
 src/core/save_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/save_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/save_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o
 .PHONY : src/core/save_system.cpp.o
 
@@ -472,6 +513,7 @@ src/core/save_system.i: src/core/save_system.cpp.i
 # target to preprocess a source file
 src/core/save_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/save_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/save_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.i
 .PHONY : src/core/save_system.cpp.i
 
@@ -481,6 +523,7 @@ src/core/save_system.s: src/core/save_system.cpp.s
 # target to generate assembly for a file
 src/core/save_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/save_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/save_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.s
 .PHONY : src/core/save_system.cpp.s
 
@@ -490,6 +533,7 @@ src/core/time_system.o: src/core/time_system.cpp.o
 # target to build an object file
 src/core/time_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/time_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/time_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/time_system.cpp.o
 .PHONY : src/core/time_system.cpp.o
 
@@ -499,6 +543,7 @@ src/core/time_system.i: src/core/time_system.cpp.i
 # target to preprocess a source file
 src/core/time_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/time_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/time_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/time_system.cpp.i
 .PHONY : src/core/time_system.cpp.i
 
@@ -508,6 +553,7 @@ src/core/time_system.s: src/core/time_system.cpp.s
 # target to generate assembly for a file
 src/core/time_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/time_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/time_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/time_system.cpp.s
 .PHONY : src/core/time_system.cpp.s
 
@@ -541,6 +587,7 @@ src/math/mat4.o: src/math/mat4.cpp.o
 # target to build an object file
 src/math/mat4.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/math/mat4.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/math/mat4.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/math/mat4.cpp.o
 .PHONY : src/math/mat4.cpp.o
 
@@ -550,6 +597,7 @@ src/math/mat4.i: src/math/mat4.cpp.i
 # target to preprocess a source file
 src/math/mat4.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/math/mat4.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/math/mat4.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/math/mat4.cpp.i
 .PHONY : src/math/mat4.cpp.i
 
@@ -559,6 +607,7 @@ src/math/mat4.s: src/math/mat4.cpp.s
 # target to generate assembly for a file
 src/math/mat4.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/math/mat4.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/math/mat4.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/math/mat4.cpp.s
 .PHONY : src/math/mat4.cpp.s
 
@@ -568,6 +617,7 @@ src/math/vec3.o: src/math/vec3.cpp.o
 # target to build an object file
 src/math/vec3.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/math/vec3.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/math/vec3.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/math/vec3.cpp.o
 .PHONY : src/math/vec3.cpp.o
 
@@ -577,6 +627,7 @@ src/math/vec3.i: src/math/vec3.cpp.i
 # target to preprocess a source file
 src/math/vec3.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/math/vec3.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/math/vec3.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/math/vec3.cpp.i
 .PHONY : src/math/vec3.cpp.i
 
@@ -586,6 +637,7 @@ src/math/vec3.s: src/math/vec3.cpp.s
 # target to generate assembly for a file
 src/math/vec3.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/math/vec3.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/math/vec3.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/math/vec3.cpp.s
 .PHONY : src/math/vec3.cpp.s
 
@@ -595,6 +647,7 @@ src/network/packet.o: src/network/packet.cpp.o
 # target to build an object file
 src/network/packet.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/packet.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/packet.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/packet.cpp.o
 .PHONY : src/network/packet.cpp.o
 
@@ -604,6 +657,7 @@ src/network/packet.i: src/network/packet.cpp.i
 # target to preprocess a source file
 src/network/packet.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/packet.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/packet.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/packet.cpp.i
 .PHONY : src/network/packet.cpp.i
 
@@ -613,6 +667,7 @@ src/network/packet.s: src/network/packet.cpp.s
 # target to generate assembly for a file
 src/network/packet.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/packet.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/packet.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/packet.cpp.s
 .PHONY : src/network/packet.cpp.s
 
@@ -622,6 +677,7 @@ src/physics/collision.o: src/physics/collision.cpp.o
 # target to build an object file
 src/physics/collision.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/physics/collision.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/physics/collision.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/collision.cpp.o
 .PHONY : src/physics/collision.cpp.o
 
@@ -631,6 +687,7 @@ src/physics/collision.i: src/physics/collision.cpp.i
 # target to preprocess a source file
 src/physics/collision.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/physics/collision.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/physics/collision.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/collision.cpp.i
 .PHONY : src/physics/collision.cpp.i
 
@@ -640,6 +697,7 @@ src/physics/collision.s: src/physics/collision.cpp.s
 # target to generate assembly for a file
 src/physics/collision.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/physics/collision.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/physics/collision.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/collision.cpp.s
 .PHONY : src/physics/collision.cpp.s
 
@@ -649,6 +707,7 @@ src/physics/rigidbody.o: src/physics/rigidbody.cpp.o
 # target to build an object file
 src/physics/rigidbody.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/physics/rigidbody.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/physics/rigidbody.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/rigidbody.cpp.o
 .PHONY : src/physics/rigidbody.cpp.o
 
@@ -658,6 +717,7 @@ src/physics/rigidbody.i: src/physics/rigidbody.cpp.i
 # target to preprocess a source file
 src/physics/rigidbody.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/physics/rigidbody.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/physics/rigidbody.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/rigidbody.cpp.i
 .PHONY : src/physics/rigidbody.cpp.i
 
@@ -667,6 +727,7 @@ src/physics/rigidbody.s: src/physics/rigidbody.cpp.s
 # target to generate assembly for a file
 src/physics/rigidbody.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/physics/rigidbody.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/physics/rigidbody.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/rigidbody.cpp.s
 .PHONY : src/physics/rigidbody.cpp.s
 
@@ -1012,6 +1073,7 @@ src/voxel/biome.o: src/voxel/biome.cpp.o
 # target to build an object file
 src/voxel/biome.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/biome.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/biome.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/biome.cpp.o
 .PHONY : src/voxel/biome.cpp.o
 
@@ -1021,6 +1083,7 @@ src/voxel/biome.i: src/voxel/biome.cpp.i
 # target to preprocess a source file
 src/voxel/biome.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/biome.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/biome.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/biome.cpp.i
 .PHONY : src/voxel/biome.cpp.i
 
@@ -1030,6 +1093,7 @@ src/voxel/biome.s: src/voxel/biome.cpp.s
 # target to generate assembly for a file
 src/voxel/biome.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/biome.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/biome.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/biome.cpp.s
 .PHONY : src/voxel/biome.cpp.s
 
@@ -1039,6 +1103,7 @@ src/voxel/block.o: src/voxel/block.cpp.o
 # target to build an object file
 src/voxel/block.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/block.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/block.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block.cpp.o
 .PHONY : src/voxel/block.cpp.o
 
@@ -1048,6 +1113,7 @@ src/voxel/block.i: src/voxel/block.cpp.i
 # target to preprocess a source file
 src/voxel/block.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/block.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/block.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block.cpp.i
 .PHONY : src/voxel/block.cpp.i
 
@@ -1057,6 +1123,7 @@ src/voxel/block.s: src/voxel/block.cpp.s
 # target to generate assembly for a file
 src/voxel/block.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/block.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/block.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block.cpp.s
 .PHONY : src/voxel/block.cpp.s
 
@@ -1090,6 +1157,7 @@ src/voxel/block_registry.o: src/voxel/block_registry.cpp.o
 # target to build an object file
 src/voxel/block_registry.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/block_registry.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/block_registry.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_registry.cpp.o
 .PHONY : src/voxel/block_registry.cpp.o
 
@@ -1099,6 +1167,7 @@ src/voxel/block_registry.i: src/voxel/block_registry.cpp.i
 # target to preprocess a source file
 src/voxel/block_registry.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/block_registry.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/block_registry.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_registry.cpp.i
 .PHONY : src/voxel/block_registry.cpp.i
 
@@ -1108,6 +1177,7 @@ src/voxel/block_registry.s: src/voxel/block_registry.cpp.s
 # target to generate assembly for a file
 src/voxel/block_registry.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/block_registry.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/block_registry.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_registry.cpp.s
 .PHONY : src/voxel/block_registry.cpp.s
 
@@ -1117,6 +1187,7 @@ src/voxel/chunk.o: src/voxel/chunk.cpp.o
 # target to build an object file
 src/voxel/chunk.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/chunk.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/chunk.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/chunk.cpp.o
 .PHONY : src/voxel/chunk.cpp.o
 
@@ -1126,6 +1197,7 @@ src/voxel/chunk.i: src/voxel/chunk.cpp.i
 # target to preprocess a source file
 src/voxel/chunk.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/chunk.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/chunk.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/chunk.cpp.i
 .PHONY : src/voxel/chunk.cpp.i
 
@@ -1135,6 +1207,7 @@ src/voxel/chunk.s: src/voxel/chunk.cpp.s
 # target to generate assembly for a file
 src/voxel/chunk.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/chunk.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/chunk.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/chunk.cpp.s
 .PHONY : src/voxel/chunk.cpp.s
 
@@ -1168,6 +1241,7 @@ src/voxel/world.o: src/voxel/world.cpp.o
 # target to build an object file
 src/voxel/world.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/world.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/world.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world.cpp.o
 .PHONY : src/voxel/world.cpp.o
 
@@ -1177,6 +1251,7 @@ src/voxel/world.i: src/voxel/world.cpp.i
 # target to preprocess a source file
 src/voxel/world.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/world.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/world.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world.cpp.i
 .PHONY : src/voxel/world.cpp.i
 
@@ -1186,6 +1261,7 @@ src/voxel/world.s: src/voxel/world.cpp.s
 # target to generate assembly for a file
 src/voxel/world.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/world.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/world.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world.cpp.s
 .PHONY : src/voxel/world.cpp.s
 
@@ -1195,6 +1271,7 @@ src/voxel/world_generator.o: src/voxel/world_generator.cpp.o
 # target to build an object file
 src/voxel/world_generator.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/world_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/world_generator.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world_generator.cpp.o
 .PHONY : src/voxel/world_generator.cpp.o
 
@@ -1204,6 +1281,7 @@ src/voxel/world_generator.i: src/voxel/world_generator.cpp.i
 # target to preprocess a source file
 src/voxel/world_generator.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/world_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/world_generator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world_generator.cpp.i
 .PHONY : src/voxel/world_generator.cpp.i
 
@@ -1213,6 +1291,7 @@ src/voxel/world_generator.s: src/voxel/world_generator.cpp.s
 # target to generate assembly for a file
 src/voxel/world_generator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/world_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/world_generator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world_generator.cpp.s
 .PHONY : src/voxel/world_generator.cpp.s
 
@@ -1240,6 +1319,30 @@ src/voxel/world_renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.s
 .PHONY : src/voxel/world_renderer.cpp.s
 
+src/world_test.o: src/world_test.cpp.o
+.PHONY : src/world_test.o
+
+# target to build an object file
+src/world_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/world_test.cpp.o
+.PHONY : src/world_test.cpp.o
+
+src/world_test.i: src/world_test.cpp.i
+.PHONY : src/world_test.i
+
+# target to preprocess a source file
+src/world_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/world_test.cpp.i
+.PHONY : src/world_test.cpp.i
+
+src/world_test.s: src/world_test.cpp.s
+.PHONY : src/world_test.s
+
+# target to generate assembly for a file
+src/world_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/world_test.cpp.s
+.PHONY : src/world_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1250,6 +1353,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... voxel_engine"
 	@echo "... voxel_test"
+	@echo "... world_test"
 	@echo "... src/audio/audio_engine.o"
 	@echo "... src/audio/audio_engine.i"
 	@echo "... src/audio/audio_engine.s"
@@ -1379,6 +1483,9 @@ help:
 	@echo "... src/voxel/world_renderer.o"
 	@echo "... src/voxel/world_renderer.i"
 	@echo "... src/voxel/world_renderer.s"
+	@echo "... src/world_test.o"
+	@echo "... src/world_test.i"
+	@echo "... src/world_test.s"
 .PHONY : help
 
 
