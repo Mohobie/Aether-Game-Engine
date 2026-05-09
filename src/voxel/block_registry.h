@@ -1,20 +1,67 @@
 #pragma once
+#include "math/vec3.h"
 
-#include "core/types.h"
-#include <string>
+namespace vge {
 
-namespace VoxelEngine {
-    struct BlockProperties {
-        std::string name;
-        bool solid;
-        bool transparent;
-        uint8_t light_emission;
-    };
+enum class BlockType : uint8_t {
+    Air = 0,
+    Stone,
+    Dirt,
+    Grass,
+    Sand,
+    Water,
+    Wood,
+    Leaves,
+    Glass,
+    Planks,
+    CraftingTable,
+    Furnace,
+    Torch,
+    Glowstone,
+    Bedrock,
+    CoalOre,
+    IronOre,
+    GoldOre,
+    DiamondOre,
+    Snow,
+    Ice,
+    Cactus,
+    Flower,
+    TallGrass,
+    Lava,
+    Stick,
+    Count
+};
+
+struct BlockInfo {
+    BlockType type;
+    char name[32];
+    bool solid;
+    bool opaque;
+    float hardness;
+    Vec3 color;
+    int emission; // Light emission level 0-15
     
-    class BlockRegistry {
-    public:
-        static BlockRegistry& Instance();
-        void Register(BlockID id, const BlockProperties& props);
-        const BlockProperties& Get(BlockID id);
-    };
-}
+    bool IsSolid() const { return solid; }
+    bool IsOpaque() const { return opaque; }
+    float GetHardness() const { return hardness; }
+    const char* GetName() const { return name; }
+    Vec3 GetColor() const { return color; }
+    int GetEmission() const { return emission; }
+};
+
+class BlockRegistry {
+private:
+    BlockInfo blocks[static_cast<int>(BlockType::Count)];
+    
+    BlockRegistry();
+    
+public:
+    static BlockRegistry& GetInstance();
+    
+    void RegisterBlock(BlockType type, const char* name, bool solid, bool opaque, float hardness, Vec3 color);
+    const BlockInfo& GetBlock(BlockType type) const;
+    const BlockInfo& GetBlockByName(const char* name) const;
+};
+
+} // namespace vge
