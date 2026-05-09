@@ -1,14 +1,17 @@
 #pragma once
-
 #include <string>
+#include <glad/gl.h>
+#include "math/vec3.h"
+#include "math/mat4.h"
 
-namespace VoxelEngine {
-    class Shader {
-    public:
-        bool Load(const std::string& vertex, const std::string& fragment);
-        void Use();
-        void SetUniform(const std::string& name, float value);
-    private:
-        unsigned int program;
-    };
+namespace vge {
+class Shader {
+    uint32_t programId;
+public:
+    Shader();
+    ~Shader();
+    bool LoadFromFile(const std::string& vertexPath, const std::string& fragmentPath);
+    void Use();
+    void SetUniform(const std::string& name, const Mat4& value);
+};
 }
