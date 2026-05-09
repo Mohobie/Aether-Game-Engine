@@ -1,7 +1,7 @@
 #pragma once
 #include "math/vec3.h"
 
-namespace VoxelEngine {
+namespace vge {
     struct RigidBody {
         Vec3 position;
         Vec3 velocity;

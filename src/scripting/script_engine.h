@@ -2,7 +2,7 @@
 #include <string>
 #include <functional>
 
-namespace VoxelEngine {
+namespace vge {
     class ScriptEngine {
     public:
         void Initialize();

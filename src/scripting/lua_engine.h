@@ -1,6 +1,6 @@
 #pragma once
 
-namespace VoxelEngine {
+namespace vge {
     class LuaEngine {
     public:
         void Initialize();

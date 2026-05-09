@@ -2,7 +2,7 @@
 #include <cmath>
 #include <random>
 
-namespace VoxelEngine {
+namespace vge {
     void WorldGenerator::SetSeed(unsigned int s) {
         seed = s;
     }

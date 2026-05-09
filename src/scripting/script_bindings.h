@@ -1,6 +1,6 @@
 #pragma once
 
-namespace VoxelEngine {
+namespace vge {
     void RegisterScriptBindings();
     void RegisterWorldBindings();
     void RegisterBlockBindings();

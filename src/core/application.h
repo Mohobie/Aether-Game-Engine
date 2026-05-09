@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-namespace VoxelEngine {
+namespace vge {
     class Application {
     public:
         void Initialize(int argc, char** argv);

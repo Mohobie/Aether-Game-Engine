@@ -2,7 +2,7 @@
 #include <cstring>
 #include <cmath>
 
-namespace VoxelEngine {
+namespace vge {
     Mat4 Mat4::Identity() {
         Mat4 m;
         for(int i=0; i<16; i++) m.data[i] = 0;

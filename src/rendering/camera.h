@@ -2,7 +2,7 @@
 #include "math/vec3.h"
 #include "math/mat4.h"
 
-namespace VoxelEngine {
+namespace vge {
     class Camera {
     public:
         Vec3 position;

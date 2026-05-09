@@ -1,7 +1,7 @@
 #pragma once
 #include "chunk.h"
 
-namespace VoxelEngine {
+namespace vge {
     class WorldGenerator {
     public:
         void GenerateChunk(Chunk& chunk, ChunkCoord x, ChunkCoord y, ChunkCoord z);

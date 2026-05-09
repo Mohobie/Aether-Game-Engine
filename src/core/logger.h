@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-namespace VoxelEngine {
+namespace vge {
     class Logger {
     public:
         static void Info(const std::string& msg);

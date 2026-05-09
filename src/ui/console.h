@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 
-namespace VoxelEngine {
+namespace vge {
     class Console {
     public:
         void Log(const std::string& msg);

@@ -1,7 +1,7 @@
 #pragma once
 
 // Iteration 7
-namespace VoxelEngine {
+namespace vge {
     class Window {
     public:
         void Create(int width, int height, const char* title);

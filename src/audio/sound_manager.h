@@ -2,7 +2,7 @@
 #include <string>
 #include <unordered_map>
 
-namespace VoxelEngine {
+namespace vge {
     class SoundManager {
     public:
         void LoadSound(const std::string& name, const std::string& path);

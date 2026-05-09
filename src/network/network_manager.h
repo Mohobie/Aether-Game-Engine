@@ -2,7 +2,7 @@
 
 #include <string>
 
-namespace VoxelEngine {
+namespace vge {
     class NetworkManager {
     public:
         void Initialize();

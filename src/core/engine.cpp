@@ -1,7 +1,7 @@
 #include "voxel_engine.h"
 #include <iostream>
 
-namespace VoxelEngine {
+namespace vge {
     int Run(int argc, char** argv) {
         std::cout << "VoxelEngine v0.1.0 starting..." << std::endl;
         return 0;

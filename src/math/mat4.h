@@ -1,6 +1,6 @@
 #pragma once
 
-namespace VoxelEngine {
+namespace vge {
     struct Mat4 {
         float data[16];
         Mat4() {

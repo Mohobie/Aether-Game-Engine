@@ -2,7 +2,7 @@
 #include <string>
 #include <functional>
 
-namespace VoxelEngine {
+namespace vge {
     class NetworkClient {
     public:
         void Connect(const std::string& address, int port);

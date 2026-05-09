@@ -2,7 +2,7 @@
 #include <chrono>
 #include <iostream>
 
-namespace VoxelEngine {
+namespace vge {
     void Application::Initialize(int argc, char** argv) {
         std::cout << "Application initializing..." << std::endl;
         running = true;

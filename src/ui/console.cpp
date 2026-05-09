@@ -1,7 +1,7 @@
 #include "console.h"
 #include <iostream>
 
-namespace VoxelEngine {
+namespace vge {
     void Console::Log(const std::string& msg) {
         history.push_back(msg);
         std::cout << "[CONSOLE] " << msg << std::endl;

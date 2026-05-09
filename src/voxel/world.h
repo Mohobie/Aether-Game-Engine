@@ -3,7 +3,7 @@
 #include "chunk.h"
 #include <unordered_map>
 
-namespace VoxelEngine {
+namespace vge {
     class World {
     public:
         Chunk* GetChunk(ChunkCoord x, ChunkCoord y, ChunkCoord z);

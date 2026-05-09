@@ -2,7 +2,7 @@
 
 #include "core/types.h"
 
-namespace VoxelEngine {
+namespace vge {
     struct Block {
         BlockID id;
         uint8_t metadata;
