@@ -1,0 +1,5 @@
+enable_testing()
+find_package(GTest REQUIRED)
+add_executable(voxel_tests test_main.cpp)
+target_link_libraries(voxel_tests GTest::gtest_main)
+add_test(NAME voxel_tests COMMAND voxel_tests)
