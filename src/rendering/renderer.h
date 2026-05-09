@@ -2,6 +2,7 @@
 #include "rendering/mesh.h"
 #include "rendering/shader.h"
 #include "rendering/camera.h"
+#include "voxel/world.h"
 
 namespace vge {
     class Renderer {
@@ -24,5 +25,6 @@ namespace vge {
         void SetViewport(int x, int y, int w, int h);
         
         void RenderMesh(const Mesh& mesh, const Shader& shader, const Camera& camera);
+        void RenderWorld(const World& world, const Camera& camera);
     };
 }

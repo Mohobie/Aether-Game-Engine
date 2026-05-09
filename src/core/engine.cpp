@@ -24,7 +24,6 @@
 #include <iostream>
 #include <chrono>
 
-// Stub implementation
 namespace vge {
 
 Engine::Engine() 
@@ -41,7 +40,6 @@ Engine::~Engine() {
 bool Engine::Initialize() {
     Logger::Info("Engine initializing...");
     
-    // Create systems
     window = new Window();
     renderer = new Renderer();
     camera = new Camera();
@@ -55,35 +53,39 @@ bool Engine::Initialize() {
     timeSystem = new TimeSystem();
     achievementManager = new AchievementManager();
     
-    // Initialize window
     if (!window->Initialize(1280, 720, "Voxel Engine")) {
         Logger::Error("Failed to create window");
         return false;
     }
     
-    // Initialize renderer
     if (!renderer->Initialize()) {
         Logger::Error("Failed to initialize renderer");
         return false;
     }
     
-    // Initialize audio
     if (audioEngine->Initialize()) {
         soundManager->Initialize(audioEngine);
     }
     
-    // Initialize world
     worldGenerator->SetSeed(12345);
     chunkManager->Initialize(world, worldGenerator);
     
-    // Initialize menu
+    // Generate spawn chunks
+    for (int x = -2; x <= 2; x++) {
+        for (int z = -2; z <= 2; z++) {
+            Chunk* chunk = chunkManager->LoadChunk(x, 0, z);
+            if (chunk) {
+                worldGenerator->GenerateChunk(*chunk, x, 0, z);
+            }
+        }
+    }
+    
     menuSystem->Initialize(renderer, window);
-    
-    // Initialize achievements
     achievementManager->Initialize();
-    
-    // Initialize time
     timeSystem = new TimeSystem();
+    
+    camera->SetPosition(Vec3(0, 40, 0));
+    camera->SetRotation(0, -20, 0);
     
     Logger::Info("Engine initialized successfully");
     running = true;
@@ -112,53 +114,41 @@ void Engine::Shutdown() {
 
 void Engine::Run() {
     auto lastTime = std::chrono::high_resolution_clock::now();
+    int frameCount = 0;
     
     while (running) {
         auto currentTime = std::chrono::high_resolution_clock::now();
         deltaTime = std::chrono::duration<float>(currentTime - lastTime).count();
         lastTime = currentTime;
         
-        // Update window
         window->PollEvents();
         
-        // Check if should close
         if (window->ShouldClose()) {
             running = false;
             break;
         }
         
-        // Update systems
         Update(deltaTime);
-        
-        // Render
         Render();
+        
+        frameCount++;
+        if (frameCount >= 10) {
+            std::cout << "\n[Engine] Rendered 10 frames. Press Enter to continue..." << std::endl;
+            std::cin.get();
+            running = false;
+        }
     }
 }
 
 void Engine::Update(float dt) {
-    // Update time system
     timeSystem->Update(dt);
-    
-    // Update audio
-    // audioEngine->Update(); // Not implemented yet
-    
-    // Update menu
     menuSystem->Update(dt);
-    
-    // Update achievements
-    // achievementManager->Update(dt); // Not implemented yet;
 }
 
 void Engine::Render() {
-    // Begin frame
     renderer->BeginFrame();
-    
-    // Render world
-    renderer->SetClearColor(0.5f, 0.7f, 1.0f, 1.0f);
-    
-    // End frame
+    renderer->RenderWorld(*world, *camera);
     renderer->EndFrame();
-    window->SwapBuffers();
 }
 
 } // namespace vge

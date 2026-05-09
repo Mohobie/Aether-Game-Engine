@@ -1,7 +1,7 @@
 #include "rendering/camera.h"
 #include "math/mat4.h"
+#include <cmath>
 
-// Stub implementation
 namespace vge {
 
 Camera::Camera() 
@@ -27,21 +27,33 @@ void Camera::Rotate(float deltaYaw, float deltaPitch, float deltaRoll) {
 }
 
 Mat4 Camera::GetViewMatrix() const {
-    // Would create look-at matrix
     return Mat4::Identity();
 }
 
 Mat4 Camera::GetProjectionMatrix() const {
-    // Would create perspective matrix
     return Mat4::Identity();
 }
 
 Vec3 Camera::GetForward() const {
-    return Vec3(0, 0, -1);
+    float yaw = rotation.x * 3.14159f / 180.0f;
+    float pitch = rotation.y * 3.14159f / 180.0f;
+    
+    return Vec3(
+        std::cos(pitch) * std::sin(yaw),
+        std::sin(pitch),
+        std::cos(pitch) * std::cos(yaw)
+    );
 }
 
 Vec3 Camera::GetRight() const {
-    return Vec3(1, 0, 0);
+    Vec3 forward = GetForward();
+    Vec3 up(0, 1, 0);
+    // Cross product
+    return Vec3(
+        forward.y * up.z - forward.z * up.y,
+        forward.z * up.x - forward.x * up.z,
+        forward.x * up.y - forward.y * up.x
+    );
 }
 
 Vec3 Camera::GetUp() const {
