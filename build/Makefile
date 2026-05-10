@@ -156,6 +156,19 @@ save_test/fast:
 .PHONY : save_test/fast
 
 #=============================================================================
+# Target rules for targets named gamepad_test
+
+# Build rule for target.
+gamepad_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gamepad_test
+.PHONY : gamepad_test
+
+# fast build rule for target.
+gamepad_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamepad_test.dir/build.make CMakeFiles/gamepad_test.dir/build
+.PHONY : gamepad_test/fast
+
+#=============================================================================
 # Target rules for targets named voxel_engine
 
 # Build rule for target.
@@ -1188,6 +1201,42 @@ src/platform/file_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/file_system.cpp.s
 .PHONY : src/platform/file_system.cpp.s
 
+src/platform/gamepad.o: src/platform/gamepad.cpp.o
+.PHONY : src/platform/gamepad.o
+
+# target to build an object file
+src/platform/gamepad.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/platform/gamepad.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/platform/gamepad.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/gamepad.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamepad_test.dir/build.make CMakeFiles/gamepad_test.dir/src/platform/gamepad.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/gamepad.cpp.o
+.PHONY : src/platform/gamepad.cpp.o
+
+src/platform/gamepad.i: src/platform/gamepad.cpp.i
+.PHONY : src/platform/gamepad.i
+
+# target to preprocess a source file
+src/platform/gamepad.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/platform/gamepad.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/platform/gamepad.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/gamepad.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamepad_test.dir/build.make CMakeFiles/gamepad_test.dir/src/platform/gamepad.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/gamepad.cpp.i
+.PHONY : src/platform/gamepad.cpp.i
+
+src/platform/gamepad.s: src/platform/gamepad.cpp.s
+.PHONY : src/platform/gamepad.s
+
+# target to generate assembly for a file
+src/platform/gamepad.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/platform/gamepad.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/platform/gamepad.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/gamepad.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamepad_test.dir/build.make CMakeFiles/gamepad_test.dir/src/platform/gamepad.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/gamepad.cpp.s
+.PHONY : src/platform/gamepad.cpp.s
+
 src/platform/input_manager.o: src/platform/input_manager.cpp.o
 .PHONY : src/platform/input_manager.o
 
@@ -2184,6 +2233,30 @@ src/world_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/world_test.cpp.s
 .PHONY : src/world_test.cpp.s
 
+tests/test_gamepad_standalone.o: tests/test_gamepad_standalone.cpp.o
+.PHONY : tests/test_gamepad_standalone.o
+
+# target to build an object file
+tests/test_gamepad_standalone.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamepad_test.dir/build.make CMakeFiles/gamepad_test.dir/tests/test_gamepad_standalone.cpp.o
+.PHONY : tests/test_gamepad_standalone.cpp.o
+
+tests/test_gamepad_standalone.i: tests/test_gamepad_standalone.cpp.i
+.PHONY : tests/test_gamepad_standalone.i
+
+# target to preprocess a source file
+tests/test_gamepad_standalone.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamepad_test.dir/build.make CMakeFiles/gamepad_test.dir/tests/test_gamepad_standalone.cpp.i
+.PHONY : tests/test_gamepad_standalone.cpp.i
+
+tests/test_gamepad_standalone.s: tests/test_gamepad_standalone.cpp.s
+.PHONY : tests/test_gamepad_standalone.s
+
+# target to generate assembly for a file
+tests/test_gamepad_standalone.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamepad_test.dir/build.make CMakeFiles/gamepad_test.dir/tests/test_gamepad_standalone.cpp.s
+.PHONY : tests/test_gamepad_standalone.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2192,6 +2265,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... gamepad_test"
 	@echo "... save_test"
 	@echo "... voxel_engine"
 	@echo "... voxel_test"
@@ -2292,6 +2366,9 @@ help:
 	@echo "... src/platform/file_system.o"
 	@echo "... src/platform/file_system.i"
 	@echo "... src/platform/file_system.s"
+	@echo "... src/platform/gamepad.o"
+	@echo "... src/platform/gamepad.i"
+	@echo "... src/platform/gamepad.s"
 	@echo "... src/platform/input_manager.o"
 	@echo "... src/platform/input_manager.i"
 	@echo "... src/platform/input_manager.s"
@@ -2394,6 +2471,9 @@ help:
 	@echo "... src/world_test.o"
 	@echo "... src/world_test.i"
 	@echo "... src/world_test.s"
+	@echo "... tests/test_gamepad_standalone.o"
+	@echo "... tests/test_gamepad_standalone.i"
+	@echo "... tests/test_gamepad_standalone.s"
 .PHONY : help
 
 

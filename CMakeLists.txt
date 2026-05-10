@@ -144,6 +144,7 @@ set(CORE_SOURCES
     src/platform/platform_common.cpp
     src/platform/file_system.cpp
     src/platform/input_manager.cpp
+    src/platform/gamepad.cpp
 )
 
 # ============================================
@@ -196,6 +197,14 @@ elseif(PLATFORM_WINDOWS)
     target_link_libraries(voxel_test PRIVATE ws2_32 winmm)
     target_link_libraries(world_test PRIVATE ws2_32 winmm)
     target_link_libraries(save_test PRIVATE ws2_32 winmm)
+endif()
+
+add_executable(gamepad_test tests/test_gamepad_standalone.cpp src/platform/gamepad.cpp)
+target_include_directories(gamepad_test PRIVATE ${COMMON_INCLUDES})
+if(PLATFORM_LINUX)
+    target_link_libraries(gamepad_test PRIVATE pthread dl)
+elseif(PLATFORM_WINDOWS)
+    target_link_libraries(gamepad_test PRIVATE ws2_32 winmm)
 endif()
 
 # ============================================

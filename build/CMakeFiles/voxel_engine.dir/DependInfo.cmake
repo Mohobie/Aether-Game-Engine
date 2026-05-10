@@ -40,6 +40,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/physics/physics_system.cpp" "CMakeFiles/voxel_engine.dir/src/physics/physics_system.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/physics/physics_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/physics/rigidbody.cpp" "CMakeFiles/voxel_engine.dir/src/physics/rigidbody.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/physics/rigidbody.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/platform/file_system.cpp" "CMakeFiles/voxel_engine.dir/src/platform/file_system.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/platform/file_system.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/platform/gamepad.cpp" "CMakeFiles/voxel_engine.dir/src/platform/gamepad.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/platform/gamepad.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/platform/input_manager.cpp" "CMakeFiles/voxel_engine.dir/src/platform/input_manager.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/platform/input_manager.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/platform/platform_common.cpp" "CMakeFiles/voxel_engine.dir/src/platform/platform_common.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/platform/platform_common.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/platform/window.cpp" "CMakeFiles/voxel_engine.dir/src/platform/window.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/platform/window.cpp.o.d"

@@ -55,6 +55,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/world_test.dir/src/physics/rigidbody.cpp.o.d"
   "CMakeFiles/world_test.dir/src/platform/file_system.cpp.o"
   "CMakeFiles/world_test.dir/src/platform/file_system.cpp.o.d"
+  "CMakeFiles/world_test.dir/src/platform/gamepad.cpp.o"
+  "CMakeFiles/world_test.dir/src/platform/gamepad.cpp.o.d"
   "CMakeFiles/world_test.dir/src/platform/input_manager.cpp.o"
   "CMakeFiles/world_test.dir/src/platform/input_manager.cpp.o.d"
   "CMakeFiles/world_test.dir/src/platform/platform_common.cpp.o"

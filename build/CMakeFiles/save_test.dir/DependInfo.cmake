@@ -36,6 +36,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/physics/physics_system.cpp" "CMakeFiles/save_test.dir/src/physics/physics_system.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/physics/physics_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/physics/rigidbody.cpp" "CMakeFiles/save_test.dir/src/physics/rigidbody.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/physics/rigidbody.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/platform/file_system.cpp" "CMakeFiles/save_test.dir/src/platform/file_system.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/platform/file_system.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/platform/gamepad.cpp" "CMakeFiles/save_test.dir/src/platform/gamepad.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/platform/gamepad.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/platform/input_manager.cpp" "CMakeFiles/save_test.dir/src/platform/input_manager.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/platform/input_manager.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/platform/platform_common.cpp" "CMakeFiles/save_test.dir/src/platform/platform_common.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/platform/platform_common.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/rendering/deferred_rendering.cpp" "CMakeFiles/save_test.dir/src/rendering/deferred_rendering.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/rendering/deferred_rendering.cpp.o.d"
