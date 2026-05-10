@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/voxel_test.dir/src/audio/audio_engine.cpp.o"
   "CMakeFiles/voxel_test.dir/src/audio/audio_engine.cpp.o.d"
+  "CMakeFiles/voxel_test.dir/src/audio/audio_system.cpp.o"
+  "CMakeFiles/voxel_test.dir/src/audio/audio_system.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/audio/sound_manager.cpp.o"
   "CMakeFiles/voxel_test.dir/src/audio/sound_manager.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/core/achievements.cpp.o"

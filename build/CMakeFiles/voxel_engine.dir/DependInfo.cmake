@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/audio/audio_engine.cpp" "CMakeFiles/voxel_engine.dir/src/audio/audio_engine.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/audio/audio_engine.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/audio/audio_system.cpp" "CMakeFiles/voxel_engine.dir/src/audio/audio_system.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/audio/audio_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/audio/sound_manager.cpp" "CMakeFiles/voxel_engine.dir/src/audio/sound_manager.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/audio/sound_manager.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/core/achievements.cpp" "CMakeFiles/voxel_engine.dir/src/core/achievements.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/core/achievements.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/core/application.cpp" "CMakeFiles/voxel_engine.dir/src/core/application.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/core/application.cpp.o.d"

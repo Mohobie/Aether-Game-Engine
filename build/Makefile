@@ -201,6 +201,39 @@ src/audio/audio_engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_engine.cpp.s
 .PHONY : src/audio/audio_engine.cpp.s
 
+src/audio/audio_system.o: src/audio/audio_system.cpp.o
+.PHONY : src/audio/audio_system.o
+
+# target to build an object file
+src/audio/audio_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/audio/audio_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/audio/audio_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/audio/audio_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_system.cpp.o
+.PHONY : src/audio/audio_system.cpp.o
+
+src/audio/audio_system.i: src/audio/audio_system.cpp.i
+.PHONY : src/audio/audio_system.i
+
+# target to preprocess a source file
+src/audio/audio_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/audio/audio_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/audio/audio_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/audio/audio_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_system.cpp.i
+.PHONY : src/audio/audio_system.cpp.i
+
+src/audio/audio_system.s: src/audio/audio_system.cpp.s
+.PHONY : src/audio/audio_system.s
+
+# target to generate assembly for a file
+src/audio/audio_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/audio/audio_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/audio/audio_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/audio/audio_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_system.cpp.s
+.PHONY : src/audio/audio_system.cpp.s
+
 src/audio/sound_manager.o: src/audio/sound_manager.cpp.o
 .PHONY : src/audio/sound_manager.o
 
@@ -1761,6 +1794,9 @@ help:
 	@echo "... src/audio/audio_engine.o"
 	@echo "... src/audio/audio_engine.i"
 	@echo "... src/audio/audio_engine.s"
+	@echo "... src/audio/audio_system.o"
+	@echo "... src/audio/audio_system.i"
+	@echo "... src/audio/audio_system.s"
 	@echo "... src/audio/sound_manager.o"
 	@echo "... src/audio/sound_manager.i"
 	@echo "... src/audio/sound_manager.s"
