@@ -1,77 +1,50 @@
-# Aether Game Engine - Complete API Reference
+# Aether Game Engine - API Reference
 
-> **Auto-generated** from C++ header files in `src/`  
+> **Auto-generated** from actual C++ header files in `src/`  
 > **Date:** 2026-05-10  
-> **Total Headers Scanned:** 87  
-> **Modules:** core, voxel, rendering, physics, audio, input, platform, scripting, ui, network, entity, game, math, resource
+> **Total Headers:** 87  
+> **Modules:** 15
 
 ---
 
 ## Module Index
 
-| Module | Description | File |
-|--------|-------------|------|
-| **Math** | Vectors, matrices, noise | [API-Math.md](API-Math.md) |
-| **Core** | Types, logger, profiler, time, save, config, achievements, crafting, inventory, raycast, player controller, utils | [API-Core.md](API-Core.md) |
-| **Entity** | Entity, component, entity manager, systems | [API-Entity.md](API-Entity.md) |
-| **Voxel** | Block, chunk, world, generator, renderer, biome, registry | [API-Voxel.md](API-Voxel.md) |
-| **Rendering** | Camera, mesh, shader, texture, renderer, framebuffer, material, light, skybox | [API-Rendering.md](API-Rendering.md) |
-| **Physics** | AABB, rigidbody, collider, physics world, raycast, joints | [API-Physics.md](API-Physics.md) |
-| **Audio** | Audio engine, sound, music, listener, source | [API-Audio.md](API-Audio.md) |
-| **Input** | Input, keyboard, mouse, gamepad, input actions | [API-Input.md](API-Input.md) |
-| **Platform** | Window, platform, file system, thread, timer | [API-Platform.md](API-Platform.md) |
-| **Scripting** | Script engine, scripts, Lua bindings, script components | [API-Scripting.md](API-Scripting.md) |
-| **UI** | UI manager, elements, button, label, panel, textbox, slider, checkbox, dropdown | [API-UI.md](API-UI.md) |
-| **Network** | Network engine, client, server, packets, connections | [API-Network.md](API-Network.md) |
-| **Game** | Game, scene, scene manager, game state, level | [API-Game.md](API-Game.md) |
-| **Resource** | Resource manager, assets, loaders, database, prefabs | [API-Resource.md](API-Resource.md) |
+| Module | Description | Files | API Doc |
+|--------|-------------|-------|---------|
+| **Math** | Vec3, Mat4, Noise | 3 | [API-Math](API-Math) |
+| **Core** | Types, Logger, Profiler, Time, Save, Config, Achievements, Crafting, Inventory, Raycast, PlayerController, Utils, Application, Engine, EventSystem, JobSystem, Math, Memory, Serializer | 21 | [API-Core](API-Core) |
+| **Entity** | Entity, Component, EntityManager, System | 4 | [API-Entity](API-Entity) |
+| **Voxel** | Block, Chunk, World, WorldGenerator, WorldRenderer, Biome, BlockRegistry, BlockMeshBuilder, ChunkManager | 9 | [API-Voxel](API-Voxel) |
+| **Render** | Camera, Mesh, Renderer, Shader, Texture | 5 | [API-Render](API-Render) |
+| **Rendering** | Camera, FramebufferRenderer, Lighting, Material, Mesh, Renderer, Shader, Texture | 8 | [API-Rendering](API-Rendering) |
+| **Physics** | AABB, Collider, Collision, PhysicsWorld, Ray, RigidBody | 6 | [API-Physics](API-Physics) |
+| **Audio** | AudioEngine, MusicPlayer, Sound, SoundManager | 4 | [API-Audio](API-Audio) |
+| **Input** | InputManager, KeyBindings | 2 | [API-Input](API-Input) |
+| **Platform** | FileSystem, Input, Threading, Timer, Window | 5 | [API-Platform](API-Platform) |
+| **Scripting** | LuaEngine, ScriptBindings, ScriptEngine | 3 | [API-Scripting](API-Scripting) |
+| **UI** | Button, Console, ImGuiWrapper, Label, MenuSystem, Panel, UIElement, UIManager | 8 | [API-UI](API-UI) |
+| **Network** | Client, NetworkManager, Packet | 3 | [API-Network](API-Network) |
+| **Game** | Application, GameState, Scene, Serializer | 4 | [API-Game](API-Game) |
+| **Resource** | AssetLoader, ConfigManager, ResourceManager | 3 | [API-Resource](API-Resource) |
 
 ---
 
-## Common Types
+## Namespaces Used
 
-### `namespace vge`
-All API classes and functions are within the `vge` namespace.
-
-### Type Aliases
-| Alias | Type | Description |
-|-------|------|-------------|
-| `EntityID` | `uint32_t` | Unique entity identifier |
-| `ComponentID` | `uint32_t` | Component type identifier |
-| `SystemID` | `uint32_t` | System type identifier |
-| `AssetID` | `uint64_t` | Asset unique identifier |
-| `JobID` | `uint64_t` | Job identifier |
-| `EventType` | `uint32_t` | Event type identifier |
-| `EventListenerID` | `uint64_t` | Event listener identifier |
-| `ConnectionID` | `uint32_t` | Network connection identifier |
+| Namespace | Modules Using It |
+|-----------|-----------------|
+| `vge` | Math, Core (partial), Voxel, Render, Rendering, Physics (partial), Audio (partial), Platform (partial), Scripting, Network, UI (partial) |
+| `aether` | Core (partial), Entity, Game, Physics (partial), Audio (partial), Platform (partial), Resource, UI (partial) |
 
 ---
 
-## Naming Conventions
+## Key Observations
 
-- **Classes/Structs**: PascalCase (e.g., `EntityManager`, `Vec3`)
-- **Methods/Functions**: camelCase (e.g., `getPosition`, `setActive`)
-- **Members/Variables**: camelCase (e.g., `position`, `isActive`)
-- **Constants/Enums**: UPPER_SNAKE_CASE or PascalCase (e.g., `MAX_ENTITIES`, `BlockType`)
-- **Type Aliases**: PascalCase (e.g., `EntityID`, `AssetID`)
-- **Files**: snake_case with `.h` extension (e.g., `entity_manager.h`, `block_registry.h`)
+1. **Dual namespaces**: The codebase uses both `vge` and `aether` namespaces inconsistently
+2. **Duplicate modules**: `render/` and `rendering/` both exist with similar classes
+3. **Missing implementations**: Some headers have no corresponding .cpp files
+4. **Platform abstraction**: Window uses GLFW, FileSystem is minimal
 
 ---
 
-## Documentation Format
-
-Each module page contains:
-- **File list**: Header files in the module
-- **Class/struct documentation**: With member tables and method tables
-- **Enum documentation**: With value tables
-- **Type alias documentation**: With description
-
-Method tables include:
-- **Method**: Function name
-- **Return Type**: Return type
-- **Parameters**: Parameter list with types
-- **Description**: Brief description
-
----
-
-*Generated by Aether Game Engine Documentation System*
+*Generated from actual source code*

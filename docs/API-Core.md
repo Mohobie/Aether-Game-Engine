@@ -1,291 +1,346 @@
 # Core Module API
+**Files:** src/core/achievements.h, src/core/application.h, src/core/config.h, src/core/crafting.h, src/core/engine.h, src/core/entity.h, src/core/event_system.h, src/core/inventory.h, src/core/job_system.h, src/core/logger.h, src/core/math.h, src/core/memory.h, src/core/player_controller.h, src/core/profiler.h, src/core/raycast.h, src/core/save_system.h, src/core/serializer.h, src/core/time_system.h, src/core/types.h, src/core/utils.h
 
-**Files:** `core/types.h`, `core/logger.h`, `core/profiler.h`, `core/time_system.h`, `core/save_system.h`, `core/config.h`, `core/achievements.h`, `core/crafting.h`, `core/inventory.h`, `core/raycast.h`, `core/player_controller.h`, `core/utils.h`
-
----
-
-## `core/types.h`
-
+## `core/achievements.h`
 ```cpp
 namespace vge {
 ```
 
-### Type Aliases
-| Alias | Type | Description |
-|-------|------|-------------|
-| `EntityID` | `uint32_t` | Unique entity identifier |
-| `ComponentID` | `uint32_t` | Component type identifier |
-| `SystemID` | `uint32_t` | System type identifier |
-| `AssetID` | `uint64_t` | Asset unique identifier |
-| `JobID` | `uint64_t` | Job identifier |
-| `EventType` | `uint32_t` | Event type identifier |
-| `EventListenerID` | `uint64_t` | Event listener identifier |
+### `enum class AchievementType`
+| Value | Description |
+|-------|-------------|
+| `MineBlock` | |
+| `PlaceBlock` | |
+| `Walk` | |
+| `SurviveDays` | |
+| `ReachDepth` | |
+| `ReachHeight` | |
+| `FindDiamond` | |
+| `CraftItem` | |
+| `KillEnemy` | |
+| `Custom` | |
 
----
+### `class AchievementType`
+
+### `class Achievement`
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `UpdateProgress` | `bool` | `int value` |
+| `Increment` | `bool` | `int amount = 1` |
+
+### `class AchievementManager`
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `RegisterDefaultAchievements` | `void` | `` |
+| `Initialize` | `void` | `` |
+| `UpdateProgress` | `bool` | `AchievementType type, int value` |
+| `Increment` | `bool` | `AchievementType type, int amount = 1` |
+| `GetAchievement` | `const Achievement*` | `const std::string& id` |
+
+## `core/application.h`
+```cpp
+namespace vge {
+```
+
+### `class Application`
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `Initialize` | `bool` | `` |
+| `Run` | `void` | `` |
+| `Shutdown` | `void` | `` |
+
+## `core/config.h`
+```cpp
+namespace vge {
+```
+
+### `class Config`
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `Load` | `bool` | `const std::string& path` |
+| `Save` | `bool` | `const std::string& path` |
+| `SetDefaultKeybinds` | `void` | `` |
+
+## `core/crafting.h`
+```cpp
+namespace vge {
+```
+
+### `struct CraftingRecipe`
+| Member | Type |
+|--------|------|
+| `outputType` | `BlockType` |
+| `outputCount` | `int` |
+
+### `struct CraftingResult`
+| Member | Type |
+|--------|------|
+| `success` | `bool` |
+| `outputType` | `BlockType` |
+| `outputCount` | `int` |
+
+### `class CraftingGrid`
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `SetItem` | `void` | `int x, int y, BlockType type` |
+| `GetItem` | `BlockType` | `int x, int y` |
+| `Clear` | `void` | `` |
+| `IsEmpty` | `bool` | `` |
+
+### `class CraftingSystem`
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `InitializeRecipes` | `void` | `` |
+| `TryCraft` | `CraftingResult` | `const CraftingGrid& grid` |
+| `PrintRecipes` | `void` | `` |
+
+## `core/engine.h`
+```cpp
+namespace vge {
+```
+
+### `class Engine`
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `Update` | `void` | `float dt` |
+| `Render` | `void` | `` |
+| `Initialize` | `bool` | `` |
+| `Run` | `void` | `` |
+| `Shutdown` | `void` | `` |
+
+## `core/entity.h`
+```cpp
+namespace vge {
+```
+
+### `class Component`
+
+### `class Entity`
+
+## `core/event_system.h`
+```cpp
+namespace aether {
+```
+
+### `class EventSystem`
+
+## `core/inventory.h`
+```cpp
+namespace vge {
+```
+
+### `struct InventorySlot`
+| Member | Type |
+|--------|------|
+| `type` | `BlockType` |
+| `count` | `int` |
+
+### `class Inventory`
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `AddItem` | `bool` | `BlockType type, int amount = 1` |
+| `RemoveItem` | `bool` | `int slotIndex, int amount = 1` |
+| `HasItem` | `bool` | `BlockType type, int amount = 1` |
+| `GetItemCount` | `int` | `BlockType type` |
+| `SelectSlot` | `void` | `int index` |
+
+## `core/job_system.h`
+```cpp
+namespace aether {
+```
+
+### `class JobSystem`
 
 ## `core/logger.h`
+```cpp
+namespace vge {
+```
 
 ### `enum class LogLevel`
 | Value | Description |
 |-------|-------------|
-| `Trace` | Most verbose |
-| `Debug` | Debug info |
-| `Info` | General info |
-| `Warning` | Warnings |
-| `Error` | Errors |
-| `Fatal` | Fatal errors |
+| `Debug` | |
+| `Info` | |
+| `Warning` | |
+| `Error` | |
+| `Fatal` | |
+
+### `class LogLevel`
 
 ### `class Logger`
-| Method | Return Type | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `GetInstance` | `Logger&` | `void` | Singleton |
-| `SetLevel` | `void` | `LogLevel level` | Set minimum level |
-| `GetLevel` | `LogLevel` | `void` | Get current level |
-| `SetOutputFile` | `void` | `const std::string& path` | File output |
-| `EnableConsole` | `void` | `bool enabled` | Console output |
-| `EnableFile` | `void` | `bool enabled` | File output toggle |
-| `Log` | `void` | `LogLevel level, const std::string& msg` | Generic log |
-| `Trace` | `void` | `const std::string& msg` | Trace log |
-| `Debug` | `void` | `const std::string& msg` | Debug log |
-| `Info` | `void` | `const std::string& msg` | Info log |
-| `Warning` | `void` | `const std::string& msg` | Warning log |
-| `Error` | `void` | `const std::string& msg` | Error log |
-| `Fatal` | `void` | `const std::string& msg` | Fatal log |
-| `Flush` | `void` | `void` | Flush buffers |
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `SetLogLevel` | `void` | `LogLevel level` |
+| `Log` | `void` | `LogLevel level, const std::string& message` |
+| `Info` | `static void` | `const std::string& msg` |
+| `Error` | `static void` | `const std::string& msg` |
+| `Debug` | `static void` | `const std::string& msg` |
 
----
+## `core/math.h`
+```cpp
+namespace aether {
+```
 
-## `core/profiler.h`
+### `struct Vec2`
 
-### `class Profiler`
-| Method | Return Type | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `GetInstance` | `Profiler&` | `void` | Singleton |
-| `BeginFrame` | `void` | `void` | Start frame profiling |
-| `EndFrame` | `void` | `void` | End frame profiling |
-| `BeginScope` | `void` | `const std::string& name` | Start scope |
-| `EndScope` | `void` | `void` | End scope |
-| `GetFrameTime` | `float` | `void` | Last frame time (ms) |
-| `GetFPS` | `float` | `void` | Current FPS |
-| `GetScopeTime` | `float` | `const std::string& name` | Scope time |
-| `GetAllScopes` | `std::vector<std::string>` | `void` | All scope names |
-| `Reset` | `void` | `void` | Reset all data |
-| `Enable` | `void` | `bool enabled` | Enable/disable |
-| `IsEnabled` | `bool` | `void` | Check enabled |
+### `struct Vec3`
 
----
+### `struct Mat4`
 
-## `core/time_system.h`
+## `core/memory.h`
+```cpp
+namespace aether {
+```
 
-### `class TimeSystem`
-| Method | Return Type | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `GetInstance` | `TimeSystem&` | `void` | Singleton |
-| `Initialize` | `void` | `void` | Initialize |
-| `Update` | `void` | `void` | Update time |
-| `GetDeltaTime` | `float` | `void` | Frame delta time |
-| `GetTimeScale` | `float` | `void` | Time scale multiplier |
-| `SetTimeScale` | `void` | `float scale` | Set time scale |
-| `GetTotalTime` | `float` | `void` | Total elapsed time |
-| `GetFrameCount` | `uint64_t` | `void` | Total frames |
-| `GetFPS` | `float` | `void` | Current FPS |
-| `Pause` | `void` | `void` | Pause time |
-| `Resume` | `void` | `void` | Resume time |
-| `IsPaused` | `bool` | `void` | Check paused |
+### `struct FreeNode`
+| Member | Type |
+|--------|------|
+| `next` | `FreeNode*` |
 
----
-
-## `core/save_system.h`
-
-### `class SaveSystem`
-| Method | Return Type | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `GetInstance` | `SaveSystem&` | `void` | Singleton |
-| `SaveWorld` | `bool` | `const World& world, const std::string& path` | Save world |
-| `LoadWorld` | `bool` | `World& world, const std::string& path` | Load world |
-| `SavePlayer` | `bool` | `const Entity& player, const std::string& path` | Save player |
-| `LoadPlayer` | `bool` | `Entity& player, const std::string& path` | Load player |
-| `SaveConfig` | `bool` | `const Config& config, const std::string& path` | Save config |
-| `LoadConfig` | `bool` | `Config& config, const std::string& path` | Load config |
-| `GetSaveFiles` | `std::vector<std::string>` | `void` | List save files |
-| `DeleteSave` | `bool` | `const std::string& path` | Delete save |
-| `SaveExists` | `bool` | `const std::string& path` | Check exists |
-
----
-
-## `core/config.h`
-
-### `class Config`
-| Method | Return Type | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `Load` | `bool` | `const std::string& path` | Load from file |
-| `Save` | `bool` | `const std::string& path` | Save to file |
-| `GetString` | `std::string` | `const std::string& key, const std::string& default = ""` | Get string |
-| `GetInt` | `int` | `const std::string& key, int default = 0` | Get int |
-| `GetFloat` | `float` | `const std::string& key, float default = 0.0f` | Get float |
-| `GetBool` | `bool` | `const std::string& key, bool default = false` | Get bool |
-| `SetString` | `void` | `const std::string& key, const std::string& value` | Set string |
-| `SetInt` | `void` | `const std::string& key, int value` | Set int |
-| `SetFloat` | `void` | `const std::string& key, float value` | Set float |
-| `SetBool` | `void` | `const std::string& key, bool value` | Set bool |
-| `HasKey` | `bool` | `const std::string& key` | Check key |
-| `RemoveKey` | `void` | `const std::string& key` | Remove key |
-| `GetKeys` | `std::vector<std::string>` | `void` | All keys |
-| `Clear` | `void` | `void` | Clear all |
-
----
-
-## `core/achievements.h`
-
-### `struct Achievement`
-| Member | Type | Description |
-|--------|------|-------------|
-| `id` | `std::string` | Unique ID |
-| `name` | `std::string` | Display name |
-| `description` | `std::string` | Description |
-| `icon` | `std::string` | Icon path |
-| `unlocked` | `bool` | Is unlocked |
-| `progress` | `float` | Current progress |
-| `target` | `float` | Target value |
-
-### `class AchievementManager`
-| Method | Return Type | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `GetInstance` | `AchievementManager&` | `void` | Singleton |
-| `Register` | `void` | `const Achievement& achievement` | Register achievement |
-| `Unlock` | `void` | `const std::string& id` | Unlock by ID |
-| `UpdateProgress` | `void` | `const std::string& id, float progress` | Update progress |
-| `IsUnlocked` | `bool` | `const std::string& id` | Check unlocked |
-| `Get` | `const Achievement*` | `const std::string& id` | Get achievement |
-| `GetAll` | `std::vector<Achievement>` | `void` | All achievements |
-| `Load` | `void` | `const std::string& path` | Load from file |
-| `Save` | `void` | `const std::string& path` | Save to file |
-| `Reset` | `void` | `void` | Reset all |
-
----
-
-## `core/crafting.h`
-
-### `struct CraftingRecipe`
-| Member | Type | Description |
-|--------|------|-------------|
-| `id` | `std::string` | Recipe ID |
-| `result` | `std::string` | Result item |
-| `resultCount` | `int` | Output count |
-| `ingredients` | `std::vector<std::pair<std::string, int>>` | Required items |
-| `craftingTime` | `float` | Time to craft |
-
-### `class CraftingSystem`
-| Method | Return Type | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `GetInstance` | `CraftingSystem&` | `void` | Singleton |
-| `RegisterRecipe` | `void` | `const CraftingRecipe& recipe` | Add recipe |
-| `CanCraft` | `bool` | `const std::string& recipeId, const Inventory& inv` | Check craftable |
-| `Craft` | `bool` | `const std::string& recipeId, Inventory& inv` | Execute craft |
-| `GetRecipe` | `const CraftingRecipe*` | `const std::string& id` | Get recipe |
-| `GetAllRecipes` | `std::vector<CraftingRecipe>` | `void` | All recipes |
-| `GetAvailable` | `std::vector<CraftingRecipe>` | `const Inventory& inv` | Available recipes |
-| `LoadRecipes` | `void` | `const std::string& path` | Load from file |
-
----
-
-## `core/inventory.h`
-
-### `struct ItemStack`
-| Member | Type | Description |
-|--------|------|-------------|
-| `itemId` | `std::string` | Item identifier |
-| `count` | `int` | Stack count |
-| `maxStack` | `int` | Max stack size |
-| `metadata` | `std::string` | Item metadata |
-
-### `class Inventory`
-| Method | Return Type | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `Inventory` | (ctor) | `size_t capacity = 36` | Constructor |
-| `AddItem` | `bool` | `const std::string& itemId, int count = 1` | Add item |
-| `RemoveItem` | `bool` | `const std::string& itemId, int count = 1` | Remove item |
-| `HasItem` | `bool` | `const std::string& itemId, int count = 1` | Check has item |
-| `GetCount` | `int` | `const std::string& itemId` | Get item count |
-| `GetSlot` | `const ItemStack*` | `size_t slot` | Get slot |
-| `SetSlot` | `void` | `size_t slot, const ItemStack& item` | Set slot |
-| `ClearSlot` | `void` | `size_t slot` | Clear slot |
-| `IsFull` | `bool` | `void` | Check full |
-| `IsEmpty` | `bool` | `void` | Check empty |
-| `GetCapacity` | `size_t` | `void` | Get capacity |
-| `GetUsedSlots` | `size_t` | `void` | Used slot count |
-| `GetItems` | `std::vector<ItemStack>` | `void` | All items |
-| `Serialize` | `std::string` | `void` | Serialize |
-| `Deserialize` | `void` | `const std::string& data` | Deserialize |
-| `Clear` | `void` | `void` | Clear all |
-
----
-
-## `core/raycast.h`
-
-### `struct RaycastHit`
-| Member | Type | Description |
-|--------|------|-------------|
-| `hit` | `bool` | Did hit |
-| `point` | `Vec3` | Hit point |
-| `normal` | `Vec3` | Hit normal |
-| `distance` | `float` | Hit distance |
-| `blockPosition` | `Vec3` | Block position |
-| `blockType` | `BlockType` | Block type |
-
-### `class Raycast`
-| Method | Return Type | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `World` | `bool` | `const World& world, const Vec3& origin, const Vec3& dir, float maxDist, RaycastHit& outHit` | Raycast against world |
-| `AABB` | `bool` | `const Vec3& origin, const Vec3& dir, const AABB& aabb, float& outDist` | Raycast AABB |
-| `Plane` | `bool` | `const Vec3& origin, const Vec3& dir, const Vec3& normal, float distance, float& outDist` | Raycast plane |
-
----
+### `class PoolAllocator`
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `allocate` | `void*` | `` |
+| `deallocate` | `void` | `void* ptr` |
 
 ## `core/player_controller.h`
+```cpp
+namespace vge {
+```
 
 ### `class PlayerController`
-| Method | Return Type | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `PlayerController` | (ctor) | `Entity* entity` | Constructor |
-| `Update` | `void` | `float deltaTime, Input& input, World& world` | Update |
-| `SetPosition` | `void` | `const Vec3& pos` | Set position |
-| `GetPosition` | `Vec3` | `void` | Get position |
-| `SetRotation` | `void` | `const Vec3& rot` | Set rotation |
-| `GetRotation` | `Vec3` | `void` | Get rotation |
-| `Move` | `void` | `const Vec3& delta` | Move relative |
-| `Rotate` | `void` | `float yaw, float pitch` | Rotate view |
-| `Jump` | `void` | `void` | Jump |
-| `IsGrounded` | `bool` | `void` | Check grounded |
-| `SetSpeed` | `void` | `float speed` | Set move speed |
-| `GetSpeed` | `float` | `void` | Get move speed |
-| `SetFlyMode` | `void` | `bool enabled` | Toggle fly mode |
-| `IsFlying` | `bool` | `void` | Check flying |
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `GetLookDirection` | `Vec3` | `` |
+| `Update` | `void` | `float deltaTime, Input& input, World& world` |
+| `CheckCollision` | `bool` | `const Vec3& pos, World& world` |
+| `PlaceBlock` | `bool` | `World& world, BlockType type` |
+| `BreakBlock` | `bool` | `World& world` |
+| `GetPosition` | `Vec3` | `` |
+| `SetPosition` | `void` | `const Vec3& pos` |
+| `GetYaw` | `float` | `` |
+| `GetPitch` | `float` | `` |
 
----
+## `core/profiler.h`
+```cpp
+namespace aether {
+```
+
+### `struct ProfileResult`
+| Member | Type |
+|--------|------|
+| `threadID` | `size_t` |
+
+### `class Profiler`
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `beginSession` | `void` | `const std::string& name` |
+| `endSession` | `void` | `` |
+| `writeProfile` | `void` | `const ProfileResult& result` |
+
+### `class Timer`
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `stop` | `void` | `` |
+
+## `core/raycast.h`
+```cpp
+namespace vge {
+```
+
+### `struct RaycastHit`
+| Member | Type |
+|--------|------|
+| `hit` | `bool` |
+| `position` | `Vec3` |
+| `blockPosition` | `Vec3` |
+| `normal` | `Vec3` |
+| `distance` | `float` |
+| `blockType` | `BlockType` |
+
+### `class Raycast`
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `Cast` | `RaycastHit` | `const Vec3& origin, const Vec3& direction, World& world` |
+| `PlaceBlock` | `bool` | `const Vec3& origin, const Vec3& direction, World& world, BlockType type` |
+| `RemoveBlock` | `bool` | `const Vec3& origin, const Vec3& direction, World& world` |
+
+## `core/save_system.h`
+```cpp
+namespace vge {
+```
+
+### `struct SaveHeader`
+| Member | Type |
+|--------|------|
+| `magic` | `uint32_t` |
+| `version` | `uint32_t` |
+| `chunkCount` | `uint32_t` |
+
+### `struct ChunkData`
+
+### `class SaveSystem`
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `SaveWorld` | `static bool` | `const World& world, const std::string& path` |
+| `LoadWorld` | `static bool` | `World& world, const std::string& path` |
+| `SaveChunk` | `static bool` | `const Chunk& chunk, std::ofstream& file` |
+| `LoadChunk` | `static bool` | `Chunk& chunk, std::ifstream& file` |
+
+## `core/serializer.h`
+```cpp
+namespace aether {
+```
+
+### `class Serializer`
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `writeInt32` | `void` | `int32_t value` |
+| `writeInt64` | `void` | `int64_t value` |
+| `writeFloat` | `void` | `float value` |
+| `writeDouble` | `void` | `double value` |
+| `writeString` | `void` | `const std::string& value` |
+| `writeBytes` | `void` | `const std::vector<uint8_t>& data` |
+| `readInt32` | `int32_t` | `` |
+| `readInt64` | `int64_t` | `` |
+| `readFloat` | `float` | `` |
+| `readDouble` | `double` | `` |
+
+## `core/time_system.h`
+```cpp
+namespace vge {
+```
+
+### `enum class WeatherType`
+| Value | Description |
+|-------|-------------|
+| `Clear` | |
+| `Rain` | |
+| `Storm` | |
+| `Snow` | |
+
+### `class WeatherType`
+
+### `class TimeSystem`
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `ChangeWeather` | `void` | `` |
+| `Update` | `void` | `float deltaTime` |
+| `GetSunIntensity` | `float` | `` |
+| `GetSunColor` | `Vec3` | `` |
+
+## `core/types.h`
+```cpp
+namespace vge {
+```
 
 ## `core/utils.h`
+```cpp
+namespace aether {
+```
 
-### Utility Functions
-| Function | Return Type | Parameters | Description |
-|----------|-------------|------------|-------------|
-| `Clamp` | `T` | `T value, T min, T max` | Clamp value |
-| `Lerp` | `T` | `T a, T b, float t` | Linear interpolate |
-| `Min` | `T` | `T a, T b` | Minimum |
-| `Max` | `T` | `T a, T b` | Maximum |
-| `Abs` | `T` | `T value` | Absolute value |
-| `Sign` | `int` | `T value` | Sign (-1, 0, 1) |
-| `RandomFloat` | `float` | `float min = 0.0f, float max = 1.0f` | Random float |
-| `RandomInt` | `int` | `int min, int max` | Random int |
-| `RandomVec3` | `Vec3` | `float min = -1.0f, float max = 1.0f` | Random vector |
-| `ToRadians` | `float` | `float degrees` | Degrees to radians |
-| `ToDegrees` | `float` | `float radians` | Radians to degrees |
-| `StringFormat` | `std::string` | `const std::string& fmt, ...` | Format string |
-| `SplitString` | `std::vector<std::string>` | `const std::string& str, char delimiter` | Split string |
-| `TrimString` | `std::string` | `const std::string& str` | Trim whitespace |
-| `FileExists` | `bool` | `const std::string& path` | Check file exists |
-| `ReadFile` | `std::string` | `const std::string& path` | Read file to string |
-| `WriteFile` | `bool` | `const std::string& path, const std::string& content` | Write string to file |
-| `GetFileSize` | `size_t` | `const std::string& path` | Get file size |
-| `GetTimeStamp` | `std::string` | `void` | Get timestamp string |
-| `HashString` | `uint64_t` | `const std::string& str` | Hash string |
+### `class Logger`
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `info` | `static void` | `const std::string& msg` |
+| `error` | `static void` | `const std::string& msg` |
