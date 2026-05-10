@@ -14,13 +14,14 @@
 11. Skeletal Animation (Joints, Clips, Skinning)
 12. AI System (A* Pathfinding, NavMesh, Steering)
 13. UI System (Buttons, Labels, Sliders, Input, Panels, Images, Checkboxes, Dropdowns)
+14. Post-Processing Stack (Bloom, SSAO, Tone Mapping, FXAA, Color Grading, Vignette, Chromatic Aberration, Motion Blur, Depth of Field)
 
 ## 🔴 In Progress - Critical Gaps
 
 ### 1. Advanced Rendering
 - [x] PBR (Physically Based Rendering) ✅
 - [x] Shadow Mapping ✅
-- [ ] Post-Processing (Bloom, SSAO, Tone Mapping)
+- [x] Post-Processing Stack ✅
 - [ ] HDR/Deferred Rendering
 - [ ] Level of Detail (LOD)
 
@@ -83,7 +84,7 @@
 3. **Skeletal Animation** ✅ - Characters/movement
 4. **Pathfinding** ✅ - NPC movement
 5. **UI System** ✅ - Game interface
-6. **Post-Processing** - Visual polish
+6. **Post-Processing** ✅ - Visual polish
 7. **Terrain** - Open worlds
 8. **Networking** - Multiplayer
 9. **Animation Blending** - Smooth transitions
