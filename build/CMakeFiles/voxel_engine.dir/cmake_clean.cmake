@@ -37,6 +37,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/core/time_system.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/core/time_system.cpp.o.d"
+  "CMakeFiles/voxel_engine.dir/src/debug/debug_system.cpp.o"
+  "CMakeFiles/voxel_engine.dir/src/debug/debug_system.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/entity/components.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/entity/components.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/entity/entity.cpp.o"

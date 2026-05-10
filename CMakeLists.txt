@@ -126,6 +126,7 @@ set(CORE_SOURCES
     src/voxel/biome.cpp
     src/voxel/world_generator.cpp
     src/voxel/block_mesh_builder.cpp
+    src/debug/debug_system.cpp
     src/physics/collision.cpp
     src/physics/rigidbody.cpp
     src/core/logger.cpp

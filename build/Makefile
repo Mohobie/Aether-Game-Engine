@@ -768,6 +768,39 @@ src/core/time_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/time_system.cpp.s
 .PHONY : src/core/time_system.cpp.s
 
+src/debug/debug_system.o: src/debug/debug_system.cpp.o
+.PHONY : src/debug/debug_system.o
+
+# target to build an object file
+src/debug/debug_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/debug/debug_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/debug/debug_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/debug/debug_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/debug/debug_system.cpp.o
+.PHONY : src/debug/debug_system.cpp.o
+
+src/debug/debug_system.i: src/debug/debug_system.cpp.i
+.PHONY : src/debug/debug_system.i
+
+# target to preprocess a source file
+src/debug/debug_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/debug/debug_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/debug/debug_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/debug/debug_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/debug/debug_system.cpp.i
+.PHONY : src/debug/debug_system.cpp.i
+
+src/debug/debug_system.s: src/debug/debug_system.cpp.s
+.PHONY : src/debug/debug_system.s
+
+# target to generate assembly for a file
+src/debug/debug_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/debug/debug_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/debug/debug_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/debug/debug_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/debug/debug_system.cpp.s
+.PHONY : src/debug/debug_system.cpp.s
+
 src/entity/components.o: src/entity/components.cpp.o
 .PHONY : src/entity/components.o
 
@@ -2220,6 +2253,9 @@ help:
 	@echo "... src/core/time_system.o"
 	@echo "... src/core/time_system.i"
 	@echo "... src/core/time_system.s"
+	@echo "... src/debug/debug_system.o"
+	@echo "... src/debug/debug_system.i"
+	@echo "... src/debug/debug_system.s"
 	@echo "... src/entity/components.o"
 	@echo "... src/entity/components.i"
 	@echo "... src/entity/components.s"
