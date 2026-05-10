@@ -24,6 +24,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/network/packet.cpp" "CMakeFiles/world_test.dir/src/network/packet.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/network/packet.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/physics/collision.cpp" "CMakeFiles/world_test.dir/src/physics/collision.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/physics/collision.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/physics/rigidbody.cpp" "CMakeFiles/world_test.dir/src/physics/rigidbody.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/physics/rigidbody.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/rendering/framebuffer_renderer.cpp" "CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/biome.cpp" "CMakeFiles/world_test.dir/src/voxel/biome.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/voxel/biome.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/block.cpp" "CMakeFiles/world_test.dir/src/voxel/block.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/voxel/block.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/block_registry.cpp" "CMakeFiles/world_test.dir/src/voxel/block_registry.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/voxel/block_registry.cpp.o.d"

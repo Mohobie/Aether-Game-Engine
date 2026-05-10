@@ -31,6 +31,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/platform/input.cpp" "CMakeFiles/voxel_engine.dir/src/platform/input.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/platform/input.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/platform/window.cpp" "CMakeFiles/voxel_engine.dir/src/platform/window.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/platform/window.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/rendering/camera.cpp" "CMakeFiles/voxel_engine.dir/src/rendering/camera.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/rendering/camera.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/rendering/framebuffer_renderer.cpp" "CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/rendering/lighting.cpp" "CMakeFiles/voxel_engine.dir/src/rendering/lighting.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/rendering/lighting.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/rendering/mesh.cpp" "CMakeFiles/voxel_engine.dir/src/rendering/mesh.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/rendering/mesh.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/rendering/renderer.cpp" "CMakeFiles/voxel_engine.dir/src/rendering/renderer.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/rendering/renderer.cpp.o.d"

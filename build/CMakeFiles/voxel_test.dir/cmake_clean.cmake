@@ -31,6 +31,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_test.dir/src/physics/collision.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/physics/rigidbody.cpp.o"
   "CMakeFiles/voxel_test.dir/src/physics/rigidbody.cpp.o.d"
+  "CMakeFiles/voxel_test.dir/src/rendering/framebuffer_renderer.cpp.o"
+  "CMakeFiles/voxel_test.dir/src/rendering/framebuffer_renderer.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/test_main.cpp.o"
   "CMakeFiles/voxel_test.dir/src/test_main.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/voxel/biome.cpp.o"

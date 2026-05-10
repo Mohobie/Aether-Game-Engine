@@ -24,6 +24,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/network/packet.cpp" "CMakeFiles/save_test.dir/src/network/packet.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/network/packet.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/physics/collision.cpp" "CMakeFiles/save_test.dir/src/physics/collision.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/physics/collision.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/physics/rigidbody.cpp" "CMakeFiles/save_test.dir/src/physics/rigidbody.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/physics/rigidbody.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/rendering/framebuffer_renderer.cpp" "CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/save_test.cpp" "CMakeFiles/save_test.dir/src/save_test.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/save_test.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/biome.cpp" "CMakeFiles/save_test.dir/src/voxel/biome.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/voxel/biome.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/block.cpp" "CMakeFiles/save_test.dir/src/voxel/block.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/voxel/block.cpp.o.d"

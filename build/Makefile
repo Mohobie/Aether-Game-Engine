@@ -864,6 +864,39 @@ src/rendering/camera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/camera.cpp.s
 .PHONY : src/rendering/camera.cpp.s
 
+src/rendering/framebuffer_renderer.o: src/rendering/framebuffer_renderer.cpp.o
+.PHONY : src/rendering/framebuffer_renderer.o
+
+# target to build an object file
+src/rendering/framebuffer_renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/framebuffer_renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.o
+.PHONY : src/rendering/framebuffer_renderer.cpp.o
+
+src/rendering/framebuffer_renderer.i: src/rendering/framebuffer_renderer.cpp.i
+.PHONY : src/rendering/framebuffer_renderer.i
+
+# target to preprocess a source file
+src/rendering/framebuffer_renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/framebuffer_renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.i
+.PHONY : src/rendering/framebuffer_renderer.cpp.i
+
+src/rendering/framebuffer_renderer.s: src/rendering/framebuffer_renderer.cpp.s
+.PHONY : src/rendering/framebuffer_renderer.s
+
+# target to generate assembly for a file
+src/rendering/framebuffer_renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/framebuffer_renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.s
+.PHONY : src/rendering/framebuffer_renderer.cpp.s
+
 src/rendering/lighting.o: src/rendering/lighting.cpp.o
 .PHONY : src/rendering/lighting.o
 
@@ -1527,6 +1560,9 @@ help:
 	@echo "... src/rendering/camera.o"
 	@echo "... src/rendering/camera.i"
 	@echo "... src/rendering/camera.s"
+	@echo "... src/rendering/framebuffer_renderer.o"
+	@echo "... src/rendering/framebuffer_renderer.i"
+	@echo "... src/rendering/framebuffer_renderer.s"
 	@echo "... src/rendering/lighting.o"
 	@echo "... src/rendering/lighting.i"
 	@echo "... src/rendering/lighting.s"

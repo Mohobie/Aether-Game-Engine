@@ -46,6 +46,7 @@ set(CORE_SOURCES
     src/network/packet.cpp
     src/audio/audio_engine.cpp
     src/audio/sound_manager.cpp
+    src/rendering/framebuffer_renderer.cpp
 )
 
 # Test executable (no OpenGL/GLFW required)

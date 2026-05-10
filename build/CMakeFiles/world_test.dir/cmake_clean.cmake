@@ -31,6 +31,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/world_test.dir/src/physics/collision.cpp.o.d"
   "CMakeFiles/world_test.dir/src/physics/rigidbody.cpp.o"
   "CMakeFiles/world_test.dir/src/physics/rigidbody.cpp.o.d"
+  "CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o"
+  "CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o.d"
   "CMakeFiles/world_test.dir/src/voxel/biome.cpp.o"
   "CMakeFiles/world_test.dir/src/voxel/biome.cpp.o.d"
   "CMakeFiles/world_test.dir/src/voxel/block.cpp.o"

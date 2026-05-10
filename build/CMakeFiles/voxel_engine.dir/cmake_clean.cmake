@@ -45,6 +45,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_engine.dir/src/platform/window.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/rendering/camera.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/rendering/camera.cpp.o.d"
+  "CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.o"
+  "CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/rendering/lighting.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/rendering/lighting.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/rendering/mesh.cpp.o"
