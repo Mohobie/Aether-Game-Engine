@@ -9,8 +9,10 @@
 6. Physics System (Rigidbody, Collision, Raycast)
 7. Shader System with Lighting
 8. Audio System (3D Positioning)
-9. **Shadow Mapping** (Cascaded Shadow Maps)
-10. **PBR Materials** (Cook-Torrance BRDF, IBL)
+9. Shadow Mapping (Cascaded Shadow Maps)
+10. PBR Materials (Cook-Torrance BRDF, IBL)
+11. Skeletal Animation (Joints, Clips, Skinning)
+12. AI System (A* Pathfinding, NavMesh, Steering)
 
 ## 🔴 In Progress - Critical Gaps
 
@@ -22,7 +24,7 @@
 - [ ] Level of Detail (LOD)
 
 ### 2. Animation System
-- [ ] Skeletal Animation
+- [x] Skeletal Animation ✅
 - [ ] Animation Blending/State Machines
 - [ ] Inverse Kinematics (IK)
 
@@ -32,7 +34,7 @@
 - [ ] Vehicle Physics
 
 ### 4. AI System
-- [ ] Pathfinding (A*, NavMesh)
+- [x] Pathfinding (A*, NavMesh) ✅
 - [ ] Behavior Trees
 - [ ] Perception/Senses
 
@@ -76,8 +78,8 @@
 
 1. **Shadow Mapping** ✅ - Biggest visual impact
 2. **PBR Materials** ✅ - Modern look
-3. **Skeletal Animation** - Characters/movement
-4. **Pathfinding** - NPC movement
+3. **Skeletal Animation** ✅ - Characters/movement
+4. **Pathfinding** ✅ - NPC movement
 5. **UI System** - Game interface
 6. **Post-Processing** - Visual polish
 7. **Terrain** - Open worlds
