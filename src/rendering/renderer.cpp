@@ -1,5 +1,4 @@
 #include "rendering/renderer.h"
-#include "rendering/framebuffer_renderer.h"
 #include "rendering/shader.h"
 #include "rendering/camera.h"
 #include "rendering/mesh.h"
@@ -12,6 +11,9 @@
 #include <cstring>
 #include <cmath>
 #include <algorithm>
+
+// Software renderer - no OpenGL required!
+// Renders voxels to ASCII/console output
 
 namespace vge {
 
@@ -61,7 +63,7 @@ struct Framebuffer {
     }
 };
 
-Renderer::Renderer() : initialized(false), width(80), height(40), fb_renderer(nullptr) {}
+Renderer::Renderer() : initialized(false), width(80), height(40) {}
 
 Renderer::~Renderer() {
     if (initialized) Shutdown();
@@ -69,42 +71,21 @@ Renderer::~Renderer() {
 
 bool Renderer::Initialize() {
     std::cout << "[Renderer] Software renderer initialized (ASCII mode)\n";
-    
-    // Try to initialize framebuffer renderer
-    fb_renderer = new FramebufferRenderer();
-    if (fb_renderer->Initialize()) {
-        std::cout << "[Renderer] Framebuffer mode available!\n";
-    } else {
-        std::cout << "[Renderer] Falling back to ASCII mode\n";
-        delete fb_renderer;
-        fb_renderer = nullptr;
-    }
-    
     initialized = true;
     return true;
 }
 
 void Renderer::Shutdown() {
-    if (fb_renderer) {
-        fb_renderer->Shutdown();
-        delete fb_renderer;
-        fb_renderer = nullptr;
-    }
     initialized = false;
 }
 
 void Renderer::BeginFrame() {
+    // Clear screen (ANSI escape)
     std::cout << "\033[2J\033[H";
-    
-    if (fb_renderer && fb_renderer->IsInitialized()) {
-        fb_renderer->Clear(0x000000);
-    }
 }
 
 void Renderer::EndFrame() {
-    if (fb_renderer && fb_renderer->IsInitialized()) {
-        fb_renderer->SwapBuffers();
-    }
+    // Frame complete
 }
 
 void Renderer::SetClearColor(float r, float g, float b, float a) {
@@ -116,13 +97,17 @@ void Renderer::SetViewport(int x, int y, int w, int h) {
     height = h;
 }
 
+// Simple projection: world -> screen
 Vec2 Project(const Vec3& worldPos, const Camera& camera, int screenW, int screenH) {
     Vec3 relative = worldPos - camera.GetPosition();
     
+    // Simple perspective projection
     float fov = 70.0f * 3.14159f / 180.0f;
     float tanHalfFov = std::tan(fov / 2.0f);
+    
     float aspect = (float)screenW / (float)screenH;
     
+    // Rotate by camera rotation (simplified - just yaw)
     float yaw = camera.GetRotation().x * 3.14159f / 180.0f;
     float cosY = std::cos(yaw);
     float sinY = std::sin(yaw);
@@ -131,7 +116,8 @@ Vec2 Project(const Vec3& worldPos, const Camera& camera, int screenW, int screen
     float rz = relative.x * sinY + relative.z * cosY;
     float ry = relative.y;
     
-    if (rz <= 0.1f) rz = 0.1f;
+    // Project
+    if (rz <= 0.1f) rz = 0.1f; // Prevent division by zero
     
     float screenX = (rx / (rz * tanHalfFov * aspect)) * screenW / 2 + screenW / 2;
     float screenY = (ry / (rz * tanHalfFov)) * screenH / 2 + screenH / 2;
@@ -154,28 +140,23 @@ char GetBlockChar(BlockType type) {
 }
 
 void Renderer::RenderWorld(const World& world, const Camera& camera) {
-    if (fb_renderer && fb_renderer->IsInitialized()) {
-        RenderWorldFB(world, camera);
-    } else {
-        RenderWorldASCII(world, camera);
-    }
-}
-
-void Renderer::RenderWorldASCII(const World& world, const Camera& camera) {
     Framebuffer fb;
     
+    // Render visible chunks
     for (int cx = -2; cx <= 2; cx++) {
         for (int cy = -1; cy <= 1; cy++) {
             for (int cz = -2; cz <= 2; cz++) {
                 Chunk* chunk = const_cast<World&>(world).GetChunk(cx, cy, cz);
                 if (!chunk || !chunk->loaded) continue;
                 
+                // Render each visible block in chunk
                 for (int x = 0; x < CHUNK_SIZE; x += 2) {
                     for (int y = 0; y < CHUNK_SIZE; y += 2) {
                         for (int z = 0; z < CHUNK_SIZE; z += 2) {
                             BlockType block = chunk->GetBlock(x, y, z);
                             if (block == BlockType::Air) continue;
                             
+                            // Optimization: only draw if at least one face is exposed to air
                             bool visible = false;
                             if (x == 0 || chunk->GetBlock(x-1, y, z) == BlockType::Air) visible = true;
                             if (x == CHUNK_SIZE-1 || chunk->GetBlock(x+1, y, z) == BlockType::Air) visible = true;
@@ -184,16 +165,22 @@ void Renderer::RenderWorldASCII(const World& world, const Camera& camera) {
                             if (z == 0 || chunk->GetBlock(x, y, z-1) == BlockType::Air) visible = true;
                             if (z == CHUNK_SIZE-1 || chunk->GetBlock(x, y, z+1) == BlockType::Air) visible = true;
                             
-                            if (!visible) continue;
+                            if (!visible) continue; // Skip hidden blocks
                             
+                            // World position
                             Vec3 worldPos(
                                 cx * CHUNK_SIZE + x,
                                 cy * CHUNK_SIZE + y,
                                 cz * CHUNK_SIZE + z
                             );
                             
+                            // Project to screen
                             Vec2 screenPos = Project(worldPos, camera, fb.WIDTH, fb.HEIGHT);
+                            
+                            // Get depth (distance from camera)
                             float depth = (worldPos - camera.GetPosition()).length();
+                            
+                            // Draw
                             fb.SetPixel((int)screenPos.x, (int)screenPos.y, depth, GetBlockChar(block));
                         }
                     }
@@ -203,57 +190,6 @@ void Renderer::RenderWorldASCII(const World& world, const Camera& camera) {
     }
     
     fb.Draw();
-}
-
-void Renderer::RenderWorldFB(const World& world, const Camera& camera) {
-    int screenW = fb_renderer->GetWidth();
-    int screenH = fb_renderer->GetHeight();
-    
-    for (int cx = -2; cx <= 2; cx++) {
-        for (int cy = -1; cy <= 1; cy++) {
-            for (int cz = -2; cz <= 2; cz++) {
-                Chunk* chunk = const_cast<World&>(world).GetChunk(cx, cy, cz);
-                if (!chunk || !chunk->loaded) continue;
-                
-                for (int x = 0; x < CHUNK_SIZE; x += 4) {
-                    for (int y = 0; y < CHUNK_SIZE; y += 4) {
-                        for (int z = 0; z < CHUNK_SIZE; z += 4) {
-                            BlockType block = chunk->GetBlock(x, y, z);
-                            if (block == BlockType::Air) continue;
-                            
-                            Vec3 worldPos(
-                                cx * CHUNK_SIZE + x,
-                                cy * CHUNK_SIZE + y,
-                                cz * CHUNK_SIZE + z
-                            );
-                            
-                            Vec2 screenPos = Project(worldPos, camera, screenW, screenH);
-                            
-                            if (screenPos.x >= 0 && screenPos.x < screenW && 
-                                screenPos.y >= 0 && screenPos.y < screenH) {
-                                uint32_t color = GetBlockColor(block);
-                                fb_renderer->SetPixel((int)screenPos.x, (int)screenPos.y, color);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-uint32_t Renderer::GetBlockColor(BlockType type) {
-    switch (type) {
-        case BlockType::Grass: return RGB(34, 139, 34);
-        case BlockType::Dirt: return RGB(139, 69, 19);
-        case BlockType::Stone: return RGB(128, 128, 128);
-        case BlockType::Wood: return RGB(101, 67, 33);
-        case BlockType::Leaves: return RGB(0, 100, 0);
-        case BlockType::Sand: return RGB(194, 178, 128);
-        case BlockType::Water: return RGB(30, 144, 255);
-        case BlockType::Bedrock: return RGB(50, 50, 50);
-        default: return RGB(255, 0, 255);
-    }
 }
 
 void Renderer::RenderMesh(const Mesh& mesh, const Shader& shader, const Camera& camera) {

@@ -764,6 +764,9 @@ voxel_engine: CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.o
 voxel_engine: CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.o
 voxel_engine: CMakeFiles/voxel_engine.dir/src/main.cpp.o
 voxel_engine: CMakeFiles/voxel_engine.dir/build.make
+voxel_engine: /usr/lib/x86_64-linux-gnu/liblua5.4.so
+voxel_engine: /usr/lib/x86_64-linux-gnu/libGLX.so
+voxel_engine: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 voxel_engine: CMakeFiles/voxel_engine.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Linking CXX executable voxel_engine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/voxel_engine.dir/link.txt --verbose=$(VERBOSE)
