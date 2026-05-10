@@ -55,6 +55,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_test.dir/src/rendering/mesh.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/rendering/pbr_material.cpp.o"
   "CMakeFiles/voxel_test.dir/src/rendering/pbr_material.cpp.o.d"
+  "CMakeFiles/voxel_test.dir/src/rendering/post_processing.cpp.o"
+  "CMakeFiles/voxel_test.dir/src/rendering/post_processing.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/rendering/shader.cpp.o"
   "CMakeFiles/voxel_test.dir/src/rendering/shader.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/rendering/shadow_system.cpp.o"

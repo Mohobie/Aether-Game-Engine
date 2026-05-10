@@ -1284,6 +1284,39 @@ src/rendering/pbr_material.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/pbr_material.cpp.s
 .PHONY : src/rendering/pbr_material.cpp.s
 
+src/rendering/post_processing.o: src/rendering/post_processing.cpp.o
+.PHONY : src/rendering/post_processing.o
+
+# target to build an object file
+src/rendering/post_processing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/post_processing.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/post_processing.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/post_processing.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/post_processing.cpp.o
+.PHONY : src/rendering/post_processing.cpp.o
+
+src/rendering/post_processing.i: src/rendering/post_processing.cpp.i
+.PHONY : src/rendering/post_processing.i
+
+# target to preprocess a source file
+src/rendering/post_processing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/post_processing.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/post_processing.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/post_processing.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/post_processing.cpp.i
+.PHONY : src/rendering/post_processing.cpp.i
+
+src/rendering/post_processing.s: src/rendering/post_processing.cpp.s
+.PHONY : src/rendering/post_processing.s
+
+# target to generate assembly for a file
+src/rendering/post_processing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/post_processing.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/post_processing.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/post_processing.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/post_processing.cpp.s
+.PHONY : src/rendering/post_processing.cpp.s
+
 src/rendering/renderer.o: src/rendering/renderer.cpp.o
 .PHONY : src/rendering/renderer.o
 
@@ -2064,6 +2097,9 @@ help:
 	@echo "... src/rendering/pbr_material.o"
 	@echo "... src/rendering/pbr_material.i"
 	@echo "... src/rendering/pbr_material.s"
+	@echo "... src/rendering/post_processing.o"
+	@echo "... src/rendering/post_processing.i"
+	@echo "... src/rendering/post_processing.s"
 	@echo "... src/rendering/renderer.o"
 	@echo "... src/rendering/renderer.i"
 	@echo "... src/rendering/renderer.s"

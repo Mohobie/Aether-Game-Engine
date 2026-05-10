@@ -71,6 +71,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_engine.dir/src/rendering/mesh.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/rendering/pbr_material.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/rendering/pbr_material.cpp.o.d"
+  "CMakeFiles/voxel_engine.dir/src/rendering/post_processing.cpp.o"
+  "CMakeFiles/voxel_engine.dir/src/rendering/post_processing.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/rendering/renderer.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/rendering/renderer.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/rendering/shader.cpp.o"

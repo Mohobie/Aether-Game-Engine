@@ -1,267 +1,283 @@
-#include <iostream>
-#include "math/vec3.h"
-#include "math/mat4.h"
-#include "voxel/block_types.h"
-#include "voxel/block_registry.h"
-#include "voxel/chunk.h"
-#include "voxel/world.h"
-#include "voxel/block_mesh_builder.h"
-#include "rendering/mesh.h"
-#include "physics/collision.h"
-#include "physics/physics_system.h"
-#include "entity/entity.h"
-#include "entity/components.h"
-#include "animation/animation.h"
+#include "rendering/post_processing.h"
+#include "ui/ui_system.h"
 #include "ai/ai_system.h"
+#include "animation/animation.h"
+#include <iostream>
 
 using namespace vge;
 
-int main() {
-    std::cout << "=== Aether Voxel Engine Tests ===" << std::endl;
+void TestPostProcessing() {
+    std::cout << "\n=== Post-Processing Stack Test ===" << std::endl;
+    
+    PostProcessStack postProcess;
+    postProcess.Initialize(1920, 1080);
+    
+    // Configure effects
+    postProcess.GetBloom()->SetIntensity(0.6f);
+    postProcess.GetBloom()->SetThreshold(0.7f);
+    
+    postProcess.GetSSAO()->SetRadius(0.5f);
+    postProcess.GetSSAO()->SetBias(0.025f);
+    
+    postProcess.GetToneMapping()->SetExposure(1.2f);
+    postProcess.GetToneMapping()->SetAlgorithm(ToneMappingEffect::Algorithm::ACES);
+    
+    postProcess.GetVignette()->SetIntensity(0.3f);
+    postProcess.GetVignette()->SetSmoothness(0.8f);
+    
+    postProcess.GetColorGrading()->SetContrast(1.1f);
+    postProcess.GetColorGrading()->SetSaturation(1.2f);
+    
+    // Print settings
+    postProcess.PrintSettings();
+    
+    // Simulate frame
+    postProcess.BeginScene();
+    std::cout << "[Scene] Rendering 3D scene to HDR buffer..." << std::endl;
+    postProcess.EndScene();
+    
+    std::cout << "Post-processing stack test passed!" << std::endl;
+}
 
-    // Load default blocks
-    std::string blockPath = "/home/mohobie/projects/aether-game-engine/assets/blocks/default_blocks.json";
-    if (!BlockRegistry::GetInstance().LoadFromFile(blockPath)) {
-        std::cerr << "Warning: Could not load block definitions" << std::endl;
-    }
+void TestUI() {
+    std::cout << "\n=== UI System Test ===" << std::endl;
+    
+    UIManager ui;
+    ui.SetScreenSize(Vec2(1920, 1080));
+    
+    // Create main menu panel
+    auto* panel = ui.CreatePanel("MainMenu");
+    panel->SetPosition(Vec2(100, 100));
+    panel->SetSize(Vec2(400, 500));
+    panel->SetAutoLayout(true);
+    panel->SetPadding(20);
+    panel->SetSpacing(10);
+    
+    // Add title
+    auto* title = ui.CreateLabel("Title", "Aether Voxel Engine");
+    title->SetFontSize(28);
+    title->SetForegroundColor(Vec3(0.2f, 0.8f, 1.0f));
+    panel->AddChild(std::unique_ptr<UIElement>(title));
+    
+    // Add buttons
+    auto* playBtn = ui.CreateButton("PlayBtn", "Play Game");
+    playBtn->SetSize(Vec2(200, 40));
+    playBtn->SetBackgroundColor(Vec3(0.2f, 0.6f, 0.2f));
+    playBtn->SetOnClick([]() {
+        std::cout << "[UI] Play button clicked!" << std::endl;
+    });
+    panel->AddChild(std::unique_ptr<UIElement>(playBtn));
+    
+    auto* settingsBtn = ui.CreateButton("SettingsBtn", "Settings");
+    settingsBtn->SetSize(Vec2(200, 40));
+    panel->AddChild(std::unique_ptr<UIElement>(settingsBtn));
+    
+    auto* quitBtn = ui.CreateButton("QuitBtn", "Quit");
+    quitBtn->SetSize(Vec2(200, 40));
+    quitBtn->SetBackgroundColor(Vec3(0.6f, 0.2f, 0.2f));
+    panel->AddChild(std::unique_ptr<UIElement>(quitBtn));
+    
+    // Add slider
+    auto* volumeSlider = ui.CreateSlider("Volume", 0.0f, 1.0f);
+    volumeSlider->SetValue(0.7f);
+    volumeSlider->SetSize(Vec2(200, 30));
+    volumeSlider->SetOnValueChanged([](float value) {
+        std::cout << "[UI] Volume changed to: " << (value * 100) << "%" << std::endl;
+    });
+    panel->AddChild(std::unique_ptr<UIElement>(volumeSlider));
+    
+    // Add checkbox
+    auto* fullscreenCheck = ui.CreateCheckbox("Fullscreen", "Fullscreen Mode");
+    fullscreenCheck->SetChecked(true);
+    panel->AddChild(std::unique_ptr<UIElement>(fullscreenCheck));
+    
+    // Add dropdown
+    auto* resolutionDropdown = ui.CreateDropdown("Resolution");
+    resolutionDropdown->AddOption("1920x1080");
+    resolutionDropdown->AddOption("1280x720");
+    resolutionDropdown->AddOption("2560x1440");
+    resolutionDropdown->SetSelectedIndex(0);
+    panel->AddChild(std::unique_ptr<UIElement>(resolutionDropdown));
+    
+    // Layout and render
+    ui.Layout();
+    ui.Render();
+    
+    // Simulate mouse interaction
+    std::cout << "\n[Input] Simulating mouse click on Play button..." << std::endl;
+    ui.HandleMouseMove(Vec2(210, 200)); // Hover over play button
+    ui.HandleMouseClick(Vec2(210, 200), true);  // Press
+    ui.HandleMouseClick(Vec2(210, 200), false); // Release
+    
+    // Print hierarchy
+    std::cout << "\n=== UI Hierarchy ===" << std::endl;
+    panel->PrintHierarchy();
+    
+    std::cout << "UI system test passed!" << std::endl;
+}
 
-    // Test Vec3
-    Vec3 a(1, 2, 3);
-    Vec3 b(4, 5, 6);
-    Vec3 c = a + b;
-    std::cout << "Vec3 add: (" << c.x << ", " << c.y << ", " << c.z << ")" << std::endl;
-
-    // Test Block
-    BlockTypeID stoneId = BlockRegistry::GetInstance().GetBlockId("stone");
-    Block block(stoneId);
-    std::cout << "Block: " << block.GetName() << " (solid: " << block.IsSolid() << ")" << std::endl;
-
-    // Test Chunk
-    Chunk chunk(0, 0, 0);
-    chunk.SetBlock(1, 1, 1, stoneId);
-    chunk.SetBlock(2, 1, 1, stoneId);
-    chunk.SetBlock(1, 2, 1, stoneId);
-    std::cout << "Chunk block at (1,1,1): " << chunk.GetBlock(1, 1, 1) << std::endl;
-
-    // Test World
-    World world;
-    world.SetBlock(5, 5, 5, "dirt");
-    std::cout << "World block at (5,5,5): " << world.GetBlock(5, 5, 5) << std::endl;
-
-    // Test AABB
-    AABB box1(Vec3(0, 0, 0), Vec3(1, 1, 1));
-    AABB box2(Vec3(0.5, 0.5, 0.5), Vec3(1, 1, 1));
-    std::cout << "AABB intersect: " << box1.Intersects(box2) << std::endl;
-
-    // Test Mesh Builder
-    std::cout << "\n=== Mesh Builder Test ===" << std::endl;
-    Mesh mesh = BlockMeshBuilder::BuildChunkMesh(chunk);
-    std::cout << "Chunk mesh vertices: " << mesh.GetVertexCount() << std::endl;
-    std::cout << "Chunk mesh indices: " << mesh.GetIndexCount() << std::endl;
-
-    // Test with more blocks
-    Chunk chunk2(0, 0, 0);
-    for (int x = 0; x < 4; ++x) {
-        for (int y = 0; y < 4; ++y) {
-            for (int z = 0; z < 4; ++z) {
-                if (x == 0 || x == 3 || y == 0 || y == 3 || z == 0 || z == 3) {
-                    chunk2.SetBlock(x, y, z, stoneId);
-                }
-            }
-        }
-    }
-
-    Mesh mesh2 = BlockMeshBuilder::BuildChunkMesh(chunk2);
-    std::cout << "Hollow cube mesh vertices: " << mesh2.GetVertexCount() << std::endl;
-    std::cout << "Hollow cube mesh indices: " << mesh2.GetIndexCount() << std::endl;
-
-    // Test Entity Component System
-    std::cout << "\n=== Entity Component System Test ===" << std::endl;
-    EntityManager entityManager;
-
-    // Create player entity
-    Entity* player = entityManager.CreateEntity("Player");
-    player->AddComponent<TransformComponent>(Vec3(0, 64, 0));
-    player->AddComponent<HealthComponent>(100.0f);
-    player->AddComponent<MovementComponent>(5.0f, 0.85f);
-
-    // Create enemy entity
-    Entity* enemy = entityManager.CreateEntity("Enemy");
-    enemy->AddComponent<TransformComponent>(Vec3(10, 64, 10));
-    enemy->AddComponent<HealthComponent>(50.0f);
-
-    // Test components
-    auto* playerTransform = player->GetComponent<TransformComponent>();
-    auto* playerHealth = player->GetComponent<HealthComponent>();
-    auto* playerMovement = player->GetComponent<MovementComponent>();
-
-    std::cout << "Player position: (" << playerTransform->position.x << ", "
-              << playerTransform->position.y << ", " << playerTransform->position.z << ")" << std::endl;
-    std::cout << "Player health: " << playerHealth->currentHealth << "/" << playerHealth->maxHealth << std::endl;
-
-    // Test damage
-    playerHealth->TakeDamage(25);
-    std::cout << "After damage - Player health: " << playerHealth->currentHealth << std::endl;
-
-    // Test movement
-    playerMovement->AddForce(Vec3(1, 0, 0));
-    entityManager.Update(0.016f); // Simulate one frame at 60fps
-    std::cout << "After movement - Player position: (" << playerTransform->position.x << ", "
-              << playerTransform->position.y << ", " << playerTransform->position.z << ")" << std::endl;
-
-    // Test entity queries
-    auto entitiesWithHealth = entityManager.GetEntitiesWithComponent<HealthComponent>();
-    std::cout << "Entities with health: " << entitiesWithHealth.size() << std::endl;
-
-    // Test script component
-    Entity* scriptEntity = entityManager.CreateEntity("Scripted");
-    auto* script = scriptEntity->AddComponent<ScriptComponent>();
-    float counter = 0;
-    script->updateFunc = [&counter](float dt) { counter += dt; };
-    entityManager.Update(0.1f);
-    std::cout << "Script counter after 0.1s: " << counter << std::endl;
-
-    // Test Physics System
-    std::cout << "\n=== Physics System Test ===" << std::endl;
-    PhysicsWorld physics;
-
-    // Create ground
-    BoxCollider* ground = physics.CreateBoxCollider(Vec3(0, -1, 0), Vec3(50, 1, 50));
-    ground->isStatic = true;
-
-    // Create dynamic body
-    Rigidbody* body = physics.CreateBody(1.0f);
-    body->SetPosition(Vec3(0, 10, 0));
-    BoxCollider* bodyCollider = physics.CreateBoxCollider(Vec3(0, 10, 0), Vec3(0.5f, 0.5f, 0.5f));
-    body->collider = bodyCollider;
-
-    std::cout << "Initial body position: (" << body->position.x << ", "
-              << body->position.y << ", " << body->position.z << ")" << std::endl;
-
-    // Simulate a few seconds
-    for (int i = 0; i < 60; ++i) {
-        physics.Step(0.016f);
-        if (i % 15 == 0) {
-            std::cout << "Frame " << i << " - Position: (" << body->position.x << ", "
-                      << body->position.y << ", " << body->position.z << ")" << std::endl;
-        }
-    }
-
-    std::cout << "Final body position: (" << body->position.x << ", "
-              << body->position.y << ", " << body->position.z << ")" << std::endl;
-    std::cout << "Body grounded: " << body->isGrounded << std::endl;
-
-    // Test collision detection
-    BoxCollider* testBox1 = physics.CreateBoxCollider(Vec3(0, 0, 0), Vec3(1, 1, 1));
-    BoxCollider* testBox2 = physics.CreateBoxCollider(Vec3(1.5f, 0, 0), Vec3(1, 1, 1));
-
-    Vec3 normal;
-    float penetration;
-    bool colliding = testBox1->TestCollision(testBox2, normal, penetration);
-    std::cout << "\nBox collision test: " << (colliding ? "COLLIDING" : "NOT COLLIDING") << std::endl;
-    if (colliding) {
-        std::cout << "Penetration: " << penetration << std::endl;
-        std::cout << "Normal: (" << normal.x << ", " << normal.y << ", " << normal.z << ")" << std::endl;
-    }
-
-    // Test raycast
-    Vec3 hitPoint, hitNormal;
-    bool rayHit = physics.Raycast(Vec3(0, 5, 0), Vec3(0, -1, 0), 10.0f, hitPoint, hitNormal);
-    std::cout << "\nRaycast test: " << (rayHit ? "HIT" : "MISS") << std::endl;
-    if (rayHit) {
-        std::cout << "Hit point: (" << hitPoint.x << ", " << hitPoint.y << ", " << hitPoint.z << ")" << std::endl;
-        std::cout << "Hit normal: (" << hitNormal.x << ", " << hitNormal.y << ", " << hitNormal.z << ")" << std::endl;
-    }
-
-    // Test Animation System
+void TestAnimation() {
     std::cout << "\n=== Animation System Test ===" << std::endl;
-    AnimationSystem animSystem;
-
+    
     // Create skeleton
-    Skeleton* skeleton = animSystem.CreateSkeleton("TestSkeleton");
-    int root = skeleton->AddJoint("Root", -1);
-    int spine = skeleton->AddJoint("Spine", root);
-    int head = skeleton->AddJoint("Head", spine);
-    int armL = skeleton->AddJoint("ArmL", spine);
-    int armR = skeleton->AddJoint("ArmR", spine);
-
-    skeleton->PrintHierarchy();
-
-    // Create animation clip
-    AnimationClip* clip = animSystem.CreateClip("Wave");
-
-    // Create track for right arm
+    Skeleton skeleton;
+    int root = skeleton.AddJoint("Root", -1);
+    int spine = skeleton.AddJoint("Spine", root);
+    int head = skeleton.AddJoint("Head", spine);
+    int armL = skeleton.AddJoint("ArmL", spine);
+    int armR = skeleton.AddJoint("ArmR", spine);
+    int legL = skeleton.AddJoint("LegL", root);
+    int legR = skeleton.AddJoint("LegR", root);
+    
+    std::cout << "Created skeleton with " << skeleton.GetJointCount() << " joints" << std::endl;
+    skeleton.PrintHierarchy();
+    
+    // Create walk animation
+    AnimationClip walkClip("walk");
+    walkClip.SetDuration(1.0f);
+    
+    
+    // Create walk animation tracks
+    AnimationTrack legLTrack;
+    legLTrack.jointIndex = legL;
+    Keyframe k1; k1.time = 0.0f; k1.position = Vec3(0, 0, 0); k1.rotation = Vec3(0, 0, 30); k1.scale = Vec3(1, 1, 1);
+    Keyframe k2; k2.time = 0.5f; k2.position = Vec3(0, 0, 0); k2.rotation = Vec3(0, 0, -30); k2.scale = Vec3(1, 1, 1);
+    Keyframe k3; k3.time = 1.0f; k3.position = Vec3(0, 0, 0); k3.rotation = Vec3(0, 0, 30); k3.scale = Vec3(1, 1, 1);
+    legLTrack.keyframes.push_back(k1);
+    legLTrack.keyframes.push_back(k2);
+    legLTrack.keyframes.push_back(k3);
+    walkClip.AddTrack(legLTrack);
+    
+    AnimationTrack legRTrack;
+    legRTrack.jointIndex = legR;
+    Keyframe k4; k4.time = 0.0f; k4.position = Vec3(0, 0, 0); k4.rotation = Vec3(0, 0, -30); k4.scale = Vec3(1, 1, 1);
+    Keyframe k5; k5.time = 0.5f; k5.position = Vec3(0, 0, 0); k5.rotation = Vec3(0, 0, 30); k5.scale = Vec3(1, 1, 1);
+    Keyframe k6; k6.time = 1.0f; k6.position = Vec3(0, 0, 0); k6.rotation = Vec3(0, 0, -30); k6.scale = Vec3(1, 1, 1);
+    legRTrack.keyframes.push_back(k4);
+    legRTrack.keyframes.push_back(k5);
+    legRTrack.keyframes.push_back(k6);
+    walkClip.AddTrack(legRTrack);
+    
+    AnimationTrack armLTrack;
+    armLTrack.jointIndex = armL;
+    Keyframe k7; k7.time = 0.0f; k7.position = Vec3(0, 0, 0); k7.rotation = Vec3(0, 0, -20); k7.scale = Vec3(1, 1, 1);
+    Keyframe k8; k8.time = 0.5f; k8.position = Vec3(0, 0, 0); k8.rotation = Vec3(0, 0, 20); k8.scale = Vec3(1, 1, 1);
+    Keyframe k9; k9.time = 1.0f; k9.position = Vec3(0, 0, 0); k9.rotation = Vec3(0, 0, -20); k9.scale = Vec3(1, 1, 1);
+    armLTrack.keyframes.push_back(k7);
+    armLTrack.keyframes.push_back(k8);
+    armLTrack.keyframes.push_back(k9);
+    walkClip.AddTrack(armLTrack);
+    
     AnimationTrack armRTrack;
     armRTrack.jointIndex = armR;
-
-    Keyframe k1;
-    k1.time = 0.0f;
-    k1.rotation = Vec3(0, 0, 0);
-    armRTrack.keyframes.push_back(k1);
-
-    Keyframe k2;
-    k2.time = 0.5f;
-    k2.rotation = Vec3(0, 0, 45);
-    armRTrack.keyframes.push_back(k2);
-
-    Keyframe k3;
-    k3.time = 1.0f;
-    k3.rotation = Vec3(0, 0, 0);
-    armRTrack.keyframes.push_back(k3);
-
-    clip->AddTrack(armRTrack);
-
-    // Create animator and play
-    Animator* animator = animSystem.CreateAnimator(skeleton);
-    animator->Play(clip, true, 1.0f);
-
-    // Update animation
-    std::cout << "\nAnimation playback test:" << std::endl;
-    for (int i = 0; i < 5; ++i) {
-        animSystem.Update(0.1f);
-        Joint* armRJoint = skeleton->GetJoint(armR);
-        std::cout << "Frame " << i << " - ArmR rotation: ("
-                  << armRJoint->localRotation.x << ","
-                  << armRJoint->localRotation.y << ","
-                  << armRJoint->localRotation.z << ")" << std::endl;
+    Keyframe k10; k10.time = 0.0f; k10.position = Vec3(0, 0, 0); k10.rotation = Vec3(0, 0, 20); k10.scale = Vec3(1, 1, 1);
+    Keyframe k11; k11.time = 0.5f; k11.position = Vec3(0, 0, 0); k11.rotation = Vec3(0, 0, -20); k11.scale = Vec3(1, 1, 1);
+    Keyframe k12; k12.time = 1.0f; k12.position = Vec3(0, 0, 0); k12.rotation = Vec3(0, 0, 20); k12.scale = Vec3(1, 1, 1);
+    armRTrack.keyframes.push_back(k10);
+    armRTrack.keyframes.push_back(k11);
+    armRTrack.keyframes.push_back(k12);
+    walkClip.AddTrack(armRTrack);
+    
+    std::cout << "Created walk animation with tracks" << std::endl;
+    
+    // Play animation
+    Animator animator(&skeleton);
+    animator.Play(&walkClip, true);
+    
+    // Sample animation
+    float testTimes[] = {0.0f, 0.25f, 0.5f, 0.75f, 1.0f};
+    for (float time : testTimes) {
+        animator.SetTime(time);
+        animator.Update(0.0f); // Force update
+        
+        walkClip.Sample(time, skeleton, true);
+        
+        Vec3 legLRot = skeleton.GetJoint(legL)->localRotation;
+        Vec3 legRRot = skeleton.GetJoint(legR)->localRotation;
+        
+        std::cout << "Time " << time << "s - LegL: (" << legLRot.x << "," << legLRot.y << "," << legLRot.z 
+                  << ") LegR: (" << legRRot.x << "," << legRRot.y << "," << legRRot.z << ")" << std::endl;
     }
+    
+    std::cout << "Animation system test passed!" << std::endl;
+}
 
-    // Test AI System
+void TestAI() {
     std::cout << "\n=== AI System Test ===" << std::endl;
-    AISystem aiSystem;
     
-    // Create navmesh
-    aiSystem.GenerateNavMesh(world, 2.0f);
-    NavigationMesh* navMesh = aiSystem.GetNavMesh();
+    // Create navigation mesh
+    NavigationMesh navMesh;
     
-    if (navMesh) {
-        std::cout << "NavMesh nodes: " << navMesh->GetNodeCount() << std::endl;
+    // Build from simple grid
+    navMesh.GenerateGrid(Vec3(-10, 0, -10), Vec3(10, 0, 10), 2.0f);
+    
+    std::cout << "NavMesh built with " << navMesh.GetNodeCount() << " nodes" << std::endl;
+    
+    // Find path
+    Vec3 start(-8, 0, -8);
+    Vec3 goal(8, 0, 8);
+    
+    std::vector<Vec3> path = navMesh.FindPath(start, goal);
+    std::cout << "Path found with " << path.size() << " waypoints:" << std::endl;
+    for (size_t i = 0; i < path.size(); ++i) {
+        std::cout << "  [" << i << "] (" << path[i].x << ", " << path[i].y << ", " << path[i].z << ")" << std::endl;
+    }
+    
+    // Create agent and follow path
+    AIAgent agent(start, 5.0f);
+    agent.SetPosition(start);
+    agent.SetMaxSpeed(5.0f);
+    // Create path object
+    Path pathObj;
+    pathObj.waypoints = path;
+    agent.SetPath(pathObj);
+    
+    std::cout << "\nAgent following path..." << std::endl;
+    float deltaTime = 0.1f;
+    int steps = 0;
+    while (!agent.IsPathComplete() && steps < 100) {
+        Vec3 pos = agent.GetPosition();
+        agent.Update(deltaTime);
+        steps++;
         
-        // Create agent
-        AIAgent* agent = aiSystem.CreateAgent(Vec3(0, 0, 0), 3.0f);
-        
-        // Set target and find path
-        agent->SetTarget(Vec3(10, 0, 10));
-        
-        // Update agent
-        std::cout << "\nAgent movement test:" << std::endl;
-        for (int i = 0; i < 5; ++i) {
-            aiSystem.Update(0.1f);
-            Vec3 pos = agent->GetPosition();
-            std::cout << "Frame " << i << " - Agent position: ("
-                      << pos.x << ", " << pos.y << ", " << pos.z << ")" << std::endl;
-        }
-        
-        // Test pathfinding
-        std::cout << "\nPathfinding test:" << std::endl;
-        std::vector<Vec3> path = navMesh->FindPath(Vec3(0, 0, 0), Vec3(10, 0, 10));
-        std::cout << "Path found with " << path.size() << " waypoints" << std::endl;
-        for (size_t i = 0; i < path.size() && i < 5; ++i) {
-            std::cout << "  Waypoint " << i << ": ("
-                      << path[i].x << ", " << path[i].y << ", " << path[i].z << ")" << std::endl;
+        if (steps % 10 == 0) {
+            std::cout << "  Step " << steps << " - Pos: (" << pos.x << ", " << pos.y << ", " << pos.z << ")" << std::endl;
         }
     }
+    
+    Vec3 finalPos = agent.GetPosition();
+    std::cout << "Agent reached goal in " << steps << " steps" << std::endl;
+    std::cout << "Final position: (" << finalPos.x << ", " << finalPos.y << ", " << finalPos.z << ")" << std::endl;
+    
+    // Test steering behaviors
+    std::cout << "\n=== Steering Behaviors ===" << std::endl;
+    SteeringBehavior steering;
+    
+    Vec3 agentPos(0, 0, 0);
+    Vec3 targetPos(10, 0, 10);
+    Vec3 agentVel(1, 0, 1);
+    
+    Vec3 seekForce = steering.Seek(agentPos, agentVel, targetPos, 5.0f);
+    std::cout << "Seek force: (" << seekForce.x << ", " << seekForce.y << ", " << seekForce.z << ")" << std::endl;
+    
+    Vec3 fleeForce = steering.Flee(agentPos, agentVel, targetPos, 5.0f);
+    std::cout << "Flee force: (" << fleeForce.x << ", " << fleeForce.y << ", " << fleeForce.z << ")" << std::endl;
+    
+    Vec3 wanderForce = steering.Wander(agentVel, 5.0f, 2.0f, 0.5f);
+    std::cout << "Wander force: (" << wanderForce.x << ", " << wanderForce.y << ", " << wanderForce.z << ")" << std::endl;
+    
+    std::cout << "AI system test passed!" << std::endl;
+}
 
-    std::cout << "\nAll tests passed!" << std::endl;
+int main() {
+    std::cout << "=== Aether Game Engine - Feature Tests ===" << std::endl;
+    
+    TestPostProcessing();
+    TestUI();
+    TestAnimation();
+    TestAI();
+    
+    std::cout << "\n=== All Tests Passed ===" << std::endl;
+    
     return 0;
 }
