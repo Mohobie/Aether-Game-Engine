@@ -4,6 +4,8 @@
 #include <iostream>
 #include <cassert>
 
+using aether::Vec2;
+
 using namespace vge;
 
 void TestItemRegistry() {

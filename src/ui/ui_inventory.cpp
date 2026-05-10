@@ -332,7 +332,7 @@ void UIInventoryController::update(float deltaTime) {
     if (!isInventoryOpen) return;
     
     // Update tooltip timer
-    tooltip->Update(deltaTime);
+    tooltip->update(deltaTime);
 }
 
 void UIInventoryController::updateDrag(const Vec2& mousePos) {

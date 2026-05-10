@@ -143,9 +143,6 @@ set(CORE_SOURCES
     src/core/time_system.cpp
     src/core/achievements.cpp
     src/core/raycast.cpp
-    src/core/item_system.cpp
-    src/core/crafting_inventory_bridge.cpp
-    src/ui/ui_inventory.cpp
     src/core/entity.cpp
     src/network/packet.cpp
     src/audio/audio_engine.cpp
@@ -187,12 +184,14 @@ add_executable(world_test src/world_test.cpp ${CORE_SOURCES})
 add_executable(save_test src/save_test.cpp ${CORE_SOURCES})
 add_executable(weather_test tests/test_weather_system.cpp ${CORE_SOURCES})
 add_executable(day_night_test tests/test_day_night.cpp ${CORE_SOURCES})
+add_executable(inventory_test tests/test_inventory_system.cpp ${CORE_SOURCES})
 
 target_include_directories(voxel_test PRIVATE ${COMMON_INCLUDES})
 target_include_directories(world_test PRIVATE ${COMMON_INCLUDES})
 target_include_directories(save_test PRIVATE ${COMMON_INCLUDES})
 target_include_directories(weather_test PRIVATE ${COMMON_INCLUDES})
 target_include_directories(day_night_test PRIVATE ${COMMON_INCLUDES})
+target_include_directories(inventory_test PRIVATE ${COMMON_INCLUDES})
 
 # ============================================
 # Platform-Specific Linking
@@ -202,12 +201,14 @@ if(PLATFORM_LINUX)
     target_link_libraries(world_test PRIVATE pthread dl)
     target_link_libraries(save_test PRIVATE pthread dl)
     target_link_libraries(day_night_test PRIVATE pthread dl)
+    target_link_libraries(inventory_test PRIVATE pthread dl)
 elseif(PLATFORM_WINDOWS)
     # Windows: Link Windows-specific libraries
     target_link_libraries(voxel_test PRIVATE ws2_32 winmm)
     target_link_libraries(world_test PRIVATE ws2_32 winmm)
     target_link_libraries(save_test PRIVATE ws2_32 winmm)
     target_link_libraries(day_night_test PRIVATE ws2_32 winmm)
+    target_link_libraries(inventory_test PRIVATE ws2_32 winmm)
 endif()
 
 add_executable(gamepad_test tests/test_gamepad_standalone.cpp src/platform/gamepad.cpp)

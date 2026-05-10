@@ -7,6 +7,8 @@
 #include "core/math.h"
 #include "voxel/block_types.h"
 
+using aether::Vec2;
+
 namespace vge {
 
 // Item categories for organization
@@ -246,7 +248,7 @@ public:
     
     void Show(const std::string& itemID, const Vec2& pos);
     void Hide();
-    void Update(float deltaTime);
+    void update(float deltaTime);
     bool IsVisible() const { return visible; }
     
     Vec2 GetPosition() const { return position; }

@@ -40,7 +40,7 @@ CraftingGrid CraftingInventoryBridge::getCraftingGridFromInventory() {
     
     Inventory* inv = inventoryManager->GetInventory(craftingInventoryID);
     if (!inv) {
-        Logger::Warning("[CraftingInventoryBridge] Crafting inventory not found: " + craftingInventoryID);
+        Logger::Info("[CraftingInventoryBridge] Crafting inventory not found: " + craftingInventoryID);
         return grid;
     }
     
@@ -126,7 +126,7 @@ bool CraftingInventoryBridge::consumeCraftingIngredients() {
 bool CraftingInventoryBridge::placeResult(const CraftingResult& result) {
     Inventory* inv = inventoryManager->GetInventory(resultInventoryID);
     if (!inv) {
-        Logger::Warning("[CraftingInventoryBridge] Result inventory not found: " + resultInventoryID);
+        Logger::Info("[CraftingInventoryBridge] Result inventory not found: " + resultInventoryID);
         return false;
     }
     
@@ -141,7 +141,7 @@ bool CraftingInventoryBridge::placeResult(const CraftingResult& result) {
     
     bool success = inv->AddItem(itemID, result.outputCount);
     if (!success) {
-        Logger::Warning("[CraftingInventoryBridge] Could not add result to inventory");
+        Logger::Info("[CraftingInventoryBridge] Could not add result to inventory");
         return false;
     }
     

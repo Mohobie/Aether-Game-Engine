@@ -1,8 +1,12 @@
 #pragma once
 #include "core/item_system.h"
+#include "core/crafting.h"
 #include "ui/ui_element.h"
 #include <memory>
 #include <functional>
+
+using aether::Vec2;
+using aether::UIElement;
 
 namespace vge {
 
