@@ -13,6 +13,7 @@
 10. PBR Materials (Cook-Torrance BRDF, IBL)
 11. Skeletal Animation (Joints, Clips, Skinning)
 12. AI System (A* Pathfinding, NavMesh, Steering)
+13. UI System (Buttons, Labels, Sliders, Input, Panels, Images, Checkboxes, Dropdowns)
 
 ## 🔴 In Progress - Critical Gaps
 
@@ -51,9 +52,10 @@
 - [ ] Vegetation Scattering
 
 ### 7. UI System
+- [x] Core UI Elements ✅
 - [ ] Immediate Mode GUI
-- [ ] Layout System
-- [ ] Event System
+- [ ] Advanced Layout System
+- [ ] Event System Polish
 
 ### 8. Save/Load System
 - [ ] Serialization
@@ -80,7 +82,7 @@
 2. **PBR Materials** ✅ - Modern look
 3. **Skeletal Animation** ✅ - Characters/movement
 4. **Pathfinding** ✅ - NPC movement
-5. **UI System** - Game interface
+5. **UI System** ✅ - Game interface
 6. **Post-Processing** - Visual polish
 7. **Terrain** - Open worlds
 8. **Networking** - Multiplayer
