@@ -234,6 +234,39 @@ src/animation/animation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/animation/animation.cpp.s
 .PHONY : src/animation/animation.cpp.s
 
+src/animation/animation_state_machine.o: src/animation/animation_state_machine.cpp.o
+.PHONY : src/animation/animation_state_machine.o
+
+# target to build an object file
+src/animation/animation_state_machine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/animation/animation_state_machine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/animation/animation_state_machine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/animation/animation_state_machine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/animation/animation_state_machine.cpp.o
+.PHONY : src/animation/animation_state_machine.cpp.o
+
+src/animation/animation_state_machine.i: src/animation/animation_state_machine.cpp.i
+.PHONY : src/animation/animation_state_machine.i
+
+# target to preprocess a source file
+src/animation/animation_state_machine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/animation/animation_state_machine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/animation/animation_state_machine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/animation/animation_state_machine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/animation/animation_state_machine.cpp.i
+.PHONY : src/animation/animation_state_machine.cpp.i
+
+src/animation/animation_state_machine.s: src/animation/animation_state_machine.cpp.s
+.PHONY : src/animation/animation_state_machine.s
+
+# target to generate assembly for a file
+src/animation/animation_state_machine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/animation/animation_state_machine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/animation/animation_state_machine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/animation/animation_state_machine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/animation/animation_state_machine.cpp.s
+.PHONY : src/animation/animation_state_machine.cpp.s
+
 src/audio/audio_engine.o: src/audio/audio_engine.cpp.o
 .PHONY : src/audio/audio_engine.o
 
@@ -2028,6 +2061,9 @@ help:
 	@echo "... src/animation/animation.o"
 	@echo "... src/animation/animation.i"
 	@echo "... src/animation/animation.s"
+	@echo "... src/animation/animation_state_machine.o"
+	@echo "... src/animation/animation_state_machine.i"
+	@echo "... src/animation/animation_state_machine.s"
 	@echo "... src/audio/audio_engine.o"
 	@echo "... src/audio/audio_engine.i"
 	@echo "... src/audio/audio_engine.s"

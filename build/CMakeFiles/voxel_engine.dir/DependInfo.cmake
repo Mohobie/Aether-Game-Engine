@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/ai/ai_system.cpp" "CMakeFiles/voxel_engine.dir/src/ai/ai_system.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/ai/ai_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/animation/animation.cpp" "CMakeFiles/voxel_engine.dir/src/animation/animation.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/animation/animation.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/animation/animation_state_machine.cpp" "CMakeFiles/voxel_engine.dir/src/animation/animation_state_machine.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/animation/animation_state_machine.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/audio/audio_engine.cpp" "CMakeFiles/voxel_engine.dir/src/audio/audio_engine.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/audio/audio_engine.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/audio/audio_system.cpp" "CMakeFiles/voxel_engine.dir/src/audio/audio_system.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/audio/audio_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/audio/sound_manager.cpp" "CMakeFiles/voxel_engine.dir/src/audio/sound_manager.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/audio/sound_manager.cpp.o.d"

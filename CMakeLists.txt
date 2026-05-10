@@ -100,6 +100,7 @@ set(CORE_SOURCES
     src/math/vec3.cpp
     src/math/mat4.cpp
     src/ui/ui_system.cpp
+    src/animation/animation_state_machine.cpp
     src/rendering/deferred_rendering.cpp
     src/rendering/post_processing.cpp
     src/ai/ai_system.cpp
