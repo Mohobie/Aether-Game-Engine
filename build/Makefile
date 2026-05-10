@@ -792,6 +792,39 @@ src/physics/rigidbody.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/rigidbody.cpp.s
 .PHONY : src/physics/rigidbody.cpp.s
 
+src/platform/file_system.o: src/platform/file_system.cpp.o
+.PHONY : src/platform/file_system.o
+
+# target to build an object file
+src/platform/file_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/platform/file_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/platform/file_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/file_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/file_system.cpp.o
+.PHONY : src/platform/file_system.cpp.o
+
+src/platform/file_system.i: src/platform/file_system.cpp.i
+.PHONY : src/platform/file_system.i
+
+# target to preprocess a source file
+src/platform/file_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/platform/file_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/platform/file_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/file_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/file_system.cpp.i
+.PHONY : src/platform/file_system.cpp.i
+
+src/platform/file_system.s: src/platform/file_system.cpp.s
+.PHONY : src/platform/file_system.s
+
+# target to generate assembly for a file
+src/platform/file_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/platform/file_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/platform/file_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/file_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/file_system.cpp.s
+.PHONY : src/platform/file_system.cpp.s
+
 src/platform/input.o: src/platform/input.cpp.o
 .PHONY : src/platform/input.o
 
@@ -815,6 +848,72 @@ src/platform/input.s: src/platform/input.cpp.s
 src/platform/input.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/input.cpp.s
 .PHONY : src/platform/input.cpp.s
+
+src/platform/input_manager.o: src/platform/input_manager.cpp.o
+.PHONY : src/platform/input_manager.o
+
+# target to build an object file
+src/platform/input_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/platform/input_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/platform/input_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/input_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/input_manager.cpp.o
+.PHONY : src/platform/input_manager.cpp.o
+
+src/platform/input_manager.i: src/platform/input_manager.cpp.i
+.PHONY : src/platform/input_manager.i
+
+# target to preprocess a source file
+src/platform/input_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/platform/input_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/platform/input_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/input_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/input_manager.cpp.i
+.PHONY : src/platform/input_manager.cpp.i
+
+src/platform/input_manager.s: src/platform/input_manager.cpp.s
+.PHONY : src/platform/input_manager.s
+
+# target to generate assembly for a file
+src/platform/input_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/platform/input_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/platform/input_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/input_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/input_manager.cpp.s
+.PHONY : src/platform/input_manager.cpp.s
+
+src/platform/platform_common.o: src/platform/platform_common.cpp.o
+.PHONY : src/platform/platform_common.o
+
+# target to build an object file
+src/platform/platform_common.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/platform/platform_common.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/platform/platform_common.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/platform_common.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/platform_common.cpp.o
+.PHONY : src/platform/platform_common.cpp.o
+
+src/platform/platform_common.i: src/platform/platform_common.cpp.i
+.PHONY : src/platform/platform_common.i
+
+# target to preprocess a source file
+src/platform/platform_common.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/platform/platform_common.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/platform/platform_common.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/platform_common.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/platform_common.cpp.i
+.PHONY : src/platform/platform_common.cpp.i
+
+src/platform/platform_common.s: src/platform/platform_common.cpp.s
+.PHONY : src/platform/platform_common.s
+
+# target to generate assembly for a file
+src/platform/platform_common.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/platform/platform_common.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/platform/platform_common.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/platform_common.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/platform_common.cpp.s
+.PHONY : src/platform/platform_common.cpp.s
 
 src/platform/window.o: src/platform/window.cpp.o
 .PHONY : src/platform/window.o
@@ -1551,9 +1650,18 @@ help:
 	@echo "... src/physics/rigidbody.o"
 	@echo "... src/physics/rigidbody.i"
 	@echo "... src/physics/rigidbody.s"
+	@echo "... src/platform/file_system.o"
+	@echo "... src/platform/file_system.i"
+	@echo "... src/platform/file_system.s"
 	@echo "... src/platform/input.o"
 	@echo "... src/platform/input.i"
 	@echo "... src/platform/input.s"
+	@echo "... src/platform/input_manager.o"
+	@echo "... src/platform/input_manager.i"
+	@echo "... src/platform/input_manager.s"
+	@echo "... src/platform/platform_common.o"
+	@echo "... src/platform/platform_common.i"
+	@echo "... src/platform/platform_common.s"
 	@echo "... src/platform/window.o"
 	@echo "... src/platform/window.i"
 	@echo "... src/platform/window.s"

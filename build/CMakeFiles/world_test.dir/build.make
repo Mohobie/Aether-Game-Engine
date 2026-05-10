@@ -391,10 +391,52 @@ CMakeFiles/world_test.dir/src/audio/sound_manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/world_test.dir/src/audio/sound_manager.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/audio/sound_manager.cpp -o CMakeFiles/world_test.dir/src/audio/sound_manager.cpp.s
 
+CMakeFiles/world_test.dir/src/platform/platform_common.cpp.o: CMakeFiles/world_test.dir/flags.make
+CMakeFiles/world_test.dir/src/platform/platform_common.cpp.o: ../src/platform/platform_common.cpp
+CMakeFiles/world_test.dir/src/platform/platform_common.cpp.o: CMakeFiles/world_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/world_test.dir/src/platform/platform_common.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/world_test.dir/src/platform/platform_common.cpp.o -MF CMakeFiles/world_test.dir/src/platform/platform_common.cpp.o.d -o CMakeFiles/world_test.dir/src/platform/platform_common.cpp.o -c /home/mohobie/projects/aether-game-engine/src/platform/platform_common.cpp
+
+CMakeFiles/world_test.dir/src/platform/platform_common.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/world_test.dir/src/platform/platform_common.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/platform/platform_common.cpp > CMakeFiles/world_test.dir/src/platform/platform_common.cpp.i
+
+CMakeFiles/world_test.dir/src/platform/platform_common.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/world_test.dir/src/platform/platform_common.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/platform/platform_common.cpp -o CMakeFiles/world_test.dir/src/platform/platform_common.cpp.s
+
+CMakeFiles/world_test.dir/src/platform/file_system.cpp.o: CMakeFiles/world_test.dir/flags.make
+CMakeFiles/world_test.dir/src/platform/file_system.cpp.o: ../src/platform/file_system.cpp
+CMakeFiles/world_test.dir/src/platform/file_system.cpp.o: CMakeFiles/world_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/world_test.dir/src/platform/file_system.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/world_test.dir/src/platform/file_system.cpp.o -MF CMakeFiles/world_test.dir/src/platform/file_system.cpp.o.d -o CMakeFiles/world_test.dir/src/platform/file_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/platform/file_system.cpp
+
+CMakeFiles/world_test.dir/src/platform/file_system.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/world_test.dir/src/platform/file_system.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/platform/file_system.cpp > CMakeFiles/world_test.dir/src/platform/file_system.cpp.i
+
+CMakeFiles/world_test.dir/src/platform/file_system.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/world_test.dir/src/platform/file_system.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/platform/file_system.cpp -o CMakeFiles/world_test.dir/src/platform/file_system.cpp.s
+
+CMakeFiles/world_test.dir/src/platform/input_manager.cpp.o: CMakeFiles/world_test.dir/flags.make
+CMakeFiles/world_test.dir/src/platform/input_manager.cpp.o: ../src/platform/input_manager.cpp
+CMakeFiles/world_test.dir/src/platform/input_manager.cpp.o: CMakeFiles/world_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/world_test.dir/src/platform/input_manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/world_test.dir/src/platform/input_manager.cpp.o -MF CMakeFiles/world_test.dir/src/platform/input_manager.cpp.o.d -o CMakeFiles/world_test.dir/src/platform/input_manager.cpp.o -c /home/mohobie/projects/aether-game-engine/src/platform/input_manager.cpp
+
+CMakeFiles/world_test.dir/src/platform/input_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/world_test.dir/src/platform/input_manager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/platform/input_manager.cpp > CMakeFiles/world_test.dir/src/platform/input_manager.cpp.i
+
+CMakeFiles/world_test.dir/src/platform/input_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/world_test.dir/src/platform/input_manager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/platform/input_manager.cpp -o CMakeFiles/world_test.dir/src/platform/input_manager.cpp.s
+
 CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o: CMakeFiles/world_test.dir/flags.make
 CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o: ../src/rendering/framebuffer_renderer.cpp
 CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o: CMakeFiles/world_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o -MF CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o.d -o CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/framebuffer_renderer.cpp
 
 CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.i: cmake_force
@@ -430,6 +472,9 @@ world_test_OBJECTS = \
 "CMakeFiles/world_test.dir/src/network/packet.cpp.o" \
 "CMakeFiles/world_test.dir/src/audio/audio_engine.cpp.o" \
 "CMakeFiles/world_test.dir/src/audio/sound_manager.cpp.o" \
+"CMakeFiles/world_test.dir/src/platform/platform_common.cpp.o" \
+"CMakeFiles/world_test.dir/src/platform/file_system.cpp.o" \
+"CMakeFiles/world_test.dir/src/platform/input_manager.cpp.o" \
 "CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o"
 
 # External object files for target world_test
@@ -458,10 +503,13 @@ world_test: CMakeFiles/world_test.dir/src/core/entity.cpp.o
 world_test: CMakeFiles/world_test.dir/src/network/packet.cpp.o
 world_test: CMakeFiles/world_test.dir/src/audio/audio_engine.cpp.o
 world_test: CMakeFiles/world_test.dir/src/audio/sound_manager.cpp.o
+world_test: CMakeFiles/world_test.dir/src/platform/platform_common.cpp.o
+world_test: CMakeFiles/world_test.dir/src/platform/file_system.cpp.o
+world_test: CMakeFiles/world_test.dir/src/platform/input_manager.cpp.o
 world_test: CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o
 world_test: CMakeFiles/world_test.dir/build.make
 world_test: CMakeFiles/world_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable world_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX executable world_test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/world_test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

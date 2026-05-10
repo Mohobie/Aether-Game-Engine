@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "blocks": [
+    {
+      "id": "air",
+      "name": "Air",
+      "solid": false,
+      "opaque": false,
+      "hardness": 0.0,
+      "color": [0.0, 0.0, 0.0],
+      "emission": 0
+    },
+    {
+      "id": "stone",
+      "name": "Stone",
+      "solid": true,
+      "opaque": true,
+      "hardness": 3.0,
+      "color": [0.5, 0.5, 0.5],
+      "emission": 0
+    },
+    {
+      "id": "dirt",
+      "name": "Dirt",
+      "solid": true,
+      "opaque": true,
+      "hardness": 1.0,
+      "color": [0.4, 0.3, 0.2],
+      "emission": 0
+    },
+    {
+      "id": "grass",
+      "name": "Grass",
+      "solid": true,
+      "opaque": true,
+      "hardness": 1.0,
+      "color": [0.2, 0.7, 0.2],
+      "emission": 0
+    },
+    {
+      "id": "sand",
+      "name": "Sand",
+      "solid": true,
+      "opaque": true,
+      "hardness": 1.0,
+      "color": [0.9, 0.85, 0.6],
+      "emission": 0
+    },
+    {
+      "id": "water",
+      "name": "Water",
+      "solid": false,
+      "opaque": false,
+      "hardness": 0.0,
+      "color": [0.1, 0.3, 0.8],
+      "emission": 0
+    },
+    {
+      "id": "wood",
+      "name": "Wood",
+      "solid": true,
+      "opaque": true,
+      "hardness": 2.0,
+      "color": [0.4, 0.25, 0.1],
+      "emission": 0
+    },
+    {
+      "id": "leaves",
+      "name": "Leaves",
+      "solid": true,
+      "opaque": false,
+      "hardness": 0.5,
+      "color": [0.1, 0.6, 0.1],
+      "emission": 0
+    },
+    {
+      "id": "glass",
+      "name": "Glass",
+      "solid": true,
+      "opaque": false,
+      "hardness": 0.5,
+      "color": [0.8, 0.9, 1.0],
+      "emission": 0
+    },
+    {
+      "id": "planks",
+      "name": "Planks",
+      "solid": true,
+      "opaque": true,
+      "hardness": 2.0,
+      "color": [0.6, 0.4, 0.2],
+      "emission": 0
+    },
+    {
+      "id": "torch",
+      "name": "Torch",
+      "solid": false,
+      "opaque": false,
+      "hardness": 0.0,
+      "color": [1.0, 0.8, 0.2],
+      "emission": 14
+    },
+    {
+      "id": "glowstone",
+      "name": "Glowstone",
+      "solid": true,
+      "opaque": true,
+      "hardness": 1.5,
+      "color": [1.0, 0.9, 0.5],
+      "emission": 15
+    },
+    {
+      "id": "bedrock",
+      "name": "Bedrock",
+      "solid": true,
+      "opaque": true,
+      "hardness": -1.0,
+      "color": [0.2, 0.2, 0.2],
+      "emission": 0
+    },
+    {
+      "id": "ore_generic",
+      "name": "Ore",
+      "solid": true,
+      "opaque": true,
+      "hardness": 3.0,
+      "color": [0.6, 0.6, 0.7],
+      "emission": 0
+    },
+    {
+      "id": "snow",
+      "name": "Snow",
+      "solid": true,
+      "opaque": true,
+      "hardness": 0.5,
+      "color": [1.0, 1.0, 1.0],
+      "emission": 0
+    },
+    {
+      "id": "ice",
+      "name": "Ice",
+      "solid": true,
+      "opaque": false,
+      "hardness": 1.0,
+      "color": [0.7, 0.9, 1.0],
+      "emission": 0
+    },
+    {
+      "id": "cactus",
+      "name": "Cactus",
+      "solid": true,
+      "opaque": true,
+      "hardness": 0.5,
+      "color": [0.1, 0.5, 0.1],
+      "emission": 0
+    },
+    {
+      "id": "flower",
+      "name": "Flower",
+      "solid": false,
+      "opaque": false,
+      "hardness": 0.0,
+      "color": [1.0, 0.2, 0.8],
+      "emission": 0
+    },
+    {
+      "id": "lava",
+      "name": "Lava",
+      "solid": false,
+      "opaque": false,
+      "hardness": 0.0,
+      "color": [1.0, 0.3, 0.0],
+      "emission": 15
+    }
+  ]
+}
