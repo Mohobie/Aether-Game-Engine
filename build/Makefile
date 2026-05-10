@@ -1575,6 +1575,39 @@ src/ui/menu_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.s
 .PHONY : src/ui/menu_system.cpp.s
 
+src/ui/ui_system.o: src/ui/ui_system.cpp.o
+.PHONY : src/ui/ui_system.o
+
+# target to build an object file
+src/ui/ui_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ui/ui_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ui/ui_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/ui_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_system.cpp.o
+.PHONY : src/ui/ui_system.cpp.o
+
+src/ui/ui_system.i: src/ui/ui_system.cpp.i
+.PHONY : src/ui/ui_system.i
+
+# target to preprocess a source file
+src/ui/ui_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ui/ui_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ui/ui_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/ui_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_system.cpp.i
+.PHONY : src/ui/ui_system.cpp.i
+
+src/ui/ui_system.s: src/ui/ui_system.cpp.s
+.PHONY : src/ui/ui_system.s
+
+# target to generate assembly for a file
+src/ui/ui_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ui/ui_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ui/ui_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/ui_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_system.cpp.s
+.PHONY : src/ui/ui_system.cpp.s
+
 src/voxel/biome.o: src/voxel/biome.cpp.o
 .PHONY : src/voxel/biome.o
 
@@ -2064,6 +2097,9 @@ help:
 	@echo "... src/ui/menu_system.o"
 	@echo "... src/ui/menu_system.i"
 	@echo "... src/ui/menu_system.s"
+	@echo "... src/ui/ui_system.o"
+	@echo "... src/ui/ui_system.i"
+	@echo "... src/ui/ui_system.s"
 	@echo "... src/voxel/biome.o"
 	@echo "... src/voxel/biome.i"
 	@echo "... src/voxel/biome.s"

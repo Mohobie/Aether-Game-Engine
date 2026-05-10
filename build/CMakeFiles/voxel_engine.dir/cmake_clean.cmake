@@ -89,6 +89,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.o.d"
+  "CMakeFiles/voxel_engine.dir/src/ui/ui_system.cpp.o"
+  "CMakeFiles/voxel_engine.dir/src/ui/ui_system.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/voxel/biome.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/voxel/biome.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/voxel/block.cpp.o"

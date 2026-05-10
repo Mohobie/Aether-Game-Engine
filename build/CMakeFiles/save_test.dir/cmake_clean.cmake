@@ -63,6 +63,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/save_test.dir/src/rendering/texture.cpp.o.d"
   "CMakeFiles/save_test.dir/src/save_test.cpp.o"
   "CMakeFiles/save_test.dir/src/save_test.cpp.o.d"
+  "CMakeFiles/save_test.dir/src/ui/ui_system.cpp.o"
+  "CMakeFiles/save_test.dir/src/ui/ui_system.cpp.o.d"
   "CMakeFiles/save_test.dir/src/voxel/biome.cpp.o"
   "CMakeFiles/save_test.dir/src/voxel/biome.cpp.o.d"
   "CMakeFiles/save_test.dir/src/voxel/block.cpp.o"

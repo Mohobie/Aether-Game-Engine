@@ -53,6 +53,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/ui/console.cpp" "CMakeFiles/voxel_engine.dir/src/ui/console.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/ui/console.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/ui/imgui_wrapper.cpp" "CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/ui/menu_system.cpp" "CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/ui/ui_system.cpp" "CMakeFiles/voxel_engine.dir/src/ui/ui_system.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/ui/ui_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/biome.cpp" "CMakeFiles/voxel_engine.dir/src/voxel/biome.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/voxel/biome.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/block.cpp" "CMakeFiles/voxel_engine.dir/src/voxel/block.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/voxel/block.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/block_mesh_builder.cpp" "CMakeFiles/voxel_engine.dir/src/voxel/block_mesh_builder.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/voxel/block_mesh_builder.cpp.o.d"

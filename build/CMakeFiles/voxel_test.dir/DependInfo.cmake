@@ -40,6 +40,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/rendering/shadow_system.cpp" "CMakeFiles/voxel_test.dir/src/rendering/shadow_system.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/rendering/shadow_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/rendering/texture.cpp" "CMakeFiles/voxel_test.dir/src/rendering/texture.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/rendering/texture.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/test_main.cpp" "CMakeFiles/voxel_test.dir/src/test_main.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/test_main.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/ui/ui_system.cpp" "CMakeFiles/voxel_test.dir/src/ui/ui_system.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/ui/ui_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/biome.cpp" "CMakeFiles/voxel_test.dir/src/voxel/biome.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/voxel/biome.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/block.cpp" "CMakeFiles/voxel_test.dir/src/voxel/block.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/voxel/block.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/block_mesh_builder.cpp" "CMakeFiles/voxel_test.dir/src/voxel/block_mesh_builder.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/voxel/block_mesh_builder.cpp.o.d"
