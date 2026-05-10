@@ -41,7 +41,7 @@ public:
     Input();
     ~Input();
     
-    void Update();
+    void Update(void* windowHandle = nullptr);
     
     bool IsKeyPressed(KeyCode key) const;
     bool IsKeyJustPressed(KeyCode key) const;

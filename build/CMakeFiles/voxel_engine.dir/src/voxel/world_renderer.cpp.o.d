@@ -169,11 +169,10 @@ CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
- /home/mohobie/projects/aether-game-engine/src/math/mat4.h \
  /home/mohobie/projects/aether-game-engine/src/rendering/camera.h \
+ /home/mohobie/projects/aether-game-engine/src/math/mat4.h \
  /home/mohobie/projects/aether-game-engine/src/voxel/chunk.h \
- /home/mohobie/projects/aether-game-engine/src/voxel/block.h \
- /home/mohobie/projects/aether-game-engine/src/core/types.h \
+ /home/mohobie/projects/aether-game-engine/src/voxel/block_types.h \
  /home/mohobie/projects/aether-game-engine/src/voxel/world.h \
  /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
  /usr/include/c++/11/bits/stl_map.h \

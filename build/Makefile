@@ -1155,30 +1155,6 @@ src/platform/file_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/file_system.cpp.s
 .PHONY : src/platform/file_system.cpp.s
 
-src/platform/input.o: src/platform/input.cpp.o
-.PHONY : src/platform/input.o
-
-# target to build an object file
-src/platform/input.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/input.cpp.o
-.PHONY : src/platform/input.cpp.o
-
-src/platform/input.i: src/platform/input.cpp.i
-.PHONY : src/platform/input.i
-
-# target to preprocess a source file
-src/platform/input.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/input.cpp.i
-.PHONY : src/platform/input.cpp.i
-
-src/platform/input.s: src/platform/input.cpp.s
-.PHONY : src/platform/input.s
-
-# target to generate assembly for a file
-src/platform/input.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/input.cpp.s
-.PHONY : src/platform/input.cpp.s
-
 src/platform/input_manager.o: src/platform/input_manager.cpp.o
 .PHONY : src/platform/input_manager.o
 
@@ -2028,6 +2004,39 @@ src/voxel/chunk_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/chunk_manager.cpp.s
 .PHONY : src/voxel/chunk_manager.cpp.s
 
+src/voxel/terrain_system.o: src/voxel/terrain_system.cpp.o
+.PHONY : src/voxel/terrain_system.o
+
+# target to build an object file
+src/voxel/terrain_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/terrain_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/terrain_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/terrain_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/terrain_system.cpp.o
+.PHONY : src/voxel/terrain_system.cpp.o
+
+src/voxel/terrain_system.i: src/voxel/terrain_system.cpp.i
+.PHONY : src/voxel/terrain_system.i
+
+# target to preprocess a source file
+src/voxel/terrain_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/terrain_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/terrain_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/terrain_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/terrain_system.cpp.i
+.PHONY : src/voxel/terrain_system.cpp.i
+
+src/voxel/terrain_system.s: src/voxel/terrain_system.cpp.s
+.PHONY : src/voxel/terrain_system.s
+
+# target to generate assembly for a file
+src/voxel/terrain_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/terrain_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/terrain_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/terrain_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/terrain_system.cpp.s
+.PHONY : src/voxel/terrain_system.cpp.s
+
 src/voxel/world.o: src/voxel/world.cpp.o
 .PHONY : src/voxel/world.o
 
@@ -2247,9 +2256,6 @@ help:
 	@echo "... src/platform/file_system.o"
 	@echo "... src/platform/file_system.i"
 	@echo "... src/platform/file_system.s"
-	@echo "... src/platform/input.o"
-	@echo "... src/platform/input.i"
-	@echo "... src/platform/input.s"
 	@echo "... src/platform/input_manager.o"
 	@echo "... src/platform/input_manager.i"
 	@echo "... src/platform/input_manager.s"
@@ -2337,6 +2343,9 @@ help:
 	@echo "... src/voxel/chunk_manager.o"
 	@echo "... src/voxel/chunk_manager.i"
 	@echo "... src/voxel/chunk_manager.s"
+	@echo "... src/voxel/terrain_system.o"
+	@echo "... src/voxel/terrain_system.i"
+	@echo "... src/voxel/terrain_system.s"
 	@echo "... src/voxel/world.o"
 	@echo "... src/voxel/world.i"
 	@echo "... src/voxel/world.s"

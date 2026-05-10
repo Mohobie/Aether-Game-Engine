@@ -17,7 +17,7 @@ private:
     
     void RenderWorldASCII(const World& world, const Camera& camera);
     void RenderWorldFB(const World& world, const Camera& camera);
-    uint32_t GetBlockColor(BlockType type);
+    uint32_t GetBlockColor(BlockTypeID type);
     
 public:
     Renderer();

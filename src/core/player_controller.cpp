@@ -56,7 +56,7 @@ void PlayerController::Update(float deltaTime, Input& input, World& world) {
     
     // Block interaction with sound
     if (input.IsKeyJustPressed(GLFW_KEY_E)) { // Place block
-        if (PlaceBlock(world, BlockType::Wood)) {
+        if (PlaceBlock(world, BlockRegistry::GetInstance().GetBlockId("wood"))) {
             // Sound played by engine
         }
     }
@@ -94,8 +94,8 @@ bool PlayerController::CheckCollision(const Vec3& pos, World& world) {
     for (int x = minX; x <= maxX; ++x) {
         for (int y = minY; y <= maxY; ++y) {
             for (int z = minZ; z <= maxZ; ++z) {
-                BlockType block = world.GetBlock(x, y, z);
-                if (block != BlockType::Air && BlockRegistry::GetInstance().GetBlock(block).IsSolid()) {
+                BlockTypeID block = world.GetBlock(x, y, z);
+                if (block != BlockRegistry::GetInstance().GetBlockId("air") && BlockRegistry::GetInstance().GetBlock(block).IsSolid()) {
                     return true;
                 }
             }
@@ -105,7 +105,7 @@ bool PlayerController::CheckCollision(const Vec3& pos, World& world) {
     return false;
 }
 
-bool PlayerController::PlaceBlock(World& world, BlockType type) {
+bool PlayerController::PlaceBlock(World& world, BlockTypeID type) {
     Vec3 eyePos = position + Vec3(0, 1.6f, 0);
     Vec3 lookDir = GetLookDirection();
     

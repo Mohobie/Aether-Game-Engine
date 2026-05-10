@@ -173,7 +173,7 @@ void Engine::Update(float dt) {
     
     // Block interaction with sound effects
     if (input->IsKeyJustPressed(GLFW_KEY_E)) { // Place block
-        if (player->PlaceBlock(*world, BlockType::Wood)) {
+        if (player->PlaceBlock(*world, BlockRegistry::GetInstance().GetBlockId("wood"))) {
             audioEngine->PlaySound("place.wav");
         }
     }

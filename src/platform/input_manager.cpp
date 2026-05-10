@@ -115,7 +115,8 @@ void Input::ProcessKeyboardInput() {
 }
 #endif
 
-void Input::Update() {
+void Input::Update(void* windowHandle) {
+    (void)windowHandle;
     // Copy current to previous
     std::memcpy(prevKeys, keys, sizeof(keys));
     std::memset(keys, 0, sizeof(keys));

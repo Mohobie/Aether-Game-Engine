@@ -125,18 +125,16 @@ Vec2 Project(const Vec3& worldPos, const Camera& camera, int screenW, int screen
     return Vec2(screenX, screenY);
 }
 
-char GetBlockChar(BlockType type) {
-    switch (type) {
-        case BlockType::Grass: return '"';
-        case BlockType::Dirt: return ':';
-        case BlockType::Stone: return '#';
-        case BlockType::Wood: return '+';
-        case BlockType::Leaves: return '*';
-        case BlockType::Sand: return '.';
-        case BlockType::Water: return '~';
-        case BlockType::Bedrock: return '@';
-        default: return '?';
-    }
+char GetBlockChar(BlockTypeID type) {
+    if (type == BlockRegistry::GetInstance().GetBlockId("grass")) return '"';
+    if (type == BlockRegistry::GetInstance().GetBlockId("dirt")) return ':';
+    if (type == BlockRegistry::GetInstance().GetBlockId("stone")) return '#';
+    if (type == BlockRegistry::GetInstance().GetBlockId("wood")) return '+';
+    if (type == BlockRegistry::GetInstance().GetBlockId("leaves")) return '*';
+    if (type == BlockRegistry::GetInstance().GetBlockId("sand")) return '.';
+    if (type == BlockRegistry::GetInstance().GetBlockId("water")) return '~';
+    if (type == BlockRegistry::GetInstance().GetBlockId("bedrock")) return '@';
+    return '?';
 }
 
 void Renderer::RenderWorld(const World& world, const Camera& camera) {
@@ -153,17 +151,17 @@ void Renderer::RenderWorld(const World& world, const Camera& camera) {
                 for (int x = 0; x < CHUNK_SIZE; x += 2) {
                     for (int y = 0; y < CHUNK_SIZE; y += 2) {
                         for (int z = 0; z < CHUNK_SIZE; z += 2) {
-                            BlockType block = chunk->GetBlock(x, y, z);
-                            if (block == BlockType::Air) continue;
+                            BlockTypeID block = chunk->GetBlock(x, y, z);
+                            if (block == BlockRegistry::GetInstance().GetBlockId("air")) continue;
                             
                             // Optimization: only draw if at least one face is exposed to air
                             bool visible = false;
-                            if (x == 0 || chunk->GetBlock(x-1, y, z) == BlockType::Air) visible = true;
-                            if (x == CHUNK_SIZE-1 || chunk->GetBlock(x+1, y, z) == BlockType::Air) visible = true;
-                            if (y == 0 || chunk->GetBlock(x, y-1, z) == BlockType::Air) visible = true;
-                            if (y == CHUNK_SIZE-1 || chunk->GetBlock(x, y+1, z) == BlockType::Air) visible = true;
-                            if (z == 0 || chunk->GetBlock(x, y, z-1) == BlockType::Air) visible = true;
-                            if (z == CHUNK_SIZE-1 || chunk->GetBlock(x, y, z+1) == BlockType::Air) visible = true;
+                            if (x == 0 || chunk->GetBlock(x-1, y, z) == BlockRegistry::GetInstance().GetBlockId("air")) visible = true;
+                            if (x == CHUNK_SIZE-1 || chunk->GetBlock(x+1, y, z) == BlockRegistry::GetInstance().GetBlockId("air")) visible = true;
+                            if (y == 0 || chunk->GetBlock(x, y-1, z) == BlockRegistry::GetInstance().GetBlockId("air")) visible = true;
+                            if (y == CHUNK_SIZE-1 || chunk->GetBlock(x, y+1, z) == BlockRegistry::GetInstance().GetBlockId("air")) visible = true;
+                            if (z == 0 || chunk->GetBlock(x, y, z-1) == BlockRegistry::GetInstance().GetBlockId("air")) visible = true;
+                            if (z == CHUNK_SIZE-1 || chunk->GetBlock(x, y, z+1) == BlockRegistry::GetInstance().GetBlockId("air")) visible = true;
                             
                             if (!visible) continue; // Skip hidden blocks
                             

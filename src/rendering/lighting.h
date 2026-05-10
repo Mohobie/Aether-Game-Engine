@@ -1,5 +1,5 @@
 #pragma once
-#include "voxel/block.h"
+#include "voxel/block_types.h"
 
 namespace vge {
 
@@ -11,7 +11,7 @@ private:
     
     void PropagateBlockLight(Chunk* chunk);
     void PropagateLightFromSource(Chunk* chunk, int sourceX, int sourceY, int sourceZ, int intensity);
-    int GetBlockLightEmission(BlockType type) const;
+    int GetBlockLightEmission(BlockTypeID type) const;
     
 public:
     LightEngine();

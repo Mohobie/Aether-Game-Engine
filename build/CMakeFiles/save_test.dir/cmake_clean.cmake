@@ -89,6 +89,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/save_test.dir/src/voxel/block_types.cpp.o.d"
   "CMakeFiles/save_test.dir/src/voxel/chunk.cpp.o"
   "CMakeFiles/save_test.dir/src/voxel/chunk.cpp.o.d"
+  "CMakeFiles/save_test.dir/src/voxel/terrain_system.cpp.o"
+  "CMakeFiles/save_test.dir/src/voxel/terrain_system.cpp.o.d"
   "CMakeFiles/save_test.dir/src/voxel/world.cpp.o"
   "CMakeFiles/save_test.dir/src/voxel/world.cpp.o.d"
   "CMakeFiles/save_test.dir/src/voxel/world_generator.cpp.o"

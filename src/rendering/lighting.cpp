@@ -18,8 +18,8 @@ void LightEngine::InitializeChunk(Chunk* chunk) {
             // Find highest solid block
             int highestSolid = -1;
             for (int y = CHUNK_SIZE - 1; y >= 0; --y) {
-                BlockType block = chunk->GetBlock(x, y, z);
-                if (block != BlockType::Air && BlockRegistry::GetInstance().GetBlock(block).IsSolid()) {
+                BlockTypeID block = chunk->GetBlock(x, y, z);
+                if (block != BlockRegistry::GetInstance().GetBlockId("air") && BlockRegistry::GetInstance().GetBlock(block).IsSolid()) {
                     highestSolid = y;
                     break;
                 }
@@ -49,7 +49,7 @@ void LightEngine::PropagateBlockLight(Chunk* chunk) {
     for (int x = 0; x < CHUNK_SIZE; ++x) {
         for (int y = 0; y < CHUNK_SIZE; ++y) {
             for (int z = 0; z < CHUNK_SIZE; ++z) {
-                BlockType block = chunk->GetBlock(x, y, z);
+                BlockTypeID block = chunk->GetBlock(x, y, z);
                 int emission = GetBlockLightEmission(block);
                 
                 if (emission > 0) {
@@ -92,21 +92,19 @@ void LightEngine::PropagateLightFromSource(Chunk* chunk, int sourceX, int source
     }
 }
 
-int LightEngine::GetBlockLightEmission(BlockType type) const {
-    switch (type) {
-        case BlockType::Glowstone: return 15;
-        case BlockType::Torch: return 14;
-        case BlockType::Lava: return 15;
-        default: return 0;
-    }
+int LightEngine::GetBlockLightEmission(BlockTypeID type) const {
+    if (type == BlockRegistry::GetInstance().GetBlockId("glowstone")) return 15;
+    if (type == BlockRegistry::GetInstance().GetBlockId("torch")) return 14;
+    if (type == BlockRegistry::GetInstance().GetBlockId("lava")) return 15;
+    return 0;
 }
 
 void LightEngine::UpdateBlockLight(Chunk* chunk, int x, int y, int z) {
     if (!chunk) return;
     
-    BlockType block = chunk->GetBlock(x, y, z);
+    BlockTypeID block = chunk->GetBlock(x, y, z);
     
-    if (block == BlockType::Air) {
+    if (block == BlockRegistry::GetInstance().GetBlockId("air")) {
         // Block removed - might need to recalculate
         RecalculateChunk(chunk);
     } else {

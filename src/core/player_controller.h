@@ -1,6 +1,6 @@
 #pragma once
 #include "math/vec3.h"
-#include "voxel/block.h"
+#include "voxel/block_types.h"
 
 namespace vge {
 
@@ -28,7 +28,7 @@ public:
     bool CheckCollision(const Vec3& pos, World& world);
     
     // Block interaction
-    bool PlaceBlock(World& world, BlockType type);
+    bool PlaceBlock(World& world, BlockTypeID type);
     bool BreakBlock(World& world);
     
     Vec3 GetPosition() const;

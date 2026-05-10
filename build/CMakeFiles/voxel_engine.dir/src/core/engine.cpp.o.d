@@ -182,12 +182,11 @@ CMakeFiles/voxel_engine.dir/src/core/engine.cpp.o: \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
  /home/mohobie/projects/aether-game-engine/src/rendering/shader.h \
- /home/mohobie/projects/aether-game-engine/src/math/mat4.h \
  /home/mohobie/projects/aether-game-engine/src/rendering/camera.h \
+ /home/mohobie/projects/aether-game-engine/src/math/mat4.h \
  /home/mohobie/projects/aether-game-engine/src/voxel/world.h \
  /home/mohobie/projects/aether-game-engine/src/voxel/chunk.h \
- /home/mohobie/projects/aether-game-engine/src/voxel/block.h \
- /home/mohobie/projects/aether-game-engine/src/core/types.h \
+ /home/mohobie/projects/aether-game-engine/src/voxel/block_types.h \
  /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
  /usr/include/c++/11/bits/stl_map.h \
  /usr/include/c++/11/bits/stl_multimap.h /usr/include/c++/11/memory \
@@ -217,6 +216,8 @@ CMakeFiles/voxel_engine.dir/src/core/engine.cpp.o: \
  /home/mohobie/projects/aether-game-engine/src/voxel/world_renderer.h \
  /home/mohobie/projects/aether-game-engine/src/audio/audio_engine.h \
  /home/mohobie/projects/aether-game-engine/src/audio/sound_manager.h \
+ /home/mohobie/projects/aether-game-engine/src/voxel/block.h \
+ /home/mohobie/projects/aether-game-engine/src/core/types.h \
  /home/mohobie/projects/aether-game-engine/src/ui/menu_system.h \
  /home/mohobie/projects/aether-game-engine/src/ui/imgui_wrapper.h \
  /home/mohobie/projects/aether-game-engine/src/core/time_system.h \

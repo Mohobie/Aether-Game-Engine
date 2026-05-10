@@ -17,6 +17,9 @@ int main() {
     WorldGenerator generator;
     generator.SetSeed(54321);
     
+    // Initialize block registry
+    BlockRegistry::GetInstance().LoadFromFile("../assets/blocks/default_blocks.json");
+    
     std::cout << "\nGenerating world..." << std::endl;
     for (int x = -1; x <= 1; x++) {
         for (int y = 0; y <= 1; y++) {  // Include y=1 for height 35
@@ -28,16 +31,17 @@ int main() {
     }
     
     // Modify a block (world coordinates)
-    world.SetBlock(0, 35, 0, BlockType::Wood);
+    // Set some blocks using BlockTypeID
+    world.SetBlock(0, 35, 0, BlockRegistry::GetInstance().GetBlockId("wood"));
     
     // Verify - the block might be in chunk (0, 1, 0) since y=35 > 32
-    BlockType before = world.GetBlock(0, 35, 0);
+    BlockTypeID before = world.GetBlock(0, 35, 0);
     std::cout << "Block at (0, 35, 0) before save: " << (int)before << std::endl;
     
     // Also check chunk coordinates
     Chunk* chunk = world.GetChunk(0, 1, 0);
     if (chunk) {
-        BlockType localBlock = chunk->GetBlock(0, 3, 0); // y=35 in chunk (0,1,0) = local y=3
+        BlockTypeID localBlock = chunk->GetBlock(0, 3, 0); // y=35 in chunk (0,1,0) = local y=3
         std::cout << "Block in chunk (0,1,0) at local (0,3,0): " << (int)localBlock << std::endl;
     }
     
@@ -62,7 +66,7 @@ int main() {
     }
     
     // Verify
-    BlockType after = world2.GetBlock(0, 35, 0);
+    BlockTypeID after = world2.GetBlock(0, 35, 0);
     std::cout << "Block at (0, 35, 0) after load: " << (int)after << std::endl;
     
     if (before == after) {

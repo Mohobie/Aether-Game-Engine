@@ -52,6 +52,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/voxel/block_registry.cpp" "CMakeFiles/world_test.dir/src/voxel/block_registry.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/voxel/block_registry.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/block_types.cpp" "CMakeFiles/world_test.dir/src/voxel/block_types.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/voxel/block_types.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/chunk.cpp" "CMakeFiles/world_test.dir/src/voxel/chunk.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/voxel/chunk.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/voxel/terrain_system.cpp" "CMakeFiles/world_test.dir/src/voxel/terrain_system.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/voxel/terrain_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/world.cpp" "CMakeFiles/world_test.dir/src/voxel/world.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/voxel/world.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/world_generator.cpp" "CMakeFiles/world_test.dir/src/voxel/world_generator.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/voxel/world_generator.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/world_test.cpp" "CMakeFiles/world_test.dir/src/world_test.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/world_test.cpp.o.d"

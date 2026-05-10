@@ -117,6 +117,7 @@ set(CORE_SOURCES
     src/rendering/pbr_material.cpp
     src/audio/audio_system.cpp
     src/physics/physics_system.cpp
+    src/voxel/terrain_system.cpp
     src/voxel/block.cpp
     src/voxel/block_types.cpp
     src/voxel/chunk.cpp
@@ -202,7 +203,6 @@ endif()
 set(ALL_SOURCES ${CORE_SOURCES})
 
 set(OPTIONAL_SOURCES
-    src/platform/input.cpp
     src/platform/window.cpp
     src/rendering/camera.cpp
     src/rendering/mesh.cpp

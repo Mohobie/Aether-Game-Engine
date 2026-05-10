@@ -13,7 +13,7 @@ int main() {
     std::cout << "=== World Generation Test ===" << std::endl;
     
     // Initialize block registry
-    BlockRegistry::GetInstance();
+    BlockRegistry::GetInstance().LoadFromFile("../assets/blocks/default_blocks.json");
     
     // Create world
     World world;
@@ -32,14 +32,15 @@ int main() {
             // Count blocks
             int solid = 0, air = 0, grass = 0, dirt = 0, stone = 0, wood = 0, leaves = 0;
             for (int i = 0; i < CHUNK_SIZE * CHUNK_SIZE * CHUNK_SIZE; i++) {
-                switch (chunk->blocks[i]) {
-                    case BlockType::Air: air++; break;
-                    case BlockType::Grass: grass++; solid++; break;
-                    case BlockType::Dirt: dirt++; solid++; break;
-                    case BlockType::Stone: stone++; solid++; break;
-                    case BlockType::Wood: wood++; solid++; break;
-                    case BlockType::Leaves: leaves++; solid++; break;
-                    default: solid++; break;
+                BlockTypeID blockId = chunk->blocks[i];
+                if (blockId == BlockRegistry::GetInstance().GetBlockId("air")) air++;
+                else {
+                    solid++;
+                    if (blockId == BlockRegistry::GetInstance().GetBlockId("grass")) grass++;
+                    else if (blockId == BlockRegistry::GetInstance().GetBlockId("dirt")) dirt++;
+                    else if (blockId == BlockRegistry::GetInstance().GetBlockId("stone")) stone++;
+                    else if (blockId == BlockRegistry::GetInstance().GetBlockId("wood")) wood++;
+                    else if (blockId == BlockRegistry::GetInstance().GetBlockId("leaves")) leaves++;
                 }
             }
             
@@ -53,9 +54,10 @@ int main() {
     
     // Test block placement
     std::cout << "\nTesting block placement..." << std::endl;
-    world.SetBlock(0, 35, 0, BlockType::Wood);
-    BlockType block = world.GetBlock(0, 35, 0);
-    std::cout << "Block at (0, 35, 0): " << (int)block << " (expected " << (int)BlockType::Wood << ")" << std::endl;
+    // Set some blocks using BlockTypeID
+    world.SetBlock(0, 35, 0, BlockRegistry::GetInstance().GetBlockId("wood"));
+    BlockTypeID block = world.GetBlock(0, 35, 0);
+    std::cout << "Block at (0, 35, 0): " << (int)block << " (expected " << (int)BlockRegistry::GetInstance().GetBlockId("wood") << ")" << std::endl;
     
     // Test raycast
     std::cout << "\nTesting raycast..." << std::endl;
