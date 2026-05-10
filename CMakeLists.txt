@@ -105,6 +105,7 @@ set(CORE_SOURCES
     src/rendering/texture.cpp
     src/rendering/shader.cpp
     src/rendering/shadow_system.cpp
+    src/rendering/pbr_material.cpp
     src/audio/audio_system.cpp
     src/physics/physics_system.cpp
     src/voxel/block.cpp

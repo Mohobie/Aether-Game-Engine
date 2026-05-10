@@ -1185,6 +1185,39 @@ src/rendering/mesh.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/mesh.cpp.s
 .PHONY : src/rendering/mesh.cpp.s
 
+src/rendering/pbr_material.o: src/rendering/pbr_material.cpp.o
+.PHONY : src/rendering/pbr_material.o
+
+# target to build an object file
+src/rendering/pbr_material.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/pbr_material.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/pbr_material.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/pbr_material.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/pbr_material.cpp.o
+.PHONY : src/rendering/pbr_material.cpp.o
+
+src/rendering/pbr_material.i: src/rendering/pbr_material.cpp.i
+.PHONY : src/rendering/pbr_material.i
+
+# target to preprocess a source file
+src/rendering/pbr_material.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/pbr_material.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/pbr_material.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/pbr_material.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/pbr_material.cpp.i
+.PHONY : src/rendering/pbr_material.cpp.i
+
+src/rendering/pbr_material.s: src/rendering/pbr_material.cpp.s
+.PHONY : src/rendering/pbr_material.s
+
+# target to generate assembly for a file
+src/rendering/pbr_material.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/pbr_material.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/pbr_material.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/pbr_material.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/pbr_material.cpp.s
+.PHONY : src/rendering/pbr_material.cpp.s
+
 src/rendering/renderer.o: src/rendering/renderer.cpp.o
 .PHONY : src/rendering/renderer.o
 
@@ -1923,6 +1956,9 @@ help:
 	@echo "... src/rendering/mesh.o"
 	@echo "... src/rendering/mesh.i"
 	@echo "... src/rendering/mesh.s"
+	@echo "... src/rendering/pbr_material.o"
+	@echo "... src/rendering/pbr_material.i"
+	@echo "... src/rendering/pbr_material.s"
 	@echo "... src/rendering/renderer.o"
 	@echo "... src/rendering/renderer.i"
 	@echo "... src/rendering/renderer.s"

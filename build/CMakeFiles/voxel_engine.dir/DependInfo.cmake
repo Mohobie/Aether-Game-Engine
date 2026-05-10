@@ -41,6 +41,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/rendering/framebuffer_renderer.cpp" "CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/rendering/lighting.cpp" "CMakeFiles/voxel_engine.dir/src/rendering/lighting.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/rendering/lighting.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/rendering/mesh.cpp" "CMakeFiles/voxel_engine.dir/src/rendering/mesh.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/rendering/mesh.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/rendering/pbr_material.cpp" "CMakeFiles/voxel_engine.dir/src/rendering/pbr_material.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/rendering/pbr_material.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/rendering/renderer.cpp" "CMakeFiles/voxel_engine.dir/src/rendering/renderer.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/rendering/renderer.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/rendering/shader.cpp" "CMakeFiles/voxel_engine.dir/src/rendering/shader.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/rendering/shader.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/rendering/shadow_system.cpp" "CMakeFiles/voxel_engine.dir/src/rendering/shadow_system.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/rendering/shadow_system.cpp.o.d"

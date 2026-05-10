@@ -49,6 +49,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o.d"
   "CMakeFiles/world_test.dir/src/rendering/mesh.cpp.o"
   "CMakeFiles/world_test.dir/src/rendering/mesh.cpp.o.d"
+  "CMakeFiles/world_test.dir/src/rendering/pbr_material.cpp.o"
+  "CMakeFiles/world_test.dir/src/rendering/pbr_material.cpp.o.d"
   "CMakeFiles/world_test.dir/src/rendering/shader.cpp.o"
   "CMakeFiles/world_test.dir/src/rendering/shader.cpp.o.d"
   "CMakeFiles/world_test.dir/src/rendering/shadow_system.cpp.o"
