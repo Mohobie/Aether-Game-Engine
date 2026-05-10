@@ -40,6 +40,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/platform/platform_common.cpp" "CMakeFiles/voxel_engine.dir/src/platform/platform_common.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/platform/platform_common.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/platform/window.cpp" "CMakeFiles/voxel_engine.dir/src/platform/window.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/platform/window.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/rendering/camera.cpp" "CMakeFiles/voxel_engine.dir/src/rendering/camera.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/rendering/camera.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/rendering/deferred_rendering.cpp" "CMakeFiles/voxel_engine.dir/src/rendering/deferred_rendering.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/rendering/deferred_rendering.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/rendering/framebuffer_renderer.cpp" "CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/rendering/lighting.cpp" "CMakeFiles/voxel_engine.dir/src/rendering/lighting.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/rendering/lighting.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/rendering/mesh.cpp" "CMakeFiles/voxel_engine.dir/src/rendering/mesh.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/rendering/mesh.cpp.o.d"

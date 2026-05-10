@@ -33,6 +33,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/platform/file_system.cpp" "CMakeFiles/save_test.dir/src/platform/file_system.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/platform/file_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/platform/input_manager.cpp" "CMakeFiles/save_test.dir/src/platform/input_manager.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/platform/input_manager.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/platform/platform_common.cpp" "CMakeFiles/save_test.dir/src/platform/platform_common.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/platform/platform_common.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/rendering/deferred_rendering.cpp" "CMakeFiles/save_test.dir/src/rendering/deferred_rendering.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/rendering/deferred_rendering.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/rendering/framebuffer_renderer.cpp" "CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/rendering/mesh.cpp" "CMakeFiles/save_test.dir/src/rendering/mesh.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/rendering/mesh.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/rendering/pbr_material.cpp" "CMakeFiles/save_test.dir/src/rendering/pbr_material.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/rendering/pbr_material.cpp.o.d"

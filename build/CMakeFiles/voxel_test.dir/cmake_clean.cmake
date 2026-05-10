@@ -49,6 +49,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_test.dir/src/platform/input_manager.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/platform/platform_common.cpp.o"
   "CMakeFiles/voxel_test.dir/src/platform/platform_common.cpp.o.d"
+  "CMakeFiles/voxel_test.dir/src/rendering/deferred_rendering.cpp.o"
+  "CMakeFiles/voxel_test.dir/src/rendering/deferred_rendering.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/rendering/framebuffer_renderer.cpp.o"
   "CMakeFiles/voxel_test.dir/src/rendering/framebuffer_renderer.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/rendering/mesh.cpp.o"

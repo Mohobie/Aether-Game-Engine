@@ -1161,6 +1161,39 @@ src/rendering/camera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/camera.cpp.s
 .PHONY : src/rendering/camera.cpp.s
 
+src/rendering/deferred_rendering.o: src/rendering/deferred_rendering.cpp.o
+.PHONY : src/rendering/deferred_rendering.o
+
+# target to build an object file
+src/rendering/deferred_rendering.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/deferred_rendering.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/deferred_rendering.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/deferred_rendering.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/deferred_rendering.cpp.o
+.PHONY : src/rendering/deferred_rendering.cpp.o
+
+src/rendering/deferred_rendering.i: src/rendering/deferred_rendering.cpp.i
+.PHONY : src/rendering/deferred_rendering.i
+
+# target to preprocess a source file
+src/rendering/deferred_rendering.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/deferred_rendering.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/deferred_rendering.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/deferred_rendering.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/deferred_rendering.cpp.i
+.PHONY : src/rendering/deferred_rendering.cpp.i
+
+src/rendering/deferred_rendering.s: src/rendering/deferred_rendering.cpp.s
+.PHONY : src/rendering/deferred_rendering.s
+
+# target to generate assembly for a file
+src/rendering/deferred_rendering.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/deferred_rendering.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/deferred_rendering.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/deferred_rendering.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/deferred_rendering.cpp.s
+.PHONY : src/rendering/deferred_rendering.cpp.s
+
 src/rendering/framebuffer_renderer.o: src/rendering/framebuffer_renderer.cpp.o
 .PHONY : src/rendering/framebuffer_renderer.o
 
@@ -2085,6 +2118,9 @@ help:
 	@echo "... src/rendering/camera.o"
 	@echo "... src/rendering/camera.i"
 	@echo "... src/rendering/camera.s"
+	@echo "... src/rendering/deferred_rendering.o"
+	@echo "... src/rendering/deferred_rendering.i"
+	@echo "... src/rendering/deferred_rendering.s"
 	@echo "... src/rendering/framebuffer_renderer.o"
 	@echo "... src/rendering/framebuffer_renderer.i"
 	@echo "... src/rendering/framebuffer_renderer.s"
