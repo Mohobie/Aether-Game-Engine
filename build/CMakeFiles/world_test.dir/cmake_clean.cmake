@@ -45,6 +45,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/world_test.dir/src/network/packet.cpp.o.d"
   "CMakeFiles/world_test.dir/src/physics/collision.cpp.o"
   "CMakeFiles/world_test.dir/src/physics/collision.cpp.o.d"
+  "CMakeFiles/world_test.dir/src/physics/physics_constraints.cpp.o"
+  "CMakeFiles/world_test.dir/src/physics/physics_constraints.cpp.o.d"
   "CMakeFiles/world_test.dir/src/physics/physics_system.cpp.o"
   "CMakeFiles/world_test.dir/src/physics/physics_system.cpp.o.d"
   "CMakeFiles/world_test.dir/src/physics/rigidbody.cpp.o"

@@ -1023,6 +1023,39 @@ src/physics/collision.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/collision.cpp.s
 .PHONY : src/physics/collision.cpp.s
 
+src/physics/physics_constraints.o: src/physics/physics_constraints.cpp.o
+.PHONY : src/physics/physics_constraints.o
+
+# target to build an object file
+src/physics/physics_constraints.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/physics/physics_constraints.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/physics/physics_constraints.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/physics/physics_constraints.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/physics_constraints.cpp.o
+.PHONY : src/physics/physics_constraints.cpp.o
+
+src/physics/physics_constraints.i: src/physics/physics_constraints.cpp.i
+.PHONY : src/physics/physics_constraints.i
+
+# target to preprocess a source file
+src/physics/physics_constraints.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/physics/physics_constraints.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/physics/physics_constraints.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/physics/physics_constraints.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/physics_constraints.cpp.i
+.PHONY : src/physics/physics_constraints.cpp.i
+
+src/physics/physics_constraints.s: src/physics/physics_constraints.cpp.s
+.PHONY : src/physics/physics_constraints.s
+
+# target to generate assembly for a file
+src/physics/physics_constraints.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/physics/physics_constraints.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/physics/physics_constraints.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/physics/physics_constraints.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/physics_constraints.cpp.s
+.PHONY : src/physics/physics_constraints.cpp.s
+
 src/physics/physics_system.o: src/physics/physics_system.cpp.o
 .PHONY : src/physics/physics_system.o
 
@@ -2202,6 +2235,9 @@ help:
 	@echo "... src/physics/collision.o"
 	@echo "... src/physics/collision.i"
 	@echo "... src/physics/collision.s"
+	@echo "... src/physics/physics_constraints.o"
+	@echo "... src/physics/physics_constraints.i"
+	@echo "... src/physics/physics_constraints.s"
 	@echo "... src/physics/physics_system.o"
 	@echo "... src/physics/physics_system.i"
 	@echo "... src/physics/physics_system.s"
