@@ -45,6 +45,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o.d"
   "CMakeFiles/world_test.dir/src/rendering/mesh.cpp.o"
   "CMakeFiles/world_test.dir/src/rendering/mesh.cpp.o.d"
+  "CMakeFiles/world_test.dir/src/rendering/texture.cpp.o"
+  "CMakeFiles/world_test.dir/src/rendering/texture.cpp.o.d"
   "CMakeFiles/world_test.dir/src/voxel/biome.cpp.o"
   "CMakeFiles/world_test.dir/src/voxel/biome.cpp.o.d"
   "CMakeFiles/world_test.dir/src/voxel/block.cpp.o"

@@ -45,6 +45,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_test.dir/src/rendering/framebuffer_renderer.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/rendering/mesh.cpp.o"
   "CMakeFiles/voxel_test.dir/src/rendering/mesh.cpp.o.d"
+  "CMakeFiles/voxel_test.dir/src/rendering/texture.cpp.o"
+  "CMakeFiles/voxel_test.dir/src/rendering/texture.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/test_main.cpp.o"
   "CMakeFiles/voxel_test.dir/src/test_main.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/voxel/biome.cpp.o"

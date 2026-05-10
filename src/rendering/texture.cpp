@@ -1,35 +1,177 @@
-#include "rendering/texture.h"
+#include "texture.h"
+#include "platform/file_system.h"
 #include <iostream>
+#include <cmath>
+#include <cstring>
 
-// Stub implementation when OpenGL is not available
 namespace vge {
 
-Texture::Texture() : textureId(0), width(0), height(0), channels(0), loaded(false) {}
-
-Texture::~Texture() {
-    // Would delete OpenGL texture
-}
+// ============================================
+// Texture Implementation
+// ============================================
 
 bool Texture::LoadFromFile(const std::string& path) {
-    std::cout << "[Texture] Stub - would load " << path << std::endl;
-    loaded = true;
+    // For now, just create a colored texture based on name
+    // In a real implementation, this would load PNG/JPG using stb_image
+    std::cout << "[Texture] Loading: " << path << std::endl;
+    
+    // Create a simple colored pattern based on hash of name
+    size_t hash = std::hash<std::string>{}(path);
+    Vec3 color(
+        ((hash >> 16) & 0xFF) / 255.0f,
+        ((hash >> 8) & 0xFF) / 255.0f,
+        (hash & 0xFF) / 255.0f
+    );
+    
+    *this = CreateSolidColor(color, 64, 64);
+    name = path;
     return true;
 }
 
-bool Texture::LoadFromData(const unsigned char* data, int w, int h, int channels) {
+bool Texture::LoadFromMemory(const uint8_t* src, int w, int h, int ch) {
     width = w;
     height = h;
-    this->channels = channels;
-    loaded = true;
+    channels = ch;
+    data.resize(w * h * ch);
+    std::memcpy(data.data(), src, w * h * ch);
     return true;
 }
 
-void Texture::Bind(int slot) const {
-    // Would bind OpenGL texture
+Texture Texture::CreateSolidColor(const Vec3& color, int w, int h) {
+    Texture tex;
+    tex.width = w;
+    tex.height = h;
+    tex.channels = 4;
+    tex.data.resize(w * h * 4);
+    
+    for (int y = 0; y < h; ++y) {
+        for (int x = 0; x < w; ++x) {
+            int idx = (y * w + x) * 4;
+            tex.data[idx] = static_cast<uint8_t>(color.x * 255);
+            tex.data[idx + 1] = static_cast<uint8_t>(color.y * 255);
+            tex.data[idx + 2] = static_cast<uint8_t>(color.z * 255);
+            tex.data[idx + 3] = 255; // Alpha
+        }
+    }
+    
+    return tex;
 }
 
-void Texture::Unbind() const {
-    // Would unbind texture
+Texture Texture::CreateCheckerboard(int w, int h, int checkSize) {
+    Texture tex;
+    tex.width = w;
+    tex.height = h;
+    tex.channels = 4;
+    tex.data.resize(w * h * 4);
+    
+    for (int y = 0; y < h; ++y) {
+        for (int x = 0; x < w; ++x) {
+            int idx = (y * w + x) * 4;
+            bool check = ((x / checkSize) + (y / checkSize)) % 2 == 0;
+            uint8_t val = check ? 255 : 64;
+            tex.data[idx] = val;
+            tex.data[idx + 1] = val;
+            tex.data[idx + 2] = val;
+            tex.data[idx + 3] = 255;
+        }
+    }
+    
+    return tex;
+}
+
+// ============================================
+// Material Implementation
+// ============================================
+
+Material Material::LoadFromJson(const std::string& json) {
+    Material mat;
+    // Simple JSON parsing would go here
+    // For now, return default material
+    return mat;
+}
+
+// ============================================
+// Asset Manager Implementation
+// ============================================
+
+AssetManager::AssetManager(const std::string& base) : basePath(base) {}
+
+Texture* AssetManager::LoadTexture(const std::string& name, const std::string& path) {
+    std::string fullPath = basePath + path;
+    
+    Texture tex;
+    if (tex.LoadFromFile(fullPath)) {
+        tex.name = name;
+        textures[name] = std::move(tex);
+        return &textures[name];
+    }
+    
+    return nullptr;
+}
+
+Texture* AssetManager::GetTexture(const std::string& name) {
+    auto it = textures.find(name);
+    if (it != textures.end()) {
+        return &it->second;
+    }
+    return nullptr;
+}
+
+void AssetManager::UnloadTexture(const std::string& name) {
+    textures.erase(name);
+}
+
+Material* AssetManager::LoadMaterial(const std::string& name, const std::string& path) {
+    std::string fullPath = basePath + path;
+    std::string json = File::ReadText(fullPath);
+    
+    if (!json.empty()) {
+        materials[name] = Material::LoadFromJson(json);
+        return &materials[name];
+    }
+    
+    return nullptr;
+}
+
+Material* AssetManager::GetMaterial(const std::string& name) {
+    auto it = materials.find(name);
+    if (it != materials.end()) {
+        return &it->second;
+    }
+    return nullptr;
+}
+
+void AssetManager::UnloadMaterial(const std::string& name) {
+    materials.erase(name);
+}
+
+void AssetManager::GenerateDefaultTextures() {
+    // Generate default textures for common block types
+    textures["default"] = Texture::CreateSolidColor(Vec3(1, 1, 1), 32, 32);
+    textures["default"].name = "default";
+    
+    textures["checkerboard"] = Texture::CreateCheckerboard(64, 64, 8);
+    textures["checkerboard"].name = "checkerboard";
+    
+    // Generate colored textures for block types
+    textures["stone"] = Texture::CreateSolidColor(Vec3(0.5f, 0.5f, 0.55f), 32, 32);
+    textures["stone"].name = "stone";
+    
+    textures["dirt"] = Texture::CreateSolidColor(Vec3(0.55f, 0.35f, 0.2f), 32, 32);
+    textures["dirt"].name = "dirt";
+    
+    textures["grass"] = Texture::CreateSolidColor(Vec3(0.3f, 0.7f, 0.2f), 32, 32);
+    textures["grass"].name = "grass";
+    
+    textures["wood"] = Texture::CreateSolidColor(Vec3(0.6f, 0.4f, 0.2f), 32, 32);
+    textures["wood"].name = "wood";
+    
+    std::cout << "[AssetManager] Generated " << textures.size() << " default textures" << std::endl;
+}
+
+void AssetManager::Clear() {
+    textures.clear();
+    materials.clear();
 }
 
 } // namespace vge

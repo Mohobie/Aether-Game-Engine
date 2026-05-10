@@ -102,6 +102,7 @@ set(CORE_SOURCES
     src/entity/entity.cpp
     src/entity/components.cpp
     src/rendering/mesh.cpp
+    src/rendering/texture.cpp
     src/voxel/block.cpp
     src/voxel/block_types.cpp
     src/voxel/chunk.cpp

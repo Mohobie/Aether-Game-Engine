@@ -1172,6 +1172,9 @@ src/rendering/texture.o: src/rendering/texture.cpp.o
 
 # target to build an object file
 src/rendering/texture.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/texture.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/texture.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/texture.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/texture.cpp.o
 .PHONY : src/rendering/texture.cpp.o
 
@@ -1180,6 +1183,9 @@ src/rendering/texture.i: src/rendering/texture.cpp.i
 
 # target to preprocess a source file
 src/rendering/texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/texture.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/texture.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/texture.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/texture.cpp.i
 .PHONY : src/rendering/texture.cpp.i
 
@@ -1188,6 +1194,9 @@ src/rendering/texture.s: src/rendering/texture.cpp.s
 
 # target to generate assembly for a file
 src/rendering/texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/texture.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/texture.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/texture.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/texture.cpp.s
 .PHONY : src/rendering/texture.cpp.s
 
