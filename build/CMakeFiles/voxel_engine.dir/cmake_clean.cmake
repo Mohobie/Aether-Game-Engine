@@ -69,6 +69,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_engine.dir/src/rendering/renderer.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/rendering/shader.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/rendering/shader.cpp.o.d"
+  "CMakeFiles/voxel_engine.dir/src/rendering/shadow_system.cpp.o"
+  "CMakeFiles/voxel_engine.dir/src/rendering/shadow_system.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/rendering/texture.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/rendering/texture.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.o"

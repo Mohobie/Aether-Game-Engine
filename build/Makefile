@@ -1242,6 +1242,39 @@ src/rendering/shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/shader.cpp.s
 .PHONY : src/rendering/shader.cpp.s
 
+src/rendering/shadow_system.o: src/rendering/shadow_system.cpp.o
+.PHONY : src/rendering/shadow_system.o
+
+# target to build an object file
+src/rendering/shadow_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/shadow_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/shadow_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/shadow_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/shadow_system.cpp.o
+.PHONY : src/rendering/shadow_system.cpp.o
+
+src/rendering/shadow_system.i: src/rendering/shadow_system.cpp.i
+.PHONY : src/rendering/shadow_system.i
+
+# target to preprocess a source file
+src/rendering/shadow_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/shadow_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/shadow_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/shadow_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/shadow_system.cpp.i
+.PHONY : src/rendering/shadow_system.cpp.i
+
+src/rendering/shadow_system.s: src/rendering/shadow_system.cpp.s
+.PHONY : src/rendering/shadow_system.s
+
+# target to generate assembly for a file
+src/rendering/shadow_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/shadow_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/shadow_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/shadow_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/shadow_system.cpp.s
+.PHONY : src/rendering/shadow_system.cpp.s
+
 src/rendering/texture.o: src/rendering/texture.cpp.o
 .PHONY : src/rendering/texture.o
 
@@ -1896,6 +1929,9 @@ help:
 	@echo "... src/rendering/shader.o"
 	@echo "... src/rendering/shader.i"
 	@echo "... src/rendering/shader.s"
+	@echo "... src/rendering/shadow_system.o"
+	@echo "... src/rendering/shadow_system.i"
+	@echo "... src/rendering/shadow_system.s"
 	@echo "... src/rendering/texture.o"
 	@echo "... src/rendering/texture.i"
 	@echo "... src/rendering/texture.s"
