@@ -9,12 +9,14 @@
 6. Physics System (Rigidbody, Collision, Raycast)
 7. Shader System with Lighting
 8. Audio System (3D Positioning)
+9. **Shadow Mapping** (Cascaded Shadow Maps)
+10. **PBR Materials** (Cook-Torrance BRDF, IBL)
 
 ## 🔴 In Progress - Critical Gaps
 
 ### 1. Advanced Rendering
-- [ ] PBR (Physically Based Rendering)
-- [ ] Shadow Mapping
+- [x] PBR (Physically Based Rendering) ✅
+- [x] Shadow Mapping ✅
 - [ ] Post-Processing (Bloom, SSAO, Tone Mapping)
 - [ ] HDR/Deferred Rendering
 - [ ] Level of Detail (LOD)
@@ -72,8 +74,8 @@
 
 ## Priority Order for Implementation
 
-1. **Shadow Mapping** - Biggest visual impact
-2. **PBR Materials** - Modern look
+1. **Shadow Mapping** ✅ - Biggest visual impact
+2. **PBR Materials** ✅ - Modern look
 3. **Skeletal Animation** - Characters/movement
 4. **Pathfinding** - NPC movement
 5. **UI System** - Game interface
