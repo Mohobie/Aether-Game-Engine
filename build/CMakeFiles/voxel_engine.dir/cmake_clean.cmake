@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/voxel_engine.dir/src/ai/ai_system.cpp.o"
+  "CMakeFiles/voxel_engine.dir/src/ai/ai_system.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/animation/animation.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/animation/animation.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/audio/audio_engine.cpp.o"

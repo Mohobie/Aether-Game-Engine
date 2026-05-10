@@ -99,6 +99,7 @@ endif()
 set(CORE_SOURCES
     src/math/vec3.cpp
     src/math/mat4.cpp
+    src/ai/ai_system.cpp
     src/animation/animation.cpp
     src/entity/entity.cpp
     src/entity/components.cpp

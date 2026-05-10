@@ -218,4 +218,5 @@ CMakeFiles/voxel_test.dir/src/test_main.cpp.o: \
  /home/mohobie/projects/aether-game-engine/src/entity/entity.h \
  /usr/include/c++/11/typeindex \
  /home/mohobie/projects/aether-game-engine/src/entity/components.h \
- /home/mohobie/projects/aether-game-engine/src/animation/animation.h
+ /home/mohobie/projects/aether-game-engine/src/animation/animation.h \
+ /home/mohobie/projects/aether-game-engine/src/ai/ai_system.h
