@@ -1,148 +1,233 @@
-#include "voxel/block_mesh_builder.h"
-#include "voxel/chunk.h"
-#include "voxel/block.h"
-#include "voxel/block_registry.h"
-#include "rendering/mesh.h"
-#include <iostream>
+#include "block_mesh_builder.h"
+#include "block_registry.h"
+#include "chunk.h"
 
 namespace vge {
 
-void BlockMeshBuilder::BuildChunkMesh(const Chunk* chunk, Mesh& mesh) {
-    if (!chunk || chunk->IsEmpty()) return;
+Mesh BlockMeshBuilder::BuildChunkMesh(const Chunk& chunk) {
+    Mesh mesh;
     
-    int cx = chunk->GetChunkX();
-    int cy = chunk->GetChunkY();
-    int cz = chunk->GetChunkZ();
-    
-    // Iterate all blocks in chunk
-    for (int x = 0; x < CHUNK_SIZE; x++) {
-        for (int y = 0; y < CHUNK_SIZE; y++) {
-            for (int z = 0; z < CHUNK_SIZE; z++) {
-                BlockType block = chunk->GetBlock(x, y, z);
-                if (block == BlockType::Air) continue;
+    for (int x = 0; x < CHUNK_SIZE; ++x) {
+        for (int y = 0; y < CHUNK_SIZE; ++y) {
+            for (int z = 0; z < CHUNK_SIZE; ++z) {
+                BlockTypeID block = chunk.GetBlock(x, y, z);
+                if (block == BLOCK_AIR) continue;
                 
-                Vec3 pos(x, y, z);
-                Vec3 color = GetBlockColor((int)block);
+                Vec3 color = GetBlockColor(block);
                 
-                // Check each face - only generate if adjacent to air
-                // Left face (x-1)
-                if (x == 0 || chunk->GetBlock(x-1, y, z) == BlockType::Air) {
-                    AddFace(mesh, pos, Vec3(-1, 0, 0), color);
+                // Check each face - only render if neighbor is air or transparent
+                // Front face (Z+)
+                if (z == CHUNK_SIZE - 1 || chunk.GetBlock(x, y, z + 1) == BLOCK_AIR) {
+                    AddFaceFront(mesh, x, y, z, color);
                 }
-                // Right face (x+1)
-                if (x == CHUNK_SIZE-1 || chunk->GetBlock(x+1, y, z) == BlockType::Air) {
-                    AddFace(mesh, pos, Vec3(1, 0, 0), color);
+                // Back face (Z-)
+                if (z == 0 || chunk.GetBlock(x, y, z - 1) == BLOCK_AIR) {
+                    AddFaceBack(mesh, x, y, z, color);
                 }
-                // Bottom face (y-1)
-                if (y == 0 || chunk->GetBlock(x, y-1, z) == BlockType::Air) {
-                    AddFace(mesh, pos, Vec3(0, -1, 0), color);
+                // Right face (X+)
+                if (x == CHUNK_SIZE - 1 || chunk.GetBlock(x + 1, y, z) == BLOCK_AIR) {
+                    AddFaceRight(mesh, x, y, z, color);
                 }
-                // Top face (y+1)
-                if (y == CHUNK_SIZE-1 || chunk->GetBlock(x, y+1, z) == BlockType::Air) {
-                    AddFace(mesh, pos, Vec3(0, 1, 0), color);
+                // Left face (X-)
+                if (x == 0 || chunk.GetBlock(x - 1, y, z) == BLOCK_AIR) {
+                    AddFaceLeft(mesh, x, y, z, color);
                 }
-                // Back face (z-1)
-                if (z == 0 || chunk->GetBlock(x, y, z-1) == BlockType::Air) {
-                    AddFace(mesh, pos, Vec3(0, 0, -1), color);
+                // Top face (Y+)
+                if (y == CHUNK_SIZE - 1 || chunk.GetBlock(x, y + 1, z) == BLOCK_AIR) {
+                    AddFaceTop(mesh, x, y, z, color);
                 }
-                // Front face (z+1)
-                if (z == CHUNK_SIZE-1 || chunk->GetBlock(x, y, z+1) == BlockType::Air) {
-                    AddFace(mesh, pos, Vec3(0, 0, 1), color);
+                // Bottom face (Y-)
+                if (y == 0 || chunk.GetBlock(x, y - 1, z) == BLOCK_AIR) {
+                    AddFaceBottom(mesh, x, y, z, color);
                 }
             }
         }
     }
-}
-
-Vec3 BlockMeshBuilder::GetBlockColor(int type) {
-    switch (type) {
-        case 3: return Vec3(0.2f, 0.8f, 0.2f);    // Grass - Green
-        case 2: return Vec3(0.6f, 0.4f, 0.2f);     // Dirt - Brown
-        case 1: return Vec3(0.5f, 0.5f, 0.5f);     // Stone - Gray
-        case 6: return Vec3(0.4f, 0.25f, 0.1f);   // Wood - Dark brown
-        case 7: return Vec3(0.1f, 0.6f, 0.1f);    // Leaves - Dark green
-        case 4: return Vec3(0.9f, 0.85f, 0.6f);    // Sand - Tan
-        case 5: return Vec3(0.2f, 0.4f, 0.9f);    // Water - Blue
-        case 14: return Vec3(0.2f, 0.2f, 0.2f);   // Bedrock - Dark gray
-        default: return Vec3(1.0f, 0.0f, 1.0f);    // Magenta (unknown)
-    }
-}
-
-void BlockMeshBuilder::AddFace(Mesh& mesh, const Vec3& position, const Vec3& normal, const Vec3& color) {
-    // Calculate face vertices based on normal
-    Vec3 v0, v1, v2, v3;
     
-    if (normal.x != 0) {
-        // Left or right face
-        float x = position.x + (normal.x > 0 ? 1.0f : 0.0f);
-        v0 = Vec3(x, position.y, position.z);
-        v1 = Vec3(x, position.y + 1, position.z);
-        v2 = Vec3(x, position.y + 1, position.z + 1);
-        v3 = Vec3(x, position.y, position.z + 1);
-    } else if (normal.y != 0) {
-        // Bottom or top face
-        float y = position.y + (normal.y > 0 ? 1.0f : 0.0f);
-        v0 = Vec3(position.x, y, position.z);
-        v1 = Vec3(position.x, y, position.z + 1);
-        v2 = Vec3(position.x + 1, y, position.z + 1);
-        v3 = Vec3(position.x + 1, y, position.z);
-    } else {
-        // Back or front face
-        float z = position.z + (normal.z > 0 ? 1.0f : 0.0f);
-        v0 = Vec3(position.x, position.y, z);
-        v1 = Vec3(position.x + 1, position.y, z);
-        v2 = Vec3(position.x + 1, position.y + 1, z);
-        v3 = Vec3(position.x, position.y + 1, z);
+    return mesh;
+}
+
+Mesh BlockMeshBuilder::BuildChunkMesh(const Chunk& chunk,
+                                      const Chunk* neighborXP, const Chunk* neighborXN,
+                                      const Chunk* neighborYP, const Chunk* neighborYN,
+                                      const Chunk* neighborZP, const Chunk* neighborZN) {
+    Mesh mesh;
+    const Chunk* neighbors[6] = {neighborXP, neighborXN, neighborYP, neighborYN, neighborZP, neighborZN};
+    
+    for (int x = 0; x < CHUNK_SIZE; ++x) {
+        for (int y = 0; y < CHUNK_SIZE; ++y) {
+            for (int z = 0; z < CHUNK_SIZE; ++z) {
+                BlockTypeID block = chunk.GetBlock(x, y, z);
+                if (block == BLOCK_AIR) continue;
+                
+                AddBlockFaces(mesh, x, y, z, block, chunk, neighbors);
+            }
+        }
     }
     
-    // Add vertices (two triangles = one face)
-    Vertex vert0, vert1, vert2, vert3;
-    
-    vert0.position = v0;
-    vert0.normal = normal;
-    vert0.color = color;
-    vert0.texCoord = Vec2(0, 0);
-    
-    vert1.position = v1;
-    vert1.normal = normal;
-    vert1.color = color;
-    vert1.texCoord = Vec2(1, 0);
-    
-    vert2.position = v2;
-    vert2.normal = normal;
-    vert2.color = color;
-    vert2.texCoord = Vec2(1, 1);
-    
-    vert3.position = v3;
-    vert3.normal = normal;
-    vert3.color = color;
-    vert3.texCoord = Vec2(0, 1);
-    
-    // Add triangles (counter-clockwise)
-    uint32_t baseIndex = mesh.GetVertexCount();
-    
-    mesh.AddVertex(vert0);
-    mesh.AddVertex(vert1);
-    mesh.AddVertex(vert2);
-    mesh.AddVertex(vert3);
-    
-    mesh.AddIndex(baseIndex + 0);
-    mesh.AddIndex(baseIndex + 1);
-    mesh.AddIndex(baseIndex + 2);
-    
-    mesh.AddIndex(baseIndex + 0);
-    mesh.AddIndex(baseIndex + 2);
-    mesh.AddIndex(baseIndex + 3);
+    return mesh;
 }
 
-void BlockMeshBuilder::AddCube(Mesh& mesh, const Vec3& position, const Vec3& color) {
-    // Add all 6 faces
-    AddFace(mesh, position, Vec3(-1, 0, 0), color); // Left
-    AddFace(mesh, position, Vec3(1, 0, 0), color);  // Right
-    AddFace(mesh, position, Vec3(0, -1, 0), color); // Bottom
-    AddFace(mesh, position, Vec3(0, 1, 0), color);  // Top
-    AddFace(mesh, position, Vec3(0, 0, -1), color); // Back
-    AddFace(mesh, position, Vec3(0, 0, 1), color);    // Front
+void BlockMeshBuilder::AddBlockFaces(Mesh& mesh, int x, int y, int z,
+                                     BlockTypeID block, const Chunk& chunk,
+                                     const Chunk* neighbors[6]) {
+    Vec3 color = GetBlockColor(block);
+    
+    // Front face (Z+)
+    BlockTypeID front = (z < CHUNK_SIZE - 1) ? chunk.GetBlock(x, y, z + 1) 
+                                             : (neighbors[4] ? neighbors[4]->GetBlock(x, y, 0) : BLOCK_AIR);
+    if (ShouldRenderFace(front)) AddFaceFront(mesh, x, y, z, color);
+    
+    // Back face (Z-)
+    BlockTypeID back = (z > 0) ? chunk.GetBlock(x, y, z - 1)
+                              : (neighbors[5] ? neighbors[5]->GetBlock(x, y, CHUNK_SIZE - 1) : BLOCK_AIR);
+    if (ShouldRenderFace(back)) AddFaceBack(mesh, x, y, z, color);
+    
+    // Right face (X+)
+    BlockTypeID right = (x < CHUNK_SIZE - 1) ? chunk.GetBlock(x + 1, y, z)
+                                              : (neighbors[0] ? neighbors[0]->GetBlock(0, y, z) : BLOCK_AIR);
+    if (ShouldRenderFace(right)) AddFaceRight(mesh, x, y, z, color);
+    
+    // Left face (X-)
+    BlockTypeID left = (x > 0) ? chunk.GetBlock(x - 1, y, z)
+                                : (neighbors[1] ? neighbors[1]->GetBlock(CHUNK_SIZE - 1, y, z) : BLOCK_AIR);
+    if (ShouldRenderFace(left)) AddFaceLeft(mesh, x, y, z, color);
+    
+    // Top face (Y+)
+    BlockTypeID top = (y < CHUNK_SIZE - 1) ? chunk.GetBlock(x, y + 1, z)
+                                            : (neighbors[2] ? neighbors[2]->GetBlock(x, 0, z) : BLOCK_AIR);
+    if (ShouldRenderFace(top)) AddFaceTop(mesh, x, y, z, color);
+    
+    // Bottom face (Y-)
+    BlockTypeID bottom = (y > 0) ? chunk.GetBlock(x, y - 1, z)
+                                  : (neighbors[3] ? neighbors[3]->GetBlock(x, CHUNK_SIZE - 1, z) : BLOCK_AIR);
+    if (ShouldRenderFace(bottom)) AddFaceBottom(mesh, x, y, z, color);
+}
+
+bool BlockMeshBuilder::ShouldRenderFace(BlockTypeID neighborBlock) {
+    if (neighborBlock == BLOCK_AIR) return true;
+    const BlockDef& def = BlockRegistry::GetInstance().GetBlock(neighborBlock);
+    return !def.IsOpaque(); // Render face if neighbor is transparent
+}
+
+Vec3 BlockMeshBuilder::GetBlockColor(BlockTypeID block) {
+    if (block == BLOCK_AIR) return Vec3(0, 0, 0);
+    return BlockRegistry::GetInstance().GetBlock(block).GetColor();
+}
+
+// Face generation helpers
+void BlockMeshBuilder::AddFaceFront(Mesh& mesh, int x, int y, int z, const Vec3& color) {
+    float fx = static_cast<float>(x);
+    float fy = static_cast<float>(y);
+    float fz = static_cast<float>(z);
+    
+    uint32_t base = mesh.GetVertexCount();
+    mesh.AddVertex({Vec3(fx, fy, fz + 1), Vec3(0, 0, 1), color, Vec2(0, 0)});
+    mesh.AddVertex({Vec3(fx + 1, fy, fz + 1), Vec3(0, 0, 1), color, Vec2(1, 0)});
+    mesh.AddVertex({Vec3(fx + 1, fy + 1, fz + 1), Vec3(0, 0, 1), color, Vec2(1, 1)});
+    mesh.AddVertex({Vec3(fx, fy + 1, fz + 1), Vec3(0, 0, 1), color, Vec2(0, 1)});
+    
+    mesh.AddIndex(base);
+    mesh.AddIndex(base + 1);
+    mesh.AddIndex(base + 2);
+    mesh.AddIndex(base);
+    mesh.AddIndex(base + 2);
+    mesh.AddIndex(base + 3);
+}
+
+void BlockMeshBuilder::AddFaceBack(Mesh& mesh, int x, int y, int z, const Vec3& color) {
+    float fx = static_cast<float>(x);
+    float fy = static_cast<float>(y);
+    float fz = static_cast<float>(z);
+    
+    uint32_t base = mesh.GetVertexCount();
+    mesh.AddVertex({Vec3(fx + 1, fy, fz), Vec3(0, 0, -1), color, Vec2(0, 0)});
+    mesh.AddVertex({Vec3(fx, fy, fz), Vec3(0, 0, -1), color, Vec2(1, 0)});
+    mesh.AddVertex({Vec3(fx, fy + 1, fz), Vec3(0, 0, -1), color, Vec2(1, 1)});
+    mesh.AddVertex({Vec3(fx + 1, fy + 1, fz), Vec3(0, 0, -1), color, Vec2(0, 1)});
+    
+    mesh.AddIndex(base);
+    mesh.AddIndex(base + 1);
+    mesh.AddIndex(base + 2);
+    mesh.AddIndex(base);
+    mesh.AddIndex(base + 2);
+    mesh.AddIndex(base + 3);
+}
+
+void BlockMeshBuilder::AddFaceRight(Mesh& mesh, int x, int y, int z, const Vec3& color) {
+    float fx = static_cast<float>(x);
+    float fy = static_cast<float>(y);
+    float fz = static_cast<float>(z);
+    
+    uint32_t base = mesh.GetVertexCount();
+    mesh.AddVertex({Vec3(fx + 1, fy, fz + 1), Vec3(1, 0, 0), color, Vec2(0, 0)});
+    mesh.AddVertex({Vec3(fx + 1, fy, fz), Vec3(1, 0, 0), color, Vec2(1, 0)});
+    mesh.AddVertex({Vec3(fx + 1, fy + 1, fz), Vec3(1, 0, 0), color, Vec2(1, 1)});
+    mesh.AddVertex({Vec3(fx + 1, fy + 1, fz + 1), Vec3(1, 0, 0), color, Vec2(0, 1)});
+    
+    mesh.AddIndex(base);
+    mesh.AddIndex(base + 1);
+    mesh.AddIndex(base + 2);
+    mesh.AddIndex(base);
+    mesh.AddIndex(base + 2);
+    mesh.AddIndex(base + 3);
+}
+
+void BlockMeshBuilder::AddFaceLeft(Mesh& mesh, int x, int y, int z, const Vec3& color) {
+    float fx = static_cast<float>(x);
+    float fy = static_cast<float>(y);
+    float fz = static_cast<float>(z);
+    
+    uint32_t base = mesh.GetVertexCount();
+    mesh.AddVertex({Vec3(fx, fy, fz), Vec3(-1, 0, 0), color, Vec2(0, 0)});
+    mesh.AddVertex({Vec3(fx, fy, fz + 1), Vec3(-1, 0, 0), color, Vec2(1, 0)});
+    mesh.AddVertex({Vec3(fx, fy + 1, fz + 1), Vec3(-1, 0, 0), color, Vec2(1, 1)});
+    mesh.AddVertex({Vec3(fx, fy + 1, fz), Vec3(-1, 0, 0), color, Vec2(0, 1)});
+    
+    mesh.AddIndex(base);
+    mesh.AddIndex(base + 1);
+    mesh.AddIndex(base + 2);
+    mesh.AddIndex(base);
+    mesh.AddIndex(base + 2);
+    mesh.AddIndex(base + 3);
+}
+
+void BlockMeshBuilder::AddFaceTop(Mesh& mesh, int x, int y, int z, const Vec3& color) {
+    float fx = static_cast<float>(x);
+    float fy = static_cast<float>(y);
+    float fz = static_cast<float>(z);
+    
+    uint32_t base = mesh.GetVertexCount();
+    mesh.AddVertex({Vec3(fx, fy + 1, fz + 1), Vec3(0, 1, 0), color, Vec2(0, 0)});
+    mesh.AddVertex({Vec3(fx + 1, fy + 1, fz + 1), Vec3(0, 1, 0), color, Vec2(1, 0)});
+    mesh.AddVertex({Vec3(fx + 1, fy + 1, fz), Vec3(0, 1, 0), color, Vec2(1, 1)});
+    mesh.AddVertex({Vec3(fx, fy + 1, fz), Vec3(0, 1, 0), color, Vec2(0, 1)});
+    
+    mesh.AddIndex(base);
+    mesh.AddIndex(base + 1);
+    mesh.AddIndex(base + 2);
+    mesh.AddIndex(base);
+    mesh.AddIndex(base + 2);
+    mesh.AddIndex(base + 3);
+}
+
+void BlockMeshBuilder::AddFaceBottom(Mesh& mesh, int x, int y, int z, const Vec3& color) {
+    float fx = static_cast<float>(x);
+    float fy = static_cast<float>(y);
+    float fz = static_cast<float>(z);
+    
+    uint32_t base = mesh.GetVertexCount();
+    mesh.AddVertex({Vec3(fx, fy, fz), Vec3(0, -1, 0), color, Vec2(0, 0)});
+    mesh.AddVertex({Vec3(fx + 1, fy, fz), Vec3(0, -1, 0), color, Vec2(1, 0)});
+    mesh.AddVertex({Vec3(fx + 1, fy, fz + 1), Vec3(0, -1, 0), color, Vec2(1, 1)});
+    mesh.AddVertex({Vec3(fx, fy, fz + 1), Vec3(0, -1, 0), color, Vec2(0, 1)});
+    
+    mesh.AddIndex(base);
+    mesh.AddIndex(base + 1);
+    mesh.AddIndex(base + 2);
+    mesh.AddIndex(base);
+    mesh.AddIndex(base + 2);
+    mesh.AddIndex(base + 3);
 }
 
 } // namespace vge

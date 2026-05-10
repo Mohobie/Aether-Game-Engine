@@ -99,6 +99,7 @@ endif()
 set(CORE_SOURCES
     src/math/vec3.cpp
     src/math/mat4.cpp
+    src/rendering/mesh.cpp
     src/voxel/block.cpp
     src/voxel/block_types.cpp
     src/voxel/chunk.cpp
@@ -106,6 +107,7 @@ set(CORE_SOURCES
     src/voxel/block_registry.cpp
     src/voxel/biome.cpp
     src/voxel/world_generator.cpp
+    src/voxel/block_mesh_builder.cpp
     src/physics/collision.cpp
     src/physics/rigidbody.cpp
     src/core/logger.cpp
