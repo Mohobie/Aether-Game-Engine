@@ -143,6 +143,10 @@ set(CORE_SOURCES
     src/core/time_system.cpp
     src/core/achievements.cpp
     src/core/raycast.cpp
+    src/core/item_system.cpp
+    src/core/crafting_inventory_bridge.cpp
+    src/ui/ui_inventory.cpp
+    src/ui/ui_element.cpp
     src/core/entity.cpp
     src/network/packet.cpp
     src/audio/audio_engine.cpp
@@ -151,6 +155,11 @@ set(CORE_SOURCES
     src/platform/file_system.cpp
     src/platform/input_manager.cpp
     src/platform/gamepad.cpp
+    src/voxel/voxel_editor.cpp
+    src/editor/entity_spawner.cpp
+    src/editor/in_game_editor.cpp
+    src/editor/entity_spawner.cpp
+    src/editor/in_game_editor.cpp
 )
 
 # ============================================
@@ -209,6 +218,14 @@ elseif(PLATFORM_WINDOWS)
     target_link_libraries(save_test PRIVATE ws2_32 winmm)
     target_link_libraries(day_night_test PRIVATE ws2_32 winmm)
     target_link_libraries(inventory_test PRIVATE ws2_32 winmm)
+endif()
+
+add_executable(editor_test tests/test_editor.cpp ${CORE_SOURCES})
+target_include_directories(editor_test PRIVATE ${COMMON_INCLUDES})
+if(PLATFORM_LINUX)
+    target_link_libraries(editor_test PRIVATE pthread dl)
+elseif(PLATFORM_WINDOWS)
+    target_link_libraries(editor_test PRIVATE ws2_32 winmm)
 endif()
 
 add_executable(gamepad_test tests/test_gamepad_standalone.cpp src/platform/gamepad.cpp)

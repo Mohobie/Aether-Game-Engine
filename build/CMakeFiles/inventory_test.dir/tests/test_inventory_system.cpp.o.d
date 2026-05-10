@@ -195,6 +195,9 @@ CMakeFiles/inventory_test.dir/tests/test_inventory_system.cpp.o: \
  /home/mohobie/projects/aether-game-engine/src/math/vec3.h \
  /home/mohobie/projects/aether-game-engine/src/core/crafting_inventory_bridge.h \
  /home/mohobie/projects/aether-game-engine/src/core/crafting.h \
+ /usr/include/c++/11/queue /usr/include/c++/11/deque \
+ /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
+ /usr/include/c++/11/bits/stl_queue.h \
  /home/mohobie/projects/aether-game-engine/src/ui/ui_inventory.h \
  /home/mohobie/projects/aether-game-engine/src/ui/ui_element.h \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \

@@ -381,7 +381,7 @@ void TestInventoryTooltip() {
     assert(!tooltipUI.IsVisible());
     
     // Simulate time passing
-    tooltipUI.Update(1.0f);
+    tooltipUI.update(1.0f);
     assert(tooltipUI.IsVisible());
     
     tooltipUI.Hide();

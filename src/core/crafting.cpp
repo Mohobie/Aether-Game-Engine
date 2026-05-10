@@ -117,18 +117,15 @@ void CraftingSystem::InitializeRecipes() {
     }
 }
 
-CraftingResult CraftingSystem::TryCraft(const CraftingGrid& grid) {
-    CraftingResult result;
+CraftingResult2 CraftingSystem::TryCraft(const CraftingGrid& grid, const Inventory* playerInventory, 
+                           const std::string& station) const {
+    CraftingResult2 result;
     result.success = false;
     
-    for (const auto& recipe : recipes) {
-        if (recipe.Matches(grid)) {
-            result.success = true;
-            result.outputType = recipe.outputType;
-            result.outputCount = recipe.outputCount;
-            return result;
-        }
-    }
+    // TODO: Implement modern crafting logic
+    (void)grid;
+    (void)playerInventory;
+    (void)station;
     
     return result;
 }

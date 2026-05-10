@@ -195,6 +195,9 @@ CMakeFiles/inventory_test.dir/src/core/crafting_inventory_bridge.cpp.o: \
  /home/mohobie/projects/aether-game-engine/src/voxel/block_types.h \
  /home/mohobie/projects/aether-game-engine/src/math/vec3.h \
  /home/mohobie/projects/aether-game-engine/src/core/crafting.h \
+ /usr/include/c++/11/queue /usr/include/c++/11/deque \
+ /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
+ /usr/include/c++/11/bits/stl_queue.h \
  /home/mohobie/projects/aether-game-engine/src/core/logger.h \
  /home/mohobie/projects/aether-game-engine/src/voxel/block_registry.h \
  /usr/include/c++/11/algorithm \

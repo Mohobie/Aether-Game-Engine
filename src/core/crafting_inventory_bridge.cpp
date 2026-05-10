@@ -53,7 +53,7 @@ CraftingGrid CraftingInventoryBridge::getCraftingGridFromInventory() {
                 if (!slot.IsEmpty()) {
                     // Convert item ID to block type ID
                     const ItemDef& itemDef = ItemRegistry::GetInstance().GetItem(slot.item.itemID);
-                    grid.SetItem(x, y, itemDef.blockType);
+                    grid.SetItem(x, y, slot.item.itemID);
                 }
             }
         }
@@ -66,15 +66,20 @@ bool CraftingInventoryBridge::checkRecipeMatch(CraftingResult& outResult) {
     if (!craftingSystem) return false;
     
     CraftingGrid grid = getCraftingGridFromInventory();
-    outResult = craftingSystem->TryCraft(grid);
+    CraftingResult2 result = craftingSystem->TryCraft(grid);
+    outResult.success = result.success;
+    outResult.outputItemID = result.outputItemID;
+    outResult.outputCount = result.outputCount;
+    outResult.recipeID = result.recipeID;
+    outResult.craftTime = result.craftTime;
     
     if (outResult.success) {
-        Logger::Info("[CraftingInventoryBridge] Recipe matched: output type " + 
-                     std::to_string(outResult.outputType));
+        Logger::Info("[CraftingInventoryBridge] Recipe matched: output item " + 
+                     outResult.outputItemID);
         if (onRecipeMatched) {
             // Find the matching recipe
             for (const auto& recipe : craftingSystem->GetRecipes()) {
-                if (recipe.Matches(grid)) {
+                if (recipe.MatchesGrid(grid)) {
                     onRecipeMatched(recipe);
                     break;
                 }
@@ -168,11 +173,10 @@ bool CraftingInventoryBridge::autoFillRecipe(const CraftingRecipe& recipe) {
     // Fill crafting grid with recipe pattern
     for (int y = 0; y < std::min((int)recipe.pattern.size(), 3); ++y) {
         for (int x = 0; x < std::min((int)recipe.pattern[y].size(), 3); ++x) {
-            BlockTypeID blockType = recipe.pattern[y][x];
-            if (blockType != BLOCK_AIR) {
-                const BlockDef& blockDef = BlockRegistry::GetInstance().GetBlock(blockType);
+            std::string itemID = recipe.pattern[y][x];
+            if (!itemID.empty()) {
                 int slotIndex = y * 3 + x;
-                inv->AddItemToSlot(slotIndex, blockDef.id, 1);
+                inv->AddItemToSlot(slotIndex, itemID, 1);
             }
         }
     }
@@ -188,10 +192,9 @@ bool CraftingInventoryBridge::hasIngredients(const CraftingRecipe& recipe, const
     // Count required ingredients
     std::unordered_map<std::string, int> required;
     for (const auto& row : recipe.pattern) {
-        for (BlockTypeID blockType : row) {
-            if (blockType != BLOCK_AIR) {
-                const BlockDef& blockDef = BlockRegistry::GetInstance().GetBlock(blockType);
-                required[blockDef.id]++;
+        for (const std::string& itemID : row) {
+            if (!itemID.empty()) {
+                required[itemID]++;
             }
         }
     }
@@ -295,10 +298,9 @@ bool RecipeBook::canCraft(const CraftingRecipe& recipe, const Inventory& invento
     // Count required ingredients
     std::unordered_map<std::string, int> required;
     for (const auto& row : recipe.pattern) {
-        for (BlockTypeID blockType : row) {
-            if (blockType != BLOCK_AIR) {
-                const BlockDef& blockDef = BlockRegistry::GetInstance().GetBlock(blockType);
-                required[blockDef.id]++;
+        for (const std::string& itemID : row) {
+            if (!itemID.empty()) {
+                required[itemID]++;
             }
         }
     }
@@ -321,10 +323,9 @@ std::vector<std::pair<std::string, int>> RecipeBook::getMissingIngredients(
     // Count required ingredients
     std::unordered_map<std::string, int> required;
     for (const auto& row : recipe.pattern) {
-        for (BlockTypeID blockType : row) {
-            if (blockType != BLOCK_AIR) {
-                const BlockDef& blockDef = BlockRegistry::GetInstance().GetBlock(blockType);
-                required[blockDef.id]++;
+        for (const std::string& itemID : row) {
+            if (!itemID.empty()) {
+                required[itemID]++;
             }
         }
     }

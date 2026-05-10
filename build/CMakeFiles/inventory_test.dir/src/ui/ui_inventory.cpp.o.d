@@ -194,6 +194,10 @@ CMakeFiles/inventory_test.dir/src/ui/ui_inventory.cpp.o: \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
  /home/mohobie/projects/aether-game-engine/src/voxel/block_types.h \
  /home/mohobie/projects/aether-game-engine/src/math/vec3.h \
+ /home/mohobie/projects/aether-game-engine/src/core/crafting.h \
+ /usr/include/c++/11/queue /usr/include/c++/11/deque \
+ /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
+ /usr/include/c++/11/bits/stl_queue.h \
  /home/mohobie/projects/aether-game-engine/src/ui/ui_element.h \
  /home/mohobie/projects/aether-game-engine/src/core/logger.h \
  /home/mohobie/projects/aether-game-engine/src/voxel/block_registry.h \

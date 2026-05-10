@@ -4,6 +4,7 @@
 /home/mohobie/projects/aether-game-engine/build/CMakeFiles/weather_test.dir
 /home/mohobie/projects/aether-game-engine/build/CMakeFiles/day_night_test.dir
 /home/mohobie/projects/aether-game-engine/build/CMakeFiles/inventory_test.dir
+/home/mohobie/projects/aether-game-engine/build/CMakeFiles/editor_test.dir
 /home/mohobie/projects/aether-game-engine/build/CMakeFiles/gamepad_test.dir
 /home/mohobie/projects/aether-game-engine/build/CMakeFiles/voxel_engine.dir
 /home/mohobie/projects/aether-game-engine/build/CMakeFiles/edit_cache.dir

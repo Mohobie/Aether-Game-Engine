@@ -93,7 +93,7 @@ bool Inventory::AddItem(const std::string& itemID, int amount) {
     
     const ItemDef& def = ItemRegistry::GetInstance().GetItem(itemID);
     if (def.itemID.empty() && itemID != "air") {
-        Logger::Warning("[Inventory] Unknown item: " + itemID);
+        Logger::Info("[Inventory] Unknown item: " + itemID);
         return false;
     }
     
@@ -127,7 +127,7 @@ bool Inventory::AddItem(const std::string& itemID, int amount) {
         }
     }
     
-    Logger::Warning("[Inventory] Full! Could not add " + std::to_string(amount) + " items of " + itemID);
+    Logger::Info("[Inventory] Full! Could not add " + std::to_string(amount) + " items of " + itemID);
     return false;
 }
 
@@ -614,7 +614,7 @@ bool InventoryManager::ConsumeItemsForCrafting(const std::string& inventoryID,
     // Verify all ingredients are available
     for (const auto& [itemID, amount] : ingredients) {
         if (!inv->HasItem(itemID, amount)) {
-            Logger::Warning("[InventoryManager] Missing ingredient: " + itemID + " x" + std::to_string(amount));
+            Logger::Info("[InventoryManager] Missing ingredient: " + itemID + " x" + std::to_string(amount));
             return false;
         }
     }
@@ -680,7 +680,7 @@ void InventoryTooltip::Hide() {
     timer = 0.0f;
 }
 
-void InventoryTooltip::Update(float deltaTime) {
+void InventoryTooltip::update(float deltaTime) {
     if (!itemID.empty() && !visible) {
         timer += deltaTime;
         if (timer >= delay) {
