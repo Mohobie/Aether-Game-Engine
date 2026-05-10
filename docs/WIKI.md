@@ -359,7 +359,65 @@ vge::Vec3 avoidForce = steering.Avoid(agentPos, agentVel, obstacles, maxSpeed, 3
 vge::Vec3 totalForce = seekForce * 1.0f + avoidForce * 2.0f + wanderForce * 0.3f;
 ```
 
-### 8. UI System
+### 9. Post-Processing Stack
+
+```cpp
+#include "rendering/post_processing.h"
+
+vge::PostProcessStack postProcess;
+postProcess.Initialize(1920, 1080);
+
+// Configure effects
+postProcess.GetBloom()->SetIntensity(0.6f);
+postProcess.GetBloom()->SetThreshold(0.7f);
+
+postProcess.GetSSAO()->SetRadius(0.5f);
+postProcess.GetSSAO()->SetBias(0.025f);
+
+postProcess.GetToneMapping()->SetExposure(1.2f);
+postProcess.GetToneMapping()->SetAlgorithm(vge::ToneMappingEffect::Algorithm::ACES);
+
+postProcess.GetVignette()->SetIntensity(0.3f);
+postProcess.GetVignette()->SetSmoothness(0.8f);
+
+postProcess.GetColorGrading()->SetContrast(1.1f);
+postProcess.GetColorGrading()->SetSaturation(1.2f);
+
+// Enable/disable effects
+postProcess.EnableBloom(true);
+postProcess.EnableSSAO(true);
+postProcess.EnableMotionBlur(false);
+postProcess.EnableDepthOfField(false);
+
+// In render loop
+postProcess.BeginScene();  // Renders to HDR buffer
+// ... render 3D scene ...
+postProcess.EndScene();    // Applies all effects
+```
+
+#### Available Effects
+
+| Effect | Description | Key Parameters |
+|--------|-------------|----------------|
+| **Bloom** | Glow around bright areas | Threshold, Intensity, Iterations |
+| **SSAO** | Ambient occlusion | Kernel Size, Radius, Bias |
+| **Tone Mapping** | HDR to LDR | Algorithm, Exposure, White Point |
+| **FXAA** | Anti-aliasing | Quality, Threshold |
+| **Color Grading** | Color correction | Brightness, Contrast, Saturation, LUT |
+| **Vignette** | Darkened edges | Intensity, Smoothness, Color |
+| **Chromatic Aberration** | Color fringing | Intensity, Direction |
+| **Motion Blur** | Movement blur | Intensity, Samples |
+| **Depth of Field** | Focus blur | Focal Distance, Aperture |
+
+#### Tone Mapping Algorithms
+
+- `Reinhard` - Simple, preserves highlights
+- `ReinhardExtended` - With white point control
+- `ACES` - Academy Color Encoding System (filmic)
+- `Uncharted2` - Uncharted 2 game style
+- `Filmic` - Film-like response
+
+### 10. UI System
 
 #### Creating UI
 
@@ -831,6 +889,16 @@ int main() {
 | `Texture` | 2D texture |
 | `Shader` | GPU shader |
 | `ShadowSystem` | Shadow mapping |
+| `PostProcessStack` | Post-processing pipeline |
+| `BloomEffect` | Bloom glow effect |
+| `SSAOEffect` | Screen space ambient occlusion |
+| `ToneMappingEffect` | HDR to LDR conversion |
+| `FXAAEffect` | Fast approximate anti-aliasing |
+| `ColorGradingEffect` | Color correction/LUT |
+| `VignetteEffect` | Edge darkening |
+| `ChromaticAberrationEffect` | Lens color fringing |
+| `MotionBlurEffect` | Camera movement blur |
+| `DepthOfFieldEffect` | Focus blur |
 
 ### Physics
 
