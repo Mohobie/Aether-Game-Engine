@@ -2,6 +2,10 @@
 #include "rendering/shader.h"
 #include "rendering/camera.h"
 #include "rendering/mesh.h"
+#include "rendering/sky/sky_renderer.h"
+#include "rendering/weather/weather_effects_renderer.h"
+#include "rendering/sky/day_night_cycle.h"
+#include "core/weather_system.h"
 #include "voxel/world.h"
 #include "voxel/chunk.h"
 #include "voxel/block.h"
@@ -63,7 +67,7 @@ struct Framebuffer {
     }
 };
 
-Renderer::Renderer() : initialized(false), width(80), height(40) {}
+Renderer::Renderer() : initialized(false), width(80), height(40), fb_renderer(nullptr), sky_renderer(nullptr), weather_renderer(nullptr), day_night_cycle(nullptr), weather_system(nullptr) {}
 
 Renderer::~Renderer() {
     if (initialized) Shutdown();
@@ -192,6 +196,18 @@ void Renderer::RenderWorld(const World& world, const Camera& camera) {
 
 void Renderer::RenderMesh(const Mesh& mesh, const Shader& shader, const Camera& camera) {
     // Not implemented for software renderer
+}
+
+void Renderer::RenderSky(const Camera& camera) {
+    if (sky_renderer && day_night_cycle) {
+        sky_renderer->RenderSkyASCII(*day_night_cycle, width, height);
+    }
+}
+
+void Renderer::RenderWeatherEffects(const Camera& camera) {
+    if (weather_renderer) {
+        weather_renderer->RenderASCII(width, height);
+    }
 }
 
 } // namespace vge

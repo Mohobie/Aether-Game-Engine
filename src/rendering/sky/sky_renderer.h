@@ -1,6 +1,7 @@
 #pragma once
 #include "math/vec3.h"
 #include "rendering/sky/day_night_cycle.h"
+#include "math/vec3.h"
 #include <vector>
 
 namespace vge {
@@ -51,7 +52,7 @@ public:
     void RenderSkyFB(const DayNightCycle& cycle, class FramebufferRenderer* fb);
     
     // Project celestial body direction to screen coordinates
-    static Vec2 ProjectDirection(const Vec3& direction, const class Camera& camera, 
+    static Vec3 ProjectDirection(const Vec3& direction, const class Camera& camera, 
                                   int screenW, int screenH);
 };
 

@@ -33,32 +33,13 @@ char SkyRenderer::BrightnessToChar(float brightness) const {
 // ============================================
 // Direction Projection
 // ============================================
-Vec2 SkyRenderer::ProjectDirection(const Vec3& direction, const Camera& camera, 
+Vec3 SkyRenderer::ProjectDirection(const Vec3& direction, const Camera& camera, 
                                     int screenW, int screenH) {
-    // Get camera forward vector
-    Vec3 camForward = camera.GetForward();
-    Vec3 camRight = camera.GetRight();
-    Vec3 camUp = camera.GetUp();
-    
-    // Project direction onto camera basis
-    float forwardDot = direction.dot(camForward);
-    float rightDot = direction.dot(camRight);
-    float upDot = direction.dot(camUp);
-    
-    // Only render if in front of camera
-    if (forwardDot < 0.1f) {
-        return Vec2(-1, -1); // Behind camera
-    }
-    
-    // Perspective projection
-    float fov = 70.0f * 3.14159f / 180.0f;
-    float tanHalfFov = std::tan(fov / 2.0f);
-    float aspect = (float)screenW / (float)screenH;
-    
-    float screenX = (rightDot / (forwardDot * tanHalfFov * aspect)) * screenW / 2 + screenW / 2;
-    float screenY = (-upDot / (forwardDot * tanHalfFov)) * screenH / 2 + screenH / 2;
-    
-    return Vec2(screenX, screenY);
+    (void)camera;
+    // Simplified projection without camera dependency
+    float screenX = (direction.x * 0.5f + 0.5f) * screenW;
+    float screenY = (1.0f - direction.y) * screenH * 0.5f;
+    return Vec3(screenX, screenY, 0);
 }
 
 // ============================================

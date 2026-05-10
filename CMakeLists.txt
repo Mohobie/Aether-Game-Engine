@@ -104,8 +104,16 @@ set(CORE_SOURCES
     src/network/network_architecture.cpp
     src/ai/behavior_tree.cpp
     src/animation/animation_state_machine.cpp
-    src/rendering/deferred_rendering.cpp
-    src/rendering/post_processing.cpp
+    src/rendering/sky/day_night_cycle.cpp
+    src/rendering/sky/sky_renderer.cpp
+    src/rendering/particles/particle_system.cpp
+    src/rendering/weather/weather_effects_renderer.cpp
+    src/core/weather_system.cpp
+    src/rendering/camera.cpp
+    src/rendering/renderer.cpp
+    src/rendering/shader.cpp
+    src/rendering/texture.cpp
+    src/rendering/lighting.cpp
     src/ai/ai_system.cpp
     src/animation/animation.cpp
     src/entity/entity.cpp
@@ -135,8 +143,9 @@ set(CORE_SOURCES
     src/core/time_system.cpp
     src/core/achievements.cpp
     src/core/raycast.cpp
-    src/core/inventory.cpp
-    src/core/crafting.cpp
+    src/core/item_system.cpp
+    src/core/crafting_inventory_bridge.cpp
+    src/ui/ui_inventory.cpp
     src/core/entity.cpp
     src/network/packet.cpp
     src/audio/audio_engine.cpp
@@ -157,20 +166,12 @@ endif()
 # ============================================
 # Test Executables
 # ============================================
-add_executable(voxel_test src/test_main.cpp ${CORE_SOURCES})
-add_executable(world_test src/world_test.cpp ${CORE_SOURCES})
-add_executable(save_test src/save_test.cpp ${CORE_SOURCES})
-
-# ============================================
-# Include Directories
-# ============================================
-set(COMMON_INCLUDES 
+set(COMMON_INCLUDES
     src
     ${CMAKE_SOURCE_DIR}/include
 )
 
 if(WIN32)
-    # Windows: Add third_party if it exists
     if(EXISTS ${CMAKE_SOURCE_DIR}/third_party)
         list(APPEND COMMON_INCLUDES ${CMAKE_SOURCE_DIR}/third_party)
     endif()
@@ -181,9 +182,17 @@ else()
     list(APPEND COMMON_INCLUDES /usr/include /usr/local/include)
 endif()
 
+add_executable(voxel_test src/test_main.cpp ${CORE_SOURCES})
+add_executable(world_test src/world_test.cpp ${CORE_SOURCES})
+add_executable(save_test src/save_test.cpp ${CORE_SOURCES})
+add_executable(weather_test tests/test_weather_system.cpp ${CORE_SOURCES})
+add_executable(day_night_test tests/test_day_night.cpp ${CORE_SOURCES})
+
 target_include_directories(voxel_test PRIVATE ${COMMON_INCLUDES})
 target_include_directories(world_test PRIVATE ${COMMON_INCLUDES})
 target_include_directories(save_test PRIVATE ${COMMON_INCLUDES})
+target_include_directories(weather_test PRIVATE ${COMMON_INCLUDES})
+target_include_directories(day_night_test PRIVATE ${COMMON_INCLUDES})
 
 # ============================================
 # Platform-Specific Linking
@@ -192,11 +201,13 @@ if(PLATFORM_LINUX)
     target_link_libraries(voxel_test PRIVATE pthread dl)
     target_link_libraries(world_test PRIVATE pthread dl)
     target_link_libraries(save_test PRIVATE pthread dl)
+    target_link_libraries(day_night_test PRIVATE pthread dl)
 elseif(PLATFORM_WINDOWS)
     # Windows: Link Windows-specific libraries
     target_link_libraries(voxel_test PRIVATE ws2_32 winmm)
     target_link_libraries(world_test PRIVATE ws2_32 winmm)
     target_link_libraries(save_test PRIVATE ws2_32 winmm)
+    target_link_libraries(day_night_test PRIVATE ws2_32 winmm)
 endif()
 
 add_executable(gamepad_test tests/test_gamepad_standalone.cpp src/platform/gamepad.cpp)

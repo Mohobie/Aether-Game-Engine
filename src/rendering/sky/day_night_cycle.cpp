@@ -44,7 +44,7 @@ void DayNightCycle::Update(float deltaTime) {
     timeOfDay += timeAdvance;
     
     // Handle day rollover
-    if (timeOfDay >= 24.0f) {
+    while (timeOfDay >= 24.0f) {
         timeOfDay -= 24.0f;
         dayCount++;
         
