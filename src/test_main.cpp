@@ -11,6 +11,7 @@
 #include "physics/physics_system.h"
 #include "entity/entity.h"
 #include "entity/components.h"
+#include "animation/animation.h"
 
 using namespace vge;
 
@@ -169,6 +170,59 @@ int main() {
     if (rayHit) {
         std::cout << "Hit point: (" << hitPoint.x << ", " << hitPoint.y << ", " << hitPoint.z << ")" << std::endl;
         std::cout << "Hit normal: (" << hitNormal.x << ", " << hitNormal.y << ", " << hitNormal.z << ")" << std::endl;
+    }
+    
+    // Test Animation System
+    std::cout << "\n=== Animation System Test ===" << std::endl;
+    AnimationSystem animSystem;
+    
+    // Create skeleton
+    Skeleton* skeleton = animSystem.CreateSkeleton("TestSkeleton");
+    int root = skeleton->AddJoint("Root", -1);
+    int spine = skeleton->AddJoint("Spine", root);
+    int head = skeleton->AddJoint("Head", spine);
+    int armL = skeleton->AddJoint("ArmL", spine);
+    int armR = skeleton->AddJoint("ArmR", spine);
+    
+    skeleton->PrintHierarchy();
+    
+    // Create animation clip
+    AnimationClip* clip = animSystem.CreateClip("Wave");
+    
+    // Create track for right arm
+    AnimationTrack armRTrack;
+    armRTrack.jointIndex = armR;
+    
+    Keyframe k1;
+    k1.time = 0.0f;
+    k1.rotation = Vec3(0, 0, 0);
+    armRTrack.keyframes.push_back(k1);
+    
+    Keyframe k2;
+    k2.time = 0.5f;
+    k2.rotation = Vec3(0, 0, 45);
+    armRTrack.keyframes.push_back(k2);
+    
+    Keyframe k3;
+    k3.time = 1.0f;
+    k3.rotation = Vec3(0, 0, 0);
+    armRTrack.keyframes.push_back(k3);
+    
+    clip->AddTrack(armRTrack);
+    
+    // Create animator and play
+    Animator* animator = animSystem.CreateAnimator(skeleton);
+    animator->Play(clip, true, 1.0f);
+    
+    // Update animation
+    std::cout << "\nAnimation playback test:" << std::endl;
+    for (int i = 0; i < 5; ++i) {
+        animSystem.Update(0.1f);
+        Joint* armRJoint = skeleton->GetJoint(armR);
+        std::cout << "Frame " << i << " - ArmR rotation: (" 
+                  << armRJoint->localRotation.x << ", "
+                  << armRJoint->localRotation.y << ", "
+                  << armRJoint->localRotation.z << ")" << std::endl;
     }
     
     std::cout << "\nAll tests passed!" << std::endl;

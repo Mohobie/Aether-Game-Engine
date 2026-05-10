@@ -217,4 +217,5 @@ CMakeFiles/voxel_test.dir/src/test_main.cpp.o: \
  /usr/include/c++/11/bits/uniform_int_dist.h \
  /home/mohobie/projects/aether-game-engine/src/entity/entity.h \
  /usr/include/c++/11/typeindex \
- /home/mohobie/projects/aether-game-engine/src/entity/components.h
+ /home/mohobie/projects/aether-game-engine/src/entity/components.h \
+ /home/mohobie/projects/aether-game-engine/src/animation/animation.h
