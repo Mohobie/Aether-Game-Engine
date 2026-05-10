@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/world_test.dir/src/ai/ai_system.cpp.o"
   "CMakeFiles/world_test.dir/src/ai/ai_system.cpp.o.d"
+  "CMakeFiles/world_test.dir/src/ai/behavior_tree.cpp.o"
+  "CMakeFiles/world_test.dir/src/ai/behavior_tree.cpp.o.d"
   "CMakeFiles/world_test.dir/src/animation/animation.cpp.o"
   "CMakeFiles/world_test.dir/src/animation/animation.cpp.o.d"
   "CMakeFiles/world_test.dir/src/animation/animation_state_machine.cpp.o"

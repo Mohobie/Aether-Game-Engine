@@ -201,6 +201,39 @@ src/ai/ai_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/ai_system.cpp.s
 .PHONY : src/ai/ai_system.cpp.s
 
+src/ai/behavior_tree.o: src/ai/behavior_tree.cpp.o
+.PHONY : src/ai/behavior_tree.o
+
+# target to build an object file
+src/ai/behavior_tree.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/behavior_tree.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/behavior_tree.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/behavior_tree.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/behavior_tree.cpp.o
+.PHONY : src/ai/behavior_tree.cpp.o
+
+src/ai/behavior_tree.i: src/ai/behavior_tree.cpp.i
+.PHONY : src/ai/behavior_tree.i
+
+# target to preprocess a source file
+src/ai/behavior_tree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/behavior_tree.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/behavior_tree.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/behavior_tree.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/behavior_tree.cpp.i
+.PHONY : src/ai/behavior_tree.cpp.i
+
+src/ai/behavior_tree.s: src/ai/behavior_tree.cpp.s
+.PHONY : src/ai/behavior_tree.s
+
+# target to generate assembly for a file
+src/ai/behavior_tree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/behavior_tree.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/behavior_tree.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/behavior_tree.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/behavior_tree.cpp.s
+.PHONY : src/ai/behavior_tree.cpp.s
+
 src/animation/animation.o: src/animation/animation.cpp.o
 .PHONY : src/animation/animation.o
 
@@ -2058,6 +2091,9 @@ help:
 	@echo "... src/ai/ai_system.o"
 	@echo "... src/ai/ai_system.i"
 	@echo "... src/ai/ai_system.s"
+	@echo "... src/ai/behavior_tree.o"
+	@echo "... src/ai/behavior_tree.i"
+	@echo "... src/ai/behavior_tree.s"
 	@echo "... src/animation/animation.o"
 	@echo "... src/animation/animation.i"
 	@echo "... src/animation/animation.s"
