@@ -103,6 +103,7 @@ set(CORE_SOURCES
     src/entity/components.cpp
     src/rendering/mesh.cpp
     src/rendering/texture.cpp
+    src/rendering/shader.cpp
     src/physics/physics_system.cpp
     src/voxel/block.cpp
     src/voxel/block_types.cpp

@@ -47,6 +47,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.o.d"
   "CMakeFiles/save_test.dir/src/rendering/mesh.cpp.o"
   "CMakeFiles/save_test.dir/src/rendering/mesh.cpp.o.d"
+  "CMakeFiles/save_test.dir/src/rendering/shader.cpp.o"
+  "CMakeFiles/save_test.dir/src/rendering/shader.cpp.o.d"
   "CMakeFiles/save_test.dir/src/rendering/texture.cpp.o"
   "CMakeFiles/save_test.dir/src/rendering/texture.cpp.o.d"
   "CMakeFiles/save_test.dir/src/save_test.cpp.o"
