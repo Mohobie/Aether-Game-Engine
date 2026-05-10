@@ -1407,6 +1407,39 @@ src/voxel/block_registry.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_registry.cpp.s
 .PHONY : src/voxel/block_registry.cpp.s
 
+src/voxel/block_types.o: src/voxel/block_types.cpp.o
+.PHONY : src/voxel/block_types.o
+
+# target to build an object file
+src/voxel/block_types.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/block_types.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/block_types.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/block_types.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_types.cpp.o
+.PHONY : src/voxel/block_types.cpp.o
+
+src/voxel/block_types.i: src/voxel/block_types.cpp.i
+.PHONY : src/voxel/block_types.i
+
+# target to preprocess a source file
+src/voxel/block_types.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/block_types.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/block_types.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/block_types.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_types.cpp.i
+.PHONY : src/voxel/block_types.cpp.i
+
+src/voxel/block_types.s: src/voxel/block_types.cpp.s
+.PHONY : src/voxel/block_types.s
+
+# target to generate assembly for a file
+src/voxel/block_types.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/block_types.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/block_types.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/block_types.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_types.cpp.s
+.PHONY : src/voxel/block_types.cpp.s
+
 src/voxel/chunk.o: src/voxel/chunk.cpp.o
 .PHONY : src/voxel/chunk.o
 
@@ -1719,6 +1752,9 @@ help:
 	@echo "... src/voxel/block_registry.o"
 	@echo "... src/voxel/block_registry.i"
 	@echo "... src/voxel/block_registry.s"
+	@echo "... src/voxel/block_types.o"
+	@echo "... src/voxel/block_types.i"
+	@echo "... src/voxel/block_types.s"
 	@echo "... src/voxel/chunk.o"
 	@echo "... src/voxel/chunk.i"
 	@echo "... src/voxel/chunk.s"

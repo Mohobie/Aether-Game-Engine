@@ -1,9 +1,11 @@
 #pragma once
 #include "core/types.h"
+#include "block_types.h"
 #include <cstdint>
 
 namespace vge {
 
+// Legacy BlockType enum for backward compatibility
 enum class BlockType : uint16_t {
     Air = 0,
     Stone = 1,
@@ -34,17 +36,7 @@ enum class BlockType : uint16_t {
     Count = 26
 };
 
-struct Block {
-    BlockType type;
-    uint8_t metadata;
-    uint8_t light_level;
-    
-    Block() : type(BlockType::Air), metadata(0), light_level(0) {}
-    Block(BlockType t) : type(t), metadata(0), light_level(0) {}
-    
-    bool IsSolid() const;
-    bool IsOpaque() const;
-    const char* GetName() const;
-};
+// Block struct is now defined in block_types.h
+// This file provides backward compatibility for BlockType enum only
 
 } // namespace vge

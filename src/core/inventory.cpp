@@ -1,10 +1,9 @@
 #include "inventory.h"
+#include "voxel/block_types.h"
 #include "voxel/block_registry.h"
 #include <iostream>
 
 namespace vge {
-
-InventorySlot::InventorySlot() : type(BlockType::Air), count(0) {}
 
 Inventory::Inventory(int size) : selectedSlot(0) {
     slots.resize(size);
@@ -12,7 +11,7 @@ Inventory::Inventory(int size) : selectedSlot(0) {
 
 Inventory::~Inventory() {}
 
-bool Inventory::AddItem(BlockType type, int amount) {
+bool Inventory::AddItem(BlockTypeID type, int amount) {
     // First, try to stack with existing items
     for (auto& slot : slots) {
         if (slot.type == type && slot.count < MAX_STACK_SIZE) {
@@ -29,7 +28,7 @@ bool Inventory::AddItem(BlockType type, int amount) {
     
     // Then, try to find empty slots
     for (auto& slot : slots) {
-        if (slot.type == BlockType::Air || slot.count == 0) {
+        if (slot.type == BLOCK_AIR || slot.count == 0) {
             slot.type = type;
             int toAdd = (amount < MAX_STACK_SIZE) ? amount : MAX_STACK_SIZE;
             slot.count = toAdd;
@@ -58,14 +57,14 @@ bool Inventory::RemoveItem(int slotIndex, int amount) {
     
     slot.count -= amount;
     if (slot.count <= 0) {
-        slot.type = BlockType::Air;
+        slot.type = BLOCK_AIR;
         slot.count = 0;
     }
     
     return true;
 }
 
-bool Inventory::HasItem(BlockType type, int amount) const {
+bool Inventory::HasItem(BlockTypeID type, int amount) const {
     int total = 0;
     for (const auto& slot : slots) {
         if (slot.type == type) {
@@ -78,7 +77,7 @@ bool Inventory::HasItem(BlockType type, int amount) const {
     return false;
 }
 
-int Inventory::GetItemCount(BlockType type) const {
+int Inventory::GetItemCount(BlockTypeID type) const {
     int total = 0;
     for (const auto& slot : slots) {
         if (slot.type == type) {
@@ -94,11 +93,11 @@ void Inventory::SelectSlot(int index) {
     }
 }
 
-BlockType Inventory::GetSelectedBlockType() const {
+BlockTypeID Inventory::GetSelectedBlockType() const {
     if (selectedSlot >= 0 && selectedSlot < (int)slots.size()) {
         return slots[selectedSlot].type;
     }
-    return BlockType::Air;
+    return BLOCK_AIR;
 }
 
 void Inventory::Print() const {
@@ -109,7 +108,7 @@ void Inventory::Print() const {
         if (i == selectedSlot) std::cout << "* ";
         else std::cout << "  ";
         
-        if (slot.type == BlockType::Air) {
+        if (slot.type == BLOCK_AIR) {
             std::cout << "Empty" << std::endl;
         } else {
             std::cout << BlockRegistry::GetInstance().GetBlock(slot.type).GetName() 

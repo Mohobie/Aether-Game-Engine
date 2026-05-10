@@ -1,5 +1,6 @@
 #pragma once
 #include "voxel/chunk.h"
+#include "voxel/block_types.h"
 #include <map>
 #include <memory>
 
@@ -29,8 +30,9 @@ public:
     Chunk* GetChunk(int x, int y, int z);
     Chunk* GetOrCreateChunk(int x, int y, int z);
     
-    BlockType GetBlock(int x, int y, int z) const;
-    void SetBlock(int x, int y, int z, BlockType type);
+    BlockTypeID GetBlock(int x, int y, int z) const;
+    void SetBlock(int x, int y, int z, BlockTypeID type);
+    void SetBlock(int x, int y, int z, const std::string& blockId);
     
     int GetSeed() const { return seed; }
     void SetSeed(int s) { seed = s; }

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "block.h"
+#include "block_types.h"
 #include "math/vec3.h"
 #include <array>
 
@@ -9,7 +9,7 @@ namespace vge {
     constexpr int CHUNK_VOLUME = CHUNK_SIZE * CHUNK_SIZE * CHUNK_SIZE;
     
     struct Chunk {
-        std::array<BlockType, CHUNK_VOLUME> blocks;
+        std::array<BlockTypeID, CHUNK_VOLUME> blocks;
         std::array<uint8_t, CHUNK_VOLUME> lightLevels; // 0-15
         bool dirty;
         bool loaded;
@@ -24,8 +24,8 @@ namespace vge {
         int GetChunkY() const { return chunkY; }
         int GetChunkZ() const { return chunkZ; }
         
-        BlockType GetBlock(int x, int y, int z) const;
-        void SetBlock(int x, int y, int z, BlockType type);
+        BlockTypeID GetBlock(int x, int y, int z) const;
+        void SetBlock(int x, int y, int z, BlockTypeID type);
         
         int GetLightLevel(int x, int y, int z) const;
         void SetLightLevel(int x, int y, int z, int level);

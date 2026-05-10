@@ -100,6 +100,7 @@ set(CORE_SOURCES
     src/math/vec3.cpp
     src/math/mat4.cpp
     src/voxel/block.cpp
+    src/voxel/block_types.cpp
     src/voxel/chunk.cpp
     src/voxel/world.cpp
     src/voxel/block_registry.cpp

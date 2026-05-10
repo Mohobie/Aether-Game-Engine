@@ -1,6 +1,6 @@
 #pragma once
 #include "math/vec3.h"
-#include "voxel/block.h"
+#include "voxel/block_types.h"
 
 namespace vge {
 
@@ -12,9 +12,9 @@ struct RaycastHit {
     Vec3 blockPosition;  // Block coordinates
     Vec3 normal;         // Face normal
     float distance;      // Distance from origin
-    BlockType blockType; // Type of block hit
+    BlockTypeID blockType; // Type of block hit
     
-    RaycastHit() : hit(false), distance(0), blockType(BlockType::Air) {}
+    RaycastHit() : hit(false), distance(0), blockType(BLOCK_AIR) {}
 };
 
 class Raycast {
@@ -27,7 +27,7 @@ public:
     RaycastHit Cast(const Vec3& origin, const Vec3& direction, World& world);
     
     // Place a block at ray hit position + normal
-    bool PlaceBlock(const Vec3& origin, const Vec3& direction, World& world, BlockType type);
+    bool PlaceBlock(const Vec3& origin, const Vec3& direction, World& world, BlockTypeID type);
     
     // Remove block at ray hit position
     bool RemoveBlock(const Vec3& origin, const Vec3& direction, World& world);

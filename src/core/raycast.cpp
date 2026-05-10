@@ -1,6 +1,6 @@
 #include "raycast.h"
 #include "voxel/world.h"
-#include "voxel/block.h"
+#include "voxel/block_types.h"
 #include "voxel/block_registry.h"
 #include <iostream>
 
@@ -29,8 +29,8 @@ RaycastHit Raycast::Cast(const Vec3& origin, const Vec3& direction, World& world
         int blockZ = (int)pos.z;
         
         // Check if solid block
-        BlockType block = world.GetBlock(blockX, blockY, blockZ);
-        if (block != BlockType::Air && BlockRegistry::GetInstance().GetBlock(block).IsSolid()) {
+        BlockTypeID block = world.GetBlock(blockX, blockY, blockZ);
+        if (block != BLOCK_AIR && BlockRegistry::GetInstance().GetBlock(block).IsSolid()) {
             hit.hit = true;
             hit.position = pos;
             hit.blockPosition = Vec3((float)blockX, (float)blockY, (float)blockZ);
@@ -57,7 +57,7 @@ RaycastHit Raycast::Cast(const Vec3& origin, const Vec3& direction, World& world
     return hit;
 }
 
-bool Raycast::PlaceBlock(const Vec3& origin, const Vec3& direction, World& world, BlockType type) {
+bool Raycast::PlaceBlock(const Vec3& origin, const Vec3& direction, World& world, BlockTypeID type) {
     RaycastHit hit = Cast(origin, direction, world);
     
     if (!hit.hit) {
@@ -79,7 +79,7 @@ bool Raycast::RemoveBlock(const Vec3& origin, const Vec3& direction, World& worl
     }
     
     // Remove the block
-    world.SetBlock((int)hit.blockPosition.x, (int)hit.blockPosition.y, (int)hit.blockPosition.z, BlockType::Air);
+    world.SetBlock((int)hit.blockPosition.x, (int)hit.blockPosition.y, (int)hit.blockPosition.z, BLOCK_AIR);
     
     return true;
 }

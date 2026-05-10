@@ -47,6 +47,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/save_test.dir/src/voxel/block.cpp.o.d"
   "CMakeFiles/save_test.dir/src/voxel/block_registry.cpp.o"
   "CMakeFiles/save_test.dir/src/voxel/block_registry.cpp.o.d"
+  "CMakeFiles/save_test.dir/src/voxel/block_types.cpp.o"
+  "CMakeFiles/save_test.dir/src/voxel/block_types.cpp.o.d"
   "CMakeFiles/save_test.dir/src/voxel/chunk.cpp.o"
   "CMakeFiles/save_test.dir/src/voxel/chunk.cpp.o.d"
   "CMakeFiles/save_test.dir/src/voxel/world.cpp.o"

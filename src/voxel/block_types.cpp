@@ -12,29 +12,7 @@ namespace vge {
 // Forward declaration for old registry compatibility
 extern BlockRegistry& GetOldRegistry();
 
-bool Block::IsSolid() const {
-    return BlockRegistry::GetInstance().GetBlock(typeId).IsSolid();
-}
-
-bool Block::IsOpaque() const {
-    return BlockRegistry::GetInstance().GetBlock(typeId).IsOpaque();
-}
-
-const std::string& Block::GetName() const {
-    return BlockRegistry::GetInstance().GetBlock(typeId).GetName();
-}
-
-Vec3 Block::GetColor() const {
-    return BlockRegistry::GetInstance().GetBlock(typeId).GetColor();
-}
-
-int Block::GetEmission() const {
-    return BlockRegistry::GetInstance().GetBlock(typeId).GetEmission();
-}
-
-float Block::GetHardness() const {
-    return BlockRegistry::GetInstance().GetBlock(typeId).GetHardness();
-}
+// Block methods are defined in block.cpp - do not define here
 
 // ============================================
 // BlockRegistry Implementation

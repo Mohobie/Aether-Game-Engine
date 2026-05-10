@@ -126,7 +126,7 @@ bool SaveSystem::LoadChunk(Chunk& chunk, std::ifstream& file) {
             for (int z = 0; z < CHUNK_SIZE; ++z) {
                 uint8_t block;
                 file.read(reinterpret_cast<char*>(&block), sizeof(uint8_t));
-                chunk.SetBlock(x, y, z, static_cast<BlockType>(block));
+                chunk.SetBlock(x, y, z, static_cast<BlockTypeID>(block));
             }
         }
     }

@@ -1,5 +1,7 @@
 #include "world.h"
 #include "chunk.h"
+#include "block_types.h"
+#include "block_registry.h"
 
 namespace vge {
 
@@ -32,7 +34,7 @@ Chunk* World::GetOrCreateChunk(int x, int y, int z) {
     return chunk;
 }
 
-BlockType World::GetBlock(int x, int y, int z) const {
+BlockTypeID World::GetBlock(int x, int y, int z) const {
     int chunkX = x / CHUNK_SIZE;
     int chunkY = y / CHUNK_SIZE;
     int chunkZ = z / CHUNK_SIZE;
@@ -49,10 +51,10 @@ BlockType World::GetBlock(int x, int y, int z) const {
         int localZ = z - chunkZ * CHUNK_SIZE;
         return it->second->GetBlock(localX, localY, localZ);
     }
-    return BlockType::Air;
+    return BLOCK_AIR;
 }
 
-void World::SetBlock(int x, int y, int z, BlockType type) {
+void World::SetBlock(int x, int y, int z, BlockTypeID type) {
     int chunkX = x / CHUNK_SIZE;
     int chunkY = y / CHUNK_SIZE;
     int chunkZ = z / CHUNK_SIZE;
@@ -66,6 +68,11 @@ void World::SetBlock(int x, int y, int z, BlockType type) {
     int localY = y - chunkY * CHUNK_SIZE;
     int localZ = z - chunkZ * CHUNK_SIZE;
     chunk->SetBlock(localX, localY, localZ, type);
+}
+
+void World::SetBlock(int x, int y, int z, const std::string& blockId) {
+    BlockTypeID typeId = BlockRegistry::GetInstance().GetBlockId(blockId);
+    SetBlock(x, y, z, typeId);
 }
 
 } // namespace vge

@@ -1,6 +1,7 @@
 #include "world_generator.h"
 #include "chunk.h"
-#include "block.h"
+#include "block_types.h"
+#include "block_registry.h"
 #include <cmath>
 #include <random>
 #include <iostream>
@@ -55,6 +56,20 @@ void WorldGenerator::GenerateChunk(Chunk& chunk, int cx, int cy, int cz) {
     int worldBaseY = cy * CHUNK_SIZE;
     int worldBaseZ = cz * CHUNK_SIZE;
     
+    // Get block type IDs from registry
+    BlockRegistry& registry = BlockRegistry::GetInstance();
+    BlockTypeID airId = registry.GetBlockId("air");
+    BlockTypeID surfaceId = registry.GetBlockId(surfaceBlock);
+    BlockTypeID subsurfaceId = registry.GetBlockId(subsurfaceBlock);
+    BlockTypeID stoneId = registry.GetBlockId(stoneBlock);
+    BlockTypeID bedrockId = registry.GetBlockId("bedrock");
+    
+    // Fallback if blocks not registered
+    if (surfaceId == BLOCK_AIR) surfaceId = airId;
+    if (subsurfaceId == BLOCK_AIR) subsurfaceId = airId;
+    if (stoneId == BLOCK_AIR) stoneId = airId;
+    if (bedrockId == BLOCK_AIR) bedrockId = stoneId;
+    
     for (int x = 0; x < CHUNK_SIZE; x++) {
         for (int z = 0; z < CHUNK_SIZE; z++) {
             // Get height at this x,z position
@@ -63,40 +78,43 @@ void WorldGenerator::GenerateChunk(Chunk& chunk, int cx, int cy, int cz) {
             
             for (int y = 0; y < CHUNK_SIZE; y++) {
                 int worldY = worldBaseY + y;
-                int index = x * CHUNK_SIZE * CHUNK_SIZE + y * CHUNK_SIZE + z;
                 
                 if (worldY > terrainHeight) {
                     // Above terrain - air
-                    chunk.blocks[index] = BlockType::Air;
+                    chunk.SetBlock(x, y, z, airId);
                 } else if (worldY == terrainHeight) {
-                    // Surface - grass
-                    chunk.blocks[index] = BlockType::Grass;
+                    // Surface
+                    chunk.SetBlock(x, y, z, surfaceId);
                 } else if (worldY > terrainHeight - 4) {
-                    // Dirt below grass
-                    chunk.blocks[index] = BlockType::Dirt;
+                    // Subsurface
+                    chunk.SetBlock(x, y, z, subsurfaceId);
                 } else if (worldY > 0) {
                     // Stone
-                    chunk.blocks[index] = BlockType::Stone;
+                    chunk.SetBlock(x, y, z, stoneId);
                 } else {
                     // Bedrock at bottom
-                    chunk.blocks[index] = BlockType::Bedrock;
+                    chunk.SetBlock(x, y, z, bedrockId);
                 }
             }
         }
     }
     
-    // Occasionally add trees on grass
-    for (int x = 2; x < CHUNK_SIZE - 2; x += 4) {
-        for (int z = 2; z < CHUNK_SIZE - 2; z += 4) {
-            int worldY = (int)(GetHeightNoise(worldBaseX + x, worldBaseZ + z) * 8.0f + 32.0f);
-            int localY = worldY - worldBaseY;
-            
-            if (localY >= 0 && localY < CHUNK_SIZE - 6) {
-                int index = x * CHUNK_SIZE * CHUNK_SIZE + localY * CHUNK_SIZE + z;
-                if (chunk.blocks[index] == BlockType::Grass) {
-                    // 10% chance for tree
-                    if ((rng() % 100) < 10) {
-                        GenerateTree(chunk, x, localY + 1, z);
+    // Occasionally add trees on surface
+    BlockTypeID trunkId = registry.GetBlockId(treeTrunkBlock);
+    BlockTypeID leafId = registry.GetBlockId(treeLeafBlock);
+    
+    if (trunkId != BLOCK_AIR && leafId != BLOCK_AIR) {
+        for (int x = 2; x < CHUNK_SIZE - 2; x += 4) {
+            for (int z = 2; z < CHUNK_SIZE - 2; z += 4) {
+                int worldY = (int)(GetHeightNoise(worldBaseX + x, worldBaseZ + z) * 8.0f + 32.0f);
+                int localY = worldY - worldBaseY;
+                
+                if (localY >= 0 && localY < CHUNK_SIZE - 6) {
+                    if (chunk.GetBlock(x, localY, z) == surfaceId) {
+                        // 10% chance for tree
+                        if ((rng() % 100) < 10) {
+                            GenerateTree(chunk, x, localY + 1, z, trunkId, leafId);
+                        }
                     }
                 }
             }
@@ -104,18 +122,24 @@ void WorldGenerator::GenerateChunk(Chunk& chunk, int cx, int cy, int cz) {
     }
     
     chunk.loaded = true;
-    chunk.dirty = true;
+    chunk.SetDirty(true);
 }
 
 void WorldGenerator::GenerateTree(Chunk& chunk, int x, int y, int z) {
+    BlockRegistry& registry = BlockRegistry::GetInstance();
+    BlockTypeID trunkId = registry.GetBlockId(treeTrunkBlock);
+    BlockTypeID leafId = registry.GetBlockId(treeLeafBlock);
+    GenerateTree(chunk, x, y, z, trunkId, leafId);
+}
+
+void WorldGenerator::GenerateTree(Chunk& chunk, int x, int y, int z, BlockTypeID trunkId, BlockTypeID leafId) {
     // Simple tree generation
     int trunkHeight = 4 + (rng() % 3);
     
     // Trunk
     for (int i = 0; i < trunkHeight; i++) {
         if (y + i < CHUNK_SIZE) {
-            int index = x * CHUNK_SIZE * CHUNK_SIZE + (y + i) * CHUNK_SIZE + z;
-            chunk.blocks[index] = BlockType::Wood;
+            chunk.SetBlock(x, y + i, z, trunkId);
         }
     }
     
@@ -135,9 +159,8 @@ void WorldGenerator::GenerateTree(Chunk& chunk, int x, int y, int z) {
                     if (std::abs(lx) == 2 && std::abs(lz) == 2) continue;
                     if (ly == 2 && (std::abs(lx) > 1 || std::abs(lz) > 1)) continue;
                     
-                    int index = nx * CHUNK_SIZE * CHUNK_SIZE + ny * CHUNK_SIZE + nz;
-                    if (chunk.blocks[index] == BlockType::Air) {
-                        chunk.blocks[index] = BlockType::Leaves;
+                    if (chunk.GetBlock(nx, ny, nz) == BLOCK_AIR) {
+                        chunk.SetBlock(nx, ny, nz, leafId);
                     }
                 }
             }

@@ -62,24 +62,29 @@ float Biome::GetHeightVariation(BiomeType type) {
     }
 }
 
-BlockType Biome::GetSurfaceBlock(BiomeType type) {
+BlockTypeID Biome::GetSurfaceBlock(BiomeType type) {
+    BlockRegistry& registry = BlockRegistry::GetInstance();
     switch (type) {
-        case BiomeType::Plains: return BlockType::Grass;
-        case BiomeType::Forest: return BlockType::Grass;
-        case BiomeType::Desert: return BlockType::Sand;
-        case BiomeType::Snow: return BlockType::Snow;
-        default: return BlockType::Grass;
+        case BiomeType::Plains: return registry.GetBlockId("grass");
+        case BiomeType::Forest: return registry.GetBlockId("grass");
+        case BiomeType::Desert: return registry.GetBlockId("sand");
+        case BiomeType::Snow: return registry.GetBlockId("snow");
+        default: return registry.GetBlockId("grass");
     }
 }
 
-BlockType Biome::GetSubsurfaceBlock(BiomeType type) {
+BlockTypeID Biome::GetSubsurfaceBlock(BiomeType type) {
+    BlockRegistry& registry = BlockRegistry::GetInstance();
     switch (type) {
-        case BiomeType::Desert: return BlockType::Sand;
-        default: return BlockType::Dirt;
+        case BiomeType::Desert: return registry.GetBlockId("sand");
+        default: return registry.GetBlockId("dirt");
     }
 }
 
 void Biome::GenerateChunkColumn(Chunk* chunk, int x, int z, float worldX, float worldZ, int seed) {
+    // Get registry for block IDs
+    BlockRegistry& registry = BlockRegistry::GetInstance();
+    
     // Sample biome parameters
     float temperature = Noise2DSmooth(worldX * 0.01f, worldZ * 0.01f, seed) * 0.5f + 0.5f;
     float humidity = Noise2DSmooth(worldX * 0.01f + 100, worldZ * 0.01f + 100, seed) * 0.5f + 0.5f;
@@ -94,38 +99,55 @@ void Biome::GenerateChunkColumn(Chunk* chunk, int x, int z, float worldX, float 
     
     int groundHeight = (int)height;
     
-    BlockType surfaceBlock = GetSurfaceBlock(biome);
-    BlockType subsurfaceBlock = GetSubsurfaceBlock(biome);
+    // Get block IDs from registry (data-driven)
+    std::string surfaceId, subsurfaceId;
+    switch (biome) {
+        case BiomeType::Desert:
+            surfaceId = "sand";
+            subsurfaceId = "sand";
+            break;
+        case BiomeType::Snow:
+            surfaceId = "snow";
+            subsurfaceId = "dirt";
+            break;
+        default:
+            surfaceId = "grass";
+            subsurfaceId = "dirt";
+            break;
+    }
+    
+    BlockTypeID surfaceBlock = registry.GetBlockId(surfaceId);
+    BlockTypeID subsurfaceBlock = registry.GetBlockId(subsurfaceId);
+    BlockTypeID stoneBlock = registry.GetBlockId("stone");
+    BlockTypeID bedrockBlock = registry.GetBlockId("bedrock");
+    BlockTypeID airBlock = BLOCK_AIR;
+    BlockTypeID woodBlock = registry.GetBlockId("wood");
     
     // Fill column
     for (int y = 0; y < CHUNK_SIZE; ++y) {
         int worldY = chunk->GetChunkY() * CHUNK_SIZE + y;
         
         if (worldY > groundHeight) {
-            // Air
-            chunk->SetBlock(x, y, z, BlockType::Air);
+            chunk->SetBlock(x, y, z, airBlock);
         } else if (worldY == groundHeight) {
-            // Surface
             chunk->SetBlock(x, y, z, surfaceBlock);
         } else if (worldY > groundHeight - 4) {
-            // Subsurface (dirt/sand)
             chunk->SetBlock(x, y, z, subsurfaceBlock);
         } else if (worldY > 0) {
-            // Stone
-            chunk->SetBlock(x, y, z, BlockType::Stone);
+            chunk->SetBlock(x, y, z, stoneBlock);
         } else {
-            // Bedrock at bottom
-            chunk->SetBlock(x, y, z, BlockType::Bedrock);
+            chunk->SetBlock(x, y, z, bedrockBlock);
         }
     }
     
     // Add trees in forests
-    if (biome == BiomeType::Forest && Noise2D((int)worldX, (int)worldZ, seed + 2) > 0.7f) {
+    if (biome == BiomeType::Forest && woodBlock != BLOCK_AIR && 
+        Noise2D((int)worldX, (int)worldZ, seed + 2) > 0.7f) {
         int treeHeight = 4 + (int)(Noise2D((int)worldX, (int)worldZ, seed + 3) * 3);
         for (int h = 1; h <= treeHeight && (groundHeight + h) < CHUNK_SIZE; ++h) {
             int ty = groundHeight + h - chunk->GetChunkY() * CHUNK_SIZE;
             if (ty >= 0 && ty < CHUNK_SIZE) {
-                chunk->SetBlock(x, ty, z, BlockType::Wood);
+                chunk->SetBlock(x, ty, z, woodBlock);
             }
         }
     }
