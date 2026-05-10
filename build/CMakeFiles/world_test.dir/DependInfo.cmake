@@ -25,6 +25,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/math/vec3.cpp" "CMakeFiles/world_test.dir/src/math/vec3.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/math/vec3.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/network/packet.cpp" "CMakeFiles/world_test.dir/src/network/packet.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/network/packet.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/physics/collision.cpp" "CMakeFiles/world_test.dir/src/physics/collision.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/physics/collision.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/physics/physics_system.cpp" "CMakeFiles/world_test.dir/src/physics/physics_system.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/physics/physics_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/physics/rigidbody.cpp" "CMakeFiles/world_test.dir/src/physics/rigidbody.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/physics/rigidbody.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/platform/file_system.cpp" "CMakeFiles/world_test.dir/src/platform/file_system.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/platform/file_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/platform/input_manager.cpp" "CMakeFiles/world_test.dir/src/platform/input_manager.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/platform/input_manager.cpp.o.d"

@@ -41,6 +41,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_engine.dir/src/network/packet.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/physics/collision.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/physics/collision.cpp.o.d"
+  "CMakeFiles/voxel_engine.dir/src/physics/physics_system.cpp.o"
+  "CMakeFiles/voxel_engine.dir/src/physics/physics_system.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/physics/rigidbody.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/physics/rigidbody.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/platform/file_system.cpp.o"

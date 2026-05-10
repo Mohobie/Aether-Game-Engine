@@ -29,6 +29,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/math/vec3.cpp" "CMakeFiles/voxel_engine.dir/src/math/vec3.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/math/vec3.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/network/packet.cpp" "CMakeFiles/voxel_engine.dir/src/network/packet.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/network/packet.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/physics/collision.cpp" "CMakeFiles/voxel_engine.dir/src/physics/collision.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/physics/collision.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/physics/physics_system.cpp" "CMakeFiles/voxel_engine.dir/src/physics/physics_system.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/physics/physics_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/physics/rigidbody.cpp" "CMakeFiles/voxel_engine.dir/src/physics/rigidbody.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/physics/rigidbody.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/platform/file_system.cpp" "CMakeFiles/voxel_engine.dir/src/platform/file_system.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/platform/file_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/platform/input.cpp" "CMakeFiles/voxel_engine.dir/src/platform/input.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/platform/input.cpp.o.d"

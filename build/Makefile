@@ -825,6 +825,39 @@ src/physics/collision.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/collision.cpp.s
 .PHONY : src/physics/collision.cpp.s
 
+src/physics/physics_system.o: src/physics/physics_system.cpp.o
+.PHONY : src/physics/physics_system.o
+
+# target to build an object file
+src/physics/physics_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/physics/physics_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/physics/physics_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/physics/physics_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/physics_system.cpp.o
+.PHONY : src/physics/physics_system.cpp.o
+
+src/physics/physics_system.i: src/physics/physics_system.cpp.i
+.PHONY : src/physics/physics_system.i
+
+# target to preprocess a source file
+src/physics/physics_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/physics/physics_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/physics/physics_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/physics/physics_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/physics_system.cpp.i
+.PHONY : src/physics/physics_system.cpp.i
+
+src/physics/physics_system.s: src/physics/physics_system.cpp.s
+.PHONY : src/physics/physics_system.s
+
+# target to generate assembly for a file
+src/physics/physics_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/physics/physics_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/physics/physics_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/physics/physics_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/physics_system.cpp.s
+.PHONY : src/physics/physics_system.cpp.s
+
 src/physics/rigidbody.o: src/physics/rigidbody.cpp.o
 .PHONY : src/physics/rigidbody.o
 
@@ -1779,6 +1812,9 @@ help:
 	@echo "... src/physics/collision.o"
 	@echo "... src/physics/collision.i"
 	@echo "... src/physics/collision.s"
+	@echo "... src/physics/physics_system.o"
+	@echo "... src/physics/physics_system.i"
+	@echo "... src/physics/physics_system.s"
 	@echo "... src/physics/rigidbody.o"
 	@echo "... src/physics/rigidbody.i"
 	@echo "... src/physics/rigidbody.s"

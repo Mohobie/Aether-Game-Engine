@@ -8,6 +8,7 @@
 #include "voxel/block_mesh_builder.h"
 #include "rendering/mesh.h"
 #include "physics/collision.h"
+#include "physics/physics_system.h"
 #include "entity/entity.h"
 #include "entity/components.h"
 
@@ -117,6 +118,58 @@ int main() {
     script->updateFunc = [&counter](float dt) { counter += dt; };
     entityManager.Update(0.1f);
     std::cout << "Script counter after 0.1s: " << counter << std::endl;
+    
+    // Test Physics System
+    std::cout << "\n=== Physics System Test ===" << std::endl;
+    PhysicsWorld physics;
+    
+    // Create ground
+    BoxCollider* ground = physics.CreateBoxCollider(Vec3(0, -1, 0), Vec3(50, 1, 50));
+    ground->isStatic = true;
+    
+    // Create dynamic body
+    Rigidbody* body = physics.CreateBody(1.0f);
+    body->SetPosition(Vec3(0, 10, 0));
+    BoxCollider* bodyCollider = physics.CreateBoxCollider(Vec3(0, 10, 0), Vec3(0.5f, 0.5f, 0.5f));
+    body->collider = bodyCollider;
+    
+    std::cout << "Initial body position: (" << body->position.x << ", " 
+              << body->position.y << ", " << body->position.z << ")" << std::endl;
+    
+    // Simulate a few seconds
+    for (int i = 0; i < 60; ++i) {
+        physics.Step(0.016f);
+        if (i % 15 == 0) {
+            std::cout << "Frame " << i << " - Position: (" << body->position.x << ", " 
+                      << body->position.y << ", " << body->position.z << ")" << std::endl;
+        }
+    }
+    
+    std::cout << "Final body position: (" << body->position.x << ", " 
+              << body->position.y << ", " << body->position.z << ")" << std::endl;
+    std::cout << "Body grounded: " << body->isGrounded << std::endl;
+    
+    // Test collision detection
+    BoxCollider* testBox1 = physics.CreateBoxCollider(Vec3(0, 0, 0), Vec3(1, 1, 1));
+    BoxCollider* testBox2 = physics.CreateBoxCollider(Vec3(1.5f, 0, 0), Vec3(1, 1, 1));
+    
+    Vec3 normal;
+    float penetration;
+    bool colliding = testBox1->TestCollision(testBox2, normal, penetration);
+    std::cout << "\nBox collision test: " << (colliding ? "COLLIDING" : "NOT COLLIDING") << std::endl;
+    if (colliding) {
+        std::cout << "Penetration: " << penetration << std::endl;
+        std::cout << "Normal: (" << normal.x << ", " << normal.y << ", " << normal.z << ")" << std::endl;
+    }
+    
+    // Test raycast
+    Vec3 hitPoint, hitNormal;
+    bool rayHit = physics.Raycast(Vec3(0, 5, 0), Vec3(0, -1, 0), 10.0f, hitPoint, hitNormal);
+    std::cout << "\nRaycast test: " << (rayHit ? "HIT" : "MISS") << std::endl;
+    if (rayHit) {
+        std::cout << "Hit point: (" << hitPoint.x << ", " << hitPoint.y << ", " << hitPoint.z << ")" << std::endl;
+        std::cout << "Hit normal: (" << hitNormal.x << ", " << hitNormal.y << ", " << hitNormal.z << ")" << std::endl;
+    }
     
     std::cout << "\nAll tests passed!" << std::endl;
     return 0;

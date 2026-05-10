@@ -33,6 +33,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/save_test.dir/src/network/packet.cpp.o.d"
   "CMakeFiles/save_test.dir/src/physics/collision.cpp.o"
   "CMakeFiles/save_test.dir/src/physics/collision.cpp.o.d"
+  "CMakeFiles/save_test.dir/src/physics/physics_system.cpp.o"
+  "CMakeFiles/save_test.dir/src/physics/physics_system.cpp.o.d"
   "CMakeFiles/save_test.dir/src/physics/rigidbody.cpp.o"
   "CMakeFiles/save_test.dir/src/physics/rigidbody.cpp.o.d"
   "CMakeFiles/save_test.dir/src/platform/file_system.cpp.o"
