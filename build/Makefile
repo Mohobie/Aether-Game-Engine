@@ -603,6 +603,72 @@ src/core/time_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/time_system.cpp.s
 .PHONY : src/core/time_system.cpp.s
 
+src/entity/components.o: src/entity/components.cpp.o
+.PHONY : src/entity/components.o
+
+# target to build an object file
+src/entity/components.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/entity/components.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/entity/components.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/entity/components.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/entity/components.cpp.o
+.PHONY : src/entity/components.cpp.o
+
+src/entity/components.i: src/entity/components.cpp.i
+.PHONY : src/entity/components.i
+
+# target to preprocess a source file
+src/entity/components.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/entity/components.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/entity/components.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/entity/components.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/entity/components.cpp.i
+.PHONY : src/entity/components.cpp.i
+
+src/entity/components.s: src/entity/components.cpp.s
+.PHONY : src/entity/components.s
+
+# target to generate assembly for a file
+src/entity/components.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/entity/components.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/entity/components.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/entity/components.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/entity/components.cpp.s
+.PHONY : src/entity/components.cpp.s
+
+src/entity/entity.o: src/entity/entity.cpp.o
+.PHONY : src/entity/entity.o
+
+# target to build an object file
+src/entity/entity.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/entity/entity.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/entity/entity.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/entity/entity.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/entity/entity.cpp.o
+.PHONY : src/entity/entity.cpp.o
+
+src/entity/entity.i: src/entity/entity.cpp.i
+.PHONY : src/entity/entity.i
+
+# target to preprocess a source file
+src/entity/entity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/entity/entity.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/entity/entity.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/entity/entity.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/entity/entity.cpp.i
+.PHONY : src/entity/entity.cpp.i
+
+src/entity/entity.s: src/entity/entity.cpp.s
+.PHONY : src/entity/entity.s
+
+# target to generate assembly for a file
+src/entity/entity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/entity/entity.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/entity/entity.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/entity/entity.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/entity/entity.cpp.s
+.PHONY : src/entity/entity.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -1683,6 +1749,12 @@ help:
 	@echo "... src/core/time_system.o"
 	@echo "... src/core/time_system.i"
 	@echo "... src/core/time_system.s"
+	@echo "... src/entity/components.o"
+	@echo "... src/entity/components.i"
+	@echo "... src/entity/components.s"
+	@echo "... src/entity/entity.o"
+	@echo "... src/entity/entity.i"
+	@echo "... src/entity/entity.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

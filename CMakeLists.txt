@@ -99,6 +99,8 @@ endif()
 set(CORE_SOURCES
     src/math/vec3.cpp
     src/math/mat4.cpp
+    src/entity/entity.cpp
+    src/entity/components.cpp
     src/rendering/mesh.cpp
     src/voxel/block.cpp
     src/voxel/block_types.cpp

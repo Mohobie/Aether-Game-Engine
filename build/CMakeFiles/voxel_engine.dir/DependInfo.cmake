@@ -22,6 +22,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/core/raycast.cpp" "CMakeFiles/voxel_engine.dir/src/core/raycast.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/core/raycast.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/core/save_system.cpp" "CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/core/time_system.cpp" "CMakeFiles/voxel_engine.dir/src/core/time_system.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/core/time_system.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/entity/components.cpp" "CMakeFiles/voxel_engine.dir/src/entity/components.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/entity/components.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/entity/entity.cpp" "CMakeFiles/voxel_engine.dir/src/entity/entity.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/entity/entity.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/main.cpp" "CMakeFiles/voxel_engine.dir/src/main.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/main.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/math/mat4.cpp" "CMakeFiles/voxel_engine.dir/src/math/mat4.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/math/mat4.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/math/vec3.cpp" "CMakeFiles/voxel_engine.dir/src/math/vec3.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/math/vec3.cpp.o.d"
