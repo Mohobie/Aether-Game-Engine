@@ -28,6 +28,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/entity/entity.cpp" "CMakeFiles/voxel_test.dir/src/entity/entity.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/entity/entity.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/math/mat4.cpp" "CMakeFiles/voxel_test.dir/src/math/mat4.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/math/mat4.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/math/vec3.cpp" "CMakeFiles/voxel_test.dir/src/math/vec3.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/math/vec3.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/network/network_architecture.cpp" "CMakeFiles/voxel_test.dir/src/network/network_architecture.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/network/network_architecture.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/network/packet.cpp" "CMakeFiles/voxel_test.dir/src/network/packet.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/network/packet.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/physics/collision.cpp" "CMakeFiles/voxel_test.dir/src/physics/collision.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/physics/collision.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/physics/physics_system.cpp" "CMakeFiles/voxel_test.dir/src/physics/physics_system.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/physics/physics_system.cpp.o.d"

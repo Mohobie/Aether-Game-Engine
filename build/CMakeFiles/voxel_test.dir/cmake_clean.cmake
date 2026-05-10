@@ -39,6 +39,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_test.dir/src/math/mat4.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/math/vec3.cpp.o"
   "CMakeFiles/voxel_test.dir/src/math/vec3.cpp.o.d"
+  "CMakeFiles/voxel_test.dir/src/network/network_architecture.cpp.o"
+  "CMakeFiles/voxel_test.dir/src/network/network_architecture.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/network/packet.cpp.o"
   "CMakeFiles/voxel_test.dir/src/network/packet.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/physics/collision.cpp.o"

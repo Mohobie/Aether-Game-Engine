@@ -924,6 +924,39 @@ src/math/vec3.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/math/vec3.cpp.s
 .PHONY : src/math/vec3.cpp.s
 
+src/network/network_architecture.o: src/network/network_architecture.cpp.o
+.PHONY : src/network/network_architecture.o
+
+# target to build an object file
+src/network/network_architecture.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/network_architecture.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/network_architecture.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/network_architecture.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/network_architecture.cpp.o
+.PHONY : src/network/network_architecture.cpp.o
+
+src/network/network_architecture.i: src/network/network_architecture.cpp.i
+.PHONY : src/network/network_architecture.i
+
+# target to preprocess a source file
+src/network/network_architecture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/network_architecture.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/network_architecture.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/network_architecture.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/network_architecture.cpp.i
+.PHONY : src/network/network_architecture.cpp.i
+
+src/network/network_architecture.s: src/network/network_architecture.cpp.s
+.PHONY : src/network/network_architecture.s
+
+# target to generate assembly for a file
+src/network/network_architecture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/network_architecture.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/network_architecture.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/network_architecture.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/network_architecture.cpp.s
+.PHONY : src/network/network_architecture.cpp.s
+
 src/network/packet.o: src/network/packet.cpp.o
 .PHONY : src/network/packet.o
 
@@ -2160,6 +2193,9 @@ help:
 	@echo "... src/math/vec3.o"
 	@echo "... src/math/vec3.i"
 	@echo "... src/math/vec3.s"
+	@echo "... src/network/network_architecture.o"
+	@echo "... src/network/network_architecture.i"
+	@echo "... src/network/network_architecture.s"
 	@echo "... src/network/packet.o"
 	@echo "... src/network/packet.i"
 	@echo "... src/network/packet.s"
