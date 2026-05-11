@@ -10,6 +10,7 @@
 #include "voxel/chunk.h"
 #include "voxel/block.h"
 #include "voxel/block_registry.h"
+#include "voxel/world_renderer.h"
 #include "core/logger.h"
 #include <iostream>
 #include <cstring>
@@ -67,7 +68,11 @@ struct Framebuffer {
     }
 };
 
-Renderer::Renderer() : initialized(false), width(80), height(40), fb_renderer(nullptr), sky_renderer(nullptr), weather_renderer(nullptr), day_night_cycle(nullptr), weather_system(nullptr) {}
+Renderer::Renderer() : initialized(false), width(80), height(40), 
+                       fb_renderer(nullptr), sky_renderer(nullptr), 
+                       weather_renderer(nullptr), day_night_cycle(nullptr), 
+                       weather_system(nullptr), world_renderer(nullptr), 
+                       world_shader(nullptr) {}
 
 Renderer::~Renderer() {
     if (initialized) Shutdown();
@@ -75,11 +80,27 @@ Renderer::~Renderer() {
 
 bool Renderer::Initialize() {
     std::cout << "[Renderer] Software renderer initialized (ASCII mode)\n";
+    
+    // Initialize world renderer
+    world_renderer = new WorldRenderer();
+    world_shader = new Shader();
+    world_shader->LoadFromSource(Shader::GetUnlitVertexShader(), 
+                                  Shader::GetUnlitFragmentShader());
+    world_renderer->Initialize(world_shader);
+    
     initialized = true;
     return true;
 }
 
 void Renderer::Shutdown() {
+    if (world_renderer) {
+        delete world_renderer;
+        world_renderer = nullptr;
+    }
+    if (world_shader) {
+        delete world_shader;
+        world_shader = nullptr;
+    }
     initialized = false;
 }
 
@@ -151,6 +172,12 @@ void Renderer::RenderWorld(const World& world, const Camera& camera) {
                 Chunk* chunk = const_cast<World&>(world).GetChunk(cx, cy, cz);
                 if (!chunk || !chunk->loaded) continue;
                 
+                // Update mesh if needed (builds GPU-ready mesh data)
+                if (chunk->IsDirty()) {
+                    UpdateChunkMesh(chunk);
+                    chunk->SetDirty(false);
+                }
+                
                 // Render each visible block in chunk
                 for (int x = 0; x < CHUNK_SIZE; x += 2) {
                     for (int y = 0; y < CHUNK_SIZE; y += 2) {
@@ -194,6 +221,36 @@ void Renderer::RenderWorld(const World& world, const Camera& camera) {
     fb.Draw();
 }
 
+void Renderer::RenderWorldMesh(const World& world, const Camera& camera) {
+    // Mesh-based world rendering entry point
+    // In a full OpenGL implementation, this would:
+    // 1. Set up view/projection matrices
+    // 2. Bind the world shader
+    // 3. Iterate visible chunks and call world_renderer->RenderChunk()
+    // For now, meshes are built and tracked via WorldRenderer
+    if (world_renderer) {
+        world_renderer->RenderWorld(world, camera);
+    }
+}
+
+void Renderer::UpdateChunkMesh(const Chunk* chunk) {
+    if (world_renderer && chunk) {
+        world_renderer->UpdateChunkMesh(chunk);
+    }
+}
+
+void Renderer::UpdateChunkMeshWithNeighbors(const Chunk* chunk,
+                                             const Chunk* neighborXP, const Chunk* neighborXN,
+                                             const Chunk* neighborYP, const Chunk* neighborYN,
+                                             const Chunk* neighborZP, const Chunk* neighborZN) {
+    if (world_renderer && chunk) {
+        world_renderer->UpdateChunkMeshWithNeighbors(chunk,
+                                                      neighborXP, neighborXN,
+                                                      neighborYP, neighborYN,
+                                                      neighborZP, neighborZN);
+    }
+}
+
 void Renderer::RenderMesh(const Mesh& mesh, const Shader& shader, const Camera& camera) {
     // Not implemented for software renderer
 }
@@ -208,6 +265,28 @@ void Renderer::RenderWeatherEffects(const Camera& camera) {
     if (weather_renderer) {
         weather_renderer->RenderASCII(width, height);
     }
+}
+
+void Renderer::RenderCrosshair(int screenW, int screenH) {
+    // Draw crosshair at screen center
+    int cx = screenW / 2;
+    int cy = screenH / 2;
+    
+    // Simple ASCII crosshair: draw '+' at center
+    // In a real implementation, this would use proper rendering
+    // For now, we just ensure the center is visible
+    
+    // Note: In ASCII mode, the crosshair is drawn as part of the framebuffer
+    // We'll draw it after the world render
+    std::cout << "\n[CROSSHAIR] + at (" << cx << ", " << cy << ")" << std::endl;
+}
+
+void Renderer::RenderBlockHighlight(const Vec3& blockPos, const Camera& camera, int screenW, int screenH) {
+    // Project block position to screen
+    Vec2 screenPos = Project(blockPos + Vec3(0.5f, 0.5f, 0.5f), camera, screenW, screenH);
+    
+    // Draw highlight indicator
+    std::cout << "[HIGHLIGHT] Block at (" << (int)blockPos.x << ", " << (int)blockPos.y << ", " << (int)blockPos.z << ")" << std::endl;
 }
 
 } // namespace vge
