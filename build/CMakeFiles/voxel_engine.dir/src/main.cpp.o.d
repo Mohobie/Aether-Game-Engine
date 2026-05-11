@@ -238,6 +238,8 @@ CMakeFiles/voxel_engine.dir/src/main.cpp.o: \
  /home/mohobie/projects/aether-game-engine/src/voxel/block_registry.h \
  /home/mohobie/projects/aether-game-engine/src/audio/audio_engine.h \
  /home/mohobie/projects/aether-game-engine/src/game/game_state.h \
+ /home/mohobie/projects/aether-game-engine/src/game/block_interaction.h \
+ /home/mohobie/projects/aether-game-engine/src/core/raycast.h \
  /usr/include/GLFW/glfw3.h /usr/include/GL/gl.h /usr/include/GL/glext.h \
  /usr/include/KHR/khrplatform.h /usr/include/c++/11/iostream \
  /usr/include/c++/11/ostream /usr/include/c++/11/ios \

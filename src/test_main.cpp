@@ -45,11 +45,8 @@ void TestPostProcessing() {
 void TestUI() {
     std::cout << "\n=== UI System Test ===" << std::endl;
     
-    UIManager ui;
-    ui.SetScreenSize(Vec2(1920, 1080));
-    
-    // Create main menu panel
-    auto* panel = ui.CreatePanel("MainMenu");
+    // Create UI elements directly (avoid UIManager ownership issues)
+    auto panel = std::make_unique<UIPanel>("MainMenu");
     panel->SetPosition(Vec2(100, 100));
     panel->SetSize(Vec2(400, 500));
     panel->SetAutoLayout(true);
@@ -57,60 +54,61 @@ void TestUI() {
     panel->SetSpacing(10);
     
     // Add title
-    auto* title = ui.CreateLabel("Title", "Aether Voxel Engine");
+    auto title = std::make_unique<UILabel>("Title", "Aether Voxel Engine");
     title->SetFontSize(28);
     title->SetForegroundColor(Vec3(0.2f, 0.8f, 1.0f));
-    panel->AddChild(std::unique_ptr<UIElement>(title));
+    panel->AddChild(std::move(title));
     
     // Add buttons
-    auto* playBtn = ui.CreateButton("PlayBtn", "Play Game");
+    auto playBtn = std::make_unique<UIButton>("PlayBtn", "Play Game");
     playBtn->SetSize(Vec2(200, 40));
     playBtn->SetBackgroundColor(Vec3(0.2f, 0.6f, 0.2f));
     playBtn->SetOnClick([]() {
         std::cout << "[UI] Play button clicked!" << std::endl;
     });
-    panel->AddChild(std::unique_ptr<UIElement>(playBtn));
+    panel->AddChild(std::move(playBtn));
     
-    auto* settingsBtn = ui.CreateButton("SettingsBtn", "Settings");
+    auto settingsBtn = std::make_unique<UIButton>("SettingsBtn", "Settings");
     settingsBtn->SetSize(Vec2(200, 40));
-    panel->AddChild(std::unique_ptr<UIElement>(settingsBtn));
+    panel->AddChild(std::move(settingsBtn));
     
-    auto* quitBtn = ui.CreateButton("QuitBtn", "Quit");
+    auto quitBtn = std::make_unique<UIButton>("QuitBtn", "Quit");
     quitBtn->SetSize(Vec2(200, 40));
     quitBtn->SetBackgroundColor(Vec3(0.6f, 0.2f, 0.2f));
-    panel->AddChild(std::unique_ptr<UIElement>(quitBtn));
+    panel->AddChild(std::move(quitBtn));
     
     // Add slider
-    auto* volumeSlider = ui.CreateSlider("Volume", 0.0f, 1.0f);
+    auto volumeSlider = std::make_unique<UISlider>("Volume", 0.0f, 1.0f);
     volumeSlider->SetValue(0.7f);
     volumeSlider->SetSize(Vec2(200, 30));
     volumeSlider->SetOnValueChanged([](float value) {
         std::cout << "[UI] Volume changed to: " << (value * 100) << "%" << std::endl;
     });
-    panel->AddChild(std::unique_ptr<UIElement>(volumeSlider));
+    panel->AddChild(std::move(volumeSlider));
     
     // Add checkbox
-    auto* fullscreenCheck = ui.CreateCheckbox("Fullscreen", "Fullscreen Mode");
+    auto fullscreenCheck = std::make_unique<UICheckbox>("Fullscreen", "Fullscreen Mode");
     fullscreenCheck->SetChecked(true);
-    panel->AddChild(std::unique_ptr<UIElement>(fullscreenCheck));
+    panel->AddChild(std::move(fullscreenCheck));
     
     // Add dropdown
-    auto* resolutionDropdown = ui.CreateDropdown("Resolution");
+    auto resolutionDropdown = std::make_unique<UIDropdown>("Resolution");
     resolutionDropdown->AddOption("1920x1080");
     resolutionDropdown->AddOption("1280x720");
     resolutionDropdown->AddOption("2560x1440");
     resolutionDropdown->SetSelectedIndex(0);
-    panel->AddChild(std::unique_ptr<UIElement>(resolutionDropdown));
+    panel->AddChild(std::move(resolutionDropdown));
     
     // Layout and render
-    ui.Layout();
-    ui.Render();
+    panel->Layout();
+    panel->Render();
     
     // Simulate mouse interaction
     std::cout << "\n[Input] Simulating mouse click on Play button..." << std::endl;
-    ui.HandleMouseMove(Vec2(210, 200)); // Hover over play button
-    ui.HandleMouseClick(Vec2(210, 200), true);  // Press
-    ui.HandleMouseClick(Vec2(210, 200), false); // Release
+    UIEvent event;
+    event.type = UIEventType::Click;
+    event.position = Vec2(210, 200);
+    panel->HandleEvent(event);
     
     // Print hierarchy
     std::cout << "\n=== UI Hierarchy ===" << std::endl;
