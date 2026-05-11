@@ -2,6 +2,9 @@
 #include "ui/ui_system.h"
 #include "ai/ai_system.h"
 #include "animation/animation.h"
+#include "editor/in_game_editor.h"
+#include "platform/input_manager.h"
+#include "rendering/camera.h"
 #include <iostream>
 
 using namespace vge;
@@ -269,15 +272,66 @@ void TestAI() {
     std::cout << "AI system test passed!" << std::endl;
 }
 
+void TestFlyCamera() {
+    std::cout << "\n=== Fly Camera Controller Test ===" << std::endl;
+
+    // Create fly camera
+    FlyCamera flyCam;
+    flyCam.SetPosition(Vec3(0, 5, 0));
+    flyCam.SetRotation(-90.0f, 0.0f); // Looking down -Z
+    flyCam.SetSpeed(5.0f);
+    flyCam.SetSensitivity(0.1f);
+
+    std::cout << "Initial position: (0, 5, 0)" << std::endl;
+    std::cout << "Initial yaw: -90, pitch: 0 (looking down -Z)" << std::endl;
+    std::cout << "Initial speed: 5.0" << std::endl;
+
+    // Test forward vector
+    Vec3 forward = flyCam.GetForward();
+    std::cout << "Forward vector: (" << forward.x << ", " << forward.y << ", " << forward.z << ")" << std::endl;
+
+    // Test right vector
+    Vec3 right = flyCam.GetRight();
+    std::cout << "Right vector: (" << right.x << ", " << right.y << ", " << right.z << ")" << std::endl;
+
+    // Test up vector
+    Vec3 up = flyCam.GetUp();
+    std::cout << "Up vector: (" << up.x << ", " << up.y << ", " << up.z << ")" << std::endl;
+
+    // Test pitch clamping
+    flyCam.SetRotation(0.0f, 95.0f);
+    std::cout << "\nAfter setting pitch to 95 (should clamp to 89):" << std::endl;
+    std::cout << "Yaw: " << flyCam.GetYaw() << ", Pitch: " << flyCam.GetPitch() << std::endl;
+
+    flyCam.SetRotation(0.0f, -95.0f);
+    std::cout << "After setting pitch to -95 (should clamp to -89):" << std::endl;
+    std::cout << "Yaw: " << flyCam.GetYaw() << ", Pitch: " << flyCam.GetPitch() << std::endl;
+
+    // Test speed bounds
+    flyCam.SetSpeed(0.1f);
+    std::cout << "\nSpeed set to 0.1 (min bound check): " << flyCam.GetSpeed() << std::endl;
+    flyCam.SetSpeed(200.0f);
+    std::cout << "Speed set to 200 (max bound check): " << flyCam.GetSpeed() << std::endl;
+
+    // Test LookAt
+    flyCam.SetPosition(Vec3(0, 0, 0));
+    flyCam.LookAt(Vec3(0, 0, -10));
+    std::cout << "\nAfter LookAt(0, 0, -10):" << std::endl;
+    std::cout << "Yaw: " << flyCam.GetYaw() << ", Pitch: " << flyCam.GetPitch() << std::endl;
+
+    std::cout << "Fly camera controller test passed!" << std::endl;
+}
+
 int main() {
     std::cout << "=== Aether Game Engine - Feature Tests ===" << std::endl;
-    
+
     TestPostProcessing();
     TestUI();
     TestAnimation();
     TestAI();
-    
+    TestFlyCamera();
+
     std::cout << "\n=== All Tests Passed ===" << std::endl;
-    
+
     return 0;
 }

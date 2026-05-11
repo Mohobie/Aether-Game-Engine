@@ -7,6 +7,9 @@ namespace vge {
 Input::Input() {
     std::memset(keys, 0, sizeof(keys));
     std::memset(prevKeys, 0, sizeof(prevKeys));
+    mouseDeltaX = 0;
+    mouseDeltaY = 0;
+    scrollDelta = 0;
     
 #ifdef PLATFORM_LINUX
     terminalMode = false;
@@ -121,6 +124,11 @@ void Input::Update(void* windowHandle) {
     std::memcpy(prevKeys, keys, sizeof(keys));
     std::memset(keys, 0, sizeof(keys));
     
+    // Reset mouse delta each frame (must be set externally for now)
+    mouseDeltaX = 0;
+    mouseDeltaY = 0;
+    scrollDelta = 0;
+    
     ProcessKeyboardInput();
 }
 
@@ -168,6 +176,30 @@ bool Input::IsKeyReleased(int key) const {
         return !keys[key] && prevKeys[key];
     }
     return false;
+}
+
+void Input::SetMouseDelta(float dx, float dy) {
+    mouseDeltaX = dx;
+    mouseDeltaY = dy;
+}
+
+void Input::GetMouseDelta(float& dx, float& dy) const {
+    dx = mouseDeltaX;
+    dy = mouseDeltaY;
+}
+
+void Input::SetScrollDelta(float delta) {
+    scrollDelta = delta;
+}
+
+float Input::GetScrollDelta() const {
+    return scrollDelta;
+}
+
+void Input::ResetMouseDelta() {
+    mouseDeltaX = 0;
+    mouseDeltaY = 0;
+    scrollDelta = 0;
 }
 
 } // namespace vge

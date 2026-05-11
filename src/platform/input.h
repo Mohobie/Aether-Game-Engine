@@ -113,6 +113,9 @@ private:
     bool mouseButtons[8];
     bool prevMouseButtons[8];
     double mouseX, mouseY;
+    double prevMouseX, prevMouseY;
+    double mouseDeltaX, mouseDeltaY;
+    double scrollDelta;
     void* window;
     
     // Terminal input state
@@ -131,6 +134,8 @@ public:
     bool IsMouseButtonJustPressed(int button) const;
     bool IsMouseButtonReleased(int button) const;
     void GetMousePosition(double& x, double& y) const;
+    void GetMouseDelta(double& dx, double& dy) const;
+    double GetScrollDelta() const;
     
     // Terminal-specific
     void EnableTerminalMode();

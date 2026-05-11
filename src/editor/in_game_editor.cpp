@@ -365,33 +365,90 @@ void InGameEditor::RenderEditorUI() {
 // FlyCamera Implementation
 // ============================================
 
-FlyCamera::FlyCamera() 
+FlyCamera::FlyCamera()
     : position(0, 0, 0), forward(0, 0, 1), up(0, 1, 0), right(1, 0, 0),
-      yaw(0), pitch(0), speed(5.0f), sensitivity(0.1f) {}
+      yaw(-90.0f), pitch(0.0f), speed(5.0f), sensitivity(0.1f), enabled(true) {}
 
 FlyCamera::~FlyCamera() {}
 
+void FlyCamera::UpdateVectors() {
+    float yawRad = yaw * 3.14159f / 180.0f;
+    float pitchRad = pitch * 3.14159f / 180.0f;
+
+    forward.x = std::cos(pitchRad) * std::cos(yawRad);
+    forward.y = std::sin(pitchRad);
+    forward.z = std::cos(pitchRad) * std::sin(yawRad);
+    forward = forward.normalize();
+
+    right = forward.cross(Vec3(0, 1, 0)).normalize();
+    up = right.cross(forward).normalize();
+}
+
 void FlyCamera::Update(float deltaTime, Input& input) {
-    (void)deltaTime;
-    (void)input;
-    // Basic fly camera update
+    if (!enabled) return;
+
+    // --- Mouse look (yaw/pitch) ---
+    float dx, dy;
+    input.GetMouseDelta(dx, dy);
+    yaw   += dx * sensitivity;
+    pitch += dy * sensitivity;
+
+    // Clamp pitch to avoid gimbal lock
+    if (pitch > 89.0f)  pitch = 89.0f;
+    if (pitch < -89.0f) pitch = -89.0f;
+
+    UpdateVectors();
+
+    // --- Scroll wheel adjusts speed ---
+    float scroll = input.GetScrollDelta();
+    if (scroll != 0.0f) {
+        speed += scroll * 2.0f;
+        if (speed < 0.5f)  speed = 0.5f;
+        if (speed > 100.0f) speed = 100.0f;
+    }
+
+    // --- WASD movement relative to look direction ---
+    Vec3 moveDir(0, 0, 0);
+
+    if (input.IsKeyPressed(static_cast<int>(KeyCode::W))) {
+        moveDir = moveDir + forward;
+    }
+    if (input.IsKeyPressed(static_cast<int>(KeyCode::S))) {
+        moveDir = moveDir - forward;
+    }
+    if (input.IsKeyPressed(static_cast<int>(KeyCode::A))) {
+        moveDir = moveDir - right;
+    }
+    if (input.IsKeyPressed(static_cast<int>(KeyCode::D))) {
+        moveDir = moveDir + right;
+    }
+
+    // --- Fly mode: Space = up, Shift = down ---
+    if (input.IsKeyPressed(static_cast<int>(KeyCode::Space))) {
+        moveDir = moveDir + Vec3(0, 1, 0);
+    }
+    if (input.IsKeyPressed(static_cast<int>(KeyCode::Shift))) {
+        moveDir = moveDir - Vec3(0, 1, 0);
+    }
+
+    // Normalize horizontal movement so diagonal isn't faster
+    if (moveDir.length() > 0.001f) {
+        moveDir = moveDir.normalize();
+        position = position + moveDir * (speed * deltaTime);
+    }
 }
 
 void FlyCamera::SetPosition(const Vec3& pos) { position = pos; }
-void FlyCamera::SetRotation(float yawDeg, float pitchDeg) { yaw = yawDeg; pitch = pitchDeg; }
+void FlyCamera::SetRotation(float yawDeg, float pitchDeg) {
+    yaw = yawDeg;
+    pitch = pitchDeg;
+    UpdateVectors();
+}
 void FlyCamera::LookAt(const Vec3& target) {
     Vec3 direction = target - position;
     yaw = atan2f(direction.z, direction.x) * 180.0f / 3.14159f;
     pitch = asinf(direction.y / direction.length()) * 180.0f / 3.14159f;
-    // Update vectors inline
-    float yawRad = yaw * 3.14159f / 180.0f;
-    float pitchRad = pitch * 3.14159f / 180.0f;
-    forward.x = cosf(pitchRad) * cosf(yawRad);
-    forward.y = sinf(pitchRad);
-    forward.z = cosf(pitchRad) * sinf(yawRad);
-    forward = forward.normalize();
-    right = forward.cross(Vec3(0, 1, 0)).normalize();
-    up = right.cross(forward).normalize();
+    UpdateVectors();
 }
 
 // ============================================

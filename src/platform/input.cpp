@@ -23,6 +23,9 @@ Input::Input() : window(nullptr), terminalMode(false), stdin_fd(STDIN_FILENO) {
         prevMouseButtons[i] = false;
     }
     mouseX = mouseY = 0;
+    prevMouseX = prevMouseY = 0;
+    mouseDeltaX = mouseDeltaY = 0;
+    scrollDelta = 0;
 }
 
 Input::~Input() {
@@ -66,6 +69,11 @@ void Input::Update(void* windowHandle) {
     for (int i = 0; i < 8; ++i) {
         prevMouseButtons[i] = mouseButtons[i];
     }
+    prevMouseX = mouseX;
+    prevMouseY = mouseY;
+    mouseDeltaX = 0;
+    mouseDeltaY = 0;
+    scrollDelta = 0;
     
     // Enable terminal mode on first update
     if (!terminalMode) {
@@ -180,6 +188,15 @@ bool Input::IsMouseButtonReleased(int button) const {
 void Input::GetMousePosition(double& x, double& y) const {
     x = mouseX;
     y = mouseY;
+}
+
+void Input::GetMouseDelta(double& dx, double& dy) const {
+    dx = mouseDeltaX;
+    dy = mouseDeltaY;
+}
+
+double Input::GetScrollDelta() const {
+    return scrollDelta;
 }
 
 } // namespace vge

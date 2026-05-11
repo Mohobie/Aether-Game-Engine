@@ -155,6 +155,7 @@ public:
     // Look at target
     void LookAt(const Vec3& target);
     void SetSpeed(float s) { speed = s; }
+    float GetSpeed() const { return speed; }
     void SetSensitivity(float s) { sensitivity = s; }
     
     // Enable/disable

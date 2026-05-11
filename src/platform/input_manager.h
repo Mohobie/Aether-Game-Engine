@@ -26,6 +26,8 @@ class Input {
 private:
     bool keys[static_cast<int>(KeyCode::Count)];
     bool prevKeys[static_cast<int>(KeyCode::Count)];
+    float mouseDeltaX, mouseDeltaY;
+    float scrollDelta;
     
 #ifdef PLATFORM_LINUX
     struct termios originalTermios;
@@ -46,6 +48,13 @@ public:
     bool IsKeyPressed(KeyCode key) const;
     bool IsKeyJustPressed(KeyCode key) const;
     bool IsKeyReleased(KeyCode key) const;
+    
+    // Mouse input
+    void SetMouseDelta(float dx, float dy);
+    void GetMouseDelta(float& dx, float& dy) const;
+    void SetScrollDelta(float delta);
+    float GetScrollDelta() const;
+    void ResetMouseDelta();
     
     // Legacy compatibility
     bool IsKeyPressed(int key) const;
