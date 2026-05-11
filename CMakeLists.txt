@@ -136,6 +136,7 @@ set(CORE_SOURCES
     src/voxel/world_generator.cpp
     src/voxel/block_mesh_builder.cpp
     src/voxel/world_renderer.cpp
+    src/voxel/chunk_manager.cpp
     src/debug/debug_system.cpp
     src/physics/collision.cpp
     src/physics/rigidbody.cpp
@@ -253,6 +254,14 @@ endif()
 add_executable(gamepad_test tests/test_gamepad_standalone.cpp src/platform/gamepad.cpp)
 target_include_directories(gamepad_test PRIVATE ${COMMON_INCLUDES})
 
+add_executable(sandbox_test tests/test_sandbox_mode.cpp ${CORE_SOURCES})
+target_include_directories(sandbox_test PRIVATE ${COMMON_INCLUDES})
+if(PLATFORM_LINUX)
+    target_link_libraries(sandbox_test PRIVATE pthread dl)
+elseif(PLATFORM_WINDOWS)
+    target_link_libraries(sandbox_test PRIVATE ws2_32 winmm)
+endif()
+
 add_executable(renderer_integration_test tests/test_renderer_integration.cpp ${CORE_SOURCES})
 target_include_directories(renderer_integration_test PRIVATE ${COMMON_INCLUDES})
 if(PLATFORM_LINUX)
@@ -276,7 +285,6 @@ set(OPTIONAL_SOURCES
     src/ui/menu_system.cpp
     src/voxel/world_renderer.cpp
     src/voxel/block_mesh_builder.cpp
-    src/voxel/chunk_manager.cpp
     src/core/player_controller.cpp
     src/core/engine.cpp
     src/core/application.cpp
