@@ -194,6 +194,17 @@ CMakeFiles/voxel_engine.dir/src/rendering/renderer.cpp.o: \
  /usr/include/c++/11/backward/auto_ptr.h \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h \
+ /home/mohobie/projects/aether-game-engine/src/rendering/sky/sky_renderer.h \
+ /home/mohobie/projects/aether-game-engine/src/rendering/sky/day_night_cycle.h \
+ /home/mohobie/projects/aether-game-engine/src/rendering/weather/weather_effects_renderer.h \
+ /home/mohobie/projects/aether-game-engine/src/rendering/particles/particle_system.h \
+ /usr/include/c++/11/random /usr/include/c++/11/bits/random.h \
+ /usr/include/c++/11/bits/uniform_int_dist.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/opt_random.h \
+ /usr/include/c++/11/bits/random.tcc /usr/include/c++/11/numeric \
+ /usr/include/c++/11/bits/stl_numeric.h \
+ /usr/include/c++/11/pstl/glue_numeric_defs.h \
+ /home/mohobie/projects/aether-game-engine/src/core/weather_system.h \
  /home/mohobie/projects/aether-game-engine/src/voxel/block.h \
  /home/mohobie/projects/aether-game-engine/src/core/types.h \
  /home/mohobie/projects/aether-game-engine/src/voxel/block_registry.h \
@@ -220,6 +231,5 @@ CMakeFiles/voxel_engine.dir/src/rendering/renderer.cpp.o: \
  /usr/include/c++/11/algorithm /usr/include/c++/11/bits/stl_algo.h \
  /usr/include/c++/11/bits/algorithmfwd.h \
  /usr/include/c++/11/bits/stl_heap.h \
- /usr/include/c++/11/bits/uniform_int_dist.h \
  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
  /usr/include/c++/11/functional /usr/include/c++/11/bits/std_function.h

@@ -199,9 +199,6 @@ CMakeFiles/editor_test.dir/tests/test_editor.cpp.o: \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/uniform_int_dist.h \
  /home/mohobie/projects/aether-game-engine/src/voxel/block_registry.h \
- /home/mohobie/projects/aether-game-engine/src/render/camera.h \
- /home/mohobie/projects/aether-game-engine/src/core/math.h \
- /home/mohobie/projects/aether-game-engine/src/core/types.h \
  /home/mohobie/projects/aether-game-engine/src/rendering/camera.h \
  /home/mohobie/projects/aether-game-engine/src/math/mat4.h \
  /home/mohobie/projects/aether-game-engine/src/rendering/renderer.h \
@@ -209,9 +206,6 @@ CMakeFiles/editor_test.dir/tests/test_editor.cpp.o: \
  /home/mohobie/projects/aether-game-engine/src/rendering/shader.h \
  /home/mohobie/projects/aether-game-engine/src/platform/input.h \
  /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
- /home/mohobie/projects/aether-game-engine/src/render/renderer.h \
- /home/mohobie/projects/aether-game-engine/src/render/mesh.h \
- /home/mohobie/projects/aether-game-engine/src/render/shader.h \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
  /usr/include/c++/11/ios /usr/include/c++/11/bits/ios_base.h \
  /usr/include/c++/11/bits/locale_classes.h \

@@ -109,6 +109,7 @@ set(CORE_SOURCES
     src/rendering/particles/particle_system.cpp
     src/rendering/weather/weather_effects_renderer.cpp
     src/core/weather_system.cpp
+    src/rendering/post_processing.cpp
     src/rendering/camera.cpp
     src/rendering/renderer.cpp
     src/rendering/shader.cpp
@@ -155,11 +156,14 @@ set(CORE_SOURCES
     src/platform/file_system.cpp
     src/platform/input_manager.cpp
     src/platform/gamepad.cpp
+    src/core/crafting.cpp
+    src/core/player_controller.cpp
     src/voxel/voxel_editor.cpp
     src/editor/entity_spawner.cpp
     src/editor/in_game_editor.cpp
-    src/editor/entity_spawner.cpp
-    src/editor/in_game_editor.cpp
+    src/ui/console_commands.cpp
+    src/rendering/frustum.cpp
+    src/rendering/culling_system.cpp
 )
 
 # ============================================
@@ -228,17 +232,24 @@ elseif(PLATFORM_WINDOWS)
     target_link_libraries(editor_test PRIVATE ws2_32 winmm)
 endif()
 
-add_executable(gamepad_test tests/test_gamepad_standalone.cpp src/platform/gamepad.cpp)
-target_include_directories(gamepad_test PRIVATE ${COMMON_INCLUDES})
+add_executable(console_test tests/test_console_commands.cpp ${CORE_SOURCES})
+target_include_directories(console_test PRIVATE ${COMMON_INCLUDES})
 if(PLATFORM_LINUX)
-    target_link_libraries(gamepad_test PRIVATE pthread dl)
+    target_link_libraries(console_test PRIVATE pthread dl)
 elseif(PLATFORM_WINDOWS)
-    target_link_libraries(gamepad_test PRIVATE ws2_32 winmm)
+    target_link_libraries(console_test PRIVATE ws2_32 winmm)
 endif()
 
-# ============================================
-# Full Engine Build
-# ============================================
+add_executable(culling_test tests/test_culling.cpp ${CORE_SOURCES})
+target_include_directories(culling_test PRIVATE ${COMMON_INCLUDES})
+if(PLATFORM_LINUX)
+    target_link_libraries(culling_test PRIVATE pthread dl)
+elseif(PLATFORM_WINDOWS)
+    target_link_libraries(culling_test PRIVATE ws2_32 winmm)
+endif()
+
+add_executable(gamepad_test tests/test_gamepad_standalone.cpp src/platform/gamepad.cpp)
+target_include_directories(gamepad_test PRIVATE ${COMMON_INCLUDES})
 set(ALL_SOURCES ${CORE_SOURCES})
 
 set(OPTIONAL_SOURCES

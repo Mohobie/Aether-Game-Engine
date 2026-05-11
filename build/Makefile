@@ -208,6 +208,32 @@ editor_test/fast:
 .PHONY : editor_test/fast
 
 #=============================================================================
+# Target rules for targets named console_test
+
+# Build rule for target.
+console_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 console_test
+.PHONY : console_test
+
+# fast build rule for target.
+console_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/build
+.PHONY : console_test/fast
+
+#=============================================================================
+# Target rules for targets named culling_test
+
+# Build rule for target.
+culling_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 culling_test
+.PHONY : culling_test
+
+# fast build rule for target.
+culling_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/build
+.PHONY : culling_test/fast
+
+#=============================================================================
 # Target rules for targets named gamepad_test
 
 # Build rule for target.
@@ -245,6 +271,8 @@ src/ai/ai_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ai/ai_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ai/ai_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ai/ai_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ai/ai_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ai/ai_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/ai_system.cpp.o
 .PHONY : src/ai/ai_system.cpp.o
 
@@ -260,6 +288,8 @@ src/ai/ai_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ai/ai_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ai/ai_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ai/ai_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ai/ai_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ai/ai_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/ai_system.cpp.i
 .PHONY : src/ai/ai_system.cpp.i
 
@@ -275,6 +305,8 @@ src/ai/ai_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ai/ai_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ai/ai_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ai/ai_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ai/ai_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ai/ai_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/ai_system.cpp.s
 .PHONY : src/ai/ai_system.cpp.s
 
@@ -290,6 +322,8 @@ src/ai/behavior_tree.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ai/behavior_tree.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ai/behavior_tree.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ai/behavior_tree.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ai/behavior_tree.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ai/behavior_tree.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/behavior_tree.cpp.o
 .PHONY : src/ai/behavior_tree.cpp.o
 
@@ -305,6 +339,8 @@ src/ai/behavior_tree.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ai/behavior_tree.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ai/behavior_tree.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ai/behavior_tree.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ai/behavior_tree.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ai/behavior_tree.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/behavior_tree.cpp.i
 .PHONY : src/ai/behavior_tree.cpp.i
 
@@ -320,6 +356,8 @@ src/ai/behavior_tree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ai/behavior_tree.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ai/behavior_tree.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ai/behavior_tree.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ai/behavior_tree.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ai/behavior_tree.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/behavior_tree.cpp.s
 .PHONY : src/ai/behavior_tree.cpp.s
 
@@ -335,6 +373,8 @@ src/animation/animation.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/animation/animation.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/animation/animation.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/animation/animation.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/animation/animation.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/animation/animation.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/animation/animation.cpp.o
 .PHONY : src/animation/animation.cpp.o
 
@@ -350,6 +390,8 @@ src/animation/animation.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/animation/animation.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/animation/animation.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/animation/animation.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/animation/animation.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/animation/animation.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/animation/animation.cpp.i
 .PHONY : src/animation/animation.cpp.i
 
@@ -365,6 +407,8 @@ src/animation/animation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/animation/animation.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/animation/animation.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/animation/animation.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/animation/animation.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/animation/animation.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/animation/animation.cpp.s
 .PHONY : src/animation/animation.cpp.s
 
@@ -380,6 +424,8 @@ src/animation/animation_state_machine.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/animation/animation_state_machine.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/animation/animation_state_machine.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/animation/animation_state_machine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/animation/animation_state_machine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/animation/animation_state_machine.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/animation/animation_state_machine.cpp.o
 .PHONY : src/animation/animation_state_machine.cpp.o
 
@@ -395,6 +441,8 @@ src/animation/animation_state_machine.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/animation/animation_state_machine.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/animation/animation_state_machine.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/animation/animation_state_machine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/animation/animation_state_machine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/animation/animation_state_machine.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/animation/animation_state_machine.cpp.i
 .PHONY : src/animation/animation_state_machine.cpp.i
 
@@ -410,6 +458,8 @@ src/animation/animation_state_machine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/animation/animation_state_machine.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/animation/animation_state_machine.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/animation/animation_state_machine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/animation/animation_state_machine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/animation/animation_state_machine.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/animation/animation_state_machine.cpp.s
 .PHONY : src/animation/animation_state_machine.cpp.s
 
@@ -425,6 +475,8 @@ src/audio/audio_engine.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/audio/audio_engine.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/audio/audio_engine.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/audio/audio_engine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/audio/audio_engine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_engine.cpp.o
 .PHONY : src/audio/audio_engine.cpp.o
 
@@ -440,6 +492,8 @@ src/audio/audio_engine.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/audio/audio_engine.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/audio/audio_engine.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/audio/audio_engine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/audio/audio_engine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_engine.cpp.i
 .PHONY : src/audio/audio_engine.cpp.i
 
@@ -455,6 +509,8 @@ src/audio/audio_engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/audio/audio_engine.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/audio/audio_engine.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/audio/audio_engine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/audio/audio_engine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_engine.cpp.s
 .PHONY : src/audio/audio_engine.cpp.s
 
@@ -470,6 +526,8 @@ src/audio/audio_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/audio/audio_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/audio/audio_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/audio/audio_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/audio/audio_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/audio/audio_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_system.cpp.o
 .PHONY : src/audio/audio_system.cpp.o
 
@@ -485,6 +543,8 @@ src/audio/audio_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/audio/audio_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/audio/audio_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/audio/audio_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/audio/audio_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/audio/audio_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_system.cpp.i
 .PHONY : src/audio/audio_system.cpp.i
 
@@ -500,6 +560,8 @@ src/audio/audio_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/audio/audio_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/audio/audio_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/audio/audio_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/audio/audio_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/audio/audio_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_system.cpp.s
 .PHONY : src/audio/audio_system.cpp.s
 
@@ -515,6 +577,8 @@ src/audio/sound_manager.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/audio/sound_manager.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/audio/sound_manager.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/audio/sound_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/audio/sound_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/sound_manager.cpp.o
 .PHONY : src/audio/sound_manager.cpp.o
 
@@ -530,6 +594,8 @@ src/audio/sound_manager.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/audio/sound_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/audio/sound_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/audio/sound_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/audio/sound_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/sound_manager.cpp.i
 .PHONY : src/audio/sound_manager.cpp.i
 
@@ -545,6 +611,8 @@ src/audio/sound_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/audio/sound_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/audio/sound_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/audio/sound_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/audio/sound_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/sound_manager.cpp.s
 .PHONY : src/audio/sound_manager.cpp.s
 
@@ -560,6 +628,8 @@ src/core/achievements.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/achievements.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/achievements.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/achievements.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/achievements.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/achievements.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/achievements.cpp.o
 .PHONY : src/core/achievements.cpp.o
 
@@ -575,6 +645,8 @@ src/core/achievements.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/achievements.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/achievements.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/achievements.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/achievements.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/achievements.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/achievements.cpp.i
 .PHONY : src/core/achievements.cpp.i
 
@@ -590,6 +662,8 @@ src/core/achievements.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/achievements.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/achievements.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/achievements.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/achievements.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/achievements.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/achievements.cpp.s
 .PHONY : src/core/achievements.cpp.s
 
@@ -629,6 +703,8 @@ src/core/config.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/config.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/config.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/config.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/config.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/config.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/config.cpp.o
 .PHONY : src/core/config.cpp.o
 
@@ -644,6 +720,8 @@ src/core/config.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/config.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/config.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/config.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/config.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/config.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/config.cpp.i
 .PHONY : src/core/config.cpp.i
 
@@ -659,8 +737,61 @@ src/core/config.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/config.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/config.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/config.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/config.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/config.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/config.cpp.s
 .PHONY : src/core/config.cpp.s
+
+src/core/crafting.o: src/core/crafting.cpp.o
+.PHONY : src/core/crafting.o
+
+# target to build an object file
+src/core/crafting.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/crafting.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/crafting.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/crafting.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/core/crafting.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/crafting.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/crafting.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/crafting.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/crafting.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/crafting.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/crafting.cpp.o
+.PHONY : src/core/crafting.cpp.o
+
+src/core/crafting.i: src/core/crafting.cpp.i
+.PHONY : src/core/crafting.i
+
+# target to preprocess a source file
+src/core/crafting.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/crafting.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/crafting.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/crafting.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/core/crafting.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/crafting.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/crafting.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/crafting.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/crafting.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/crafting.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/crafting.cpp.i
+.PHONY : src/core/crafting.cpp.i
+
+src/core/crafting.s: src/core/crafting.cpp.s
+.PHONY : src/core/crafting.s
+
+# target to generate assembly for a file
+src/core/crafting.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/crafting.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/crafting.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/crafting.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/core/crafting.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/crafting.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/crafting.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/crafting.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/crafting.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/crafting.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/crafting.cpp.s
+.PHONY : src/core/crafting.cpp.s
 
 src/core/crafting_inventory_bridge.o: src/core/crafting_inventory_bridge.cpp.o
 .PHONY : src/core/crafting_inventory_bridge.o
@@ -674,6 +805,8 @@ src/core/crafting_inventory_bridge.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/crafting_inventory_bridge.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/crafting_inventory_bridge.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/crafting_inventory_bridge.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/crafting_inventory_bridge.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/crafting_inventory_bridge.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/crafting_inventory_bridge.cpp.o
 .PHONY : src/core/crafting_inventory_bridge.cpp.o
 
@@ -689,6 +822,8 @@ src/core/crafting_inventory_bridge.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/crafting_inventory_bridge.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/crafting_inventory_bridge.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/crafting_inventory_bridge.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/crafting_inventory_bridge.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/crafting_inventory_bridge.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/crafting_inventory_bridge.cpp.i
 .PHONY : src/core/crafting_inventory_bridge.cpp.i
 
@@ -704,6 +839,8 @@ src/core/crafting_inventory_bridge.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/crafting_inventory_bridge.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/crafting_inventory_bridge.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/crafting_inventory_bridge.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/crafting_inventory_bridge.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/crafting_inventory_bridge.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/crafting_inventory_bridge.cpp.s
 .PHONY : src/core/crafting_inventory_bridge.cpp.s
 
@@ -743,6 +880,8 @@ src/core/entity.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/entity.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/entity.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/entity.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/entity.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/entity.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/entity.cpp.o
 .PHONY : src/core/entity.cpp.o
 
@@ -758,6 +897,8 @@ src/core/entity.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/entity.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/entity.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/entity.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/entity.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/entity.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/entity.cpp.i
 .PHONY : src/core/entity.cpp.i
 
@@ -773,6 +914,8 @@ src/core/entity.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/entity.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/entity.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/entity.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/entity.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/entity.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/entity.cpp.s
 .PHONY : src/core/entity.cpp.s
 
@@ -788,6 +931,8 @@ src/core/item_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/item_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/item_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/item_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/item_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/item_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/item_system.cpp.o
 .PHONY : src/core/item_system.cpp.o
 
@@ -803,6 +948,8 @@ src/core/item_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/item_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/item_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/item_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/item_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/item_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/item_system.cpp.i
 .PHONY : src/core/item_system.cpp.i
 
@@ -818,6 +965,8 @@ src/core/item_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/item_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/item_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/item_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/item_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/item_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/item_system.cpp.s
 .PHONY : src/core/item_system.cpp.s
 
@@ -833,6 +982,8 @@ src/core/logger.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/logger.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/logger.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/logger.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/logger.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/logger.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/logger.cpp.o
 .PHONY : src/core/logger.cpp.o
 
@@ -848,6 +999,8 @@ src/core/logger.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/logger.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/logger.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/logger.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/logger.cpp.i
 .PHONY : src/core/logger.cpp.i
 
@@ -863,6 +1016,8 @@ src/core/logger.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/logger.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/logger.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/logger.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/logger.cpp.s
 .PHONY : src/core/logger.cpp.s
 
@@ -871,6 +1026,15 @@ src/core/player_controller.o: src/core/player_controller.cpp.o
 
 # target to build an object file
 src/core/player_controller.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/player_controller.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/player_controller.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/player_controller.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/core/player_controller.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/player_controller.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/player_controller.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/player_controller.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/player_controller.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/player_controller.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/player_controller.cpp.o
 .PHONY : src/core/player_controller.cpp.o
 
@@ -879,6 +1043,15 @@ src/core/player_controller.i: src/core/player_controller.cpp.i
 
 # target to preprocess a source file
 src/core/player_controller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/player_controller.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/player_controller.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/player_controller.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/core/player_controller.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/player_controller.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/player_controller.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/player_controller.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/player_controller.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/player_controller.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/player_controller.cpp.i
 .PHONY : src/core/player_controller.cpp.i
 
@@ -887,6 +1060,15 @@ src/core/player_controller.s: src/core/player_controller.cpp.s
 
 # target to generate assembly for a file
 src/core/player_controller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/player_controller.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/player_controller.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/player_controller.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/core/player_controller.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/player_controller.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/player_controller.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/player_controller.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/player_controller.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/player_controller.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/player_controller.cpp.s
 .PHONY : src/core/player_controller.cpp.s
 
@@ -902,6 +1084,8 @@ src/core/raycast.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/raycast.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/raycast.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/raycast.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/raycast.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/raycast.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/raycast.cpp.o
 .PHONY : src/core/raycast.cpp.o
 
@@ -917,6 +1101,8 @@ src/core/raycast.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/raycast.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/raycast.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/raycast.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/raycast.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/raycast.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/raycast.cpp.i
 .PHONY : src/core/raycast.cpp.i
 
@@ -932,6 +1118,8 @@ src/core/raycast.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/raycast.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/raycast.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/raycast.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/raycast.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/raycast.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/raycast.cpp.s
 .PHONY : src/core/raycast.cpp.s
 
@@ -947,6 +1135,8 @@ src/core/save_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/save_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/save_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/save_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/save_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/save_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o
 .PHONY : src/core/save_system.cpp.o
 
@@ -962,6 +1152,8 @@ src/core/save_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/save_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/save_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/save_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/save_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/save_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.i
 .PHONY : src/core/save_system.cpp.i
 
@@ -977,6 +1169,8 @@ src/core/save_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/save_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/save_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/save_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/save_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/save_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.s
 .PHONY : src/core/save_system.cpp.s
 
@@ -992,6 +1186,8 @@ src/core/time_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/time_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/time_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/time_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/time_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/time_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/time_system.cpp.o
 .PHONY : src/core/time_system.cpp.o
 
@@ -1007,6 +1203,8 @@ src/core/time_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/time_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/time_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/time_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/time_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/time_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/time_system.cpp.i
 .PHONY : src/core/time_system.cpp.i
 
@@ -1022,6 +1220,8 @@ src/core/time_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/time_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/time_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/time_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/time_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/time_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/time_system.cpp.s
 .PHONY : src/core/time_system.cpp.s
 
@@ -1037,6 +1237,8 @@ src/core/weather_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/weather_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/weather_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/weather_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/weather_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/weather_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/weather_system.cpp.o
 .PHONY : src/core/weather_system.cpp.o
 
@@ -1052,6 +1254,8 @@ src/core/weather_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/weather_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/weather_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/weather_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/weather_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/weather_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/weather_system.cpp.i
 .PHONY : src/core/weather_system.cpp.i
 
@@ -1067,6 +1271,8 @@ src/core/weather_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/weather_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/weather_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/weather_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/weather_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/weather_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/weather_system.cpp.s
 .PHONY : src/core/weather_system.cpp.s
 
@@ -1082,6 +1288,8 @@ src/debug/debug_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/debug/debug_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/debug/debug_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/debug/debug_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/debug/debug_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/debug/debug_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/debug/debug_system.cpp.o
 .PHONY : src/debug/debug_system.cpp.o
 
@@ -1097,6 +1305,8 @@ src/debug/debug_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/debug/debug_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/debug/debug_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/debug/debug_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/debug/debug_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/debug/debug_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/debug/debug_system.cpp.i
 .PHONY : src/debug/debug_system.cpp.i
 
@@ -1112,6 +1322,8 @@ src/debug/debug_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/debug/debug_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/debug/debug_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/debug/debug_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/debug/debug_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/debug/debug_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/debug/debug_system.cpp.s
 .PHONY : src/debug/debug_system.cpp.s
 
@@ -1127,6 +1339,8 @@ src/editor/entity_spawner.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/editor/entity_spawner.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/editor/entity_spawner.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/editor/entity_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/editor/entity_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/editor/entity_spawner.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/entity_spawner.cpp.o
 .PHONY : src/editor/entity_spawner.cpp.o
 
@@ -1142,6 +1356,8 @@ src/editor/entity_spawner.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/editor/entity_spawner.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/editor/entity_spawner.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/editor/entity_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/editor/entity_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/editor/entity_spawner.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/entity_spawner.cpp.i
 .PHONY : src/editor/entity_spawner.cpp.i
 
@@ -1157,6 +1373,8 @@ src/editor/entity_spawner.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/editor/entity_spawner.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/editor/entity_spawner.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/editor/entity_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/editor/entity_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/editor/entity_spawner.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/entity_spawner.cpp.s
 .PHONY : src/editor/entity_spawner.cpp.s
 
@@ -1172,6 +1390,8 @@ src/editor/in_game_editor.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/editor/in_game_editor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/editor/in_game_editor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/editor/in_game_editor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/editor/in_game_editor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/editor/in_game_editor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.o
 .PHONY : src/editor/in_game_editor.cpp.o
 
@@ -1187,6 +1407,8 @@ src/editor/in_game_editor.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/editor/in_game_editor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/editor/in_game_editor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/editor/in_game_editor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/editor/in_game_editor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/editor/in_game_editor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.i
 .PHONY : src/editor/in_game_editor.cpp.i
 
@@ -1202,6 +1424,8 @@ src/editor/in_game_editor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/editor/in_game_editor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/editor/in_game_editor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/editor/in_game_editor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/editor/in_game_editor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/editor/in_game_editor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.s
 .PHONY : src/editor/in_game_editor.cpp.s
 
@@ -1217,6 +1441,8 @@ src/entity/components.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/entity/components.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/entity/components.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/entity/components.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/entity/components.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/entity/components.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/entity/components.cpp.o
 .PHONY : src/entity/components.cpp.o
 
@@ -1232,6 +1458,8 @@ src/entity/components.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/entity/components.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/entity/components.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/entity/components.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/entity/components.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/entity/components.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/entity/components.cpp.i
 .PHONY : src/entity/components.cpp.i
 
@@ -1247,6 +1475,8 @@ src/entity/components.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/entity/components.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/entity/components.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/entity/components.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/entity/components.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/entity/components.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/entity/components.cpp.s
 .PHONY : src/entity/components.cpp.s
 
@@ -1262,6 +1492,8 @@ src/entity/entity.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/entity/entity.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/entity/entity.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/entity/entity.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/entity/entity.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/entity/entity.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/entity/entity.cpp.o
 .PHONY : src/entity/entity.cpp.o
 
@@ -1277,6 +1509,8 @@ src/entity/entity.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/entity/entity.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/entity/entity.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/entity/entity.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/entity/entity.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/entity/entity.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/entity/entity.cpp.i
 .PHONY : src/entity/entity.cpp.i
 
@@ -1292,6 +1526,8 @@ src/entity/entity.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/entity/entity.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/entity/entity.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/entity/entity.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/entity/entity.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/entity/entity.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/entity/entity.cpp.s
 .PHONY : src/entity/entity.cpp.s
 
@@ -1331,6 +1567,8 @@ src/math/mat4.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/math/mat4.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/math/mat4.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/math/mat4.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/math/mat4.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/math/mat4.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/math/mat4.cpp.o
 .PHONY : src/math/mat4.cpp.o
 
@@ -1346,6 +1584,8 @@ src/math/mat4.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/math/mat4.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/math/mat4.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/math/mat4.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/math/mat4.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/math/mat4.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/math/mat4.cpp.i
 .PHONY : src/math/mat4.cpp.i
 
@@ -1361,6 +1601,8 @@ src/math/mat4.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/math/mat4.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/math/mat4.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/math/mat4.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/math/mat4.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/math/mat4.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/math/mat4.cpp.s
 .PHONY : src/math/mat4.cpp.s
 
@@ -1376,6 +1618,8 @@ src/math/vec3.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/math/vec3.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/math/vec3.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/math/vec3.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/math/vec3.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/math/vec3.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/math/vec3.cpp.o
 .PHONY : src/math/vec3.cpp.o
 
@@ -1391,6 +1635,8 @@ src/math/vec3.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/math/vec3.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/math/vec3.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/math/vec3.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/math/vec3.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/math/vec3.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/math/vec3.cpp.i
 .PHONY : src/math/vec3.cpp.i
 
@@ -1406,6 +1652,8 @@ src/math/vec3.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/math/vec3.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/math/vec3.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/math/vec3.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/math/vec3.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/math/vec3.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/math/vec3.cpp.s
 .PHONY : src/math/vec3.cpp.s
 
@@ -1421,6 +1669,8 @@ src/network/network_architecture.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/network/network_architecture.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/network/network_architecture.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/network/network_architecture.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/network/network_architecture.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/network/network_architecture.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/network_architecture.cpp.o
 .PHONY : src/network/network_architecture.cpp.o
 
@@ -1436,6 +1686,8 @@ src/network/network_architecture.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/network/network_architecture.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/network/network_architecture.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/network/network_architecture.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/network/network_architecture.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/network/network_architecture.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/network_architecture.cpp.i
 .PHONY : src/network/network_architecture.cpp.i
 
@@ -1451,6 +1703,8 @@ src/network/network_architecture.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/network/network_architecture.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/network/network_architecture.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/network/network_architecture.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/network/network_architecture.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/network/network_architecture.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/network_architecture.cpp.s
 .PHONY : src/network/network_architecture.cpp.s
 
@@ -1466,6 +1720,8 @@ src/network/packet.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/network/packet.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/network/packet.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/network/packet.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/network/packet.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/network/packet.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/packet.cpp.o
 .PHONY : src/network/packet.cpp.o
 
@@ -1481,6 +1737,8 @@ src/network/packet.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/network/packet.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/network/packet.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/network/packet.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/network/packet.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/network/packet.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/packet.cpp.i
 .PHONY : src/network/packet.cpp.i
 
@@ -1496,6 +1754,8 @@ src/network/packet.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/network/packet.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/network/packet.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/network/packet.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/network/packet.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/network/packet.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/packet.cpp.s
 .PHONY : src/network/packet.cpp.s
 
@@ -1511,6 +1771,8 @@ src/physics/collision.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/physics/collision.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/physics/collision.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/physics/collision.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/physics/collision.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/physics/collision.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/collision.cpp.o
 .PHONY : src/physics/collision.cpp.o
 
@@ -1526,6 +1788,8 @@ src/physics/collision.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/physics/collision.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/physics/collision.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/physics/collision.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/physics/collision.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/physics/collision.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/collision.cpp.i
 .PHONY : src/physics/collision.cpp.i
 
@@ -1541,6 +1805,8 @@ src/physics/collision.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/physics/collision.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/physics/collision.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/physics/collision.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/physics/collision.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/physics/collision.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/collision.cpp.s
 .PHONY : src/physics/collision.cpp.s
 
@@ -1556,6 +1822,8 @@ src/physics/physics_constraints.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/physics/physics_constraints.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/physics/physics_constraints.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/physics/physics_constraints.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/physics/physics_constraints.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/physics/physics_constraints.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/physics_constraints.cpp.o
 .PHONY : src/physics/physics_constraints.cpp.o
 
@@ -1571,6 +1839,8 @@ src/physics/physics_constraints.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/physics/physics_constraints.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/physics/physics_constraints.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/physics/physics_constraints.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/physics/physics_constraints.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/physics/physics_constraints.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/physics_constraints.cpp.i
 .PHONY : src/physics/physics_constraints.cpp.i
 
@@ -1586,6 +1856,8 @@ src/physics/physics_constraints.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/physics/physics_constraints.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/physics/physics_constraints.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/physics/physics_constraints.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/physics/physics_constraints.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/physics/physics_constraints.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/physics_constraints.cpp.s
 .PHONY : src/physics/physics_constraints.cpp.s
 
@@ -1601,6 +1873,8 @@ src/physics/physics_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/physics/physics_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/physics/physics_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/physics/physics_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/physics/physics_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/physics/physics_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/physics_system.cpp.o
 .PHONY : src/physics/physics_system.cpp.o
 
@@ -1616,6 +1890,8 @@ src/physics/physics_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/physics/physics_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/physics/physics_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/physics/physics_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/physics/physics_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/physics/physics_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/physics_system.cpp.i
 .PHONY : src/physics/physics_system.cpp.i
 
@@ -1631,6 +1907,8 @@ src/physics/physics_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/physics/physics_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/physics/physics_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/physics/physics_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/physics/physics_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/physics/physics_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/physics_system.cpp.s
 .PHONY : src/physics/physics_system.cpp.s
 
@@ -1646,6 +1924,8 @@ src/physics/rigidbody.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/physics/rigidbody.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/physics/rigidbody.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/physics/rigidbody.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/physics/rigidbody.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/physics/rigidbody.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/rigidbody.cpp.o
 .PHONY : src/physics/rigidbody.cpp.o
 
@@ -1661,6 +1941,8 @@ src/physics/rigidbody.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/physics/rigidbody.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/physics/rigidbody.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/physics/rigidbody.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/physics/rigidbody.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/physics/rigidbody.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/rigidbody.cpp.i
 .PHONY : src/physics/rigidbody.cpp.i
 
@@ -1676,6 +1958,8 @@ src/physics/rigidbody.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/physics/rigidbody.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/physics/rigidbody.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/physics/rigidbody.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/physics/rigidbody.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/physics/rigidbody.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/rigidbody.cpp.s
 .PHONY : src/physics/rigidbody.cpp.s
 
@@ -1691,6 +1975,8 @@ src/platform/file_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/platform/file_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/platform/file_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/platform/file_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/platform/file_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/platform/file_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/file_system.cpp.o
 .PHONY : src/platform/file_system.cpp.o
 
@@ -1706,6 +1992,8 @@ src/platform/file_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/platform/file_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/platform/file_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/platform/file_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/platform/file_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/platform/file_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/file_system.cpp.i
 .PHONY : src/platform/file_system.cpp.i
 
@@ -1721,6 +2009,8 @@ src/platform/file_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/platform/file_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/platform/file_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/platform/file_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/platform/file_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/platform/file_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/file_system.cpp.s
 .PHONY : src/platform/file_system.cpp.s
 
@@ -1736,6 +2026,8 @@ src/platform/gamepad.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/platform/gamepad.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/platform/gamepad.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/platform/gamepad.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/platform/gamepad.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/platform/gamepad.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamepad_test.dir/build.make CMakeFiles/gamepad_test.dir/src/platform/gamepad.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/gamepad.cpp.o
 .PHONY : src/platform/gamepad.cpp.o
@@ -1752,6 +2044,8 @@ src/platform/gamepad.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/platform/gamepad.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/platform/gamepad.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/platform/gamepad.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/platform/gamepad.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/platform/gamepad.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamepad_test.dir/build.make CMakeFiles/gamepad_test.dir/src/platform/gamepad.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/gamepad.cpp.i
 .PHONY : src/platform/gamepad.cpp.i
@@ -1768,6 +2062,8 @@ src/platform/gamepad.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/platform/gamepad.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/platform/gamepad.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/platform/gamepad.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/platform/gamepad.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/platform/gamepad.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamepad_test.dir/build.make CMakeFiles/gamepad_test.dir/src/platform/gamepad.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/gamepad.cpp.s
 .PHONY : src/platform/gamepad.cpp.s
@@ -1784,6 +2080,8 @@ src/platform/input_manager.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/platform/input_manager.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/platform/input_manager.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/platform/input_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/platform/input_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/platform/input_manager.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/input_manager.cpp.o
 .PHONY : src/platform/input_manager.cpp.o
 
@@ -1799,6 +2097,8 @@ src/platform/input_manager.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/platform/input_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/platform/input_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/platform/input_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/platform/input_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/platform/input_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/input_manager.cpp.i
 .PHONY : src/platform/input_manager.cpp.i
 
@@ -1814,6 +2114,8 @@ src/platform/input_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/platform/input_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/platform/input_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/platform/input_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/platform/input_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/platform/input_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/input_manager.cpp.s
 .PHONY : src/platform/input_manager.cpp.s
 
@@ -1829,6 +2131,8 @@ src/platform/platform_common.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/platform/platform_common.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/platform/platform_common.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/platform/platform_common.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/platform/platform_common.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/platform/platform_common.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/platform_common.cpp.o
 .PHONY : src/platform/platform_common.cpp.o
 
@@ -1844,6 +2148,8 @@ src/platform/platform_common.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/platform/platform_common.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/platform/platform_common.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/platform/platform_common.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/platform/platform_common.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/platform/platform_common.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/platform_common.cpp.i
 .PHONY : src/platform/platform_common.cpp.i
 
@@ -1859,6 +2165,8 @@ src/platform/platform_common.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/platform/platform_common.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/platform/platform_common.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/platform/platform_common.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/platform/platform_common.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/platform/platform_common.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/platform_common.cpp.s
 .PHONY : src/platform/platform_common.cpp.s
 
@@ -1898,6 +2206,8 @@ src/rendering/camera.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/camera.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/camera.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/camera.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/camera.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/camera.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/camera.cpp.o
 .PHONY : src/rendering/camera.cpp.o
 
@@ -1913,6 +2223,8 @@ src/rendering/camera.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/camera.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/camera.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/camera.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/camera.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/camera.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/camera.cpp.i
 .PHONY : src/rendering/camera.cpp.i
 
@@ -1928,8 +2240,61 @@ src/rendering/camera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/camera.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/camera.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/camera.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/camera.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/camera.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/camera.cpp.s
 .PHONY : src/rendering/camera.cpp.s
+
+src/rendering/culling_system.o: src/rendering/culling_system.cpp.o
+.PHONY : src/rendering/culling_system.o
+
+# target to build an object file
+src/rendering/culling_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/culling_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/culling_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/culling_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/rendering/culling_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/culling_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/culling_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/culling_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/culling_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/culling_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/culling_system.cpp.o
+.PHONY : src/rendering/culling_system.cpp.o
+
+src/rendering/culling_system.i: src/rendering/culling_system.cpp.i
+.PHONY : src/rendering/culling_system.i
+
+# target to preprocess a source file
+src/rendering/culling_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/culling_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/culling_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/culling_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/rendering/culling_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/culling_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/culling_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/culling_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/culling_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/culling_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/culling_system.cpp.i
+.PHONY : src/rendering/culling_system.cpp.i
+
+src/rendering/culling_system.s: src/rendering/culling_system.cpp.s
+.PHONY : src/rendering/culling_system.s
+
+# target to generate assembly for a file
+src/rendering/culling_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/culling_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/culling_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/culling_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/rendering/culling_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/culling_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/culling_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/culling_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/culling_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/culling_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/culling_system.cpp.s
+.PHONY : src/rendering/culling_system.cpp.s
 
 src/rendering/framebuffer_renderer.o: src/rendering/framebuffer_renderer.cpp.o
 .PHONY : src/rendering/framebuffer_renderer.o
@@ -1943,6 +2308,8 @@ src/rendering/framebuffer_renderer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/framebuffer_renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/framebuffer_renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/framebuffer_renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/framebuffer_renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/framebuffer_renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.o
 .PHONY : src/rendering/framebuffer_renderer.cpp.o
 
@@ -1958,6 +2325,8 @@ src/rendering/framebuffer_renderer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/framebuffer_renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/framebuffer_renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/framebuffer_renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/framebuffer_renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/framebuffer_renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.i
 .PHONY : src/rendering/framebuffer_renderer.cpp.i
 
@@ -1973,8 +2342,61 @@ src/rendering/framebuffer_renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/framebuffer_renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/framebuffer_renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/framebuffer_renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/framebuffer_renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/framebuffer_renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.s
 .PHONY : src/rendering/framebuffer_renderer.cpp.s
+
+src/rendering/frustum.o: src/rendering/frustum.cpp.o
+.PHONY : src/rendering/frustum.o
+
+# target to build an object file
+src/rendering/frustum.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/frustum.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/frustum.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/frustum.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/rendering/frustum.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/frustum.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/frustum.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/frustum.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/frustum.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/frustum.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/frustum.cpp.o
+.PHONY : src/rendering/frustum.cpp.o
+
+src/rendering/frustum.i: src/rendering/frustum.cpp.i
+.PHONY : src/rendering/frustum.i
+
+# target to preprocess a source file
+src/rendering/frustum.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/frustum.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/frustum.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/frustum.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/rendering/frustum.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/frustum.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/frustum.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/frustum.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/frustum.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/frustum.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/frustum.cpp.i
+.PHONY : src/rendering/frustum.cpp.i
+
+src/rendering/frustum.s: src/rendering/frustum.cpp.s
+.PHONY : src/rendering/frustum.s
+
+# target to generate assembly for a file
+src/rendering/frustum.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/frustum.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/frustum.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/frustum.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/rendering/frustum.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/frustum.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/frustum.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/frustum.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/frustum.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/frustum.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/frustum.cpp.s
+.PHONY : src/rendering/frustum.cpp.s
 
 src/rendering/lighting.o: src/rendering/lighting.cpp.o
 .PHONY : src/rendering/lighting.o
@@ -1988,6 +2410,8 @@ src/rendering/lighting.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/lighting.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/lighting.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/lighting.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/lighting.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/lighting.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/lighting.cpp.o
 .PHONY : src/rendering/lighting.cpp.o
 
@@ -2003,6 +2427,8 @@ src/rendering/lighting.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/lighting.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/lighting.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/lighting.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/lighting.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/lighting.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/lighting.cpp.i
 .PHONY : src/rendering/lighting.cpp.i
 
@@ -2018,6 +2444,8 @@ src/rendering/lighting.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/lighting.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/lighting.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/lighting.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/lighting.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/lighting.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/lighting.cpp.s
 .PHONY : src/rendering/lighting.cpp.s
 
@@ -2033,6 +2461,8 @@ src/rendering/mesh.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/mesh.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/mesh.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/mesh.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/mesh.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/mesh.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/mesh.cpp.o
 .PHONY : src/rendering/mesh.cpp.o
 
@@ -2048,6 +2478,8 @@ src/rendering/mesh.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/mesh.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/mesh.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/mesh.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/mesh.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/mesh.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/mesh.cpp.i
 .PHONY : src/rendering/mesh.cpp.i
 
@@ -2063,6 +2495,8 @@ src/rendering/mesh.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/mesh.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/mesh.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/mesh.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/mesh.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/mesh.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/mesh.cpp.s
 .PHONY : src/rendering/mesh.cpp.s
 
@@ -2078,6 +2512,8 @@ src/rendering/particles/particle_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/particles/particle_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/particles/particle_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/particles/particle_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/particles/particle_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/particles/particle_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/particles/particle_system.cpp.o
 .PHONY : src/rendering/particles/particle_system.cpp.o
 
@@ -2093,6 +2529,8 @@ src/rendering/particles/particle_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/particles/particle_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/particles/particle_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/particles/particle_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/particles/particle_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/particles/particle_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/particles/particle_system.cpp.i
 .PHONY : src/rendering/particles/particle_system.cpp.i
 
@@ -2108,6 +2546,8 @@ src/rendering/particles/particle_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/particles/particle_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/particles/particle_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/particles/particle_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/particles/particle_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/particles/particle_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/particles/particle_system.cpp.s
 .PHONY : src/rendering/particles/particle_system.cpp.s
 
@@ -2123,6 +2563,8 @@ src/rendering/pbr_material.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/pbr_material.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/pbr_material.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/pbr_material.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/pbr_material.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/pbr_material.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/pbr_material.cpp.o
 .PHONY : src/rendering/pbr_material.cpp.o
 
@@ -2138,6 +2580,8 @@ src/rendering/pbr_material.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/pbr_material.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/pbr_material.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/pbr_material.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/pbr_material.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/pbr_material.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/pbr_material.cpp.i
 .PHONY : src/rendering/pbr_material.cpp.i
 
@@ -2153,8 +2597,61 @@ src/rendering/pbr_material.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/pbr_material.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/pbr_material.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/pbr_material.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/pbr_material.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/pbr_material.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/pbr_material.cpp.s
 .PHONY : src/rendering/pbr_material.cpp.s
+
+src/rendering/post_processing.o: src/rendering/post_processing.cpp.o
+.PHONY : src/rendering/post_processing.o
+
+# target to build an object file
+src/rendering/post_processing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/post_processing.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/post_processing.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/post_processing.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/rendering/post_processing.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/post_processing.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/post_processing.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/post_processing.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/post_processing.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/post_processing.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/post_processing.cpp.o
+.PHONY : src/rendering/post_processing.cpp.o
+
+src/rendering/post_processing.i: src/rendering/post_processing.cpp.i
+.PHONY : src/rendering/post_processing.i
+
+# target to preprocess a source file
+src/rendering/post_processing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/post_processing.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/post_processing.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/post_processing.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/rendering/post_processing.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/post_processing.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/post_processing.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/post_processing.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/post_processing.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/post_processing.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/post_processing.cpp.i
+.PHONY : src/rendering/post_processing.cpp.i
+
+src/rendering/post_processing.s: src/rendering/post_processing.cpp.s
+.PHONY : src/rendering/post_processing.s
+
+# target to generate assembly for a file
+src/rendering/post_processing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/post_processing.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/post_processing.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/post_processing.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/rendering/post_processing.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/post_processing.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/post_processing.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/post_processing.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/post_processing.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/post_processing.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/post_processing.cpp.s
+.PHONY : src/rendering/post_processing.cpp.s
 
 src/rendering/renderer.o: src/rendering/renderer.cpp.o
 .PHONY : src/rendering/renderer.o
@@ -2168,6 +2665,8 @@ src/rendering/renderer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/renderer.cpp.o
 .PHONY : src/rendering/renderer.cpp.o
 
@@ -2183,6 +2682,8 @@ src/rendering/renderer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/renderer.cpp.i
 .PHONY : src/rendering/renderer.cpp.i
 
@@ -2198,6 +2699,8 @@ src/rendering/renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/renderer.cpp.s
 .PHONY : src/rendering/renderer.cpp.s
 
@@ -2213,6 +2716,8 @@ src/rendering/shader.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/shader.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/shader.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/shader.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/shader.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/shader.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/shader.cpp.o
 .PHONY : src/rendering/shader.cpp.o
 
@@ -2228,6 +2733,8 @@ src/rendering/shader.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/shader.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/shader.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/shader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/shader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/shader.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/shader.cpp.i
 .PHONY : src/rendering/shader.cpp.i
 
@@ -2243,6 +2750,8 @@ src/rendering/shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/shader.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/shader.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/shader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/shader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/shader.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/shader.cpp.s
 .PHONY : src/rendering/shader.cpp.s
 
@@ -2258,6 +2767,8 @@ src/rendering/shadow_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/shadow_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/shadow_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/shadow_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/shadow_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/shadow_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/shadow_system.cpp.o
 .PHONY : src/rendering/shadow_system.cpp.o
 
@@ -2273,6 +2784,8 @@ src/rendering/shadow_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/shadow_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/shadow_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/shadow_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/shadow_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/shadow_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/shadow_system.cpp.i
 .PHONY : src/rendering/shadow_system.cpp.i
 
@@ -2288,6 +2801,8 @@ src/rendering/shadow_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/shadow_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/shadow_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/shadow_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/shadow_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/shadow_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/shadow_system.cpp.s
 .PHONY : src/rendering/shadow_system.cpp.s
 
@@ -2303,6 +2818,8 @@ src/rendering/sky/day_night_cycle.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/sky/day_night_cycle.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/sky/day_night_cycle.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/sky/day_night_cycle.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/sky/day_night_cycle.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/sky/day_night_cycle.cpp.o
 .PHONY : src/rendering/sky/day_night_cycle.cpp.o
 
@@ -2318,6 +2835,8 @@ src/rendering/sky/day_night_cycle.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/sky/day_night_cycle.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/sky/day_night_cycle.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/sky/day_night_cycle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/sky/day_night_cycle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/sky/day_night_cycle.cpp.i
 .PHONY : src/rendering/sky/day_night_cycle.cpp.i
 
@@ -2333,6 +2852,8 @@ src/rendering/sky/day_night_cycle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/sky/day_night_cycle.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/sky/day_night_cycle.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/sky/day_night_cycle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/sky/day_night_cycle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/sky/day_night_cycle.cpp.s
 .PHONY : src/rendering/sky/day_night_cycle.cpp.s
 
@@ -2348,6 +2869,8 @@ src/rendering/sky/sky_renderer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/sky/sky_renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/sky/sky_renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/sky/sky_renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/sky/sky_renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/sky/sky_renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/sky/sky_renderer.cpp.o
 .PHONY : src/rendering/sky/sky_renderer.cpp.o
 
@@ -2363,6 +2886,8 @@ src/rendering/sky/sky_renderer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/sky/sky_renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/sky/sky_renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/sky/sky_renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/sky/sky_renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/sky/sky_renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/sky/sky_renderer.cpp.i
 .PHONY : src/rendering/sky/sky_renderer.cpp.i
 
@@ -2378,6 +2903,8 @@ src/rendering/sky/sky_renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/sky/sky_renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/sky/sky_renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/sky/sky_renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/sky/sky_renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/sky/sky_renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/sky/sky_renderer.cpp.s
 .PHONY : src/rendering/sky/sky_renderer.cpp.s
 
@@ -2393,6 +2920,8 @@ src/rendering/texture.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/texture.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/texture.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/texture.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/texture.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/texture.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/texture.cpp.o
 .PHONY : src/rendering/texture.cpp.o
 
@@ -2408,6 +2937,8 @@ src/rendering/texture.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/texture.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/texture.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/texture.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/texture.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/texture.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/texture.cpp.i
 .PHONY : src/rendering/texture.cpp.i
 
@@ -2423,6 +2954,8 @@ src/rendering/texture.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/texture.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/texture.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/texture.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/texture.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/texture.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/texture.cpp.s
 .PHONY : src/rendering/texture.cpp.s
 
@@ -2438,6 +2971,8 @@ src/rendering/weather/weather_effects_renderer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/weather/weather_effects_renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/weather/weather_effects_renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/weather/weather_effects_renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/weather/weather_effects_renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/weather/weather_effects_renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/weather/weather_effects_renderer.cpp.o
 .PHONY : src/rendering/weather/weather_effects_renderer.cpp.o
 
@@ -2453,6 +2988,8 @@ src/rendering/weather/weather_effects_renderer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/weather/weather_effects_renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/weather/weather_effects_renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/weather/weather_effects_renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/weather/weather_effects_renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/weather/weather_effects_renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/weather/weather_effects_renderer.cpp.i
 .PHONY : src/rendering/weather/weather_effects_renderer.cpp.i
 
@@ -2468,6 +3005,8 @@ src/rendering/weather/weather_effects_renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/weather/weather_effects_renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/weather/weather_effects_renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/weather/weather_effects_renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/weather/weather_effects_renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/weather/weather_effects_renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/weather/weather_effects_renderer.cpp.s
 .PHONY : src/rendering/weather/weather_effects_renderer.cpp.s
 
@@ -2591,6 +3130,57 @@ src/ui/console.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/console.cpp.s
 .PHONY : src/ui/console.cpp.s
 
+src/ui/console_commands.o: src/ui/console_commands.cpp.o
+.PHONY : src/ui/console_commands.o
+
+# target to build an object file
+src/ui/console_commands.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ui/console_commands.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ui/console_commands.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/console_commands.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/ui/console_commands.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ui/console_commands.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ui/console_commands.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ui/console_commands.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ui/console_commands.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ui/console_commands.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/console_commands.cpp.o
+.PHONY : src/ui/console_commands.cpp.o
+
+src/ui/console_commands.i: src/ui/console_commands.cpp.i
+.PHONY : src/ui/console_commands.i
+
+# target to preprocess a source file
+src/ui/console_commands.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ui/console_commands.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ui/console_commands.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/console_commands.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/ui/console_commands.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ui/console_commands.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ui/console_commands.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ui/console_commands.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ui/console_commands.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ui/console_commands.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/console_commands.cpp.i
+.PHONY : src/ui/console_commands.cpp.i
+
+src/ui/console_commands.s: src/ui/console_commands.cpp.s
+.PHONY : src/ui/console_commands.s
+
+# target to generate assembly for a file
+src/ui/console_commands.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ui/console_commands.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ui/console_commands.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/console_commands.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/ui/console_commands.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ui/console_commands.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ui/console_commands.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ui/console_commands.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ui/console_commands.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ui/console_commands.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/console_commands.cpp.s
+.PHONY : src/ui/console_commands.cpp.s
+
 src/ui/imgui_wrapper.o: src/ui/imgui_wrapper.cpp.o
 .PHONY : src/ui/imgui_wrapper.o
 
@@ -2651,6 +3241,8 @@ src/ui/ui_element.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ui/ui_element.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ui/ui_element.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ui/ui_element.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ui/ui_element.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ui/ui_element.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_element.cpp.o
 .PHONY : src/ui/ui_element.cpp.o
 
@@ -2666,6 +3258,8 @@ src/ui/ui_element.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ui/ui_element.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ui/ui_element.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ui/ui_element.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ui/ui_element.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ui/ui_element.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_element.cpp.i
 .PHONY : src/ui/ui_element.cpp.i
 
@@ -2681,6 +3275,8 @@ src/ui/ui_element.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ui/ui_element.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ui/ui_element.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ui/ui_element.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ui/ui_element.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ui/ui_element.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_element.cpp.s
 .PHONY : src/ui/ui_element.cpp.s
 
@@ -2696,6 +3292,8 @@ src/ui/ui_inventory.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ui/ui_inventory.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ui/ui_inventory.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ui/ui_inventory.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ui/ui_inventory.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ui/ui_inventory.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_inventory.cpp.o
 .PHONY : src/ui/ui_inventory.cpp.o
 
@@ -2711,6 +3309,8 @@ src/ui/ui_inventory.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ui/ui_inventory.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ui/ui_inventory.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ui/ui_inventory.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ui/ui_inventory.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ui/ui_inventory.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_inventory.cpp.i
 .PHONY : src/ui/ui_inventory.cpp.i
 
@@ -2726,6 +3326,8 @@ src/ui/ui_inventory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ui/ui_inventory.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ui/ui_inventory.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ui/ui_inventory.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ui/ui_inventory.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ui/ui_inventory.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_inventory.cpp.s
 .PHONY : src/ui/ui_inventory.cpp.s
 
@@ -2741,6 +3343,8 @@ src/ui/ui_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ui/ui_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ui/ui_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ui/ui_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ui/ui_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ui/ui_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_system.cpp.o
 .PHONY : src/ui/ui_system.cpp.o
 
@@ -2756,6 +3360,8 @@ src/ui/ui_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ui/ui_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ui/ui_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ui/ui_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ui/ui_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ui/ui_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_system.cpp.i
 .PHONY : src/ui/ui_system.cpp.i
 
@@ -2771,6 +3377,8 @@ src/ui/ui_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ui/ui_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ui/ui_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ui/ui_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ui/ui_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ui/ui_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_system.cpp.s
 .PHONY : src/ui/ui_system.cpp.s
 
@@ -2786,6 +3394,8 @@ src/voxel/biome.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/biome.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/biome.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/biome.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/biome.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/biome.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/biome.cpp.o
 .PHONY : src/voxel/biome.cpp.o
 
@@ -2801,6 +3411,8 @@ src/voxel/biome.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/biome.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/biome.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/biome.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/biome.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/biome.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/biome.cpp.i
 .PHONY : src/voxel/biome.cpp.i
 
@@ -2816,6 +3428,8 @@ src/voxel/biome.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/biome.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/biome.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/biome.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/biome.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/biome.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/biome.cpp.s
 .PHONY : src/voxel/biome.cpp.s
 
@@ -2831,6 +3445,8 @@ src/voxel/block.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/block.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/block.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/block.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/block.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/block.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block.cpp.o
 .PHONY : src/voxel/block.cpp.o
 
@@ -2846,6 +3462,8 @@ src/voxel/block.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/block.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/block.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/block.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/block.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/block.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block.cpp.i
 .PHONY : src/voxel/block.cpp.i
 
@@ -2861,6 +3479,8 @@ src/voxel/block.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/block.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/block.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/block.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/block.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/block.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block.cpp.s
 .PHONY : src/voxel/block.cpp.s
 
@@ -2876,6 +3496,8 @@ src/voxel/block_mesh_builder.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/block_mesh_builder.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/block_mesh_builder.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/block_mesh_builder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/block_mesh_builder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/block_mesh_builder.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_mesh_builder.cpp.o
 .PHONY : src/voxel/block_mesh_builder.cpp.o
 
@@ -2891,6 +3513,8 @@ src/voxel/block_mesh_builder.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/block_mesh_builder.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/block_mesh_builder.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/block_mesh_builder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/block_mesh_builder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/block_mesh_builder.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_mesh_builder.cpp.i
 .PHONY : src/voxel/block_mesh_builder.cpp.i
 
@@ -2906,6 +3530,8 @@ src/voxel/block_mesh_builder.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/block_mesh_builder.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/block_mesh_builder.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/block_mesh_builder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/block_mesh_builder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/block_mesh_builder.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_mesh_builder.cpp.s
 .PHONY : src/voxel/block_mesh_builder.cpp.s
 
@@ -2921,6 +3547,8 @@ src/voxel/block_registry.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/block_registry.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/block_registry.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/block_registry.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/block_registry.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/block_registry.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_registry.cpp.o
 .PHONY : src/voxel/block_registry.cpp.o
 
@@ -2936,6 +3564,8 @@ src/voxel/block_registry.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/block_registry.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/block_registry.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/block_registry.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/block_registry.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/block_registry.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_registry.cpp.i
 .PHONY : src/voxel/block_registry.cpp.i
 
@@ -2951,6 +3581,8 @@ src/voxel/block_registry.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/block_registry.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/block_registry.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/block_registry.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/block_registry.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/block_registry.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_registry.cpp.s
 .PHONY : src/voxel/block_registry.cpp.s
 
@@ -2966,6 +3598,8 @@ src/voxel/block_types.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/block_types.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/block_types.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/block_types.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/block_types.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/block_types.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_types.cpp.o
 .PHONY : src/voxel/block_types.cpp.o
 
@@ -2981,6 +3615,8 @@ src/voxel/block_types.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/block_types.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/block_types.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/block_types.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/block_types.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/block_types.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_types.cpp.i
 .PHONY : src/voxel/block_types.cpp.i
 
@@ -2996,6 +3632,8 @@ src/voxel/block_types.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/block_types.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/block_types.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/block_types.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/block_types.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/block_types.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_types.cpp.s
 .PHONY : src/voxel/block_types.cpp.s
 
@@ -3011,6 +3649,8 @@ src/voxel/chunk.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/chunk.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/chunk.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/chunk.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/chunk.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/chunk.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/chunk.cpp.o
 .PHONY : src/voxel/chunk.cpp.o
 
@@ -3026,6 +3666,8 @@ src/voxel/chunk.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/chunk.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/chunk.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/chunk.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/chunk.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/chunk.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/chunk.cpp.i
 .PHONY : src/voxel/chunk.cpp.i
 
@@ -3041,6 +3683,8 @@ src/voxel/chunk.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/chunk.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/chunk.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/chunk.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/chunk.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/chunk.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/chunk.cpp.s
 .PHONY : src/voxel/chunk.cpp.s
 
@@ -3080,6 +3724,8 @@ src/voxel/terrain_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/terrain_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/terrain_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/terrain_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/terrain_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/terrain_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/terrain_system.cpp.o
 .PHONY : src/voxel/terrain_system.cpp.o
 
@@ -3095,6 +3741,8 @@ src/voxel/terrain_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/terrain_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/terrain_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/terrain_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/terrain_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/terrain_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/terrain_system.cpp.i
 .PHONY : src/voxel/terrain_system.cpp.i
 
@@ -3110,6 +3758,8 @@ src/voxel/terrain_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/terrain_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/terrain_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/terrain_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/terrain_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/terrain_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/terrain_system.cpp.s
 .PHONY : src/voxel/terrain_system.cpp.s
 
@@ -3125,6 +3775,8 @@ src/voxel/voxel_editor.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/voxel_editor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/voxel_editor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/voxel_editor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/voxel_editor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/voxel_editor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.o
 .PHONY : src/voxel/voxel_editor.cpp.o
 
@@ -3140,6 +3792,8 @@ src/voxel/voxel_editor.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/voxel_editor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/voxel_editor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/voxel_editor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/voxel_editor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/voxel_editor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.i
 .PHONY : src/voxel/voxel_editor.cpp.i
 
@@ -3155,6 +3809,8 @@ src/voxel/voxel_editor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/voxel_editor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/voxel_editor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/voxel_editor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/voxel_editor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/voxel_editor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.s
 .PHONY : src/voxel/voxel_editor.cpp.s
 
@@ -3170,6 +3826,8 @@ src/voxel/world.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/world.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/world.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/world.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/world.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/world.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world.cpp.o
 .PHONY : src/voxel/world.cpp.o
 
@@ -3185,6 +3843,8 @@ src/voxel/world.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/world.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/world.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/world.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/world.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/world.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world.cpp.i
 .PHONY : src/voxel/world.cpp.i
 
@@ -3200,6 +3860,8 @@ src/voxel/world.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/world.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/world.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/world.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/world.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/world.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world.cpp.s
 .PHONY : src/voxel/world.cpp.s
 
@@ -3215,6 +3877,8 @@ src/voxel/world_generator.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/world_generator.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/world_generator.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/world_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/world_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/world_generator.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world_generator.cpp.o
 .PHONY : src/voxel/world_generator.cpp.o
 
@@ -3230,6 +3894,8 @@ src/voxel/world_generator.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/world_generator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/world_generator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/world_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/world_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/world_generator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world_generator.cpp.i
 .PHONY : src/voxel/world_generator.cpp.i
 
@@ -3245,6 +3911,8 @@ src/voxel/world_generator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/world_generator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/world_generator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/world_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/world_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/world_generator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world_generator.cpp.s
 .PHONY : src/voxel/world_generator.cpp.s
 
@@ -3295,6 +3963,54 @@ src/world_test.s: src/world_test.cpp.s
 src/world_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/world_test.cpp.s
 .PHONY : src/world_test.cpp.s
+
+tests/test_console_commands.o: tests/test_console_commands.cpp.o
+.PHONY : tests/test_console_commands.o
+
+# target to build an object file
+tests/test_console_commands.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/tests/test_console_commands.cpp.o
+.PHONY : tests/test_console_commands.cpp.o
+
+tests/test_console_commands.i: tests/test_console_commands.cpp.i
+.PHONY : tests/test_console_commands.i
+
+# target to preprocess a source file
+tests/test_console_commands.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/tests/test_console_commands.cpp.i
+.PHONY : tests/test_console_commands.cpp.i
+
+tests/test_console_commands.s: tests/test_console_commands.cpp.s
+.PHONY : tests/test_console_commands.s
+
+# target to generate assembly for a file
+tests/test_console_commands.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/tests/test_console_commands.cpp.s
+.PHONY : tests/test_console_commands.cpp.s
+
+tests/test_culling.o: tests/test_culling.cpp.o
+.PHONY : tests/test_culling.o
+
+# target to build an object file
+tests/test_culling.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/tests/test_culling.cpp.o
+.PHONY : tests/test_culling.cpp.o
+
+tests/test_culling.i: tests/test_culling.cpp.i
+.PHONY : tests/test_culling.i
+
+# target to preprocess a source file
+tests/test_culling.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/tests/test_culling.cpp.i
+.PHONY : tests/test_culling.cpp.i
+
+tests/test_culling.s: tests/test_culling.cpp.s
+.PHONY : tests/test_culling.s
+
+# target to generate assembly for a file
+tests/test_culling.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/tests/test_culling.cpp.s
+.PHONY : tests/test_culling.cpp.s
 
 tests/test_day_night.o: tests/test_day_night.cpp.o
 .PHONY : tests/test_day_night.o
@@ -3424,6 +4140,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... console_test"
+	@echo "... culling_test"
 	@echo "... day_night_test"
 	@echo "... editor_test"
 	@echo "... gamepad_test"
@@ -3463,6 +4181,9 @@ help:
 	@echo "... src/core/config.o"
 	@echo "... src/core/config.i"
 	@echo "... src/core/config.s"
+	@echo "... src/core/crafting.o"
+	@echo "... src/core/crafting.i"
+	@echo "... src/core/crafting.s"
 	@echo "... src/core/crafting_inventory_bridge.o"
 	@echo "... src/core/crafting_inventory_bridge.i"
 	@echo "... src/core/crafting_inventory_bridge.s"
@@ -3553,9 +4274,15 @@ help:
 	@echo "... src/rendering/camera.o"
 	@echo "... src/rendering/camera.i"
 	@echo "... src/rendering/camera.s"
+	@echo "... src/rendering/culling_system.o"
+	@echo "... src/rendering/culling_system.i"
+	@echo "... src/rendering/culling_system.s"
 	@echo "... src/rendering/framebuffer_renderer.o"
 	@echo "... src/rendering/framebuffer_renderer.i"
 	@echo "... src/rendering/framebuffer_renderer.s"
+	@echo "... src/rendering/frustum.o"
+	@echo "... src/rendering/frustum.i"
+	@echo "... src/rendering/frustum.s"
 	@echo "... src/rendering/lighting.o"
 	@echo "... src/rendering/lighting.i"
 	@echo "... src/rendering/lighting.s"
@@ -3568,6 +4295,9 @@ help:
 	@echo "... src/rendering/pbr_material.o"
 	@echo "... src/rendering/pbr_material.i"
 	@echo "... src/rendering/pbr_material.s"
+	@echo "... src/rendering/post_processing.o"
+	@echo "... src/rendering/post_processing.i"
+	@echo "... src/rendering/post_processing.s"
 	@echo "... src/rendering/renderer.o"
 	@echo "... src/rendering/renderer.i"
 	@echo "... src/rendering/renderer.s"
@@ -3604,6 +4334,9 @@ help:
 	@echo "... src/ui/console.o"
 	@echo "... src/ui/console.i"
 	@echo "... src/ui/console.s"
+	@echo "... src/ui/console_commands.o"
+	@echo "... src/ui/console_commands.i"
+	@echo "... src/ui/console_commands.s"
 	@echo "... src/ui/imgui_wrapper.o"
 	@echo "... src/ui/imgui_wrapper.i"
 	@echo "... src/ui/imgui_wrapper.s"
@@ -3658,6 +4391,12 @@ help:
 	@echo "... src/world_test.o"
 	@echo "... src/world_test.i"
 	@echo "... src/world_test.s"
+	@echo "... tests/test_console_commands.o"
+	@echo "... tests/test_console_commands.i"
+	@echo "... tests/test_console_commands.s"
+	@echo "... tests/test_culling.o"
+	@echo "... tests/test_culling.i"
+	@echo "... tests/test_culling.s"
 	@echo "... tests/test_day_night.o"
 	@echo "... tests/test_day_night.i"
 	@echo "... tests/test_day_night.s"

@@ -50,6 +50,8 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/day_night_test.dir/DependInfo.cmake"
   "CMakeFiles/inventory_test.dir/DependInfo.cmake"
   "CMakeFiles/editor_test.dir/DependInfo.cmake"
+  "CMakeFiles/console_test.dir/DependInfo.cmake"
+  "CMakeFiles/culling_test.dir/DependInfo.cmake"
   "CMakeFiles/gamepad_test.dir/DependInfo.cmake"
   "CMakeFiles/voxel_engine.dir/DependInfo.cmake"
   )

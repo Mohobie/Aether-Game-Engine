@@ -253,7 +253,12 @@ CMakeFiles/voxel_engine.dir/src/core/engine.cpp.o: \
  /usr/include/c++/11/bits/fstream.tcc \
  /home/mohobie/projects/aether-game-engine/src/core/config.h \
  /home/mohobie/projects/aether-game-engine/src/ui/console.h \
+ /home/mohobie/projects/aether-game-engine/src/ui/console_commands.h \
  /home/mohobie/projects/aether-game-engine/src/core/player_controller.h \
- /usr/include/c++/11/iostream /usr/include/c++/11/chrono \
- /usr/include/c++/11/ratio /usr/include/c++/11/ctime \
- /usr/include/c++/11/bits/parse_numbers.h
+ /home/mohobie/projects/aether-game-engine/src/editor/entity_spawner.h \
+ /home/mohobie/projects/aether-game-engine/src/debug/debug_system.h \
+ /usr/include/c++/11/chrono /usr/include/c++/11/ratio \
+ /usr/include/c++/11/ctime /usr/include/c++/11/bits/parse_numbers.h \
+ /home/mohobie/projects/aether-game-engine/src/core/item_system.h \
+ /home/mohobie/projects/aether-game-engine/src/core/math.h \
+ /usr/include/c++/11/iostream
