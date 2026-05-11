@@ -103,6 +103,8 @@ set(CORE_SOURCES
     src/physics/physics_constraints.cpp
     src/network/network_architecture.cpp
     src/ai/behavior_tree.cpp
+    src/ai/enemy_ai.cpp
+    src/ai/enemy_spawner.cpp
     src/animation/animation_state_machine.cpp
     src/rendering/sky/day_night_cycle.cpp
     src/rendering/sky/sky_renderer.cpp
@@ -162,7 +164,10 @@ set(CORE_SOURCES
     src/core/player_controller.cpp
     src/voxel/voxel_editor.cpp
     src/game/sandbox_mode.cpp
+    src/game/survival_mode.cpp
+    src/game/player_stats.cpp
     src/game/block_interaction.cpp
+    src/game/combat_system.cpp
     src/editor/entity_spawner.cpp
     src/editor/in_game_editor.cpp
     src/ui/console_commands.cpp

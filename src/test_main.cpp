@@ -1,10 +1,15 @@
 #include "rendering/post_processing.h"
 #include "ui/ui_system.h"
 #include "ai/ai_system.h"
+#include "ai/enemy_ai.h"
+#include "ai/enemy_spawner.h"
+#include "game/combat_system.h"
 #include "animation/animation.h"
 #include "editor/in_game_editor.h"
 #include "platform/input_manager.h"
 #include "rendering/camera.h"
+#include "game/player_stats.h"
+#include "game/survival_mode.h"
 #include <iostream>
 
 using namespace vge;
@@ -47,8 +52,8 @@ void TestUI() {
     
     // Create UI elements directly (avoid UIManager ownership issues)
     auto panel = std::make_unique<UIPanel>("MainMenu");
-    panel->SetPosition(Vec2(100, 100));
-    panel->SetSize(Vec2(400, 500));
+    panel->SetPosition(vge::Vec2(100, 100));
+    panel->SetSize(vge::Vec2(400, 500));
     panel->SetAutoLayout(true);
     panel->SetPadding(20);
     panel->SetSpacing(10);
@@ -61,7 +66,7 @@ void TestUI() {
     
     // Add buttons
     auto playBtn = std::make_unique<UIButton>("PlayBtn", "Play Game");
-    playBtn->SetSize(Vec2(200, 40));
+    playBtn->SetSize(vge::Vec2(200, 40));
     playBtn->SetBackgroundColor(Vec3(0.2f, 0.6f, 0.2f));
     playBtn->SetOnClick([]() {
         std::cout << "[UI] Play button clicked!" << std::endl;
@@ -69,18 +74,18 @@ void TestUI() {
     panel->AddChild(std::move(playBtn));
     
     auto settingsBtn = std::make_unique<UIButton>("SettingsBtn", "Settings");
-    settingsBtn->SetSize(Vec2(200, 40));
+    settingsBtn->SetSize(vge::Vec2(200, 40));
     panel->AddChild(std::move(settingsBtn));
     
     auto quitBtn = std::make_unique<UIButton>("QuitBtn", "Quit");
-    quitBtn->SetSize(Vec2(200, 40));
+    quitBtn->SetSize(vge::Vec2(200, 40));
     quitBtn->SetBackgroundColor(Vec3(0.6f, 0.2f, 0.2f));
     panel->AddChild(std::move(quitBtn));
     
     // Add slider
     auto volumeSlider = std::make_unique<UISlider>("Volume", 0.0f, 1.0f);
     volumeSlider->SetValue(0.7f);
-    volumeSlider->SetSize(Vec2(200, 30));
+    volumeSlider->SetSize(vge::Vec2(200, 30));
     volumeSlider->SetOnValueChanged([](float value) {
         std::cout << "[UI] Volume changed to: " << (value * 100) << "%" << std::endl;
     });
@@ -107,7 +112,7 @@ void TestUI() {
     std::cout << "\n[Input] Simulating mouse click on Play button..." << std::endl;
     UIEvent event;
     event.type = UIEventType::Click;
-    event.position = Vec2(210, 200);
+    event.position = vge::Vec2(210, 200);
     panel->HandleEvent(event);
     
     // Print hierarchy
@@ -270,6 +275,258 @@ void TestAI() {
     std::cout << "AI system test passed!" << std::endl;
 }
 
+void TestEnemyAI() {
+    std::cout << "\n=== Enemy AI Test ===" << std::endl;
+    
+    // Create navigation mesh
+    NavigationMesh navMesh;
+    navMesh.GenerateGrid(Vec3(-50, 0, -50), Vec3(50, 0, 50), 2.0f);
+    
+    // Test Zombie creation and stats
+    Vec3 spawnPos(10, 0, 10);
+    EnemyAI zombie(EnemyType::ZOMBIE, spawnPos);
+    
+    std::cout << "Created Zombie at (" << spawnPos.x << ", " << spawnPos.y << ", " << spawnPos.z << ")" << std::endl;
+    std::cout << "Zombie Health: " << zombie.GetHealth() << "/" << zombie.GetMaxHealth() << std::endl;
+    std::cout << "Zombie Speed: " << zombie.GetSpeed() << std::endl;
+    std::cout << "Zombie Damage: " << zombie.GetDamage() << std::endl;
+    std::cout << "Zombie Attack Range: " << zombie.GetAttackRange() << std::endl;
+    std::cout << "Zombie Detection Range: " << zombie.GetDetectionRange() << std::endl;
+    
+    // Test Skeleton creation and stats
+    Vec3 skeletonPos(-10, 0, -10);
+    EnemyAI skeleton(EnemyType::SKELETON, skeletonPos);
+    
+    std::cout << "\nCreated Skeleton at (" << skeletonPos.x << ", " << skeletonPos.y << ", " << skeletonPos.z << ")" << std::endl;
+    std::cout << "Skeleton Health: " << skeleton.GetHealth() << "/" << skeleton.GetMaxHealth() << std::endl;
+    std::cout << "Skeleton Speed: " << skeleton.GetSpeed() << std::endl;
+    std::cout << "Skeleton Damage: " << skeleton.GetDamage() << std::endl;
+    std::cout << "Skeleton Attack Range: " << skeleton.GetAttackRange() << " (ranged)" << std::endl;
+    
+    // Test state transitions - IDLE to CHASE
+    Vec3 playerPos(15, 0, 15); // Within detection range of zombie
+    std::cout << "\n=== State Transition Tests ===" << std::endl;
+    std::cout << "Initial state: IDLE" << std::endl;
+    
+    // Update zombie with player nearby
+    for (int i = 0; i < 10; ++i) {
+        zombie.Update(0.1f, playerPos, &navMesh);
+    }
+    
+    std::cout << "After player enters detection range: " 
+              << (zombie.GetState() == EnemyState::CHASE ? "CHASE" : "IDLE") << std::endl;
+    
+    // Test CHASE to ATTACK
+    Vec3 closePlayer(10.5f, 0, 10.5f); // Very close to zombie
+    zombie.SetState(EnemyState::CHASE);
+    zombie.Update(0.1f, closePlayer, &navMesh);
+    
+    std::cout << "When player is within attack range: " 
+              << (zombie.GetState() == EnemyState::ATTACK ? "ATTACK" : "CHASE") << std::endl;
+    
+    // Test damage and death
+    std::cout << "\n=== Damage Test ===" << std::endl;
+    std::cout << "Zombie health before damage: " << zombie.GetHealth() << std::endl;
+    zombie.TakeDamage(30.0f);
+    std::cout << "After 30 damage: " << zombie.GetHealth() << "/" << zombie.GetMaxHealth() << std::endl;
+    
+    zombie.TakeDamage(50.0f);
+    std::cout << "After 50 more damage: " << zombie.GetHealth() << "/" << zombie.GetMaxHealth() << std::endl;
+    
+    // Kill the zombie
+    zombie.TakeDamage(100.0f); // Overkill
+    std::cout << "After lethal damage: " << zombie.GetHealth() << std::endl;
+    std::cout << "Is dead: " << (zombie.IsDead() ? "Yes" : "No") << std::endl;
+    std::cout << "State: " << (zombie.GetState() == EnemyState::DIE ? "DIE" : "Other") << std::endl;
+    
+    // Test skeleton death
+    std::cout << "\n=== Skeleton Death Test ===" << std::endl;
+    skeleton.Die();
+    std::cout << "Skeleton died. Is dead: " << (skeleton.IsDead() ? "Yes" : "No") << std::endl;
+    std::cout << "State: " << (skeleton.GetState() == EnemyState::DIE ? "DIE" : "Other") << std::endl;
+    
+    std::cout << "Enemy AI test passed!" << std::endl;
+}
+
+void TestEnemySpawner() {
+    std::cout << "\n=== Enemy Spawner Test ===" << std::endl;
+    
+    EnemySpawner spawner;
+    NavigationMesh navMesh;
+    navMesh.GenerateGrid(Vec3(-100, 0, -100), Vec3(100, 0, 100), 5.0f);
+    
+    // Test configuration
+    std::cout << "Max enemies: " << spawner.GetMaxEnemies() << std::endl;
+    std::cout << "Spawn radius: " << spawner.GetMinSpawnRadius() << "-" << spawner.GetMaxSpawnRadius() << std::endl;
+    std::cout << "Spawn cooldown: " << spawner.GetSpawnCooldown() << std::endl;
+    
+    // Test night time spawning
+    Vec3 playerPos(0, 0, 0);
+    spawner.SetTime(0.8f); // Night time
+    
+    std::cout << "\nTime set to 0.8 (night): " << (spawner.IsNightTime() ? "Yes" : "No") << std::endl;
+    
+    // Force spawn some enemies
+    spawner.ForceSpawnEnemy(Vec3(25, 0, 0), EnemyType::ZOMBIE);
+    spawner.ForceSpawnEnemy(Vec3(-25, 0, 0), EnemyType::SKELETON);
+    spawner.ForceSpawnEnemy(Vec3(0, 0, 30), EnemyType::ZOMBIE);
+    
+    std::cout << "Active enemies after 3 spawns: " << spawner.GetActiveEnemyCount() << std::endl;
+    std::cout << "Total spawned: " << spawner.GetTotalSpawned() << std::endl;
+    
+    // Test spawn cap
+    spawner.SetMaxEnemies(5);
+    spawner.ForceSpawnEnemy(Vec3(10, 0, 10), EnemyType::ZOMBIE);
+    spawner.ForceSpawnEnemy(Vec3(-10, 0, -10), EnemyType::SKELETON);
+    spawner.ForceSpawnEnemy(Vec3(15, 0, -15), EnemyType::ZOMBIE); // Should still work (forced)
+    
+    std::cout << "Active enemies after 6 spawns (cap 5): " << spawner.GetActiveEnemyCount() << std::endl;
+    
+    // Test safe zones
+    std::cout << "\n=== Safe Zone Test ===" << std::endl;
+    Vec3 torchPos(30, 0, 0);
+    spawner.AddLightSource(torchPos, 10.0f, 1.0f);
+    
+    std::cout << "Added torch at (30, 0, 0) with radius 10" << std::endl;
+    std::cout << "Position (35, 0, 0) in safe zone: " 
+              << (spawner.IsInSafeZone(Vec3(35, 0, 0)) ? "Yes" : "No") << std::endl;
+    std::cout << "Position (50, 0, 0) in safe zone: " 
+              << (spawner.IsInSafeZone(Vec3(50, 0, 0)) ? "Yes" : "No") << std::endl;
+    
+    // Test enemy queries
+    std::cout << "\n=== Enemy Query Tests ===" << std::endl;
+    auto allEnemies = spawner.GetAllEnemies();
+    std::cout << "All enemies: " << allEnemies.size() << std::endl;
+    
+    auto nearbyEnemies = spawner.GetEnemiesInRadius(playerPos, 30.0f);
+    std::cout << "Enemies within 30 blocks of player: " << nearbyEnemies.size() << std::endl;
+    
+    // Test update and enemy chasing player
+    std::cout << "\n=== Spawner Update Test ===" << std::endl;
+    Vec3 movingPlayer(5, 0, 5);
+    spawner.Update(1.0f, movingPlayer, &navMesh);
+    
+    // Check if enemies moved toward player
+    for (auto* enemy : spawner.GetAllEnemies()) {
+        if (enemy && !enemy->IsDead()) {
+            float dist = (enemy->GetPosition() - movingPlayer).length();
+            std::cout << "Enemy at (" << enemy->GetPosition().x << ", " 
+                      << enemy->GetPosition().z << ") distance to player: " 
+                      << dist << std::endl;
+        }
+    }
+    
+    // Test day time (no spawning)
+    spawner.SetTime(0.5f); // Day time
+    std::cout << "\nTime set to 0.5 (day): " << (spawner.IsNightTime() ? "Yes" : "No") << std::endl;
+    int countBefore = spawner.GetActiveEnemyCount();
+    spawner.Update(1.0f, movingPlayer, &navMesh);
+    std::cout << "Enemies after day update: " << spawner.GetActiveEnemyCount() 
+              << " (should be same: " << countBefore << ")" << std::endl;
+    
+    // Test clear
+    spawner.ClearAllEnemies();
+    std::cout << "\nAfter clearing all enemies: " << spawner.GetActiveEnemyCount() << std::endl;
+    std::cout << "Total killed: " << spawner.GetTotalKilled() << std::endl;
+    
+    std::cout << "Enemy spawner test passed!" << std::endl;
+}
+
+void TestCombatSystem() {
+    std::cout << "\n=== Combat System Test ===" << std::endl;
+    
+    CombatSystem combat;
+    EnemySpawner spawner;
+    NavigationMesh navMesh;
+    navMesh.GenerateGrid(Vec3(-50, 0, -50), Vec3(50, 0, 50), 2.0f);
+    
+    combat.SetEnemySpawner(&spawner);
+    
+    // Test player stats
+    std::cout << "Player max health: " << combat.GetPlayerStats().maxHealth << std::endl;
+    std::cout << "Player health: " << combat.GetPlayerHealth() << std::endl;
+    std::cout << "Player damage: " << combat.GetPlayerStats().attackDamage << std::endl;
+    std::cout << "Player attack range: " << combat.GetPlayerStats().attackRange << std::endl;
+    
+    // Test damage calculation
+    std::cout << "\n=== Damage Calculation Test ===" << std::endl;
+    
+    // No armor
+    DamageInfo dmg1 = combat.CalculateDamage(20.0f, 0.0f, false);
+    std::cout << "20 damage, 0 armor: " << dmg1.finalDamage << " final (blocked: " << dmg1.armorBlocked << ")" << std::endl;
+    
+    // With armor
+    DamageInfo dmg2 = combat.CalculateDamage(20.0f, 10.0f, false);
+    std::cout << "20 damage, 10 armor: " << dmg2.finalDamage << " final (blocked: " << dmg2.armorBlocked << ")" << std::endl;
+    
+    // High armor (capped at 80%)
+    DamageInfo dmg3 = combat.CalculateDamage(20.0f, 50.0f, false);
+    std::cout << "20 damage, 50 armor: " << dmg3.finalDamage << " final (blocked: " << dmg3.armorBlocked << ", capped)" << std::endl;
+    
+    // Test player attack
+    std::cout << "\n=== Player Attack Test ===" << std::endl;
+    Vec3 playerPos(0, 0, 0);
+    Vec3 playerForward(1, 0, 0);
+    
+    // Spawn an enemy in front of player
+    spawner.ForceSpawnEnemy(Vec3(2, 0, 0), EnemyType::ZOMBIE);
+    auto enemies = spawner.GetAllEnemies();
+    EnemyAI* zombie = enemies.empty() ? nullptr : enemies[0];
+    
+    if (zombie) {
+        std::cout << "Zombie health before attack: " << zombie->GetHealth() << std::endl;
+        bool hit = combat.PlayerAttack(playerPos, playerForward);
+        std::cout << "Player attack hit: " << (hit ? "Yes" : "No") << std::endl;
+        std::cout << "Zombie health after attack: " << zombie->GetHealth() << std::endl;
+    }
+    
+    // Test enemy attack on player
+    std::cout << "\n=== Enemy Attack Test ===" << std::endl;
+    // Spawn enemy close to player
+    spawner.ForceSpawnEnemy(Vec3(1.5f, 0, 0), EnemyType::ZOMBIE);
+    enemies = spawner.GetAllEnemies();
+    
+    std::cout << "Player health before enemy attack: " << combat.GetPlayerHealth() << std::endl;
+    combat.Update(0.1f, playerPos); // This should trigger enemy attacks
+    std::cout << "Player health after enemy attack: " << combat.GetPlayerHealth() << std::endl;
+    
+    // Test player death and respawn
+    std::cout << "\n=== Player Death Test ===" << std::endl;
+    combat.DamagePlayer(200.0f); // Overkill
+    std::cout << "Player alive after 200 damage: " << (combat.IsPlayerAlive() ? "Yes" : "No") << std::endl;
+    std::cout << "Waiting for respawn: " << (combat.IsWaitingForRespawn() ? "Yes" : "No") << std::endl;
+    
+    // Simulate respawn timer
+    combat.Update(5.0f, playerPos); // Should respawn after delay
+    std::cout << "Player alive after respawn: " << (combat.IsPlayerAlive() ? "Yes" : "No") << std::endl;
+    std::cout << "Player health after respawn: " << combat.GetPlayerHealth() << std::endl;
+    
+    // Test drop rolling
+    std::cout << "\n=== Drop Table Test ===" << std::endl;
+    auto zombieDrops = combat.RollDrops(EnemyType::ZOMBIE);
+    std::cout << "Zombie drops rolled: " << zombieDrops.size() << " items" << std::endl;
+    for (const auto& drop : zombieDrops) {
+        std::cout << "  - " << drop.second << "x " << drop.first << std::endl;
+    }
+    
+    auto skeletonDrops = combat.RollDrops(EnemyType::SKELETON);
+    std::cout << "Skeleton drops rolled: " << skeletonDrops.size() << " items" << std::endl;
+    for (const auto& drop : skeletonDrops) {
+        std::cout << "  - " << drop.second << "x " << drop.first << std::endl;
+    }
+    
+    // Test healing
+    std::cout << "\n=== Healing Test ===" << std::endl;
+    combat.DamagePlayer(50.0f);
+    std::cout << "Player health after 50 damage: " << combat.GetPlayerHealth() << std::endl;
+    combat.HealPlayer(30.0f);
+    std::cout << "Player health after 30 heal: " << combat.GetPlayerHealth() << std::endl;
+    combat.HealPlayer(100.0f); // Overheal should cap
+    std::cout << "Player health after 100 heal (capped): " << combat.GetPlayerHealth() << std::endl;
+    
+    std::cout << "Combat system test passed!" << std::endl;
+}
+
 void TestFlyCamera() {
     std::cout << "\n=== Fly Camera Controller Test ===" << std::endl;
 
@@ -327,6 +584,9 @@ int main() {
     TestUI();
     TestAnimation();
     TestAI();
+    TestEnemyAI();
+    TestEnemySpawner();
+    TestCombatSystem();
     TestFlyCamera();
 
     std::cout << "\n=== All Tests Passed ===" << std::endl;
