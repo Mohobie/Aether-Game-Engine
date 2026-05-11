@@ -83,8 +83,14 @@ struct CommandDef {
     bool requiresCheats;
     bool isDebug;
     
-    CommandDef()
-        : minArgs(0), maxArgs(-1), requiresCheats(false), isDebug(false) {}
+    CommandDef(const std::string& n = "", const std::string& desc = "", 
+               const std::string& u = "", const std::vector<std::string>& a = {},
+               int minA = 0, int maxA = -1,
+               std::function<CommandResult(const ParsedCommand&, const CommandContext&, std::string&)> h = nullptr,
+               bool cheats = false, bool debug = false)
+        : name(n), description(desc), usage(u), aliases(a),
+          minArgs(minA), maxArgs(maxA), handler(h),
+          requiresCheats(cheats), isDebug(debug) {}
 };
 
 // ============================================
@@ -101,6 +107,11 @@ public:
     
     // Register a command
     void Register(const CommandDef& def);
+    void Register(const std::string& name, const std::string& description,
+                  const std::string& usage, const std::vector<std::string>& aliases,
+                  int minArgs, int maxArgs,
+                  std::function<CommandResult(const ParsedCommand&, const CommandContext&, std::string&)> handler,
+                  bool requiresCheats = false, bool isDebug = false);
     void RegisterAlias(const std::string& alias, const std::string& target);
     
     // Get command

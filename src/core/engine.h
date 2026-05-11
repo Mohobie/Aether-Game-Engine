@@ -16,8 +16,11 @@ class SoundManager;
 class MenuSystem;
 class TimeSystem;
 class AchievementManager;
-
 class PlayerController;
+class Console;
+class EntitySpawner;
+class DebugSystem;
+class InventoryManager;
 
 class Engine {
 private:
@@ -36,11 +39,17 @@ private:
     AchievementManager* achievementManager;
     PlayerController* player;
     
+    Console* console;
+    EntitySpawner* entitySpawner;
+    DebugSystem* debugSystem;
+    InventoryManager* inventoryManager;
+    
     bool running;
     float deltaTime;
     
     void Update(float dt);
     void Render();
+    void SetupConsoleCommands();
     
 public:
     Engine();

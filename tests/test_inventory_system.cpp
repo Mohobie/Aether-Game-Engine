@@ -120,13 +120,17 @@ void TestInventory() {
     assert(inv.GetSlot(0).item.count == 64); // First stack full
     assert(inv.GetSlot(1).item.count == 10);  // Second stack
     
-    // Test RemoveItem
+    // Test RemoveItem - removes 10 from first available stack (slot 0)
     assert(inv.RemoveItem("stone", 10));
-    assert(inv.GetItemCount("stone") == 64);
+    assert(inv.GetItemCount("stone") == 64); // 74 - 10 = 64
+    assert(inv.GetSlot(0).item.count == 54); // Slot 0 now has 54
     
-    // Test slot removal
-    assert(inv.RemoveItem(0, 64));
+    // Test slot removal - remove remaining 54 from slot 0
+    assert(inv.RemoveItem(0, 54));
     assert(inv.GetSlot(0).IsEmpty());
+    
+    // After removing slot 0, we have 10 stone in slot 1
+    assert(inv.GetItemCount("stone") == 10);
     
     // Test slot locking
     inv.LockSlot(5);

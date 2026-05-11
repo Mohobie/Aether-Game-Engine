@@ -82,6 +82,8 @@ struct CraftingRecipe {
     int experienceReward;               // XP given on craft
     
     CraftingRecipe();
+    CraftingRecipe(const std::vector<std::vector<BlockTypeID>>& blockPattern, 
+                   BlockTypeID output, int count);
     
     // Legacy compatibility
     std::vector<std::vector<BlockTypeID>> blockPattern;
@@ -92,6 +94,8 @@ struct CraftingRecipe {
     
     // Check if a crafting grid matches
     bool MatchesGrid(const class CraftingGrid& grid) const;
+    bool Matches(const CraftingGrid& grid) const;
+    bool MatchesAt(const CraftingGrid& grid, int startX, int startY) const;
     
     // Get required ingredients as flat list
     std::vector<std::pair<std::string, int>> GetRequiredItems() const;
@@ -102,7 +106,7 @@ struct CraftingRecipe {
 // ============================================
 class CraftingGrid {
 private:
-    std::vector<std::vector<std::string>> items;  // Item IDs instead of BlockTypeID
+    std::vector<std::vector<std::string>> items;
     
 public:
     static constexpr int GRID_SIZE = 3;
@@ -111,10 +115,10 @@ public:
     
     void SetItem(int x, int y, const std::string& itemID);
     std::string GetItem(int x, int y) const;
+    BlockTypeID GetBlockItem(int x, int y) const;
     void Clear();
     bool IsEmpty() const;
     
-    // Convert to ingredient counts for shapeless matching
     std::unordered_map<std::string, int> GetIngredientCounts() const;
 };
 
@@ -239,7 +243,7 @@ private:
     std::unordered_map<std::string, std::vector<size_t>> recipesByInput;
     
     void InitializeDefaultRecipes();
-    void InitializeDefaultSmelting();
+    void InitializeRecipes();
     
 public:
     CraftingSystem();
@@ -265,6 +269,9 @@ public:
     // Crafting
     CraftingResult2 TryCraft(const CraftingGrid& grid, const Inventory* playerInventory = nullptr, 
                            const std::string& station = "") const;
+    
+    // Smelting
+    void InitializeDefaultSmelting();
     
     // Check if player can craft (has ingredients + discovered)
     bool CanCraft(const CraftingRecipe& recipe, const Inventory& inventory, 

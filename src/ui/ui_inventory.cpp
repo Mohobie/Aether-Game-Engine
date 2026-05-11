@@ -328,11 +328,16 @@ void UIInventoryController::toggleInventory() {
     }
 }
 
+void UIInventoryTooltip::Update(float deltaTime) {
+    (void)deltaTime;
+    // Timer-based visibility logic could go here
+}
+
 void UIInventoryController::update(float deltaTime) {
     if (!isInventoryOpen) return;
     
     // Update tooltip timer
-    tooltip->update(deltaTime);
+    tooltip->Update(deltaTime);
 }
 
 void UIInventoryController::updateDrag(const Vec2& mousePos) {

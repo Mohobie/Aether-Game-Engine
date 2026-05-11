@@ -1,21 +1,37 @@
 #include "ui/console.h"
+#include "ui/console_commands.h"
 #include "core/logger.h"
 #include <iostream>
 #include <sstream>
+#include <algorithm>
 
-// Stub implementation
 namespace vge {
 
-Console::Console() : visible(false), maxLines(100) {}
+Console::Console() : visible(false), maxLines(100), executor(nullptr) {}
 
-Console::~Console() {}
+Console::~Console() {
+    Shutdown();
+}
 
 void Console::Initialize() {
     std::cout << "[Console] Initialized" << std::endl;
+    executor = new CommandExecutor();
 }
 
 void Console::Shutdown() {
+    if (executor) {
+        executor->Shutdown();
+        delete executor;
+        executor = nullptr;
+    }
     lines.clear();
+}
+
+void Console::SetupCommands(const CommandContext& ctx) {
+    if (executor) {
+        executor->Initialize(ctx);
+        AddLine("Console commands initialized. Type 'help' for available commands.");
+    }
 }
 
 void Console::AddLine(const std::string& line) {
@@ -46,15 +62,70 @@ void Console::Toggle() {
 void Console::ExecuteCommand(const std::string& cmd) {
     AddLine("> " + cmd);
     
-    // Simple command parsing
-    if (cmd == "help") {
-        AddLine("Available commands: help, clear, quit");
-    } else if (cmd == "clear") {
+    if (!executor) {
+        AddLine("Command executor not initialized");
+        return;
+    }
+    
+    std::string output;
+    CommandResult result = executor->Execute(cmd, output);
+    
+    if (output == "__CLEAR__") {
         Clear();
-    } else if (cmd == "quit") {
-        AddLine("Quitting...");
-    } else {
-        AddLine("Unknown command: " + cmd);
+        return;
+    }
+    
+    if (!output.empty()) {
+        // Split multi-line output
+        std::stringstream ss(output);
+        std::string line;
+        while (std::getline(ss, line)) {
+            if (!line.empty()) {
+                AddLine(line);
+            }
+        }
+    }
+    
+    if (result != CommandResult::Success && output.empty()) {
+        switch (result) {
+            case CommandResult::InvalidCommand:
+                AddLine("Unknown command. Type 'help' for available commands.");
+                break;
+            case CommandResult::InvalidArguments:
+                AddLine("Invalid arguments. Check command usage.");
+                break;
+            case CommandResult::ExecutionError:
+                AddLine("Command execution failed.");
+                break;
+            default:
+                AddLine("Command failed.");
+                break;
+        }
+    }
+}
+
+std::string Console::GetHistoryText() const {
+    if (!executor) return "";
+    
+    std::stringstream ss;
+    const auto& history = executor->GetHistory();
+    for (size_t i = 0; i < history.size(); ++i) {
+        ss << i + 1 << ". " << history[i] << "\n";
+    }
+    return ss.str();
+}
+
+void Console::SetCheatsEnabled(bool enabled) {
+    if (executor) {
+        executor->SetCheatsEnabled(enabled);
+        AddLine(enabled ? "Cheats enabled." : "Cheats disabled.");
+    }
+}
+
+void Console::SetDebugEnabled(bool enabled) {
+    if (executor) {
+        executor->SetDebugEnabled(enabled);
+        AddLine(enabled ? "Debug mode enabled." : "Debug mode disabled.");
     }
 }
 

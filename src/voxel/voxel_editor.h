@@ -73,6 +73,16 @@ public:
 };
 
 // ============================================
+// Brush Falloff
+// ============================================
+enum class BrushFalloff {
+    Constant,
+    Linear,
+    Smooth,
+    Exponential
+};
+
+// ============================================
 // Voxel Brush Settings
 // ============================================
 struct BrushSettings {
@@ -80,12 +90,12 @@ struct BrushSettings {
     float radius;           // For sphere/cylinder
     Vec3 size;              // For box (x,y,z dimensions)
     float strength;         // 0.0 - 1.0 (for smooth/raise/lower)
-    float falloff;          // 0.0 = hard edge, 1.0 = smooth falloff
+    BrushFalloff falloff;          // Falloff type
     bool affectAir;         // Whether to affect air blocks
     
     BrushSettings() 
         : shape(BrushShape::Sphere), radius(1.0f), size(1,1,1),
-          strength(1.0f), falloff(0.0f), affectAir(false) {}
+          strength(1.0f), falloff(BrushFalloff::Constant), affectAir(false) {}
 };
 
 // ============================================
@@ -129,8 +139,8 @@ public:
     Vec3 GetBrushSize() const { return brush.size; }
     void SetBrushStrength(float strength) { brush.strength = strength; }
     float GetBrushStrength() const { return brush.strength; }
-    void SetBrushFalloff(float falloff) { brush.falloff = falloff; }
-    float GetBrushFalloff() const { return brush.falloff; }
+    void SetBrushFalloff(float falloff) { brush.falloff = static_cast<BrushFalloff>((int)falloff); }
+    float GetBrushFalloff() const { return static_cast<float>(brush.falloff); }
     void SetAffectAir(bool affect) { brush.affectAir = affect; }
     bool GetAffectAir() const { return brush.affectAir; }
     BrushSettings& GetBrushSettings() { return brush; }
@@ -168,6 +178,9 @@ public:
     // Apply edits (for undo/redo)
     void ApplyEdits(const std::vector<VoxelEdit>& edits, bool reverse);
     
+    // Height query
+    int GetHeightAt(int x, int z) const;
+    
     // Utility
     std::vector<Vec3> GetAffectedBlocks(const Vec3& center) const;
     bool IsInBrushRadius(const Vec3& center, const Vec3& block) const;
@@ -183,6 +196,12 @@ public:
     bool CanPlaceAt(const Vec3& position) const;
     bool CanRemoveAt(const Vec3& position) const;
     
+    // Selection operations
+    bool FillSelection(BlockTypeID type);
+    bool ClearSelection();
+    bool ReplaceSelection(BlockTypeID oldType, BlockTypeID newType);
+    bool PatternFill(const std::vector<BlockTypeID>& pattern, int patternWidth, int patternHeight);
+    
     // Serialization
     std::string SerializeHistory() const;
     bool DeserializeHistory(const std::string& data);
@@ -197,11 +216,13 @@ struct PaintLayer {
     float blendWeight;
     float minHeight;
     float maxHeight;
-    float slopeMin;
-    float slopeMax;
+    float minSlope;
+    float maxSlope;
+    float minDepth;
+    float maxDepth;
     
     PaintLayer() : blockType(BLOCK_AIR), blendWeight(1.0f), 
-                   minHeight(-9999), maxHeight(9999), slopeMin(0), slopeMax(90) {}
+                   minHeight(-9999), maxHeight(9999), minSlope(0), maxSlope(90), minDepth(0), maxDepth(9999) {}
 };
 
 class TerrainPainter {
@@ -225,7 +246,7 @@ public:
     // Painting
     void PaintChunk(int chunkX, int chunkY, int chunkZ);
     void PaintRegion(int startX, int startY, int startZ, int width, int height, int depth);
-    void PaintWorld();
+    void PaintWorld(int minChunkX, int minChunkZ, int maxChunkX, int maxChunkZ);
     
     // Slope-based painting
     void PaintBySlope(int chunkX, int chunkY, int chunkZ);
@@ -238,6 +259,7 @@ public:
     float CalculateSlope(int x, int y, int z) const;
     float CalculateSlopeAt(float worldX, float worldZ) const;
     int SelectLayerForBlock(int x, int y, int z) const;
+    int GetHeightAt(int x, int z) const;
     
     // Noise-based variation
     float GetNoiseVariation(int x, int y, int z) const;

@@ -20,8 +20,12 @@
 #include "core/save_system.h"
 #include "core/config.h"
 #include "ui/console.h"
+#include "ui/console_commands.h"
 #include "ui/imgui_wrapper.h"
 #include "core/player_controller.h"
+#include "editor/entity_spawner.h"
+#include "debug/debug_system.h"
+#include "core/item_system.h"
 #include <iostream>
 #include <chrono>
 
@@ -32,7 +36,9 @@ Engine::Engine()
       world(nullptr), worldGenerator(nullptr), chunkManager(nullptr),
       worldRenderer(nullptr), audioEngine(nullptr), soundManager(nullptr),
       menuSystem(nullptr), timeSystem(nullptr), achievementManager(nullptr),
-      player(nullptr), input(nullptr), running(false), deltaTime(0.016f) {}
+      player(nullptr), input(nullptr), console(nullptr), entitySpawner(nullptr),
+      debugSystem(nullptr), inventoryManager(nullptr),
+      running(false), deltaTime(0.016f) {}
 
 Engine::~Engine() {
     Shutdown();
@@ -87,6 +93,18 @@ bool Engine::Initialize() {
     achievementManager->Initialize();
     timeSystem = new TimeSystem();
     
+    // Initialize console and command system
+    console = new Console();
+    console->Initialize();
+    
+    // Initialize other systems
+    entitySpawner = new EntitySpawner();
+    debugSystem = new DebugSystem();
+    inventoryManager = new InventoryManager();
+    
+    // Setup console commands with engine context
+    SetupConsoleCommands();
+    
     // Set player and camera position
     player->SetPosition(Vec3(0, 40, 0));
     camera->SetPosition(Vec3(0, 41.6f, 0));
@@ -100,6 +118,10 @@ bool Engine::Initialize() {
 void Engine::Shutdown() {
     Logger::Info("Engine shutting down...");
     
+    delete console;
+    delete entitySpawner;
+    delete debugSystem;
+    delete inventoryManager;
     delete input;
     delete player;
     delete achievementManager;
@@ -183,10 +205,27 @@ void Engine::Update(float dt) {
         }
     }
     
+    // Toggle console with tilde key
+    if (input->IsKeyJustPressed(GLFW_KEY_GRAVE_ACCENT)) {
+        console->Toggle();
+    }
+    
     // Update camera to follow player
     Vec3 playerPos = player->GetPosition();
     camera->SetPosition(playerPos + Vec3(0, 1.6f, 0));
     camera->SetRotation(player->GetYaw(), player->GetPitch(), 0);
+}
+
+void Engine::SetupConsoleCommands() {
+    CommandContext ctx;
+    ctx.engine = this;
+    ctx.player = player;
+    ctx.world = world;
+    ctx.timeSystem = timeSystem;
+    ctx.entitySpawner = entitySpawner;
+    ctx.debugSystem = debugSystem;
+    ctx.inventoryManager = inventoryManager;
+    console->SetupCommands(ctx);
 }
 
 void Engine::Render() {

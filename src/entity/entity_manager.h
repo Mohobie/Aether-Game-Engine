@@ -1,8 +1,13 @@
 #pragma once
-#include "entity.h"
+#include "entity/entity.h"
 #include <unordered_map>
 #include <memory>
+
 namespace aether {
+
+using Entity = vge::Entity;
+using EntityID = vge::EntityID;
+
 class EntityManager {
 public:
     EntityManager();
@@ -15,4 +20,5 @@ private:
     std::unordered_map<EntityID, std::unique_ptr<Entity>> entities;
     EntityID nextID = 1;
 };
+
 } // namespace aether

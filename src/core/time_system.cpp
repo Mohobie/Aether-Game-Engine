@@ -104,6 +104,11 @@ void TimeSystem::SetTime(int time) {
     timeOfDay = time % dayLength;
 }
 
+void TimeSystem::SetWeather(WeatherType type, float transitionDuration) {
+    weather = type;
+    weatherDuration = transitionDuration;
+}
+
 void TimeSystem::ChangeWeather() {
     // Random weather
     float r = (float)rand() / RAND_MAX;

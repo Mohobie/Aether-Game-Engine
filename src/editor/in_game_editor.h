@@ -17,7 +17,37 @@ class Renderer;
 class EntityManager;
 
 // ============================================
-// Gizmo Types
+// Voxel Raycast Hit
+// ============================================
+struct VoxelRaycastHit {
+    Vec3 position;
+    Vec3 normal;
+    BlockTypeID blockType;
+    float distance;
+};
+
+// ============================================
+// AABB
+// ============================================
+struct AABB {
+    Vec3 min;
+    Vec3 max;
+    
+    AABB() : min(0, 0, 0), max(0, 0, 0) {}
+    AABB(const Vec3& min, const Vec3& max) : min(min), max(max) {}
+    
+    bool Contains(const Vec3& point) const {
+        return point.x >= min.x && point.x <= max.x &&
+               point.y >= min.y && point.y <= max.y &&
+               point.z >= min.z && point.z <= max.z;
+    }
+    
+    bool Intersects(const AABB& other) const {
+        return min.x <= other.max.x && max.x >= other.min.x &&
+               min.y <= other.max.y && max.y >= other.min.y &&
+               min.z <= other.max.z && max.z >= other.min.z;
+    }
+};
 // ============================================
 enum class GizmoType {
     None,
@@ -121,6 +151,9 @@ public:
     // Setters
     void SetPosition(const Vec3& pos);
     void SetRotation(float yawDeg, float pitchDeg);
+    
+    // Look at target
+    void LookAt(const Vec3& target);
     void SetSpeed(float s) { speed = s; }
     void SetSensitivity(float s) { sensitivity = s; }
     
@@ -131,9 +164,6 @@ public:
     
     // Ray from camera through screen point
     Vec3 ScreenToWorldRay(float screenX, float screenY, float screenWidth, float screenHeight) const;
-    
-    // Look at target
-    void LookAt(const Vec3& target);
 };
 
 // ============================================
@@ -208,7 +238,7 @@ public:
     void Shutdown();
     
     // Main update
-    void Update(float deltaTime);
+    void Update(float deltaTime, Input& input);
     void Render();
     
     // Activation
@@ -292,6 +322,45 @@ public:
     void RenderEntitySpawnerUI();
     void RenderTerrainToolsUI();
     void RenderEditorUI();
+};
+
+// ============================================
+// PlayerController (stub for console commands)
+// ============================================
+class PlayerController {
+private:
+    Vec3 position;
+    float yaw;
+    float pitch;
+    float health;
+    float maxHealth;
+    float speed;
+    bool noclip;
+    bool godMode;
+    bool flying;
+    
+public:
+    PlayerController() : position(0, 0, 0), yaw(0), pitch(0), 
+                         health(100), maxHealth(100), speed(5.0f),
+                         noclip(false), godMode(false), flying(false) {}
+    
+    Vec3 GetPosition() const { return position; }
+    void SetPosition(const Vec3& pos) { position = pos; }
+    float GetYaw() const { return yaw; }
+    void SetYaw(float y) { yaw = y; }
+    float GetPitch() const { return pitch; }
+    void SetPitch(float p) { pitch = p; }
+    float GetHealth() const { return health; }
+    void SetHealth(float h) { health = h; }
+    float GetMaxHealth() const { return maxHealth; }
+    float GetSpeed() const { return speed; }
+    void SetSpeed(float s) { speed = s; }
+    bool IsNoclip() const { return noclip; }
+    void SetNoclip(bool n) { noclip = n; }
+    bool IsGodMode() const { return godMode; }
+    void SetGodMode(bool g) { godMode = g; }
+    bool IsFlying() const { return flying; }
+    void SetFlying(bool f) { flying = f; }
 };
 
 } // namespace vge

@@ -31,5 +31,8 @@ namespace vge {
         
         Vec3 GetPosition() const { return position; }
         Vec3 GetRotation() const { return rotation; }
+        
+        // Public position for editor fly camera
+        void SetPositionDirect(const Vec3& pos) { position = pos; }
     };
 }

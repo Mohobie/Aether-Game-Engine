@@ -163,6 +163,20 @@ bool Input::IsMouseButtonPressed(int button) const {
     return false;
 }
 
+bool Input::IsMouseButtonJustPressed(int button) const {
+    if (button >= 0 && button < 8) {
+        return mouseButtons[button] && !prevMouseButtons[button];
+    }
+    return false;
+}
+
+bool Input::IsMouseButtonReleased(int button) const {
+    if (button >= 0 && button < 8) {
+        return !mouseButtons[button] && prevMouseButtons[button];
+    }
+    return false;
+}
+
 void Input::GetMousePosition(double& x, double& y) const {
     x = mouseX;
     y = mouseY;

@@ -140,6 +140,7 @@ public:
     
     void show(const std::string& item, const Vec2& pos);
     void hide();
+    void Update(float deltaTime);
     bool isTooltipVisible() const { return visible; }
     
     void setTooltipText(const std::string& text) { tooltipText = text; }
