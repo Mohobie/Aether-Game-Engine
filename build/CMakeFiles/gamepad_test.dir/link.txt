@@ -1,1 +1,1 @@
-/usr/bin/c++ -g CMakeFiles/gamepad_test.dir/tests/test_gamepad_standalone.cpp.o CMakeFiles/gamepad_test.dir/src/platform/gamepad.cpp.o -o gamepad_test 
+/usr/bin/c++ CMakeFiles/gamepad_test.dir/tests/test_gamepad_standalone.cpp.o CMakeFiles/gamepad_test.dir/src/platform/gamepad.cpp.o -o gamepad_test 

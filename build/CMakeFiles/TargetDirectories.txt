@@ -8,6 +8,8 @@
 /home/mohobie/projects/aether-game-engine/build/CMakeFiles/console_test.dir
 /home/mohobie/projects/aether-game-engine/build/CMakeFiles/culling_test.dir
 /home/mohobie/projects/aether-game-engine/build/CMakeFiles/gamepad_test.dir
+/home/mohobie/projects/aether-game-engine/build/CMakeFiles/sandbox_test.dir
+/home/mohobie/projects/aether-game-engine/build/CMakeFiles/renderer_integration_test.dir
 /home/mohobie/projects/aether-game-engine/build/CMakeFiles/voxel_engine.dir
 /home/mohobie/projects/aether-game-engine/build/CMakeFiles/edit_cache.dir
 /home/mohobie/projects/aether-game-engine/build/CMakeFiles/rebuild_cache.dir

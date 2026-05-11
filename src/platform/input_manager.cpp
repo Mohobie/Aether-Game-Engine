@@ -63,6 +63,15 @@ void Input::ProcessKeyboardInput() {
             case ' ': key = KeyCode::Space; break;
             case 'e': case 'E': key = KeyCode::E; break;
             case 'q': case 'Q': key = KeyCode::Q; break;
+            case '1': key = KeyCode::Key1; break;
+            case '2': key = KeyCode::Key2; break;
+            case '3': key = KeyCode::Key3; break;
+            case '4': key = KeyCode::Key4; break;
+            case '5': key = KeyCode::Key5; break;
+            case '6': key = KeyCode::Key6; break;
+            case '7': key = KeyCode::Key7; break;
+            case '8': key = KeyCode::Key8; break;
+            case '9': key = KeyCode::Key9; break;
             case 27: // Escape or arrow keys
                 char seq[2];
                 if (read(stdin_fd, &seq[0], 1) > 0) {
@@ -115,6 +124,15 @@ void Input::ProcessKeyboardInput() {
     checkKey('Q', KeyCode::Q);
     checkKey(VK_SHIFT, KeyCode::Shift);
     checkKey(VK_CONTROL, KeyCode::Ctrl);
+    checkKey('1', KeyCode::Key1);
+    checkKey('2', KeyCode::Key2);
+    checkKey('3', KeyCode::Key3);
+    checkKey('4', KeyCode::Key4);
+    checkKey('5', KeyCode::Key5);
+    checkKey('6', KeyCode::Key6);
+    checkKey('7', KeyCode::Key7);
+    checkKey('8', KeyCode::Key8);
+    checkKey('9', KeyCode::Key9);
 }
 #endif
 

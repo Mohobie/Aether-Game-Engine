@@ -34,6 +34,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/editor/in_game_editor.cpp" "CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/entity/components.cpp" "CMakeFiles/voxel_engine.dir/src/entity/components.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/entity/components.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/entity/entity.cpp" "CMakeFiles/voxel_engine.dir/src/entity/entity.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/entity/entity.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/game/block_interaction.cpp" "CMakeFiles/voxel_engine.dir/src/game/block_interaction.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/game/block_interaction.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/game/sandbox_mode.cpp" "CMakeFiles/voxel_engine.dir/src/game/sandbox_mode.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/game/sandbox_mode.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/main.cpp" "CMakeFiles/voxel_engine.dir/src/main.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/main.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/math/mat4.cpp" "CMakeFiles/voxel_engine.dir/src/math/mat4.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/math/mat4.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/math/vec3.cpp" "CMakeFiles/voxel_engine.dir/src/math/vec3.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/math/vec3.cpp.o.d"

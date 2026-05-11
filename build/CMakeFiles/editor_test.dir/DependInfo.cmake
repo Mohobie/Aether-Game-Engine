@@ -32,6 +32,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/editor/in_game_editor.cpp" "CMakeFiles/editor_test.dir/src/editor/in_game_editor.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/editor/in_game_editor.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/entity/components.cpp" "CMakeFiles/editor_test.dir/src/entity/components.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/entity/components.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/entity/entity.cpp" "CMakeFiles/editor_test.dir/src/entity/entity.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/entity/entity.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/game/block_interaction.cpp" "CMakeFiles/editor_test.dir/src/game/block_interaction.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/game/block_interaction.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/game/sandbox_mode.cpp" "CMakeFiles/editor_test.dir/src/game/sandbox_mode.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/game/sandbox_mode.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/math/mat4.cpp" "CMakeFiles/editor_test.dir/src/math/mat4.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/math/mat4.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/math/vec3.cpp" "CMakeFiles/editor_test.dir/src/math/vec3.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/math/vec3.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/network/network_architecture.cpp" "CMakeFiles/editor_test.dir/src/network/network_architecture.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/network/network_architecture.cpp.o.d"
@@ -70,10 +72,12 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/voxel/block_registry.cpp" "CMakeFiles/editor_test.dir/src/voxel/block_registry.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/voxel/block_registry.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/block_types.cpp" "CMakeFiles/editor_test.dir/src/voxel/block_types.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/voxel/block_types.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/chunk.cpp" "CMakeFiles/editor_test.dir/src/voxel/chunk.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/voxel/chunk.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/voxel/chunk_manager.cpp" "CMakeFiles/editor_test.dir/src/voxel/chunk_manager.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/voxel/chunk_manager.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/terrain_system.cpp" "CMakeFiles/editor_test.dir/src/voxel/terrain_system.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/voxel/terrain_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/voxel_editor.cpp" "CMakeFiles/editor_test.dir/src/voxel/voxel_editor.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/voxel/voxel_editor.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/world.cpp" "CMakeFiles/editor_test.dir/src/voxel/world.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/voxel/world.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/world_generator.cpp" "CMakeFiles/editor_test.dir/src/voxel/world_generator.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/voxel/world_generator.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/voxel/world_renderer.cpp" "CMakeFiles/editor_test.dir/src/voxel/world_renderer.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/voxel/world_renderer.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/tests/test_editor.cpp" "CMakeFiles/editor_test.dir/tests/test_editor.cpp.o" "gcc" "CMakeFiles/editor_test.dir/tests/test_editor.cpp.o.d"
   )
 

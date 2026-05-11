@@ -218,6 +218,15 @@ void Renderer::RenderWorld(const World& world, const Camera& camera) {
         }
     }
     
+    // Draw crosshair at center
+    int cx = fb.WIDTH / 2;
+    int cy = fb.HEIGHT / 2;
+    fb.SetPixel(cx, cy, 0.0f, '+');
+    fb.SetPixel(cx - 1, cy, 0.0f, '-');
+    fb.SetPixel(cx + 1, cy, 0.0f, '-');
+    fb.SetPixel(cx, cy - 1, 0.0f, '|');
+    fb.SetPixel(cx, cy + 1, 0.0f, '|');
+
     fb.Draw();
 }
 

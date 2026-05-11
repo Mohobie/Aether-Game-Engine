@@ -167,7 +167,8 @@ CMakeFiles/console_test.dir/src/game/sandbox_mode.cpp.o: \
  /usr/include/c++/11/bits/enable_special_members.h \
  /usr/include/c++/11/bits/node_handle.h \
  /usr/include/c++/11/bits/unordered_map.h \
- /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/memory \
+ /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/cstring \
+ /usr/include/string.h /usr/include/strings.h /usr/include/c++/11/memory \
  /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
  /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
@@ -209,7 +210,6 @@ CMakeFiles/console_test.dir/src/game/sandbox_mode.cpp.o: \
  /home/mohobie/projects/aether-game-engine/src/rendering/camera.h \
  /home/mohobie/projects/aether-game-engine/src/math/mat4.h \
  /home/mohobie/projects/aether-game-engine/src/platform/input.h \
- /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
  /home/mohobie/projects/aether-game-engine/src/rendering/renderer.h \
  /home/mohobie/projects/aether-game-engine/src/rendering/mesh.h \
  /home/mohobie/projects/aether-game-engine/src/rendering/shader.h \

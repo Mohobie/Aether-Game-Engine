@@ -162,6 +162,7 @@ set(CORE_SOURCES
     src/core/player_controller.cpp
     src/voxel/voxel_editor.cpp
     src/game/sandbox_mode.cpp
+    src/game/block_interaction.cpp
     src/editor/entity_spawner.cpp
     src/editor/in_game_editor.cpp
     src/ui/console_commands.cpp

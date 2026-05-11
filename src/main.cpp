@@ -9,6 +9,7 @@
 #include "voxel/block_registry.h"
 #include "audio/audio_engine.h"
 #include "game/game_state.h"
+#include "game/block_interaction.h"
 
 #include <GLFW/glfw3.h>
 #include <iostream>
@@ -43,6 +44,7 @@ struct GameContext {
     std::unique_ptr<WorldGenerator> worldGenerator;
     std::unique_ptr<ChunkManager> chunkManager;
     std::unique_ptr<AudioEngine> audioEngine;
+    std::unique_ptr<BlockInteraction> blockInteraction;
 };
 
 // ============================================
@@ -155,7 +157,13 @@ static bool InitializeAll(GameContext& ctx) {
     if (!InitializeInput(ctx))     return false;
     if (!InitializeAudio(ctx))     return false;
     if (!InitializeCamera(ctx))    return false;
-    
+
+    // Initialize block interaction system
+    Logger::Info("[Main] Initializing block interaction...");
+    ctx.blockInteraction = std::make_unique<BlockInteraction>();
+    ctx.blockInteraction->Initialize(*ctx.world);
+    Logger::Info("[Main] Block interaction initialized");
+
     ctx.state = GameState::Playing;
     
     Logger::Info("============================================");
@@ -164,12 +172,14 @@ static bool InitializeAll(GameContext& ctx) {
     
     // Print controls
     std::cout << "\n=== CONTROLS ===" << std::endl;
-    std::cout << "WASD     = Move" << std::endl;
+    std::cout << "WASD       = Move" << std::endl;
     std::cout << "Arrow Keys = Look around" << std::endl;
-    std::cout << "Space    = Jump" << std::endl;
-    std::cout << "E        = Place block" << std::endl;
-    std::cout << "Q        = Break block" << std::endl;
-    std::cout << "ESC      = Quit" << std::endl;
+    std::cout << "Space      = Jump / Up" << std::endl;
+    std::cout << "Shift      = Down" << std::endl;
+    std::cout << "E          = Place block (right click)" << std::endl;
+    std::cout << "Q          = Break block (left click)" << std::endl;
+    std::cout << "1-9        = Select block type" << std::endl;
+    std::cout << "ESC        = Quit" << std::endl;
     std::cout << "================\n" << std::endl;
     
     return true;
@@ -240,7 +250,10 @@ static void Update(GameContext& ctx) {
     }
     
     ctx.camera->SetPositionDirect(camPos);
-    
+
+    // Update block interaction (raycast + input)
+    ctx.blockInteraction->Update(*ctx.camera, *ctx.input, *ctx.world);
+
     // Update total time
     ctx.totalTime += ctx.deltaTime;
     ctx.frameCount++;
@@ -252,8 +265,21 @@ static void Update(GameContext& ctx) {
 static void Render(GameContext& ctx) {
     ctx.renderer->BeginFrame();
     ctx.renderer->RenderWorld(*ctx.world, *ctx.camera);
+
+    // Render crosshair and block highlight
+    int w = ctx.renderer->GetWidth();
+    int h = ctx.renderer->GetHeight();
+    ctx.renderer->RenderCrosshair(w, h);
+
+    if (ctx.blockInteraction->HasTarget()) {
+        ctx.renderer->RenderBlockHighlight(
+            ctx.blockInteraction->GetTarget().blockPosition,
+            *ctx.camera, w, h
+        );
+    }
+
     ctx.renderer->EndFrame();
-    
+
     // Swap buffers
     ctx.window->SwapBuffers();
 }

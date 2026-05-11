@@ -6,5 +6,5 @@ CXX_DEFINES = -DPLATFORM_LINUX
 
 CXX_INCLUDES = -I/home/mohobie/projects/aether-game-engine/src -I/home/mohobie/projects/aether-game-engine/include
 
-CXX_FLAGS = -g -std=gnu++17
+CXX_FLAGS = -std=gnu++17
 

@@ -208,6 +208,7 @@ CMakeFiles/save_test.dir/src/rendering/renderer.cpp.o: \
  /home/mohobie/projects/aether-game-engine/src/voxel/block.h \
  /home/mohobie/projects/aether-game-engine/src/core/types.h \
  /home/mohobie/projects/aether-game-engine/src/voxel/block_registry.h \
+ /home/mohobie/projects/aether-game-engine/src/voxel/world_renderer.h \
  /home/mohobie/projects/aether-game-engine/src/core/logger.h \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
  /usr/include/c++/11/ios /usr/include/c++/11/bits/ios_base.h \
