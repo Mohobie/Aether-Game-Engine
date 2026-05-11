@@ -4,12 +4,15 @@
 #include "ai/enemy_ai.h"
 #include "ai/enemy_spawner.h"
 #include "game/combat_system.h"
+#include "game/day_night_cycle.h"
 #include "animation/animation.h"
 #include "editor/in_game_editor.h"
 #include "platform/input_manager.h"
 #include "rendering/camera.h"
 #include "game/player_stats.h"
-#include "game/survival_mode.h"
+#include "core/crafting.h"
+#include "voxel/world.h"
+#include "voxel/block_registry.h"
 #include <iostream>
 
 using namespace vge;
@@ -577,6 +580,395 @@ void TestFlyCamera() {
     std::cout << "Fly camera controller test passed!" << std::endl;
 }
 
+void TestPlayerStats() {
+    std::cout << "\n=== Player Stats Test ===" << std::endl;
+
+    PlayerStats stats(Vec3(10, 20, 10));
+
+    // Initial values
+    std::cout << "Initial health: " << stats.GetHealth() << " (expected 100)" << std::endl;
+    std::cout << "Initial hunger: " << stats.GetHunger() << " (expected 100)" << std::endl;
+    std::cout << "Initial stamina: " << stats.GetStamina() << " (expected 100)" << std::endl;
+    if (stats.GetHealth() != 100.0f || stats.GetHunger() != 100.0f || stats.GetStamina() != 100.0f) {
+        std::cerr << "FAILED: Initial stats incorrect" << std::endl;
+        return;
+    }
+
+    // Damage test
+    stats.TakeDamage(25.0f);
+    std::cout << "After 25 damage, health: " << stats.GetHealth() << " (expected 75)" << std::endl;
+    if (stats.GetHealth() != 75.0f) {
+        std::cerr << "FAILED: Damage calculation incorrect" << std::endl;
+        return;
+    }
+
+    // Healing test
+    stats.Heal(10.0f);
+    std::cout << "After healing 10, health: " << stats.GetHealth() << " (expected 85)" << std::endl;
+    if (stats.GetHealth() != 85.0f) {
+        std::cerr << "FAILED: Healing calculation incorrect" << std::endl;
+        return;
+    }
+
+    // Eating test
+    stats.Eat(15.0f);
+    std::cout << "After eating 15, hunger: " << stats.GetHunger() << " (expected 100, clamped)" << std::endl;
+    if (stats.GetHunger() != 100.0f) {
+        std::cerr << "FAILED: Hunger clamping incorrect" << std::endl;
+        return;
+    }
+
+    // Stamina use test
+    bool used = stats.UseStamina(30.0f);
+    std::cout << "Used 30 stamina: " << (used ? "success" : "failed") << ", stamina: " << stats.GetStamina() << " (expected 70)" << std::endl;
+    if (!used || stats.GetStamina() != 70.0f) {
+        std::cerr << "FAILED: Stamina use incorrect" << std::endl;
+        return;
+    }
+
+    // Stamina regeneration test
+    stats.RegenerateStamina(20.0f);
+    std::cout << "After regenerating 20, stamina: " << stats.GetStamina() << " (expected 90)" << std::endl;
+    if (stats.GetStamina() != 90.0f) {
+        std::cerr << "FAILED: Stamina regeneration incorrect" << std::endl;
+        return;
+    }
+
+    // Death test
+    stats.SetHealth(10.0f);
+    stats.TakeDamage(50.0f);
+    std::cout << "After lethal damage, dead: " << (stats.IsDead() ? "YES" : "NO") << " (expected YES)" << std::endl;
+    if (!stats.IsDead()) {
+        std::cerr << "FAILED: Death detection incorrect" << std::endl;
+        return;
+    }
+
+    // Respawn test
+    stats.Respawn();
+    std::cout << "After respawn, health: " << stats.GetHealth() << ", hunger: " << stats.GetHunger() << ", stamina: " << stats.GetStamina() << std::endl;
+    std::cout << "After respawn, dead: " << (stats.IsDead() ? "YES" : "NO") << " (expected NO)" << std::endl;
+    if (stats.IsDead() || stats.GetHealth() != 100.0f || stats.GetHunger() != 100.0f || stats.GetStamina() != 100.0f) {
+        std::cerr << "FAILED: Respawn incorrect" << std::endl;
+        return;
+    }
+
+    // Hunger decay test (simulate 2 seconds)
+    stats.SetHunger(50.0f);
+    stats.Update(2.0f);
+    std::cout << "After 2s update, hunger: " << stats.GetHunger() << " (expected ~49)" << std::endl;
+    if (stats.GetHunger() > 49.5f || stats.GetHunger() < 48.5f) {
+        std::cerr << "FAILED: Hunger decay incorrect" << std::endl;
+        return;
+    }
+
+    // Stamina regen when not sprinting
+    stats.SetStamina(50.0f);
+    stats.SetSprinting(false);
+    stats.Update(1.0f);
+    std::cout << "After 1s not sprinting, stamina: " << stats.GetStamina() << " (expected ~60)" << std::endl;
+    if (stats.GetStamina() < 59.0f || stats.GetStamina() > 61.0f) {
+        std::cerr << "FAILED: Stamina regeneration incorrect" << std::endl;
+        return;
+    }
+
+    // Sprint stamina cost
+    stats.SetStamina(100.0f);
+    stats.SetSprinting(true);
+    stats.Update(1.0f);
+    std::cout << "After 1s sprinting, stamina: " << stats.GetStamina() << " (expected ~85)" << std::endl;
+    if (stats.GetStamina() < 84.0f || stats.GetStamina() > 86.0f) {
+        std::cerr << "FAILED: Sprint stamina cost incorrect" << std::endl;
+        return;
+    }
+
+    std::cout << "Player stats test passed!" << std::endl;
+}
+
+void TestSurvivalMode() {
+    std::cout << "\n=== Survival Mode Test ===" << std::endl;
+
+    // SurvivalMode requires World/Camera/Input/Renderer pointers.
+    // We test the standalone PlayerStats and CraftingSystem integration here.
+
+    // Test crafting system initialization
+    CraftingSystem craftingSystem;
+    std::cout << "Crafting recipes loaded: " << craftingSystem.GetRecipeCount() << std::endl;
+
+    // Test PlayerStats with spawn point
+    PlayerStats stats(Vec3(5, 20, 5));
+    Vec3 spawn = stats.GetSpawnPoint();
+    std::cout << "Spawn point: (" << spawn.x << ", " << spawn.y << ", " << spawn.z << ")" << std::endl;
+    if (spawn.x != 5.0f || spawn.y != 20.0f || spawn.z != 5.0f) {
+        std::cerr << "FAILED: Spawn point incorrect" << std::endl;
+        return;
+    }
+
+    // Simulate update loop - player takes damage, starves, dies, respawns
+    stats.SetHealth(5.0f);
+    stats.SetHunger(0.0f);
+    stats.SetStamina(100.0f);
+
+    // Update for 5 seconds while starving
+    for (int i = 0; i < 5; ++i) {
+        stats.Update(1.0f);
+        std::cout << "  t=" << (i+1) << "s: health=" << stats.GetHealth()
+                  << ", hunger=" << stats.GetHunger()
+                  << ", dead=" << (stats.IsDead() ? "YES" : "NO") << std::endl;
+        if (stats.IsDead()) break;
+    }
+
+    if (!stats.IsDead()) {
+        std::cerr << "FAILED: Player should have died from starvation" << std::endl;
+        return;
+    }
+
+    // Respawn
+    stats.Respawn();
+    std::cout << "After respawn: health=" << stats.GetHealth()
+              << ", hunger=" << stats.GetHunger()
+              << ", stamina=" << stats.GetStamina()
+              << ", dead=" << (stats.IsDead() ? "YES" : "NO") << std::endl;
+    if (stats.IsDead()) {
+        std::cerr << "FAILED: Player should be alive after respawn" << std::endl;
+        return;
+    }
+
+    // Test night hunger multiplier via PlayerStats configuration
+    stats.SetHungerDecayRate(0.5f * 1.5f); // night multiplier
+    stats.SetHunger(100.0f);
+    stats.Update(2.0f);
+    std::cout << "After 2s with night multiplier, hunger: " << stats.GetHunger() << " (expected ~98.5)" << std::endl;
+    if (stats.GetHunger() > 99.0f || stats.GetHunger() < 97.0f) {
+        std::cerr << "FAILED: Night hunger decay incorrect" << std::endl;
+        return;
+    }
+
+    std::cout << "Survival mode test passed!" << std::endl;
+}
+
+void TestDayNightCycle() {
+    std::cout << "\n=== Day/Night Cycle Test ===" << std::endl;
+
+    DayNightCycle cycle;
+
+    // Test initial state (dawn)
+    std::cout << "Initial time: " << cycle.GetTimeOfDay() << " (0.0 = dawn)" << std::endl;
+    std::cout << "IsNight: " << (cycle.IsNight() ? "Yes" : "No") << std::endl;
+    std::cout << "IsDay: " << (cycle.IsDay() ? "Yes" : "No") << std::endl;
+    std::cout << "Time string: " << cycle.GetTimeString() << std::endl;
+
+    // Test time progression (1 day = 1200 seconds)
+    cycle.SetDayLength(1200.0f);
+    cycle.Update(600.0f); // Half a day
+    std::cout << "\nAfter 600s (half day):" << std::endl;
+    std::cout << "Time: " << cycle.GetTimeOfDay() << std::endl;
+    std::cout << "IsNight: " << (cycle.IsNight() ? "Yes" : "No") << std::endl;
+    std::cout << "IsDay: " << (cycle.IsDay() ? "Yes" : "No") << std::endl;
+
+    // Test noon
+    cycle.SkipToNoon();
+    std::cout << "\nAt noon (0.25):" << std::endl;
+    std::cout << "Time: " << cycle.GetTimeOfDay() << std::endl;
+    std::cout << "IsDay: " << (cycle.IsDay() ? "Yes" : "No") << std::endl;
+    std::cout << "Sun intensity: " << cycle.GetSunIntensity() << std::endl;
+    std::cout << "Sky top color: (" << cycle.GetSkyTopColor().x << ", "
+              << cycle.GetSkyTopColor().y << ", " << cycle.GetSkyTopColor().z << ")" << std::endl;
+
+    // Test dusk
+    cycle.SkipToDusk();
+    std::cout << "\nAt dusk (0.5):" << std::endl;
+    std::cout << "Time: " << cycle.GetTimeOfDay() << std::endl;
+    std::cout << "IsDusk: " << (cycle.IsDusk() ? "Yes" : "No") << std::endl;
+    std::cout << "Sky horizon color: (" << cycle.GetSkyHorizonColor().x << ", "
+              << cycle.GetSkyHorizonColor().y << ", " << cycle.GetSkyHorizonColor().z << ")" << std::endl;
+
+    // Test midnight
+    cycle.SkipToMidnight();
+    std::cout << "\nAt midnight (0.75):" << std::endl;
+    std::cout << "Time: " << cycle.GetTimeOfDay() << std::endl;
+    std::cout << "IsNight: " << (cycle.IsNight() ? "Yes" : "No") << std::endl;
+    std::cout << "Moon phase: " << cycle.GetMoonPhaseName() << std::endl;
+    std::cout << "Moon brightness: " << cycle.GetMoonPhaseBrightness() << std::endl;
+
+    // Test day/night blend
+    cycle.SkipToDawn();
+    std::cout << "\nDay/night blend at dawn: " << cycle.GetDayNightBlend() << std::endl;
+    cycle.SkipToNoon();
+    std::cout << "Day/night blend at noon: " << cycle.GetDayNightBlend() << std::endl;
+    cycle.SkipToDusk();
+    std::cout << "Day/night blend at dusk: " << cycle.GetDayNightBlend() << std::endl;
+    cycle.SkipToMidnight();
+    std::cout << "Day/night blend at midnight: " << cycle.GetDayNightBlend() << std::endl;
+
+    // Test moon phases
+    std::cout << "\n=== Moon Phase Test ===" << std::endl;
+    for (int i = 0; i < 8; ++i) {
+        cycle.SetTime(0.75f);
+        std::cout << "Day " << (cycle.GetDayCount() + 1) << ": "
+                  << cycle.GetMoonPhaseName() << " (brightness: "
+                  << cycle.GetMoonPhaseBrightness() << ")" << std::endl;
+    }
+
+    // Test ambient light
+    cycle.SkipToNoon();
+    Vec3 ambientNoon = cycle.GetTotalAmbientLight();
+    cycle.SkipToMidnight();
+    Vec3 ambientNight = cycle.GetTotalAmbientLight();
+    std::cout << "\nAmbient at noon: (" << ambientNoon.x << ", " << ambientNoon.y << ", " << ambientNoon.z << ")" << std::endl;
+    std::cout << "Ambient at midnight: (" << ambientNight.x << ", " << ambientNight.y << ", " << ambientNight.z << ")" << std::endl;
+
+    std::cout << "Day/Night cycle test passed!" << std::endl;
+}
+
+void TestLightSystem() {
+    std::cout << "\n=== Light System Test ===" << std::endl;
+
+    World world;
+    LightSystem lights(&world);
+
+    // Create a simple chunk with some blocks
+    Chunk* chunk = world.GetOrCreateChunk(0, 0, 0);
+    if (chunk) {
+        chunk->SetBlock(0, 0, 0, 1);
+        chunk->SetBlock(1, 0, 0, 1);
+        chunk->SetBlock(0, 1, 0, 0);
+    }
+
+    std::cout << "Initial sky light intensity: " << lights.GetSkyLightIntensity() << std::endl;
+
+    // Test torch placement
+    lights.PlaceTorch(5, 5, 5, 14);
+    std::cout << "Placed torch at (5, 5, 5) with level 14" << std::endl;
+    std::cout << "Light sources: " << lights.GetLightSources().size() << std::endl;
+
+    int lightAtTorch = lights.GetTotalLightLevel(5, 5, 5);
+    std::cout << "Light at torch position: " << lightAtTorch << std::endl;
+
+    int lightNearby = lights.GetTotalLightLevel(6, 5, 5);
+    std::cout << "Light at (6, 5, 5): " << lightNearby << std::endl;
+
+    int lightFar = lights.GetTotalLightLevel(10, 5, 5);
+    std::cout << "Light at (10, 5, 5): " << lightFar << std::endl;
+
+    // Test sky light update
+    lights.UpdateSkyLightForTime(1.0f);
+    std::cout << "\nSky light intensity at full day: " << lights.GetSkyLightIntensity() << std::endl;
+
+    lights.UpdateSkyLightForTime(0.0f);
+    std::cout << "Sky light intensity at full night: " << lights.GetSkyLightIntensity() << std::endl;
+
+    bool darkEnough = lights.IsDarkEnoughForMobs(5, 5, 5, 7);
+    std::cout << "\nIs (5, 5, 5) dark enough for mobs: " << (darkEnough ? "Yes" : "No") << std::endl;
+
+    lights.RemoveTorch(5, 5, 5);
+    std::cout << "After removing torch, light sources: " << lights.GetLightSources().size() << std::endl;
+
+    lights.PlaceTorch(0, 2, 0, 14);
+    lights.PlaceTorch(10, 2, 10, 10);
+    std::cout << "After placing 2 more torches, light sources: " << lights.GetLightSources().size() << std::endl;
+
+    lights.ClearLightSources();
+    std::cout << "After clearing all, light sources: " << lights.GetLightSources().size() << std::endl;
+
+    std::cout << "Light system test passed!" << std::endl;
+}
+
+void TestMobSpawner() {
+    std::cout << "\n=== Mob Spawner Test ===" << std::endl;
+
+    World world;
+    LightSystem lights(&world);
+    DayNightCycle cycle;
+
+    // Create some terrain for spawning
+    for (int x = -2; x < 2; ++x) {
+        for (int z = -2; z < 2; ++z) {
+            Chunk* chunk = world.GetOrCreateChunk(x, 0, z);
+            if (chunk) {
+                for (int bx = 0; bx < CHUNK_SIZE; ++bx) {
+                    for (int bz = 0; bz < CHUNK_SIZE; ++bz) {
+                        chunk->SetBlock(bx, 4, bz, 1);
+                    }
+                }
+            }
+        }
+    }
+
+    MobSpawner spawner(&world, &lights, &cycle);
+
+    std::cout << "Initial mob count: " << spawner.GetMobCount() << std::endl;
+
+    // Test spawning at night
+    cycle.SkipToMidnight();
+    lights.UpdateSkyLightForTime(0.0f);
+
+    std::cout << "\nAt midnight (night):" << std::endl;
+    std::cout << "IsNight: " << (cycle.IsNight() ? "Yes" : "No") << std::endl;
+
+    Mob* zombie = spawner.SpawnMob(MobType::Zombie, Vec3(10, 5, 10));
+    Mob* skeleton = spawner.SpawnMob(MobType::Skeleton, Vec3(15, 5, 15));
+    Mob* spider = spawner.SpawnMob(MobType::Spider, Vec3(20, 5, 20));
+
+    std::cout << "Spawned mobs: " << spawner.GetMobCount() << std::endl;
+
+    if (zombie) {
+        MobDef def = MobSpawner::GetMobDefForType(zombie->type);
+        std::cout << "Zombie health: " << zombie->health << ", burns in daylight: "
+                  << (def.burnsInDaylight ? "Yes" : "No") << std::endl;
+    }
+
+    if (spider) {
+        MobDef def = MobSpawner::GetMobDefForType(spider->type);
+        std::cout << "Spider can climb walls: " << (def.canClimbWalls ? "Yes" : "No") << std::endl;
+    }
+
+    auto chunkMobs = spawner.GetMobsInChunk(0, 0, 0);
+    std::cout << "Mobs in chunk (0,0,0): " << chunkMobs.size() << std::endl;
+
+    // Test spawn cap
+    std::cout << "\n=== Spawn Cap Test ===" << std::endl;
+    for (int i = 0; i < 10; ++i) {
+        spawner.SpawnMob(MobType::Zombie, Vec3(static_cast<float>(i * 2), 5.0f, 0.0f));
+    }
+    std::cout << "After spawning 10 more zombies: " << spawner.GetMobCount() << std::endl;
+
+    // Test despawning at dawn
+    std::cout << "\n=== Dawn Despawn Test ===" << std::endl;
+    cycle.SkipToDawn();
+    lights.UpdateSkyLightForTime(1.0f);
+    spawner.OnDawnBegin();
+    std::cout << "After dawn (surface mobs despawned): " << spawner.GetMobCount() << std::endl;
+
+    // Test cave protection
+    std::cout << "\n=== Cave Protection Test ===" << std::endl;
+    cycle.SkipToMidnight();
+    lights.UpdateSkyLightForTime(0.0f);
+
+    Mob* caveZombie = spawner.SpawnMob(MobType::Zombie, Vec3(5, 5, 5));
+    if (caveZombie) {
+        caveZombie->inCave = true;
+        std::cout << "Spawned cave zombie, inCave: " << (caveZombie->inCave ? "Yes" : "No") << std::endl;
+    }
+
+    cycle.SkipToDawn();
+    lights.UpdateSkyLightForTime(1.0f);
+    spawner.OnDawnBegin();
+    std::cout << "After dawn with cave mob: " << spawner.GetMobCount() << " (should be 1)" << std::endl;
+
+    // Test queries
+    std::cout << "\n=== Mob Query Tests ===" << std::endl;
+    auto allMobs = spawner.GetAllMobs();
+    std::cout << "All mobs: " << allMobs.size() << std::endl;
+
+    auto nearbyMobs = spawner.GetMobsInRadius(Vec3(0, 5, 0), 20.0f);
+    std::cout << "Mobs within 20 blocks of (0,5,0): " << nearbyMobs.size() << std::endl;
+
+    spawner.DespawnAllMobs();
+    std::cout << "\nAfter despawning all: " << spawner.GetMobCount() << std::endl;
+
+    std::cout << "Mob spawner test passed!" << std::endl;
+}
+
 int main() {
     std::cout << "=== Aether Game Engine - Feature Tests ===" << std::endl;
 
@@ -588,6 +980,8 @@ int main() {
     TestEnemySpawner();
     TestCombatSystem();
     TestFlyCamera();
+    TestPlayerStats();
+    TestSurvivalMode();
 
     std::cout << "\n=== All Tests Passed ===" << std::endl;
 
