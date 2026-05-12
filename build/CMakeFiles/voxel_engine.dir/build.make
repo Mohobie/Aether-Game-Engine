@@ -1245,66 +1245,10 @@ CMakeFiles/voxel_engine.dir/src/core/application.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/voxel_engine.dir/src/core/application.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/core/application.cpp -o CMakeFiles/voxel_engine.dir/src/core/application.cpp.s
 
-CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
-CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.o: ../src/scripting/lua_engine.cpp
-CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building CXX object CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.o -MF CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.o -c /home/mohobie/projects/aether-game-engine/src/scripting/lua_engine.cpp
-
-CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/scripting/lua_engine.cpp > CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.i
-
-CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/scripting/lua_engine.cpp -o CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.s
-
-CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
-CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.o: ../src/scripting/script_engine.cpp
-CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building CXX object CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.o -MF CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.o -c /home/mohobie/projects/aether-game-engine/src/scripting/script_engine.cpp
-
-CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/scripting/script_engine.cpp > CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.i
-
-CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/scripting/script_engine.cpp -o CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.s
-
-CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
-CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.o: ../src/scripting/lua_bindings.cpp
-CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building CXX object CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.o -MF CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.o -c /home/mohobie/projects/aether-game-engine/src/scripting/lua_bindings.cpp
-
-CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/scripting/lua_bindings.cpp > CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.i
-
-CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/scripting/lua_bindings.cpp -o CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.s
-
-CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
-CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.o: ../src/scripting/mod_system.cpp
-CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building CXX object CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.o -MF CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/scripting/mod_system.cpp
-
-CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/scripting/mod_system.cpp > CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.i
-
-CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/scripting/mod_system.cpp -o CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.s
-
 CMakeFiles/voxel_engine.dir/src/main.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/voxel_engine.dir/src/main.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building CXX object CMakeFiles/voxel_engine.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building CXX object CMakeFiles/voxel_engine.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/main.cpp.o -MF CMakeFiles/voxel_engine.dir/src/main.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/main.cpp.o -c /home/mohobie/projects/aether-game-engine/src/main.cpp
 
 CMakeFiles/voxel_engine.dir/src/main.cpp.i: cmake_force
@@ -1401,10 +1345,6 @@ voxel_engine_OBJECTS = \
 "CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.o" \
 "CMakeFiles/voxel_engine.dir/src/core/engine.cpp.o" \
 "CMakeFiles/voxel_engine.dir/src/core/application.cpp.o" \
-"CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.o" \
-"CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.o" \
-"CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.o" \
-"CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.o" \
 "CMakeFiles/voxel_engine.dir/src/main.cpp.o"
 
 # External object files for target voxel_engine
@@ -1494,17 +1434,13 @@ voxel_engine: CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.o
 voxel_engine: CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.o
 voxel_engine: CMakeFiles/voxel_engine.dir/src/core/engine.cpp.o
 voxel_engine: CMakeFiles/voxel_engine.dir/src/core/application.cpp.o
-voxel_engine: CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.o
-voxel_engine: CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.o
-voxel_engine: CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.o
-voxel_engine: CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.o
 voxel_engine: CMakeFiles/voxel_engine.dir/src/main.cpp.o
 voxel_engine: CMakeFiles/voxel_engine.dir/build.make
 voxel_engine: /usr/lib/x86_64-linux-gnu/liblua5.4.so
 voxel_engine: /usr/lib/x86_64-linux-gnu/libGLX.so
 voxel_engine: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 voxel_engine: CMakeFiles/voxel_engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Linking CXX executable voxel_engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Linking CXX executable voxel_engine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/voxel_engine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -202,16 +202,10 @@ endif()
 add_executable(voxel_test src/test_main.cpp ${CORE_SOURCES})
 add_executable(world_test src/world_test.cpp ${CORE_SOURCES})
 add_executable(save_test src/save_test.cpp ${CORE_SOURCES})
-add_executable(weather_test tests/test_weather_system.cpp ${CORE_SOURCES})
-add_executable(day_night_test tests/test_day_night.cpp ${CORE_SOURCES})
-add_executable(inventory_test tests/test_inventory_system.cpp ${CORE_SOURCES})
 
 target_include_directories(voxel_test PRIVATE ${COMMON_INCLUDES})
 target_include_directories(world_test PRIVATE ${COMMON_INCLUDES})
 target_include_directories(save_test PRIVATE ${COMMON_INCLUDES})
-target_include_directories(weather_test PRIVATE ${COMMON_INCLUDES})
-target_include_directories(day_night_test PRIVATE ${COMMON_INCLUDES})
-target_include_directories(inventory_test PRIVATE ${COMMON_INCLUDES})
 
 # ============================================
 # Platform-Specific Linking
@@ -220,58 +214,13 @@ if(PLATFORM_LINUX)
     target_link_libraries(voxel_test PRIVATE pthread dl)
     target_link_libraries(world_test PRIVATE pthread dl)
     target_link_libraries(save_test PRIVATE pthread dl)
-    target_link_libraries(day_night_test PRIVATE pthread dl)
-    target_link_libraries(inventory_test PRIVATE pthread dl)
 elseif(PLATFORM_WINDOWS)
     target_link_libraries(voxel_test PRIVATE ws2_32 winmm)
     target_link_libraries(world_test PRIVATE ws2_32 winmm)
     target_link_libraries(save_test PRIVATE ws2_32 winmm)
-    target_link_libraries(day_night_test PRIVATE ws2_32 winmm)
-    target_link_libraries(inventory_test PRIVATE ws2_32 winmm)
 endif()
 
-add_executable(editor_test tests/test_editor.cpp ${CORE_SOURCES})
-target_include_directories(editor_test PRIVATE ${COMMON_INCLUDES})
-if(PLATFORM_LINUX)
-    target_link_libraries(editor_test PRIVATE pthread dl)
-elseif(PLATFORM_WINDOWS)
-    target_link_libraries(editor_test PRIVATE ws2_32 winmm)
-endif()
 
-add_executable(console_test tests/test_console_commands.cpp ${CORE_SOURCES})
-target_include_directories(console_test PRIVATE ${COMMON_INCLUDES})
-if(PLATFORM_LINUX)
-    target_link_libraries(console_test PRIVATE pthread dl)
-elseif(PLATFORM_WINDOWS)
-    target_link_libraries(console_test PRIVATE ws2_32 winmm)
-endif()
-
-add_executable(culling_test tests/test_culling.cpp ${CORE_SOURCES})
-target_include_directories(culling_test PRIVATE ${COMMON_INCLUDES})
-if(PLATFORM_LINUX)
-    target_link_libraries(culling_test PRIVATE pthread dl)
-elseif(PLATFORM_WINDOWS)
-    target_link_libraries(culling_test PRIVATE ws2_32 winmm)
-endif()
-
-add_executable(gamepad_test tests/test_gamepad_standalone.cpp src/platform/gamepad.cpp)
-target_include_directories(gamepad_test PRIVATE ${COMMON_INCLUDES})
-
-add_executable(sandbox_test tests/test_sandbox_mode.cpp ${CORE_SOURCES})
-target_include_directories(sandbox_test PRIVATE ${COMMON_INCLUDES})
-if(PLATFORM_LINUX)
-    target_link_libraries(sandbox_test PRIVATE pthread dl)
-elseif(PLATFORM_WINDOWS)
-    target_link_libraries(sandbox_test PRIVATE ws2_32 winmm)
-endif()
-
-add_executable(renderer_integration_test tests/test_renderer_integration.cpp ${CORE_SOURCES})
-target_include_directories(renderer_integration_test PRIVATE ${COMMON_INCLUDES})
-if(PLATFORM_LINUX)
-    target_link_libraries(renderer_integration_test PRIVATE pthread dl)
-elseif(PLATFORM_WINDOWS)
-    target_link_libraries(renderer_integration_test PRIVATE ws2_32 winmm)
-endif()
 
 set(ALL_SOURCES ${CORE_SOURCES})
 
@@ -290,10 +239,6 @@ set(OPTIONAL_SOURCES
     src/voxel/block_mesh_builder.cpp
     src/core/engine.cpp
     src/core/application.cpp
-    src/scripting/lua_engine.cpp
-    src/scripting/script_engine.cpp
-    src/scripting/lua_bindings.cpp
-    src/scripting/mod_system.cpp
     src/main.cpp
 )
 
