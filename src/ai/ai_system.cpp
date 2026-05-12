@@ -224,14 +224,14 @@ void NavigationMesh::Visualize() const {
 // Path Implementation
 // ============================================
 
-Vec3 Path::GetCurrentWaypoint() const {
+Vec3 AIPath::GetCurrentWaypoint() const {
     if (currentWaypoint < waypoints.size()) {
         return waypoints[currentWaypoint];
     }
     return Vec3(0, 0, 0);
 }
 
-Vec3 Path::GetNextWaypoint() {
+Vec3 AIPath::GetNextWaypoint() {
     if (currentWaypoint < waypoints.size() - 1) {
         currentWaypoint++;
         return waypoints[currentWaypoint];
@@ -240,11 +240,11 @@ Vec3 Path::GetNextWaypoint() {
     return waypoints.empty() ? Vec3(0, 0, 0) : waypoints.back();
 }
 
-bool Path::HasReachedEnd() const {
+bool AIPath::HasReachedEnd() const {
     return completed || currentWaypoint >= waypoints.size() - 1;
 }
 
-void Path::Reset() {
+void AIPath::Reset() {
     currentWaypoint = 0;
     completed = false;
 }
@@ -309,7 +309,7 @@ Vec3 SteeringBehavior::AvoidObstacles(const Vec3& position, const Vec3& velocity
     return avoidance;
 }
 
-Vec3 SteeringBehavior::FollowPath(Path& path, const Vec3& position, const Vec3& velocity, 
+Vec3 SteeringBehavior::FollowPath(AIPath& path, const Vec3& position, const Vec3& velocity, 
                                    float maxSpeed, float waypointRadius) {
     if (path.HasReachedEnd()) {
         return Vec3(0, 0, 0);
@@ -418,7 +418,7 @@ void AIAgent::ClearTarget() {
     currentPath.Reset();
 }
 
-void AIAgent::SetPath(const Path& path) {
+void AIAgent::SetPath(const AIPath& path) {
     currentPath = path;
     currentPath.Reset();
 }
@@ -454,7 +454,7 @@ Vec3 AIAgent::CalculateSteering(const NavigationMesh* navMesh) {
             // Find path through navmesh
             std::vector<Vec3> path = navMesh->FindPath(position, target);
             if (!path.empty()) {
-                Path newPath;
+                AIPath newPath;
                 newPath.waypoints = path;
                 SetPath(newPath);
             }

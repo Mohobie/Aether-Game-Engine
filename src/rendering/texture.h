@@ -51,35 +51,4 @@ struct Material {
     static Material LoadFromJson(const std::string& json);
 };
 
-// Asset manager for loading and caching assets
-class AssetManager {
-private:
-    std::unordered_map<std::string, Texture> textures;
-    std::unordered_map<std::string, Material> materials;
-    std::string basePath;
-    
-public:
-    AssetManager(const std::string& base = "assets/");
-    
-    // Texture management
-    Texture* LoadTexture(const std::string& name, const std::string& path);
-    Texture* GetTexture(const std::string& name);
-    void UnloadTexture(const std::string& name);
-    
-    // Material management
-    Material* LoadMaterial(const std::string& name, const std::string& path);
-    Material* GetMaterial(const std::string& name);
-    void UnloadMaterial(const std::string& name);
-    
-    // Generate default textures
-    void GenerateDefaultTextures();
-    
-    // Get stats
-    size_t GetTextureCount() const { return textures.size(); }
-    size_t GetMaterialCount() const { return materials.size(); }
-    
-    // Clear all
-    void Clear();
-};
-
 } // namespace vge

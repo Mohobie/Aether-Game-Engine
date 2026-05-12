@@ -100,6 +100,10 @@ set(CORE_SOURCES
     src/physics/physics_constraints.cpp
     src/network/network_architecture.cpp
     src/network/packet.cpp
+    src/network/network_manager.cpp
+    src/network/server_authority.cpp
+    src/network/entity_replication.cpp
+    src/network/networked_game_mode.cpp
     src/ai/behavior_tree.cpp
     src/ai/enemy_ai.cpp
     src/ai/enemy_spawner.cpp

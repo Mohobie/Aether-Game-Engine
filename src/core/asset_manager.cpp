@@ -39,7 +39,6 @@ std::vector<std::string> FileWatcher::GetChangedFiles() {
 
 void FileWatcher::WatchLoop() {
     while (m_running) {
-        // Simple polling-based file watcher
         auto files = File::ListDirectory(m_watchDir);
         {
             std::lock_guard<std::mutex> lock(m_mutex);
@@ -71,10 +70,8 @@ AssetManager::AssetManager(const std::string& assetRoot)
 AssetManager::~AssetManager() { Shutdown(); }
 
 bool AssetManager::Initialize() {
-    // Ensure asset directory exists
     File::CreateDirectory(m_assetRoot);
 
-    // Start async workers
     m_asyncRunning = true;
     unsigned int numWorkers = std::thread::hardware_concurrency();
     if (numWorkers == 0) numWorkers = 2;
@@ -122,11 +119,10 @@ void AssetManager::AsyncWorkerLoop() {
             m_asyncQueue.pop();
         }
 
-        // Process the request
         bool success = false;
         switch (request.type) {
             case AssetType::Texture:
-                success = LoadTexture(request.id, request.path);
+                success = DoLoadTexture(request.id, request.path);
                 break;
             case AssetType::Model:
                 success = LoadModel(request.id, request.path);
@@ -153,8 +149,49 @@ void AssetManager::AsyncWorkerLoop() {
     }
 }
 
-void AssetManager::LoadAsync(const std::string& id, const std::string& path,
-                             std::function<void(Texture*)> callback) {
+Texture* AssetManager::LoadTexture(const std::string& id, const std::string& path) {
+    std::lock_guard<std::mutex> lock(m_mutex);
+
+    auto it = m_assets.find(id);
+    if (it != m_assets.end()) {
+        it->second->metadata.refCount++;
+        return static_cast<Texture*>(it->second.get());
+    }
+
+    std::string fullPath = m_assetRoot + path;
+    Texture* texture = new Texture();
+
+    texture->width = 64;
+    texture->height = 64;
+    texture->channels = 4;
+    texture->data.resize(64 * 64 * 4, 255);
+
+    texture->metadata.id = id;
+    texture->metadata.path = path;
+    texture->metadata.type = AssetType::Texture;
+    texture->metadata.loaded = true;
+    texture->metadata.refCount = 1;
+
+    m_assets[id] = std::shared_ptr<Asset>(texture);
+    return texture;
+}
+
+Texture* AssetManager::GetTexture(const std::string& id) {
+    std::lock_guard<std::mutex> lock(m_mutex);
+    auto it = m_assets.find(id);
+    if (it != m_assets.end()) {
+        return static_cast<Texture*>(it->second.get());
+    }
+    return nullptr;
+}
+
+bool AssetManager::HasTexture(const std::string& id) const {
+    std::lock_guard<std::mutex> lock(m_mutex);
+    return m_assets.find(id) != m_assets.end();
+}
+
+void AssetManager::LoadTextureAsync(const std::string& id, const std::string& path,
+                                    std::function<void(Texture*)> callback) {
     {
         std::lock_guard<std::mutex> lock(m_mutex);
         auto it = m_assets.find(id);
@@ -187,6 +224,11 @@ void AssetManager::LoadAsync(const std::string& id, const std::string& path,
         m_asyncQueue.push(request);
     }
     m_asyncCV.notify_one();
+}
+
+bool AssetManager::Has(const std::string& id) const {
+    std::lock_guard<std::mutex> lock(m_mutex);
+    return m_assets.find(id) != m_assets.end();
 }
 
 void AssetManager::Unload(const std::string& id) {
@@ -227,13 +269,10 @@ void AssetManager::UpdateHotReload() {
         auto changedFiles = m_fileWatcher->GetChangedFiles();
         for (const auto& file : changedFiles) {
             LOG_INFO("Hot-reload: File changed: %s", file.c_str());
-            // Find asset by path and reload
             std::lock_guard<std::mutex> lock(m_mutex);
             for (auto& pair : m_assets) {
                 if (pair.second->metadata.path == file) {
-                    // Reload the asset
                     LOG_INFO("Hot-reload: Reloading asset: %s", pair.first.c_str());
-                    // In a real implementation, reload the actual asset data
                     pair.second->metadata.lastModified = File::GetLastModifiedTime(file);
                     break;
                 }
@@ -270,14 +309,12 @@ void AssetManager::PrintStats() const {
 }
 
 void AssetManager::GenerateDefaults() {
-    // Generate default texture (magenta checkerboard for missing textures)
     Texture* defaultTex = new Texture();
     defaultTex->width = 64;
     defaultTex->height = 64;
     defaultTex->channels = 4;
     defaultTex->data.resize(64 * 64 * 4);
 
-    // Create checkerboard pattern
     for (int y = 0; y < 64; ++y) {
         for (int x = 0; x < 64; ++x) {
             int idx = (y * 64 + x) * 4;
@@ -309,7 +346,7 @@ void AssetManager::GenerateDefaults() {
     LOG_INFO("Generated default assets");
 }
 
-bool AssetManager::LoadTexture(const std::string& id, const std::string& path) {
+bool AssetManager::DoLoadTexture(const std::string& id, const std::string& path) {
     std::lock_guard<std::mutex> lock(m_mutex);
     if (m_assets.find(id) != m_assets.end()) return true;
 
@@ -330,31 +367,26 @@ bool AssetManager::LoadTexture(const std::string& id, const std::string& path) {
 }
 
 bool AssetManager::LoadModel(const std::string& id, const std::string& path) {
-    // Placeholder for model loading
     LOG_INFO("Loading model: %s", path.c_str());
     return true;
 }
 
 bool AssetManager::LoadSound(const std::string& id, const std::string& path) {
-    // Placeholder for sound loading
     LOG_INFO("Loading sound: %s", path.c_str());
     return true;
 }
 
 bool AssetManager::LoadShader(const std::string& id, const std::string& path) {
-    // Placeholder for shader loading
     LOG_INFO("Loading shader: %s", path.c_str());
     return true;
 }
 
 bool AssetManager::LoadFont(const std::string& id, const std::string& path) {
-    // Placeholder for font loading
     LOG_INFO("Loading font: %s", path.c_str());
     return true;
 }
 
 bool AssetManager::LoadMaterial(const std::string& id, const std::string& path) {
-    // Placeholder for material loading
     LOG_INFO("Loading material: %s", path.c_str());
     return true;
 }

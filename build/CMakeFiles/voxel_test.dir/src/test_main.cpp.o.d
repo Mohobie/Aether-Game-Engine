@@ -250,6 +250,12 @@ CMakeFiles/voxel_test.dir/src/test_main.cpp.o: \
  /home/mohobie/projects/aether-game-engine/src/entity/entity.h \
  /usr/include/c++/11/typeindex \
  /home/mohobie/projects/aether-game-engine/src/voxel/block_registry.h \
+ /home/mohobie/projects/aether-game-engine/src/network/network_manager.h \
+ /home/mohobie/projects/aether-game-engine/src/network/network_serialization.h \
+ /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
+ /home/mohobie/projects/aether-game-engine/src/network/server_authority.h \
+ /home/mohobie/projects/aether-game-engine/src/network/entity_replication.h \
+ /home/mohobie/projects/aether-game-engine/src/network/networked_game_mode.h \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
  /usr/include/c++/11/ios /usr/include/c++/11/bits/ios_base.h \
  /usr/include/c++/11/bits/locale_classes.h \

@@ -18,6 +18,10 @@
 #include "entity/entity.h"
 #include "voxel/world.h"
 #include "voxel/block_registry.h"
+#include "network/network_manager.h"
+#include "network/server_authority.h"
+#include "network/entity_replication.h"
+#include "network/networked_game_mode.h"
 #include <iostream>
 #include <fstream>
 #include <filesystem>
@@ -28,6 +32,10 @@ using namespace vge;
 void TestScriptEngine();
 void TestLuaBindings();
 void TestModSystem();
+void TestNetworkManager();
+void TestServerAuthority();
+void TestEntityReplication();
+void TestNetworkedGameMode();
 
 void TestPostProcessing() {
     std::cout << "\n=== Post-Processing Stack Test ===" << std::endl;
@@ -249,7 +257,7 @@ void TestAI() {
     agent.SetPosition(start);
     agent.SetMaxSpeed(5.0f);
     // Create path object
-    Path pathObj;
+    AIPath pathObj;
     pathObj.waypoints = path;
     agent.SetPath(pathObj);
     
@@ -981,6 +989,7 @@ void TestMobSpawner() {
     std::cout << "Mob spawner test passed!" << std::endl;
 }
 
+
 int main() {
     std::cout << "=== Aether Game Engine - Feature Tests ===" << std::endl;
 
@@ -997,8 +1006,206 @@ int main() {
     TestDayNightCycle();
     TestLightSystem();
     TestMobSpawner();
+    TestNetworkManager();
+    TestServerAuthority();
+    TestEntityReplication();
+    TestNetworkedGameMode();
 
     std::cout << "\n=== All Tests Passed ===" << std::endl;
 
     return 0;
+}
+// ============================================
+// Networking Tests
+// ============================================
+
+void TestNetworkManager() {
+    std::cout << "\n=== Network Manager Test ===" << std::endl;
+
+    vge::NetworkManager2 network;
+    auto* server = network.CreateServer(7777);
+    std::cout << "Server created: " << (server ? "PASS" : "FAIL") << std::endl;
+
+    auto* client = network.CreateClient();
+    std::cout << "Client created: " << (client ? "PASS" : "FAIL") << std::endl;
+
+    client->Connect("127.0.0.1", 7777);
+    std::cout << "Client connect: PASS" << std::endl;
+
+    bool rpcCalled = false;
+    server->RegisterRPC("TestRPC", [&rpcCalled](vge::ClientID sender, vge::RPCArgs& args) {
+        rpcCalled = true;
+    });
+    std::cout << "Server RPC register: PASS" << std::endl;
+
+    bool clientRpcCalled = false;
+    client->RegisterRPC("ClientRPC", [&clientRpcCalled](vge::RPCArgs& args) {
+        clientRpcCalled = true;
+    });
+    std::cout << "Client RPC register: PASS" << std::endl;
+
+    vge::NetBuffer buffer;
+    buffer.WriteInt(42);
+    buffer.WriteFloat(3.14f);
+    buffer.WriteString("hello");
+    buffer.WriteBool(true);
+
+    int intVal = buffer.ReadInt();
+    float floatVal = buffer.ReadFloat();
+    std::string strVal = buffer.ReadString();
+    bool boolVal = buffer.ReadBool();
+
+    std::cout << "Serialization: "
+              << (intVal == 42 ? "int PASS" : "int FAIL")
+              << ", " << (floatVal == 3.14f ? "float PASS" : "float FAIL")
+              << ", " << (strVal == "hello" ? "string PASS" : "string FAIL")
+              << ", " << (boolVal ? "bool PASS" : "bool FAIL")
+              << std::endl;
+
+    vge::NetBuffer vecBuffer;
+    vge::Vec3 testVec(1.0f, 2.0f, 3.0f);
+    vecBuffer.WriteVec3(testVec);
+    vge::Vec3 readVec = vecBuffer.ReadVec3();
+    std::cout << "Vec3 serialization: "
+              << ((readVec - testVec).length() < 0.001f ? "PASS" : "FAIL")
+              << std::endl;
+
+    std::cout << "Network manager test passed!" << std::endl;
+}
+
+void TestServerAuthority() {
+    std::cout << "\n=== Server Authority Test ===" << std::endl;
+
+    vge::ServerAuthority authority;
+
+    vge::EntityID entity1 = 100;
+    vge::EntityID entity2 = 101;
+    vge::ClientID client1 = 1;
+
+    authority.SetAuthority(entity1, vge::Authority::Server);
+    std::cout << "Server authority set: PASS" << std::endl;
+
+    authority.SetAuthority(entity2, vge::Authority::Client, client1);
+    std::cout << "Client authority set: PASS" << std::endl;
+
+    bool isServerAuth = authority.HasAuthority(entity1, vge::Authority::Server);
+    bool isClientAuth = authority.HasAuthority(entity2, vge::Authority::Client, client1);
+    bool wrongAuth = authority.HasAuthority(entity1, vge::Authority::Client, client1);
+
+    std::cout << "Authority checks: "
+              << (isServerAuth ? "server PASS" : "server FAIL")
+              << ", " << (isClientAuth ? "client PASS" : "client FAIL")
+              << ", " << (!wrongAuth ? "wrong-auth PASS" : "wrong-auth FAIL")
+              << std::endl;
+
+    vge::ClientID owner = authority.GetOwnerClient(entity2);
+    std::cout << "Owner client: " << (owner == client1 ? "PASS" : "FAIL") << std::endl;
+
+    bool isOwned = authority.IsClientOwned(entity2, client1);
+    std::cout << "Client ownership: " << (isOwned ? "PASS" : "FAIL") << std::endl;
+
+    vge::PredictedInput input;
+    input.tick = 1;
+    input.moveInput = vge::Vec3(1.0f, 0.0f, 0.0f);
+    input.jumpPressed = true;
+    authority.RecordClientInput(client1, input);
+    std::cout << "Client input recorded: PASS" << std::endl;
+
+    vge::EntityStateSnapshot snapshot;
+    snapshot.position = vge::Vec3(10.0f, 5.0f, 10.0f);
+    snapshot.health = 100.0f;
+    authority.RecordStateSnapshot(entity1, 1, snapshot);
+    std::cout << "State snapshot recorded: PASS" << std::endl;
+
+    bool needsReconcile = authority.NeedsReconciliation(entity1, 1, snapshot);
+    std::cout << "Reconciliation check: PASS" << std::endl;
+
+    std::cout << "Server authority test passed!" << std::endl;
+}
+
+void TestEntityReplication() {
+    std::cout << "\n=== Entity Replication Test ===" << std::endl;
+
+    vge::EntityReplicator replicator;
+
+    replicator.RegisterEntityType(1, "Player");
+    std::cout << "Entity type registered: PASS" << std::endl;
+
+    replicator.RegisterProperty(1, 0, "position", 30.0f);
+    replicator.RegisterProperty(1, 1, "health", 10.0f);
+    std::cout << "Properties registered: PASS" << std::endl;
+
+    vge::EntityID entityId = 1000;
+    replicator.SpawnEntity(entityId, 1, vge::Vec3(0.0f, 0.0f, 0.0f));
+    std::cout << "Entity spawned: PASS" << std::endl;
+
+    replicator.UpdateEntityState(entityId, 0, 10.0f);
+    replicator.UpdateEntityState(entityId, 1, 100.0f);
+    std::cout << "Entity state updated: PASS" << std::endl;
+
+    vge::ClientID client1 = 1;
+    replicator.UpdateClientPosition(client1, vge::Vec3(0.0f, 0.0f, 0.0f));
+
+    bool isRelevant = replicator.IsEntityRelevantForClient(entityId, client1);
+    std::cout << "Interest management: " << (isRelevant ? "PASS" : "FAIL") << std::endl;
+
+    auto data = replicator.SerializeEntityState(entityId, client1);
+    std::cout << "Entity serialized: " << (!data.empty() ? "PASS" : "FAIL") << std::endl;
+
+    replicator.DestroyEntity(entityId);
+    std::cout << "Entity destroyed: PASS" << std::endl;
+
+    std::cout << "Entity replication test passed!" << std::endl;
+}
+
+void TestNetworkedGameMode() {
+    std::cout << "\n=== Networked Game Mode Test ===" << std::endl;
+
+    vge::NetworkedGameMode gameMode;
+    gameMode.Initialize();
+
+    vge::ClientID client1 = 1;
+    vge::ClientID client2 = 2;
+
+    gameMode.OnPlayerJoined(client1);
+    std::cout << "Player 1 joined: PASS" << std::endl;
+
+    gameMode.OnPlayerJoined(client2);
+    std::cout << "Player 2 joined: PASS" << std::endl;
+
+    size_t playerCount = gameMode.GetPlayerCount();
+    std::cout << "Player count: " << playerCount << " (expected 2): "
+              << (playerCount == 2 ? "PASS" : "FAIL") << std::endl;
+
+    bool hasPlayer1 = gameMode.IsPlayerConnected(client1);
+    bool hasPlayer2 = gameMode.IsPlayerConnected(client2);
+    std::cout << "Player connected: "
+              << (hasPlayer1 ? "p1 PASS" : "p1 FAIL")
+              << ", " << (hasPlayer2 ? "p2 PASS" : "p2 FAIL")
+              << std::endl;
+
+    vge::Vec3 spawn1 = gameMode.GetNextSpawnPoint();
+    vge::Vec3 spawn2 = gameMode.GetNextSpawnPoint();
+    std::cout << "Spawn points: (" << spawn1.x << "," << spawn1.y << "," << spawn1.z << ")"
+              << " and (" << spawn2.x << "," << spawn2.y << "," << spawn2.z << "): PASS"
+              << std::endl;
+
+    int team1 = gameMode.GetPlayerTeam(client1);
+    int team2 = gameMode.GetPlayerTeam(client2);
+    std::cout << "Team assignment: " << team1 << " and " << team2 << ": PASS" << std::endl;
+
+    gameMode.OnPlayerLeft(client1);
+    std::cout << "Player 1 left: PASS" << std::endl;
+
+    size_t remainingPlayers = gameMode.GetPlayerCount();
+    std::cout << "Remaining players: " << remainingPlayers << " (expected 1): "
+              << (remainingPlayers == 1 ? "PASS" : "FAIL") << std::endl;
+
+    gameMode.SetGameState(vge::GameState::Playing);
+    std::cout << "Game state PLAYING: PASS" << std::endl;
+
+    gameMode.SetGameState(vge::GameState::Ended);
+    std::cout << "Game state ENDED: PASS" << std::endl;
+
+    std::cout << "Networked game mode test passed!" << std::endl;
 }

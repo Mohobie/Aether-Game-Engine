@@ -33,7 +33,7 @@ public:
     virtual ~ReplicatedPropertyBase() = default;
 
     virtual void Serialize(NetBuffer& buffer) const = 0;
-    virtual void Deserialize(const NetBuffer& buffer) = 0;
+    virtual void Deserialize(NetBuffer& buffer) = 0;
     virtual bool HasChanged() const = 0;
     virtual void MarkClean() = 0;
 };
@@ -62,7 +62,7 @@ public:
         SerializeValue(buffer, currentValue);
     }
 
-    void Deserialize(const NetBuffer& buffer) override {
+    void Deserialize(NetBuffer& buffer) override {
         DeserializeValue(buffer, currentValue);
         lastSyncedValue = currentValue;
     }
@@ -93,19 +93,19 @@ private:
         buffer.WriteString(value);
     }
 
-    void DeserializeValue(const NetBuffer& buffer, Vec3& value) {
+    void DeserializeValue(NetBuffer& buffer, Vec3& value) {
         value = buffer.ReadVec3();
     }
-    void DeserializeValue(const NetBuffer& buffer, float& value) {
+    void DeserializeValue(NetBuffer& buffer, float& value) {
         value = buffer.ReadFloat();
     }
-    void DeserializeValue(const NetBuffer& buffer, int32_t& value) {
+    void DeserializeValue(NetBuffer& buffer, int32_t& value) {
         value = buffer.ReadInt();
     }
-    void DeserializeValue(const NetBuffer& buffer, bool& value) {
+    void DeserializeValue(NetBuffer& buffer, bool& value) {
         value = buffer.ReadBool();
     }
-    void DeserializeValue(const NetBuffer& buffer, std::string& value) {
+    void DeserializeValue(NetBuffer& buffer, std::string& value) {
         value = buffer.ReadString();
     }
 };

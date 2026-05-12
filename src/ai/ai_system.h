@@ -69,12 +69,12 @@ private:
 // ============================================
 // Path
 // ============================================
-struct Path {
+struct AIPath {
     std::vector<Vec3> waypoints;
     int currentWaypoint;
     bool completed;
     
-    Path() : currentWaypoint(0), completed(false) {}
+    AIPath() : currentWaypoint(0), completed(false) {}
     
     bool IsValid() const { return !waypoints.empty(); }
     Vec3 GetCurrentWaypoint() const;
@@ -106,7 +106,7 @@ public:
                                const std::vector<Vec3>& obstacles, float maxSeeAhead, float maxAvoidForce);
     
     // Follow path
-    static Vec3 FollowPath(Path& path, const Vec3& position, const Vec3& velocity, 
+    static Vec3 FollowPath(AIPath& path, const Vec3& position, const Vec3& velocity, 
                            float maxSpeed, float waypointRadius);
     
     // Separation from other agents
@@ -131,7 +131,7 @@ private:
     float maxForce;
     float mass;
     
-    Path currentPath;
+    AIPath currentPath;
     bool hasTarget;
     
     // Behavior weights
@@ -150,7 +150,7 @@ public:
     bool HasTarget() const { return hasTarget; }
     
     // Path following
-    void SetPath(const Path& path);
+    void SetPath(const AIPath& path);
     bool IsPathComplete() const { return currentPath.completed; }
     
     // Update

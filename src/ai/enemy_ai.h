@@ -49,7 +49,7 @@ private:
     Vec3 targetPosition;
     
     // Pathfinding
-    Path currentPath;
+    AIPath currentPath;
     float pathUpdateTimer;
     float pathUpdateInterval;
     

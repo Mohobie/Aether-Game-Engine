@@ -89,24 +89,23 @@ public:
     bool Initialize();
     void Shutdown();
 
-    // Synchronous loading
-    template<typename T>
-    T* Load(const std::string& id, const std::string& path);
+    // Synchronous loading - non-template for Texture
+    Texture* LoadTexture(const std::string& id, const std::string& path);
 
-    template<typename T>
-    T* Get(const std::string& id);
+    // Get cached asset
+    Texture* GetTexture(const std::string& id);
 
-    template<typename T>
-    bool Has(const std::string& id) const;
+    // Check if asset exists
+    bool HasTexture(const std::string& id) const;
 
     // Async loading
-    template<typename T>
-    void LoadAsync(const std::string& id, const std::string& path,
-                   std::function<void(T*)> callback);
+    void LoadTextureAsync(const std::string& id, const std::string& path,
+                          std::function<void(Texture*)> callback);
 
-    // Unloading
+    // Generic by string ID
     void Unload(const std::string& id);
     void UnloadAll();
+    bool Has(const std::string& id) const;
 
     // Hot-reload
     void EnableHotReload(bool enable);
@@ -142,7 +141,7 @@ private:
     ResourcePackManager* m_packManager = nullptr;
 
     void AsyncWorkerLoop();
-    bool LoadTexture(const std::string& id, const std::string& path);
+    bool DoLoadTexture(const std::string& id, const std::string& path);
     bool LoadModel(const std::string& id, const std::string& path);
     bool LoadSound(const std::string& id, const std::string& path);
     bool LoadShader(const std::string& id, const std::string& path);
@@ -151,55 +150,5 @@ private:
 
     AssetType GetAssetTypeFromExtension(const std::string& path) const;
 };
-
-// Template implementations
-
-// Load asset by ID and path
-inline Texture* AssetManager::Load<Texture>(const std::string& id, const std::string& path) {
-    std::lock_guard<std::mutex> lock(m_mutex);
-
-    // Check cache first
-    auto it = m_assets.find(id);
-    if (it != m_assets.end()) {
-        it->second->metadata.refCount++;
-        return static_cast<Texture*>(it->second.get());
-    }
-
-    // Load from file
-    std::string fullPath = m_assetRoot + path;
-    Texture* texture = new Texture();
-
-    // Try to load - for now create a placeholder
-    // In a real implementation, this would call stb_image or similar
-    texture->width = 64;
-    texture->height = 64;
-    texture->channels = 4;
-    texture->data.resize(64 * 64 * 4, 255);
-
-    texture->metadata.id = id;
-    texture->metadata.path = path;
-    texture->metadata.type = AssetType::Texture;
-    texture->metadata.loaded = true;
-    texture->metadata.refCount = 1;
-
-    m_assets[id] = std::shared_ptr<Asset>(texture);
-    return texture;
-}
-
-// Get cached asset
-inline Texture* AssetManager::Get<Texture>(const std::string& id) {
-    std::lock_guard<std::mutex> lock(m_mutex);
-    auto it = m_assets.find(id);
-    if (it != m_assets.end()) {
-        return static_cast<Texture*>(it->second.get());
-    }
-    return nullptr;
-}
-
-// Check if asset exists
-inline bool AssetManager::Has<Texture>(const std::string& id) const {
-    std::lock_guard<std::mutex> lock(m_mutex);
-    return m_assets.find(id) != m_assets.end();
-}
 
 } // namespace vge

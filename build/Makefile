@@ -1395,6 +1395,39 @@ src/math/vec3.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/math/vec3.cpp.s
 .PHONY : src/math/vec3.cpp.s
 
+src/network/entity_replication.o: src/network/entity_replication.cpp.o
+.PHONY : src/network/entity_replication.o
+
+# target to build an object file
+src/network/entity_replication.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/entity_replication.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/entity_replication.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/entity_replication.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/entity_replication.cpp.o
+.PHONY : src/network/entity_replication.cpp.o
+
+src/network/entity_replication.i: src/network/entity_replication.cpp.i
+.PHONY : src/network/entity_replication.i
+
+# target to preprocess a source file
+src/network/entity_replication.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/entity_replication.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/entity_replication.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/entity_replication.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/entity_replication.cpp.i
+.PHONY : src/network/entity_replication.cpp.i
+
+src/network/entity_replication.s: src/network/entity_replication.cpp.s
+.PHONY : src/network/entity_replication.s
+
+# target to generate assembly for a file
+src/network/entity_replication.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/entity_replication.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/entity_replication.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/entity_replication.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/entity_replication.cpp.s
+.PHONY : src/network/entity_replication.cpp.s
+
 src/network/network_architecture.o: src/network/network_architecture.cpp.o
 .PHONY : src/network/network_architecture.o
 
@@ -1428,6 +1461,72 @@ src/network/network_architecture.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/network_architecture.cpp.s
 .PHONY : src/network/network_architecture.cpp.s
 
+src/network/network_manager.o: src/network/network_manager.cpp.o
+.PHONY : src/network/network_manager.o
+
+# target to build an object file
+src/network/network_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/network_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/network_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/network_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/network_manager.cpp.o
+.PHONY : src/network/network_manager.cpp.o
+
+src/network/network_manager.i: src/network/network_manager.cpp.i
+.PHONY : src/network/network_manager.i
+
+# target to preprocess a source file
+src/network/network_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/network_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/network_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/network_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/network_manager.cpp.i
+.PHONY : src/network/network_manager.cpp.i
+
+src/network/network_manager.s: src/network/network_manager.cpp.s
+.PHONY : src/network/network_manager.s
+
+# target to generate assembly for a file
+src/network/network_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/network_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/network_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/network_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/network_manager.cpp.s
+.PHONY : src/network/network_manager.cpp.s
+
+src/network/networked_game_mode.o: src/network/networked_game_mode.cpp.o
+.PHONY : src/network/networked_game_mode.o
+
+# target to build an object file
+src/network/networked_game_mode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/networked_game_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/networked_game_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/networked_game_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/networked_game_mode.cpp.o
+.PHONY : src/network/networked_game_mode.cpp.o
+
+src/network/networked_game_mode.i: src/network/networked_game_mode.cpp.i
+.PHONY : src/network/networked_game_mode.i
+
+# target to preprocess a source file
+src/network/networked_game_mode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/networked_game_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/networked_game_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/networked_game_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/networked_game_mode.cpp.i
+.PHONY : src/network/networked_game_mode.cpp.i
+
+src/network/networked_game_mode.s: src/network/networked_game_mode.cpp.s
+.PHONY : src/network/networked_game_mode.s
+
+# target to generate assembly for a file
+src/network/networked_game_mode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/networked_game_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/networked_game_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/networked_game_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/networked_game_mode.cpp.s
+.PHONY : src/network/networked_game_mode.cpp.s
+
 src/network/packet.o: src/network/packet.cpp.o
 .PHONY : src/network/packet.o
 
@@ -1460,6 +1559,39 @@ src/network/packet.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/packet.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/packet.cpp.s
 .PHONY : src/network/packet.cpp.s
+
+src/network/server_authority.o: src/network/server_authority.cpp.o
+.PHONY : src/network/server_authority.o
+
+# target to build an object file
+src/network/server_authority.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/server_authority.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/server_authority.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/server_authority.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/server_authority.cpp.o
+.PHONY : src/network/server_authority.cpp.o
+
+src/network/server_authority.i: src/network/server_authority.cpp.i
+.PHONY : src/network/server_authority.i
+
+# target to preprocess a source file
+src/network/server_authority.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/server_authority.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/server_authority.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/server_authority.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/server_authority.cpp.i
+.PHONY : src/network/server_authority.cpp.i
+
+src/network/server_authority.s: src/network/server_authority.cpp.s
+.PHONY : src/network/server_authority.s
+
+# target to generate assembly for a file
+src/network/server_authority.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/server_authority.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/server_authority.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/server_authority.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/server_authority.cpp.s
+.PHONY : src/network/server_authority.cpp.s
 
 src/physics/collision.o: src/physics/collision.cpp.o
 .PHONY : src/physics/collision.o
@@ -3108,12 +3240,24 @@ help:
 	@echo "... src/math/vec3.o"
 	@echo "... src/math/vec3.i"
 	@echo "... src/math/vec3.s"
+	@echo "... src/network/entity_replication.o"
+	@echo "... src/network/entity_replication.i"
+	@echo "... src/network/entity_replication.s"
 	@echo "... src/network/network_architecture.o"
 	@echo "... src/network/network_architecture.i"
 	@echo "... src/network/network_architecture.s"
+	@echo "... src/network/network_manager.o"
+	@echo "... src/network/network_manager.i"
+	@echo "... src/network/network_manager.s"
+	@echo "... src/network/networked_game_mode.o"
+	@echo "... src/network/networked_game_mode.i"
+	@echo "... src/network/networked_game_mode.s"
 	@echo "... src/network/packet.o"
 	@echo "... src/network/packet.i"
 	@echo "... src/network/packet.s"
+	@echo "... src/network/server_authority.o"
+	@echo "... src/network/server_authority.i"
+	@echo "... src/network/server_authority.s"
 	@echo "... src/physics/collision.o"
 	@echo "... src/physics/collision.i"
 	@echo "... src/physics/collision.s"
