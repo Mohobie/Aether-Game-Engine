@@ -2,94 +2,88 @@
 
 ## Overview
 
-The Aether Game Engine uses a **fully generic, data-driven entity system**. There are NO hardcoded mob types like "zombie" or "skeleton". Instead, games define their own entities through archetypes.
+The Aether Game Engine provides a **fully generic, data-driven entity system**. 
+
+**Important:** The engine comes with NO predefined entities. There are NO built-in zombies, skeletons, goblins, or dragons. Your game defines every entity type dynamically through archetypes.
 
 ## Quick Start
 
-### 1. Define an Entity Archetype
+### 1. Define Your Own Entity Archetype
 
 ```cpp
 #include "ai/entity_ai.h"
 
 using namespace vge;
 
-// Create a goblin archetype
-EntityArchetype goblin;
-goblin.id = "goblin";
-goblin.displayName = "Forest Goblin";
-goblin.health = 50.0f;
-goblin.speed = 6.0f;
-goblin.damage = 8.0f;
-goblin.attackRange = 1.5f;
-goblin.detectionRange = 15.0f;
-goblin.behavior = AIBehaviorType::Aggressive;
-goblin.minLightLevel = 0;
-goblin.maxLightLevel = 7;
-goblin.spawnsOnGround = true;
-goblin.modelId = "goblin_model";
-goblin.textureId = "goblin_texture";
+// YOUR game defines what entities exist
+// Example: A space pirate for your sci-fi game
+EntityArchetype spacePirate;
+spacePirate.id = "space_pirate";           // Your unique ID
+spacePirate.displayName = "Space Pirate";
+spacePirate.health = 75.0f;
+spacePirate.speed = 8.0f;
+spacePirate.damage = 15.0f;
+spacePirate.attackRange = 15.0f;           // Laser rifle range
+spacePirate.detectionRange = 40.0f;        // Scanner range
+spacePirate.behavior = AIBehaviorType::Aggressive;
+spacePirate.canFly = true;                 // Jetpack
+spacePirate.damagedBySunlight = false;     // Space helmet
+spacePirate.modelId = "your_game/models/space_pirate.obj";
+spacePirate.textureId = "your_game/textures/pirate_diffuse.png";
 
 // Register it
-EntityArchetypeRegistry::GetInstance()->RegisterArchetype(goblin);
+EntityArchetypeRegistry::GetInstance()->RegisterArchetype(spacePirate);
 ```
 
-### 2. Spawn Entities
+### 2. Spawn Your Entity
 
 ```cpp
 GenericEntitySpawner spawner(world, lightSystem, dayNightCycle);
 
-// Spawn a goblin at position (10, 5, 10)
-auto* entity = spawner.SpawnEntity("goblin", Vec3(10, 5, 10));
+// Spawn YOUR space pirate
+auto* entity = spawner.SpawnEntity("space_pirate", Vec3(100, 50, 200));
 ```
 
-### 3. Define Any Entity Type
+### 3. Define Any Entity YOUR Game Needs
 
+The engine doesn't limit what you can create. Some examples:
+
+**Fantasy RPG:**
 ```cpp
-// Passive wildlife
-EntityArchetype deer;
-deer.id = "deer";
-deer.displayName = "White-tailed Deer";
-deer.health = 20.0f;
-deer.speed = 12.0f;
-deer.behavior = AIBehaviorType::Passive;
-deer.damagedBySunlight = false;
+EntityArchetype darkMage;
+darkMage.id = "dark_mage";
+darkMage.behavior = AIBehaviorType::Aggressive;
+darkMage.customFloats["mana"] = 100.0f;
+darkMage.customStrings["spell_type"] = "necromancy";
+```
 
-// Boss enemy
-EntityArchetype dragon;
-dragon.id = "dragon";
-dragon.displayName = "Ancient Dragon";
-dragon.health = 1000.0f;
-dragon.speed = 8.0f;
-dragon.damage = 50.0f;
-dragon.attackRange = 10.0f;
-dragon.detectionRange = 50.0f;
-dragon.behavior = AIBehaviorType::Boss;
-dragon.canFly = true;
-dragon.damagedBySunlight = false;
+**Sci-Fi Shooter:**
+```cpp
+EntityArchetype droneSwarm;
+droneSwarm.id = "drone_swarm";
+droneSwarm.behavior = AIBehaviorType::Aggressive;
+droneSwarm.canFly = true;
+droneSwarm.minGroupSize = 3;
+droneSwarm.maxGroupSize = 8;
+```
 
-// Aquatic creature
-EntityArchetype shark;
-shark.id = "shark";
-shark.displayName = "Great White Shark";
-shark.health = 80.0f;
-shark.speed = 10.0f;
-shark.damage = 25.0f;
-shark.behavior = AIBehaviorType::Aggressive;
-shark.spawnsInWater = true;
-shark.spawnsOnGround = false;
-shark.canSwim = true;
+**Survival Horror:**
+```cpp
+EntityArchetype shadowStalker;
+shadowStalker.id = "shadow_stalker";
+shadowStalker.behavior = AIBehaviorType::Fleeing;
+shadowStalker.minLightLevel = 0;
+shadowStalker.maxLightLevel = 3;  // Only in darkness
+shadowStalker.damagedBySunlight = true;
+```
 
-// Nocturnal predator
-EntityArchetype werewolf;
-werewolf.id = "werewolf";
-werewolf.displayName = "Werewolf";
-werewolf.health = 120.0f;
-werewolf.speed = 9.0f;
-werewolf.damage = 15.0f;
-werewolf.behavior = AIBehaviorType::Aggressive;
-werewolf.minTimeOfDay = 0.7f;  // Only spawns at night
-werewolf.maxTimeOfDay = 0.3f;
-werewolf.damagedBySunlight = true;  // Burns in daylight
+**Peaceful Wildlife:**
+```cpp
+EntityArchetype forestDeer;
+forestDeer.id = "forest_deer";
+forestDeer.behavior = AIBehaviorType::Passive;
+forestDeer.health = 20;
+forestDeer.speed = 15;  // Fast runner
 ```
 
 ## AI Behavior Types
@@ -120,25 +114,25 @@ werewolf.damagedBySunlight = true;  // Burns in daylight
 Entities can have conditions for spawning:
 
 ```cpp
-EntityArchetype ghost;
-ghost.minLightLevel = 0;     // Only in darkness
-ghost.maxLightLevel = 3;
-ghost.minTimeOfDay = 0.7f;   // Only at night
-ghost.maxTimeOfDay = 0.3f;
-ghost.spawnsOnGround = true;
-ghost.spawnsInWater = false;
-ghost.canClimbWalls = true;  // Can climb walls
+EntityArchetype caveTroll;
+caveTroll.minLightLevel = 0;     // Only in darkness
+caveTroll.maxLightLevel = 5;
+caveTroll.minTimeOfDay = 0.0f;   // Any time
+caveTroll.maxTimeOfDay = 1.0f;
+caveTroll.spawnsOnGround = true;
+caveTroll.spawnsInWater = false;
 ```
 
 ## Environmental Effects
 
 ```cpp
-EntityArchetype vampire;
-vampire.damagedBySunlight = true;  // Takes damage in sun
-vampire.damagedByWater = true;     // Takes damage in water
+EntityArchetype lavaGolem;
+lavaGolem.damagedByWater = true;      // Water hurts it
+lavaGolem.damagedBySunlight = false;   // Sun is fine
 
-EntityArchetype fireElemental;
-fireElemental.damagedByWater = true;
+EntityArchetype frostWraith;
+frostWraith.damagedBySunlight = true;  // Melts in sun
+frostWraith.canFly = true;
 ```
 
 ## Custom Properties
@@ -146,11 +140,11 @@ fireElemental.damagedByWater = true;
 Add game-specific data:
 
 ```cpp
-EntityArchetype wizard;
-wizard.customFloats["mana"] = 100.0f;
-wizard.customFloats["spell_power"] = 25.0f;
-wizard.customStrings["element"] = "fire";
-wizard.customBools["can_teleport"] = true;
+EntityArchetype cyborgBoss;
+cyborgBoss.customFloats["shield_strength"] = 500.0f;
+cyborgBoss.customFloats["rocket_damage"] = 100.0f;
+cyborgBoss.customStrings["weakness"] = "electricity";
+cyborgBoss.customBools["has_second_form"] = true;
 ```
 
 ## Events
@@ -162,7 +156,7 @@ spawner.onEntitySpawned = [](const std::string& archetypeId, const Vec3& pos) {
 };
 
 // Access spawned entities
-auto entities = spawner.GetEntitiesByArchetype("goblin");
+auto entities = spawner.GetEntitiesByArchetype("space_pirate");
 for (auto* entity : entities) {
     entity->controller->TakeDamage(10.0f);
 }
@@ -174,71 +168,41 @@ When JSON support is added, archetypes can be defined in files:
 
 ```json
 {
-  "id": "goblin",
-  "displayName": "Forest Goblin",
-  "health": 50,
-  "speed": 6,
-  "damage": 8,
+  "id": "space_pirate",
+  "displayName": "Space Pirate",
+  "health": 75,
+  "speed": 8,
+  "damage": 15,
   "behavior": "aggressive",
-  "spawnsOnGround": true,
-  "minLightLevel": 0,
-  "maxLightLevel": 7,
-  "modelId": "goblin_model",
-  "textureId": "goblin_texture"
+  "canFly": true,
+  "modelId": "your_game/models/space_pirate.obj"
 }
 ```
 
-## Comparison: Old vs New
+## Key Principle
 
-### Old (Hardcoded)
-```cpp
-// Only zombies and skeletons existed
-MobType::Zombie
-MobType::Skeleton
-MobType::Spider
-```
+**The engine provides the systems. You provide the content.**
 
-### New (Generic)
-```cpp
-// Any entity type you define
-"goblin"
-"dragon"
-"deer"
-"werewolf"
-"shark"
-"fire_elemental"
-// ... unlimited possibilities
-```
+The engine handles:
+- AI state machines
+- Pathfinding
+- Spawning logic
+- Combat calculations
+- Environmental effects
 
-## Migration Guide
-
-If you have code using the old system:
-
-```cpp
-// OLD
-MobSpawner spawner;
-Mob* zombie = spawner.SpawnMob(MobType::Zombie, pos);
-
-// NEW
-GenericEntitySpawner spawner(world, lights, cycle);
-
-// Define archetype once
-EntityArchetype zombieArch;
-zombieArch.id = "zombie";
-zombieArch.health = 20;
-// ... configure
-EntityArchetypeRegistry::GetInstance()->RegisterArchetype(zombieArch);
-
-// Spawn anytime
-auto* entity = spawner.SpawnEntity("zombie", pos);
-```
+Your game provides:
+- What entities exist
+- Their stats and behavior
+- Their visual appearance
+- Their spawn conditions
+- Their special abilities
 
 ## Summary
 
-The new entity system is:
-- **Fully generic** - No hardcoded types
+The entity system is:
+- **Fully generic** - No built-in entity types
 - **Data-driven** - Define entities through code or files
 - **Extensible** - Custom properties and behaviors
-- **Game-agnostic** - Works for any genre (RPG, FPS, survival, etc.)
+- **Game-agnostic** - Works for any genre
 
-Your game defines what entities exist, not the engine.
+**You define what exists in your world. The engine just makes it work.**
