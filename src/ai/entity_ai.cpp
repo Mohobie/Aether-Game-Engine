@@ -1,7 +1,10 @@
 #include "entity_ai.h"
 #include "core/logger.h"
+#include <nlohmann/json.hpp>
 #include <cmath>
 #include <algorithm>
+#include <fstream>
+#include <filesystem>
 
 namespace vge {
 
@@ -66,15 +69,103 @@ std::unique_ptr<AIEntity> EntityArchetypeRegistry::CreateEntity(const std::strin
 }
 
 bool EntityArchetypeRegistry::LoadFromFile(const std::string& path) {
-    // TODO: Implement when JSON library is available
-    Logger::Info("[EntityArchetype] LoadFromFile not yet implemented: " + path);
-    return false;
+    try {
+        std::ifstream file(path);
+        if (!file.is_open()) {
+            Logger::Error("[EntityArchetype] Failed to open file: " + path);
+            return false;
+        }
+        
+        nlohmann::json j;
+        file >> j;
+        
+        EntityArchetype archetype;
+        archetype.id = j.value("id", "");
+        archetype.displayName = j.value("displayName", archetype.id);
+        archetype.health = j.value("health", 100.0f);
+        archetype.speed = j.value("speed", 5.0f);
+        archetype.damage = j.value("damage", 10.0f);
+        archetype.attackRange = j.value("attackRange", 2.0f);
+        archetype.attackCooldown = j.value("attackCooldown", 1.0f);
+        archetype.detectionRange = j.value("detectionRange", 20.0f);
+        
+        // Behavior
+        std::string behaviorStr = j.value("behavior", "passive");
+        if (behaviorStr == "passive") archetype.behavior = AIBehaviorType::Passive;
+        else if (behaviorStr == "neutral") archetype.behavior = AIBehaviorType::Neutral;
+        else if (behaviorStr == "aggressive") archetype.behavior = AIBehaviorType::Aggressive;
+        else if (behaviorStr == "territorial") archetype.behavior = AIBehaviorType::Territorial;
+        else if (behaviorStr == "fleeing") archetype.behavior = AIBehaviorType::Fleeing;
+        else if (behaviorStr == "boss") archetype.behavior = AIBehaviorType::Boss;
+        
+        // Spawn conditions
+        archetype.minLightLevel = j.value("minLightLevel", 0);
+        archetype.maxLightLevel = j.value("maxLightLevel", 15);
+        archetype.minTimeOfDay = j.value("minTimeOfDay", 0.0f);
+        archetype.maxTimeOfDay = j.value("maxTimeOfDay", 1.0f);
+        archetype.spawnsOnGround = j.value("spawnsOnGround", true);
+        archetype.spawnsInWater = j.value("spawnsInWater", false);
+        archetype.spawnsInAir = j.value("spawnsInAir", false);
+        
+        // Environmental effects
+        archetype.damagedBySunlight = j.value("damagedBySunlight", false);
+        archetype.damagedByWater = j.value("damagedByWater", false);
+        archetype.canClimbWalls = j.value("canClimbWalls", false);
+        archetype.canFly = j.value("canFly", false);
+        archetype.canSwim = j.value("canSwim", false);
+        
+        // Visual/Audio
+        archetype.modelId = j.value("modelId", "");
+        archetype.textureId = j.value("textureId", "");
+        archetype.scale = j.value("scale", 1.0f);
+        archetype.ambientSoundId = j.value("ambientSoundId", "");
+        archetype.hurtSoundId = j.value("hurtSoundId", "");
+        archetype.deathSoundId = j.value("deathSoundId", "");
+        archetype.attackSoundId = j.value("attackSoundId", "");
+        archetype.lootTableId = j.value("lootTableId", "");
+        
+        // Custom properties
+        if (j.contains("customFloats")) {
+            for (auto& [key, value] : j["customFloats"].items()) {
+                archetype.customFloats[key] = value.get<float>();
+            }
+        }
+        if (j.contains("customStrings")) {
+            for (auto& [key, value] : j["customStrings"].items()) {
+                archetype.customStrings[key] = value.get<std::string>();
+            }
+        }
+        if (j.contains("customBools")) {
+            for (auto& [key, value] : j["customBools"].items()) {
+                archetype.customBools[key] = value.get<bool>();
+            }
+        }
+        
+        RegisterArchetype(archetype);
+        Logger::Info("[EntityArchetype] Loaded archetype from JSON: " + archetype.id);
+        return true;
+    } catch (const std::exception& e) {
+        Logger::Error("[EntityArchetype] Failed to load JSON: " + std::string(e.what()));
+        return false;
+    }
 }
 
 bool EntityArchetypeRegistry::LoadFromDirectory(const std::string& dirPath) {
-    // TODO: Implement when JSON library is available
-    Logger::Info("[EntityArchetype] LoadFromDirectory not yet implemented: " + dirPath);
-    return false;
+    bool anyLoaded = false;
+    
+    try {
+        for (const auto& entry : std::filesystem::directory_iterator(dirPath)) {
+            if (entry.is_regular_file() && entry.path().extension() == ".json") {
+                if (LoadFromFile(entry.path().string())) {
+                    anyLoaded = true;
+                }
+            }
+        }
+    } catch (const std::exception& e) {
+        Logger::Error("[EntityArchetype] Failed to read directory: " + std::string(e.what()));
+    }
+    
+    return anyLoaded;
 }
 
 void EntityArchetypeRegistry::Clear() {
