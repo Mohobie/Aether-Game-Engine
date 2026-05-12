@@ -13,6 +13,12 @@ This guide gets you from zero to a running voxel game as fast as possible. Follo
 | CMake | 3.14+ | `cmake --version` |
 | OpenGL | 3.3+ | `glxinfo | grep "OpenGL version"` (Linux) |
 | Git | Any | `git --version` |
+| Dear ImGui | Latest | Auto-cloned during build |
+
+> **Note:** Dear ImGui is required for the UI system. It will be auto-cloned during build, or you can manually clone it:
+> ```bash
+> git clone https://github.com/ocornut/imgui.git third_party/imgui
+> ```
 
 ### Linux (Ubuntu/Debian)
 ```bash
@@ -42,6 +48,9 @@ brew install cmake git
 ```bash
 git clone http://192.168.1.189:3100/aether/aether-game-engine.git
 cd aether-game-engine
+
+# Clone Dear ImGui (required dependency)
+git clone https://github.com/ocornut/imgui.git third_party/imgui
 ```
 
 ### Build (Linux/macOS)
@@ -67,7 +76,25 @@ cmake --build . --config Release
 ./voxel_engine
 ```
 
-**Expected output:** A window opens showing a voxel world. Use WASD to move, mouse to look, Space to jump.
+**Expected output:** A window opens showing a voxel world with colored blocks. Use WASD to move, mouse to look, Space to jump.
+
+### Build Your Own Game
+
+The engine supports building custom games via a `my_game.cpp` file:
+
+```bash
+# Create my_game.cpp in the project root
+# (see examples below)
+
+# Build your game
+cmake ..
+make -j4 my_game
+
+# Run it
+./my_game
+```
+
+The `my_game` target is automatically created when `my_game.cpp` exists.
 
 ---
 
@@ -108,7 +135,7 @@ aether-game-engine/
 
 ## 4. Your First Voxel World
 
-Create `my_game.cpp`:
+Create `my_game.cpp` in the project root:
 
 ```cpp
 #include "voxel/world.h"
@@ -116,38 +143,93 @@ Create `my_game.cpp`:
 #include "rendering/camera.h"
 #include "platform/window.h"
 #include "platform/input_manager.h"
+#include "core/player_controller.h"
+#include "game/block_interaction.h"
+#include "debug/debug_renderer.h"
+#include "audio/audio_engine.h"
+#include "editor/in_game_editor.h"
 #include <iostream>
 
 int main() {
     // 1. Create window
     vge::Window window;
-    window.Initialize("My Voxel Game", 1280, 720);
+    if (!window.Initialize(1280, 720, "My Voxel Game")) {
+        std::cerr << "Failed to initialize window" << std::endl;
+        return 1;
+    }
     
-    // 2. Create renderer
+    // 2. Create renderer (OpenGL 3.3+ with VAOs/VBOs)
     vge::Renderer renderer;
-    renderer.Initialize();
+    if (!renderer.Initialize()) {
+        std::cerr << "Failed to initialize renderer" << std::endl;
+        return 1;
+    }
     renderer.SetViewport(0, 0, 1280, 720);
     
     // 3. Create camera
     vge::Camera camera;
-    camera.SetPosition(vge::Vec3(0, 30, 0));
-    camera.SetRotation(-90, -30, 0);  // Look down at world
+    camera.SetPosition(vge::Vec3(0, 50, 0));
+    camera.SetRotation(-90, -30, 0);
     
-    // 4. Create world
+    // 4. Create world and generate terrain
     vge::World world;
-    world.Initialize();
+    world.SetSeed(12345);
     
-    // 5. Generate terrain
-    world.GenerateTerrain(0, 0);  // Generate around origin
+    // Generate some chunks
+    for (int x = -2; x <= 2; x++) {
+        for (int z = -2; z <= 2; z++) {
+            world.GetOrCreateChunk(x, 0, z);
+        }
+    }
     
-    // 6. Place some blocks
-    world.SetBlock(vge::Vec3(0, 10, 0), vge::BLOCK_STONE);
-    world.SetBlock(vge::Vec3(1, 10, 0), vge::BLOCK_STONE);
-    world.SetBlock(vge::Vec3(0, 11, 0), vge::BLOCK_STONE);
-    world.SetBlock(vge::Vec3(0, 10, 1), vge::BLOCK_DIRT);
+    // Place some blocks
+    world.SetBlock(0, 0, 0, "stone");
+    world.SetBlock(1, 0, 0, "stone");
+    world.SetBlock(0, 1, 0, "stone");
+    world.SetBlock(0, 0, 1, "dirt");
+    world.SetBlock(1, 1, 0, "dirt");
+    world.SetBlock(0, 2, 0, "grass");
+    world.SetBlock(2, 0, 0, "wood");
+    world.SetBlock(2, 1, 0, "wood");
+    world.SetBlock(2, 2, 0, "leaves");
+    world.SetBlock(3, 0, 0, "sand");
+    world.SetBlock(4, 0, 0, "water");
+    world.SetBlock(5, 0, 0, "bedrock");
     
-    // 7. Game loop
+    // Create a platform
+    for (int x = -3; x <= 3; x++) {
+        for (int z = -3; z <= 3; z++) {
+            world.SetBlock(x, -1, z, "stone");
+        }
+    }
+    
+    // 5. Create input
+    vge::Input input;
+    
+    // 6. Create player controller
+    vge::PlayerController player;
+    player.SetPosition(vge::Vec3(0, 50, 0));
+    
+    // 7. Create block interaction
+    vge::BlockInteraction blockInteraction;
+    blockInteraction.Initialize(world);
+    
+    // 8. Create audio
+    vge::AudioEngine audio;
+    audio.Initialize();
+    
+    // 9. Create editor
+    vge::InGameEditor editor(&world, &camera, &input, &renderer);
+    editor.Initialize();
+    
+    // 10. Create debug renderer
+    vge::DebugRenderer& debug = vge::GetDebugRenderer();
+    debug.Initialize();
+    
+    // 11. Game loop
     bool running = true;
+    float deltaTime = 1.0f / 60.0f;
+    
     while (running) {
         // Handle window events
         window.PollEvents();
@@ -155,21 +237,52 @@ int main() {
             running = false;
         }
         
-        // Update
-        float deltaTime = 1.0f / 60.0f;  // Fixed timestep for demo
+        // Update input
+        input.Update();
+        
+        // Toggle editor with Escape
+        if (input.IsKeyJustPressed(vge::KeyCode::Escape)) {
+            editor.Toggle();
+        }
+        
+        if (editor.IsActive()) {
+            // Editor mode
+            editor.Update(deltaTime, input);
+        } else {
+            // Game mode - player movement
+            player.Update(deltaTime, input, world);
+            
+            // Update camera to follow player
+            camera.SetPosition(player.GetPosition() + vge::Vec3(0, 1.8f, 0));
+            camera.SetRotation(player.GetYaw(), player.GetPitch(), 0);
+            
+            // Block interaction
+            blockInteraction.Update(camera, input, world);
+        }
         
         // Render
-        renderer.SetClearColor(0.5f, 0.7f, 1.0f, 1.0f);  // Sky blue
+        renderer.SetClearColor(0.5f, 0.7f, 1.0f, 1.0f);
         renderer.BeginFrame();
         
         renderer.RenderWorld(world, camera);
+        
+        // Render editor visuals if active
+        if (editor.IsActive()) {
+            editor.Render();
+        }
+        
+        // Render debug visualization
+        debug.Render(camera);
+        debug.Update(deltaTime);
+        debug.Clear();
         
         renderer.EndFrame();
         window.SwapBuffers();
     }
     
     // Cleanup
-    world.Shutdown();
+    editor.Shutdown();
+    audio.Shutdown();
     renderer.Shutdown();
     window.Shutdown();
     
@@ -179,19 +292,12 @@ int main() {
 
 ### Build Your Game
 
-Add to `CMakeLists.txt`:
-```cmake
-add_executable(my_game my_game.cpp)
-target_link_libraries(my_game PRIVATE voxel_engine_lib)
-```
+The `my_game` target is automatically created when `my_game.cpp` exists in the project root:
 
-Or compile directly:
 ```bash
 cd build
-g++ -std=c++17 ../my_game.cpp -I../src -I../include \
-    -L. -lvoxel_engine \
-    -lGL -lglfw -lpthread -ldl \
-    -o my_game
+cmake ..
+make -j4 my_game
 ./my_game
 ```
 
@@ -666,6 +772,7 @@ sudo apt install libglfw3-dev
 **Error:** `Failed to create OpenGL context`
 - Update graphics drivers
 - Ensure OpenGL 3.3+ support: `glxinfo | grep "OpenGL version"`
+- The engine requires OpenGL 3.3+ for VAO/VBO support
 
 **Error:** `Segmentation fault in RenderWorld`
 - Check that world.Initialize() was called
@@ -673,8 +780,15 @@ sudo apt install libglfw3-dev
 
 **Error:** `Black screen`
 - Check camera position (might be inside a block)
-- Verify lighting is set up
-- Check that chunks are loaded
+- Verify renderer.Initialize() was called successfully
+- Check that chunks are loaded (call `world.GetOrCreateChunk(x, y, z)`)
+- Ensure blocks are placed above ground level (y >= 0)
+
+**Error:** `Dear ImGui not found`
+```bash
+# Clone Dear ImGui manually
+git clone https://github.com/ocornut/imgui.git third_party/imgui
+```
 
 ### Performance Issues
 
@@ -722,6 +836,21 @@ world.SetUnloadDistance(32);  // chunks
 | `14-inventory-crafting.md` | Items, recipes, smelting |
 | `15-entity-archetypes.md` | Entity types, environmental effects |
 | `19-editor-system.md` | Editor, debug visualization |
+
+### Renderer Architecture
+
+The engine uses a **modern OpenGL renderer** with:
+- **VAOs/VBOs** for efficient geometry management
+- **Indexed drawing** (`glDrawElements`) for optimal performance
+- **Proper buffer lifecycle** (creation, usage, cleanup)
+- **Colored voxel rendering** with per-block-type colors
+
+**Key classes:**
+- `Renderer` — Main rendering interface
+- `Shader` — GLSL shader program management
+- `Mesh` — Geometry buffer management
+- `Camera` — View/projection matrices
+- `WorldRenderer` — Chunk mesh building and rendering
 
 ---
 

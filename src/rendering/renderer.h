@@ -3,6 +3,7 @@
 #include "rendering/shader.h"
 #include "rendering/camera.h"
 #include "voxel/world.h"
+#include <GL/gl.h>
 
 namespace vge {
 
@@ -13,11 +14,22 @@ class DayNightCycle;
 class WeatherSystem;
 class WorldRenderer;
 
+// Modern OpenGL renderer with VAOs/VBOs
 class Renderer {
 private:
     bool initialized;
     int width;
     int height;
+    
+    // OpenGL resources
+    uint32_t cubeVAO;
+    uint32_t cubeVBO;
+    uint32_t crosshairVAO;
+    uint32_t crosshairVBO;
+    uint32_t highlightVAO;
+    uint32_t highlightVBO;
+    
+    // Sub-renderers
     FramebufferRenderer* fb_renderer;
     SkyRenderer* sky_renderer;
     WeatherEffectsRenderer* weather_renderer;
@@ -26,6 +38,12 @@ private:
     WorldRenderer* world_renderer;
     Shader* world_shader;
     
+    void InitializeCubeBuffers();
+    void InitializeCrosshairBuffers();
+    void InitializeHighlightBuffers();
+    void CleanupBuffers();
+    
+    void RenderWorldModern(const World& world, const Camera& camera);
     void RenderWorldASCII(const World& world, const Camera& camera);
     void RenderWorldFB(const World& world, const Camera& camera);
     void RenderWorldMesh(const World& world, const Camera& camera);
@@ -68,6 +86,8 @@ public:
     // Get screen dimensions
     int GetWidth() const { return width; }
     int GetHeight() const { return height; }
+    
+    bool IsInitialized() const { return initialized; }
 };
 
 } // namespace vge

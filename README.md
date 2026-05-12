@@ -13,7 +13,9 @@ A modern C++ voxel game engine with advanced rendering, physics, AI, networking,
 - **Voxel editor**: In-game editing with undo/redo, brush tools, fill/replace
 
 ### Rendering
-- **OpenGL 3.3+**: Modern graphics pipeline
+- **Modern OpenGL 3.3+**: VAO/VBO-based rendering with proper buffer management
+- **Colored voxel rendering**: Each block type rendered with distinct colors
+- **Crosshair & block highlight**: In-world UI elements rendered with OpenGL
 - **PBR materials**: Metallic/roughness workflow with albedo, normal, AO maps
 - **Deferred rendering**: G-buffer for efficient lighting
 - **Shadow mapping**: Cascaded shadow maps for directional lights
@@ -22,6 +24,8 @@ A modern C++ voxel game engine with advanced rendering, physics, AI, networking,
 - **Sky rendering**: Dynamic day/night cycle, stars, clouds, atmospheric scattering
 - **Weather effects**: Rain, snow, storms with visual effects
 - **Frustum & occlusion culling**: BVH-based culling for performance
+
+> **Note**: The renderer uses modern OpenGL with VAOs/VBOs. Legacy immediate mode (`glBegin`/`glEnd`) and ASCII fallback rendering have been removed.
 
 ### Physics
 - **Rigid body dynamics**: Forces, impulses, torque, gravity
@@ -108,6 +112,9 @@ A modern C++ voxel game engine with advanced rendering, physics, AI, networking,
 git clone http://192.168.1.189:3100/aether/aether-game-engine.git
 cd aether-game-engine
 
+# Clone Dear ImGui (required dependency)
+git clone https://github.com/ocornut/imgui.git third_party/imgui
+
 # Create build directory
 mkdir build && cd build
 
@@ -122,6 +129,80 @@ cmake --build . --parallel
 
 # Run the engine
 ./voxel_engine
+```
+
+### Building Your Own Game
+
+Create a `my_game.cpp` file in the project root:
+
+```cpp
+#include "voxel/world.h"
+#include "rendering/renderer.h"
+#include "rendering/camera.h"
+#include "platform/window.h"
+#include "platform/input_manager.h"
+#include "core/player_controller.h"
+#include "game/block_interaction.h"
+#include "debug/debug_renderer.h"
+#include "audio/audio_engine.h"
+#include "editor/in_game_editor.h"
+
+int main() {
+    // 1. Create window
+    vge::Window window;
+    window.Initialize(1280, 720, "My Voxel Game");
+    
+    // 2. Create renderer (OpenGL 3.3+)
+    vge::Renderer renderer;
+    renderer.Initialize();
+    renderer.SetViewport(0, 0, 1280, 720);
+    
+    // 3. Create camera
+    vge::Camera camera;
+    camera.SetPosition(vge::Vec3(0, 50, 0));
+    camera.SetRotation(-90, -30, 0);
+    
+    // 4. Create world
+    vge::World world;
+    world.SetSeed(12345);
+    
+    // 5. Create player
+    vge::PlayerController player;
+    player.SetPosition(vge::Vec3(0, 50, 0));
+    
+    // 6. Game loop
+    bool running = true;
+    vge::Input input;
+    
+    while (running) {
+        window.PollEvents();
+        if (window.ShouldClose()) running = false;
+        
+        input.Update();
+        player.Update(1.0f/60.0f, input, world);
+        
+        camera.SetPosition(player.GetPosition() + vge::Vec3(0, 1.8f, 0));
+        camera.SetRotation(player.GetYaw(), player.GetPitch(), 0);
+        
+        renderer.SetClearColor(0.5f, 0.7f, 1.0f, 1.0f);
+        renderer.BeginFrame();
+        renderer.RenderWorld(world, camera);
+        renderer.EndFrame();
+        
+        window.SwapBuffers();
+    }
+    
+    renderer.Shutdown();
+    window.Shutdown();
+    return 0;
+}
+```
+
+Build your game:
+```bash
+cmake ..
+make -j4 my_game
+./my_game
 ```
 
 ### Windows
