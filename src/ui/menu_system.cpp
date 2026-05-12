@@ -17,7 +17,7 @@ bool MenuSystem::Initialize(Renderer* renderer, Window* window) {
     this->renderer = renderer;
     this->window = window;
     
-    if (!imgui.Initialize(window->GetHandle())) {
+    if (!imgui.Initialize(static_cast<GLFWwindow*>(window->GetHandle()))) {
         std::cerr << "[MenuSystem] Failed to initialize ImGui" << std::endl;
         return false;
     }

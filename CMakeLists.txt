@@ -211,6 +211,8 @@ if(WIN32)
     endif()
 else()
     list(APPEND COMMON_INCLUDES /usr/include /usr/local/include /usr/include/lua5.4)
+list(APPEND COMMON_INCLUDES ${CMAKE_SOURCE_DIR}/third_party/imgui)
+list(APPEND COMMON_INCLUDES ${CMAKE_SOURCE_DIR}/third_party/imgui/backends)
 endif()
 
 add_executable(voxel_test src/test_main.cpp ${CORE_SOURCES})
@@ -244,6 +246,19 @@ endif()
 
 set(ALL_SOURCES ${CORE_SOURCES})
 
+# ============================================
+# Dear ImGui Sources
+# ============================================
+set(IMGUI_SOURCES
+    third_party/imgui/imgui.cpp
+    third_party/imgui/imgui_draw.cpp
+    third_party/imgui/imgui_widgets.cpp
+    third_party/imgui/imgui_tables.cpp
+    third_party/imgui/imgui_demo.cpp
+    third_party/imgui/backends/imgui_impl_glfw.cpp
+    third_party/imgui/backends/imgui_impl_opengl3.cpp
+)
+
 set(OPTIONAL_SOURCES
     src/platform/window.cpp
     src/rendering/camera.cpp
@@ -260,6 +275,7 @@ set(OPTIONAL_SOURCES
     src/core/engine.cpp
     src/core/application.cpp
     src/main.cpp
+    ${IMGUI_SOURCES}
 )
 
 set(COMPILABLE_OPTIONAL_SOURCES)

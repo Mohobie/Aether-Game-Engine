@@ -21,7 +21,7 @@ using namespace vge;
 // ============================================
 // Game State Management
 // ============================================
-enum class GameState {
+enum class AppState {
     Loading,
     Playing,
     Paused,
@@ -29,7 +29,7 @@ enum class GameState {
 };
 
 struct GameContext {
-    GameState state = GameState::Loading;
+    AppState state = AppState::Loading;
     float deltaTime = 0.016f;
     float totalTime = 0.0f;
     int frameCount = 0;
@@ -164,7 +164,7 @@ static bool InitializeAll(GameContext& ctx) {
     ctx.blockInteraction->Initialize(*ctx.world);
     Logger::Info("[Main] Block interaction initialized");
 
-    ctx.state = GameState::Playing;
+    ctx.state = AppState::Playing;
     
     Logger::Info("============================================");
     Logger::Info("  All systems initialized successfully");

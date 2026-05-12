@@ -107,6 +107,13 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/voxel/world_generator.cpp" "CMakeFiles/voxel_engine.dir/src/voxel/world_generator.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/voxel/world_generator.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/world_renderer.cpp" "CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/voxel/world_serializer.cpp" "CMakeFiles/voxel_engine.dir/src/voxel/world_serializer.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/voxel/world_serializer.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/third_party/imgui/backends/imgui_impl_glfw.cpp" "CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/third_party/imgui/backends/imgui_impl_opengl3.cpp" "CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/third_party/imgui/imgui.cpp" "CMakeFiles/voxel_engine.dir/third_party/imgui/imgui.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/third_party/imgui/imgui.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/third_party/imgui/imgui_demo.cpp" "CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_demo.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_demo.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/third_party/imgui/imgui_draw.cpp" "CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_draw.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_draw.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/third_party/imgui/imgui_tables.cpp" "CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_tables.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_tables.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/third_party/imgui/imgui_widgets.cpp" "CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_widgets.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_widgets.cpp.o.d"
   )
 
 # Targets to which this target links.

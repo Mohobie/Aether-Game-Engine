@@ -1455,6 +1455,104 @@ CMakeFiles/voxel_engine.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/voxel_engine.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/main.cpp -o CMakeFiles/voxel_engine.dir/src/main.cpp.s
 
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui.cpp.o: ../third_party/imgui/imgui.cpp
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building CXX object CMakeFiles/voxel_engine.dir/third_party/imgui/imgui.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/third_party/imgui/imgui.cpp.o -MF CMakeFiles/voxel_engine.dir/third_party/imgui/imgui.cpp.o.d -o CMakeFiles/voxel_engine.dir/third_party/imgui/imgui.cpp.o -c /home/mohobie/projects/aether-game-engine/third_party/imgui/imgui.cpp
+
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/voxel_engine.dir/third_party/imgui/imgui.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/third_party/imgui/imgui.cpp > CMakeFiles/voxel_engine.dir/third_party/imgui/imgui.cpp.i
+
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/voxel_engine.dir/third_party/imgui/imgui.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/third_party/imgui/imgui.cpp -o CMakeFiles/voxel_engine.dir/third_party/imgui/imgui.cpp.s
+
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_draw.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_draw.cpp.o: ../third_party/imgui/imgui_draw.cpp
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_draw.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building CXX object CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_draw.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_draw.cpp.o -MF CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_draw.cpp.o.d -o CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_draw.cpp.o -c /home/mohobie/projects/aether-game-engine/third_party/imgui/imgui_draw.cpp
+
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_draw.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_draw.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/third_party/imgui/imgui_draw.cpp > CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_draw.cpp.i
+
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_draw.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_draw.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/third_party/imgui/imgui_draw.cpp -o CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_draw.cpp.s
+
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_widgets.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_widgets.cpp.o: ../third_party/imgui/imgui_widgets.cpp
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_widgets.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building CXX object CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_widgets.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_widgets.cpp.o -MF CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_widgets.cpp.o.d -o CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_widgets.cpp.o -c /home/mohobie/projects/aether-game-engine/third_party/imgui/imgui_widgets.cpp
+
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_widgets.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_widgets.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/third_party/imgui/imgui_widgets.cpp > CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_widgets.cpp.i
+
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_widgets.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_widgets.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/third_party/imgui/imgui_widgets.cpp -o CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_widgets.cpp.s
+
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_tables.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_tables.cpp.o: ../third_party/imgui/imgui_tables.cpp
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_tables.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building CXX object CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_tables.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_tables.cpp.o -MF CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_tables.cpp.o.d -o CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_tables.cpp.o -c /home/mohobie/projects/aether-game-engine/third_party/imgui/imgui_tables.cpp
+
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_tables.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_tables.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/third_party/imgui/imgui_tables.cpp > CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_tables.cpp.i
+
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_tables.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_tables.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/third_party/imgui/imgui_tables.cpp -o CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_tables.cpp.s
+
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_demo.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_demo.cpp.o: ../third_party/imgui/imgui_demo.cpp
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_demo.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building CXX object CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_demo.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_demo.cpp.o -MF CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_demo.cpp.o.d -o CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_demo.cpp.o -c /home/mohobie/projects/aether-game-engine/third_party/imgui/imgui_demo.cpp
+
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_demo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_demo.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/third_party/imgui/imgui_demo.cpp > CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_demo.cpp.i
+
+CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_demo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_demo.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/third_party/imgui/imgui_demo.cpp -o CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_demo.cpp.s
+
+CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
+CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.o: ../third_party/imgui/backends/imgui_impl_glfw.cpp
+CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building CXX object CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.o -MF CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.o.d -o CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.o -c /home/mohobie/projects/aether-game-engine/third_party/imgui/backends/imgui_impl_glfw.cpp
+
+CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/third_party/imgui/backends/imgui_impl_glfw.cpp > CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.i
+
+CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/third_party/imgui/backends/imgui_impl_glfw.cpp -o CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.s
+
+CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
+CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.o: ../third_party/imgui/backends/imgui_impl_opengl3.cpp
+CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building CXX object CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.o -MF CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.o.d -o CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.o -c /home/mohobie/projects/aether-game-engine/third_party/imgui/backends/imgui_impl_opengl3.cpp
+
+CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/third_party/imgui/backends/imgui_impl_opengl3.cpp > CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.i
+
+CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/third_party/imgui/backends/imgui_impl_opengl3.cpp -o CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.s
+
 # Object files for target voxel_engine
 voxel_engine_OBJECTS = \
 "CMakeFiles/voxel_engine.dir/src/math/vec3.cpp.o" \
@@ -1555,7 +1653,14 @@ voxel_engine_OBJECTS = \
 "CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.o" \
 "CMakeFiles/voxel_engine.dir/src/core/engine.cpp.o" \
 "CMakeFiles/voxel_engine.dir/src/core/application.cpp.o" \
-"CMakeFiles/voxel_engine.dir/src/main.cpp.o"
+"CMakeFiles/voxel_engine.dir/src/main.cpp.o" \
+"CMakeFiles/voxel_engine.dir/third_party/imgui/imgui.cpp.o" \
+"CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_draw.cpp.o" \
+"CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_widgets.cpp.o" \
+"CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_tables.cpp.o" \
+"CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_demo.cpp.o" \
+"CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.o" \
+"CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.o"
 
 # External object files for target voxel_engine
 voxel_engine_EXTERNAL_OBJECTS =
@@ -1659,12 +1764,19 @@ voxel_engine: CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.o
 voxel_engine: CMakeFiles/voxel_engine.dir/src/core/engine.cpp.o
 voxel_engine: CMakeFiles/voxel_engine.dir/src/core/application.cpp.o
 voxel_engine: CMakeFiles/voxel_engine.dir/src/main.cpp.o
+voxel_engine: CMakeFiles/voxel_engine.dir/third_party/imgui/imgui.cpp.o
+voxel_engine: CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_draw.cpp.o
+voxel_engine: CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_widgets.cpp.o
+voxel_engine: CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_tables.cpp.o
+voxel_engine: CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_demo.cpp.o
+voxel_engine: CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.o
+voxel_engine: CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.o
 voxel_engine: CMakeFiles/voxel_engine.dir/build.make
 voxel_engine: /usr/lib/x86_64-linux-gnu/liblua5.4.so
 voxel_engine: /usr/lib/x86_64-linux-gnu/libGLX.so
 voxel_engine: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 voxel_engine: CMakeFiles/voxel_engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Linking CXX executable voxel_engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Linking CXX executable voxel_engine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/voxel_engine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
