@@ -1,6 +1,6 @@
 #include "music_player.h"
 #include <iostream>
-namespace aether {
+namespace vge {
 MusicPlayer::MusicPlayer() {}
 bool MusicPlayer::loadPlaylist(const std::vector<std::string>& tracks) {
     this->tracks = tracks;
@@ -14,4 +14,4 @@ void MusicPlayer::next() { if (!tracks.empty()) currentTrack = (currentTrack + 1
 void MusicPlayer::previous() { if (!tracks.empty()) currentTrack = (currentTrack + tracks.size() - 1) % tracks.size(); }
 void MusicPlayer::setVolume(float volume) { this->volume = volume; }
 bool MusicPlayer::isPlaying() const { return playing; }
-} // namespace aether
+} // namespace vge

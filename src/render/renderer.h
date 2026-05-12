@@ -2,7 +2,7 @@
 #include "camera.h"
 #include "mesh.h"
 #include "shader.h"
-namespace aether {
+namespace vge {
 class Renderer {
 public:
     void init();
@@ -15,4 +15,4 @@ private:
     Camera currentCamera;
     Shader defaultShader;
 };
-} // namespace aether
+} // namespace vge

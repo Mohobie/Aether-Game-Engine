@@ -168,7 +168,7 @@ CMakeFiles/voxel_test.dir/src/core/crafting_inventory_bridge.cpp.o: \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/uniform_int_dist.h \
  /home/mohobie/projects/aether-game-engine/src/core/math.h \
- /home/mohobie/projects/aether-game-engine/src/core/types.h \
+ /home/mohobie/projects/aether-game-engine/src/math/vec2.h \
  /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -192,8 +192,9 @@ CMakeFiles/voxel_test.dir/src/core/crafting_inventory_bridge.cpp.o: \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
- /home/mohobie/projects/aether-game-engine/src/voxel/block_types.h \
  /home/mohobie/projects/aether-game-engine/src/math/vec3.h \
+ /home/mohobie/projects/aether-game-engine/src/math/mat4.h \
+ /home/mohobie/projects/aether-game-engine/src/voxel/block_types.h \
  /home/mohobie/projects/aether-game-engine/src/core/crafting.h \
  /usr/include/c++/11/queue /usr/include/c++/11/deque \
  /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \

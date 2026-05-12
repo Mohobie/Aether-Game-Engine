@@ -1,5 +1,5 @@
 #include "collider.h"
-namespace aether {
+namespace vge {
 bool BoxCollider::intersects(const Collider& other) const {
     return bounds.intersects(other.getBounds());
 }
@@ -8,4 +8,4 @@ bool BoxCollider::raycast(const Ray& ray, RaycastHit& hit) const {
     hit.hit = false;
     return false;
 }
-} // namespace aether
+} // namespace vge

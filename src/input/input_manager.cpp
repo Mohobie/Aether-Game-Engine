@@ -1,5 +1,5 @@
 #include "input_manager.h"
-namespace aether {
+namespace vge {
 InputManager::InputManager() {}
 void InputManager::update() {
     previousKeyStates = keyStates;
@@ -33,4 +33,4 @@ bool InputManager::isMouseButtonDown(MouseButton button) const {
 void InputManager::getMousePosition(float& x, float& y) const { x = mouseX; y = mouseY; }
 void InputManager::getMouseDelta(float& dx, float& dy) const { dx = mouseX - lastMouseX; dy = mouseY - lastMouseY; }
 void InputManager::bindKey(Key key, std::function<void()> callback) {}
-} // namespace aether
+} // namespace vge

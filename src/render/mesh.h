@@ -1,7 +1,7 @@
 #pragma once
 #include "core/math.h"
 #include <vector>
-namespace aether {
+namespace vge {
 struct Vertex {
     Vec3 position;
     Vec2 texCoord;
@@ -17,4 +17,4 @@ private:
     std::vector<Vertex> vertices;
     std::vector<uint32_t> indices;
 };
-} // namespace aether
+} // namespace vge

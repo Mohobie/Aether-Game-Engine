@@ -1,6 +1,6 @@
 #include "serializer.h"
 #include <fstream>
-namespace aether {
+namespace vge {
 bool Serializer::saveWorld(const World& world, const std::string& path) {
     std::ofstream file(path, std::ios::binary);
     return file.good();
@@ -41,4 +41,4 @@ std::string Serializer::readString(const std::vector<uint8_t>& data, size_t& off
     offset += size;
     return value;
 }
-} // namespace aether
+} // namespace vge

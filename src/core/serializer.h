@@ -2,7 +2,7 @@
 #include <vector>
 #include <stdint>
 #include <string>
-namespace aether {
+namespace vge {
 class Serializer {
 public:
     void writeInt32(int32_t value);
@@ -27,4 +27,4 @@ private:
     void writeRaw(const void* ptr, size_t size);
     void readRaw(void* ptr, size_t size);
 };
-} // namespace aether
+} // namespace vge

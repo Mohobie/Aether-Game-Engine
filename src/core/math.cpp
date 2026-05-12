@@ -1,6 +1,6 @@
 #include "math.h"
 #include <cstring>
-namespace aether {
+namespace vge {
 Mat4 Mat4::identity() { Mat4 r; std::memset(r.m, 0, sizeof(r.m)); r.m[0]=r.m[5]=r.m[10]=r.m[15]=1.0f; return r; }
 Mat4 Mat4::translate(const Vec3& t) { Mat4 r = identity(); r.m[12]=t.x; r.m[13]=t.y; r.m[14]=t.z; return r; }
 Mat4 Mat4::scale(const Vec3& s) { Mat4 r = identity(); r.m[0]=s.x; r.m[5]=s.y; r.m[10]=s.z; return r; }
@@ -32,4 +32,4 @@ Mat4 Mat4::operator*(const Mat4& o) const {
             r.m[i*4+j] = m[i*4+0]*o.m[0*4+j] + m[i*4+1]*o.m[1*4+j] + m[i*4+2]*o.m[2*4+j] + m[i*4+3]*o.m[3*4+j];
     return r;
 }
-} // namespace aether
+} // namespace vge

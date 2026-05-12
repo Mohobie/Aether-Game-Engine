@@ -1,6 +1,6 @@
 #pragma once
 #include "ui_element.h"
-namespace aether {
+namespace vge {
 class Label : public UIElement {
 public:
     Label();
@@ -12,4 +12,4 @@ private:
     std::string text;
     uint32_t color = 0xFFFFFFFF;
 };
-} // namespace aether
+} // namespace vge

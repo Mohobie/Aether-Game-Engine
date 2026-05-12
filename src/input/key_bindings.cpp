@@ -1,5 +1,5 @@
 #include "key_bindings.h"
-namespace aether {
+namespace vge {
 KeyBindings::KeyBindings() {}
 void KeyBindings::loadDefaults() {
     defaults["move_forward"] = Key::W;
@@ -25,4 +25,4 @@ std::string KeyBindings::getActionName(Key key) const {
     return "";
 }
 void KeyBindings::resetToDefaults() { bindings = defaults; }
-} // namespace aether
+} // namespace vge

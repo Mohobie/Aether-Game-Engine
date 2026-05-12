@@ -1,5 +1,5 @@
 #include "physics_world.h"
-namespace aether {
+namespace vge {
 PhysicsWorld::PhysicsWorld() {}
 void PhysicsWorld::addCollider(std::shared_ptr<Collider> collider) {
     colliders.push_back(collider);
@@ -27,4 +27,4 @@ bool PhysicsWorld::raycast(const Ray& ray, RaycastHit& hit) const {
     return false;
 }
 void PhysicsWorld::update(float deltaTime) {}
-} // namespace aether
+} // namespace vge

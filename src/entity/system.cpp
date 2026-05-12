@@ -1,5 +1,5 @@
 #include "system.h"
-namespace aether {
+namespace vge {
 void SystemManager::addSystem(std::unique_ptr<System> system) {
     systems.push_back(std::move(system));
 }
@@ -12,4 +12,4 @@ void SystemManager::updateAll(float deltaTime) {
 void SystemManager::shutdownAll() {
     for (auto& system : systems) system->shutdown();
 }
-} // namespace aether
+} // namespace vge

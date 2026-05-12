@@ -64,9 +64,13 @@ struct EntityArchetype {
     bool spawnsInWater = false;
     bool spawnsInAir = false;
     
-    // Environmental effects
-    bool damagedBySunlight = false;
-    bool damagedByWater = false;
+    // Environmental effects (all optional - game defines what hurts what)
+    bool damagedBySunlight = false;   // Takes damage in sunlight
+    bool damagedByWater = false;      // Takes damage in water (drowning)
+    bool damagedByDarkness = false;   // Takes damage in darkness
+    bool healedBySunlight = false;    // Heals in sunlight
+    bool healedByWater = false;       // Heals in water
+    bool healedByDarkness = false;    // Heals in darkness
     bool canClimbWalls = false;
     bool canFly = false;
     bool canSwim = false;

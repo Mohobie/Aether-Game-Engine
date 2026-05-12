@@ -1,6 +1,6 @@
 #include "memory.h"
 #include <cstdlib>
-namespace aether {
+namespace vge {
 PoolAllocator::PoolAllocator(size_t objectSize, size_t objectCount) : objectSize(std::max(objectSize, sizeof(FreeNode))), freeList(nullptr) {
     size_t blockSize = this->objectSize * objectCount;
     void* block = std::malloc(blockSize);
@@ -15,4 +15,4 @@ PoolAllocator::PoolAllocator(size_t objectSize, size_t objectCount) : objectSize
 PoolAllocator::~PoolAllocator() { for (void* block : blocks) std::free(block); }
 void* PoolAllocator::allocate() { if (!freeList) return nullptr; FreeNode* node = freeList; freeList = node->next; return node; }
 void PoolAllocator::deallocate(void* ptr) { if (!ptr) return; FreeNode* node = static_cast<FreeNode*>(ptr); node->next = freeList; freeList = node; }
-} // namespace aether
+} // namespace vge

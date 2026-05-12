@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint>
 #include <type_traits>
-namespace aether {
+namespace vge {
 using ComponentID = uint32_t;
 using EntityID = uint32_t;
 constexpr EntityID INVALID_ENTITY = 0;
@@ -18,4 +18,4 @@ ComponentID getComponentTypeID() {
     return id;
 }
 extern ComponentID nextComponentTypeID;
-} // namespace aether
+} // namespace vge

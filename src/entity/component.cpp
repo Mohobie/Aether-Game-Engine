@@ -1,4 +1,4 @@
 #include "component.h"
-namespace aether {
+namespace vge {
 ComponentID nextComponentTypeID = 0;
-} // namespace aether
+} // namespace vge

@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
-namespace aether {
+namespace vge {
 class MusicPlayer {
 public:
     MusicPlayer();
@@ -19,4 +19,4 @@ private:
     float volume = 1.0f;
     bool playing = false;
 };
-} // namespace aether
+} // namespace vge

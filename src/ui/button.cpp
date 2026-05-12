@@ -1,6 +1,6 @@
 #include "button.h"
 #include <iostream>
-namespace aether {
+namespace vge {
 Button::Button() {}
 void Button::setText(const std::string& text) { this->text = text; }
 std::string Button::getText() const { return text; }
@@ -13,4 +13,4 @@ bool Button::onClick(const Vec2& pos) {
     }
     return false;
 }
-} // namespace aether
+} // namespace vge

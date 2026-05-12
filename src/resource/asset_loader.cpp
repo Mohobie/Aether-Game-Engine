@@ -2,7 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <sys/stat.h>
-namespace aether {
+namespace vge {
 AssetLoader::AssetLoader() {}
 bool AssetLoader::loadText(const std::string& path, std::string& out) {
     std::ifstream file(searchPath + path);
@@ -31,4 +31,4 @@ std::string AssetLoader::getExtension(const std::string& path) const {
     return pos != std::string::npos ? path.substr(pos + 1) : "";
 }
 void AssetLoader::setSearchPath(const std::string& path) { searchPath = path; }
-} // namespace aether
+} // namespace vge

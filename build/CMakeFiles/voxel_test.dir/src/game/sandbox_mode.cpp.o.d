@@ -212,6 +212,7 @@ CMakeFiles/voxel_test.dir/src/game/sandbox_mode.cpp.o: \
  /home/mohobie/projects/aether-game-engine/src/platform/input.h \
  /home/mohobie/projects/aether-game-engine/src/rendering/renderer.h \
  /home/mohobie/projects/aether-game-engine/src/rendering/mesh.h \
+ /home/mohobie/projects/aether-game-engine/src/math/vec2.h \
  /home/mohobie/projects/aether-game-engine/src/rendering/shader.h \
  /home/mohobie/projects/aether-game-engine/src/core/logger.h \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \

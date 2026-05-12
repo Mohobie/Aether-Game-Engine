@@ -1,6 +1,6 @@
 #pragma once
 #include "ui_element.h"
-namespace aether {
+namespace vge {
 class Panel : public UIElement {
 public:
     Panel();
@@ -9,4 +9,4 @@ public:
 private:
     uint32_t backgroundColor = 0x333333FF;
 };
-} // namespace aether
+} // namespace vge

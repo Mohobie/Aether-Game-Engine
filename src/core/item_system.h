@@ -7,7 +7,7 @@
 #include "core/math.h"
 #include "voxel/block_types.h"
 
-using aether::Vec2;
+using vge::Vec2;
 
 namespace vge {
 

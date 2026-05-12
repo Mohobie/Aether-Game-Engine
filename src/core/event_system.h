@@ -3,7 +3,7 @@
 #include <vector>
 #include <map>
 #include <string>
-namespace aether {
+namespace vge {
 class EventSystem {
 public:
     using Handler = std::function<void(const void*)>;
@@ -25,4 +25,4 @@ public:
 private:
     std::map<std::string, std::vector<Handler>> handlers;
 };
-} // namespace aether
+} // namespace vge

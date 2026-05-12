@@ -3,7 +3,7 @@
 #include <sstream>
 #include <iostream>
 
-namespace aether {
+namespace vge {
 
 bool FileSystem::exists(const std::string& path) {
     return vge::File::Exists(path);
@@ -59,4 +59,4 @@ std::vector<std::string> FileSystem::listDirectory(const std::string& path) {
     return result;
 }
 
-} // namespace aether
+} // namespace vge

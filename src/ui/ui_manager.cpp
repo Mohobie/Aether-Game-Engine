@@ -1,6 +1,6 @@
 #include "ui_manager.h"
 #include <algorithm>
-namespace aether {
+namespace vge {
 UIManager::UIManager() {}
 void UIManager::addElement(std::shared_ptr<UIElement> element) { elements.push_back(element); }
 void UIManager::removeElement(UIElement* element) {
@@ -18,4 +18,4 @@ bool UIManager::onClick(const Vec2& pos) {
     return false;
 }
 void UIManager::clear() { elements.clear(); }
-} // namespace aether
+} // namespace vge

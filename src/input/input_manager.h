@@ -2,7 +2,7 @@
 #include <string>
 #include <unordered_map>
 #include <functional>
-namespace aether {
+namespace vge {
 enum class Key {
     Unknown = -1, Space = 32, A = 65, B, C, D, E, F, G, H, I, J, K, L, M,
     N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
@@ -29,4 +29,4 @@ private:
     float mouseX = 0, mouseY = 0;
     float lastMouseX = 0, lastMouseY = 0;
 };
-} // namespace aether
+} // namespace vge

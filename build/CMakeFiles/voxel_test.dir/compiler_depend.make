@@ -4573,7 +4573,8 @@ CMakeFiles/voxel_test.dir/src/core/crafting.cpp.o: ../src/core/crafting.cpp \
   /usr/include/c++/11/pstl/glue_memory_defs.h \
   /usr/include/c++/11/pstl/execution_defs.h \
   ../src/core/math.h \
-  ../src/core/types.h \
+  ../src/math/vec2.h \
+  ../src/math/mat4.h \
   ../src/voxel/block_registry.h \
   ../src/core/logger.h \
   /usr/include/c++/11/algorithm \
@@ -4805,7 +4806,7 @@ CMakeFiles/voxel_test.dir/src/core/crafting_inventory_bridge.cpp.o: ../src/core/
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
   ../src/core/math.h \
-  ../src/core/types.h \
+  ../src/math/vec2.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -4831,8 +4832,9 @@ CMakeFiles/voxel_test.dir/src/core/crafting_inventory_bridge.cpp.o: ../src/core/
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  ../src/voxel/block_types.h \
   ../src/math/vec3.h \
+  ../src/math/mat4.h \
+  ../src/voxel/block_types.h \
   ../src/core/crafting.h \
   /usr/include/c++/11/queue \
   /usr/include/c++/11/deque \
@@ -5291,7 +5293,7 @@ CMakeFiles/voxel_test.dir/src/core/item_system.cpp.o: ../src/core/item_system.cp
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
   ../src/core/math.h \
-  ../src/core/types.h \
+  ../src/math/vec2.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -5317,8 +5319,9 @@ CMakeFiles/voxel_test.dir/src/core/item_system.cpp.o: ../src/core/item_system.cp
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  ../src/voxel/block_types.h \
   ../src/math/vec3.h \
+  ../src/math/mat4.h \
+  ../src/voxel/block_types.h \
   ../src/voxel/block_registry.h \
   ../src/core/logger.h \
   /usr/include/c++/11/algorithm \
@@ -7768,7 +7771,6 @@ CMakeFiles/voxel_test.dir/src/editor/in_game_editor.cpp.o: ../src/editor/in_game
   /usr/include/linux/falloc.h \
   /usr/include/x86_64-linux-gnu/bits/stat.h \
   /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
-  ../src/entity/entity_manager.h \
   ../src/entity/entity.h \
   /usr/include/c++/11/typeindex \
   ../src/core/logger.h
@@ -8779,7 +8781,8 @@ CMakeFiles/voxel_test.dir/src/game/combat_system.cpp.o: ../src/game/combat_syste
   /usr/include/c++/11/pstl/glue_numeric_defs.h \
   ../src/core/item_system.h \
   ../src/core/math.h \
-  ../src/core/types.h \
+  ../src/math/vec2.h \
+  ../src/math/mat4.h \
   ../src/voxel/block_types.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
@@ -9452,6 +9455,7 @@ CMakeFiles/voxel_test.dir/src/game/sandbox_mode.cpp.o: ../src/game/sandbox_mode.
   ../src/platform/input.h \
   ../src/rendering/renderer.h \
   ../src/rendering/mesh.h \
+  ../src/math/vec2.h \
   ../src/rendering/shader.h \
   ../src/core/logger.h \
   /usr/include/c++/11/iostream \
@@ -9744,6 +9748,7 @@ CMakeFiles/voxel_test.dir/src/game/survival_mode.cpp.o: ../src/game/survival_mod
   /usr/include/strings.h \
   ../src/rendering/renderer.h \
   ../src/rendering/mesh.h \
+  ../src/math/vec2.h \
   ../src/rendering/shader.h \
   ../src/rendering/sky/day_night_cycle.h \
   ../src/core/crafting.h \
@@ -9754,7 +9759,6 @@ CMakeFiles/voxel_test.dir/src/game/survival_mode.cpp.o: ../src/game/survival_mod
   /usr/include/c++/11/bits/stl_queue.h \
   ../src/core/item_system.h \
   ../src/core/math.h \
-  ../src/core/types.h \
   ../src/core/logger.h \
   ../src/core/raycast.h \
   ../src/editor/in_game_editor.h \
@@ -14636,6 +14640,7 @@ CMakeFiles/voxel_test.dir/src/rendering/mesh.cpp.o: ../src/rendering/mesh.cpp \
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
+  ../src/math/vec2.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/ios \
@@ -15521,6 +15526,7 @@ CMakeFiles/voxel_test.dir/src/rendering/renderer.cpp.o: ../src/rendering/rendere
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
+  ../src/math/vec2.h \
   ../src/rendering/shader.h \
   /usr/include/c++/11/string \
   /usr/include/c++/11/bits/stringfwd.h \
@@ -16151,6 +16157,7 @@ CMakeFiles/voxel_test.dir/src/rendering/shadow_system.cpp.o: ../src/rendering/sh
   /usr/include/c++/11/bits/unordered_map.h \
   /usr/include/c++/11/bits/erase_if.h \
   ../src/rendering/mesh.h \
+  ../src/math/vec2.h \
   /usr/include/c++/11/memory \
   /usr/include/c++/11/bits/stl_tempbuf.h \
   /usr/include/c++/11/bits/stl_raw_storage_iter.h \
@@ -17208,7 +17215,7 @@ CMakeFiles/voxel_test.dir/src/scripting/lua_bindings.cpp.o: ../src/scripting/lua
   /usr/include/c++/11/bits/stl_queue.h \
   ../src/core/item_system.h \
   ../src/core/math.h \
-  ../src/core/types.h \
+  ../src/math/mat4.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/ios \
@@ -17727,7 +17734,8 @@ CMakeFiles/voxel_test.dir/src/scripting/mod_system.cpp.o: ../src/scripting/mod_s
   /usr/include/c++/11/bits/stl_queue.h \
   ../src/core/item_system.h \
   ../src/core/math.h \
-  ../src/core/types.h \
+  ../src/math/vec2.h \
+  ../src/math/mat4.h \
   ../src/audio/audio_system.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
@@ -18310,7 +18318,6 @@ CMakeFiles/voxel_test.dir/src/test_main.cpp.o: ../src/test_main.cpp \
   ../src/game/combat_system.h \
   ../src/core/item_system.h \
   ../src/core/math.h \
-  ../src/core/types.h \
   ../src/animation/animation.h \
   ../src/editor/in_game_editor.h \
   ../src/editor/entity_spawner.h \
@@ -18375,6 +18382,7 @@ CMakeFiles/voxel_test.dir/src/test_main.cpp.o: ../src/test_main.cpp \
   /usr/include/c++/11/bits/this_thread_sleep.h \
   /usr/include/c++/11/atomic \
   /usr/include/c++/11/condition_variable \
+  ../src/core/types.h \
   ../src/core/asset_base.h \
   ../src/core/asset_importer.h \
   ../src/rendering/texture.h \
@@ -18679,7 +18687,8 @@ CMakeFiles/voxel_test.dir/src/ui/console_commands.cpp.o: ../src/ui/console_comma
   ../src/core/time_system.h \
   ../src/core/item_system.h \
   ../src/core/math.h \
-  ../src/core/types.h \
+  ../src/math/vec2.h \
+  ../src/math/mat4.h \
   ../src/voxel/world.h \
   ../src/voxel/chunk.h \
   /usr/include/c++/11/map \
@@ -18710,8 +18719,8 @@ CMakeFiles/voxel_test.dir/src/ui/ui_element.cpp.o: ../src/ui/ui_element.cpp \
   /usr/include/stdc-predef.h \
   ../src/ui/ui_element.h \
   ../src/core/math.h \
-  ../src/core/types.h \
-  /usr/include/c++/11/cstdint \
+  ../src/math/vec2.h \
+  /usr/include/c++/11/cmath \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
   /usr/include/features.h \
@@ -18724,19 +18733,13 @@ CMakeFiles/voxel_test.dir/src/ui/ui_element.cpp.o: ../src/ui/ui_element.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
   /usr/include/c++/11/pstl/pstl_config.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h \
-  /usr/include/stdint.h \
+  /usr/include/c++/11/bits/cpp_type_traits.h \
+  /usr/include/c++/11/ext/type_traits.h \
+  /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/x86_64-linux-gnu/bits/types.h \
   /usr/include/x86_64-linux-gnu/bits/typesizes.h \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar.h \
-  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
-  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
-  /usr/include/c++/11/cmath \
-  /usr/include/c++/11/bits/cpp_type_traits.h \
-  /usr/include/c++/11/ext/type_traits.h \
-  /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
   /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
@@ -18760,6 +18763,7 @@ CMakeFiles/voxel_test.dir/src/ui/ui_element.cpp.o: ../src/ui/ui_element.cpp \
   /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/endian.h \
   /usr/include/x86_64-linux-gnu/bits/endian.h \
   /usr/include/x86_64-linux-gnu/bits/endianness.h \
@@ -18808,6 +18812,8 @@ CMakeFiles/voxel_test.dir/src/ui/ui_element.cpp.o: ../src/ui/ui_element.cpp \
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
+  ../src/math/vec3.h \
+  ../src/math/mat4.h \
   /usr/include/c++/11/string \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/memoryfwd.h \
@@ -18816,11 +18822,16 @@ CMakeFiles/voxel_test.dir/src/ui/ui_element.cpp.o: ../src/ui/ui_element.cpp \
   /usr/include/c++/11/cwchar \
   /usr/include/wchar.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+  /usr/include/c++/11/cstdint \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h \
+  /usr/include/stdint.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /usr/include/c++/11/bits/allocator.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h \
   /usr/include/c++/11/ext/new_allocator.h \
@@ -19121,7 +19132,7 @@ CMakeFiles/voxel_test.dir/src/ui/ui_inventory.cpp.o: ../src/ui/ui_inventory.cpp 
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
   ../src/core/math.h \
-  ../src/core/types.h \
+  ../src/math/vec2.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -19147,8 +19158,9 @@ CMakeFiles/voxel_test.dir/src/ui/ui_inventory.cpp.o: ../src/ui/ui_inventory.cpp 
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  ../src/voxel/block_types.h \
   ../src/math/vec3.h \
+  ../src/math/mat4.h \
+  ../src/voxel/block_types.h \
   ../src/core/crafting.h \
   /usr/include/c++/11/queue \
   /usr/include/c++/11/deque \
@@ -20026,6 +20038,7 @@ CMakeFiles/voxel_test.dir/src/voxel/block_mesh_builder.cpp.o: ../src/voxel/block
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
   ../src/rendering/mesh.h \
+  ../src/math/vec2.h \
   ../src/voxel/block_registry.h
 
 CMakeFiles/voxel_test.dir/src/voxel/block_registry.cpp.o: ../src/voxel/block_registry.cpp \
@@ -22127,6 +22140,7 @@ CMakeFiles/voxel_test.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_ren
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
+  ../src/math/vec2.h \
   ../src/rendering/shader.h \
   /usr/include/c++/11/string \
   /usr/include/c++/11/bits/stringfwd.h \
@@ -22590,8 +22604,6 @@ CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.o: ../src/voxel/world_s
 ../src/rendering/weather/weather_effects_renderer.h:
 
 ../src/rendering/post_processing.cpp:
-
-../src/rendering/pbr_material.h:
 
 /usr/include/c++/11/bits/istream.tcc:
 
@@ -23597,8 +23609,6 @@ CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.o: ../src/voxel/world_s
 
 ../src/network/server_authority.cpp:
 
-../src/entity/entity_manager.h:
-
 ../src/entity/components.cpp:
 
 ../src/voxel/world_serializer.cpp:
@@ -23672,6 +23682,8 @@ CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.o: ../src/voxel/world_s
 /usr/include/x86_64-linux-gnu/sys/time.h:
 
 /usr/include/asm-generic/ioctl.h:
+
+../src/rendering/pbr_material.h:
 
 ../src/rendering/shadow_system.h:
 

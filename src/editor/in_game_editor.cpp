@@ -2,7 +2,7 @@
 #include "voxel/voxel_editor.h"
 #include "rendering/camera.h"
 #include "platform/input_manager.h"
-#include "entity/entity_manager.h"
+#include "entity/entity.h"
 #include "core/logger.h"
 #include <cmath>
 

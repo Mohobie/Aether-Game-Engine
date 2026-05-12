@@ -1,6 +1,6 @@
 #pragma once
 #include <chrono>
-namespace aether {
+namespace vge {
 class Timer {
 public:
     void start();
@@ -8,4 +8,4 @@ public:
 private:
     std::chrono::high_resolution_clock::time_point startTime;
 };
-} // namespace aether
+} // namespace vge

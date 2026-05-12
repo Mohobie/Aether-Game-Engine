@@ -2,7 +2,7 @@
 #include <string>
 #include <unordered_map>
 #include <variant>
-namespace aether {
+namespace vge {
 using ConfigValue = std::variant<std::string, int, float, bool>;
 class ConfigManager {
 public:
@@ -18,4 +18,4 @@ private:
     std::unordered_map<std::string, ConfigValue> values;
     std::unordered_map<std::string, ConfigValue> defaults;
 };
-} // namespace aether
+} // namespace vge

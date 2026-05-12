@@ -3,7 +3,7 @@
 #include <unordered_map>
 #include <memory>
 #include <typeindex>
-namespace aether {
+namespace vge {
 class Resource {
 public:
     virtual ~Resource() = default;
@@ -31,4 +31,4 @@ public:
 private:
     std::unordered_map<std::string, std::shared_ptr<Resource>> resources;
 };
-} // namespace aether
+} // namespace vge

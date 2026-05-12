@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-namespace aether {
+namespace vge {
 enum class GameStateType {
     Menu,
     Playing,
@@ -18,4 +18,4 @@ public:
     virtual GameStateType getType() const = 0;
     virtual const char* getName() const = 0;
 };
-} // namespace aether
+} // namespace vge

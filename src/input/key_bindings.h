@@ -2,7 +2,7 @@
 #include "input_manager.h"
 #include <string>
 #include <unordered_map>
-namespace aether {
+namespace vge {
 struct KeyBinding {
     std::string action;
     Key key;
@@ -20,4 +20,4 @@ private:
     std::unordered_map<std::string, Key> bindings;
     std::unordered_map<std::string, Key> defaults;
 };
-} // namespace aether
+} // namespace vge

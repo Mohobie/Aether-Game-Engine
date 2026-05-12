@@ -197,7 +197,8 @@ CMakeFiles/voxel_test.dir/src/core/crafting.cpp.o: \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h \
  /home/mohobie/projects/aether-game-engine/src/core/math.h \
- /home/mohobie/projects/aether-game-engine/src/core/types.h \
+ /home/mohobie/projects/aether-game-engine/src/math/vec2.h \
+ /home/mohobie/projects/aether-game-engine/src/math/mat4.h \
  /home/mohobie/projects/aether-game-engine/src/voxel/block_registry.h \
  /home/mohobie/projects/aether-game-engine/src/core/logger.h \
  /usr/include/c++/11/algorithm \

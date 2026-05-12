@@ -1,5 +1,5 @@
 #include "aabb.h"
-namespace aether {
+namespace vge {
 bool AABB::intersects(const AABB& other) const {
     return (min.x <= other.max.x && max.x >= other.min.x) &&
            (min.y <= other.max.y && max.y >= other.min.y) &&
@@ -20,4 +20,4 @@ void AABB::expand(const Vec3& point) {
     if (point.y > max.y) max.y = point.y;
     if (point.z > max.z) max.z = point.z;
 }
-} // namespace aether
+} // namespace vge

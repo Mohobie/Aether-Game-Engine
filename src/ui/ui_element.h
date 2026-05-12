@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 #include <memory>
-namespace aether {
+namespace vge {
 class UIElement {
 public:
     UIElement();
@@ -23,4 +23,4 @@ protected:
     bool visible = true;
     std::vector<std::shared_ptr<UIElement>> children;
 };
-} // namespace aether
+} // namespace vge

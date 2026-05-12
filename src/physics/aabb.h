@@ -1,6 +1,6 @@
 #pragma once
 #include "core/math.h"
-namespace aether {
+namespace vge {
 struct AABB {
     Vec3 min;
     Vec3 max;
@@ -12,4 +12,4 @@ struct AABB {
     Vec3 getSize() const;
     void expand(const Vec3& point);
 };
-} // namespace aether
+} // namespace vge

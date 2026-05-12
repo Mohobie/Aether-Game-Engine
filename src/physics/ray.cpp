@@ -1,3 +1,3 @@
 #include "ray.h"
-namespace aether {
-} // namespace aether
+namespace vge {
+} // namespace vge

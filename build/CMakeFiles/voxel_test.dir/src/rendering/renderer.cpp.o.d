@@ -107,6 +107,7 @@ CMakeFiles/voxel_test.dir/src/rendering/renderer.cpp.o: \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
+ /home/mohobie/projects/aether-game-engine/src/math/vec2.h \
  /home/mohobie/projects/aether-game-engine/src/rendering/shader.h \
  /usr/include/c++/11/string /usr/include/c++/11/bits/stringfwd.h \
  /usr/include/c++/11/bits/char_traits.h \

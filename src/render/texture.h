@@ -1,7 +1,7 @@
 #pragma once
 #include "core/types.h"
 #include <string>
-namespace aether {
+namespace vge {
 class Texture2D {
 public:
     Texture2D();
@@ -10,4 +10,4 @@ public:
 private:
     uint32_t id = 0;
 };
-} // namespace aether
+} // namespace vge

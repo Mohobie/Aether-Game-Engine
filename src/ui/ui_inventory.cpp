@@ -12,7 +12,7 @@ UIInventorySlot::UIInventorySlot(int index, const std::string& invID)
     : slotIndex(index), inventoryID(invID), isHovered(false), isPressed(false),
       isDragTarget(false), backgroundColor(0x444444FF), hoverColor(0x666666FF),
       pressedColor(0x888888FF), borderColor(0x222222FF), dragTargetColor(0x44AA44FF) {
-    setSize(aether::Vec2(50, 50));
+    setSize(vge::Vec2(50, 50));
 }
 
 void UIInventorySlot::setColors(uint32_t bg, uint32_t hover, uint32_t pressed, uint32_t border) {
@@ -36,8 +36,8 @@ void UIInventorySlot::render() {
     }
     
     // Get position and size
-    aether::Vec2 pos = getPosition();
-    aether::Vec2 size = getSize();
+    vge::Vec2 pos = getPosition();
+    vge::Vec2 size = getSize();
     
     // Note: Actual rendering would use the engine's 2D rendering system
     // For now, this is a placeholder that logs rendering info
@@ -51,11 +51,11 @@ void UIInventorySlot::render() {
     (void)size;
 }
 
-bool UIInventorySlot::onClick(const aether::Vec2& pos) {
+bool UIInventorySlot::onClick(const vge::Vec2& pos) {
     if (!isVisible()) return false;
     
-    aether::Vec2 slotPos = getPosition();
-    aether::Vec2 slotSize = getSize();
+    vge::Vec2 slotPos = getPosition();
+    vge::Vec2 slotSize = getSize();
     
     if (pos.x >= slotPos.x && pos.x <= slotPos.x + slotSize.x &&
         pos.y >= slotPos.y && pos.y <= slotPos.y + slotSize.y) {
@@ -80,7 +80,7 @@ UIInventoryGrid::UIInventoryGrid(const std::string& invID, int width, int height
     // Calculate grid size
     float totalWidth = width * slotSize + (width - 1) * slotSpacing;
     float totalHeight = height * slotSize + (height - 1) * slotSpacing;
-    setSize(aether::Vec2(totalWidth, totalHeight));
+    setSize(vge::Vec2(totalWidth, totalHeight));
     
     // Create slot elements
     for (int y = 0; y < height; ++y) {
@@ -90,8 +90,8 @@ UIInventoryGrid::UIInventoryGrid(const std::string& invID, int width, int height
             
             float posX = x * (slotSize + slotSpacing);
             float posY = y * (slotSize + slotSpacing);
-            slot->setPosition(aether::Vec2(posX, posY));
-            slot->setSize(aether::Vec2(slotSize, slotSize));
+            slot->setPosition(vge::Vec2(posX, posY));
+            slot->setSize(vge::Vec2(slotSize, slotSize));
             slot->setColors(slotBackgroundColor, slotHoverColor, slotPressedColor, slotBorderColor);
             
             // Set up callbacks
@@ -138,9 +138,9 @@ std::shared_ptr<UIInventorySlot> UIInventoryGrid::getSlotElement(int x, int y) {
     return getSlotElement(index);
 }
 
-int UIInventoryGrid::getSlotAtPosition(const aether::Vec2& pos) const {
-    aether::Vec2 gridPos = getPosition();
-    aether::Vec2 localPos = aether::Vec2(pos.x - gridPos.x, pos.y - gridPos.y);
+int UIInventoryGrid::getSlotAtPosition(const vge::Vec2& pos) const {
+    vge::Vec2 gridPos = getPosition();
+    vge::Vec2 localPos = vge::Vec2(pos.x - gridPos.x, pos.y - gridPos.y);
     
     for (int y = 0; y < gridHeight; ++y) {
         for (int x = 0; x < gridWidth; ++x) {
@@ -157,15 +157,15 @@ int UIInventoryGrid::getSlotAtPosition(const aether::Vec2& pos) const {
     return -1;
 }
 
-aether::Vec2 UIInventoryGrid::getSlotPosition(int index) const {
+vge::Vec2 UIInventoryGrid::getSlotPosition(int index) const {
     int x = index % gridWidth;
     int y = index / gridWidth;
     
-    aether::Vec2 gridPos = getPosition();
+    vge::Vec2 gridPos = getPosition();
     float slotX = gridPos.x + x * (slotSize + slotSpacing);
     float slotY = gridPos.y + y * (slotSize + slotSpacing);
     
-    return aether::Vec2(slotX, slotY);
+    return vge::Vec2(slotX, slotY);
 }
 
 void UIInventoryGrid::render() {
@@ -180,11 +180,11 @@ void UIInventoryGrid::render() {
     }
 }
 
-bool UIInventoryGrid::onClick(const aether::Vec2& pos) {
+bool UIInventoryGrid::onClick(const vge::Vec2& pos) {
     if (!isVisible()) return false;
     
-    aether::Vec2 gridPos = getPosition();
-    aether::Vec2 gridSize = getSize();
+    vge::Vec2 gridPos = getPosition();
+    vge::Vec2 gridSize = getSize();
     
     if (pos.x >= gridPos.x && pos.x <= gridPos.x + gridSize.x &&
         pos.y >= gridPos.y && pos.y <= gridPos.y + gridSize.y) {
@@ -204,8 +204,8 @@ bool UIInventoryGrid::onClick(const aether::Vec2& pos) {
 
 // ==================== UIDraggedItem ====================
 
-UIDraggedItem::UIDraggedItem() : visible(false), offset(aether::Vec2(-25, -25)) {
-    setSize(aether::Vec2(50, 50));
+UIDraggedItem::UIDraggedItem() : visible(false), offset(vge::Vec2(-25, -25)) {
+    setSize(vge::Vec2(50, 50));
 }
 
 void UIDraggedItem::setItem(const ItemInstance& itemInstance) {
@@ -218,8 +218,8 @@ void UIDraggedItem::clearItem() {
     visible = false;
 }
 
-void UIDraggedItem::updatePosition(const aether::Vec2& mousePos) {
-    setPosition(aether::Vec2(mousePos.x + offset.x, mousePos.y + offset.y));
+void UIDraggedItem::updatePosition(const vge::Vec2& mousePos) {
+    setPosition(vge::Vec2(mousePos.x + offset.x, mousePos.y + offset.y));
 }
 
 void UIDraggedItem::render() {
@@ -233,10 +233,10 @@ void UIDraggedItem::render() {
 
 UIInventoryTooltip::UIInventoryTooltip()
     : visible(false), backgroundColor(0x222222EE), textColor(0xFFFFFFFF), maxWidth(200.0f) {
-    setSize(aether::Vec2(200, 100));
+    setSize(vge::Vec2(200, 100));
 }
 
-void UIInventoryTooltip::show(const std::string& item, const aether::Vec2& pos) {
+void UIInventoryTooltip::show(const std::string& item, const vge::Vec2& pos) {
     itemID = item;
     visible = true;
     setPosition(pos);
@@ -260,7 +260,7 @@ void UIInventoryTooltip::show(const std::string& item, const aether::Vec2& pos) 
     
     float width = std::min(textWidth + 20.0f, maxWidth);
     float height = lineCount * lineHeight + 20.0f;
-    setSize(aether::Vec2(width, height));
+    setSize(vge::Vec2(width, height));
 }
 
 void UIInventoryTooltip::hide() {
@@ -288,13 +288,13 @@ bool UIInventoryController::initialize() {
     
     // Create player inventory grid (9x4 = 36 slots: 9 hotbar + 27 inventory)
     playerInventoryGrid = std::make_shared<UIInventoryGrid>("player_inventory", 9, 4);
-    playerInventoryGrid->setPosition(aether::Vec2(100, 200));
+    playerInventoryGrid->setPosition(vge::Vec2(100, 200));
     playerInventoryGrid->setSlotSize(50.0f);
     playerInventoryGrid->setSlotSpacing(5.0f);
     
     // Create hotbar grid (9x1)
     hotbarGrid = std::make_shared<UIInventoryGrid>("player_hotbar", 9, 1);
-    hotbarGrid->setPosition(aether::Vec2(100, 500));
+    hotbarGrid->setPosition(vge::Vec2(100, 500));
     hotbarGrid->setSlotSize(50.0f);
     hotbarGrid->setSlotSpacing(5.0f);
     
@@ -367,14 +367,14 @@ void UIInventoryController::update(float deltaTime) {
     tooltip->Update(deltaTime);
 }
 
-void UIInventoryController::updateDrag(const aether::Vec2& mousePos) {
+void UIInventoryController::updateDrag(const vge::Vec2& mousePos) {
     if (isDragging) {
         draggedItem->updatePosition(mousePos);
         inventoryManager->UpdateDragPosition(mousePos);
     }
 }
 
-void UIInventoryController::updateTooltip(const aether::Vec2& mousePos, int hoveredSlot) {
+void UIInventoryController::updateTooltip(const vge::Vec2& mousePos, int hoveredSlot) {
     if (hoveredSlot >= 0 && isInventoryOpen) {
         Inventory* inv = inventoryManager->GetActiveInventory();
         if (inv && hoveredSlot < inv->GetTotalSlots()) {
@@ -389,7 +389,7 @@ void UIInventoryController::updateTooltip(const aether::Vec2& mousePos, int hove
     tooltip->hide();
 }
 
-bool UIInventoryController::handleMouseClick(const aether::Vec2& pos, bool isRightClick) {
+bool UIInventoryController::handleMouseClick(const vge::Vec2& pos, bool isRightClick) {
     if (!isInventoryOpen) return false;
     
     // Check which grid was clicked
@@ -446,7 +446,7 @@ bool UIInventoryController::handleMouseClick(const aether::Vec2& pos, bool isRig
     return false;
 }
 
-bool UIInventoryController::handleMouseRelease(const aether::Vec2& pos) {
+bool UIInventoryController::handleMouseRelease(const vge::Vec2& pos) {
     if (!isDragging) return false;
     
     // Try to drop at current position
@@ -479,7 +479,7 @@ bool UIInventoryController::handleMouseRelease(const aether::Vec2& pos) {
     return true;
 }
 
-bool UIInventoryController::handleMouseMove(const aether::Vec2& pos) {
+bool UIInventoryController::handleMouseMove(const vge::Vec2& pos) {
     if (!isInventoryOpen) return false;
     
     // Update drag position
@@ -588,14 +588,14 @@ bool UICraftingPanel::initialize() {
     
     // Create 3x3 crafting grid
     craftingGrid = std::make_shared<UIInventoryGrid>("crafting_grid", 3, 3);
-    craftingGrid->setPosition(aether::Vec2(500, 200));
+    craftingGrid->setPosition(vge::Vec2(500, 200));
     craftingGrid->setSlotSize(50.0f);
     craftingGrid->setSlotSpacing(5.0f);
     
     // Create result slot
     resultSlot = std::make_shared<UIInventorySlot>(-1, "crafting_result");
-    resultSlot->setPosition(aether::Vec2(700, 275));
-    resultSlot->setSize(aether::Vec2(50, 50));
+    resultSlot->setPosition(vge::Vec2(700, 275));
+    resultSlot->setSize(vge::Vec2(50, 50));
     
     Logger::Info("[UICraftingPanel] Initialized");
     return true;

@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-namespace aether {
+namespace vge {
 class Sound {
 public:
     Sound();
@@ -15,4 +15,4 @@ private:
     bool looping = false;
     bool playing = false;
 };
-} // namespace aether
+} // namespace vge

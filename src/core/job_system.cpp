@@ -1,5 +1,5 @@
 #include "job_system.h"
-namespace aether {
+namespace vge {
 JobSystem::JobSystem(size_t numThreads) {
     for (size_t i = 0; i < numThreads; ++i) {
         workers.emplace_back([this] {
@@ -32,4 +32,4 @@ void JobSystem::waitForAll() {
 size_t JobSystem::getPendingTasks() const {
     return pendingTasks.load();
 }
-} // namespace aether
+} // namespace vge

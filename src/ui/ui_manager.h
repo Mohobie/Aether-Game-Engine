@@ -2,7 +2,7 @@
 #include "ui_element.h"
 #include <vector>
 #include <memory>
-namespace aether {
+namespace vge {
 class UIManager {
 public:
     UIManager();
@@ -14,4 +14,4 @@ public:
 private:
     std::vector<std::shared_ptr<UIElement>> elements;
 };
-} // namespace aether
+} // namespace vge

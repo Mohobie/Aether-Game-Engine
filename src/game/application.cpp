@@ -2,7 +2,7 @@
 #include "core/utils.h"
 #include "platform/timer.h"
 #include <iostream>
-namespace aether {
+namespace vge {
 Application::Application() {}
 bool Application::initialize(int width, int height, const std::string& title) {
     Logger::info("Initializing Aether Engine...");
@@ -64,4 +64,4 @@ InputManager& Application::getInput() { return *input; }
 EntityManager& Application::getEntities() { return *entities; }
 UIManager& Application::getUI() { return *ui; }
 ResourceManager& Application::getResources() { return *resources; }
-} // namespace aether
+} // namespace vge

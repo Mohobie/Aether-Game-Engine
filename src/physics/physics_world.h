@@ -2,7 +2,7 @@
 #include "collider.h"
 #include <vector>
 #include <memory>
-namespace aether {
+namespace vge {
 class PhysicsWorld {
 public:
     PhysicsWorld();
@@ -14,4 +14,4 @@ public:
 private:
     std::vector<std::shared_ptr<Collider>> colliders;
 };
-} // namespace aether
+} // namespace vge

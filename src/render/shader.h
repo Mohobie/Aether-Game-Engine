@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-namespace aether {
+namespace vge {
 class Shader {
 public:
     bool load(const std::string& vertexSource, const std::string& fragmentSource);
@@ -9,4 +9,4 @@ public:
 private:
     unsigned int program = 0;
 };
-} // namespace aether
+} // namespace vge

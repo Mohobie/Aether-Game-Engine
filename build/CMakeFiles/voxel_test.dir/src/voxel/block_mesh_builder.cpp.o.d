@@ -171,4 +171,5 @@ CMakeFiles/voxel_test.dir/src/voxel/block_mesh_builder.cpp.o: \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
  /home/mohobie/projects/aether-game-engine/src/rendering/mesh.h \
+ /home/mohobie/projects/aether-game-engine/src/math/vec2.h \
  /home/mohobie/projects/aether-game-engine/src/voxel/block_registry.h

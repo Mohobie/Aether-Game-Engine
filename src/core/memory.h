@@ -2,7 +2,7 @@
 #include "types.h"
 #include <vector>
 #include <cstddef>
-namespace aether {
+namespace vge {
 class PoolAllocator {
 public:
     PoolAllocator(size_t objectSize, size_t objectCount);
@@ -15,4 +15,4 @@ private:
     FreeNode* freeList;
     std::vector<void*> blocks;
 };
-} // namespace aether
+} // namespace vge

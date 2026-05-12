@@ -1,7 +1,7 @@
 #pragma once
 #include "ui_element.h"
 #include <functional>
-namespace aether {
+namespace vge {
 class Button : public UIElement {
 public:
     Button();
@@ -14,4 +14,4 @@ private:
     std::string text;
     std::function<void()> callback;
 };
-} // namespace aether
+} // namespace vge

@@ -1,6 +1,6 @@
 #pragma once
 #include "core/math.h"
-namespace aether {
+namespace vge {
 struct Ray {
     Vec3 origin;
     Vec3 direction;
@@ -14,4 +14,4 @@ struct RaycastHit {
     float distance;
     bool hit;
 };
-} // namespace aether
+} // namespace vge

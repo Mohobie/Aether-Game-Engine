@@ -1,5 +1,5 @@
 #include "ui_element.h"
-namespace aether {
+namespace vge {
 UIElement::UIElement() : position(0,0), size(100,100) {}
 void UIElement::setPosition(const Vec2& pos) { position = pos; }
 void UIElement::setSize(const Vec2& size) { this->size = size; }
@@ -20,4 +20,4 @@ bool UIElement::onClick(const Vec2& pos) {
     }
     return false;
 }
-} // namespace aether
+} // namespace vge

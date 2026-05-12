@@ -5,7 +5,7 @@
 #include <mutex>
 #include <condition_variable>
 #include <future>
-namespace aether {
+namespace vge {
 class JobSystem {
 public:
     JobSystem(size_t numThreads = 4);
@@ -32,4 +32,4 @@ private:
     bool stop = false;
     std::atomic<size_t> pendingTasks{0};
 };
-} // namespace aether
+} // namespace vge

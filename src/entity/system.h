@@ -1,6 +1,6 @@
 #pragma once
 #include "entity_manager.h"
-namespace aether {
+namespace vge {
 class System {
 public:
     virtual ~System() = default;
@@ -18,4 +18,4 @@ public:
 private:
     std::vector<std::unique_ptr<System>> systems;
 };
-} // namespace aether
+} // namespace vge

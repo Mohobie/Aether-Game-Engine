@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 #include <functional>
-namespace aether {
+namespace vge {
 class AssetLoader {
 public:
     AssetLoader();
@@ -14,4 +14,4 @@ public:
 private:
     std::string searchPath;
 };
-} // namespace aether
+} // namespace vge

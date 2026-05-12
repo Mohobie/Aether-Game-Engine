@@ -1,7 +1,7 @@
 #include "profiler.h"
 #include <fstream>
 #include <mutex>
-namespace aether {
+namespace vge {
 Profiler& Profiler::getInstance() {
     static Profiler instance;
     return instance;
@@ -40,4 +40,4 @@ void Timer::stop() {
     Profiler::getInstance().writeProfile({name, start, end, 0});
     stopped = true;
 }
-} // namespace aether
+} // namespace vge

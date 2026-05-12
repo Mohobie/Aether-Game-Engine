@@ -1,9 +1,9 @@
 #pragma once
 #include "core/math.h"
-#include "entity/entity_manager.h"
+#include "entity/entity.h"
 #include "voxel/world.h"
 #include <string>
-namespace aether {
+namespace vge {
 class Scene {
 public:
     Scene(const std::string& name);
@@ -21,4 +21,4 @@ private:
     World world;
     EntityID activeCamera = INVALID_ENTITY;
 };
-} // namespace aether
+} // namespace vge

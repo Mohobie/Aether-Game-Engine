@@ -2,7 +2,7 @@
 #include <string>
 #include <map>
 #include <chrono>
-namespace aether {
+namespace vge {
 struct ProfileResult {
     std::string name;
     long long start, end;
@@ -31,4 +31,4 @@ private:
     std::chrono::time_point<std::chrono::high_resolution_clock> startTime;
     bool stopped = false;
 };
-} // namespace aether
+} // namespace vge

@@ -1,6 +1,6 @@
 #pragma once
 #include "core/math.h"
-namespace aether {
+namespace vge {
 class Camera {
 public:
     Vec3 position = Vec3(0, 10, 0);
@@ -13,4 +13,4 @@ public:
     Mat4 getViewMatrix() const;
     Mat4 getProjectionMatrix() const;
 };
-} // namespace aether
+} // namespace vge

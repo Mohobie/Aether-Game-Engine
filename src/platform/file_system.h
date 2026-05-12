@@ -3,7 +3,7 @@
 #include <vector>
 #include "platform_common.h"
 
-namespace aether {
+namespace vge {
 class FileSystem {
 public:
     static bool exists(const std::string& path);
@@ -13,4 +13,4 @@ public:
     static bool deleteFile(const std::string& path);
     static std::vector<std::string> listDirectory(const std::string& path);
 };
-} // namespace aether
+} // namespace vge

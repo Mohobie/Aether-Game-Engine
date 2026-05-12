@@ -1,7 +1,7 @@
 #include "config_manager.h"
 #include <fstream>
 #include <sstream>
-namespace aether {
+namespace vge {
 ConfigManager::ConfigManager() {}
 bool ConfigManager::loadFromFile(const std::string& path) {
     std::ifstream file(path);
@@ -54,4 +54,4 @@ ConfigValue ConfigManager::getValue(const std::string& key) const {
 bool ConfigManager::hasKey(const std::string& key) const { return values.find(key) != values.end(); }
 void ConfigManager::setDefault(const std::string& key, const ConfigValue& value) { defaults[key] = value; }
 void ConfigManager::clear() { values.clear(); }
-} // namespace aether
+} // namespace vge

@@ -1,7 +1,7 @@
 #pragma once
 #include "aabb.h"
 #include "ray.h"
-namespace aether {
+namespace vge {
 class Collider {
 public:
     virtual ~Collider() = default;
@@ -18,4 +18,4 @@ public:
 private:
     AABB bounds;
 };
-} // namespace aether
+} // namespace vge

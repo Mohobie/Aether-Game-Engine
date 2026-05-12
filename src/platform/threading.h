@@ -4,7 +4,7 @@
 #include <queue>
 #include <mutex>
 #include <condition_variable>
-namespace aether {
+namespace vge {
 class ThreadPool {
 public:
     ThreadPool(size_t numThreads = 4);
@@ -17,4 +17,4 @@ private:
     std::condition_variable condition;
     bool stop = false;
 };
-} // namespace aether
+} // namespace vge

@@ -170,6 +170,7 @@ CMakeFiles/voxel_test.dir/src/rendering/shadow_system.cpp.o: \
  /usr/include/c++/11/bits/unordered_map.h \
  /usr/include/c++/11/bits/erase_if.h \
  /home/mohobie/projects/aether-game-engine/src/rendering/mesh.h \
+ /home/mohobie/projects/aether-game-engine/src/math/vec2.h \
  /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
  /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \

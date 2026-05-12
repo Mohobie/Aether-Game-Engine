@@ -1,6 +1,6 @@
 #include "noise.h"
 #include <math>
-namespace aether {
+namespace vge {
 PerlinNoise::PerlinNoise(unsigned int seed) {
     for (int i = 0; i < 256; ++i) p[i] = i;
     for (int i = 0; i < 256; ++i) {
@@ -40,4 +40,4 @@ float PerlinNoise::octaveNoise(float x, float y, float z, int octaves) const {
     }
     return total / maxValue;
 }
-} // namespace aether
+} // namespace vge

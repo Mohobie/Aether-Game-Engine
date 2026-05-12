@@ -216,7 +216,8 @@ CMakeFiles/voxel_test.dir/src/ui/console_commands.cpp.o: \
  /home/mohobie/projects/aether-game-engine/src/core/time_system.h \
  /home/mohobie/projects/aether-game-engine/src/core/item_system.h \
  /home/mohobie/projects/aether-game-engine/src/core/math.h \
- /home/mohobie/projects/aether-game-engine/src/core/types.h \
+ /home/mohobie/projects/aether-game-engine/src/math/vec2.h \
+ /home/mohobie/projects/aether-game-engine/src/math/mat4.h \
  /home/mohobie/projects/aether-game-engine/src/voxel/world.h \
  /home/mohobie/projects/aether-game-engine/src/voxel/chunk.h \
  /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \

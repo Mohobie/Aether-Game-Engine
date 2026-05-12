@@ -5,8 +5,8 @@
 #include <memory>
 #include <functional>
 
-using aether::Vec2;
-using aether::UIElement;
+using vge::Vec2;
+using vge::UIElement;
 
 namespace vge {
 

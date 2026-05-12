@@ -1,9 +1,9 @@
 #pragma once
 #include "voxel/world.h"
-#include "entity/entity_manager.h"
+#include "entity/entity.h"
 #include <string>
 #include <vector>
-namespace aether {
+namespace vge {
 class Serializer {
 public:
     static bool saveWorld(const World& world, const std::string& path);
@@ -16,4 +16,4 @@ private:
     static int32_t readInt32(const std::vector<uint8_t>& data, size_t& offset);
     static std::string readString(const std::vector<uint8_t>& data, size_t& offset);
 };
-} // namespace aether
+} // namespace vge

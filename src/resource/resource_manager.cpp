@@ -1,5 +1,5 @@
 #include "resource_manager.h"
-namespace aether {
+namespace vge {
 ResourceManager::ResourceManager() {}
 void ResourceManager::unload(const std::string& path) {
     auto it = resources.find(path);
@@ -7,4 +7,4 @@ void ResourceManager::unload(const std::string& path) {
 }
 void ResourceManager::unloadAll() { resources.clear(); }
 size_t ResourceManager::getResourceCount() const { return resources.size(); }
-} // namespace aether
+} // namespace vge

@@ -4,11 +4,11 @@
 #include "voxel/world.h"
 #include "audio/audio_engine.h"
 #include "input/input_manager.h"
-#include "entity/entity_manager.h"
+#include "entity/entity.h"
 #include "ui/ui_manager.h"
 #include "resource/resource_manager.h"
 #include <memory>
-namespace aether {
+namespace vge {
 class Application {
 public:
     Application();
@@ -37,4 +37,4 @@ private:
     std::unique_ptr<UIManager> ui;
     std::unique_ptr<ResourceManager> resources;
 };
-} // namespace aether
+} // namespace vge

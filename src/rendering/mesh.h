@@ -2,13 +2,9 @@
 #include <vector>
 #include <cstdint>
 #include "math/vec3.h"
+#include "math/vec2.h"
 
 namespace vge {
-
-struct Vec2 {
-    float x, y;
-    Vec2(float x = 0, float y = 0) : x(x), y(y) {}
-};
 
 struct Vertex {
     Vec3 position;
