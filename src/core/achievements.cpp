@@ -1,7 +1,10 @@
 #include "achievements.h"
 #include "config.h"
+#include "nlohmann/json.hpp"
 #include <fstream>
 #include <iostream>
+
+using json = nlohmann::json;
 
 namespace vge {
 
@@ -185,33 +188,81 @@ void AchievementManager::PrintStatus() const {
 }
 
 bool AchievementManager::Save(const std::string& path) const {
-    // Simplified save without JSON library dependency
+    json j;
+    j["version"] = 1;
+    
+    json achievementsJson = json::array();
+    for (const auto& a : achievements) {
+        json achievementJson;
+        achievementJson["id"] = a.GetId();
+        achievementJson["name"] = a.GetName();
+        achievementJson["description"] = a.GetDescription();
+        achievementJson["type"] = static_cast<int>(a.GetType());
+        achievementJson["target"] = a.GetTarget();
+        achievementJson["current"] = a.GetCurrent();
+        achievementJson["unlocked"] = a.IsUnlocked();
+        achievementsJson.push_back(achievementJson);
+    }
+    j["achievements"] = achievementsJson;
+    
     std::ofstream file(path);
-    if (!file.is_open()) return false;
-    
-    file << "{" << std::endl;
-    file << "  \"achievements\": [" << std::endl;
-    
-    for (size_t i = 0; i < achievements.size(); ++i) {
-        const auto& a = achievements[i];
-        file << "    {\"id\": \"" << a.GetId() << "\", \"current\": " << a.GetCurrent() << ", \"unlocked\": " << (a.IsUnlocked() ? "true" : "false") << "}";
-        if (i < achievements.size() - 1) file << ",";
-        file << std::endl;
+    if (!file.is_open()) {
+        std::cerr << "[Achievements] Failed to write: " << path << std::endl;
+        return false;
     }
     
-    file << "  ]" << std::endl;
-    file << "}" << std::endl;
-    
+    file << j.dump(4);
+    std::cout << "[Achievements] Saved to " << path << std::endl;
     return true;
 }
 
 bool AchievementManager::Load(const std::string& path) {
-    // Simplified load - just check if file exists
     std::ifstream file(path);
-    if (!file.is_open()) return false;
+    if (!file.is_open()) {
+        std::cerr << "[Achievements] Failed to open: " << path << std::endl;
+        return false;
+    }
     
-    // TODO: Implement proper JSON parsing
-    return true;
+    try {
+        json j;
+        file >> j;
+        
+        if (!j.contains("achievements")) {
+            std::cerr << "[Achievements] Invalid format: missing 'achievements' array" << std::endl;
+            return false;
+        }
+        
+        // Clear existing achievements
+        achievements.clear();
+        
+        for (const auto& achievementJson : j["achievements"]) {
+            std::string id = achievementJson["id"].get<std::string>();
+            std::string name = achievementJson["name"].get<std::string>();
+            std::string description = achievementJson["description"].get<std::string>();
+            AchievementType type = static_cast<AchievementType>(achievementJson["type"].get<int>());
+            int target = achievementJson["target"].get<int>();
+            
+            Achievement achievement(id, name, description, type, target);
+            
+            // Restore progress
+            if (achievementJson.contains("current")) {
+                achievement.UpdateProgress(achievementJson["current"].get<int>());
+            }
+            if (achievementJson.contains("unlocked") && achievementJson["unlocked"].get<bool>()) {
+                achievement.Increment(0); // Force unlock if needed
+            }
+            
+            achievements.push_back(std::move(achievement));
+        }
+        
+        std::cout << "[Achievements] Loaded " << achievements.size() << " achievements from " << path << std::endl;
+        initialized = true;
+        return true;
+        
+    } catch (const std::exception& e) {
+        std::cerr << "[Achievements] JSON parse error: " << e.what() << std::endl;
+        return false;
+    }
 }
 
 } // namespace vge

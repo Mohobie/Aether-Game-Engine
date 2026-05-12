@@ -1,6 +1,10 @@
 #include "audio_events.h"
+#include "nlohmann/json.hpp"
 #include <cstdlib>
 #include <iostream>
+#include <fstream>
+
+using json = nlohmann::json;
 
 namespace vge {
 
@@ -177,15 +181,154 @@ bool SoundPack::HasCustomEvent(const std::string& eventName) const {
 }
 
 bool SoundPack::LoadFromFile(const std::string& path) {
-    // TODO: Implement JSON parsing when JSON library is available
-    std::cout << "[SoundPack] LoadFromFile not yet implemented (needs JSON parser): " << path << std::endl;
-    return false;
+    std::ifstream file(path);
+    if (!file.is_open()) {
+        std::cerr << "[SoundPack] Failed to open: " << path << std::endl;
+        return false;
+    }
+    
+    try {
+        json j;
+        file >> j;
+        
+        // Load pack name
+        if (j.contains("name")) {
+            name = j["name"].get<std::string>();
+        }
+        
+        // Load standard events
+        if (j.contains("events")) {
+            for (const auto& [eventName, eventData] : j["events"].items()) {
+                AudioEventType eventType = StringToAudioEventType(eventName);
+                if (eventType == AudioEventType::Custom && eventName != "custom") {
+                    // Skip unknown standard events
+                    continue;
+                }
+                
+                EventSoundSet soundSet(eventType);
+                
+                if (eventData.contains("default_volume")) {
+                    soundSet.defaultVolume = eventData["default_volume"].get<float>();
+                }
+                if (eventData.contains("randomize_pitch")) {
+                    soundSet.randomizePitch = eventData["randomize_pitch"].get<bool>();
+                }
+                if (eventData.contains("pitch_variation")) {
+                    soundSet.pitchVariation = eventData["pitch_variation"].get<float>();
+                }
+                
+                if (eventData.contains("sounds")) {
+                    for (const auto& sound : eventData["sounds"]) {
+                        SoundEntry entry;
+                        entry.filePath = sound["file"].get<std::string>();
+                        if (sound.contains("volume")) entry.volume = sound["volume"].get<float>();
+                        if (sound.contains("pitch_min")) entry.pitchMin = sound["pitch_min"].get<float>();
+                        if (sound.contains("pitch_max")) entry.pitchMax = sound["pitch_max"].get<float>();
+                        if (sound.contains("probability")) entry.probability = sound["probability"].get<float>();
+                        if (sound.contains("priority")) entry.priority = sound["priority"].get<int>();
+                        soundSet.AddSound(entry);
+                    }
+                }
+                
+                events[eventType] = std::move(soundSet);
+            }
+        }
+        
+        // Load custom events
+        if (j.contains("custom_events")) {
+            for (const auto& [eventName, eventData] : j["custom_events"].items()) {
+                EventSoundSet soundSet(AudioEventType::Custom);
+                
+                if (eventData.contains("default_volume")) {
+                    soundSet.defaultVolume = eventData["default_volume"].get<float>();
+                }
+                
+                if (eventData.contains("sounds")) {
+                    for (const auto& sound : eventData["sounds"]) {
+                        SoundEntry entry;
+                        entry.filePath = sound["file"].get<std::string>();
+                        if (sound.contains("volume")) entry.volume = sound["volume"].get<float>();
+                        if (sound.contains("pitch_min")) entry.pitchMin = sound["pitch_min"].get<float>();
+                        if (sound.contains("pitch_max")) entry.pitchMax = sound["pitch_max"].get<float>();
+                        if (sound.contains("probability")) entry.probability = sound["probability"].get<float>();
+                        if (sound.contains("priority")) entry.priority = sound["priority"].get<int>();
+                        soundSet.AddSound(entry);
+                    }
+                }
+                
+                customEvents[eventName] = std::move(soundSet);
+            }
+        }
+        
+        std::cout << "[SoundPack] Loaded " << name << " from " << path << std::endl;
+        return true;
+        
+    } catch (const std::exception& e) {
+        std::cerr << "[SoundPack] JSON parse error: " << e.what() << std::endl;
+        return false;
+    }
 }
 
 bool SoundPack::SaveToFile(const std::string& path) const {
-    // TODO: Implement JSON serialization when JSON library is available
-    std::cout << "[SoundPack] SaveToFile not yet implemented (needs JSON parser): " << path << std::endl;
-    return false;
+    json j;
+    j["name"] = name;
+    
+    // Save standard events
+    json eventsJson;
+    for (const auto& [eventType, soundSet] : events) {
+        std::string eventName = AudioEventTypeToString(eventType);
+        json eventJson;
+        eventJson["default_volume"] = soundSet.defaultVolume;
+        eventJson["randomize_pitch"] = soundSet.randomizePitch;
+        eventJson["pitch_variation"] = soundSet.pitchVariation;
+        
+        json soundsJson = json::array();
+        for (const auto& sound : soundSet.sounds) {
+            json soundJson;
+            soundJson["file"] = sound.filePath;
+            soundJson["volume"] = sound.volume;
+            soundJson["pitch_min"] = sound.pitchMin;
+            soundJson["pitch_max"] = sound.pitchMax;
+            soundJson["probability"] = sound.probability;
+            soundJson["priority"] = sound.priority;
+            soundsJson.push_back(soundJson);
+        }
+        eventJson["sounds"] = soundsJson;
+        eventsJson[eventName] = eventJson;
+    }
+    j["events"] = eventsJson;
+    
+    // Save custom events
+    json customEventsJson;
+    for (const auto& [eventName, soundSet] : customEvents) {
+        json eventJson;
+        eventJson["default_volume"] = soundSet.defaultVolume;
+        
+        json soundsJson = json::array();
+        for (const auto& sound : soundSet.sounds) {
+            json soundJson;
+            soundJson["file"] = sound.filePath;
+            soundJson["volume"] = sound.volume;
+            soundJson["pitch_min"] = sound.pitchMin;
+            soundJson["pitch_max"] = sound.pitchMax;
+            soundJson["probability"] = sound.probability;
+            soundJson["priority"] = sound.priority;
+            soundsJson.push_back(soundJson);
+        }
+        eventJson["sounds"] = soundsJson;
+        customEventsJson[eventName] = eventJson;
+    }
+    j["custom_events"] = customEventsJson;
+    
+    std::ofstream file(path);
+    if (!file.is_open()) {
+        std::cerr << "[SoundPack] Failed to write: " << path << std::endl;
+        return false;
+    }
+    
+    file << j.dump(4);
+    std::cout << "[SoundPack] Saved " << name << " to " << path << std::endl;
+    return true;
 }
 
 std::vector<AudioEventType> SoundPack::GetRegisteredEvents() const {
