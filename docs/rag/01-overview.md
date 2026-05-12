@@ -9,9 +9,12 @@ Aether Game Engine is a C++ voxel-based game engine with modern rendering, physi
 - **Voxel World**: Minecraft-style block-based world with infinite terrain generation
 - **Modern Rendering**: PBR materials, shadows, post-processing, day/night cycle
 - **Physics**: Rigidbody physics with collision detection
-- **AI**: Behavior trees, pathfinding, state machines
+- **AI**: Behavior trees, pathfinding, state machines, fully configurable environmental effects
 - **Networking**: Client-server multiplayer architecture
 - **Editor**: In-game editor for level design and testing
+- **Inventory**: Grid-based inventory with drag-and-drop, crafting, and item categories
+- **Audio**: 3D positional audio with event-driven sound packs
+- **Entity System**: Fully generic, data-driven entity archetypes (no built-in types)
 
 ## Project Structure
 
@@ -57,6 +60,7 @@ make -j4
 ```cpp
 #include "voxel/world.h"
 #include "rendering/renderer.h"
+#include "ai/entity_ai.h"
 
 int main() {
     // Create a world
@@ -68,6 +72,18 @@ int main() {
     
     // Place a block
     world.SetBlock(vge::Vec3(5, 10, 5), vge::BlockType::Stone);
+    
+    // Define a custom entity archetype (your game defines what exists)
+    vge::EntityArchetype spacePirate;
+    spacePirate.id = "space_pirate";
+    spacePirate.displayName = "Space Pirate";
+    spacePirate.health = 75.0f;
+    spacePirate.speed = 8.0f;
+    spacePirate.damage = 15.0f;
+    spacePirate.behavior = vge::AIBehaviorType::Aggressive;
+    spacePirate.canFly = true;
+    spacePirate.damagedBySunlight = false;  // Space helmet
+    vge::EntityArchetypeRegistry::GetInstance()->RegisterArchetype(spacePirate);
     
     // Render loop
     while (running) {
@@ -86,3 +102,6 @@ int main() {
 3. **Entities**: Game objects with components (position, mesh, physics)
 4. **Systems**: Process entities (rendering, physics, AI)
 5. **Events**: Communication between systems (input, collisions, etc.)
+6. **Entity Archetypes**: Fully generic - your game defines all entity types
+7. **Environmental Effects**: Configurable per entity (sunlight/water/darkness damage/heal)
+8. **Item Categories**: Block, Material, Consumable, Weapon, Armor, Tool, Misc

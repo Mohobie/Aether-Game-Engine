@@ -33,15 +33,14 @@
 
 | Namespace | Modules Using It |
 |-----------|-----------------|
-| `vge` | Math, Core (partial), Voxel, Render, Rendering, Physics (partial), Audio (partial), Platform (partial), Scripting, Network, UI (partial) |
-| `aether` | Core (partial), Entity, Game, Physics (partial), Audio (partial), Platform (partial), Resource, UI (partial) |
+| `vge` | All modules (unified namespace) |
 
 ---
 
 ## Key Observations
 
-1. **Dual namespaces**: The codebase uses both `vge` and `aether` namespaces inconsistently
-2. **Duplicate modules**: `render/` and `rendering/` both exist with similar classes
+1. **Unified namespace**: All code uses `vge` namespace consistently (fixed 2026-05-12)
+2. **Duplicate modules**: `render/` and `rendering/` both exist with similar classes - `render/` is legacy, prefer `rendering/`
 3. **Missing implementations**: Some headers have no corresponding .cpp files
 4. **Platform abstraction**: Window uses GLFW, FileSystem is minimal
 
