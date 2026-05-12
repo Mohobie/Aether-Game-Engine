@@ -170,7 +170,15 @@ aether-game-engine/
 
 ## Quick Start
 
-### Creating a World
+**New to the engine?** Read the [Developer Quick Start Guide](docs/QUICKSTART.md) for a step-by-step tutorial covering:
+- Building on Linux/macOS/Windows
+- Creating your first voxel world
+- Adding entities and player controllers
+- Block interaction, inventory, crafting
+- Audio, save/load, editor usage
+- Debug visualization and troubleshooting
+
+### Quick Example
 ```cpp
 #include "voxel/world.h"
 #include "rendering/renderer.h"
