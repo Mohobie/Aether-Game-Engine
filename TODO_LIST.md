@@ -3,8 +3,8 @@
 ## JSON Serialization (8 items)
 These require a JSON library (e.g., nlohmann/json) to be added to the project.
 
-- [ ] **src/ai/entity_ai.cpp:69** - `LoadFromFile()` - Load entity archetypes from JSON files
-- [ ] **src/ai/entity_ai.cpp:75** - `LoadFromDirectory()` - Batch load archetype JSON files from directory
+- [x] **src/ai/entity_ai.cpp:69** - `LoadFromFile()` - Load entity archetypes from JSON files ✅
+- [x] **src/ai/entity_ai.cpp:75** - `LoadFromDirectory()` - Batch load archetype JSON files from directory ✅
 - [ ] **src/audio/audio_events.cpp:180** - `LoadFromFile()` - Load sound pack definitions from JSON
 - [ ] **src/audio/audio_events.cpp:186** - `SaveToFile()` - Save sound pack definitions to JSON
 - [ ] **src/core/achievements.cpp:213** - `LoadFromFile()` - Load achievement definitions from JSON
@@ -33,11 +33,11 @@ These need actual rendering code for the inventory/crafting UI.
 
 - [ ] **src/core/crafting_inventory_bridge.cpp:274** - Map block types to item categories
 - [ ] **src/core/item_system.cpp:468** - Use proper inventory index instead of hardcoded 0
-- [ ] **src/voxel/chunk_manager.cpp:84** - Save chunks to disk (chunk persistence)
+- [x] **src/voxel/chunk_manager.cpp:84** - Save chunks to disk (chunk persistence) ✅
 
 ## AI (1 item)
 
-- [ ] **src/ai/entity_ai.cpp:100** - Check if entity is in sunlight (for sunlight damage)
+- [x] **src/ai/entity_ai.cpp:100** - Check if entity is in sunlight (for sunlight damage) ✅
 
 ---
 
