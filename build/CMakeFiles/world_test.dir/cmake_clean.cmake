@@ -59,6 +59,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/world_test.dir/src/debug/debug_renderer.cpp.o.d"
   "CMakeFiles/world_test.dir/src/debug/debug_system.cpp.o"
   "CMakeFiles/world_test.dir/src/debug/debug_system.cpp.o.d"
+  "CMakeFiles/world_test.dir/src/editor/asset_browser.cpp.o"
+  "CMakeFiles/world_test.dir/src/editor/asset_browser.cpp.o.d"
   "CMakeFiles/world_test.dir/src/editor/entity_spawner.cpp.o"
   "CMakeFiles/world_test.dir/src/editor/entity_spawner.cpp.o.d"
   "CMakeFiles/world_test.dir/src/editor/in_game_editor.cpp.o"

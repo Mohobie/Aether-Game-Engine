@@ -1206,6 +1206,39 @@ src/debug/debug_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/debug/debug_system.cpp.s
 .PHONY : src/debug/debug_system.cpp.s
 
+src/editor/asset_browser.o: src/editor/asset_browser.cpp.o
+.PHONY : src/editor/asset_browser.o
+
+# target to build an object file
+src/editor/asset_browser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/editor/asset_browser.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/editor/asset_browser.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/asset_browser.cpp.o
+.PHONY : src/editor/asset_browser.cpp.o
+
+src/editor/asset_browser.i: src/editor/asset_browser.cpp.i
+.PHONY : src/editor/asset_browser.i
+
+# target to preprocess a source file
+src/editor/asset_browser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/editor/asset_browser.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/editor/asset_browser.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/asset_browser.cpp.i
+.PHONY : src/editor/asset_browser.cpp.i
+
+src/editor/asset_browser.s: src/editor/asset_browser.cpp.s
+.PHONY : src/editor/asset_browser.s
+
+# target to generate assembly for a file
+src/editor/asset_browser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/editor/asset_browser.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/editor/asset_browser.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/asset_browser.cpp.s
+.PHONY : src/editor/asset_browser.cpp.s
+
 src/editor/entity_spawner.o: src/editor/entity_spawner.cpp.o
 .PHONY : src/editor/entity_spawner.o
 
@@ -3786,6 +3819,9 @@ help:
 	@echo "... src/debug/debug_system.o"
 	@echo "... src/debug/debug_system.i"
 	@echo "... src/debug/debug_system.s"
+	@echo "... src/editor/asset_browser.o"
+	@echo "... src/editor/asset_browser.i"
+	@echo "... src/editor/asset_browser.s"
 	@echo "... src/editor/entity_spawner.o"
 	@echo "... src/editor/entity_spawner.i"
 	@echo "... src/editor/entity_spawner.s"

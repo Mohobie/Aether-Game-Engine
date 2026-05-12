@@ -1343,10 +1343,24 @@ CMakeFiles/save_test.dir/src/editor/scene_viewport.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/save_test.dir/src/editor/scene_viewport.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/editor/scene_viewport.cpp -o CMakeFiles/save_test.dir/src/editor/scene_viewport.cpp.s
 
+CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.o: CMakeFiles/save_test.dir/flags.make
+CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.o: ../src/editor/asset_browser.cpp
+CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.o: CMakeFiles/save_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building CXX object CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.o -MF CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.o.d -o CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.o -c /home/mohobie/projects/aether-game-engine/src/editor/asset_browser.cpp
+
+CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/editor/asset_browser.cpp > CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.i
+
+CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/editor/asset_browser.cpp -o CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.s
+
 CMakeFiles/save_test.dir/src/ui/console_commands.cpp.o: CMakeFiles/save_test.dir/flags.make
 CMakeFiles/save_test.dir/src/ui/console_commands.cpp.o: ../src/ui/console_commands.cpp
 CMakeFiles/save_test.dir/src/ui/console_commands.cpp.o: CMakeFiles/save_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building CXX object CMakeFiles/save_test.dir/src/ui/console_commands.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building CXX object CMakeFiles/save_test.dir/src/ui/console_commands.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/save_test.dir/src/ui/console_commands.cpp.o -MF CMakeFiles/save_test.dir/src/ui/console_commands.cpp.o.d -o CMakeFiles/save_test.dir/src/ui/console_commands.cpp.o -c /home/mohobie/projects/aether-game-engine/src/ui/console_commands.cpp
 
 CMakeFiles/save_test.dir/src/ui/console_commands.cpp.i: cmake_force
@@ -1360,7 +1374,7 @@ CMakeFiles/save_test.dir/src/ui/console_commands.cpp.s: cmake_force
 CMakeFiles/save_test.dir/src/rendering/frustum.cpp.o: CMakeFiles/save_test.dir/flags.make
 CMakeFiles/save_test.dir/src/rendering/frustum.cpp.o: ../src/rendering/frustum.cpp
 CMakeFiles/save_test.dir/src/rendering/frustum.cpp.o: CMakeFiles/save_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building CXX object CMakeFiles/save_test.dir/src/rendering/frustum.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building CXX object CMakeFiles/save_test.dir/src/rendering/frustum.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/save_test.dir/src/rendering/frustum.cpp.o -MF CMakeFiles/save_test.dir/src/rendering/frustum.cpp.o.d -o CMakeFiles/save_test.dir/src/rendering/frustum.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/frustum.cpp
 
 CMakeFiles/save_test.dir/src/rendering/frustum.cpp.i: cmake_force
@@ -1374,7 +1388,7 @@ CMakeFiles/save_test.dir/src/rendering/frustum.cpp.s: cmake_force
 CMakeFiles/save_test.dir/src/rendering/culling_system.cpp.o: CMakeFiles/save_test.dir/flags.make
 CMakeFiles/save_test.dir/src/rendering/culling_system.cpp.o: ../src/rendering/culling_system.cpp
 CMakeFiles/save_test.dir/src/rendering/culling_system.cpp.o: CMakeFiles/save_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building CXX object CMakeFiles/save_test.dir/src/rendering/culling_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building CXX object CMakeFiles/save_test.dir/src/rendering/culling_system.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/save_test.dir/src/rendering/culling_system.cpp.o -MF CMakeFiles/save_test.dir/src/rendering/culling_system.cpp.o.d -o CMakeFiles/save_test.dir/src/rendering/culling_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/culling_system.cpp
 
 CMakeFiles/save_test.dir/src/rendering/culling_system.cpp.i: cmake_force
@@ -1388,7 +1402,7 @@ CMakeFiles/save_test.dir/src/rendering/culling_system.cpp.s: cmake_force
 CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.o: CMakeFiles/save_test.dir/flags.make
 CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.o: ../src/rendering/framebuffer_renderer.cpp
 CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.o: CMakeFiles/save_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building CXX object CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building CXX object CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.o -MF CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.o.d -o CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/framebuffer_renderer.cpp
 
 CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.i: cmake_force
@@ -1492,6 +1506,7 @@ save_test_OBJECTS = \
 "CMakeFiles/save_test.dir/src/editor/entity_spawner.cpp.o" \
 "CMakeFiles/save_test.dir/src/editor/in_game_editor.cpp.o" \
 "CMakeFiles/save_test.dir/src/editor/scene_viewport.cpp.o" \
+"CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.o" \
 "CMakeFiles/save_test.dir/src/ui/console_commands.cpp.o" \
 "CMakeFiles/save_test.dir/src/rendering/frustum.cpp.o" \
 "CMakeFiles/save_test.dir/src/rendering/culling_system.cpp.o" \
@@ -1591,6 +1606,7 @@ save_test: CMakeFiles/save_test.dir/src/game/combat_system.cpp.o
 save_test: CMakeFiles/save_test.dir/src/editor/entity_spawner.cpp.o
 save_test: CMakeFiles/save_test.dir/src/editor/in_game_editor.cpp.o
 save_test: CMakeFiles/save_test.dir/src/editor/scene_viewport.cpp.o
+save_test: CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.o
 save_test: CMakeFiles/save_test.dir/src/ui/console_commands.cpp.o
 save_test: CMakeFiles/save_test.dir/src/rendering/frustum.cpp.o
 save_test: CMakeFiles/save_test.dir/src/rendering/culling_system.cpp.o
@@ -1598,7 +1614,7 @@ save_test: CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.o
 save_test: CMakeFiles/save_test.dir/build.make
 save_test: /usr/lib/x86_64-linux-gnu/liblua5.4.so
 save_test: CMakeFiles/save_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Linking CXX executable save_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Linking CXX executable save_test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/save_test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
