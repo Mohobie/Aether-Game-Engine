@@ -63,6 +63,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_test.dir/src/editor/entity_spawner.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/editor/in_game_editor.cpp.o"
   "CMakeFiles/voxel_test.dir/src/editor/in_game_editor.cpp.o.d"
+  "CMakeFiles/voxel_test.dir/src/editor/scene_viewport.cpp.o"
+  "CMakeFiles/voxel_test.dir/src/editor/scene_viewport.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/entity/components.cpp.o"
   "CMakeFiles/voxel_test.dir/src/entity/components.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/entity/entity.cpp.o"

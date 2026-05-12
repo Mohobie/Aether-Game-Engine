@@ -1272,6 +1272,39 @@ src/editor/in_game_editor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.s
 .PHONY : src/editor/in_game_editor.cpp.s
 
+src/editor/scene_viewport.o: src/editor/scene_viewport.cpp.o
+.PHONY : src/editor/scene_viewport.o
+
+# target to build an object file
+src/editor/scene_viewport.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/editor/scene_viewport.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/editor/scene_viewport.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/editor/scene_viewport.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/scene_viewport.cpp.o
+.PHONY : src/editor/scene_viewport.cpp.o
+
+src/editor/scene_viewport.i: src/editor/scene_viewport.cpp.i
+.PHONY : src/editor/scene_viewport.i
+
+# target to preprocess a source file
+src/editor/scene_viewport.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/editor/scene_viewport.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/editor/scene_viewport.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/editor/scene_viewport.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/scene_viewport.cpp.i
+.PHONY : src/editor/scene_viewport.cpp.i
+
+src/editor/scene_viewport.s: src/editor/scene_viewport.cpp.s
+.PHONY : src/editor/scene_viewport.s
+
+# target to generate assembly for a file
+src/editor/scene_viewport.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/editor/scene_viewport.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/editor/scene_viewport.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/editor/scene_viewport.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/scene_viewport.cpp.s
+.PHONY : src/editor/scene_viewport.cpp.s
+
 src/entity/components.o: src/entity/components.cpp.o
 .PHONY : src/entity/components.o
 
@@ -3759,6 +3792,9 @@ help:
 	@echo "... src/editor/in_game_editor.o"
 	@echo "... src/editor/in_game_editor.i"
 	@echo "... src/editor/in_game_editor.s"
+	@echo "... src/editor/scene_viewport.o"
+	@echo "... src/editor/scene_viewport.i"
+	@echo "... src/editor/scene_viewport.s"
 	@echo "... src/entity/components.o"
 	@echo "... src/entity/components.i"
 	@echo "... src/entity/components.s"

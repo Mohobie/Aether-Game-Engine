@@ -183,6 +183,7 @@ set(CORE_SOURCES
     src/game/combat_system.cpp
     src/editor/entity_spawner.cpp
     src/editor/in_game_editor.cpp
+    src/editor/scene_viewport.cpp
     src/ui/console_commands.cpp
     src/rendering/frustum.cpp
     src/rendering/culling_system.cpp

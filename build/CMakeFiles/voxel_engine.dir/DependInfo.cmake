@@ -42,6 +42,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/debug/debug_system.cpp" "CMakeFiles/voxel_engine.dir/src/debug/debug_system.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/debug/debug_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/editor/entity_spawner.cpp" "CMakeFiles/voxel_engine.dir/src/editor/entity_spawner.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/editor/entity_spawner.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/editor/in_game_editor.cpp" "CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/editor/scene_viewport.cpp" "CMakeFiles/voxel_engine.dir/src/editor/scene_viewport.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/editor/scene_viewport.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/entity/components.cpp" "CMakeFiles/voxel_engine.dir/src/entity/components.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/entity/components.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/entity/entity.cpp" "CMakeFiles/voxel_engine.dir/src/entity/entity.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/entity/entity.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/game/block_interaction.cpp" "CMakeFiles/voxel_engine.dir/src/game/block_interaction.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/game/block_interaction.cpp.o.d"
