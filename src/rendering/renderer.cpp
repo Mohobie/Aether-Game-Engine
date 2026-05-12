@@ -12,63 +12,15 @@
 #include "voxel/block_registry.h"
 #include "voxel/world_renderer.h"
 #include "core/logger.h"
+#include <GL/gl.h>
 #include <iostream>
 #include <cstring>
 #include <cmath>
 #include <algorithm>
 
-// Software renderer - no OpenGL required!
-// Renders voxels to ASCII/console output
-
 namespace vge {
 
-struct Framebuffer {
-    static const int WIDTH = 80;
-    static const int HEIGHT = 40;
-    char pixels[HEIGHT][WIDTH];
-    float depth[HEIGHT][WIDTH];
-    
-    Framebuffer() {
-        Clear();
-    }
-    
-    void Clear() {
-        for (int y = 0; y < HEIGHT; y++) {
-            for (int x = 0; x < WIDTH; x++) {
-                pixels[y][x] = ' ';
-                depth[y][x] = 999999.0f;
-            }
-        }
-    }
-    
-    void SetPixel(int x, int y, float z, char c) {
-        if (x < 0 || x >= WIDTH || y < 0 || y >= HEIGHT) return;
-        if (z < depth[y][x]) {
-            depth[y][x] = z;
-            pixels[y][x] = c;
-        }
-    }
-    
-    void Draw() const {
-        std::cout << "+";
-        for (int x = 0; x < WIDTH; x++) std::cout << "-";
-        std::cout << "+\n";
-        
-        for (int y = 0; y < HEIGHT; y++) {
-            std::cout << "|";
-            for (int x = 0; x < WIDTH; x++) {
-                std::cout << pixels[y][x];
-            }
-            std::cout << "|\n";
-        }
-        
-        std::cout << "+";
-        for (int x = 0; x < WIDTH; x++) std::cout << "-";
-        std::cout << "+\n";
-    }
-};
-
-Renderer::Renderer() : initialized(false), width(80), height(40), 
+Renderer::Renderer() : initialized(false), width(1280), height(720), 
                        fb_renderer(nullptr), sky_renderer(nullptr), 
                        weather_renderer(nullptr), day_night_cycle(nullptr), 
                        weather_system(nullptr), world_renderer(nullptr), 
@@ -79,7 +31,11 @@ Renderer::~Renderer() {
 }
 
 bool Renderer::Initialize() {
-    std::cout << "[Renderer] Software renderer initialized (ASCII mode)\n";
+    // Initialize OpenGL
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_BACK);
+    glFrontFace(GL_CCW);
     
     // Initialize world renderer
     world_renderer = new WorldRenderer();
@@ -88,6 +44,7 @@ bool Renderer::Initialize() {
                                   Shader::GetUnlitFragmentShader());
     world_renderer->Initialize(world_shader);
     
+    std::cout << "[Renderer] OpenGL renderer initialized\n";
     initialized = true;
     return true;
 }
@@ -105,21 +62,21 @@ void Renderer::Shutdown() {
 }
 
 void Renderer::BeginFrame() {
-    // Clear screen (ANSI escape)
-    std::cout << "\033[2J\033[H";
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 void Renderer::EndFrame() {
-    // Frame complete
+    // Frame complete - swap buffers happens in window
 }
 
 void Renderer::SetClearColor(float r, float g, float b, float a) {
-    // No-op for ASCII renderer
+    glClearColor(r, g, b, a);
 }
 
 void Renderer::SetViewport(int x, int y, int w, int h) {
     width = w;
     height = h;
+    glViewport(x, y, w, h);
 }
 
 // Simple projection: world -> screen
@@ -150,42 +107,48 @@ Vec2 Project(const Vec3& worldPos, const Camera& camera, int screenW, int screen
     return Vec2(screenX, screenY);
 }
 
-char GetBlockChar(BlockTypeID type) {
-    if (type == BlockRegistry::GetInstance().GetBlockId("grass")) return '"';
-    if (type == BlockRegistry::GetInstance().GetBlockId("dirt")) return ':';
-    if (type == BlockRegistry::GetInstance().GetBlockId("stone")) return '#';
-    if (type == BlockRegistry::GetInstance().GetBlockId("wood")) return '+';
-    if (type == BlockRegistry::GetInstance().GetBlockId("leaves")) return '*';
-    if (type == BlockRegistry::GetInstance().GetBlockId("sand")) return '.';
-    if (type == BlockRegistry::GetInstance().GetBlockId("water")) return '~';
-    if (type == BlockRegistry::GetInstance().GetBlockId("bedrock")) return '@';
-    return '?';
+uint32_t Renderer::GetBlockColor(BlockTypeID type) {
+    // Return color for block type
+    if (type == BlockRegistry::GetInstance().GetBlockId("grass")) return 0xFF4CAF50;
+    if (type == BlockRegistry::GetInstance().GetBlockId("dirt")) return 0xFF795548;
+    if (type == BlockRegistry::GetInstance().GetBlockId("stone")) return 0xFF9E9E9E;
+    if (type == BlockRegistry::GetInstance().GetBlockId("wood")) return 0xFF8D6E63;
+    if (type == BlockRegistry::GetInstance().GetBlockId("leaves")) return 0xFF2E7D32;
+    if (type == BlockRegistry::GetInstance().GetBlockId("sand")) return 0xFFFFF59D;
+    if (type == BlockRegistry::GetInstance().GetBlockId("water")) return 0xFF2196F3;
+    if (type == BlockRegistry::GetInstance().GetBlockId("bedrock")) return 0xFF424242;
+    return 0xFFFFFFFF;
 }
 
 void Renderer::RenderWorld(const World& world, const Camera& camera) {
-    Framebuffer fb;
+    // Use OpenGL to render the world
+    // For now, render as colored cubes
     
-    // Render visible chunks
+    // Set up matrices
+    Mat4 view = camera.GetViewMatrix();
+    Mat4 proj = camera.GetProjectionMatrix();
+    
+    // Simple colored cube rendering
     for (int cx = -2; cx <= 2; cx++) {
         for (int cy = -1; cy <= 1; cy++) {
             for (int cz = -2; cz <= 2; cz++) {
                 Chunk* chunk = const_cast<World&>(world).GetChunk(cx, cy, cz);
                 if (!chunk || !chunk->loaded) continue;
                 
-                // Update mesh if needed (builds GPU-ready mesh data)
+                // Update mesh if needed
                 if (chunk->IsDirty()) {
                     UpdateChunkMesh(chunk);
                     chunk->SetDirty(false);
                 }
                 
-                // Render each visible block in chunk
-                for (int x = 0; x < CHUNK_SIZE; x += 2) {
-                    for (int y = 0; y < CHUNK_SIZE; y += 2) {
-                        for (int z = 0; z < CHUNK_SIZE; z += 2) {
+                // Render each visible block
+                for (int x = 0; x < CHUNK_SIZE; x++) {
+                    for (int y = 0; y < CHUNK_SIZE; y++) {
+                        for (int z = 0; z < CHUNK_SIZE; z++) {
                             BlockTypeID block = chunk->GetBlock(x, y, z);
                             if (block == BlockRegistry::GetInstance().GetBlockId("air")) continue;
                             
-                            // Optimization: only draw if at least one face is exposed to air
+                            // Check visibility
                             bool visible = false;
                             if (x == 0 || chunk->GetBlock(x-1, y, z) == BlockRegistry::GetInstance().GetBlockId("air")) visible = true;
                             if (x == CHUNK_SIZE-1 || chunk->GetBlock(x+1, y, z) == BlockRegistry::GetInstance().GetBlockId("air")) visible = true;
@@ -194,7 +157,7 @@ void Renderer::RenderWorld(const World& world, const Camera& camera) {
                             if (z == 0 || chunk->GetBlock(x, y, z-1) == BlockRegistry::GetInstance().GetBlockId("air")) visible = true;
                             if (z == CHUNK_SIZE-1 || chunk->GetBlock(x, y, z+1) == BlockRegistry::GetInstance().GetBlockId("air")) visible = true;
                             
-                            if (!visible) continue; // Skip hidden blocks
+                            if (!visible) continue;
                             
                             // World position
                             Vec3 worldPos(
@@ -203,40 +166,69 @@ void Renderer::RenderWorld(const World& world, const Camera& camera) {
                                 cz * CHUNK_SIZE + z
                             );
                             
-                            // Project to screen
-                            Vec2 screenPos = Project(worldPos, camera, fb.WIDTH, fb.HEIGHT);
+                            // Draw colored cube
+                            uint32_t color = GetBlockColor(block);
+                            float r = ((color >> 16) & 0xFF) / 255.0f;
+                            float g = ((color >> 8) & 0xFF) / 255.0f;
+                            float b = (color & 0xFF) / 255.0f;
                             
-                            // Get depth (distance from camera)
-                            float depth = (worldPos - camera.GetPosition()).length();
+                            glPushMatrix();
+                            glTranslatef(worldPos.x + 0.5f, worldPos.y + 0.5f, worldPos.z + 0.5f);
+                            glScalef(0.5f, 0.5f, 0.5f);
                             
-                            // Draw
-                            fb.SetPixel((int)screenPos.x, (int)screenPos.y, depth, GetBlockChar(block));
+                            glColor3f(r, g, b);
+                            
+                            // Draw cube faces
+                            glBegin(GL_QUADS);
+                            
+                            // Front face
+                            glVertex3f(-1, -1, 1);
+                            glVertex3f(1, -1, 1);
+                            glVertex3f(1, 1, 1);
+                            glVertex3f(-1, 1, 1);
+                            
+                            // Back face
+                            glVertex3f(-1, -1, -1);
+                            glVertex3f(-1, 1, -1);
+                            glVertex3f(1, 1, -1);
+                            glVertex3f(1, -1, -1);
+                            
+                            // Top face
+                            glVertex3f(-1, 1, -1);
+                            glVertex3f(-1, 1, 1);
+                            glVertex3f(1, 1, 1);
+                            glVertex3f(1, 1, -1);
+                            
+                            // Bottom face
+                            glVertex3f(-1, -1, -1);
+                            glVertex3f(1, -1, -1);
+                            glVertex3f(1, -1, 1);
+                            glVertex3f(-1, -1, 1);
+                            
+                            // Right face
+                            glVertex3f(1, -1, -1);
+                            glVertex3f(1, 1, -1);
+                            glVertex3f(1, 1, 1);
+                            glVertex3f(1, -1, 1);
+                            
+                            // Left face
+                            glVertex3f(-1, -1, -1);
+                            glVertex3f(-1, -1, 1);
+                            glVertex3f(-1, 1, 1);
+                            glVertex3f(-1, 1, -1);
+                            
+                            glEnd();
+                            
+                            glPopMatrix();
                         }
                     }
                 }
             }
         }
     }
-    
-    // Draw crosshair at center
-    int cx = fb.WIDTH / 2;
-    int cy = fb.HEIGHT / 2;
-    fb.SetPixel(cx, cy, 0.0f, '+');
-    fb.SetPixel(cx - 1, cy, 0.0f, '-');
-    fb.SetPixel(cx + 1, cy, 0.0f, '-');
-    fb.SetPixel(cx, cy - 1, 0.0f, '|');
-    fb.SetPixel(cx, cy + 1, 0.0f, '|');
-
-    fb.Draw();
 }
 
 void Renderer::RenderWorldMesh(const World& world, const Camera& camera) {
-    // Mesh-based world rendering entry point
-    // In a full OpenGL implementation, this would:
-    // 1. Set up view/projection matrices
-    // 2. Bind the world shader
-    // 3. Iterate visible chunks and call world_renderer->RenderChunk()
-    // For now, meshes are built and tracked via WorldRenderer
     if (world_renderer) {
         world_renderer->RenderWorld(world, camera);
     }
@@ -261,7 +253,7 @@ void Renderer::UpdateChunkMeshWithNeighbors(const Chunk* chunk,
 }
 
 void Renderer::RenderMesh(const Mesh& mesh, const Shader& shader, const Camera& camera) {
-    // Not implemented for software renderer
+    // Not implemented for basic OpenGL renderer
 }
 
 void Renderer::RenderSky(const Camera& camera) {
@@ -281,21 +273,66 @@ void Renderer::RenderCrosshair(int screenW, int screenH) {
     int cx = screenW / 2;
     int cy = screenH / 2;
     
-    // Simple ASCII crosshair: draw '+' at center
-    // In a real implementation, this would use proper rendering
-    // For now, we just ensure the center is visible
+    glMatrixMode(GL_PROJECTION);
+    glPushMatrix();
+    glLoadIdentity();
+    glOrtho(0, screenW, screenH, 0, -1, 1);
     
-    // Note: In ASCII mode, the crosshair is drawn as part of the framebuffer
-    // We'll draw it after the world render
-    std::cout << "\n[CROSSHAIR] + at (" << cx << ", " << cy << ")" << std::endl;
+    glMatrixMode(GL_MODELVIEW);
+    glPushMatrix();
+    glLoadIdentity();
+    
+    glColor3f(1.0f, 1.0f, 1.0f);
+    glLineWidth(2.0f);
+    
+    glBegin(GL_LINES);
+    glVertex2f(cx - 10, cy);
+    glVertex2f(cx + 10, cy);
+    glVertex2f(cx, cy - 10);
+    glVertex2f(cx, cy + 10);
+    glEnd();
+    
+    glPopMatrix();
+    glMatrixMode(GL_PROJECTION);
+    glPopMatrix();
+    glMatrixMode(GL_MODELVIEW);
 }
 
 void Renderer::RenderBlockHighlight(const Vec3& blockPos, const Camera& camera, int screenW, int screenH) {
-    // Project block position to screen
-    Vec2 screenPos = Project(blockPos + Vec3(0.5f, 0.5f, 0.5f), camera, screenW, screenH);
+    // Draw wireframe box around selected block
+    glPushMatrix();
+    glTranslatef(blockPos.x + 0.5f, blockPos.y + 0.5f, blockPos.z + 0.5f);
+    glScalef(0.51f, 0.51f, 0.51f);
     
-    // Draw highlight indicator
-    std::cout << "[HIGHLIGHT] Block at (" << (int)blockPos.x << ", " << (int)blockPos.y << ", " << (int)blockPos.z << ")" << std::endl;
+    glColor3f(1.0f, 1.0f, 0.0f);
+    glLineWidth(2.0f);
+    
+    glBegin(GL_LINE_LOOP);
+    glVertex3f(-1, -1, 1);
+    glVertex3f(1, -1, 1);
+    glVertex3f(1, 1, 1);
+    glVertex3f(-1, 1, 1);
+    glEnd();
+    
+    glBegin(GL_LINE_LOOP);
+    glVertex3f(-1, -1, -1);
+    glVertex3f(-1, 1, -1);
+    glVertex3f(1, 1, -1);
+    glVertex3f(1, -1, -1);
+    glEnd();
+    
+    glBegin(GL_LINES);
+    glVertex3f(-1, -1, 1);
+    glVertex3f(-1, -1, -1);
+    glVertex3f(1, -1, 1);
+    glVertex3f(1, -1, -1);
+    glVertex3f(1, 1, 1);
+    glVertex3f(1, 1, -1);
+    glVertex3f(-1, 1, 1);
+    glVertex3f(-1, 1, -1);
+    glEnd();
+    
+    glPopMatrix();
 }
 
 } // namespace vge

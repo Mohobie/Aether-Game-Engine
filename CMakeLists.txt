@@ -329,6 +329,42 @@ else()
     target_compile_options(voxel_test PRIVATE -Wall -Wextra)
 endif()
 
+# ============================================
+# My Game Executable
+# ============================================
+if(EXISTS ${CMAKE_SOURCE_DIR}/my_game.cpp)
+    # Build without main.cpp and engine.cpp (they have their own main)
+    set(MY_GAME_SOURCES ${ALL_SOURCES})
+    list(REMOVE_ITEM MY_GAME_SOURCES src/main.cpp src/core/engine.cpp src/core/application.cpp)
+    
+    # Also remove from optional sources
+    set(MY_GAME_OPTIONAL ${COMPILABLE_OPTIONAL_SOURCES})
+    list(REMOVE_ITEM MY_GAME_OPTIONAL src/main.cpp src/core/engine.cpp src/core/application.cpp)
+    
+    add_executable(my_game my_game.cpp ${MY_GAME_SOURCES} ${MY_GAME_OPTIONAL})
+    target_include_directories(my_game PRIVATE ${COMMON_INCLUDES})
+    
+    if(OpenGL_FOUND)
+        target_link_libraries(my_game PRIVATE OpenGL::GL)
+    endif()
+    if(GLFW_FOUND)
+        target_include_directories(my_game PRIVATE ${GLFW_INCLUDE_DIRS})
+        target_link_libraries(my_game PRIVATE ${GLFW_LIBRARIES})
+    endif()
+    if(LUA_FOUND)
+        target_link_libraries(my_game PRIVATE ${LUA_LIBRARY})
+    endif()
+    if(PLATFORM_LINUX)
+        target_link_libraries(my_game PRIVATE pthread dl GL GLX)
+    elseif(PLATFORM_WINDOWS)
+        target_link_libraries(my_game PRIVATE ws2_32 winmm opengl32)
+    endif()
+    
+    message(STATUS "My Game: my_game.cpp found — building my_game executable")
+else()
+    message(STATUS "My Game: my_game.cpp not found — skipping")
+endif()
+
 message(STATUS "Building VoxelEngine v${PROJECT_VERSION}")
 message(STATUS "Platform: ${CMAKE_SYSTEM_NAME}")
 message(STATUS "Compiler: ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}")

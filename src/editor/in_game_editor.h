@@ -325,43 +325,4 @@ public:
     void RenderEditorUI();
 };
 
-// ============================================
-// PlayerController (stub for console commands)
-// ============================================
-class PlayerController {
-private:
-    Vec3 position;
-    float yaw;
-    float pitch;
-    float health;
-    float maxHealth;
-    float speed;
-    bool noclip;
-    bool godMode;
-    bool flying;
-    
-public:
-    PlayerController() : position(0, 0, 0), yaw(0), pitch(0), 
-                         health(100), maxHealth(100), speed(5.0f),
-                         noclip(false), godMode(false), flying(false) {}
-    
-    Vec3 GetPosition() const { return position; }
-    void SetPosition(const Vec3& pos) { position = pos; }
-    float GetYaw() const { return yaw; }
-    void SetYaw(float y) { yaw = y; }
-    float GetPitch() const { return pitch; }
-    void SetPitch(float p) { pitch = p; }
-    float GetHealth() const { return health; }
-    void SetHealth(float h) { health = h; }
-    float GetMaxHealth() const { return maxHealth; }
-    float GetSpeed() const { return speed; }
-    void SetSpeed(float s) { speed = s; }
-    bool IsNoclip() const { return noclip; }
-    void SetNoclip(bool n) { noclip = n; }
-    bool IsGodMode() const { return godMode; }
-    void SetGodMode(bool g) { godMode = g; }
-    bool IsFlying() const { return flying; }
-    void SetFlying(bool f) { flying = f; }
-};
-
 } // namespace vge
