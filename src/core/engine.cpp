@@ -196,12 +196,18 @@ void Engine::Update(float dt) {
     // Block interaction with sound effects
     if (input->IsKeyJustPressed(GLFW_KEY_E)) { // Place block
         if (player->PlaceBlock(*world, BlockRegistry::GetInstance().GetBlockId("wood"))) {
-            audioEngine->PlaySound("place.wav");
+            int soundHandle = audioEngine->LoadSound("place.wav");
+            if (soundHandle >= 0) {
+                audioEngine->Play2D(soundHandle, VolumeGroup::SFX, 1.0f, 1.0f, false, 10);
+            }
         }
     }
     if (input->IsKeyJustPressed(GLFW_KEY_Q)) { // Break block
         if (player->BreakBlock(*world)) {
-            audioEngine->PlaySound("dig.wav");
+            int soundHandle = audioEngine->LoadSound("dig.wav");
+            if (soundHandle >= 0) {
+                audioEngine->Play2D(soundHandle, VolumeGroup::SFX, 1.0f, 1.0f, false, 10);
+            }
         }
     }
     

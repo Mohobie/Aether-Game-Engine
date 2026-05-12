@@ -168,6 +168,7 @@ CMakeFiles/voxel_test.dir/src/rendering/texture.cpp.o: \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
+ /home/mohobie/projects/aether-game-engine/src/core/asset_base.h \
  /home/mohobie/projects/aether-game-engine/src/platform/file_system.h \
  /home/mohobie/projects/aether-game-engine/src/platform/platform_common.h \
  /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \

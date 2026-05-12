@@ -588,6 +588,72 @@ src/core/application.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/application.cpp.s
 .PHONY : src/core/application.cpp.s
 
+src/core/asset_importer.o: src/core/asset_importer.cpp.o
+.PHONY : src/core/asset_importer.o
+
+# target to build an object file
+src/core/asset_importer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/asset_importer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/asset_importer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/asset_importer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/asset_importer.cpp.o
+.PHONY : src/core/asset_importer.cpp.o
+
+src/core/asset_importer.i: src/core/asset_importer.cpp.i
+.PHONY : src/core/asset_importer.i
+
+# target to preprocess a source file
+src/core/asset_importer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/asset_importer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/asset_importer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/asset_importer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/asset_importer.cpp.i
+.PHONY : src/core/asset_importer.cpp.i
+
+src/core/asset_importer.s: src/core/asset_importer.cpp.s
+.PHONY : src/core/asset_importer.s
+
+# target to generate assembly for a file
+src/core/asset_importer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/asset_importer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/asset_importer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/asset_importer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/asset_importer.cpp.s
+.PHONY : src/core/asset_importer.cpp.s
+
+src/core/asset_manager.o: src/core/asset_manager.cpp.o
+.PHONY : src/core/asset_manager.o
+
+# target to build an object file
+src/core/asset_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/asset_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/asset_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/asset_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/asset_manager.cpp.o
+.PHONY : src/core/asset_manager.cpp.o
+
+src/core/asset_manager.i: src/core/asset_manager.cpp.i
+.PHONY : src/core/asset_manager.i
+
+# target to preprocess a source file
+src/core/asset_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/asset_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/asset_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/asset_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/asset_manager.cpp.i
+.PHONY : src/core/asset_manager.cpp.i
+
+src/core/asset_manager.s: src/core/asset_manager.cpp.s
+.PHONY : src/core/asset_manager.s
+
+# target to generate assembly for a file
+src/core/asset_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/asset_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/asset_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/asset_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/asset_manager.cpp.s
+.PHONY : src/core/asset_manager.cpp.s
+
 src/core/config.o: src/core/config.cpp.o
 .PHONY : src/core/config.o
 
@@ -875,6 +941,39 @@ src/core/raycast.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/raycast.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/raycast.cpp.s
 .PHONY : src/core/raycast.cpp.s
+
+src/core/resource_pack.o: src/core/resource_pack.cpp.o
+.PHONY : src/core/resource_pack.o
+
+# target to build an object file
+src/core/resource_pack.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/resource_pack.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/resource_pack.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/resource_pack.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/resource_pack.cpp.o
+.PHONY : src/core/resource_pack.cpp.o
+
+src/core/resource_pack.i: src/core/resource_pack.cpp.i
+.PHONY : src/core/resource_pack.i
+
+# target to preprocess a source file
+src/core/resource_pack.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/resource_pack.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/resource_pack.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/resource_pack.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/resource_pack.cpp.i
+.PHONY : src/core/resource_pack.cpp.i
+
+src/core/resource_pack.s: src/core/resource_pack.cpp.s
+.PHONY : src/core/resource_pack.s
+
+# target to generate assembly for a file
+src/core/resource_pack.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/resource_pack.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/resource_pack.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/resource_pack.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/resource_pack.cpp.s
+.PHONY : src/core/resource_pack.cpp.s
 
 src/core/time_system.o: src/core/time_system.cpp.o
 .PHONY : src/core/time_system.o
@@ -2433,6 +2532,138 @@ src/save_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/save_test.cpp.s
 .PHONY : src/save_test.cpp.s
 
+src/scripting/lua_bindings.o: src/scripting/lua_bindings.cpp.o
+.PHONY : src/scripting/lua_bindings.o
+
+# target to build an object file
+src/scripting/lua_bindings.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/scripting/lua_bindings.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/scripting/lua_bindings.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/lua_bindings.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.o
+.PHONY : src/scripting/lua_bindings.cpp.o
+
+src/scripting/lua_bindings.i: src/scripting/lua_bindings.cpp.i
+.PHONY : src/scripting/lua_bindings.i
+
+# target to preprocess a source file
+src/scripting/lua_bindings.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/scripting/lua_bindings.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/scripting/lua_bindings.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/lua_bindings.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.i
+.PHONY : src/scripting/lua_bindings.cpp.i
+
+src/scripting/lua_bindings.s: src/scripting/lua_bindings.cpp.s
+.PHONY : src/scripting/lua_bindings.s
+
+# target to generate assembly for a file
+src/scripting/lua_bindings.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/scripting/lua_bindings.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/scripting/lua_bindings.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/lua_bindings.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.s
+.PHONY : src/scripting/lua_bindings.cpp.s
+
+src/scripting/lua_engine.o: src/scripting/lua_engine.cpp.o
+.PHONY : src/scripting/lua_engine.o
+
+# target to build an object file
+src/scripting/lua_engine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/scripting/lua_engine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/scripting/lua_engine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/lua_engine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.o
+.PHONY : src/scripting/lua_engine.cpp.o
+
+src/scripting/lua_engine.i: src/scripting/lua_engine.cpp.i
+.PHONY : src/scripting/lua_engine.i
+
+# target to preprocess a source file
+src/scripting/lua_engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/scripting/lua_engine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/scripting/lua_engine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/lua_engine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.i
+.PHONY : src/scripting/lua_engine.cpp.i
+
+src/scripting/lua_engine.s: src/scripting/lua_engine.cpp.s
+.PHONY : src/scripting/lua_engine.s
+
+# target to generate assembly for a file
+src/scripting/lua_engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/scripting/lua_engine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/scripting/lua_engine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/lua_engine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.s
+.PHONY : src/scripting/lua_engine.cpp.s
+
+src/scripting/mod_system.o: src/scripting/mod_system.cpp.o
+.PHONY : src/scripting/mod_system.o
+
+# target to build an object file
+src/scripting/mod_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/scripting/mod_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/scripting/mod_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/mod_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.o
+.PHONY : src/scripting/mod_system.cpp.o
+
+src/scripting/mod_system.i: src/scripting/mod_system.cpp.i
+.PHONY : src/scripting/mod_system.i
+
+# target to preprocess a source file
+src/scripting/mod_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/scripting/mod_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/scripting/mod_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/mod_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.i
+.PHONY : src/scripting/mod_system.cpp.i
+
+src/scripting/mod_system.s: src/scripting/mod_system.cpp.s
+.PHONY : src/scripting/mod_system.s
+
+# target to generate assembly for a file
+src/scripting/mod_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/scripting/mod_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/scripting/mod_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/mod_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.s
+.PHONY : src/scripting/mod_system.cpp.s
+
+src/scripting/script_engine.o: src/scripting/script_engine.cpp.o
+.PHONY : src/scripting/script_engine.o
+
+# target to build an object file
+src/scripting/script_engine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/scripting/script_engine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/scripting/script_engine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/script_engine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.o
+.PHONY : src/scripting/script_engine.cpp.o
+
+src/scripting/script_engine.i: src/scripting/script_engine.cpp.i
+.PHONY : src/scripting/script_engine.i
+
+# target to preprocess a source file
+src/scripting/script_engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/scripting/script_engine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/scripting/script_engine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/script_engine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.i
+.PHONY : src/scripting/script_engine.cpp.i
+
+src/scripting/script_engine.s: src/scripting/script_engine.cpp.s
+.PHONY : src/scripting/script_engine.s
+
+# target to generate assembly for a file
+src/scripting/script_engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/scripting/script_engine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/scripting/script_engine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/script_engine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.s
+.PHONY : src/scripting/script_engine.cpp.s
+
 src/test_main.o: src/test_main.cpp.o
 .PHONY : src/test_main.o
 
@@ -3165,6 +3396,12 @@ help:
 	@echo "... src/core/application.o"
 	@echo "... src/core/application.i"
 	@echo "... src/core/application.s"
+	@echo "... src/core/asset_importer.o"
+	@echo "... src/core/asset_importer.i"
+	@echo "... src/core/asset_importer.s"
+	@echo "... src/core/asset_manager.o"
+	@echo "... src/core/asset_manager.i"
+	@echo "... src/core/asset_manager.s"
 	@echo "... src/core/config.o"
 	@echo "... src/core/config.i"
 	@echo "... src/core/config.s"
@@ -3192,6 +3429,9 @@ help:
 	@echo "... src/core/raycast.o"
 	@echo "... src/core/raycast.i"
 	@echo "... src/core/raycast.s"
+	@echo "... src/core/resource_pack.o"
+	@echo "... src/core/resource_pack.i"
+	@echo "... src/core/resource_pack.s"
 	@echo "... src/core/time_system.o"
 	@echo "... src/core/time_system.i"
 	@echo "... src/core/time_system.s"
@@ -3336,6 +3576,18 @@ help:
 	@echo "... src/save_test.o"
 	@echo "... src/save_test.i"
 	@echo "... src/save_test.s"
+	@echo "... src/scripting/lua_bindings.o"
+	@echo "... src/scripting/lua_bindings.i"
+	@echo "... src/scripting/lua_bindings.s"
+	@echo "... src/scripting/lua_engine.o"
+	@echo "... src/scripting/lua_engine.i"
+	@echo "... src/scripting/lua_engine.s"
+	@echo "... src/scripting/mod_system.o"
+	@echo "... src/scripting/mod_system.i"
+	@echo "... src/scripting/mod_system.s"
+	@echo "... src/scripting/script_engine.o"
+	@echo "... src/scripting/script_engine.i"
+	@echo "... src/scripting/script_engine.s"
 	@echo "... src/test_main.o"
 	@echo "... src/test_main.i"
 	@echo "... src/test_main.s"
