@@ -300,6 +300,72 @@ src/ai/enemy_spawner.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/enemy_spawner.cpp.s
 .PHONY : src/ai/enemy_spawner.cpp.s
 
+src/ai/entity_ai.o: src/ai/entity_ai.cpp.o
+.PHONY : src/ai/entity_ai.o
+
+# target to build an object file
+src/ai/entity_ai.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/entity_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/entity_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/entity_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/entity_ai.cpp.o
+.PHONY : src/ai/entity_ai.cpp.o
+
+src/ai/entity_ai.i: src/ai/entity_ai.cpp.i
+.PHONY : src/ai/entity_ai.i
+
+# target to preprocess a source file
+src/ai/entity_ai.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/entity_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/entity_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/entity_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/entity_ai.cpp.i
+.PHONY : src/ai/entity_ai.cpp.i
+
+src/ai/entity_ai.s: src/ai/entity_ai.cpp.s
+.PHONY : src/ai/entity_ai.s
+
+# target to generate assembly for a file
+src/ai/entity_ai.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/entity_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/entity_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/entity_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/entity_ai.cpp.s
+.PHONY : src/ai/entity_ai.cpp.s
+
+src/ai/entity_spawner.o: src/ai/entity_spawner.cpp.o
+.PHONY : src/ai/entity_spawner.o
+
+# target to build an object file
+src/ai/entity_spawner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/entity_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/entity_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/entity_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/entity_spawner.cpp.o
+.PHONY : src/ai/entity_spawner.cpp.o
+
+src/ai/entity_spawner.i: src/ai/entity_spawner.cpp.i
+.PHONY : src/ai/entity_spawner.i
+
+# target to preprocess a source file
+src/ai/entity_spawner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/entity_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/entity_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/entity_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/entity_spawner.cpp.i
+.PHONY : src/ai/entity_spawner.cpp.i
+
+src/ai/entity_spawner.s: src/ai/entity_spawner.cpp.s
+.PHONY : src/ai/entity_spawner.s
+
+# target to generate assembly for a file
+src/ai/entity_spawner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/entity_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/entity_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/entity_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/entity_spawner.cpp.s
+.PHONY : src/ai/entity_spawner.cpp.s
+
 src/ai/mob_spawner.o: src/ai/mob_spawner.cpp.o
 .PHONY : src/ai/mob_spawner.o
 
@@ -3369,6 +3435,12 @@ help:
 	@echo "... src/ai/enemy_spawner.o"
 	@echo "... src/ai/enemy_spawner.i"
 	@echo "... src/ai/enemy_spawner.s"
+	@echo "... src/ai/entity_ai.o"
+	@echo "... src/ai/entity_ai.i"
+	@echo "... src/ai/entity_ai.s"
+	@echo "... src/ai/entity_spawner.o"
+	@echo "... src/ai/entity_spawner.i"
+	@echo "... src/ai/entity_spawner.s"
 	@echo "... src/ai/mob_spawner.o"
 	@echo "... src/ai/mob_spawner.i"
 	@echo "... src/ai/mob_spawner.s"

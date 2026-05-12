@@ -12,6 +12,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/ai/behavior_tree.cpp" "CMakeFiles/voxel_test.dir/src/ai/behavior_tree.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/ai/behavior_tree.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/ai/enemy_ai.cpp" "CMakeFiles/voxel_test.dir/src/ai/enemy_ai.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/ai/enemy_ai.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/ai/enemy_spawner.cpp" "CMakeFiles/voxel_test.dir/src/ai/enemy_spawner.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/ai/enemy_spawner.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/ai/entity_ai.cpp" "CMakeFiles/voxel_test.dir/src/ai/entity_ai.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/ai/entity_ai.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/ai/entity_spawner.cpp" "CMakeFiles/voxel_test.dir/src/ai/entity_spawner.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/ai/entity_spawner.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/ai/mob_spawner.cpp" "CMakeFiles/voxel_test.dir/src/ai/mob_spawner.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/ai/mob_spawner.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/animation/animation.cpp" "CMakeFiles/voxel_test.dir/src/animation/animation.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/animation/animation.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/animation/animation_state_machine.cpp" "CMakeFiles/voxel_test.dir/src/animation/animation_state_machine.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/animation/animation_state_machine.cpp.o.d"

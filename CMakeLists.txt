@@ -112,6 +112,8 @@ set(CORE_SOURCES
     src/ai/enemy_ai.cpp
     src/ai/enemy_spawner.cpp
     src/ai/mob_spawner.cpp
+    src/ai/entity_ai.cpp
+    src/ai/entity_spawner.cpp
     src/animation/animation_state_machine.cpp
     src/rendering/sky/sky_renderer.cpp
     src/rendering/particles/particle_system.cpp
