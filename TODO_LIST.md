@@ -5,9 +5,10 @@ These require a JSON library (e.g., nlohmann/json) to be added to the project.
 
 - [x] **src/ai/entity_ai.cpp:69** - `LoadFromFile()` - Load entity archetypes from JSON files ✅
 - [x] **src/ai/entity_ai.cpp:75** - `LoadFromDirectory()` - Batch load archetype JSON files from directory ✅
-- [ ] **src/audio/audio_events.cpp:180** - `LoadFromFile()` - Load sound pack definitions from JSON
-- [ ] **src/audio/audio_events.cpp:186** - `SaveToFile()` - Save sound pack definitions to JSON
-- [ ] **src/core/achievements.cpp:213** - `LoadFromFile()` - Load achievement definitions from JSON
+- [x] **src/audio/audio_events.cpp:180** - `LoadFromFile()` - Load sound pack definitions from JSON ✅
+- [x] **src/audio/audio_events.cpp:186** - `SaveToFile()` - Save sound pack definitions to JSON ✅
+- [x] **src/core/achievements.cpp:213** - `LoadFromFile()` - Load achievement definitions from JSON ✅
+- [x] **src/core/achievements.cpp:219** - `SaveToFile()` - Save achievement definitions to JSON ✅
 - [ ] **src/core/item_system.cpp:50** - `LoadFromFile()` - Load item definitions from JSON
 - [ ] **src/core/item_system.cpp:56** - `LoadFromJson()` - Parse item JSON data
 - [ ] **src/core/item_system.cpp:395** - `Deserialize()` - Deserialize item data from JSON
@@ -31,7 +32,7 @@ These need actual rendering code for the inventory/crafting UI.
 
 ## Game Logic (3 items)
 
-- [ ] **src/core/crafting_inventory_bridge.cpp:274** - Map block types to item categories
+- [x] **src/core/crafting_inventory_bridge.cpp:274** - Map block types to item categories ✅
 - [ ] **src/core/item_system.cpp:468** - Use proper inventory index instead of hardcoded 0
 - [x] **src/voxel/chunk_manager.cpp:84** - Save chunks to disk (chunk persistence) ✅
 

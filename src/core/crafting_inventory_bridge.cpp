@@ -271,9 +271,69 @@ void RecipeBook::setCategoryFilter(ItemCategory category) {
     for (const auto& recipe : allRecipes) {
         const BlockDef& blockDef = BlockRegistry::GetInstance().GetBlock(recipe.outputType);
         
-        // TODO: Map block types to item categories
+        // Map block types to item categories based on block ID patterns
+        ItemCategory blockCategory = ItemCategory::Misc;
+        
+        // Check block ID patterns to determine category
+        if (blockDef.id.find("ore") != std::string::npos || 
+            blockDef.id.find("ingot") != std::string::npos ||
+            blockDef.id.find("gem") != std::string::npos ||
+            blockDef.id.find("coal") != std::string::npos ||
+            blockDef.id.find("iron") != std::string::npos ||
+            blockDef.id.find("gold") != std::string::npos ||
+            blockDef.id.find("diamond") != std::string::npos) {
+            blockCategory = ItemCategory::Material; // Ores and materials
+        }
+        else if (blockDef.id.find("food") != std::string::npos ||
+            blockDef.id.find("meat") != std::string::npos ||
+            blockDef.id.find("fruit") != std::string::npos ||
+            blockDef.id.find("vegetable") != std::string::npos ||
+            blockDef.id.find("bread") != std::string::npos ||
+            blockDef.id.find("apple") != std::string::npos) {
+            blockCategory = ItemCategory::Consumable; // Food items
+        }
+        else if (blockDef.id.find("sword") != std::string::npos ||
+            blockDef.id.find("axe") != std::string::npos ||
+            blockDef.id.find("pickaxe") != std::string::npos ||
+            blockDef.id.find("shovel") != std::string::npos ||
+            blockDef.id.find("hoe") != std::string::npos ||
+            blockDef.id.find("bow") != std::string::npos) {
+            blockCategory = ItemCategory::Weapon; // Weapons
+        }
+        else if (blockDef.id.find("armor") != std::string::npos ||
+            blockDef.id.find("helmet") != std::string::npos ||
+            blockDef.id.find("chestplate") != std::string::npos ||
+            blockDef.id.find("leggings") != std::string::npos ||
+            blockDef.id.find("boots") != std::string::npos ||
+            blockDef.id.find("shield") != std::string::npos) {
+            blockCategory = ItemCategory::Armor; // Armor
+        }
+        else if (blockDef.id.find("potion") != std::string::npos ||
+            blockDef.id.find("herb") != std::string::npos ||
+            blockDef.id.find("medicine") != std::string::npos) {
+            blockCategory = ItemCategory::Consumable; // Potions and medicine
+        }
+        else if (blockDef.id.find("plank") != std::string::npos ||
+            blockDef.id.find("stone") != std::string::npos ||
+            blockDef.id.find("brick") != std::string::npos ||
+            blockDef.id.find("glass") != std::string::npos ||
+            blockDef.id.find("wood") != std::string::npos ||
+            blockDef.id.find("dirt") != std::string::npos ||
+            blockDef.id.find("sand") != std::string::npos ||
+            blockDef.id.find("gravel") != std::string::npos ||
+            blockDef.id.find("concrete") != std::string::npos) {
+            blockCategory = ItemCategory::Block; // Building blocks
+        }
+        else if (blockDef.id.find("stick") != std::string::npos ||
+            blockDef.id.find("string") != std::string::npos ||
+            blockDef.id.find("feather") != std::string::npos ||
+            blockDef.id.find("leather") != std::string::npos ||
+            blockDef.id.find("wool") != std::string::npos) {
+            blockCategory = ItemCategory::Material; // Crafting materials
+        }
+        
         bool matchesCategory = category == ItemCategory::Misc || 
-                               categoryFilter == ItemCategory::Misc;
+                               blockCategory == category;
         
         if (matchesCategory) {
             filteredRecipes.push_back(recipe);
