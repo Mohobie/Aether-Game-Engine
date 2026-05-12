@@ -26,6 +26,7 @@ Each document covers a specific system or topic:
 | `16-audio-events.md` | Decoupled audio event system, sound packs, JSON loading | ~220 |
 | `17-chunk-system.md` | Chunk architecture, persistence, streaming, LOD, culling | ~200 |
 | `18-network-system.md` | Client-server multiplayer, entity replication, server authority | ~250 |
+| `19-editor-system.md` | In-game editor, ImGui, debug visualization, viewports, asset browser | ~350 |
 
 ## How to Use This Documentation
 
@@ -36,7 +37,8 @@ Each document covers a specific system or topic:
 3. **Use `13-common-patterns.md`** for complete game implementations
 4. **Use `14-inventory-crafting.md`** for item/crafting systems
 5. **Use `15-entity-archetypes.md`** for entity/AI systems
-6. **All code examples are copy-paste ready** with proper includes
+6. **Use `19-editor-system.md`** for editor, debug visualization, viewports
+7. **All code examples are copy-paste ready** with proper includes
 
 ### Key Conventions
 
@@ -65,6 +67,10 @@ Each document covers a specific system or topic:
 #include "ai/entity_ai.h"
 #include "core/item_system.h"
 #include "core/crafting.h"
+#include "editor/in_game_editor.h"
+#include "editor/scene_viewport.h"
+#include "editor/asset_browser.h"
+#include "debug/debug_renderer.h"
 
 // Common types
 vge::Vec3    // 3D vector
@@ -73,6 +79,10 @@ vge::World   // Voxel world
 vge::EntityID // Entity handle
 vge::Inventory // Item inventory
 vge::CraftingSystem // Crafting recipes
+vge::InGameEditor   // In-game editor
+vge::ViewportManager // Multi-viewport system
+vge::AssetBrowser   // Asset browser
+vge::DebugRenderer  // Debug visualization
 ```
 
 ## Building with the Engine
