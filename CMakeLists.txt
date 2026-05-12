@@ -26,7 +26,6 @@ find_package(OpenGL QUIET)
 # Find GLFW - try multiple methods
 set(GLFW_FOUND FALSE)
 if(WIN32)
-    # Windows: Check common install locations
     find_path(GLFW_INCLUDE_DIR GLFW/glfw3.h
         PATHS 
             ${CMAKE_SOURCE_DIR}/third_party/glfw/include
@@ -48,13 +47,11 @@ if(WIN32)
         message(STATUS "Found GLFW (Windows): ${GLFW_LIBRARY}")
     endif()
 else()
-    # Linux/macOS: Try pkg-config first
     find_package(PkgConfig QUIET)
     if(PkgConfig_FOUND)
         pkg_check_modules(GLFW QUIET glfw3)
     endif()
     
-    # Fallback to find_library
     if(NOT GLFW_FOUND)
         find_library(GLFW_LIBRARY glfw PATHS /usr/lib /usr/local/lib)
         find_path(GLFW_INCLUDE_DIR GLFW/glfw3.h PATHS /usr/include /usr/local/include)
@@ -102,6 +99,7 @@ set(CORE_SOURCES
     src/ui/ui_system.cpp
     src/physics/physics_constraints.cpp
     src/network/network_architecture.cpp
+    src/network/packet.cpp
     src/ai/behavior_tree.cpp
     src/ai/enemy_ai.cpp
     src/ai/enemy_spawner.cpp
@@ -123,8 +121,6 @@ set(CORE_SOURCES
     src/entity/entity.cpp
     src/entity/components.cpp
     src/rendering/mesh.cpp
-    src/rendering/texture.cpp
-    src/rendering/shader.cpp
     src/rendering/shadow_system.cpp
     src/rendering/pbr_material.cpp
     src/audio/audio_system.cpp
@@ -148,7 +144,6 @@ set(CORE_SOURCES
     src/physics/collision.cpp
     src/physics/rigidbody.cpp
     src/core/logger.cpp
-    src/core/save_system.cpp
     src/core/config.cpp
     src/core/time_system.cpp
     src/core/achievements.cpp
@@ -158,7 +153,6 @@ set(CORE_SOURCES
     src/ui/ui_inventory.cpp
     src/ui/ui_element.cpp
     src/core/entity.cpp
-    src/network/packet.cpp
     src/platform/platform_common.cpp
     src/platform/file_system.cpp
     src/platform/input_manager.cpp
@@ -229,7 +223,6 @@ if(PLATFORM_LINUX)
     target_link_libraries(day_night_test PRIVATE pthread dl)
     target_link_libraries(inventory_test PRIVATE pthread dl)
 elseif(PLATFORM_WINDOWS)
-    # Windows: Link Windows-specific libraries
     target_link_libraries(voxel_test PRIVATE ws2_32 winmm)
     target_link_libraries(world_test PRIVATE ws2_32 winmm)
     target_link_libraries(save_test PRIVATE ws2_32 winmm)
@@ -295,11 +288,12 @@ set(OPTIONAL_SOURCES
     src/ui/menu_system.cpp
     src/voxel/world_renderer.cpp
     src/voxel/block_mesh_builder.cpp
-    src/core/player_controller.cpp
     src/core/engine.cpp
     src/core/application.cpp
     src/scripting/lua_engine.cpp
     src/scripting/script_engine.cpp
+    src/scripting/lua_bindings.cpp
+    src/scripting/mod_system.cpp
     src/main.cpp
 )
 

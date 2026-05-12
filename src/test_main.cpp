@@ -13,11 +13,21 @@
 #include "rendering/light_system.h"
 #include "game/player_stats.h"
 #include "core/crafting.h"
+#include "scripting/script_engine.h"
+#include "scripting/mod_system.h"
+#include "entity/entity.h"
 #include "voxel/world.h"
 #include "voxel/block_registry.h"
 #include <iostream>
+#include <fstream>
+#include <filesystem>
 
 using namespace vge;
+
+// Forward declarations for new tests
+void TestScriptEngine();
+void TestLuaBindings();
+void TestModSystem();
 
 void TestPostProcessing() {
     std::cout << "\n=== Post-Processing Stack Test ===" << std::endl;

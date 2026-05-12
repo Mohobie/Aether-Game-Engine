@@ -39,8 +39,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/sandbox_test.dir/src/core/player_controller.cpp.o.d"
   "CMakeFiles/sandbox_test.dir/src/core/raycast.cpp.o"
   "CMakeFiles/sandbox_test.dir/src/core/raycast.cpp.o.d"
-  "CMakeFiles/sandbox_test.dir/src/core/save_system.cpp.o"
-  "CMakeFiles/sandbox_test.dir/src/core/save_system.cpp.o.d"
   "CMakeFiles/sandbox_test.dir/src/core/time_system.cpp.o"
   "CMakeFiles/sandbox_test.dir/src/core/time_system.cpp.o.d"
   "CMakeFiles/sandbox_test.dir/src/core/weather_system.cpp.o"

@@ -1473,63 +1473,6 @@ src/core/raycast.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/raycast.cpp.s
 .PHONY : src/core/raycast.cpp.s
 
-src/core/save_system.o: src/core/save_system.cpp.o
-.PHONY : src/core/save_system.o
-
-# target to build an object file
-src/core/save_system.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/save_system.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/save_system.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/save_system.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/core/save_system.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/save_system.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/save_system.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/save_system.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/save_system.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/save_system.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/core/save_system.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/core/save_system.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o
-.PHONY : src/core/save_system.cpp.o
-
-src/core/save_system.i: src/core/save_system.cpp.i
-.PHONY : src/core/save_system.i
-
-# target to preprocess a source file
-src/core/save_system.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/save_system.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/save_system.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/save_system.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/core/save_system.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/save_system.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/save_system.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/save_system.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/save_system.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/save_system.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/core/save_system.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/core/save_system.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.i
-.PHONY : src/core/save_system.cpp.i
-
-src/core/save_system.s: src/core/save_system.cpp.s
-.PHONY : src/core/save_system.s
-
-# target to generate assembly for a file
-src/core/save_system.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/save_system.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/save_system.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/save_system.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/core/save_system.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/core/save_system.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/core/save_system.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/core/save_system.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/core/save_system.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/core/save_system.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/core/save_system.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/core/save_system.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.s
-.PHONY : src/core/save_system.cpp.s
-
 src/core/time_system.o: src/core/time_system.cpp.o
 .PHONY : src/core/time_system.o
 
@@ -3942,6 +3885,30 @@ src/save_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/save_test.cpp.s
 .PHONY : src/save_test.cpp.s
 
+src/scripting/lua_bindings.o: src/scripting/lua_bindings.cpp.o
+.PHONY : src/scripting/lua_bindings.o
+
+# target to build an object file
+src/scripting/lua_bindings.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.o
+.PHONY : src/scripting/lua_bindings.cpp.o
+
+src/scripting/lua_bindings.i: src/scripting/lua_bindings.cpp.i
+.PHONY : src/scripting/lua_bindings.i
+
+# target to preprocess a source file
+src/scripting/lua_bindings.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.i
+.PHONY : src/scripting/lua_bindings.cpp.i
+
+src/scripting/lua_bindings.s: src/scripting/lua_bindings.cpp.s
+.PHONY : src/scripting/lua_bindings.s
+
+# target to generate assembly for a file
+src/scripting/lua_bindings.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.s
+.PHONY : src/scripting/lua_bindings.cpp.s
+
 src/scripting/lua_engine.o: src/scripting/lua_engine.cpp.o
 .PHONY : src/scripting/lua_engine.o
 
@@ -3965,6 +3932,30 @@ src/scripting/lua_engine.s: src/scripting/lua_engine.cpp.s
 src/scripting/lua_engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.s
 .PHONY : src/scripting/lua_engine.cpp.s
+
+src/scripting/mod_system.o: src/scripting/mod_system.cpp.o
+.PHONY : src/scripting/mod_system.o
+
+# target to build an object file
+src/scripting/mod_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.o
+.PHONY : src/scripting/mod_system.cpp.o
+
+src/scripting/mod_system.i: src/scripting/mod_system.cpp.i
+.PHONY : src/scripting/mod_system.i
+
+# target to preprocess a source file
+src/scripting/mod_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.i
+.PHONY : src/scripting/mod_system.cpp.i
+
+src/scripting/mod_system.s: src/scripting/mod_system.cpp.s
+.PHONY : src/scripting/mod_system.s
+
+# target to generate assembly for a file
+src/scripting/mod_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.s
+.PHONY : src/scripting/mod_system.cpp.s
 
 src/scripting/script_engine.o: src/scripting/script_engine.cpp.o
 .PHONY : src/scripting/script_engine.o
@@ -5382,9 +5373,6 @@ help:
 	@echo "... src/core/raycast.o"
 	@echo "... src/core/raycast.i"
 	@echo "... src/core/raycast.s"
-	@echo "... src/core/save_system.o"
-	@echo "... src/core/save_system.i"
-	@echo "... src/core/save_system.s"
 	@echo "... src/core/time_system.o"
 	@echo "... src/core/time_system.i"
 	@echo "... src/core/time_system.s"
@@ -5517,9 +5505,15 @@ help:
 	@echo "... src/save_test.o"
 	@echo "... src/save_test.i"
 	@echo "... src/save_test.s"
+	@echo "... src/scripting/lua_bindings.o"
+	@echo "... src/scripting/lua_bindings.i"
+	@echo "... src/scripting/lua_bindings.s"
 	@echo "... src/scripting/lua_engine.o"
 	@echo "... src/scripting/lua_engine.i"
 	@echo "... src/scripting/lua_engine.s"
+	@echo "... src/scripting/mod_system.o"
+	@echo "... src/scripting/mod_system.i"
+	@echo "... src/scripting/mod_system.s"
 	@echo "... src/scripting/script_engine.o"
 	@echo "... src/scripting/script_engine.i"
 	@echo "... src/scripting/script_engine.s"

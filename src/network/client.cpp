@@ -3,18 +3,9 @@
 
 namespace vge {
 
-NetworkClient::NetworkClient() : connected(false), serverAddress(""), serverPort(7777) {}
-
-NetworkClient::~NetworkClient() {
-    if (connected) Disconnect();
-}
-
-bool NetworkClient::Connect(const std::string& address, int port) {
-    serverAddress = address;
-    serverPort = port;
+void NetworkClient::Connect(const std::string& address, int port) {
     std::cout << "[Client] Connecting to " << address << ":" << port << " (stub)" << std::endl;
     connected = true;
-    return true;
 }
 
 void NetworkClient::Disconnect() {
@@ -22,12 +13,12 @@ void NetworkClient::Disconnect() {
     connected = false;
 }
 
-void NetworkClient::SendPacket(const Packet& packet) {
-    // Stub: Would serialize and send packet
+void NetworkClient::SendMessage(const std::string& msg) {
+    std::cout << "[Client] Sending: " << msg << std::endl;
 }
 
-void NetworkClient::Update() {
-    // Stub: Would receive and process packets
+void NetworkClient::OnMessageReceived(std::function<void(const std::string&)> callback) {
+    // Stub: Would set up message receive callback
 }
 
 bool NetworkClient::IsConnected() const {

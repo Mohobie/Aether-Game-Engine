@@ -28,7 +28,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/core/logger.cpp" "CMakeFiles/editor_test.dir/src/core/logger.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/core/logger.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/core/player_controller.cpp" "CMakeFiles/editor_test.dir/src/core/player_controller.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/core/player_controller.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/core/raycast.cpp" "CMakeFiles/editor_test.dir/src/core/raycast.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/core/raycast.cpp.o.d"
-  "/home/mohobie/projects/aether-game-engine/src/core/save_system.cpp" "CMakeFiles/editor_test.dir/src/core/save_system.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/core/save_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/core/time_system.cpp" "CMakeFiles/editor_test.dir/src/core/time_system.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/core/time_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/core/weather_system.cpp" "CMakeFiles/editor_test.dir/src/core/weather_system.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/core/weather_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/debug/debug_system.cpp" "CMakeFiles/editor_test.dir/src/debug/debug_system.cpp.o" "gcc" "CMakeFiles/editor_test.dir/src/debug/debug_system.cpp.o.d"

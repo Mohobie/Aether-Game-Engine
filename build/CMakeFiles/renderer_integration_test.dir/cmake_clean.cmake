@@ -39,8 +39,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/renderer_integration_test.dir/src/core/player_controller.cpp.o.d"
   "CMakeFiles/renderer_integration_test.dir/src/core/raycast.cpp.o"
   "CMakeFiles/renderer_integration_test.dir/src/core/raycast.cpp.o.d"
-  "CMakeFiles/renderer_integration_test.dir/src/core/save_system.cpp.o"
-  "CMakeFiles/renderer_integration_test.dir/src/core/save_system.cpp.o.d"
   "CMakeFiles/renderer_integration_test.dir/src/core/time_system.cpp.o"
   "CMakeFiles/renderer_integration_test.dir/src/core/time_system.cpp.o.d"
   "CMakeFiles/renderer_integration_test.dir/src/core/weather_system.cpp.o"

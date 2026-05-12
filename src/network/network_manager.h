@@ -1,14 +1,31 @@
 #pragma once
-
 #include <string>
 
 namespace vge {
-    class NetworkManager {
-    public:
-        void Initialize();
-        void Connect(const std::string& address, int port);
-        void Disconnect();
-        void Send(const std::string& message);
-        void Shutdown();
-    };
-}
+
+struct Packet {
+    std::string data;
+    std::string address;
+    int port;
+};
+
+class NetworkManager {
+private:
+    bool initialized;
+    int port;
+
+public:
+    NetworkManager();
+    ~NetworkManager();
+
+    bool Initialize(int listenPort = 7777);
+    void Shutdown();
+
+    void SendPacket(const Packet& packet, const std::string& address);
+    void BroadcastPacket(const Packet& packet);
+    void Update();
+
+    bool IsInitialized() const;
+};
+
+} // namespace vge
