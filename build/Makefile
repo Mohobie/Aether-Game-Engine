@@ -399,6 +399,177 @@ src/ai/behavior_tree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/behavior_tree.cpp.s
 .PHONY : src/ai/behavior_tree.cpp.s
 
+src/ai/enemy_ai.o: src/ai/enemy_ai.cpp.o
+.PHONY : src/ai/enemy_ai.o
+
+# target to build an object file
+src/ai/enemy_ai.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/enemy_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/enemy_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/enemy_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/ai/enemy_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ai/enemy_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ai/enemy_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ai/enemy_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ai/enemy_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ai/enemy_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/ai/enemy_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/ai/enemy_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/enemy_ai.cpp.o
+.PHONY : src/ai/enemy_ai.cpp.o
+
+src/ai/enemy_ai.i: src/ai/enemy_ai.cpp.i
+.PHONY : src/ai/enemy_ai.i
+
+# target to preprocess a source file
+src/ai/enemy_ai.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/enemy_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/enemy_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/enemy_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/ai/enemy_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ai/enemy_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ai/enemy_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ai/enemy_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ai/enemy_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ai/enemy_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/ai/enemy_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/ai/enemy_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/enemy_ai.cpp.i
+.PHONY : src/ai/enemy_ai.cpp.i
+
+src/ai/enemy_ai.s: src/ai/enemy_ai.cpp.s
+.PHONY : src/ai/enemy_ai.s
+
+# target to generate assembly for a file
+src/ai/enemy_ai.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/enemy_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/enemy_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/enemy_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/ai/enemy_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ai/enemy_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ai/enemy_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ai/enemy_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ai/enemy_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ai/enemy_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/ai/enemy_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/ai/enemy_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/enemy_ai.cpp.s
+.PHONY : src/ai/enemy_ai.cpp.s
+
+src/ai/enemy_spawner.o: src/ai/enemy_spawner.cpp.o
+.PHONY : src/ai/enemy_spawner.o
+
+# target to build an object file
+src/ai/enemy_spawner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/enemy_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/enemy_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/enemy_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/ai/enemy_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ai/enemy_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ai/enemy_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ai/enemy_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ai/enemy_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ai/enemy_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/ai/enemy_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/ai/enemy_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/enemy_spawner.cpp.o
+.PHONY : src/ai/enemy_spawner.cpp.o
+
+src/ai/enemy_spawner.i: src/ai/enemy_spawner.cpp.i
+.PHONY : src/ai/enemy_spawner.i
+
+# target to preprocess a source file
+src/ai/enemy_spawner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/enemy_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/enemy_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/enemy_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/ai/enemy_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ai/enemy_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ai/enemy_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ai/enemy_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ai/enemy_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ai/enemy_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/ai/enemy_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/ai/enemy_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/enemy_spawner.cpp.i
+.PHONY : src/ai/enemy_spawner.cpp.i
+
+src/ai/enemy_spawner.s: src/ai/enemy_spawner.cpp.s
+.PHONY : src/ai/enemy_spawner.s
+
+# target to generate assembly for a file
+src/ai/enemy_spawner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/enemy_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/enemy_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/enemy_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/ai/enemy_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ai/enemy_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ai/enemy_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ai/enemy_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ai/enemy_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ai/enemy_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/ai/enemy_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/ai/enemy_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/enemy_spawner.cpp.s
+.PHONY : src/ai/enemy_spawner.cpp.s
+
+src/ai/mob_spawner.o: src/ai/mob_spawner.cpp.o
+.PHONY : src/ai/mob_spawner.o
+
+# target to build an object file
+src/ai/mob_spawner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/mob_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/mob_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/mob_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/ai/mob_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ai/mob_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ai/mob_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ai/mob_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ai/mob_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ai/mob_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/ai/mob_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/ai/mob_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/mob_spawner.cpp.o
+.PHONY : src/ai/mob_spawner.cpp.o
+
+src/ai/mob_spawner.i: src/ai/mob_spawner.cpp.i
+.PHONY : src/ai/mob_spawner.i
+
+# target to preprocess a source file
+src/ai/mob_spawner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/mob_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/mob_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/mob_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/ai/mob_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ai/mob_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ai/mob_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ai/mob_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ai/mob_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ai/mob_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/ai/mob_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/ai/mob_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/mob_spawner.cpp.i
+.PHONY : src/ai/mob_spawner.cpp.i
+
+src/ai/mob_spawner.s: src/ai/mob_spawner.cpp.s
+.PHONY : src/ai/mob_spawner.s
+
+# target to generate assembly for a file
+src/ai/mob_spawner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/mob_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/mob_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/mob_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/ai/mob_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/ai/mob_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/ai/mob_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/ai/mob_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/ai/mob_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/ai/mob_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/ai/mob_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/ai/mob_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/mob_spawner.cpp.s
+.PHONY : src/ai/mob_spawner.cpp.s
+
 src/animation/animation.o: src/animation/animation.cpp.o
 .PHONY : src/animation/animation.o
 
@@ -569,6 +740,63 @@ src/audio/audio_engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/audio/audio_engine.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_engine.cpp.s
 .PHONY : src/audio/audio_engine.cpp.s
+
+src/audio/audio_events.o: src/audio/audio_events.cpp.o
+.PHONY : src/audio/audio_events.o
+
+# target to build an object file
+src/audio/audio_events.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/audio/audio_events.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/audio/audio_events.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/audio/audio_events.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/audio/audio_events.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/audio/audio_events.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/audio/audio_events.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/audio/audio_events.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/audio/audio_events.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/audio/audio_events.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/audio/audio_events.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/audio/audio_events.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_events.cpp.o
+.PHONY : src/audio/audio_events.cpp.o
+
+src/audio/audio_events.i: src/audio/audio_events.cpp.i
+.PHONY : src/audio/audio_events.i
+
+# target to preprocess a source file
+src/audio/audio_events.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/audio/audio_events.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/audio/audio_events.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/audio/audio_events.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/audio/audio_events.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/audio/audio_events.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/audio/audio_events.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/audio/audio_events.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/audio/audio_events.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/audio/audio_events.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/audio/audio_events.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/audio/audio_events.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_events.cpp.i
+.PHONY : src/audio/audio_events.cpp.i
+
+src/audio/audio_events.s: src/audio/audio_events.cpp.s
+.PHONY : src/audio/audio_events.s
+
+# target to generate assembly for a file
+src/audio/audio_events.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/audio/audio_events.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/audio/audio_events.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/audio/audio_events.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/audio/audio_events.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/audio/audio_events.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/audio/audio_events.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/audio/audio_events.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/audio/audio_events.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/audio/audio_events.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/audio/audio_events.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/audio/audio_events.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_events.cpp.s
+.PHONY : src/audio/audio_events.cpp.s
 
 src/audio/audio_system.o: src/audio/audio_system.cpp.o
 .PHONY : src/audio/audio_system.o
@@ -1758,6 +1986,177 @@ src/game/block_interaction.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/block_interaction.cpp.s
 .PHONY : src/game/block_interaction.cpp.s
 
+src/game/combat_system.o: src/game/combat_system.cpp.o
+.PHONY : src/game/combat_system.o
+
+# target to build an object file
+src/game/combat_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/combat_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/combat_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/combat_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/game/combat_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/game/combat_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/game/combat_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/game/combat_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/game/combat_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/game/combat_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/game/combat_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/game/combat_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/combat_system.cpp.o
+.PHONY : src/game/combat_system.cpp.o
+
+src/game/combat_system.i: src/game/combat_system.cpp.i
+.PHONY : src/game/combat_system.i
+
+# target to preprocess a source file
+src/game/combat_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/combat_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/combat_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/combat_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/game/combat_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/game/combat_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/game/combat_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/game/combat_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/game/combat_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/game/combat_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/game/combat_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/game/combat_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/combat_system.cpp.i
+.PHONY : src/game/combat_system.cpp.i
+
+src/game/combat_system.s: src/game/combat_system.cpp.s
+.PHONY : src/game/combat_system.s
+
+# target to generate assembly for a file
+src/game/combat_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/combat_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/combat_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/combat_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/game/combat_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/game/combat_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/game/combat_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/game/combat_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/game/combat_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/game/combat_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/game/combat_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/game/combat_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/combat_system.cpp.s
+.PHONY : src/game/combat_system.cpp.s
+
+src/game/day_night_cycle.o: src/game/day_night_cycle.cpp.o
+.PHONY : src/game/day_night_cycle.o
+
+# target to build an object file
+src/game/day_night_cycle.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/day_night_cycle.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/day_night_cycle.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/day_night_cycle.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/game/day_night_cycle.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/game/day_night_cycle.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/game/day_night_cycle.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/game/day_night_cycle.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/game/day_night_cycle.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/game/day_night_cycle.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/game/day_night_cycle.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/game/day_night_cycle.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/day_night_cycle.cpp.o
+.PHONY : src/game/day_night_cycle.cpp.o
+
+src/game/day_night_cycle.i: src/game/day_night_cycle.cpp.i
+.PHONY : src/game/day_night_cycle.i
+
+# target to preprocess a source file
+src/game/day_night_cycle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/day_night_cycle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/day_night_cycle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/day_night_cycle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/game/day_night_cycle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/game/day_night_cycle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/game/day_night_cycle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/game/day_night_cycle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/game/day_night_cycle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/game/day_night_cycle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/game/day_night_cycle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/game/day_night_cycle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/day_night_cycle.cpp.i
+.PHONY : src/game/day_night_cycle.cpp.i
+
+src/game/day_night_cycle.s: src/game/day_night_cycle.cpp.s
+.PHONY : src/game/day_night_cycle.s
+
+# target to generate assembly for a file
+src/game/day_night_cycle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/day_night_cycle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/day_night_cycle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/day_night_cycle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/game/day_night_cycle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/game/day_night_cycle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/game/day_night_cycle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/game/day_night_cycle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/game/day_night_cycle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/game/day_night_cycle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/game/day_night_cycle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/game/day_night_cycle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/day_night_cycle.cpp.s
+.PHONY : src/game/day_night_cycle.cpp.s
+
+src/game/player_stats.o: src/game/player_stats.cpp.o
+.PHONY : src/game/player_stats.o
+
+# target to build an object file
+src/game/player_stats.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/player_stats.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/player_stats.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/player_stats.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/game/player_stats.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/game/player_stats.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/game/player_stats.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/game/player_stats.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/game/player_stats.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/game/player_stats.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/game/player_stats.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/game/player_stats.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/player_stats.cpp.o
+.PHONY : src/game/player_stats.cpp.o
+
+src/game/player_stats.i: src/game/player_stats.cpp.i
+.PHONY : src/game/player_stats.i
+
+# target to preprocess a source file
+src/game/player_stats.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/player_stats.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/player_stats.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/player_stats.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/game/player_stats.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/game/player_stats.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/game/player_stats.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/game/player_stats.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/game/player_stats.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/game/player_stats.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/game/player_stats.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/game/player_stats.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/player_stats.cpp.i
+.PHONY : src/game/player_stats.cpp.i
+
+src/game/player_stats.s: src/game/player_stats.cpp.s
+.PHONY : src/game/player_stats.s
+
+# target to generate assembly for a file
+src/game/player_stats.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/player_stats.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/player_stats.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/player_stats.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/game/player_stats.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/game/player_stats.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/game/player_stats.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/game/player_stats.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/game/player_stats.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/game/player_stats.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/game/player_stats.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/game/player_stats.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/player_stats.cpp.s
+.PHONY : src/game/player_stats.cpp.s
+
 src/game/sandbox_mode.o: src/game/sandbox_mode.cpp.o
 .PHONY : src/game/sandbox_mode.o
 
@@ -1814,6 +2213,63 @@ src/game/sandbox_mode.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/game/sandbox_mode.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/sandbox_mode.cpp.s
 .PHONY : src/game/sandbox_mode.cpp.s
+
+src/game/survival_mode.o: src/game/survival_mode.cpp.o
+.PHONY : src/game/survival_mode.o
+
+# target to build an object file
+src/game/survival_mode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/survival_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/survival_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/survival_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/game/survival_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/game/survival_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/game/survival_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/game/survival_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/game/survival_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/game/survival_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/game/survival_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/game/survival_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/survival_mode.cpp.o
+.PHONY : src/game/survival_mode.cpp.o
+
+src/game/survival_mode.i: src/game/survival_mode.cpp.i
+.PHONY : src/game/survival_mode.i
+
+# target to preprocess a source file
+src/game/survival_mode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/survival_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/survival_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/survival_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/game/survival_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/game/survival_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/game/survival_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/game/survival_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/game/survival_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/game/survival_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/game/survival_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/game/survival_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/survival_mode.cpp.i
+.PHONY : src/game/survival_mode.cpp.i
+
+src/game/survival_mode.s: src/game/survival_mode.cpp.s
+.PHONY : src/game/survival_mode.s
+
+# target to generate assembly for a file
+src/game/survival_mode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/survival_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/survival_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/survival_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/game/survival_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/game/survival_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/game/survival_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/game/survival_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/game/survival_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/game/survival_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/game/survival_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/game/survival_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/survival_mode.cpp.s
+.PHONY : src/game/survival_mode.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -2778,6 +3234,63 @@ src/rendering/frustum.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/frustum.cpp.s
 .PHONY : src/rendering/frustum.cpp.s
 
+src/rendering/light_system.o: src/rendering/light_system.cpp.o
+.PHONY : src/rendering/light_system.o
+
+# target to build an object file
+src/rendering/light_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/light_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/light_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/light_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/rendering/light_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/light_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/light_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/light_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/light_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/light_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/rendering/light_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/rendering/light_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/light_system.cpp.o
+.PHONY : src/rendering/light_system.cpp.o
+
+src/rendering/light_system.i: src/rendering/light_system.cpp.i
+.PHONY : src/rendering/light_system.i
+
+# target to preprocess a source file
+src/rendering/light_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/light_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/light_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/light_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/rendering/light_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/light_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/light_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/light_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/light_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/light_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/rendering/light_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/rendering/light_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/light_system.cpp.i
+.PHONY : src/rendering/light_system.cpp.i
+
+src/rendering/light_system.s: src/rendering/light_system.cpp.s
+.PHONY : src/rendering/light_system.s
+
+# target to generate assembly for a file
+src/rendering/light_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/light_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/light_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/light_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/rendering/light_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/light_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/light_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/light_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/light_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/light_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/rendering/light_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/rendering/light_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/light_system.cpp.s
+.PHONY : src/rendering/light_system.cpp.s
+
 src/rendering/lighting.o: src/rendering/lighting.cpp.o
 .PHONY : src/rendering/lighting.o
 
@@ -3233,63 +3746,6 @@ src/rendering/shadow_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/rendering/shadow_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/shadow_system.cpp.s
 .PHONY : src/rendering/shadow_system.cpp.s
-
-src/rendering/sky/day_night_cycle.o: src/rendering/sky/day_night_cycle.cpp.o
-.PHONY : src/rendering/sky/day_night_cycle.o
-
-# target to build an object file
-src/rendering/sky/day_night_cycle.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/sky/day_night_cycle.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/sky/day_night_cycle.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/sky/day_night_cycle.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/rendering/sky/day_night_cycle.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/sky/day_night_cycle.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/sky/day_night_cycle.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/sky/day_night_cycle.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/sky/day_night_cycle.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/rendering/sky/day_night_cycle.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/rendering/sky/day_night_cycle.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/sky/day_night_cycle.cpp.o
-.PHONY : src/rendering/sky/day_night_cycle.cpp.o
-
-src/rendering/sky/day_night_cycle.i: src/rendering/sky/day_night_cycle.cpp.i
-.PHONY : src/rendering/sky/day_night_cycle.i
-
-# target to preprocess a source file
-src/rendering/sky/day_night_cycle.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/sky/day_night_cycle.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/sky/day_night_cycle.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/sky/day_night_cycle.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/rendering/sky/day_night_cycle.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/sky/day_night_cycle.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/sky/day_night_cycle.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/sky/day_night_cycle.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/sky/day_night_cycle.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/rendering/sky/day_night_cycle.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/rendering/sky/day_night_cycle.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/sky/day_night_cycle.cpp.i
-.PHONY : src/rendering/sky/day_night_cycle.cpp.i
-
-src/rendering/sky/day_night_cycle.s: src/rendering/sky/day_night_cycle.cpp.s
-.PHONY : src/rendering/sky/day_night_cycle.s
-
-# target to generate assembly for a file
-src/rendering/sky/day_night_cycle.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/rendering/sky/day_night_cycle.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/rendering/sky/day_night_cycle.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/sky/day_night_cycle.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/rendering/sky/day_night_cycle.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/rendering/sky/day_night_cycle.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/rendering/sky/day_night_cycle.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/rendering/sky/day_night_cycle.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/rendering/sky/day_night_cycle.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/rendering/sky/day_night_cycle.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/rendering/sky/day_night_cycle.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/sky/day_night_cycle.cpp.s
-.PHONY : src/rendering/sky/day_night_cycle.cpp.s
 
 src/rendering/sky/sky_renderer.o: src/rendering/sky/sky_renderer.cpp.o
 .PHONY : src/rendering/sky/sky_renderer.o
@@ -4542,6 +4998,63 @@ src/voxel/world_renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.s
 .PHONY : src/voxel/world_renderer.cpp.s
 
+src/voxel/world_serializer.o: src/voxel/world_serializer.cpp.o
+.PHONY : src/voxel/world_serializer.o
+
+# target to build an object file
+src/voxel/world_serializer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/world_serializer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/world_serializer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/voxel/world_serializer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/world_serializer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/world_serializer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/world_serializer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/world_serializer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/world_serializer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/voxel/world_serializer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/voxel/world_serializer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world_serializer.cpp.o
+.PHONY : src/voxel/world_serializer.cpp.o
+
+src/voxel/world_serializer.i: src/voxel/world_serializer.cpp.i
+.PHONY : src/voxel/world_serializer.i
+
+# target to preprocess a source file
+src/voxel/world_serializer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/world_serializer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/world_serializer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/voxel/world_serializer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/world_serializer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/world_serializer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/world_serializer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/world_serializer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/world_serializer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/voxel/world_serializer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/voxel/world_serializer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world_serializer.cpp.i
+.PHONY : src/voxel/world_serializer.cpp.i
+
+src/voxel/world_serializer.s: src/voxel/world_serializer.cpp.s
+.PHONY : src/voxel/world_serializer.s
+
+# target to generate assembly for a file
+src/voxel/world_serializer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/world_serializer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/world_serializer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weather_test.dir/build.make CMakeFiles/weather_test.dir/src/voxel/world_serializer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/day_night_test.dir/build.make CMakeFiles/day_night_test.dir/src/voxel/world_serializer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_test.dir/build.make CMakeFiles/inventory_test.dir/src/voxel/world_serializer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/editor_test.dir/build.make CMakeFiles/editor_test.dir/src/voxel/world_serializer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/console_test.dir/build.make CMakeFiles/console_test.dir/src/voxel/world_serializer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/culling_test.dir/build.make CMakeFiles/culling_test.dir/src/voxel/world_serializer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox_test.dir/build.make CMakeFiles/sandbox_test.dir/src/voxel/world_serializer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/renderer_integration_test.dir/build.make CMakeFiles/renderer_integration_test.dir/src/voxel/world_serializer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world_serializer.cpp.s
+.PHONY : src/voxel/world_serializer.cpp.s
+
 src/world_test.o: src/world_test.cpp.o
 .PHONY : src/world_test.o
 
@@ -4809,6 +5322,15 @@ help:
 	@echo "... src/ai/behavior_tree.o"
 	@echo "... src/ai/behavior_tree.i"
 	@echo "... src/ai/behavior_tree.s"
+	@echo "... src/ai/enemy_ai.o"
+	@echo "... src/ai/enemy_ai.i"
+	@echo "... src/ai/enemy_ai.s"
+	@echo "... src/ai/enemy_spawner.o"
+	@echo "... src/ai/enemy_spawner.i"
+	@echo "... src/ai/enemy_spawner.s"
+	@echo "... src/ai/mob_spawner.o"
+	@echo "... src/ai/mob_spawner.i"
+	@echo "... src/ai/mob_spawner.s"
 	@echo "... src/animation/animation.o"
 	@echo "... src/animation/animation.i"
 	@echo "... src/animation/animation.s"
@@ -4818,6 +5340,9 @@ help:
 	@echo "... src/audio/audio_engine.o"
 	@echo "... src/audio/audio_engine.i"
 	@echo "... src/audio/audio_engine.s"
+	@echo "... src/audio/audio_events.o"
+	@echo "... src/audio/audio_events.i"
+	@echo "... src/audio/audio_events.s"
 	@echo "... src/audio/audio_system.o"
 	@echo "... src/audio/audio_system.i"
 	@echo "... src/audio/audio_system.s"
@@ -4884,9 +5409,21 @@ help:
 	@echo "... src/game/block_interaction.o"
 	@echo "... src/game/block_interaction.i"
 	@echo "... src/game/block_interaction.s"
+	@echo "... src/game/combat_system.o"
+	@echo "... src/game/combat_system.i"
+	@echo "... src/game/combat_system.s"
+	@echo "... src/game/day_night_cycle.o"
+	@echo "... src/game/day_night_cycle.i"
+	@echo "... src/game/day_night_cycle.s"
+	@echo "... src/game/player_stats.o"
+	@echo "... src/game/player_stats.i"
+	@echo "... src/game/player_stats.s"
 	@echo "... src/game/sandbox_mode.o"
 	@echo "... src/game/sandbox_mode.i"
 	@echo "... src/game/sandbox_mode.s"
+	@echo "... src/game/survival_mode.o"
+	@echo "... src/game/survival_mode.i"
+	@echo "... src/game/survival_mode.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -4941,6 +5478,9 @@ help:
 	@echo "... src/rendering/frustum.o"
 	@echo "... src/rendering/frustum.i"
 	@echo "... src/rendering/frustum.s"
+	@echo "... src/rendering/light_system.o"
+	@echo "... src/rendering/light_system.i"
+	@echo "... src/rendering/light_system.s"
 	@echo "... src/rendering/lighting.o"
 	@echo "... src/rendering/lighting.i"
 	@echo "... src/rendering/lighting.s"
@@ -4965,9 +5505,6 @@ help:
 	@echo "... src/rendering/shadow_system.o"
 	@echo "... src/rendering/shadow_system.i"
 	@echo "... src/rendering/shadow_system.s"
-	@echo "... src/rendering/sky/day_night_cycle.o"
-	@echo "... src/rendering/sky/day_night_cycle.i"
-	@echo "... src/rendering/sky/day_night_cycle.s"
 	@echo "... src/rendering/sky/sky_renderer.o"
 	@echo "... src/rendering/sky/sky_renderer.i"
 	@echo "... src/rendering/sky/sky_renderer.s"
@@ -5046,6 +5583,9 @@ help:
 	@echo "... src/voxel/world_renderer.o"
 	@echo "... src/voxel/world_renderer.i"
 	@echo "... src/voxel/world_renderer.s"
+	@echo "... src/voxel/world_serializer.o"
+	@echo "... src/voxel/world_serializer.i"
+	@echo "... src/voxel/world_serializer.s"
 	@echo "... src/world_test.o"
 	@echo "... src/world_test.i"
 	@echo "... src/world_test.s"

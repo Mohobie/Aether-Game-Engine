@@ -3,12 +3,14 @@
 #include "ai/ai_system.h"
 #include "ai/enemy_ai.h"
 #include "ai/enemy_spawner.h"
+#include "ai/mob_spawner.h"
 #include "game/combat_system.h"
 #include "game/day_night_cycle.h"
 #include "animation/animation.h"
 #include "editor/in_game_editor.h"
 #include "platform/input_manager.h"
 #include "rendering/camera.h"
+#include "rendering/light_system.h"
 #include "game/player_stats.h"
 #include "core/crafting.h"
 #include "voxel/world.h"
@@ -982,6 +984,9 @@ int main() {
     TestFlyCamera();
     TestPlayerStats();
     TestSurvivalMode();
+    TestDayNightCycle();
+    TestLightSystem();
+    TestMobSpawner();
 
     std::cout << "\n=== All Tests Passed ===" << std::endl;
 

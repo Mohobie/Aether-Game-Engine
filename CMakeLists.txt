@@ -105,8 +105,8 @@ set(CORE_SOURCES
     src/ai/behavior_tree.cpp
     src/ai/enemy_ai.cpp
     src/ai/enemy_spawner.cpp
+    src/ai/mob_spawner.cpp
     src/animation/animation_state_machine.cpp
-    src/rendering/sky/day_night_cycle.cpp
     src/rendering/sky/sky_renderer.cpp
     src/rendering/particles/particle_system.cpp
     src/rendering/weather/weather_effects_renderer.cpp
@@ -117,6 +117,7 @@ set(CORE_SOURCES
     src/rendering/shader.cpp
     src/rendering/texture.cpp
     src/rendering/lighting.cpp
+    src/rendering/light_system.cpp
     src/ai/ai_system.cpp
     src/animation/animation.cpp
     src/entity/entity.cpp
@@ -127,6 +128,9 @@ set(CORE_SOURCES
     src/rendering/shadow_system.cpp
     src/rendering/pbr_material.cpp
     src/audio/audio_system.cpp
+    src/audio/audio_events.cpp
+    src/audio/sound_manager.cpp
+    src/audio/audio_engine.cpp
     src/physics/physics_system.cpp
     src/voxel/terrain_system.cpp
     src/voxel/block.cpp
@@ -138,6 +142,7 @@ set(CORE_SOURCES
     src/voxel/world_generator.cpp
     src/voxel/block_mesh_builder.cpp
     src/voxel/world_renderer.cpp
+    src/voxel/world_serializer.cpp
     src/voxel/chunk_manager.cpp
     src/debug/debug_system.cpp
     src/physics/collision.cpp
@@ -154,8 +159,6 @@ set(CORE_SOURCES
     src/ui/ui_element.cpp
     src/core/entity.cpp
     src/network/packet.cpp
-    src/audio/audio_engine.cpp
-    src/audio/sound_manager.cpp
     src/platform/platform_common.cpp
     src/platform/file_system.cpp
     src/platform/input_manager.cpp
@@ -166,6 +169,7 @@ set(CORE_SOURCES
     src/game/sandbox_mode.cpp
     src/game/survival_mode.cpp
     src/game/player_stats.cpp
+    src/game/day_night_cycle.cpp
     src/game/block_interaction.cpp
     src/game/combat_system.cpp
     src/editor/entity_spawner.cpp

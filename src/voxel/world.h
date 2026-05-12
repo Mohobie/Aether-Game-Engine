@@ -36,6 +36,10 @@ public:
     
     int GetSeed() const { return seed; }
     void SetSeed(int s) { seed = s; }
+
+    // Iterator access for systems that need to iterate all chunks
+    const std::map<ChunkCoord, std::unique_ptr<Chunk>>& GetChunks() const { return chunks; }
+    std::map<ChunkCoord, std::unique_ptr<Chunk>>& GetChunks() { return chunks; }
 };
 
 } // namespace vge

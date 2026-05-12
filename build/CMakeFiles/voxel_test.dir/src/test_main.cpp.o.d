@@ -191,16 +191,33 @@ CMakeFiles/voxel_test.dir/src/test_main.cpp.o: \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/uniform_int_dist.h \
  /home/mohobie/projects/aether-game-engine/src/ai/ai_system.h \
- /home/mohobie/projects/aether-game-engine/src/animation/animation.h \
- /home/mohobie/projects/aether-game-engine/src/editor/in_game_editor.h \
- /home/mohobie/projects/aether-game-engine/src/voxel/block_types.h \
- /home/mohobie/projects/aether-game-engine/src/editor/entity_spawner.h \
- /home/mohobie/projects/aether-game-engine/src/voxel/voxel_editor.h \
+ /home/mohobie/projects/aether-game-engine/src/ai/enemy_ai.h \
+ /home/mohobie/projects/aether-game-engine/src/ai/enemy_spawner.h \
+ /usr/include/c++/11/random /usr/include/c++/11/bits/random.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/opt_random.h \
+ /usr/include/c++/11/bits/random.tcc /usr/include/c++/11/numeric \
+ /usr/include/c++/11/bits/stl_numeric.h \
+ /usr/include/c++/11/pstl/glue_numeric_defs.h \
+ /home/mohobie/projects/aether-game-engine/src/ai/mob_spawner.h \
  /home/mohobie/projects/aether-game-engine/src/voxel/world.h \
  /home/mohobie/projects/aether-game-engine/src/voxel/chunk.h \
+ /home/mohobie/projects/aether-game-engine/src/voxel/block_types.h \
  /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
  /usr/include/c++/11/bits/stl_map.h \
  /usr/include/c++/11/bits/stl_multimap.h \
+ /home/mohobie/projects/aether-game-engine/src/rendering/light_system.h \
+ /usr/include/c++/11/queue /usr/include/c++/11/deque \
+ /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
+ /usr/include/c++/11/bits/stl_queue.h \
+ /home/mohobie/projects/aether-game-engine/src/game/day_night_cycle.h \
+ /home/mohobie/projects/aether-game-engine/src/game/combat_system.h \
+ /home/mohobie/projects/aether-game-engine/src/core/item_system.h \
+ /home/mohobie/projects/aether-game-engine/src/core/math.h \
+ /home/mohobie/projects/aether-game-engine/src/core/types.h \
+ /home/mohobie/projects/aether-game-engine/src/animation/animation.h \
+ /home/mohobie/projects/aether-game-engine/src/editor/in_game_editor.h \
+ /home/mohobie/projects/aether-game-engine/src/editor/entity_spawner.h \
+ /home/mohobie/projects/aether-game-engine/src/voxel/voxel_editor.h \
  /home/mohobie/projects/aether-game-engine/src/platform/input_manager.h \
  /usr/include/termios.h /usr/include/x86_64-linux-gnu/bits/termios.h \
  /usr/include/x86_64-linux-gnu/bits/termios-struct.h \
@@ -226,6 +243,9 @@ CMakeFiles/voxel_test.dir/src/test_main.cpp.o: \
  /usr/include/linux/falloc.h /usr/include/x86_64-linux-gnu/bits/stat.h \
  /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
  /home/mohobie/projects/aether-game-engine/src/rendering/camera.h \
+ /home/mohobie/projects/aether-game-engine/src/game/player_stats.h \
+ /home/mohobie/projects/aether-game-engine/src/core/crafting.h \
+ /home/mohobie/projects/aether-game-engine/src/voxel/block_registry.h \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
  /usr/include/c++/11/ios /usr/include/c++/11/bits/ios_base.h \
  /usr/include/c++/11/bits/locale_classes.h \

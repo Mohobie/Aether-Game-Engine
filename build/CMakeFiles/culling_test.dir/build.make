@@ -167,10 +167,52 @@ CMakeFiles/culling_test.dir/src/ai/behavior_tree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/ai/behavior_tree.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/ai/behavior_tree.cpp -o CMakeFiles/culling_test.dir/src/ai/behavior_tree.cpp.s
 
+CMakeFiles/culling_test.dir/src/ai/enemy_ai.cpp.o: CMakeFiles/culling_test.dir/flags.make
+CMakeFiles/culling_test.dir/src/ai/enemy_ai.cpp.o: ../src/ai/enemy_ai.cpp
+CMakeFiles/culling_test.dir/src/ai/enemy_ai.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/culling_test.dir/src/ai/enemy_ai.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/ai/enemy_ai.cpp.o -MF CMakeFiles/culling_test.dir/src/ai/enemy_ai.cpp.o.d -o CMakeFiles/culling_test.dir/src/ai/enemy_ai.cpp.o -c /home/mohobie/projects/aether-game-engine/src/ai/enemy_ai.cpp
+
+CMakeFiles/culling_test.dir/src/ai/enemy_ai.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/culling_test.dir/src/ai/enemy_ai.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/ai/enemy_ai.cpp > CMakeFiles/culling_test.dir/src/ai/enemy_ai.cpp.i
+
+CMakeFiles/culling_test.dir/src/ai/enemy_ai.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/ai/enemy_ai.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/ai/enemy_ai.cpp -o CMakeFiles/culling_test.dir/src/ai/enemy_ai.cpp.s
+
+CMakeFiles/culling_test.dir/src/ai/enemy_spawner.cpp.o: CMakeFiles/culling_test.dir/flags.make
+CMakeFiles/culling_test.dir/src/ai/enemy_spawner.cpp.o: ../src/ai/enemy_spawner.cpp
+CMakeFiles/culling_test.dir/src/ai/enemy_spawner.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/culling_test.dir/src/ai/enemy_spawner.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/ai/enemy_spawner.cpp.o -MF CMakeFiles/culling_test.dir/src/ai/enemy_spawner.cpp.o.d -o CMakeFiles/culling_test.dir/src/ai/enemy_spawner.cpp.o -c /home/mohobie/projects/aether-game-engine/src/ai/enemy_spawner.cpp
+
+CMakeFiles/culling_test.dir/src/ai/enemy_spawner.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/culling_test.dir/src/ai/enemy_spawner.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/ai/enemy_spawner.cpp > CMakeFiles/culling_test.dir/src/ai/enemy_spawner.cpp.i
+
+CMakeFiles/culling_test.dir/src/ai/enemy_spawner.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/ai/enemy_spawner.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/ai/enemy_spawner.cpp -o CMakeFiles/culling_test.dir/src/ai/enemy_spawner.cpp.s
+
+CMakeFiles/culling_test.dir/src/ai/mob_spawner.cpp.o: CMakeFiles/culling_test.dir/flags.make
+CMakeFiles/culling_test.dir/src/ai/mob_spawner.cpp.o: ../src/ai/mob_spawner.cpp
+CMakeFiles/culling_test.dir/src/ai/mob_spawner.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/culling_test.dir/src/ai/mob_spawner.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/ai/mob_spawner.cpp.o -MF CMakeFiles/culling_test.dir/src/ai/mob_spawner.cpp.o.d -o CMakeFiles/culling_test.dir/src/ai/mob_spawner.cpp.o -c /home/mohobie/projects/aether-game-engine/src/ai/mob_spawner.cpp
+
+CMakeFiles/culling_test.dir/src/ai/mob_spawner.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/culling_test.dir/src/ai/mob_spawner.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/ai/mob_spawner.cpp > CMakeFiles/culling_test.dir/src/ai/mob_spawner.cpp.i
+
+CMakeFiles/culling_test.dir/src/ai/mob_spawner.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/ai/mob_spawner.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/ai/mob_spawner.cpp -o CMakeFiles/culling_test.dir/src/ai/mob_spawner.cpp.s
+
 CMakeFiles/culling_test.dir/src/animation/animation_state_machine.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/animation/animation_state_machine.cpp.o: ../src/animation/animation_state_machine.cpp
 CMakeFiles/culling_test.dir/src/animation/animation_state_machine.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/culling_test.dir/src/animation/animation_state_machine.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/culling_test.dir/src/animation/animation_state_machine.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/animation/animation_state_machine.cpp.o -MF CMakeFiles/culling_test.dir/src/animation/animation_state_machine.cpp.o.d -o CMakeFiles/culling_test.dir/src/animation/animation_state_machine.cpp.o -c /home/mohobie/projects/aether-game-engine/src/animation/animation_state_machine.cpp
 
 CMakeFiles/culling_test.dir/src/animation/animation_state_machine.cpp.i: cmake_force
@@ -181,24 +223,10 @@ CMakeFiles/culling_test.dir/src/animation/animation_state_machine.cpp.s: cmake_f
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/animation/animation_state_machine.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/animation/animation_state_machine.cpp -o CMakeFiles/culling_test.dir/src/animation/animation_state_machine.cpp.s
 
-CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.o: CMakeFiles/culling_test.dir/flags.make
-CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.o: ../src/rendering/sky/day_night_cycle.cpp
-CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.o -MF CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.o.d -o CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/sky/day_night_cycle.cpp
-
-CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/rendering/sky/day_night_cycle.cpp > CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.i
-
-CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/rendering/sky/day_night_cycle.cpp -o CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.s
-
 CMakeFiles/culling_test.dir/src/rendering/sky/sky_renderer.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/rendering/sky/sky_renderer.cpp.o: ../src/rendering/sky/sky_renderer.cpp
 CMakeFiles/culling_test.dir/src/rendering/sky/sky_renderer.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/sky/sky_renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/sky/sky_renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/rendering/sky/sky_renderer.cpp.o -MF CMakeFiles/culling_test.dir/src/rendering/sky/sky_renderer.cpp.o.d -o CMakeFiles/culling_test.dir/src/rendering/sky/sky_renderer.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/sky/sky_renderer.cpp
 
 CMakeFiles/culling_test.dir/src/rendering/sky/sky_renderer.cpp.i: cmake_force
@@ -212,7 +240,7 @@ CMakeFiles/culling_test.dir/src/rendering/sky/sky_renderer.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/rendering/particles/particle_system.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/rendering/particles/particle_system.cpp.o: ../src/rendering/particles/particle_system.cpp
 CMakeFiles/culling_test.dir/src/rendering/particles/particle_system.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/particles/particle_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/particles/particle_system.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/rendering/particles/particle_system.cpp.o -MF CMakeFiles/culling_test.dir/src/rendering/particles/particle_system.cpp.o.d -o CMakeFiles/culling_test.dir/src/rendering/particles/particle_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/particles/particle_system.cpp
 
 CMakeFiles/culling_test.dir/src/rendering/particles/particle_system.cpp.i: cmake_force
@@ -226,7 +254,7 @@ CMakeFiles/culling_test.dir/src/rendering/particles/particle_system.cpp.s: cmake
 CMakeFiles/culling_test.dir/src/rendering/weather/weather_effects_renderer.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/rendering/weather/weather_effects_renderer.cpp.o: ../src/rendering/weather/weather_effects_renderer.cpp
 CMakeFiles/culling_test.dir/src/rendering/weather/weather_effects_renderer.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/weather/weather_effects_renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/weather/weather_effects_renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/rendering/weather/weather_effects_renderer.cpp.o -MF CMakeFiles/culling_test.dir/src/rendering/weather/weather_effects_renderer.cpp.o.d -o CMakeFiles/culling_test.dir/src/rendering/weather/weather_effects_renderer.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/weather/weather_effects_renderer.cpp
 
 CMakeFiles/culling_test.dir/src/rendering/weather/weather_effects_renderer.cpp.i: cmake_force
@@ -240,7 +268,7 @@ CMakeFiles/culling_test.dir/src/rendering/weather/weather_effects_renderer.cpp.s
 CMakeFiles/culling_test.dir/src/core/weather_system.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/core/weather_system.cpp.o: ../src/core/weather_system.cpp
 CMakeFiles/culling_test.dir/src/core/weather_system.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/culling_test.dir/src/core/weather_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/culling_test.dir/src/core/weather_system.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/core/weather_system.cpp.o -MF CMakeFiles/culling_test.dir/src/core/weather_system.cpp.o.d -o CMakeFiles/culling_test.dir/src/core/weather_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/core/weather_system.cpp
 
 CMakeFiles/culling_test.dir/src/core/weather_system.cpp.i: cmake_force
@@ -254,7 +282,7 @@ CMakeFiles/culling_test.dir/src/core/weather_system.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/rendering/post_processing.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/rendering/post_processing.cpp.o: ../src/rendering/post_processing.cpp
 CMakeFiles/culling_test.dir/src/rendering/post_processing.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/post_processing.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/post_processing.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/rendering/post_processing.cpp.o -MF CMakeFiles/culling_test.dir/src/rendering/post_processing.cpp.o.d -o CMakeFiles/culling_test.dir/src/rendering/post_processing.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/post_processing.cpp
 
 CMakeFiles/culling_test.dir/src/rendering/post_processing.cpp.i: cmake_force
@@ -268,7 +296,7 @@ CMakeFiles/culling_test.dir/src/rendering/post_processing.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/rendering/camera.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/rendering/camera.cpp.o: ../src/rendering/camera.cpp
 CMakeFiles/culling_test.dir/src/rendering/camera.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/camera.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/camera.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/rendering/camera.cpp.o -MF CMakeFiles/culling_test.dir/src/rendering/camera.cpp.o.d -o CMakeFiles/culling_test.dir/src/rendering/camera.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/camera.cpp
 
 CMakeFiles/culling_test.dir/src/rendering/camera.cpp.i: cmake_force
@@ -282,7 +310,7 @@ CMakeFiles/culling_test.dir/src/rendering/camera.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/rendering/renderer.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/rendering/renderer.cpp.o: ../src/rendering/renderer.cpp
 CMakeFiles/culling_test.dir/src/rendering/renderer.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/rendering/renderer.cpp.o -MF CMakeFiles/culling_test.dir/src/rendering/renderer.cpp.o.d -o CMakeFiles/culling_test.dir/src/rendering/renderer.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/renderer.cpp
 
 CMakeFiles/culling_test.dir/src/rendering/renderer.cpp.i: cmake_force
@@ -296,7 +324,7 @@ CMakeFiles/culling_test.dir/src/rendering/renderer.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/rendering/shader.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/rendering/shader.cpp.o: ../src/rendering/shader.cpp
 CMakeFiles/culling_test.dir/src/rendering/shader.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/shader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/rendering/shader.cpp.o -MF CMakeFiles/culling_test.dir/src/rendering/shader.cpp.o.d -o CMakeFiles/culling_test.dir/src/rendering/shader.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/shader.cpp
 
 CMakeFiles/culling_test.dir/src/rendering/shader.cpp.i: cmake_force
@@ -310,7 +338,7 @@ CMakeFiles/culling_test.dir/src/rendering/shader.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/rendering/texture.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/rendering/texture.cpp.o: ../src/rendering/texture.cpp
 CMakeFiles/culling_test.dir/src/rendering/texture.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/texture.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/texture.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/rendering/texture.cpp.o -MF CMakeFiles/culling_test.dir/src/rendering/texture.cpp.o.d -o CMakeFiles/culling_test.dir/src/rendering/texture.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/texture.cpp
 
 CMakeFiles/culling_test.dir/src/rendering/texture.cpp.i: cmake_force
@@ -324,7 +352,7 @@ CMakeFiles/culling_test.dir/src/rendering/texture.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/rendering/lighting.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/rendering/lighting.cpp.o: ../src/rendering/lighting.cpp
 CMakeFiles/culling_test.dir/src/rendering/lighting.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/lighting.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/lighting.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/rendering/lighting.cpp.o -MF CMakeFiles/culling_test.dir/src/rendering/lighting.cpp.o.d -o CMakeFiles/culling_test.dir/src/rendering/lighting.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/lighting.cpp
 
 CMakeFiles/culling_test.dir/src/rendering/lighting.cpp.i: cmake_force
@@ -335,10 +363,24 @@ CMakeFiles/culling_test.dir/src/rendering/lighting.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/rendering/lighting.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/rendering/lighting.cpp -o CMakeFiles/culling_test.dir/src/rendering/lighting.cpp.s
 
+CMakeFiles/culling_test.dir/src/rendering/light_system.cpp.o: CMakeFiles/culling_test.dir/flags.make
+CMakeFiles/culling_test.dir/src/rendering/light_system.cpp.o: ../src/rendering/light_system.cpp
+CMakeFiles/culling_test.dir/src/rendering/light_system.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/light_system.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/rendering/light_system.cpp.o -MF CMakeFiles/culling_test.dir/src/rendering/light_system.cpp.o.d -o CMakeFiles/culling_test.dir/src/rendering/light_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/light_system.cpp
+
+CMakeFiles/culling_test.dir/src/rendering/light_system.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/culling_test.dir/src/rendering/light_system.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/rendering/light_system.cpp > CMakeFiles/culling_test.dir/src/rendering/light_system.cpp.i
+
+CMakeFiles/culling_test.dir/src/rendering/light_system.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/rendering/light_system.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/rendering/light_system.cpp -o CMakeFiles/culling_test.dir/src/rendering/light_system.cpp.s
+
 CMakeFiles/culling_test.dir/src/ai/ai_system.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/ai/ai_system.cpp.o: ../src/ai/ai_system.cpp
 CMakeFiles/culling_test.dir/src/ai/ai_system.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/culling_test.dir/src/ai/ai_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/culling_test.dir/src/ai/ai_system.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/ai/ai_system.cpp.o -MF CMakeFiles/culling_test.dir/src/ai/ai_system.cpp.o.d -o CMakeFiles/culling_test.dir/src/ai/ai_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/ai/ai_system.cpp
 
 CMakeFiles/culling_test.dir/src/ai/ai_system.cpp.i: cmake_force
@@ -352,7 +394,7 @@ CMakeFiles/culling_test.dir/src/ai/ai_system.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/animation/animation.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/animation/animation.cpp.o: ../src/animation/animation.cpp
 CMakeFiles/culling_test.dir/src/animation/animation.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/culling_test.dir/src/animation/animation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/culling_test.dir/src/animation/animation.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/animation/animation.cpp.o -MF CMakeFiles/culling_test.dir/src/animation/animation.cpp.o.d -o CMakeFiles/culling_test.dir/src/animation/animation.cpp.o -c /home/mohobie/projects/aether-game-engine/src/animation/animation.cpp
 
 CMakeFiles/culling_test.dir/src/animation/animation.cpp.i: cmake_force
@@ -366,7 +408,7 @@ CMakeFiles/culling_test.dir/src/animation/animation.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/entity/entity.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/entity/entity.cpp.o: ../src/entity/entity.cpp
 CMakeFiles/culling_test.dir/src/entity/entity.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/culling_test.dir/src/entity/entity.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/culling_test.dir/src/entity/entity.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/entity/entity.cpp.o -MF CMakeFiles/culling_test.dir/src/entity/entity.cpp.o.d -o CMakeFiles/culling_test.dir/src/entity/entity.cpp.o -c /home/mohobie/projects/aether-game-engine/src/entity/entity.cpp
 
 CMakeFiles/culling_test.dir/src/entity/entity.cpp.i: cmake_force
@@ -380,7 +422,7 @@ CMakeFiles/culling_test.dir/src/entity/entity.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/entity/components.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/entity/components.cpp.o: ../src/entity/components.cpp
 CMakeFiles/culling_test.dir/src/entity/components.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/culling_test.dir/src/entity/components.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/culling_test.dir/src/entity/components.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/entity/components.cpp.o -MF CMakeFiles/culling_test.dir/src/entity/components.cpp.o.d -o CMakeFiles/culling_test.dir/src/entity/components.cpp.o -c /home/mohobie/projects/aether-game-engine/src/entity/components.cpp
 
 CMakeFiles/culling_test.dir/src/entity/components.cpp.i: cmake_force
@@ -394,7 +436,7 @@ CMakeFiles/culling_test.dir/src/entity/components.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/rendering/mesh.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/rendering/mesh.cpp.o: ../src/rendering/mesh.cpp
 CMakeFiles/culling_test.dir/src/rendering/mesh.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/mesh.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/mesh.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/rendering/mesh.cpp.o -MF CMakeFiles/culling_test.dir/src/rendering/mesh.cpp.o.d -o CMakeFiles/culling_test.dir/src/rendering/mesh.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/mesh.cpp
 
 CMakeFiles/culling_test.dir/src/rendering/mesh.cpp.i: cmake_force
@@ -408,7 +450,7 @@ CMakeFiles/culling_test.dir/src/rendering/mesh.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/rendering/shadow_system.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/rendering/shadow_system.cpp.o: ../src/rendering/shadow_system.cpp
 CMakeFiles/culling_test.dir/src/rendering/shadow_system.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/shadow_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/shadow_system.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/rendering/shadow_system.cpp.o -MF CMakeFiles/culling_test.dir/src/rendering/shadow_system.cpp.o.d -o CMakeFiles/culling_test.dir/src/rendering/shadow_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/shadow_system.cpp
 
 CMakeFiles/culling_test.dir/src/rendering/shadow_system.cpp.i: cmake_force
@@ -422,7 +464,7 @@ CMakeFiles/culling_test.dir/src/rendering/shadow_system.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/rendering/pbr_material.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/rendering/pbr_material.cpp.o: ../src/rendering/pbr_material.cpp
 CMakeFiles/culling_test.dir/src/rendering/pbr_material.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/pbr_material.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/pbr_material.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/rendering/pbr_material.cpp.o -MF CMakeFiles/culling_test.dir/src/rendering/pbr_material.cpp.o.d -o CMakeFiles/culling_test.dir/src/rendering/pbr_material.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/pbr_material.cpp
 
 CMakeFiles/culling_test.dir/src/rendering/pbr_material.cpp.i: cmake_force
@@ -436,7 +478,7 @@ CMakeFiles/culling_test.dir/src/rendering/pbr_material.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/audio/audio_system.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/audio/audio_system.cpp.o: ../src/audio/audio_system.cpp
 CMakeFiles/culling_test.dir/src/audio/audio_system.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/culling_test.dir/src/audio/audio_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/culling_test.dir/src/audio/audio_system.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/audio/audio_system.cpp.o -MF CMakeFiles/culling_test.dir/src/audio/audio_system.cpp.o.d -o CMakeFiles/culling_test.dir/src/audio/audio_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/audio/audio_system.cpp
 
 CMakeFiles/culling_test.dir/src/audio/audio_system.cpp.i: cmake_force
@@ -447,10 +489,52 @@ CMakeFiles/culling_test.dir/src/audio/audio_system.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/audio/audio_system.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/audio/audio_system.cpp -o CMakeFiles/culling_test.dir/src/audio/audio_system.cpp.s
 
+CMakeFiles/culling_test.dir/src/audio/audio_events.cpp.o: CMakeFiles/culling_test.dir/flags.make
+CMakeFiles/culling_test.dir/src/audio/audio_events.cpp.o: ../src/audio/audio_events.cpp
+CMakeFiles/culling_test.dir/src/audio/audio_events.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/culling_test.dir/src/audio/audio_events.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/audio/audio_events.cpp.o -MF CMakeFiles/culling_test.dir/src/audio/audio_events.cpp.o.d -o CMakeFiles/culling_test.dir/src/audio/audio_events.cpp.o -c /home/mohobie/projects/aether-game-engine/src/audio/audio_events.cpp
+
+CMakeFiles/culling_test.dir/src/audio/audio_events.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/culling_test.dir/src/audio/audio_events.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/audio/audio_events.cpp > CMakeFiles/culling_test.dir/src/audio/audio_events.cpp.i
+
+CMakeFiles/culling_test.dir/src/audio/audio_events.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/audio/audio_events.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/audio/audio_events.cpp -o CMakeFiles/culling_test.dir/src/audio/audio_events.cpp.s
+
+CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.o: CMakeFiles/culling_test.dir/flags.make
+CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.o: ../src/audio/sound_manager.cpp
+CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.o -MF CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.o.d -o CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.o -c /home/mohobie/projects/aether-game-engine/src/audio/sound_manager.cpp
+
+CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/audio/sound_manager.cpp > CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.i
+
+CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/audio/sound_manager.cpp -o CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.s
+
+CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.o: CMakeFiles/culling_test.dir/flags.make
+CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.o: ../src/audio/audio_engine.cpp
+CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.o -MF CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.o.d -o CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.o -c /home/mohobie/projects/aether-game-engine/src/audio/audio_engine.cpp
+
+CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/audio/audio_engine.cpp > CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.i
+
+CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/audio/audio_engine.cpp -o CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.s
+
 CMakeFiles/culling_test.dir/src/physics/physics_system.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/physics/physics_system.cpp.o: ../src/physics/physics_system.cpp
 CMakeFiles/culling_test.dir/src/physics/physics_system.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/culling_test.dir/src/physics/physics_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/culling_test.dir/src/physics/physics_system.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/physics/physics_system.cpp.o -MF CMakeFiles/culling_test.dir/src/physics/physics_system.cpp.o.d -o CMakeFiles/culling_test.dir/src/physics/physics_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/physics/physics_system.cpp
 
 CMakeFiles/culling_test.dir/src/physics/physics_system.cpp.i: cmake_force
@@ -464,7 +548,7 @@ CMakeFiles/culling_test.dir/src/physics/physics_system.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/voxel/terrain_system.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/voxel/terrain_system.cpp.o: ../src/voxel/terrain_system.cpp
 CMakeFiles/culling_test.dir/src/voxel/terrain_system.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/terrain_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/terrain_system.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/voxel/terrain_system.cpp.o -MF CMakeFiles/culling_test.dir/src/voxel/terrain_system.cpp.o.d -o CMakeFiles/culling_test.dir/src/voxel/terrain_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/voxel/terrain_system.cpp
 
 CMakeFiles/culling_test.dir/src/voxel/terrain_system.cpp.i: cmake_force
@@ -478,7 +562,7 @@ CMakeFiles/culling_test.dir/src/voxel/terrain_system.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/voxel/block.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/voxel/block.cpp.o: ../src/voxel/block.cpp
 CMakeFiles/culling_test.dir/src/voxel/block.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/block.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/block.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/voxel/block.cpp.o -MF CMakeFiles/culling_test.dir/src/voxel/block.cpp.o.d -o CMakeFiles/culling_test.dir/src/voxel/block.cpp.o -c /home/mohobie/projects/aether-game-engine/src/voxel/block.cpp
 
 CMakeFiles/culling_test.dir/src/voxel/block.cpp.i: cmake_force
@@ -492,7 +576,7 @@ CMakeFiles/culling_test.dir/src/voxel/block.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/voxel/block_types.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/voxel/block_types.cpp.o: ../src/voxel/block_types.cpp
 CMakeFiles/culling_test.dir/src/voxel/block_types.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/block_types.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/block_types.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/voxel/block_types.cpp.o -MF CMakeFiles/culling_test.dir/src/voxel/block_types.cpp.o.d -o CMakeFiles/culling_test.dir/src/voxel/block_types.cpp.o -c /home/mohobie/projects/aether-game-engine/src/voxel/block_types.cpp
 
 CMakeFiles/culling_test.dir/src/voxel/block_types.cpp.i: cmake_force
@@ -506,7 +590,7 @@ CMakeFiles/culling_test.dir/src/voxel/block_types.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/voxel/chunk.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/voxel/chunk.cpp.o: ../src/voxel/chunk.cpp
 CMakeFiles/culling_test.dir/src/voxel/chunk.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/chunk.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/chunk.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/voxel/chunk.cpp.o -MF CMakeFiles/culling_test.dir/src/voxel/chunk.cpp.o.d -o CMakeFiles/culling_test.dir/src/voxel/chunk.cpp.o -c /home/mohobie/projects/aether-game-engine/src/voxel/chunk.cpp
 
 CMakeFiles/culling_test.dir/src/voxel/chunk.cpp.i: cmake_force
@@ -520,7 +604,7 @@ CMakeFiles/culling_test.dir/src/voxel/chunk.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/voxel/world.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/voxel/world.cpp.o: ../src/voxel/world.cpp
 CMakeFiles/culling_test.dir/src/voxel/world.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/world.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/world.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/voxel/world.cpp.o -MF CMakeFiles/culling_test.dir/src/voxel/world.cpp.o.d -o CMakeFiles/culling_test.dir/src/voxel/world.cpp.o -c /home/mohobie/projects/aether-game-engine/src/voxel/world.cpp
 
 CMakeFiles/culling_test.dir/src/voxel/world.cpp.i: cmake_force
@@ -534,7 +618,7 @@ CMakeFiles/culling_test.dir/src/voxel/world.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/voxel/block_registry.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/voxel/block_registry.cpp.o: ../src/voxel/block_registry.cpp
 CMakeFiles/culling_test.dir/src/voxel/block_registry.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/block_registry.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/block_registry.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/voxel/block_registry.cpp.o -MF CMakeFiles/culling_test.dir/src/voxel/block_registry.cpp.o.d -o CMakeFiles/culling_test.dir/src/voxel/block_registry.cpp.o -c /home/mohobie/projects/aether-game-engine/src/voxel/block_registry.cpp
 
 CMakeFiles/culling_test.dir/src/voxel/block_registry.cpp.i: cmake_force
@@ -548,7 +632,7 @@ CMakeFiles/culling_test.dir/src/voxel/block_registry.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/voxel/biome.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/voxel/biome.cpp.o: ../src/voxel/biome.cpp
 CMakeFiles/culling_test.dir/src/voxel/biome.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/biome.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/biome.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/voxel/biome.cpp.o -MF CMakeFiles/culling_test.dir/src/voxel/biome.cpp.o.d -o CMakeFiles/culling_test.dir/src/voxel/biome.cpp.o -c /home/mohobie/projects/aether-game-engine/src/voxel/biome.cpp
 
 CMakeFiles/culling_test.dir/src/voxel/biome.cpp.i: cmake_force
@@ -562,7 +646,7 @@ CMakeFiles/culling_test.dir/src/voxel/biome.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/voxel/world_generator.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/voxel/world_generator.cpp.o: ../src/voxel/world_generator.cpp
 CMakeFiles/culling_test.dir/src/voxel/world_generator.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/world_generator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/world_generator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/voxel/world_generator.cpp.o -MF CMakeFiles/culling_test.dir/src/voxel/world_generator.cpp.o.d -o CMakeFiles/culling_test.dir/src/voxel/world_generator.cpp.o -c /home/mohobie/projects/aether-game-engine/src/voxel/world_generator.cpp
 
 CMakeFiles/culling_test.dir/src/voxel/world_generator.cpp.i: cmake_force
@@ -576,7 +660,7 @@ CMakeFiles/culling_test.dir/src/voxel/world_generator.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/voxel/block_mesh_builder.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/voxel/block_mesh_builder.cpp.o: ../src/voxel/block_mesh_builder.cpp
 CMakeFiles/culling_test.dir/src/voxel/block_mesh_builder.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/block_mesh_builder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/block_mesh_builder.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/voxel/block_mesh_builder.cpp.o -MF CMakeFiles/culling_test.dir/src/voxel/block_mesh_builder.cpp.o.d -o CMakeFiles/culling_test.dir/src/voxel/block_mesh_builder.cpp.o -c /home/mohobie/projects/aether-game-engine/src/voxel/block_mesh_builder.cpp
 
 CMakeFiles/culling_test.dir/src/voxel/block_mesh_builder.cpp.i: cmake_force
@@ -590,7 +674,7 @@ CMakeFiles/culling_test.dir/src/voxel/block_mesh_builder.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/voxel/world_renderer.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_renderer.cpp
 CMakeFiles/culling_test.dir/src/voxel/world_renderer.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/world_renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/world_renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/voxel/world_renderer.cpp.o -MF CMakeFiles/culling_test.dir/src/voxel/world_renderer.cpp.o.d -o CMakeFiles/culling_test.dir/src/voxel/world_renderer.cpp.o -c /home/mohobie/projects/aether-game-engine/src/voxel/world_renderer.cpp
 
 CMakeFiles/culling_test.dir/src/voxel/world_renderer.cpp.i: cmake_force
@@ -601,10 +685,24 @@ CMakeFiles/culling_test.dir/src/voxel/world_renderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/voxel/world_renderer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/voxel/world_renderer.cpp -o CMakeFiles/culling_test.dir/src/voxel/world_renderer.cpp.s
 
+CMakeFiles/culling_test.dir/src/voxel/world_serializer.cpp.o: CMakeFiles/culling_test.dir/flags.make
+CMakeFiles/culling_test.dir/src/voxel/world_serializer.cpp.o: ../src/voxel/world_serializer.cpp
+CMakeFiles/culling_test.dir/src/voxel/world_serializer.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/world_serializer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/voxel/world_serializer.cpp.o -MF CMakeFiles/culling_test.dir/src/voxel/world_serializer.cpp.o.d -o CMakeFiles/culling_test.dir/src/voxel/world_serializer.cpp.o -c /home/mohobie/projects/aether-game-engine/src/voxel/world_serializer.cpp
+
+CMakeFiles/culling_test.dir/src/voxel/world_serializer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/culling_test.dir/src/voxel/world_serializer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/voxel/world_serializer.cpp > CMakeFiles/culling_test.dir/src/voxel/world_serializer.cpp.i
+
+CMakeFiles/culling_test.dir/src/voxel/world_serializer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/voxel/world_serializer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/voxel/world_serializer.cpp -o CMakeFiles/culling_test.dir/src/voxel/world_serializer.cpp.s
+
 CMakeFiles/culling_test.dir/src/voxel/chunk_manager.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/voxel/chunk_manager.cpp.o: ../src/voxel/chunk_manager.cpp
 CMakeFiles/culling_test.dir/src/voxel/chunk_manager.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/chunk_manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/chunk_manager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/voxel/chunk_manager.cpp.o -MF CMakeFiles/culling_test.dir/src/voxel/chunk_manager.cpp.o.d -o CMakeFiles/culling_test.dir/src/voxel/chunk_manager.cpp.o -c /home/mohobie/projects/aether-game-engine/src/voxel/chunk_manager.cpp
 
 CMakeFiles/culling_test.dir/src/voxel/chunk_manager.cpp.i: cmake_force
@@ -618,7 +716,7 @@ CMakeFiles/culling_test.dir/src/voxel/chunk_manager.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/debug/debug_system.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/debug/debug_system.cpp.o: ../src/debug/debug_system.cpp
 CMakeFiles/culling_test.dir/src/debug/debug_system.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/culling_test.dir/src/debug/debug_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/culling_test.dir/src/debug/debug_system.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/debug/debug_system.cpp.o -MF CMakeFiles/culling_test.dir/src/debug/debug_system.cpp.o.d -o CMakeFiles/culling_test.dir/src/debug/debug_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/debug/debug_system.cpp
 
 CMakeFiles/culling_test.dir/src/debug/debug_system.cpp.i: cmake_force
@@ -632,7 +730,7 @@ CMakeFiles/culling_test.dir/src/debug/debug_system.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/physics/collision.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/physics/collision.cpp.o: ../src/physics/collision.cpp
 CMakeFiles/culling_test.dir/src/physics/collision.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/culling_test.dir/src/physics/collision.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/culling_test.dir/src/physics/collision.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/physics/collision.cpp.o -MF CMakeFiles/culling_test.dir/src/physics/collision.cpp.o.d -o CMakeFiles/culling_test.dir/src/physics/collision.cpp.o -c /home/mohobie/projects/aether-game-engine/src/physics/collision.cpp
 
 CMakeFiles/culling_test.dir/src/physics/collision.cpp.i: cmake_force
@@ -646,7 +744,7 @@ CMakeFiles/culling_test.dir/src/physics/collision.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/physics/rigidbody.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/physics/rigidbody.cpp.o: ../src/physics/rigidbody.cpp
 CMakeFiles/culling_test.dir/src/physics/rigidbody.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/culling_test.dir/src/physics/rigidbody.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/culling_test.dir/src/physics/rigidbody.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/physics/rigidbody.cpp.o -MF CMakeFiles/culling_test.dir/src/physics/rigidbody.cpp.o.d -o CMakeFiles/culling_test.dir/src/physics/rigidbody.cpp.o -c /home/mohobie/projects/aether-game-engine/src/physics/rigidbody.cpp
 
 CMakeFiles/culling_test.dir/src/physics/rigidbody.cpp.i: cmake_force
@@ -660,7 +758,7 @@ CMakeFiles/culling_test.dir/src/physics/rigidbody.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/core/logger.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/core/logger.cpp.o: ../src/core/logger.cpp
 CMakeFiles/culling_test.dir/src/core/logger.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/culling_test.dir/src/core/logger.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/culling_test.dir/src/core/logger.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/core/logger.cpp.o -MF CMakeFiles/culling_test.dir/src/core/logger.cpp.o.d -o CMakeFiles/culling_test.dir/src/core/logger.cpp.o -c /home/mohobie/projects/aether-game-engine/src/core/logger.cpp
 
 CMakeFiles/culling_test.dir/src/core/logger.cpp.i: cmake_force
@@ -674,7 +772,7 @@ CMakeFiles/culling_test.dir/src/core/logger.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/core/save_system.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/core/save_system.cpp.o: ../src/core/save_system.cpp
 CMakeFiles/culling_test.dir/src/core/save_system.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/culling_test.dir/src/core/save_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/culling_test.dir/src/core/save_system.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/core/save_system.cpp.o -MF CMakeFiles/culling_test.dir/src/core/save_system.cpp.o.d -o CMakeFiles/culling_test.dir/src/core/save_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/core/save_system.cpp
 
 CMakeFiles/culling_test.dir/src/core/save_system.cpp.i: cmake_force
@@ -688,7 +786,7 @@ CMakeFiles/culling_test.dir/src/core/save_system.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/core/config.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/core/config.cpp.o: ../src/core/config.cpp
 CMakeFiles/culling_test.dir/src/core/config.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/culling_test.dir/src/core/config.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/culling_test.dir/src/core/config.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/core/config.cpp.o -MF CMakeFiles/culling_test.dir/src/core/config.cpp.o.d -o CMakeFiles/culling_test.dir/src/core/config.cpp.o -c /home/mohobie/projects/aether-game-engine/src/core/config.cpp
 
 CMakeFiles/culling_test.dir/src/core/config.cpp.i: cmake_force
@@ -702,7 +800,7 @@ CMakeFiles/culling_test.dir/src/core/config.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/core/time_system.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/core/time_system.cpp.o: ../src/core/time_system.cpp
 CMakeFiles/culling_test.dir/src/core/time_system.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/culling_test.dir/src/core/time_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/culling_test.dir/src/core/time_system.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/core/time_system.cpp.o -MF CMakeFiles/culling_test.dir/src/core/time_system.cpp.o.d -o CMakeFiles/culling_test.dir/src/core/time_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/core/time_system.cpp
 
 CMakeFiles/culling_test.dir/src/core/time_system.cpp.i: cmake_force
@@ -716,7 +814,7 @@ CMakeFiles/culling_test.dir/src/core/time_system.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/core/achievements.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/core/achievements.cpp.o: ../src/core/achievements.cpp
 CMakeFiles/culling_test.dir/src/core/achievements.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/culling_test.dir/src/core/achievements.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/culling_test.dir/src/core/achievements.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/core/achievements.cpp.o -MF CMakeFiles/culling_test.dir/src/core/achievements.cpp.o.d -o CMakeFiles/culling_test.dir/src/core/achievements.cpp.o -c /home/mohobie/projects/aether-game-engine/src/core/achievements.cpp
 
 CMakeFiles/culling_test.dir/src/core/achievements.cpp.i: cmake_force
@@ -730,7 +828,7 @@ CMakeFiles/culling_test.dir/src/core/achievements.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/core/raycast.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/core/raycast.cpp.o: ../src/core/raycast.cpp
 CMakeFiles/culling_test.dir/src/core/raycast.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/culling_test.dir/src/core/raycast.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/culling_test.dir/src/core/raycast.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/core/raycast.cpp.o -MF CMakeFiles/culling_test.dir/src/core/raycast.cpp.o.d -o CMakeFiles/culling_test.dir/src/core/raycast.cpp.o -c /home/mohobie/projects/aether-game-engine/src/core/raycast.cpp
 
 CMakeFiles/culling_test.dir/src/core/raycast.cpp.i: cmake_force
@@ -744,7 +842,7 @@ CMakeFiles/culling_test.dir/src/core/raycast.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/core/item_system.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/core/item_system.cpp.o: ../src/core/item_system.cpp
 CMakeFiles/culling_test.dir/src/core/item_system.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/culling_test.dir/src/core/item_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/culling_test.dir/src/core/item_system.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/core/item_system.cpp.o -MF CMakeFiles/culling_test.dir/src/core/item_system.cpp.o.d -o CMakeFiles/culling_test.dir/src/core/item_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/core/item_system.cpp
 
 CMakeFiles/culling_test.dir/src/core/item_system.cpp.i: cmake_force
@@ -758,7 +856,7 @@ CMakeFiles/culling_test.dir/src/core/item_system.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/core/crafting_inventory_bridge.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/core/crafting_inventory_bridge.cpp.o: ../src/core/crafting_inventory_bridge.cpp
 CMakeFiles/culling_test.dir/src/core/crafting_inventory_bridge.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/culling_test.dir/src/core/crafting_inventory_bridge.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/culling_test.dir/src/core/crafting_inventory_bridge.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/core/crafting_inventory_bridge.cpp.o -MF CMakeFiles/culling_test.dir/src/core/crafting_inventory_bridge.cpp.o.d -o CMakeFiles/culling_test.dir/src/core/crafting_inventory_bridge.cpp.o -c /home/mohobie/projects/aether-game-engine/src/core/crafting_inventory_bridge.cpp
 
 CMakeFiles/culling_test.dir/src/core/crafting_inventory_bridge.cpp.i: cmake_force
@@ -772,7 +870,7 @@ CMakeFiles/culling_test.dir/src/core/crafting_inventory_bridge.cpp.s: cmake_forc
 CMakeFiles/culling_test.dir/src/ui/ui_inventory.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/ui/ui_inventory.cpp.o: ../src/ui/ui_inventory.cpp
 CMakeFiles/culling_test.dir/src/ui/ui_inventory.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/culling_test.dir/src/ui/ui_inventory.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/culling_test.dir/src/ui/ui_inventory.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/ui/ui_inventory.cpp.o -MF CMakeFiles/culling_test.dir/src/ui/ui_inventory.cpp.o.d -o CMakeFiles/culling_test.dir/src/ui/ui_inventory.cpp.o -c /home/mohobie/projects/aether-game-engine/src/ui/ui_inventory.cpp
 
 CMakeFiles/culling_test.dir/src/ui/ui_inventory.cpp.i: cmake_force
@@ -786,7 +884,7 @@ CMakeFiles/culling_test.dir/src/ui/ui_inventory.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/ui/ui_element.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/ui/ui_element.cpp.o: ../src/ui/ui_element.cpp
 CMakeFiles/culling_test.dir/src/ui/ui_element.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/culling_test.dir/src/ui/ui_element.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/culling_test.dir/src/ui/ui_element.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/ui/ui_element.cpp.o -MF CMakeFiles/culling_test.dir/src/ui/ui_element.cpp.o.d -o CMakeFiles/culling_test.dir/src/ui/ui_element.cpp.o -c /home/mohobie/projects/aether-game-engine/src/ui/ui_element.cpp
 
 CMakeFiles/culling_test.dir/src/ui/ui_element.cpp.i: cmake_force
@@ -800,7 +898,7 @@ CMakeFiles/culling_test.dir/src/ui/ui_element.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/core/entity.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/core/entity.cpp.o: ../src/core/entity.cpp
 CMakeFiles/culling_test.dir/src/core/entity.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/culling_test.dir/src/core/entity.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/culling_test.dir/src/core/entity.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/core/entity.cpp.o -MF CMakeFiles/culling_test.dir/src/core/entity.cpp.o.d -o CMakeFiles/culling_test.dir/src/core/entity.cpp.o -c /home/mohobie/projects/aether-game-engine/src/core/entity.cpp
 
 CMakeFiles/culling_test.dir/src/core/entity.cpp.i: cmake_force
@@ -814,7 +912,7 @@ CMakeFiles/culling_test.dir/src/core/entity.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/network/packet.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/network/packet.cpp.o: ../src/network/packet.cpp
 CMakeFiles/culling_test.dir/src/network/packet.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/culling_test.dir/src/network/packet.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/culling_test.dir/src/network/packet.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/network/packet.cpp.o -MF CMakeFiles/culling_test.dir/src/network/packet.cpp.o.d -o CMakeFiles/culling_test.dir/src/network/packet.cpp.o -c /home/mohobie/projects/aether-game-engine/src/network/packet.cpp
 
 CMakeFiles/culling_test.dir/src/network/packet.cpp.i: cmake_force
@@ -825,38 +923,10 @@ CMakeFiles/culling_test.dir/src/network/packet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/network/packet.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/network/packet.cpp -o CMakeFiles/culling_test.dir/src/network/packet.cpp.s
 
-CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.o: CMakeFiles/culling_test.dir/flags.make
-CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.o: ../src/audio/audio_engine.cpp
-CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.o -MF CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.o.d -o CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.o -c /home/mohobie/projects/aether-game-engine/src/audio/audio_engine.cpp
-
-CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/audio/audio_engine.cpp > CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.i
-
-CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/audio/audio_engine.cpp -o CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.s
-
-CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.o: CMakeFiles/culling_test.dir/flags.make
-CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.o: ../src/audio/sound_manager.cpp
-CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.o -MF CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.o.d -o CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.o -c /home/mohobie/projects/aether-game-engine/src/audio/sound_manager.cpp
-
-CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/audio/sound_manager.cpp > CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.i
-
-CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/audio/sound_manager.cpp -o CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.s
-
 CMakeFiles/culling_test.dir/src/platform/platform_common.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/platform/platform_common.cpp.o: ../src/platform/platform_common.cpp
 CMakeFiles/culling_test.dir/src/platform/platform_common.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/culling_test.dir/src/platform/platform_common.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/culling_test.dir/src/platform/platform_common.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/platform/platform_common.cpp.o -MF CMakeFiles/culling_test.dir/src/platform/platform_common.cpp.o.d -o CMakeFiles/culling_test.dir/src/platform/platform_common.cpp.o -c /home/mohobie/projects/aether-game-engine/src/platform/platform_common.cpp
 
 CMakeFiles/culling_test.dir/src/platform/platform_common.cpp.i: cmake_force
@@ -870,7 +940,7 @@ CMakeFiles/culling_test.dir/src/platform/platform_common.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/platform/file_system.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/platform/file_system.cpp.o: ../src/platform/file_system.cpp
 CMakeFiles/culling_test.dir/src/platform/file_system.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/culling_test.dir/src/platform/file_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/culling_test.dir/src/platform/file_system.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/platform/file_system.cpp.o -MF CMakeFiles/culling_test.dir/src/platform/file_system.cpp.o.d -o CMakeFiles/culling_test.dir/src/platform/file_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/platform/file_system.cpp
 
 CMakeFiles/culling_test.dir/src/platform/file_system.cpp.i: cmake_force
@@ -884,7 +954,7 @@ CMakeFiles/culling_test.dir/src/platform/file_system.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/platform/input_manager.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/platform/input_manager.cpp.o: ../src/platform/input_manager.cpp
 CMakeFiles/culling_test.dir/src/platform/input_manager.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/culling_test.dir/src/platform/input_manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/culling_test.dir/src/platform/input_manager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/platform/input_manager.cpp.o -MF CMakeFiles/culling_test.dir/src/platform/input_manager.cpp.o.d -o CMakeFiles/culling_test.dir/src/platform/input_manager.cpp.o -c /home/mohobie/projects/aether-game-engine/src/platform/input_manager.cpp
 
 CMakeFiles/culling_test.dir/src/platform/input_manager.cpp.i: cmake_force
@@ -898,7 +968,7 @@ CMakeFiles/culling_test.dir/src/platform/input_manager.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/platform/gamepad.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/platform/gamepad.cpp.o: ../src/platform/gamepad.cpp
 CMakeFiles/culling_test.dir/src/platform/gamepad.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/culling_test.dir/src/platform/gamepad.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/culling_test.dir/src/platform/gamepad.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/platform/gamepad.cpp.o -MF CMakeFiles/culling_test.dir/src/platform/gamepad.cpp.o.d -o CMakeFiles/culling_test.dir/src/platform/gamepad.cpp.o -c /home/mohobie/projects/aether-game-engine/src/platform/gamepad.cpp
 
 CMakeFiles/culling_test.dir/src/platform/gamepad.cpp.i: cmake_force
@@ -912,7 +982,7 @@ CMakeFiles/culling_test.dir/src/platform/gamepad.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/core/crafting.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/core/crafting.cpp.o: ../src/core/crafting.cpp
 CMakeFiles/culling_test.dir/src/core/crafting.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/culling_test.dir/src/core/crafting.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building CXX object CMakeFiles/culling_test.dir/src/core/crafting.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/core/crafting.cpp.o -MF CMakeFiles/culling_test.dir/src/core/crafting.cpp.o.d -o CMakeFiles/culling_test.dir/src/core/crafting.cpp.o -c /home/mohobie/projects/aether-game-engine/src/core/crafting.cpp
 
 CMakeFiles/culling_test.dir/src/core/crafting.cpp.i: cmake_force
@@ -926,7 +996,7 @@ CMakeFiles/culling_test.dir/src/core/crafting.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/core/player_controller.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/core/player_controller.cpp.o: ../src/core/player_controller.cpp
 CMakeFiles/culling_test.dir/src/core/player_controller.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/culling_test.dir/src/core/player_controller.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building CXX object CMakeFiles/culling_test.dir/src/core/player_controller.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/core/player_controller.cpp.o -MF CMakeFiles/culling_test.dir/src/core/player_controller.cpp.o.d -o CMakeFiles/culling_test.dir/src/core/player_controller.cpp.o -c /home/mohobie/projects/aether-game-engine/src/core/player_controller.cpp
 
 CMakeFiles/culling_test.dir/src/core/player_controller.cpp.i: cmake_force
@@ -940,7 +1010,7 @@ CMakeFiles/culling_test.dir/src/core/player_controller.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/voxel/voxel_editor.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/voxel/voxel_editor.cpp.o: ../src/voxel/voxel_editor.cpp
 CMakeFiles/culling_test.dir/src/voxel/voxel_editor.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/voxel_editor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building CXX object CMakeFiles/culling_test.dir/src/voxel/voxel_editor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/voxel/voxel_editor.cpp.o -MF CMakeFiles/culling_test.dir/src/voxel/voxel_editor.cpp.o.d -o CMakeFiles/culling_test.dir/src/voxel/voxel_editor.cpp.o -c /home/mohobie/projects/aether-game-engine/src/voxel/voxel_editor.cpp
 
 CMakeFiles/culling_test.dir/src/voxel/voxel_editor.cpp.i: cmake_force
@@ -954,7 +1024,7 @@ CMakeFiles/culling_test.dir/src/voxel/voxel_editor.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/game/sandbox_mode.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/game/sandbox_mode.cpp.o: ../src/game/sandbox_mode.cpp
 CMakeFiles/culling_test.dir/src/game/sandbox_mode.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/culling_test.dir/src/game/sandbox_mode.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building CXX object CMakeFiles/culling_test.dir/src/game/sandbox_mode.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/game/sandbox_mode.cpp.o -MF CMakeFiles/culling_test.dir/src/game/sandbox_mode.cpp.o.d -o CMakeFiles/culling_test.dir/src/game/sandbox_mode.cpp.o -c /home/mohobie/projects/aether-game-engine/src/game/sandbox_mode.cpp
 
 CMakeFiles/culling_test.dir/src/game/sandbox_mode.cpp.i: cmake_force
@@ -965,10 +1035,52 @@ CMakeFiles/culling_test.dir/src/game/sandbox_mode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/game/sandbox_mode.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/game/sandbox_mode.cpp -o CMakeFiles/culling_test.dir/src/game/sandbox_mode.cpp.s
 
+CMakeFiles/culling_test.dir/src/game/survival_mode.cpp.o: CMakeFiles/culling_test.dir/flags.make
+CMakeFiles/culling_test.dir/src/game/survival_mode.cpp.o: ../src/game/survival_mode.cpp
+CMakeFiles/culling_test.dir/src/game/survival_mode.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building CXX object CMakeFiles/culling_test.dir/src/game/survival_mode.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/game/survival_mode.cpp.o -MF CMakeFiles/culling_test.dir/src/game/survival_mode.cpp.o.d -o CMakeFiles/culling_test.dir/src/game/survival_mode.cpp.o -c /home/mohobie/projects/aether-game-engine/src/game/survival_mode.cpp
+
+CMakeFiles/culling_test.dir/src/game/survival_mode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/culling_test.dir/src/game/survival_mode.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/game/survival_mode.cpp > CMakeFiles/culling_test.dir/src/game/survival_mode.cpp.i
+
+CMakeFiles/culling_test.dir/src/game/survival_mode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/game/survival_mode.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/game/survival_mode.cpp -o CMakeFiles/culling_test.dir/src/game/survival_mode.cpp.s
+
+CMakeFiles/culling_test.dir/src/game/player_stats.cpp.o: CMakeFiles/culling_test.dir/flags.make
+CMakeFiles/culling_test.dir/src/game/player_stats.cpp.o: ../src/game/player_stats.cpp
+CMakeFiles/culling_test.dir/src/game/player_stats.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building CXX object CMakeFiles/culling_test.dir/src/game/player_stats.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/game/player_stats.cpp.o -MF CMakeFiles/culling_test.dir/src/game/player_stats.cpp.o.d -o CMakeFiles/culling_test.dir/src/game/player_stats.cpp.o -c /home/mohobie/projects/aether-game-engine/src/game/player_stats.cpp
+
+CMakeFiles/culling_test.dir/src/game/player_stats.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/culling_test.dir/src/game/player_stats.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/game/player_stats.cpp > CMakeFiles/culling_test.dir/src/game/player_stats.cpp.i
+
+CMakeFiles/culling_test.dir/src/game/player_stats.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/game/player_stats.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/game/player_stats.cpp -o CMakeFiles/culling_test.dir/src/game/player_stats.cpp.s
+
+CMakeFiles/culling_test.dir/src/game/day_night_cycle.cpp.o: CMakeFiles/culling_test.dir/flags.make
+CMakeFiles/culling_test.dir/src/game/day_night_cycle.cpp.o: ../src/game/day_night_cycle.cpp
+CMakeFiles/culling_test.dir/src/game/day_night_cycle.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building CXX object CMakeFiles/culling_test.dir/src/game/day_night_cycle.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/game/day_night_cycle.cpp.o -MF CMakeFiles/culling_test.dir/src/game/day_night_cycle.cpp.o.d -o CMakeFiles/culling_test.dir/src/game/day_night_cycle.cpp.o -c /home/mohobie/projects/aether-game-engine/src/game/day_night_cycle.cpp
+
+CMakeFiles/culling_test.dir/src/game/day_night_cycle.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/culling_test.dir/src/game/day_night_cycle.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/game/day_night_cycle.cpp > CMakeFiles/culling_test.dir/src/game/day_night_cycle.cpp.i
+
+CMakeFiles/culling_test.dir/src/game/day_night_cycle.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/game/day_night_cycle.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/game/day_night_cycle.cpp -o CMakeFiles/culling_test.dir/src/game/day_night_cycle.cpp.s
+
 CMakeFiles/culling_test.dir/src/game/block_interaction.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/game/block_interaction.cpp.o: ../src/game/block_interaction.cpp
 CMakeFiles/culling_test.dir/src/game/block_interaction.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/culling_test.dir/src/game/block_interaction.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building CXX object CMakeFiles/culling_test.dir/src/game/block_interaction.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/game/block_interaction.cpp.o -MF CMakeFiles/culling_test.dir/src/game/block_interaction.cpp.o.d -o CMakeFiles/culling_test.dir/src/game/block_interaction.cpp.o -c /home/mohobie/projects/aether-game-engine/src/game/block_interaction.cpp
 
 CMakeFiles/culling_test.dir/src/game/block_interaction.cpp.i: cmake_force
@@ -979,10 +1091,24 @@ CMakeFiles/culling_test.dir/src/game/block_interaction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/game/block_interaction.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/game/block_interaction.cpp -o CMakeFiles/culling_test.dir/src/game/block_interaction.cpp.s
 
+CMakeFiles/culling_test.dir/src/game/combat_system.cpp.o: CMakeFiles/culling_test.dir/flags.make
+CMakeFiles/culling_test.dir/src/game/combat_system.cpp.o: ../src/game/combat_system.cpp
+CMakeFiles/culling_test.dir/src/game/combat_system.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building CXX object CMakeFiles/culling_test.dir/src/game/combat_system.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/game/combat_system.cpp.o -MF CMakeFiles/culling_test.dir/src/game/combat_system.cpp.o.d -o CMakeFiles/culling_test.dir/src/game/combat_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/game/combat_system.cpp
+
+CMakeFiles/culling_test.dir/src/game/combat_system.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/culling_test.dir/src/game/combat_system.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/game/combat_system.cpp > CMakeFiles/culling_test.dir/src/game/combat_system.cpp.i
+
+CMakeFiles/culling_test.dir/src/game/combat_system.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/culling_test.dir/src/game/combat_system.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/game/combat_system.cpp -o CMakeFiles/culling_test.dir/src/game/combat_system.cpp.s
+
 CMakeFiles/culling_test.dir/src/editor/entity_spawner.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/editor/entity_spawner.cpp.o: ../src/editor/entity_spawner.cpp
 CMakeFiles/culling_test.dir/src/editor/entity_spawner.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building CXX object CMakeFiles/culling_test.dir/src/editor/entity_spawner.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building CXX object CMakeFiles/culling_test.dir/src/editor/entity_spawner.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/editor/entity_spawner.cpp.o -MF CMakeFiles/culling_test.dir/src/editor/entity_spawner.cpp.o.d -o CMakeFiles/culling_test.dir/src/editor/entity_spawner.cpp.o -c /home/mohobie/projects/aether-game-engine/src/editor/entity_spawner.cpp
 
 CMakeFiles/culling_test.dir/src/editor/entity_spawner.cpp.i: cmake_force
@@ -996,7 +1122,7 @@ CMakeFiles/culling_test.dir/src/editor/entity_spawner.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/editor/in_game_editor.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/editor/in_game_editor.cpp.o: ../src/editor/in_game_editor.cpp
 CMakeFiles/culling_test.dir/src/editor/in_game_editor.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building CXX object CMakeFiles/culling_test.dir/src/editor/in_game_editor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building CXX object CMakeFiles/culling_test.dir/src/editor/in_game_editor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/editor/in_game_editor.cpp.o -MF CMakeFiles/culling_test.dir/src/editor/in_game_editor.cpp.o.d -o CMakeFiles/culling_test.dir/src/editor/in_game_editor.cpp.o -c /home/mohobie/projects/aether-game-engine/src/editor/in_game_editor.cpp
 
 CMakeFiles/culling_test.dir/src/editor/in_game_editor.cpp.i: cmake_force
@@ -1010,7 +1136,7 @@ CMakeFiles/culling_test.dir/src/editor/in_game_editor.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/ui/console_commands.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/ui/console_commands.cpp.o: ../src/ui/console_commands.cpp
 CMakeFiles/culling_test.dir/src/ui/console_commands.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building CXX object CMakeFiles/culling_test.dir/src/ui/console_commands.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building CXX object CMakeFiles/culling_test.dir/src/ui/console_commands.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/ui/console_commands.cpp.o -MF CMakeFiles/culling_test.dir/src/ui/console_commands.cpp.o.d -o CMakeFiles/culling_test.dir/src/ui/console_commands.cpp.o -c /home/mohobie/projects/aether-game-engine/src/ui/console_commands.cpp
 
 CMakeFiles/culling_test.dir/src/ui/console_commands.cpp.i: cmake_force
@@ -1024,7 +1150,7 @@ CMakeFiles/culling_test.dir/src/ui/console_commands.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/rendering/frustum.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/rendering/frustum.cpp.o: ../src/rendering/frustum.cpp
 CMakeFiles/culling_test.dir/src/rendering/frustum.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/frustum.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/frustum.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/rendering/frustum.cpp.o -MF CMakeFiles/culling_test.dir/src/rendering/frustum.cpp.o.d -o CMakeFiles/culling_test.dir/src/rendering/frustum.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/frustum.cpp
 
 CMakeFiles/culling_test.dir/src/rendering/frustum.cpp.i: cmake_force
@@ -1038,7 +1164,7 @@ CMakeFiles/culling_test.dir/src/rendering/frustum.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/rendering/culling_system.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/rendering/culling_system.cpp.o: ../src/rendering/culling_system.cpp
 CMakeFiles/culling_test.dir/src/rendering/culling_system.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/culling_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/culling_system.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/rendering/culling_system.cpp.o -MF CMakeFiles/culling_test.dir/src/rendering/culling_system.cpp.o.d -o CMakeFiles/culling_test.dir/src/rendering/culling_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/culling_system.cpp
 
 CMakeFiles/culling_test.dir/src/rendering/culling_system.cpp.i: cmake_force
@@ -1052,7 +1178,7 @@ CMakeFiles/culling_test.dir/src/rendering/culling_system.cpp.s: cmake_force
 CMakeFiles/culling_test.dir/src/rendering/framebuffer_renderer.cpp.o: CMakeFiles/culling_test.dir/flags.make
 CMakeFiles/culling_test.dir/src/rendering/framebuffer_renderer.cpp.o: ../src/rendering/framebuffer_renderer.cpp
 CMakeFiles/culling_test.dir/src/rendering/framebuffer_renderer.cpp.o: CMakeFiles/culling_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/framebuffer_renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building CXX object CMakeFiles/culling_test.dir/src/rendering/framebuffer_renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/culling_test.dir/src/rendering/framebuffer_renderer.cpp.o -MF CMakeFiles/culling_test.dir/src/rendering/framebuffer_renderer.cpp.o.d -o CMakeFiles/culling_test.dir/src/rendering/framebuffer_renderer.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/framebuffer_renderer.cpp
 
 CMakeFiles/culling_test.dir/src/rendering/framebuffer_renderer.cpp.i: cmake_force
@@ -1072,8 +1198,10 @@ culling_test_OBJECTS = \
 "CMakeFiles/culling_test.dir/src/physics/physics_constraints.cpp.o" \
 "CMakeFiles/culling_test.dir/src/network/network_architecture.cpp.o" \
 "CMakeFiles/culling_test.dir/src/ai/behavior_tree.cpp.o" \
+"CMakeFiles/culling_test.dir/src/ai/enemy_ai.cpp.o" \
+"CMakeFiles/culling_test.dir/src/ai/enemy_spawner.cpp.o" \
+"CMakeFiles/culling_test.dir/src/ai/mob_spawner.cpp.o" \
 "CMakeFiles/culling_test.dir/src/animation/animation_state_machine.cpp.o" \
-"CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.o" \
 "CMakeFiles/culling_test.dir/src/rendering/sky/sky_renderer.cpp.o" \
 "CMakeFiles/culling_test.dir/src/rendering/particles/particle_system.cpp.o" \
 "CMakeFiles/culling_test.dir/src/rendering/weather/weather_effects_renderer.cpp.o" \
@@ -1084,6 +1212,7 @@ culling_test_OBJECTS = \
 "CMakeFiles/culling_test.dir/src/rendering/shader.cpp.o" \
 "CMakeFiles/culling_test.dir/src/rendering/texture.cpp.o" \
 "CMakeFiles/culling_test.dir/src/rendering/lighting.cpp.o" \
+"CMakeFiles/culling_test.dir/src/rendering/light_system.cpp.o" \
 "CMakeFiles/culling_test.dir/src/ai/ai_system.cpp.o" \
 "CMakeFiles/culling_test.dir/src/animation/animation.cpp.o" \
 "CMakeFiles/culling_test.dir/src/entity/entity.cpp.o" \
@@ -1092,6 +1221,9 @@ culling_test_OBJECTS = \
 "CMakeFiles/culling_test.dir/src/rendering/shadow_system.cpp.o" \
 "CMakeFiles/culling_test.dir/src/rendering/pbr_material.cpp.o" \
 "CMakeFiles/culling_test.dir/src/audio/audio_system.cpp.o" \
+"CMakeFiles/culling_test.dir/src/audio/audio_events.cpp.o" \
+"CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.o" \
+"CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.o" \
 "CMakeFiles/culling_test.dir/src/physics/physics_system.cpp.o" \
 "CMakeFiles/culling_test.dir/src/voxel/terrain_system.cpp.o" \
 "CMakeFiles/culling_test.dir/src/voxel/block.cpp.o" \
@@ -1103,6 +1235,7 @@ culling_test_OBJECTS = \
 "CMakeFiles/culling_test.dir/src/voxel/world_generator.cpp.o" \
 "CMakeFiles/culling_test.dir/src/voxel/block_mesh_builder.cpp.o" \
 "CMakeFiles/culling_test.dir/src/voxel/world_renderer.cpp.o" \
+"CMakeFiles/culling_test.dir/src/voxel/world_serializer.cpp.o" \
 "CMakeFiles/culling_test.dir/src/voxel/chunk_manager.cpp.o" \
 "CMakeFiles/culling_test.dir/src/debug/debug_system.cpp.o" \
 "CMakeFiles/culling_test.dir/src/physics/collision.cpp.o" \
@@ -1119,8 +1252,6 @@ culling_test_OBJECTS = \
 "CMakeFiles/culling_test.dir/src/ui/ui_element.cpp.o" \
 "CMakeFiles/culling_test.dir/src/core/entity.cpp.o" \
 "CMakeFiles/culling_test.dir/src/network/packet.cpp.o" \
-"CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.o" \
-"CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.o" \
 "CMakeFiles/culling_test.dir/src/platform/platform_common.cpp.o" \
 "CMakeFiles/culling_test.dir/src/platform/file_system.cpp.o" \
 "CMakeFiles/culling_test.dir/src/platform/input_manager.cpp.o" \
@@ -1129,7 +1260,11 @@ culling_test_OBJECTS = \
 "CMakeFiles/culling_test.dir/src/core/player_controller.cpp.o" \
 "CMakeFiles/culling_test.dir/src/voxel/voxel_editor.cpp.o" \
 "CMakeFiles/culling_test.dir/src/game/sandbox_mode.cpp.o" \
+"CMakeFiles/culling_test.dir/src/game/survival_mode.cpp.o" \
+"CMakeFiles/culling_test.dir/src/game/player_stats.cpp.o" \
+"CMakeFiles/culling_test.dir/src/game/day_night_cycle.cpp.o" \
 "CMakeFiles/culling_test.dir/src/game/block_interaction.cpp.o" \
+"CMakeFiles/culling_test.dir/src/game/combat_system.cpp.o" \
 "CMakeFiles/culling_test.dir/src/editor/entity_spawner.cpp.o" \
 "CMakeFiles/culling_test.dir/src/editor/in_game_editor.cpp.o" \
 "CMakeFiles/culling_test.dir/src/ui/console_commands.cpp.o" \
@@ -1147,8 +1282,10 @@ culling_test: CMakeFiles/culling_test.dir/src/ui/ui_system.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/physics/physics_constraints.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/network/network_architecture.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/ai/behavior_tree.cpp.o
+culling_test: CMakeFiles/culling_test.dir/src/ai/enemy_ai.cpp.o
+culling_test: CMakeFiles/culling_test.dir/src/ai/enemy_spawner.cpp.o
+culling_test: CMakeFiles/culling_test.dir/src/ai/mob_spawner.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/animation/animation_state_machine.cpp.o
-culling_test: CMakeFiles/culling_test.dir/src/rendering/sky/day_night_cycle.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/rendering/sky/sky_renderer.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/rendering/particles/particle_system.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/rendering/weather/weather_effects_renderer.cpp.o
@@ -1159,6 +1296,7 @@ culling_test: CMakeFiles/culling_test.dir/src/rendering/renderer.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/rendering/shader.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/rendering/texture.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/rendering/lighting.cpp.o
+culling_test: CMakeFiles/culling_test.dir/src/rendering/light_system.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/ai/ai_system.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/animation/animation.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/entity/entity.cpp.o
@@ -1167,6 +1305,9 @@ culling_test: CMakeFiles/culling_test.dir/src/rendering/mesh.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/rendering/shadow_system.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/rendering/pbr_material.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/audio/audio_system.cpp.o
+culling_test: CMakeFiles/culling_test.dir/src/audio/audio_events.cpp.o
+culling_test: CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.o
+culling_test: CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/physics/physics_system.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/voxel/terrain_system.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/voxel/block.cpp.o
@@ -1178,6 +1319,7 @@ culling_test: CMakeFiles/culling_test.dir/src/voxel/biome.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/voxel/world_generator.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/voxel/block_mesh_builder.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/voxel/world_renderer.cpp.o
+culling_test: CMakeFiles/culling_test.dir/src/voxel/world_serializer.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/voxel/chunk_manager.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/debug/debug_system.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/physics/collision.cpp.o
@@ -1194,8 +1336,6 @@ culling_test: CMakeFiles/culling_test.dir/src/ui/ui_inventory.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/ui/ui_element.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/core/entity.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/network/packet.cpp.o
-culling_test: CMakeFiles/culling_test.dir/src/audio/audio_engine.cpp.o
-culling_test: CMakeFiles/culling_test.dir/src/audio/sound_manager.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/platform/platform_common.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/platform/file_system.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/platform/input_manager.cpp.o
@@ -1204,7 +1344,11 @@ culling_test: CMakeFiles/culling_test.dir/src/core/crafting.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/core/player_controller.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/voxel/voxel_editor.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/game/sandbox_mode.cpp.o
+culling_test: CMakeFiles/culling_test.dir/src/game/survival_mode.cpp.o
+culling_test: CMakeFiles/culling_test.dir/src/game/player_stats.cpp.o
+culling_test: CMakeFiles/culling_test.dir/src/game/day_night_cycle.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/game/block_interaction.cpp.o
+culling_test: CMakeFiles/culling_test.dir/src/game/combat_system.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/editor/entity_spawner.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/editor/in_game_editor.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/ui/console_commands.cpp.o
@@ -1213,7 +1357,7 @@ culling_test: CMakeFiles/culling_test.dir/src/rendering/culling_system.cpp.o
 culling_test: CMakeFiles/culling_test.dir/src/rendering/framebuffer_renderer.cpp.o
 culling_test: CMakeFiles/culling_test.dir/build.make
 culling_test: CMakeFiles/culling_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Linking CXX executable culling_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Linking CXX executable culling_test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/culling_test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
