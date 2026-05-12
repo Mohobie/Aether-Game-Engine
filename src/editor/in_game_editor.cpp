@@ -4,6 +4,7 @@
 #include "platform/input_manager.h"
 #include "entity/entity.h"
 #include "core/logger.h"
+#include "debug/debug_renderer.h"
 #include <cmath>
 
 namespace vge {
@@ -336,29 +337,69 @@ bool InGameEditor::RaycastWorld(Vec3& outPosition, Vec3& outNormal) {
 // ============================================
 
 void InGameEditor::RenderGizmo() {
-    // Stub - would render translation/rotation/scale gizmo
+    if (!selection.IsValid()) return;
+    
+    DebugRenderer& debug = GetDebugRenderer();
+    
+    Vec3 gizmoPos = selection.worldPosition;
+    float gizmoSize = 1.0f;
+    
+    switch (currentGizmoType) {
+        case GizmoType::Translate:
+            debug.DrawGizmoTranslate(gizmoPos, gizmoSize);
+            break;
+        case GizmoType::Rotate:
+            debug.DrawGizmoRotate(gizmoPos, gizmoSize);
+            break;
+        case GizmoType::Scale:
+            debug.DrawGizmoScale(gizmoPos, gizmoSize);
+            break;
+        default:
+            break;
+    }
 }
 
 void InGameEditor::RenderSelectionHighlight() {
     if (!selection.IsValid()) return;
     
-    // Stub - would render selection box
+    DebugRenderer& debug = GetDebugRenderer();
+    Vec3 color(1.0f, 0.8f, 0.0f); // Orange selection color
+    
+    switch (selection.type) {
+        case EditorSelection::Type::Block: {
+            Vec3 min = selection.blockPosition;
+            Vec3 max = selection.blockPosition + Vec3(1, 1, 1);
+            debug.DrawSelectionBox(min, max, color);
+            break;
+        }
+        case EditorSelection::Type::Entity: {
+            // Draw cross at entity position
+            debug.DrawCross(selection.worldPosition, 0.5f, color);
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 void InGameEditor::RenderBlockPickerUI() {
-    // Stub - would render block picker panel
+    // Block picker is now handled by ImGui in imgui_wrapper.cpp
+    // This stub remains for non-ImGui fallback
 }
 
 void InGameEditor::RenderEntitySpawnerUI() {
-    // Stub - would render entity spawner panel
+    // Entity spawner is now handled by ImGui in imgui_wrapper.cpp
+    // This stub remains for non-ImGui fallback
 }
 
 void InGameEditor::RenderTerrainToolsUI() {
-    // Stub - would render terrain tools panel
+    // Terrain tools are now handled by ImGui in imgui_wrapper.cpp
+    // This stub remains for non-ImGui fallback
 }
 
 void InGameEditor::RenderEditorUI() {
-    // Stub - would render main editor UI
+    // Main editor UI is now handled by ImGui in imgui_wrapper.cpp
+    // This stub remains for non-ImGui fallback
 }
 
 // ============================================

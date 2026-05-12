@@ -8720,7 +8720,8 @@ CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.o: ../src/editor/in_ga
   /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
   ../src/entity/entity.h \
   /usr/include/c++/11/typeindex \
-  ../src/core/logger.h
+  ../src/core/logger.h \
+  ../src/debug/debug_renderer.h
 
 CMakeFiles/voxel_engine.dir/src/entity/components.cpp.o: ../src/entity/components.cpp \
   /usr/include/stdc-predef.h \

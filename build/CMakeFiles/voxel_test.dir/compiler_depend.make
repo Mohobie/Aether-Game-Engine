@@ -8219,7 +8219,8 @@ CMakeFiles/voxel_test.dir/src/editor/in_game_editor.cpp.o: ../src/editor/in_game
   /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
   ../src/entity/entity.h \
   /usr/include/c++/11/typeindex \
-  ../src/core/logger.h
+  ../src/core/logger.h \
+  ../src/debug/debug_renderer.h
 
 CMakeFiles/voxel_test.dir/src/entity/components.cpp.o: ../src/entity/components.cpp \
   /usr/include/stdc-predef.h \
