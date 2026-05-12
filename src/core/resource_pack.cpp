@@ -1,7 +1,7 @@
 #include "resource_pack.h"
 #include "asset_manager.h"
 #include "platform/platform_common.h"
-#include "logger.h"
+#include "core/logger.h"
 #include <fstream>
 #include <algorithm>
 #include <mutex>
@@ -21,8 +21,8 @@ bool ResourcePack::LoadFromDirectory(const std::string& directory) {
     // Load manifest
     std::string manifestPath = m_basePath + "manifest.json";
     if (!LoadManifest(manifestPath)) {
-        LOG_WARN("No manifest found for pack at %s, using defaults", directory.c_str());
-        m_manifest.name = Path::GetFileName(directory);
+        Logger::Error("No manifest found for pack at %s, using defaults", directory.c_str());
+        m_manifest.name = Path::GetFilename(directory);
         m_manifest.version = "1.0";
     }
 
@@ -42,7 +42,7 @@ bool ResourcePack::LoadFromDirectory(const std::string& directory) {
     }
 
     m_loaded = true;
-    LOG_INFO("Loaded resource pack: %s (%zu files, priority %d)",
+    Logger::Info("Loaded resource pack: %s (%zu files, priority %d)",
              m_manifest.name.c_str(), m_files.size(), m_manifest.priority);
     return true;
 }
@@ -50,7 +50,7 @@ bool ResourcePack::LoadFromDirectory(const std::string& directory) {
 bool ResourcePack::LoadFromZip(const std::string& zipPath) {
     // Placeholder for ZIP loading
     // In a real implementation, use miniz or similar
-    LOG_INFO("ZIP loading not yet implemented: %s", zipPath.c_str());
+    Logger::Info("ZIP loading not yet implemented: %s", zipPath.c_str());
     return false;
 }
 
@@ -181,7 +181,7 @@ ResourcePackManager::~ResourcePackManager() { Shutdown(); }
 
 bool ResourcePackManager::Initialize(AssetManager* assetManager) {
     m_assetManager = assetManager;
-    LOG_INFO("ResourcePackManager initialized");
+    Logger::Info("ResourcePackManager initialized");
     return true;
 }
 
@@ -277,10 +277,10 @@ size_t ResourcePackManager::GetTotalAssetCount() const {
 
 void ResourcePackManager::PrintStats() const {
     std::lock_guard<std::mutex> lock(m_mutex);
-    LOG_INFO("=== Resource Pack Stats ===");
-    LOG_INFO("Total packs: %zu", m_packs.size());
+    Logger::Info("=== Resource Pack Stats ===");
+    Logger::Info("Total packs: %zu", m_packs.size());
     for (const auto& pack : m_packs) {
-        LOG_INFO("  %s (priority %d): %zu files, %zu bytes",
+        Logger::Info("  %s (priority %d): %zu files, %zu bytes",
                  pack->GetName().c_str(), pack->GetPriority(),
                  pack->GetFileCount(), pack->GetTotalSize());
     }

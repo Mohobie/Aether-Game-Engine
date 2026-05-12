@@ -1,6 +1,7 @@
 #include "asset_importer.h"
 #include "platform/platform_common.h"
-#include "logger.h"
+#include "core/logger.h"
+#include "rendering/texture.h"
 #include <fstream>
 #include <sstream>
 #include <algorithm>
@@ -73,7 +74,7 @@ bool TextureAtlas::AddTexture(const std::string& name, const Texture& texture) {
 }
 
 bool TextureAtlas::Build() {
-    LOG_INFO("Texture atlas built with %zu textures", m_regions.size());
+    Logger::Info("Texture atlas built with %zu textures", m_regions.size());
     return true;
 }
 
@@ -265,29 +266,29 @@ AssetImporter::~AssetImporter() = default;
 
 bool AssetImporter::Initialize() {
     File::CreateDirectory(m_cacheDir);
-    LOG_INFO("AssetImporter initialized with cache: %s", m_cacheDir.c_str());
+    Logger::Info("AssetImporter initialized with cache: %s", m_cacheDir.c_str());
     return true;
 }
 
 void AssetImporter::Shutdown() {
-    LOG_INFO("AssetImporter shutdown");
+    Logger::Info("AssetImporter shutdown");
 }
 
 ImportResult AssetImporter::ImportTexture(const std::string& sourcePath, const TextureImportSettings& settings) {
     ImportResult result;
-    result.originalSize = File::GetFileSize(sourcePath);
+    result.originalSize = File::GetSize(sourcePath);
 
     // Check cache first
     if (IsCacheValid(sourcePath)) {
         result.success = true;
         result.outputPath = GetCachePath(sourcePath);
-        result.importedSize = File::GetFileSize(result.outputPath);
-        LOG_INFO("Texture import cache hit: %s", sourcePath.c_str());
+        result.importedSize = File::GetSize(result.outputPath);
+        Logger::Info("Texture import cache hit: %s", sourcePath.c_str());
         return result;
     }
 
     // Simulate import process
-    LOG_INFO("Importing texture: %s (format: %s, mipmaps: %s)",
+    Logger::Info("Importing texture: %s (format: %s, mipmaps: %s)",
              sourcePath.c_str(), settings.format.c_str(),
              settings.generateMipmaps ? "yes" : "no");
 
@@ -317,9 +318,9 @@ ImportResult AssetImporter::ImportTexture(const std::string& sourcePath, const T
 
 ImportResult AssetImporter::ImportModel(const std::string& sourcePath, const ModelImportSettings& settings) {
     ImportResult result;
-    result.originalSize = File::GetFileSize(sourcePath);
+    result.originalSize = File::GetSize(sourcePath);
 
-    LOG_INFO("Importing model: %s (scale: %.2f, normals: %s)",
+    Logger::Info("Importing model: %s (scale: %.2f, normals: %s)",
              sourcePath.c_str(), settings.scale,
              settings.generateNormals ? "yes" : "no");
 
@@ -334,9 +335,9 @@ ImportResult AssetImporter::ImportModel(const std::string& sourcePath, const Mod
 
 ImportResult AssetImporter::ImportSound(const std::string& sourcePath, const SoundImportSettings& settings) {
     ImportResult result;
-    result.originalSize = File::GetFileSize(sourcePath);
+    result.originalSize = File::GetSize(sourcePath);
 
-    LOG_INFO("Importing sound: %s (format: %s, quality: %d)",
+    Logger::Info("Importing sound: %s (format: %s, quality: %d)",
              sourcePath.c_str(), settings.format.c_str(), settings.quality);
 
     // Placeholder for sound import
@@ -381,7 +382,7 @@ bool AssetImporter::BuildAtlas(const std::vector<std::string>& texturePaths, con
         tex.channels = 4;
         tex.data.resize(64 * 64 * 4, 128);
 
-        std::string name = Path::GetFileName(path);
+        std::string name = Path::GetFilename(path);
         atlas.AddTexture(name, tex);
     }
 
@@ -448,17 +449,17 @@ ImportSettings AssetImporter::LoadSettingsFromJson(const std::string& path) {
 void AssetImporter::ClearCache() {
     auto files = File::ListDirectory(m_cacheDir);
     for (const auto& file : files) {
-        File::DeleteFile(file);
+        File::Delete(file);
     }
     m_importCount = 0;
-    LOG_INFO("Cache cleared");
+    Logger::Info("Cache cleared");
 }
 
 size_t AssetImporter::GetCacheSize() const {
     size_t totalSize = 0;
     auto files = File::ListDirectory(m_cacheDir);
     for (const auto& file : files) {
-        totalSize += File::GetFileSize(file);
+        totalSize += File::GetSize(file);
     }
     return totalSize;
 }
@@ -468,7 +469,7 @@ size_t AssetImporter::GetImportCount() const {
 }
 
 std::string AssetImporter::GetCachePath(const std::string& sourcePath) const {
-    std::string filename = Path::GetFileName(sourcePath);
+    std::string filename = Path::GetFilename(sourcePath);
     return m_cacheDir + filename + ".cache";
 }
 

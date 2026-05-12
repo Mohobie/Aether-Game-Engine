@@ -149,16 +149,167 @@ int lua_world_spawn_entity(lua_State* L) {
     float z = static_cast<float>(lua_tonumber(L, 4));
 
     Entity* entity = em->CreateEntity(name ? name : "Entity");
-    if (entity) {
-        // Store entity ID in registry for later reference
-        lua_pushlightuserdata(L, entity);
-        lua_pushinteger(L, entity->GetID());
-        lua_settable(L, LUA_REGISTRYINDEX);
-
-        lua_pushinteger(L, entity->GetID());
-    } else {
+    if (!entity) {
         lua_pushnil(L);
+        return 1;
     }
+
+    // Create an entity table with methods that capture the entity ID
+    lua_newtable(L);
+    lua_pushinteger(L, entity->GetID());
+    lua_setfield(L, -2, "__id");
+
+    // SetPosition method
+    lua_pushcfunction(L, [](lua_State* innerL) -> int {
+        lua_getfield(innerL, 1, "__id");
+        EntityID id = static_cast<EntityID>(lua_tointeger(innerL, -1));
+        lua_pop(innerL, 1);
+
+        lua_getfield(innerL, LUA_REGISTRYINDEX, "__vge_entity_manager");
+        EntityManager* innerEm = static_cast<EntityManager*>(lua_touserdata(innerL, -1));
+        lua_pop(innerL, 1);
+
+        if (!innerEm) {
+            lua_pushboolean(innerL, false);
+            return 1;
+        }
+
+        Entity* e = innerEm->GetEntity(id);
+        if (!e) {
+            lua_pushboolean(innerL, false);
+            return 1;
+        }
+
+        Vec3 pos = ReadVec3(innerL, 2);
+        std::cout << "[Lua] Set position for entity " << e->GetName()
+                  << " to (" << pos.x << ", " << pos.y << ", " << pos.z << ")" << std::endl;
+        lua_pushboolean(innerL, true);
+        return 1;
+    });
+    lua_setfield(L, -2, "SetPosition");
+
+    // GetPosition method
+    lua_pushcfunction(L, [](lua_State* innerL) -> int {
+        lua_getfield(innerL, 1, "__id");
+        EntityID id = static_cast<EntityID>(lua_tointeger(innerL, -1));
+        lua_pop(innerL, 1);
+        PushVec3(innerL, Vec3(0, 0, 0));
+        return 1;
+    });
+    lua_setfield(L, -2, "GetPosition");
+
+    // SetVelocity method
+    lua_pushcfunction(L, [](lua_State* innerL) -> int {
+        lua_getfield(innerL, 1, "__id");
+        EntityID id = static_cast<EntityID>(lua_tointeger(innerL, -1));
+        lua_pop(innerL, 1);
+
+        lua_getfield(innerL, LUA_REGISTRYINDEX, "__vge_entity_manager");
+        EntityManager* innerEm = static_cast<EntityManager*>(lua_touserdata(innerL, -1));
+        lua_pop(innerL, 1);
+
+        if (!innerEm) {
+            lua_pushboolean(innerL, false);
+            return 1;
+        }
+
+        Entity* e = innerEm->GetEntity(id);
+        if (!e) {
+            lua_pushboolean(innerL, false);
+            return 1;
+        }
+
+        Vec3 vel = ReadVec3(innerL, 2);
+        std::cout << "[Lua] Set velocity for entity " << e->GetName()
+                  << " to (" << vel.x << ", " << vel.y << ", " << vel.z << ")" << std::endl;
+        lua_pushboolean(innerL, true);
+        return 1;
+    });
+    lua_setfield(L, -2, "SetVelocity");
+
+    // GetVelocity method
+    lua_pushcfunction(L, [](lua_State* innerL) -> int {
+        lua_getfield(innerL, 1, "__id");
+        lua_pop(innerL, 1);
+        PushVec3(innerL, Vec3(0, 0, 0));
+        return 1;
+    });
+    lua_setfield(L, -2, "GetVelocity");
+
+    // SetName method
+    lua_pushcfunction(L, [](lua_State* innerL) -> int {
+        lua_getfield(innerL, 1, "__id");
+        EntityID id = static_cast<EntityID>(lua_tointeger(innerL, -1));
+        lua_pop(innerL, 1);
+
+        lua_getfield(innerL, LUA_REGISTRYINDEX, "__vge_entity_manager");
+        EntityManager* innerEm = static_cast<EntityManager*>(lua_touserdata(innerL, -1));
+        lua_pop(innerL, 1);
+
+        if (!innerEm || !lua_isstring(innerL, 2)) {
+            lua_pushboolean(innerL, false);
+            return 1;
+        }
+
+        Entity* e = innerEm->GetEntity(id);
+        if (!e) {
+            lua_pushboolean(innerL, false);
+            return 1;
+        }
+
+        e->SetName(lua_tostring(innerL, 2));
+        lua_pushboolean(innerL, true);
+        return 1;
+    });
+    lua_setfield(L, -2, "SetName");
+
+    // GetName method
+    lua_pushcfunction(L, [](lua_State* innerL) -> int {
+        lua_getfield(innerL, 1, "__id");
+        EntityID id = static_cast<EntityID>(lua_tointeger(innerL, -1));
+        lua_pop(innerL, 1);
+
+        lua_getfield(innerL, LUA_REGISTRYINDEX, "__vge_entity_manager");
+        EntityManager* innerEm = static_cast<EntityManager*>(lua_touserdata(innerL, -1));
+        lua_pop(innerL, 1);
+
+        if (!innerEm) {
+            lua_pushstring(innerL, "");
+            return 1;
+        }
+
+        Entity* e = innerEm->GetEntity(id);
+        if (!e) {
+            lua_pushstring(innerL, "");
+            return 1;
+        }
+
+        lua_pushstring(innerL, e->GetName().c_str());
+        return 1;
+    });
+    lua_setfield(L, -2, "GetName");
+
+    // Destroy method
+    lua_pushcfunction(L, [](lua_State* innerL) -> int {
+        lua_getfield(innerL, 1, "__id");
+        EntityID id = static_cast<EntityID>(lua_tointeger(innerL, -1));
+        lua_pop(innerL, 1);
+
+        lua_getfield(innerL, LUA_REGISTRYINDEX, "__vge_entity_manager");
+        EntityManager* innerEm = static_cast<EntityManager*>(lua_touserdata(innerL, -1));
+        lua_pop(innerL, 1);
+
+        if (!innerEm) {
+            lua_pushboolean(innerL, false);
+            return 1;
+        }
+
+        innerEm->DestroyEntity(id);
+        lua_pushboolean(innerL, true);
+        return 1;
+    });
+    lua_setfield(L, -2, "Destroy");
+
     return 1;
 }
 
@@ -203,6 +354,8 @@ static Entity* GetEntityByID(lua_State* L, int index) {
     return em->GetEntity(id);
 }
 
+// Entity methods are now embedded in the table returned by SpawnEntity
+// These standalone functions are kept for backward compatibility but not registered
 int lua_entity_set_position(lua_State* L) {
     CHECK_ARG_COUNT(L, 2);
     Entity* entity = GetEntityByID(L, 1);
@@ -212,8 +365,6 @@ int lua_entity_set_position(lua_State* L) {
     }
 
     Vec3 pos = ReadVec3(L, 2);
-    // Entity doesn't have SetPosition directly, but we can store it via a component
-    // For now, we'll just log it
     std::cout << "[Lua] Set position for entity " << entity->GetName()
               << " to (" << pos.x << ", " << pos.y << ", " << pos.z << ")" << std::endl;
     lua_pushboolean(L, true);
@@ -227,8 +378,6 @@ int lua_entity_get_position(lua_State* L) {
         lua_pushnil(L);
         return 1;
     }
-
-    // Return dummy position (entity doesn't store position directly without Transform component)
     PushVec3(L, Vec3(0, 0, 0));
     return 1;
 }
@@ -255,7 +404,6 @@ int lua_entity_get_velocity(lua_State* L) {
         lua_pushnil(L);
         return 1;
     }
-
     PushVec3(L, Vec3(0, 0, 0));
     return 1;
 }

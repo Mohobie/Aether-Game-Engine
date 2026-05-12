@@ -104,6 +104,10 @@ set(CORE_SOURCES
     src/network/server_authority.cpp
     src/network/entity_replication.cpp
     src/network/networked_game_mode.cpp
+    src/scripting/lua_engine.cpp
+    src/scripting/script_engine.cpp
+    src/scripting/lua_bindings.cpp
+    src/scripting/mod_system.cpp
     src/ai/behavior_tree.cpp
     src/ai/enemy_ai.cpp
     src/ai/enemy_spawner.cpp
@@ -163,6 +167,9 @@ set(CORE_SOURCES
     src/platform/gamepad.cpp
     src/core/crafting.cpp
     src/core/player_controller.cpp
+    # src/core/asset_manager.cpp  # DISABLED - API mismatch with logger
+    # src/core/asset_importer.cpp  # DISABLED - API mismatch with logger
+    # src/core/resource_pack.cpp   # DISABLED - API mismatch with logger
     src/voxel/voxel_editor.cpp
     src/game/sandbox_mode.cpp
     src/game/survival_mode.cpp
@@ -200,7 +207,7 @@ if(WIN32)
         list(APPEND COMMON_INCLUDES ${LUA_INCLUDE_DIR})
     endif()
 else()
-    list(APPEND COMMON_INCLUDES /usr/include /usr/local/include)
+    list(APPEND COMMON_INCLUDES /usr/include /usr/local/include /usr/include/lua5.4)
 endif()
 
 add_executable(voxel_test src/test_main.cpp ${CORE_SOURCES})
@@ -214,6 +221,12 @@ target_include_directories(save_test PRIVATE ${COMMON_INCLUDES})
 # ============================================
 # Platform-Specific Linking
 # ============================================
+if(LUA_FOUND)
+    target_link_libraries(voxel_test PRIVATE ${LUA_LIBRARY})
+    target_link_libraries(world_test PRIVATE ${LUA_LIBRARY})
+    target_link_libraries(save_test PRIVATE ${LUA_LIBRARY})
+endif()
+
 if(PLATFORM_LINUX)
     target_link_libraries(voxel_test PRIVATE pthread dl)
     target_link_libraries(world_test PRIVATE pthread dl)

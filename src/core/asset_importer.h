@@ -4,6 +4,8 @@
 #include <vector>
 #include <unordered_map>
 #include "types.h"
+#include "math/vec3.h"
+#include "math/vec2.h"
 #include "rendering/texture.h"
 
 namespace vge {

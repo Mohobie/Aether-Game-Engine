@@ -56,6 +56,7 @@
 // Cross-platform types
 #include <cstdint>
 #include <string>
+#include <vector>
 
 namespace vge {
 
@@ -78,6 +79,9 @@ public:
     static bool CreateDirectory(const std::string& path);
     static bool Delete(const std::string& path);
     static size_t GetSize(const std::string& path);
+    static uint64_t GetLastModifiedTime(const std::string& path);
+    static std::vector<std::string> ListDirectory(const std::string& path);
+    static std::vector<std::string> ListDirectoryRecursive(const std::string& path);
     static std::string ReadText(const std::string& path);
     static bool WriteText(const std::string& path, const std::string& content);
 };

@@ -2,7 +2,7 @@
 #include "asset_importer.h"
 #include "resource_pack.h"
 #include "platform/platform_common.h"
-#include "logger.h"
+#include "core/logger.h"
 #include <fstream>
 #include <sstream>
 
@@ -80,7 +80,7 @@ bool AssetManager::Initialize() {
         m_asyncWorkers.emplace_back(&AssetManager::AsyncWorkerLoop, this);
     }
 
-    LOG_INFO("AssetManager initialized with %d async workers", numWorkers);
+    Logger::Info("AssetManager initialized with " + std::to_string(numWorkers) + " async workers");
     return true;
 }
 
@@ -102,7 +102,7 @@ void AssetManager::Shutdown() {
         m_fileWatcher.reset();
     }
 
-    LOG_INFO("AssetManager shutdown complete");
+    Logger::Info("AssetManager shutdown complete");
 }
 
 void AssetManager::AsyncWorkerLoop() {
@@ -254,7 +254,7 @@ void AssetManager::EnableHotReload(bool enable) {
             m_fileWatcher = std::make_unique<FileWatcher>();
         }
         m_fileWatcher->StartWatching(m_assetRoot);
-        LOG_INFO("Hot-reload enabled for directory: %s", m_assetRoot.c_str());
+        Logger::Info("Hot-reload enabled for directory: %s", m_assetRoot.c_str());
     } else {
         if (m_fileWatcher) {
             m_fileWatcher->StopWatching();
@@ -268,11 +268,11 @@ void AssetManager::UpdateHotReload() {
     if (m_fileWatcher->HasChanges()) {
         auto changedFiles = m_fileWatcher->GetChangedFiles();
         for (const auto& file : changedFiles) {
-            LOG_INFO("Hot-reload: File changed: %s", file.c_str());
+            Logger::Info("Hot-reload: File changed: %s", file.c_str());
             std::lock_guard<std::mutex> lock(m_mutex);
             for (auto& pair : m_assets) {
                 if (pair.second->metadata.path == file) {
-                    LOG_INFO("Hot-reload: Reloading asset: %s", pair.first.c_str());
+                    Logger::Info("Hot-reload: Reloading asset: %s", pair.first.c_str());
                     pair.second->metadata.lastModified = File::GetLastModifiedTime(file);
                     break;
                 }
@@ -292,20 +292,20 @@ size_t AssetManager::GetLoadedAssetCount() const {
 
 void AssetManager::PrintStats() const {
     std::lock_guard<std::mutex> lock(m_mutex);
-    LOG_INFO("=== Asset Manager Stats ===");
-    LOG_INFO("Total loaded assets: %zu", m_assets.size());
+    Logger::Info("=== Asset Manager Stats ===");
+    Logger::Info("Total loaded assets: %zu", m_assets.size());
 
     size_t counts[(int)AssetType::Count] = {};
     for (const auto& pair : m_assets) {
         counts[(int)pair.second->metadata.type]++;
     }
 
-    LOG_INFO("  Textures: %zu", counts[(int)AssetType::Texture]);
-    LOG_INFO("  Models: %zu", counts[(int)AssetType::Model]);
-    LOG_INFO("  Sounds: %zu", counts[(int)AssetType::Sound]);
-    LOG_INFO("  Shaders: %zu", counts[(int)AssetType::Shader]);
-    LOG_INFO("  Fonts: %zu", counts[(int)AssetType::Font]);
-    LOG_INFO("  Materials: %zu", counts[(int)AssetType::Material]);
+    Logger::Info("  Textures: %zu", counts[(int)AssetType::Texture]);
+    Logger::Info("  Models: %zu", counts[(int)AssetType::Model]);
+    Logger::Info("  Sounds: %zu", counts[(int)AssetType::Sound]);
+    Logger::Info("  Shaders: %zu", counts[(int)AssetType::Shader]);
+    Logger::Info("  Fonts: %zu", counts[(int)AssetType::Font]);
+    Logger::Info("  Materials: %zu", counts[(int)AssetType::Material]);
 }
 
 void AssetManager::GenerateDefaults() {
@@ -343,7 +343,7 @@ void AssetManager::GenerateDefaults() {
         m_assets["__default_texture__"] = std::shared_ptr<Asset>(defaultTex);
     }
 
-    LOG_INFO("Generated default assets");
+    Logger::Info("Generated default assets");
 }
 
 bool AssetManager::DoLoadTexture(const std::string& id, const std::string& path) {
@@ -367,27 +367,27 @@ bool AssetManager::DoLoadTexture(const std::string& id, const std::string& path)
 }
 
 bool AssetManager::LoadModel(const std::string& id, const std::string& path) {
-    LOG_INFO("Loading model: %s", path.c_str());
+    Logger::Info("Loading model: %s", path.c_str());
     return true;
 }
 
 bool AssetManager::LoadSound(const std::string& id, const std::string& path) {
-    LOG_INFO("Loading sound: %s", path.c_str());
+    Logger::Info("Loading sound: %s", path.c_str());
     return true;
 }
 
 bool AssetManager::LoadShader(const std::string& id, const std::string& path) {
-    LOG_INFO("Loading shader: %s", path.c_str());
+    Logger::Info("Loading shader: %s", path.c_str());
     return true;
 }
 
 bool AssetManager::LoadFont(const std::string& id, const std::string& path) {
-    LOG_INFO("Loading font: %s", path.c_str());
+    Logger::Info("Loading font: %s", path.c_str());
     return true;
 }
 
 bool AssetManager::LoadMaterial(const std::string& id, const std::string& path) {
-    LOG_INFO("Loading material: %s", path.c_str());
+    Logger::Info("Loading material: %s", path.c_str());
     return true;
 }
 

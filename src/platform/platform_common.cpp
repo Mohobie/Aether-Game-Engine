@@ -121,6 +121,61 @@ bool File::Delete(const std::string& path) {
     return std::remove(path.c_str()) == 0;
 }
 
+uint64_t File::GetLastModifiedTime(const std::string& path) {
+#ifdef PLATFORM_WINDOWS
+    struct _stat info;
+    if (_stat(path.c_str(), &info) != 0) return 0;
+    return static_cast<uint64_t>(info.st_mtime);
+#else
+    struct stat info;
+    if (stat(path.c_str(), &info) != 0) return 0;
+    return static_cast<uint64_t>(info.st_mtime);
+#endif
+}
+
+std::vector<std::string> File::ListDirectory(const std::string& path) {
+    std::vector<std::string> result;
+#ifdef PLATFORM_WINDOWS
+    WIN32_FIND_DATA findData;
+    HANDLE hFind = FindFirstFile((path + "\\*").c_str(), &findData);
+    if (hFind != INVALID_HANDLE_VALUE) {
+        do {
+            std::string name = findData.cFileName;
+            if (name != "." && name != "..") {
+                result.push_back(Path::Join(path, name));
+            }
+        } while (FindNextFile(hFind, &findData));
+        FindClose(hFind);
+    }
+#else
+    DIR* dir = opendir(path.c_str());
+    if (dir) {
+        struct dirent* entry;
+        while ((entry = readdir(dir)) != nullptr) {
+            std::string name = entry->d_name;
+            if (name != "." && name != "..") {
+                result.push_back(Path::Join(path, name));
+            }
+        }
+        closedir(dir);
+    }
+#endif
+    return result;
+}
+
+std::vector<std::string> File::ListDirectoryRecursive(const std::string& path) {
+    std::vector<std::string> result;
+    auto files = ListDirectory(path);
+    for (const auto& file : files) {
+        result.push_back(file);
+        if (IsDirectory(file)) {
+            auto subFiles = ListDirectoryRecursive(file);
+            result.insert(result.end(), subFiles.begin(), subFiles.end());
+        }
+    }
+    return result;
+}
+
 size_t File::GetSize(const std::string& path) {
     std::ifstream file(path, std::ios::binary | std::ios::ate);
     if (!file.is_open()) return 0;

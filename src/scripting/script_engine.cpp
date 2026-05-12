@@ -6,6 +6,11 @@
 #include <fstream>
 #include <sstream>
 #include <sys/stat.h>
+extern "C" {
+#include <lua.h>
+#include <lauxlib.h>
+#include <lualib.h>
+}
 
 namespace vge {
 
@@ -273,48 +278,48 @@ void ScriptEngine::RegisterDefaultBindings() {
     lua_pushlightuserdata(L, craftingSystem);
     lua_setfield(L, LUA_REGISTRYINDEX, "__vge_crafting");
 
-    RegisterWorldBindings(L);
-    RegisterEntityBindings(L);
-    RegisterEventBindings(L);
-    RegisterInputBindings(L);
-    RegisterUIBindings(L);
-    RegisterAudioBindings(L);
-    RegisterCraftingBindings(L);
+    vge::RegisterWorldBindings(L);
+    vge::RegisterEntityBindings(L);
+    vge::RegisterEventBindings(L);
+    vge::RegisterInputBindings(L);
+    vge::RegisterUIBindings(L);
+    vge::RegisterAudioBindings(L);
+    vge::RegisterCraftingBindings(L);
 }
 
 void ScriptEngine::RegisterWorldBindings() {
     if (!luaEngine) return;
-    RegisterWorldBindings(luaEngine->GetState());
+    vge::RegisterWorldBindings(luaEngine->GetState());
 }
 
 void ScriptEngine::RegisterEntityBindings() {
     if (!luaEngine) return;
-    RegisterEntityBindings(luaEngine->GetState());
+    vge::RegisterEntityBindings(luaEngine->GetState());
 }
 
 void ScriptEngine::RegisterEventBindings() {
     if (!luaEngine) return;
-    RegisterEventBindings(luaEngine->GetState());
+    vge::RegisterEventBindings(luaEngine->GetState());
 }
 
 void ScriptEngine::RegisterInputBindings() {
     if (!luaEngine) return;
-    RegisterInputBindings(luaEngine->GetState());
+    vge::RegisterInputBindings(luaEngine->GetState());
 }
 
 void ScriptEngine::RegisterUIBindings() {
     if (!luaEngine) return;
-    RegisterUIBindings(luaEngine->GetState());
+    vge::RegisterUIBindings(luaEngine->GetState());
 }
 
 void ScriptEngine::RegisterAudioBindings() {
     if (!luaEngine) return;
-    RegisterAudioBindings(luaEngine->GetState());
+    vge::RegisterAudioBindings(luaEngine->GetState());
 }
 
 void ScriptEngine::RegisterCraftingBindings() {
     if (!luaEngine) return;
-    RegisterCraftingBindings(luaEngine->GetState());
+    vge::RegisterCraftingBindings(luaEngine->GetState());
 }
 
 std::string ScriptEngine::GetLastError() const {
