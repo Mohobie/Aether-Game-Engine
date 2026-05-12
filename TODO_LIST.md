@@ -16,18 +16,18 @@ These require a JSON library (e.g., nlohmann/json) to be added to the project.
 ## UI Implementation (8 items)
 These need actual rendering code for the inventory/crafting UI.
 
-- [ ] **src/ui/ui_inventory.cpp:38** - Render slot background, item icon, and count text
-- [ ] **src/ui/ui_inventory.cpp:114** - Integrate with actual inventory data (currently mock data)
-- [ ] **src/ui/ui_inventory.cpp:163** - Actual rendering implementation for inventory grid
-- [ ] **src/ui/ui_inventory.cpp:216** - Render dragged item icon during drag-and-drop
-- [ ] **src/ui/ui_inventory.cpp:236** - Calculate proper tooltip size based on text content
-- [ ] **src/ui/ui_inventory.cpp:248** - Render tooltip background and text
-- [ ] **src/ui/ui_inventory.cpp:499** - Set hotbar selection on click
-- [ ] **src/ui/ui_inventory.cpp:574** - Load available recipes based on inventory contents
-- [ ] **src/ui/ui_inventory.cpp:578** - Implement crafting logic using CraftingSystem
-- [ ] **src/ui/ui_inventory.cpp:583** - Check if current grid matches any recipe
-- [ ] **src/ui/ui_inventory.cpp:588** - Consume ingredients and clear crafting grid
-- [ ] **src/ui/inventory_ui.cpp:793** - Handle crafting grid drops
+- [x] **src/ui/ui_inventory.cpp:38** - Render slot background, item icon, and count text ✅
+- [x] **src/ui/ui_inventory.cpp:114** - Integrate with actual inventory data ✅
+- [x] **src/ui/ui_inventory.cpp:163** - Actual rendering implementation for inventory grid ✅
+- [x] **src/ui/ui_inventory.cpp:216** - Render dragged item icon during drag-and-drop ✅
+- [x] **src/ui/ui_inventory.cpp:236** - Calculate proper tooltip size based on text content ✅
+- [x] **src/ui/ui_inventory.cpp:248** - Render tooltip background and text ✅
+- [x] **src/ui/ui_inventory.cpp:499** - Set hotbar selection on click ✅
+- [x] **src/ui/ui_inventory.cpp:574** - Load available recipes based on inventory contents ✅
+- [x] **src/ui/ui_inventory.cpp:578** - Implement crafting logic using CraftingSystem ✅
+- [x] **src/ui/ui_inventory.cpp:583** - Check if current grid matches any recipe ✅
+- [x] **src/ui/ui_inventory.cpp:588** - Consume ingredients and clear crafting grid ✅
+- [x] **src/ui/inventory_ui.cpp:793** - Handle crafting grid drops ✅
 
 ## Game Logic (3 items)
 
