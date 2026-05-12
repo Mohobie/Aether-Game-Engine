@@ -167,9 +167,9 @@ set(CORE_SOURCES
     src/platform/gamepad.cpp
     src/core/crafting.cpp
     src/core/player_controller.cpp
-    # src/core/asset_manager.cpp  # DISABLED - API mismatch with logger
-    # src/core/asset_importer.cpp  # DISABLED - API mismatch with logger
-    # src/core/resource_pack.cpp   # DISABLED - API mismatch with logger
+    src/core/asset_manager.cpp
+    src/core/asset_importer.cpp
+    src/core/resource_pack.cpp
     src/voxel/voxel_editor.cpp
     src/game/sandbox_mode.cpp
     src/game/survival_mode.cpp

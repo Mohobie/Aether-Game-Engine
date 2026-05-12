@@ -11,37 +11,16 @@
 #include <queue>
 #include <condition_variable>
 #include "types.h"
-#include "rendering/texture.h"
+#include "asset_base.h"
+
+// Forward declaration
+namespace vge { struct Texture; }
 
 namespace vge {
 
 // Forward declarations
 class AssetImporter;
 class ResourcePackManager;
-
-// Base asset type enum
-enum class AssetType {
-    Unknown,
-    Texture,
-    Model,
-    Sound,
-    Shader,
-    Font,
-    Material,
-    Count
-};
-
-// Asset metadata
-struct AssetMetadata {
-    std::string id;
-    std::string path;
-    AssetType type;
-    size_t size = 0;
-    uint64_t lastModified = 0;
-    uint32_t refCount = 0;
-    bool loaded = false;
-    bool fromPack = false;
-};
 
 // Async load request
 struct AsyncLoadRequest {
@@ -71,13 +50,6 @@ private:
     std::mutex m_mutex;
     std::vector<std::string> m_changedFiles;
     std::unordered_map<std::string, uint64_t> m_fileTimestamps;
-};
-
-// Base asset class
-class Asset {
-public:
-    virtual ~Asset() = default;
-    AssetMetadata metadata;
 };
 
 // Asset manager - centralized loading and caching

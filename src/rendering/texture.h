@@ -4,11 +4,12 @@
 #include <cstdint>
 #include <unordered_map>
 #include "math/vec3.h"
+#include "core/asset_base.h"
 
 namespace vge {
 
 // Texture data
-struct Texture {
+struct Texture : public Asset {
     std::string name;
     int width;
     int height;
