@@ -1140,6 +1140,39 @@ src/core/weather_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/weather_system.cpp.s
 .PHONY : src/core/weather_system.cpp.s
 
+src/debug/debug_renderer.o: src/debug/debug_renderer.cpp.o
+.PHONY : src/debug/debug_renderer.o
+
+# target to build an object file
+src/debug/debug_renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/debug/debug_renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/debug/debug_renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/debug/debug_renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/debug/debug_renderer.cpp.o
+.PHONY : src/debug/debug_renderer.cpp.o
+
+src/debug/debug_renderer.i: src/debug/debug_renderer.cpp.i
+.PHONY : src/debug/debug_renderer.i
+
+# target to preprocess a source file
+src/debug/debug_renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/debug/debug_renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/debug/debug_renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/debug/debug_renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/debug/debug_renderer.cpp.i
+.PHONY : src/debug/debug_renderer.cpp.i
+
+src/debug/debug_renderer.s: src/debug/debug_renderer.cpp.s
+.PHONY : src/debug/debug_renderer.s
+
+# target to generate assembly for a file
+src/debug/debug_renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/debug/debug_renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/debug/debug_renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/debug/debug_renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/debug/debug_renderer.cpp.s
+.PHONY : src/debug/debug_renderer.cpp.s
+
 src/debug/debug_system.o: src/debug/debug_system.cpp.o
 .PHONY : src/debug/debug_system.o
 
@@ -3714,6 +3747,9 @@ help:
 	@echo "... src/core/weather_system.o"
 	@echo "... src/core/weather_system.i"
 	@echo "... src/core/weather_system.s"
+	@echo "... src/debug/debug_renderer.o"
+	@echo "... src/debug/debug_renderer.i"
+	@echo "... src/debug/debug_renderer.s"
 	@echo "... src/debug/debug_system.o"
 	@echo "... src/debug/debug_system.i"
 	@echo "... src/debug/debug_system.s"

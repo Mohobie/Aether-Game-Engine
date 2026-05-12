@@ -182,6 +182,9 @@ CMakeFiles/voxel_test.dir/src/physics/physics_constraints.cpp.o: \
  /usr/include/c++/11/pstl/execution_defs.h \
  /home/mohobie/projects/aether-game-engine/src/physics/physics_system.h \
  /home/mohobie/projects/aether-game-engine/src/physics/collision.h \
+ /home/mohobie/projects/aether-game-engine/src/physics/aabb.h \
+ /home/mohobie/projects/aether-game-engine/src/core/math.h \
+ /home/mohobie/projects/aether-game-engine/src/math/vec2.h \
  /usr/include/c++/11/functional /usr/include/c++/11/bits/std_function.h \
  /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
  /usr/include/c++/11/bits/hashtable_policy.h \

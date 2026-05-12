@@ -4,11 +4,8 @@
 
 namespace vge {
 
-bool AABB::Intersects(const AABB& other) const {
-    return (min.x <= other.max.x && max.x >= other.min.x) &&
-           (min.y <= other.max.y && max.y >= other.min.y) &&
-           (min.z <= other.max.z && max.z >= other.min.z);
-}
+// AABB methods are now in aabb.h/aabb.cpp
+// Keeping only Physics methods here
 
 // Improved ray-AABB intersection using slab method
 bool Physics::RayCast(const Vec3& origin, const Vec3& direction, float maxDist, Vec3& hit) {

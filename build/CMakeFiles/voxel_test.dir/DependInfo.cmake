@@ -36,6 +36,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/core/save_system.cpp" "CMakeFiles/voxel_test.dir/src/core/save_system.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/core/save_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/core/time_system.cpp" "CMakeFiles/voxel_test.dir/src/core/time_system.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/core/time_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/core/weather_system.cpp" "CMakeFiles/voxel_test.dir/src/core/weather_system.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/core/weather_system.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/debug/debug_renderer.cpp" "CMakeFiles/voxel_test.dir/src/debug/debug_renderer.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/debug/debug_renderer.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/debug/debug_system.cpp" "CMakeFiles/voxel_test.dir/src/debug/debug_system.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/debug/debug_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/editor/entity_spawner.cpp" "CMakeFiles/voxel_test.dir/src/editor/entity_spawner.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/editor/entity_spawner.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/editor/in_game_editor.cpp" "CMakeFiles/voxel_test.dir/src/editor/in_game_editor.cpp.o" "gcc" "CMakeFiles/voxel_test.dir/src/editor/in_game_editor.cpp.o.d"

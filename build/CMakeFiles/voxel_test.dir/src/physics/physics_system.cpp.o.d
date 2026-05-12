@@ -88,6 +88,10 @@ CMakeFiles/voxel_test.dir/src/physics/physics_system.cpp.o: \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
  /home/mohobie/projects/aether-game-engine/src/physics/collision.h \
+ /home/mohobie/projects/aether-game-engine/src/physics/aabb.h \
+ /home/mohobie/projects/aether-game-engine/src/core/math.h \
+ /home/mohobie/projects/aether-game-engine/src/math/vec2.h \
+ /home/mohobie/projects/aether-game-engine/src/math/mat4.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/allocator.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h \
  /usr/include/c++/11/ext/new_allocator.h /usr/include/c++/11/new \

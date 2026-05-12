@@ -151,6 +151,7 @@ set(CORE_SOURCES
     src/voxel/world_serializer.cpp
     src/voxel/chunk_manager.cpp
     src/debug/debug_system.cpp
+    src/debug/debug_renderer.cpp
     src/physics/collision.cpp
     src/physics/rigidbody.cpp
     src/core/logger.cpp
@@ -304,9 +305,15 @@ if(LUA_FOUND)
 endif()
 
 if(PLATFORM_LINUX)
-    target_link_libraries(voxel_engine PRIVATE pthread dl)
+    target_link_libraries(voxel_engine PRIVATE pthread dl GL GLX)
+    target_link_libraries(voxel_test PRIVATE pthread dl GL GLX)
+    target_link_libraries(world_test PRIVATE pthread dl GL GLX)
+    target_link_libraries(save_test PRIVATE pthread dl GL GLX)
 elseif(PLATFORM_WINDOWS)
-    target_link_libraries(voxel_engine PRIVATE ws2_32 winmm)
+    target_link_libraries(voxel_engine PRIVATE ws2_32 winmm opengl32)
+    target_link_libraries(voxel_test PRIVATE ws2_32 winmm opengl32)
+    target_link_libraries(world_test PRIVATE ws2_32 winmm opengl32)
+    target_link_libraries(save_test PRIVATE ws2_32 winmm opengl32)
 endif()
 
 # ============================================

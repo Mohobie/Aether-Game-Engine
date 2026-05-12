@@ -2,7 +2,9 @@ CMakeFiles/voxel_test.dir/src/physics/collision.cpp.o: \
  /home/mohobie/projects/aether-game-engine/src/physics/collision.cpp \
  /usr/include/stdc-predef.h \
  /home/mohobie/projects/aether-game-engine/src/physics/collision.h \
- /home/mohobie/projects/aether-game-engine/src/math/vec3.h \
+ /home/mohobie/projects/aether-game-engine/src/physics/aabb.h \
+ /home/mohobie/projects/aether-game-engine/src/core/math.h \
+ /home/mohobie/projects/aether-game-engine/src/math/vec2.h \
  /usr/include/c++/11/cmath \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -86,4 +88,6 @@ CMakeFiles/voxel_test.dir/src/physics/collision.cpp.o: \
  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
- /usr/include/c++/11/tr1/riemann_zeta.tcc
+ /usr/include/c++/11/tr1/riemann_zeta.tcc \
+ /home/mohobie/projects/aether-game-engine/src/math/vec3.h \
+ /home/mohobie/projects/aether-game-engine/src/math/mat4.h
