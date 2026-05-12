@@ -1161,10 +1161,24 @@ CMakeFiles/voxel_engine.dir/src/core/resource_pack.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/voxel_engine.dir/src/core/resource_pack.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/core/resource_pack.cpp -o CMakeFiles/voxel_engine.dir/src/core/resource_pack.cpp.s
 
+CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
+CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o: ../src/core/save_system.cpp
+CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building CXX object CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o -MF CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/core/save_system.cpp
+
+CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-engine/src/core/save_system.cpp > CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.i
+
+CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-engine/src/core/save_system.cpp -o CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.s
+
 CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.o: ../src/voxel/voxel_editor.cpp
 CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building CXX object CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building CXX object CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.o -MF CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.o -c /home/mohobie/projects/aether-game-engine/src/voxel/voxel_editor.cpp
 
 CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.i: cmake_force
@@ -1178,7 +1192,7 @@ CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.s: cmake_force
 CMakeFiles/voxel_engine.dir/src/game/sandbox_mode.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/game/sandbox_mode.cpp.o: ../src/game/sandbox_mode.cpp
 CMakeFiles/voxel_engine.dir/src/game/sandbox_mode.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building CXX object CMakeFiles/voxel_engine.dir/src/game/sandbox_mode.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building CXX object CMakeFiles/voxel_engine.dir/src/game/sandbox_mode.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/game/sandbox_mode.cpp.o -MF CMakeFiles/voxel_engine.dir/src/game/sandbox_mode.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/game/sandbox_mode.cpp.o -c /home/mohobie/projects/aether-game-engine/src/game/sandbox_mode.cpp
 
 CMakeFiles/voxel_engine.dir/src/game/sandbox_mode.cpp.i: cmake_force
@@ -1192,7 +1206,7 @@ CMakeFiles/voxel_engine.dir/src/game/sandbox_mode.cpp.s: cmake_force
 CMakeFiles/voxel_engine.dir/src/game/survival_mode.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/game/survival_mode.cpp.o: ../src/game/survival_mode.cpp
 CMakeFiles/voxel_engine.dir/src/game/survival_mode.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building CXX object CMakeFiles/voxel_engine.dir/src/game/survival_mode.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building CXX object CMakeFiles/voxel_engine.dir/src/game/survival_mode.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/game/survival_mode.cpp.o -MF CMakeFiles/voxel_engine.dir/src/game/survival_mode.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/game/survival_mode.cpp.o -c /home/mohobie/projects/aether-game-engine/src/game/survival_mode.cpp
 
 CMakeFiles/voxel_engine.dir/src/game/survival_mode.cpp.i: cmake_force
@@ -1206,7 +1220,7 @@ CMakeFiles/voxel_engine.dir/src/game/survival_mode.cpp.s: cmake_force
 CMakeFiles/voxel_engine.dir/src/game/player_stats.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/game/player_stats.cpp.o: ../src/game/player_stats.cpp
 CMakeFiles/voxel_engine.dir/src/game/player_stats.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building CXX object CMakeFiles/voxel_engine.dir/src/game/player_stats.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building CXX object CMakeFiles/voxel_engine.dir/src/game/player_stats.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/game/player_stats.cpp.o -MF CMakeFiles/voxel_engine.dir/src/game/player_stats.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/game/player_stats.cpp.o -c /home/mohobie/projects/aether-game-engine/src/game/player_stats.cpp
 
 CMakeFiles/voxel_engine.dir/src/game/player_stats.cpp.i: cmake_force
@@ -1220,7 +1234,7 @@ CMakeFiles/voxel_engine.dir/src/game/player_stats.cpp.s: cmake_force
 CMakeFiles/voxel_engine.dir/src/game/day_night_cycle.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/game/day_night_cycle.cpp.o: ../src/game/day_night_cycle.cpp
 CMakeFiles/voxel_engine.dir/src/game/day_night_cycle.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building CXX object CMakeFiles/voxel_engine.dir/src/game/day_night_cycle.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building CXX object CMakeFiles/voxel_engine.dir/src/game/day_night_cycle.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/game/day_night_cycle.cpp.o -MF CMakeFiles/voxel_engine.dir/src/game/day_night_cycle.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/game/day_night_cycle.cpp.o -c /home/mohobie/projects/aether-game-engine/src/game/day_night_cycle.cpp
 
 CMakeFiles/voxel_engine.dir/src/game/day_night_cycle.cpp.i: cmake_force
@@ -1234,7 +1248,7 @@ CMakeFiles/voxel_engine.dir/src/game/day_night_cycle.cpp.s: cmake_force
 CMakeFiles/voxel_engine.dir/src/game/block_interaction.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/game/block_interaction.cpp.o: ../src/game/block_interaction.cpp
 CMakeFiles/voxel_engine.dir/src/game/block_interaction.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building CXX object CMakeFiles/voxel_engine.dir/src/game/block_interaction.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building CXX object CMakeFiles/voxel_engine.dir/src/game/block_interaction.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/game/block_interaction.cpp.o -MF CMakeFiles/voxel_engine.dir/src/game/block_interaction.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/game/block_interaction.cpp.o -c /home/mohobie/projects/aether-game-engine/src/game/block_interaction.cpp
 
 CMakeFiles/voxel_engine.dir/src/game/block_interaction.cpp.i: cmake_force
@@ -1248,7 +1262,7 @@ CMakeFiles/voxel_engine.dir/src/game/block_interaction.cpp.s: cmake_force
 CMakeFiles/voxel_engine.dir/src/game/combat_system.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/game/combat_system.cpp.o: ../src/game/combat_system.cpp
 CMakeFiles/voxel_engine.dir/src/game/combat_system.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building CXX object CMakeFiles/voxel_engine.dir/src/game/combat_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building CXX object CMakeFiles/voxel_engine.dir/src/game/combat_system.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/game/combat_system.cpp.o -MF CMakeFiles/voxel_engine.dir/src/game/combat_system.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/game/combat_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/game/combat_system.cpp
 
 CMakeFiles/voxel_engine.dir/src/game/combat_system.cpp.i: cmake_force
@@ -1262,7 +1276,7 @@ CMakeFiles/voxel_engine.dir/src/game/combat_system.cpp.s: cmake_force
 CMakeFiles/voxel_engine.dir/src/editor/entity_spawner.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/editor/entity_spawner.cpp.o: ../src/editor/entity_spawner.cpp
 CMakeFiles/voxel_engine.dir/src/editor/entity_spawner.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building CXX object CMakeFiles/voxel_engine.dir/src/editor/entity_spawner.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building CXX object CMakeFiles/voxel_engine.dir/src/editor/entity_spawner.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/editor/entity_spawner.cpp.o -MF CMakeFiles/voxel_engine.dir/src/editor/entity_spawner.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/editor/entity_spawner.cpp.o -c /home/mohobie/projects/aether-game-engine/src/editor/entity_spawner.cpp
 
 CMakeFiles/voxel_engine.dir/src/editor/entity_spawner.cpp.i: cmake_force
@@ -1276,7 +1290,7 @@ CMakeFiles/voxel_engine.dir/src/editor/entity_spawner.cpp.s: cmake_force
 CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.o: ../src/editor/in_game_editor.cpp
 CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building CXX object CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building CXX object CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.o -MF CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.o -c /home/mohobie/projects/aether-game-engine/src/editor/in_game_editor.cpp
 
 CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.i: cmake_force
@@ -1290,7 +1304,7 @@ CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.s: cmake_force
 CMakeFiles/voxel_engine.dir/src/ui/console_commands.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/ui/console_commands.cpp.o: ../src/ui/console_commands.cpp
 CMakeFiles/voxel_engine.dir/src/ui/console_commands.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building CXX object CMakeFiles/voxel_engine.dir/src/ui/console_commands.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building CXX object CMakeFiles/voxel_engine.dir/src/ui/console_commands.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/ui/console_commands.cpp.o -MF CMakeFiles/voxel_engine.dir/src/ui/console_commands.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/ui/console_commands.cpp.o -c /home/mohobie/projects/aether-game-engine/src/ui/console_commands.cpp
 
 CMakeFiles/voxel_engine.dir/src/ui/console_commands.cpp.i: cmake_force
@@ -1304,7 +1318,7 @@ CMakeFiles/voxel_engine.dir/src/ui/console_commands.cpp.s: cmake_force
 CMakeFiles/voxel_engine.dir/src/rendering/frustum.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/rendering/frustum.cpp.o: ../src/rendering/frustum.cpp
 CMakeFiles/voxel_engine.dir/src/rendering/frustum.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building CXX object CMakeFiles/voxel_engine.dir/src/rendering/frustum.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building CXX object CMakeFiles/voxel_engine.dir/src/rendering/frustum.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/rendering/frustum.cpp.o -MF CMakeFiles/voxel_engine.dir/src/rendering/frustum.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/rendering/frustum.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/frustum.cpp
 
 CMakeFiles/voxel_engine.dir/src/rendering/frustum.cpp.i: cmake_force
@@ -1318,7 +1332,7 @@ CMakeFiles/voxel_engine.dir/src/rendering/frustum.cpp.s: cmake_force
 CMakeFiles/voxel_engine.dir/src/rendering/culling_system.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/rendering/culling_system.cpp.o: ../src/rendering/culling_system.cpp
 CMakeFiles/voxel_engine.dir/src/rendering/culling_system.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building CXX object CMakeFiles/voxel_engine.dir/src/rendering/culling_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building CXX object CMakeFiles/voxel_engine.dir/src/rendering/culling_system.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/rendering/culling_system.cpp.o -MF CMakeFiles/voxel_engine.dir/src/rendering/culling_system.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/rendering/culling_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/culling_system.cpp
 
 CMakeFiles/voxel_engine.dir/src/rendering/culling_system.cpp.i: cmake_force
@@ -1332,7 +1346,7 @@ CMakeFiles/voxel_engine.dir/src/rendering/culling_system.cpp.s: cmake_force
 CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.o: ../src/rendering/framebuffer_renderer.cpp
 CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building CXX object CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building CXX object CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.o -MF CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.o -c /home/mohobie/projects/aether-game-engine/src/rendering/framebuffer_renderer.cpp
 
 CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.i: cmake_force
@@ -1346,7 +1360,7 @@ CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.s: cmake_forc
 CMakeFiles/voxel_engine.dir/src/platform/window.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/platform/window.cpp.o: ../src/platform/window.cpp
 CMakeFiles/voxel_engine.dir/src/platform/window.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building CXX object CMakeFiles/voxel_engine.dir/src/platform/window.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building CXX object CMakeFiles/voxel_engine.dir/src/platform/window.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/platform/window.cpp.o -MF CMakeFiles/voxel_engine.dir/src/platform/window.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/platform/window.cpp.o -c /home/mohobie/projects/aether-game-engine/src/platform/window.cpp
 
 CMakeFiles/voxel_engine.dir/src/platform/window.cpp.i: cmake_force
@@ -1360,7 +1374,7 @@ CMakeFiles/voxel_engine.dir/src/platform/window.cpp.s: cmake_force
 CMakeFiles/voxel_engine.dir/src/ui/console.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/ui/console.cpp.o: ../src/ui/console.cpp
 CMakeFiles/voxel_engine.dir/src/ui/console.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building CXX object CMakeFiles/voxel_engine.dir/src/ui/console.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building CXX object CMakeFiles/voxel_engine.dir/src/ui/console.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/ui/console.cpp.o -MF CMakeFiles/voxel_engine.dir/src/ui/console.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/ui/console.cpp.o -c /home/mohobie/projects/aether-game-engine/src/ui/console.cpp
 
 CMakeFiles/voxel_engine.dir/src/ui/console.cpp.i: cmake_force
@@ -1374,7 +1388,7 @@ CMakeFiles/voxel_engine.dir/src/ui/console.cpp.s: cmake_force
 CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.o: ../src/ui/imgui_wrapper.cpp
 CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building CXX object CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building CXX object CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.o -MF CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.o -c /home/mohobie/projects/aether-game-engine/src/ui/imgui_wrapper.cpp
 
 CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.i: cmake_force
@@ -1388,7 +1402,7 @@ CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.s: cmake_force
 CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.o: ../src/ui/menu_system.cpp
 CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building CXX object CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building CXX object CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.o -MF CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.o -c /home/mohobie/projects/aether-game-engine/src/ui/menu_system.cpp
 
 CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.i: cmake_force
@@ -1402,7 +1416,7 @@ CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.s: cmake_force
 CMakeFiles/voxel_engine.dir/src/core/engine.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/core/engine.cpp.o: ../src/core/engine.cpp
 CMakeFiles/voxel_engine.dir/src/core/engine.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building CXX object CMakeFiles/voxel_engine.dir/src/core/engine.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building CXX object CMakeFiles/voxel_engine.dir/src/core/engine.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/core/engine.cpp.o -MF CMakeFiles/voxel_engine.dir/src/core/engine.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/core/engine.cpp.o -c /home/mohobie/projects/aether-game-engine/src/core/engine.cpp
 
 CMakeFiles/voxel_engine.dir/src/core/engine.cpp.i: cmake_force
@@ -1416,7 +1430,7 @@ CMakeFiles/voxel_engine.dir/src/core/engine.cpp.s: cmake_force
 CMakeFiles/voxel_engine.dir/src/core/application.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/core/application.cpp.o: ../src/core/application.cpp
 CMakeFiles/voxel_engine.dir/src/core/application.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building CXX object CMakeFiles/voxel_engine.dir/src/core/application.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building CXX object CMakeFiles/voxel_engine.dir/src/core/application.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/core/application.cpp.o -MF CMakeFiles/voxel_engine.dir/src/core/application.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/core/application.cpp.o -c /home/mohobie/projects/aether-game-engine/src/core/application.cpp
 
 CMakeFiles/voxel_engine.dir/src/core/application.cpp.i: cmake_force
@@ -1430,7 +1444,7 @@ CMakeFiles/voxel_engine.dir/src/core/application.cpp.s: cmake_force
 CMakeFiles/voxel_engine.dir/src/main.cpp.o: CMakeFiles/voxel_engine.dir/flags.make
 CMakeFiles/voxel_engine.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/voxel_engine.dir/src/main.cpp.o: CMakeFiles/voxel_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building CXX object CMakeFiles/voxel_engine.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building CXX object CMakeFiles/voxel_engine.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_engine.dir/src/main.cpp.o -MF CMakeFiles/voxel_engine.dir/src/main.cpp.o.d -o CMakeFiles/voxel_engine.dir/src/main.cpp.o -c /home/mohobie/projects/aether-game-engine/src/main.cpp
 
 CMakeFiles/voxel_engine.dir/src/main.cpp.i: cmake_force
@@ -1521,6 +1535,7 @@ voxel_engine_OBJECTS = \
 "CMakeFiles/voxel_engine.dir/src/core/asset_manager.cpp.o" \
 "CMakeFiles/voxel_engine.dir/src/core/asset_importer.cpp.o" \
 "CMakeFiles/voxel_engine.dir/src/core/resource_pack.cpp.o" \
+"CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o" \
 "CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.o" \
 "CMakeFiles/voxel_engine.dir/src/game/sandbox_mode.cpp.o" \
 "CMakeFiles/voxel_engine.dir/src/game/survival_mode.cpp.o" \
@@ -1623,6 +1638,7 @@ voxel_engine: CMakeFiles/voxel_engine.dir/src/core/player_controller.cpp.o
 voxel_engine: CMakeFiles/voxel_engine.dir/src/core/asset_manager.cpp.o
 voxel_engine: CMakeFiles/voxel_engine.dir/src/core/asset_importer.cpp.o
 voxel_engine: CMakeFiles/voxel_engine.dir/src/core/resource_pack.cpp.o
+voxel_engine: CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o
 voxel_engine: CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.o
 voxel_engine: CMakeFiles/voxel_engine.dir/src/game/sandbox_mode.cpp.o
 voxel_engine: CMakeFiles/voxel_engine.dir/src/game/survival_mode.cpp.o
@@ -1648,7 +1664,7 @@ voxel_engine: /usr/lib/x86_64-linux-gnu/liblua5.4.so
 voxel_engine: /usr/lib/x86_64-linux-gnu/libGLX.so
 voxel_engine: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 voxel_engine: CMakeFiles/voxel_engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Linking CXX executable voxel_engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mohobie/projects/aether-game-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Linking CXX executable voxel_engine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/voxel_engine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

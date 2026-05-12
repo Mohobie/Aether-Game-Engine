@@ -35,6 +35,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-engine/src/core/player_controller.cpp" "CMakeFiles/voxel_engine.dir/src/core/player_controller.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/core/player_controller.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/core/raycast.cpp" "CMakeFiles/voxel_engine.dir/src/core/raycast.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/core/raycast.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/core/resource_pack.cpp" "CMakeFiles/voxel_engine.dir/src/core/resource_pack.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/core/resource_pack.cpp.o.d"
+  "/home/mohobie/projects/aether-game-engine/src/core/save_system.cpp" "CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/core/time_system.cpp" "CMakeFiles/voxel_engine.dir/src/core/time_system.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/core/time_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/core/weather_system.cpp" "CMakeFiles/voxel_engine.dir/src/core/weather_system.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/core/weather_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-engine/src/debug/debug_system.cpp" "CMakeFiles/voxel_engine.dir/src/debug/debug_system.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/debug/debug_system.cpp.o.d"

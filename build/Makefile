@@ -1041,6 +1041,39 @@ src/core/resource_pack.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/resource_pack.cpp.s
 .PHONY : src/core/resource_pack.cpp.s
 
+src/core/save_system.o: src/core/save_system.cpp.o
+.PHONY : src/core/save_system.o
+
+# target to build an object file
+src/core/save_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/save_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/save_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/save_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o
+.PHONY : src/core/save_system.cpp.o
+
+src/core/save_system.i: src/core/save_system.cpp.i
+.PHONY : src/core/save_system.i
+
+# target to preprocess a source file
+src/core/save_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/save_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/save_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/save_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.i
+.PHONY : src/core/save_system.cpp.i
+
+src/core/save_system.s: src/core/save_system.cpp.s
+.PHONY : src/core/save_system.s
+
+# target to generate assembly for a file
+src/core/save_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/save_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/save_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/save_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.s
+.PHONY : src/core/save_system.cpp.s
+
 src/core/time_system.o: src/core/time_system.cpp.o
 .PHONY : src/core/time_system.o
 
@@ -3504,6 +3537,9 @@ help:
 	@echo "... src/core/resource_pack.o"
 	@echo "... src/core/resource_pack.i"
 	@echo "... src/core/resource_pack.s"
+	@echo "... src/core/save_system.o"
+	@echo "... src/core/save_system.i"
+	@echo "... src/core/save_system.s"
 	@echo "... src/core/time_system.o"
 	@echo "... src/core/time_system.i"
 	@echo "... src/core/time_system.s"

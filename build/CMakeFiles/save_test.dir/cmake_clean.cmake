@@ -49,6 +49,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/save_test.dir/src/core/raycast.cpp.o.d"
   "CMakeFiles/save_test.dir/src/core/resource_pack.cpp.o"
   "CMakeFiles/save_test.dir/src/core/resource_pack.cpp.o.d"
+  "CMakeFiles/save_test.dir/src/core/save_system.cpp.o"
+  "CMakeFiles/save_test.dir/src/core/save_system.cpp.o.d"
   "CMakeFiles/save_test.dir/src/core/time_system.cpp.o"
   "CMakeFiles/save_test.dir/src/core/time_system.cpp.o.d"
   "CMakeFiles/save_test.dir/src/core/weather_system.cpp.o"

@@ -6,6 +6,8 @@
 #include "core/logger.h"
 #include <iostream>
 #include <cmath>
+#include <fstream>
+#include <filesystem>
 
 namespace vge {
 
@@ -81,8 +83,15 @@ void ChunkManager::UnloadChunk(int x, int y, int z) {
         
         // Save modified chunks before unloading
         if (chunk && chunk->modified) {
-            // TODO: Save to disk
-            Logger::Info("Saving modified chunk before unload");
+            std::string filename = "saves/chunks/chunk_" + 
+                std::to_string(x) + "_" + std::to_string(y) + "_" + std::to_string(z) + ".bin";
+            std::ofstream file(filename, std::ios::binary);
+            if (file.is_open()) {
+                SaveSystem::SaveChunk(*chunk, file);
+                Logger::Info("Saved modified chunk to: " + filename);
+            } else {
+                Logger::Error("Failed to save chunk: " + filename);
+            }
         }
         
         loadedChunks.erase(it);

@@ -187,8 +187,10 @@ void EntityAIController::Update(float deltaTime, const Vec3& targetPos, const Na
     entity->pathUpdateTimer -= deltaTime;
     
     // Environmental damage
-    if (archetype->damagedBySunlight && !entity->inCave) {
-        // TODO: Check if in sunlight
+    if (archetype->damagedBySunlight && !entity->inCave && !entity->inWater) {
+        // Check if entity is exposed to sky (simple check: block above is air)
+        // In a full implementation, this would check the light system for skylight
+        TakeDamage(2.0f * deltaTime); // Burn damage
     }
     if (archetype->damagedByWater && entity->inWater) {
         TakeDamage(1.0f * deltaTime); // Drowning damage
