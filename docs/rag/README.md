@@ -21,6 +21,11 @@ Each document covers a specific system or topic:
 | `11-networking.md` | Client-server, packets, entity sync, chunk streaming | ~480 |
 | `12-editor-tools.md` | Editor mode, block editing, entity spawning, console commands | ~300 |
 | `13-common-patterns.md` | Player controller, inventory, crafting, save/load, game loop | ~760 |
+| `14-inventory-crafting.md` | Item system, inventory, drag-and-drop, crafting, smelting | ~350 |
+| `15-entity-archetypes.md` | Generic entity system, archetypes, environmental effects | ~280 |
+| `16-audio-events.md` | Decoupled audio event system, sound packs, JSON loading | ~220 |
+| `17-chunk-system.md` | Chunk architecture, persistence, streaming, LOD, culling | ~200 |
+| `18-network-system.md` | Client-server multiplayer, entity replication, server authority | ~250 |
 
 ## How to Use This Documentation
 
@@ -29,15 +34,20 @@ Each document covers a specific system or topic:
 1. **Start with `01-overview.md`** to understand the engine's architecture
 2. **Reference specific systems** as needed during code generation
 3. **Use `13-common-patterns.md`** for complete game implementations
-4. **All code examples are copy-paste ready** with proper includes
+4. **Use `14-inventory-crafting.md`** for item/crafting systems
+5. **Use `15-entity-archetypes.md`** for entity/AI systems
+6. **All code examples are copy-paste ready** with proper includes
 
 ### Key Conventions
 
-- **Namespace**: All engine code is in `vge::` namespace
+- **Namespace**: All engine code is in `vge::` namespace (unified 2026-05-12)
 - **Math**: Column-major matrices, Y-is-up coordinate system
 - **Blocks**: Minecraft-style voxels with 16x16x16 chunks
 - **ECS**: Entity-Component-System architecture
 - **Rendering**: OpenGL-based with modern features
+- **Entity System**: Fully generic - no built-in entity types
+- **Environmental Effects**: Configurable per entity (sunlight/water/darkness)
+- **Item Categories**: Block, Tool, Weapon, Armor, Consumable, Material, Misc
 
 ### Quick Reference
 
@@ -52,21 +62,18 @@ Each document covers a specific system or topic:
 #include "platform/input_manager.h"
 #include "ui/ui_system.h"
 #include "audio/audio_engine.h"
+#include "ai/entity_ai.h"
+#include "core/item_system.h"
+#include "core/crafting.h"
 
 // Common types
 vge::Vec3    // 3D vector
 vge::Mat4    // 4x4 matrix
 vge::World   // Voxel world
 vge::EntityID // Entity handle
+vge::Inventory // Item inventory
+vge::CraftingSystem // Crafting recipes
 ```
-
-## Code Examples
-
-Every document contains:
-- **API Reference**: Function signatures and parameters
-- **Usage Examples**: Complete, runnable code snippets
-- **Common Patterns**: Real-world usage scenarios
-- **Integration**: How systems work together
 
 ## Building with the Engine
 
@@ -81,9 +88,7 @@ cmake ..
 make -j4
 
 # Run tests
-./editor_test
-./culling_test
-./inventory_test
+./voxel_test
 ```
 
 ## Dependencies
@@ -94,6 +99,7 @@ make -j4
 - stb_image (texture loading)
 - miniaudio (audio)
 - enet (networking)
+- nlohmann/json (JSON serialization)
 
 ## License
 
