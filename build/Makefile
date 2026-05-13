@@ -181,6 +181,43 @@ my_game/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/build
 .PHONY : my_game/fast
 
+#=============================================================================
+# Target rules for targets named multiplayer
+
+# Build rule for target.
+multiplayer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multiplayer
+.PHONY : multiplayer
+
+# fast build rule for target.
+multiplayer/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/build
+.PHONY : multiplayer/fast
+
+multiplayer_main.o: multiplayer_main.cpp.o
+.PHONY : multiplayer_main.o
+
+# target to build an object file
+multiplayer_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/multiplayer_main.cpp.o
+.PHONY : multiplayer_main.cpp.o
+
+multiplayer_main.i: multiplayer_main.cpp.i
+.PHONY : multiplayer_main.i
+
+# target to preprocess a source file
+multiplayer_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/multiplayer_main.cpp.i
+.PHONY : multiplayer_main.cpp.i
+
+multiplayer_main.s: multiplayer_main.cpp.s
+.PHONY : multiplayer_main.s
+
+# target to generate assembly for a file
+multiplayer_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/multiplayer_main.cpp.s
+.PHONY : multiplayer_main.cpp.s
+
 my_game.o: my_game.cpp.o
 .PHONY : my_game.o
 
@@ -215,6 +252,7 @@ src/ai/ai_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/ai_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/ai_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/ai_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/ai_system.cpp.o
 .PHONY : src/ai/ai_system.cpp.o
 
 src/ai/ai_system.i: src/ai/ai_system.cpp.i
@@ -227,6 +265,7 @@ src/ai/ai_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/ai_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/ai_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/ai_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/ai_system.cpp.i
 .PHONY : src/ai/ai_system.cpp.i
 
 src/ai/ai_system.s: src/ai/ai_system.cpp.s
@@ -239,6 +278,7 @@ src/ai/ai_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/ai_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/ai_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/ai_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/ai_system.cpp.s
 .PHONY : src/ai/ai_system.cpp.s
 
 src/ai/behavior_tree.o: src/ai/behavior_tree.cpp.o
@@ -251,6 +291,7 @@ src/ai/behavior_tree.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/behavior_tree.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/behavior_tree.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/behavior_tree.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/behavior_tree.cpp.o
 .PHONY : src/ai/behavior_tree.cpp.o
 
 src/ai/behavior_tree.i: src/ai/behavior_tree.cpp.i
@@ -263,6 +304,7 @@ src/ai/behavior_tree.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/behavior_tree.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/behavior_tree.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/behavior_tree.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/behavior_tree.cpp.i
 .PHONY : src/ai/behavior_tree.cpp.i
 
 src/ai/behavior_tree.s: src/ai/behavior_tree.cpp.s
@@ -275,6 +317,7 @@ src/ai/behavior_tree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/behavior_tree.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/behavior_tree.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/behavior_tree.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/behavior_tree.cpp.s
 .PHONY : src/ai/behavior_tree.cpp.s
 
 src/ai/enemy_ai.o: src/ai/enemy_ai.cpp.o
@@ -287,6 +330,7 @@ src/ai/enemy_ai.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/enemy_ai.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/enemy_ai.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/enemy_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/enemy_ai.cpp.o
 .PHONY : src/ai/enemy_ai.cpp.o
 
 src/ai/enemy_ai.i: src/ai/enemy_ai.cpp.i
@@ -299,6 +343,7 @@ src/ai/enemy_ai.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/enemy_ai.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/enemy_ai.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/enemy_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/enemy_ai.cpp.i
 .PHONY : src/ai/enemy_ai.cpp.i
 
 src/ai/enemy_ai.s: src/ai/enemy_ai.cpp.s
@@ -311,6 +356,7 @@ src/ai/enemy_ai.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/enemy_ai.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/enemy_ai.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/enemy_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/enemy_ai.cpp.s
 .PHONY : src/ai/enemy_ai.cpp.s
 
 src/ai/enemy_spawner.o: src/ai/enemy_spawner.cpp.o
@@ -323,6 +369,7 @@ src/ai/enemy_spawner.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/enemy_spawner.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/enemy_spawner.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/enemy_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/enemy_spawner.cpp.o
 .PHONY : src/ai/enemy_spawner.cpp.o
 
 src/ai/enemy_spawner.i: src/ai/enemy_spawner.cpp.i
@@ -335,6 +382,7 @@ src/ai/enemy_spawner.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/enemy_spawner.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/enemy_spawner.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/enemy_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/enemy_spawner.cpp.i
 .PHONY : src/ai/enemy_spawner.cpp.i
 
 src/ai/enemy_spawner.s: src/ai/enemy_spawner.cpp.s
@@ -347,6 +395,7 @@ src/ai/enemy_spawner.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/enemy_spawner.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/enemy_spawner.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/enemy_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/enemy_spawner.cpp.s
 .PHONY : src/ai/enemy_spawner.cpp.s
 
 src/ai/entity_ai.o: src/ai/entity_ai.cpp.o
@@ -359,6 +408,7 @@ src/ai/entity_ai.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/entity_ai.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/entity_ai.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/entity_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/entity_ai.cpp.o
 .PHONY : src/ai/entity_ai.cpp.o
 
 src/ai/entity_ai.i: src/ai/entity_ai.cpp.i
@@ -371,6 +421,7 @@ src/ai/entity_ai.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/entity_ai.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/entity_ai.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/entity_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/entity_ai.cpp.i
 .PHONY : src/ai/entity_ai.cpp.i
 
 src/ai/entity_ai.s: src/ai/entity_ai.cpp.s
@@ -383,6 +434,7 @@ src/ai/entity_ai.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/entity_ai.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/entity_ai.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/entity_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/entity_ai.cpp.s
 .PHONY : src/ai/entity_ai.cpp.s
 
 src/ai/entity_spawner.o: src/ai/entity_spawner.cpp.o
@@ -395,6 +447,7 @@ src/ai/entity_spawner.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/entity_spawner.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/entity_spawner.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/entity_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/entity_spawner.cpp.o
 .PHONY : src/ai/entity_spawner.cpp.o
 
 src/ai/entity_spawner.i: src/ai/entity_spawner.cpp.i
@@ -407,6 +460,7 @@ src/ai/entity_spawner.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/entity_spawner.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/entity_spawner.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/entity_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/entity_spawner.cpp.i
 .PHONY : src/ai/entity_spawner.cpp.i
 
 src/ai/entity_spawner.s: src/ai/entity_spawner.cpp.s
@@ -419,6 +473,7 @@ src/ai/entity_spawner.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/entity_spawner.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/entity_spawner.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/entity_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/entity_spawner.cpp.s
 .PHONY : src/ai/entity_spawner.cpp.s
 
 src/ai/mob_spawner.o: src/ai/mob_spawner.cpp.o
@@ -431,6 +486,7 @@ src/ai/mob_spawner.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/mob_spawner.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/mob_spawner.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/mob_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/mob_spawner.cpp.o
 .PHONY : src/ai/mob_spawner.cpp.o
 
 src/ai/mob_spawner.i: src/ai/mob_spawner.cpp.i
@@ -443,6 +499,7 @@ src/ai/mob_spawner.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/mob_spawner.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/mob_spawner.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/mob_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/mob_spawner.cpp.i
 .PHONY : src/ai/mob_spawner.cpp.i
 
 src/ai/mob_spawner.s: src/ai/mob_spawner.cpp.s
@@ -455,6 +512,7 @@ src/ai/mob_spawner.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/mob_spawner.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/mob_spawner.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/mob_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/mob_spawner.cpp.s
 .PHONY : src/ai/mob_spawner.cpp.s
 
 src/animation/animation.o: src/animation/animation.cpp.o
@@ -467,6 +525,7 @@ src/animation/animation.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/animation/animation.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/animation/animation.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/animation/animation.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/animation/animation.cpp.o
 .PHONY : src/animation/animation.cpp.o
 
 src/animation/animation.i: src/animation/animation.cpp.i
@@ -479,6 +538,7 @@ src/animation/animation.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/animation/animation.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/animation/animation.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/animation/animation.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/animation/animation.cpp.i
 .PHONY : src/animation/animation.cpp.i
 
 src/animation/animation.s: src/animation/animation.cpp.s
@@ -491,6 +551,7 @@ src/animation/animation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/animation/animation.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/animation/animation.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/animation/animation.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/animation/animation.cpp.s
 .PHONY : src/animation/animation.cpp.s
 
 src/animation/animation_state_machine.o: src/animation/animation_state_machine.cpp.o
@@ -503,6 +564,7 @@ src/animation/animation_state_machine.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/animation/animation_state_machine.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/animation/animation_state_machine.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/animation/animation_state_machine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/animation/animation_state_machine.cpp.o
 .PHONY : src/animation/animation_state_machine.cpp.o
 
 src/animation/animation_state_machine.i: src/animation/animation_state_machine.cpp.i
@@ -515,6 +577,7 @@ src/animation/animation_state_machine.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/animation/animation_state_machine.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/animation/animation_state_machine.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/animation/animation_state_machine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/animation/animation_state_machine.cpp.i
 .PHONY : src/animation/animation_state_machine.cpp.i
 
 src/animation/animation_state_machine.s: src/animation/animation_state_machine.cpp.s
@@ -527,6 +590,7 @@ src/animation/animation_state_machine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/animation/animation_state_machine.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/animation/animation_state_machine.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/animation/animation_state_machine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/animation/animation_state_machine.cpp.s
 .PHONY : src/animation/animation_state_machine.cpp.s
 
 src/audio/audio_engine.o: src/audio/audio_engine.cpp.o
@@ -539,6 +603,7 @@ src/audio/audio_engine.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/audio/audio_engine.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_engine.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/audio/audio_engine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/audio/audio_engine.cpp.o
 .PHONY : src/audio/audio_engine.cpp.o
 
 src/audio/audio_engine.i: src/audio/audio_engine.cpp.i
@@ -551,6 +616,7 @@ src/audio/audio_engine.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/audio/audio_engine.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_engine.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/audio/audio_engine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/audio/audio_engine.cpp.i
 .PHONY : src/audio/audio_engine.cpp.i
 
 src/audio/audio_engine.s: src/audio/audio_engine.cpp.s
@@ -563,6 +629,7 @@ src/audio/audio_engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/audio/audio_engine.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_engine.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/audio/audio_engine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/audio/audio_engine.cpp.s
 .PHONY : src/audio/audio_engine.cpp.s
 
 src/audio/audio_events.o: src/audio/audio_events.cpp.o
@@ -575,6 +642,7 @@ src/audio/audio_events.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/audio/audio_events.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_events.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/audio/audio_events.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/audio/audio_events.cpp.o
 .PHONY : src/audio/audio_events.cpp.o
 
 src/audio/audio_events.i: src/audio/audio_events.cpp.i
@@ -587,6 +655,7 @@ src/audio/audio_events.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/audio/audio_events.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_events.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/audio/audio_events.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/audio/audio_events.cpp.i
 .PHONY : src/audio/audio_events.cpp.i
 
 src/audio/audio_events.s: src/audio/audio_events.cpp.s
@@ -599,6 +668,7 @@ src/audio/audio_events.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/audio/audio_events.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_events.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/audio/audio_events.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/audio/audio_events.cpp.s
 .PHONY : src/audio/audio_events.cpp.s
 
 src/audio/audio_system.o: src/audio/audio_system.cpp.o
@@ -611,6 +681,7 @@ src/audio/audio_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/audio/audio_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/audio/audio_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/audio/audio_system.cpp.o
 .PHONY : src/audio/audio_system.cpp.o
 
 src/audio/audio_system.i: src/audio/audio_system.cpp.i
@@ -623,6 +694,7 @@ src/audio/audio_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/audio/audio_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/audio/audio_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/audio/audio_system.cpp.i
 .PHONY : src/audio/audio_system.cpp.i
 
 src/audio/audio_system.s: src/audio/audio_system.cpp.s
@@ -635,6 +707,7 @@ src/audio/audio_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/audio/audio_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/audio_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/audio/audio_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/audio/audio_system.cpp.s
 .PHONY : src/audio/audio_system.cpp.s
 
 src/audio/sound_manager.o: src/audio/sound_manager.cpp.o
@@ -647,6 +720,7 @@ src/audio/sound_manager.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/audio/sound_manager.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/sound_manager.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/audio/sound_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/audio/sound_manager.cpp.o
 .PHONY : src/audio/sound_manager.cpp.o
 
 src/audio/sound_manager.i: src/audio/sound_manager.cpp.i
@@ -659,6 +733,7 @@ src/audio/sound_manager.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/audio/sound_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/sound_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/audio/sound_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/audio/sound_manager.cpp.i
 .PHONY : src/audio/sound_manager.cpp.i
 
 src/audio/sound_manager.s: src/audio/sound_manager.cpp.s
@@ -671,6 +746,7 @@ src/audio/sound_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/audio/sound_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/audio/sound_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/audio/sound_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/audio/sound_manager.cpp.s
 .PHONY : src/audio/sound_manager.cpp.s
 
 src/core/achievements.o: src/core/achievements.cpp.o
@@ -683,6 +759,7 @@ src/core/achievements.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/achievements.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/achievements.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/achievements.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/achievements.cpp.o
 .PHONY : src/core/achievements.cpp.o
 
 src/core/achievements.i: src/core/achievements.cpp.i
@@ -695,6 +772,7 @@ src/core/achievements.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/achievements.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/achievements.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/achievements.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/achievements.cpp.i
 .PHONY : src/core/achievements.cpp.i
 
 src/core/achievements.s: src/core/achievements.cpp.s
@@ -707,6 +785,7 @@ src/core/achievements.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/achievements.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/achievements.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/achievements.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/achievements.cpp.s
 .PHONY : src/core/achievements.cpp.s
 
 src/core/application.o: src/core/application.cpp.o
@@ -743,6 +822,7 @@ src/core/asset_importer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/asset_importer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/asset_importer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/asset_importer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/asset_importer.cpp.o
 .PHONY : src/core/asset_importer.cpp.o
 
 src/core/asset_importer.i: src/core/asset_importer.cpp.i
@@ -755,6 +835,7 @@ src/core/asset_importer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/asset_importer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/asset_importer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/asset_importer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/asset_importer.cpp.i
 .PHONY : src/core/asset_importer.cpp.i
 
 src/core/asset_importer.s: src/core/asset_importer.cpp.s
@@ -767,6 +848,7 @@ src/core/asset_importer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/asset_importer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/asset_importer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/asset_importer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/asset_importer.cpp.s
 .PHONY : src/core/asset_importer.cpp.s
 
 src/core/asset_manager.o: src/core/asset_manager.cpp.o
@@ -779,6 +861,7 @@ src/core/asset_manager.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/asset_manager.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/asset_manager.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/asset_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/asset_manager.cpp.o
 .PHONY : src/core/asset_manager.cpp.o
 
 src/core/asset_manager.i: src/core/asset_manager.cpp.i
@@ -791,6 +874,7 @@ src/core/asset_manager.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/asset_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/asset_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/asset_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/asset_manager.cpp.i
 .PHONY : src/core/asset_manager.cpp.i
 
 src/core/asset_manager.s: src/core/asset_manager.cpp.s
@@ -803,6 +887,7 @@ src/core/asset_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/asset_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/asset_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/asset_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/asset_manager.cpp.s
 .PHONY : src/core/asset_manager.cpp.s
 
 src/core/config.o: src/core/config.cpp.o
@@ -815,6 +900,7 @@ src/core/config.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/config.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/config.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/config.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/config.cpp.o
 .PHONY : src/core/config.cpp.o
 
 src/core/config.i: src/core/config.cpp.i
@@ -827,6 +913,7 @@ src/core/config.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/config.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/config.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/config.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/config.cpp.i
 .PHONY : src/core/config.cpp.i
 
 src/core/config.s: src/core/config.cpp.s
@@ -839,6 +926,7 @@ src/core/config.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/config.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/config.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/config.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/config.cpp.s
 .PHONY : src/core/config.cpp.s
 
 src/core/crafting.o: src/core/crafting.cpp.o
@@ -851,6 +939,7 @@ src/core/crafting.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/crafting.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/crafting.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/crafting.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/crafting.cpp.o
 .PHONY : src/core/crafting.cpp.o
 
 src/core/crafting.i: src/core/crafting.cpp.i
@@ -863,6 +952,7 @@ src/core/crafting.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/crafting.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/crafting.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/crafting.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/crafting.cpp.i
 .PHONY : src/core/crafting.cpp.i
 
 src/core/crafting.s: src/core/crafting.cpp.s
@@ -875,6 +965,7 @@ src/core/crafting.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/crafting.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/crafting.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/crafting.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/crafting.cpp.s
 .PHONY : src/core/crafting.cpp.s
 
 src/core/crafting_inventory_bridge.o: src/core/crafting_inventory_bridge.cpp.o
@@ -887,6 +978,7 @@ src/core/crafting_inventory_bridge.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/crafting_inventory_bridge.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/crafting_inventory_bridge.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/crafting_inventory_bridge.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/crafting_inventory_bridge.cpp.o
 .PHONY : src/core/crafting_inventory_bridge.cpp.o
 
 src/core/crafting_inventory_bridge.i: src/core/crafting_inventory_bridge.cpp.i
@@ -899,6 +991,7 @@ src/core/crafting_inventory_bridge.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/crafting_inventory_bridge.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/crafting_inventory_bridge.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/crafting_inventory_bridge.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/crafting_inventory_bridge.cpp.i
 .PHONY : src/core/crafting_inventory_bridge.cpp.i
 
 src/core/crafting_inventory_bridge.s: src/core/crafting_inventory_bridge.cpp.s
@@ -911,6 +1004,7 @@ src/core/crafting_inventory_bridge.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/crafting_inventory_bridge.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/crafting_inventory_bridge.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/crafting_inventory_bridge.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/crafting_inventory_bridge.cpp.s
 .PHONY : src/core/crafting_inventory_bridge.cpp.s
 
 src/core/engine.o: src/core/engine.cpp.o
@@ -947,6 +1041,7 @@ src/core/entity.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/entity.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/entity.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/entity.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/entity.cpp.o
 .PHONY : src/core/entity.cpp.o
 
 src/core/entity.i: src/core/entity.cpp.i
@@ -959,6 +1054,7 @@ src/core/entity.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/entity.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/entity.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/entity.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/entity.cpp.i
 .PHONY : src/core/entity.cpp.i
 
 src/core/entity.s: src/core/entity.cpp.s
@@ -971,6 +1067,7 @@ src/core/entity.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/entity.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/entity.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/entity.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/entity.cpp.s
 .PHONY : src/core/entity.cpp.s
 
 src/core/item_system.o: src/core/item_system.cpp.o
@@ -983,6 +1080,7 @@ src/core/item_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/item_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/item_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/item_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/item_system.cpp.o
 .PHONY : src/core/item_system.cpp.o
 
 src/core/item_system.i: src/core/item_system.cpp.i
@@ -995,6 +1093,7 @@ src/core/item_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/item_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/item_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/item_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/item_system.cpp.i
 .PHONY : src/core/item_system.cpp.i
 
 src/core/item_system.s: src/core/item_system.cpp.s
@@ -1007,6 +1106,7 @@ src/core/item_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/item_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/item_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/item_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/item_system.cpp.s
 .PHONY : src/core/item_system.cpp.s
 
 src/core/logger.o: src/core/logger.cpp.o
@@ -1019,6 +1119,7 @@ src/core/logger.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/logger.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/logger.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/logger.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/logger.cpp.o
 .PHONY : src/core/logger.cpp.o
 
 src/core/logger.i: src/core/logger.cpp.i
@@ -1031,6 +1132,7 @@ src/core/logger.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/logger.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/logger.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/logger.cpp.i
 .PHONY : src/core/logger.cpp.i
 
 src/core/logger.s: src/core/logger.cpp.s
@@ -1043,6 +1145,7 @@ src/core/logger.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/logger.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/logger.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/logger.cpp.s
 .PHONY : src/core/logger.cpp.s
 
 src/core/player_controller.o: src/core/player_controller.cpp.o
@@ -1055,6 +1158,7 @@ src/core/player_controller.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/player_controller.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/player_controller.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/player_controller.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/player_controller.cpp.o
 .PHONY : src/core/player_controller.cpp.o
 
 src/core/player_controller.i: src/core/player_controller.cpp.i
@@ -1067,6 +1171,7 @@ src/core/player_controller.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/player_controller.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/player_controller.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/player_controller.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/player_controller.cpp.i
 .PHONY : src/core/player_controller.cpp.i
 
 src/core/player_controller.s: src/core/player_controller.cpp.s
@@ -1079,6 +1184,7 @@ src/core/player_controller.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/player_controller.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/player_controller.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/player_controller.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/player_controller.cpp.s
 .PHONY : src/core/player_controller.cpp.s
 
 src/core/raycast.o: src/core/raycast.cpp.o
@@ -1091,6 +1197,7 @@ src/core/raycast.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/raycast.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/raycast.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/raycast.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/raycast.cpp.o
 .PHONY : src/core/raycast.cpp.o
 
 src/core/raycast.i: src/core/raycast.cpp.i
@@ -1103,6 +1210,7 @@ src/core/raycast.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/raycast.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/raycast.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/raycast.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/raycast.cpp.i
 .PHONY : src/core/raycast.cpp.i
 
 src/core/raycast.s: src/core/raycast.cpp.s
@@ -1115,6 +1223,7 @@ src/core/raycast.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/raycast.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/raycast.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/raycast.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/raycast.cpp.s
 .PHONY : src/core/raycast.cpp.s
 
 src/core/resource_pack.o: src/core/resource_pack.cpp.o
@@ -1127,6 +1236,7 @@ src/core/resource_pack.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/resource_pack.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/resource_pack.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/resource_pack.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/resource_pack.cpp.o
 .PHONY : src/core/resource_pack.cpp.o
 
 src/core/resource_pack.i: src/core/resource_pack.cpp.i
@@ -1139,6 +1249,7 @@ src/core/resource_pack.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/resource_pack.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/resource_pack.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/resource_pack.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/resource_pack.cpp.i
 .PHONY : src/core/resource_pack.cpp.i
 
 src/core/resource_pack.s: src/core/resource_pack.cpp.s
@@ -1151,6 +1262,7 @@ src/core/resource_pack.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/resource_pack.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/resource_pack.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/resource_pack.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/resource_pack.cpp.s
 .PHONY : src/core/resource_pack.cpp.s
 
 src/core/save_system.o: src/core/save_system.cpp.o
@@ -1163,6 +1275,7 @@ src/core/save_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/save_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/save_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/save_system.cpp.o
 .PHONY : src/core/save_system.cpp.o
 
 src/core/save_system.i: src/core/save_system.cpp.i
@@ -1175,6 +1288,7 @@ src/core/save_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/save_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/save_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/save_system.cpp.i
 .PHONY : src/core/save_system.cpp.i
 
 src/core/save_system.s: src/core/save_system.cpp.s
@@ -1187,6 +1301,7 @@ src/core/save_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/save_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/save_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/save_system.cpp.s
 .PHONY : src/core/save_system.cpp.s
 
 src/core/time_system.o: src/core/time_system.cpp.o
@@ -1199,6 +1314,7 @@ src/core/time_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/time_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/time_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/time_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/time_system.cpp.o
 .PHONY : src/core/time_system.cpp.o
 
 src/core/time_system.i: src/core/time_system.cpp.i
@@ -1211,6 +1327,7 @@ src/core/time_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/time_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/time_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/time_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/time_system.cpp.i
 .PHONY : src/core/time_system.cpp.i
 
 src/core/time_system.s: src/core/time_system.cpp.s
@@ -1223,6 +1340,7 @@ src/core/time_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/time_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/time_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/time_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/time_system.cpp.s
 .PHONY : src/core/time_system.cpp.s
 
 src/core/weather_system.o: src/core/weather_system.cpp.o
@@ -1235,6 +1353,7 @@ src/core/weather_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/weather_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/weather_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/weather_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/weather_system.cpp.o
 .PHONY : src/core/weather_system.cpp.o
 
 src/core/weather_system.i: src/core/weather_system.cpp.i
@@ -1247,6 +1366,7 @@ src/core/weather_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/weather_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/weather_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/weather_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/weather_system.cpp.i
 .PHONY : src/core/weather_system.cpp.i
 
 src/core/weather_system.s: src/core/weather_system.cpp.s
@@ -1259,6 +1379,7 @@ src/core/weather_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/weather_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/weather_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/weather_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/weather_system.cpp.s
 .PHONY : src/core/weather_system.cpp.s
 
 src/debug/debug_renderer.o: src/debug/debug_renderer.cpp.o
@@ -1271,6 +1392,7 @@ src/debug/debug_renderer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/debug/debug_renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/debug/debug_renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/debug/debug_renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/debug/debug_renderer.cpp.o
 .PHONY : src/debug/debug_renderer.cpp.o
 
 src/debug/debug_renderer.i: src/debug/debug_renderer.cpp.i
@@ -1283,6 +1405,7 @@ src/debug/debug_renderer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/debug/debug_renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/debug/debug_renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/debug/debug_renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/debug/debug_renderer.cpp.i
 .PHONY : src/debug/debug_renderer.cpp.i
 
 src/debug/debug_renderer.s: src/debug/debug_renderer.cpp.s
@@ -1295,6 +1418,7 @@ src/debug/debug_renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/debug/debug_renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/debug/debug_renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/debug/debug_renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/debug/debug_renderer.cpp.s
 .PHONY : src/debug/debug_renderer.cpp.s
 
 src/debug/debug_system.o: src/debug/debug_system.cpp.o
@@ -1307,6 +1431,7 @@ src/debug/debug_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/debug/debug_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/debug/debug_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/debug/debug_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/debug/debug_system.cpp.o
 .PHONY : src/debug/debug_system.cpp.o
 
 src/debug/debug_system.i: src/debug/debug_system.cpp.i
@@ -1319,6 +1444,7 @@ src/debug/debug_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/debug/debug_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/debug/debug_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/debug/debug_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/debug/debug_system.cpp.i
 .PHONY : src/debug/debug_system.cpp.i
 
 src/debug/debug_system.s: src/debug/debug_system.cpp.s
@@ -1331,6 +1457,7 @@ src/debug/debug_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/debug/debug_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/debug/debug_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/debug/debug_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/debug/debug_system.cpp.s
 .PHONY : src/debug/debug_system.cpp.s
 
 src/editor/asset_browser.o: src/editor/asset_browser.cpp.o
@@ -1343,6 +1470,7 @@ src/editor/asset_browser.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/asset_browser.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/editor/asset_browser.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/editor/asset_browser.cpp.o
 .PHONY : src/editor/asset_browser.cpp.o
 
 src/editor/asset_browser.i: src/editor/asset_browser.cpp.i
@@ -1355,6 +1483,7 @@ src/editor/asset_browser.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/asset_browser.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/editor/asset_browser.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/editor/asset_browser.cpp.i
 .PHONY : src/editor/asset_browser.cpp.i
 
 src/editor/asset_browser.s: src/editor/asset_browser.cpp.s
@@ -1367,6 +1496,7 @@ src/editor/asset_browser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/editor/asset_browser.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/asset_browser.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/editor/asset_browser.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/editor/asset_browser.cpp.s
 .PHONY : src/editor/asset_browser.cpp.s
 
 src/editor/entity_spawner.o: src/editor/entity_spawner.cpp.o
@@ -1379,6 +1509,7 @@ src/editor/entity_spawner.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/editor/entity_spawner.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/entity_spawner.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/editor/entity_spawner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/editor/entity_spawner.cpp.o
 .PHONY : src/editor/entity_spawner.cpp.o
 
 src/editor/entity_spawner.i: src/editor/entity_spawner.cpp.i
@@ -1391,6 +1522,7 @@ src/editor/entity_spawner.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/editor/entity_spawner.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/entity_spawner.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/editor/entity_spawner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/editor/entity_spawner.cpp.i
 .PHONY : src/editor/entity_spawner.cpp.i
 
 src/editor/entity_spawner.s: src/editor/entity_spawner.cpp.s
@@ -1403,6 +1535,7 @@ src/editor/entity_spawner.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/editor/entity_spawner.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/entity_spawner.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/editor/entity_spawner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/editor/entity_spawner.cpp.s
 .PHONY : src/editor/entity_spawner.cpp.s
 
 src/editor/in_game_editor.o: src/editor/in_game_editor.cpp.o
@@ -1415,6 +1548,7 @@ src/editor/in_game_editor.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/editor/in_game_editor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/editor/in_game_editor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/editor/in_game_editor.cpp.o
 .PHONY : src/editor/in_game_editor.cpp.o
 
 src/editor/in_game_editor.i: src/editor/in_game_editor.cpp.i
@@ -1427,6 +1561,7 @@ src/editor/in_game_editor.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/editor/in_game_editor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/editor/in_game_editor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/editor/in_game_editor.cpp.i
 .PHONY : src/editor/in_game_editor.cpp.i
 
 src/editor/in_game_editor.s: src/editor/in_game_editor.cpp.s
@@ -1439,6 +1574,7 @@ src/editor/in_game_editor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/editor/in_game_editor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/in_game_editor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/editor/in_game_editor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/editor/in_game_editor.cpp.s
 .PHONY : src/editor/in_game_editor.cpp.s
 
 src/editor/scene_viewport.o: src/editor/scene_viewport.cpp.o
@@ -1451,6 +1587,7 @@ src/editor/scene_viewport.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/editor/scene_viewport.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/scene_viewport.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/editor/scene_viewport.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/editor/scene_viewport.cpp.o
 .PHONY : src/editor/scene_viewport.cpp.o
 
 src/editor/scene_viewport.i: src/editor/scene_viewport.cpp.i
@@ -1463,6 +1600,7 @@ src/editor/scene_viewport.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/editor/scene_viewport.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/scene_viewport.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/editor/scene_viewport.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/editor/scene_viewport.cpp.i
 .PHONY : src/editor/scene_viewport.cpp.i
 
 src/editor/scene_viewport.s: src/editor/scene_viewport.cpp.s
@@ -1475,6 +1613,7 @@ src/editor/scene_viewport.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/editor/scene_viewport.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/editor/scene_viewport.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/editor/scene_viewport.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/editor/scene_viewport.cpp.s
 .PHONY : src/editor/scene_viewport.cpp.s
 
 src/entity/components.o: src/entity/components.cpp.o
@@ -1487,6 +1626,7 @@ src/entity/components.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/entity/components.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/entity/components.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/entity/components.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/entity/components.cpp.o
 .PHONY : src/entity/components.cpp.o
 
 src/entity/components.i: src/entity/components.cpp.i
@@ -1499,6 +1639,7 @@ src/entity/components.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/entity/components.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/entity/components.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/entity/components.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/entity/components.cpp.i
 .PHONY : src/entity/components.cpp.i
 
 src/entity/components.s: src/entity/components.cpp.s
@@ -1511,6 +1652,7 @@ src/entity/components.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/entity/components.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/entity/components.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/entity/components.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/entity/components.cpp.s
 .PHONY : src/entity/components.cpp.s
 
 src/entity/entity.o: src/entity/entity.cpp.o
@@ -1523,6 +1665,7 @@ src/entity/entity.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/entity/entity.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/entity/entity.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/entity/entity.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/entity/entity.cpp.o
 .PHONY : src/entity/entity.cpp.o
 
 src/entity/entity.i: src/entity/entity.cpp.i
@@ -1535,6 +1678,7 @@ src/entity/entity.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/entity/entity.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/entity/entity.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/entity/entity.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/entity/entity.cpp.i
 .PHONY : src/entity/entity.cpp.i
 
 src/entity/entity.s: src/entity/entity.cpp.s
@@ -1547,6 +1691,7 @@ src/entity/entity.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/entity/entity.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/entity/entity.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/entity/entity.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/entity/entity.cpp.s
 .PHONY : src/entity/entity.cpp.s
 
 src/game/block_interaction.o: src/game/block_interaction.cpp.o
@@ -1559,6 +1704,7 @@ src/game/block_interaction.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/block_interaction.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/block_interaction.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/block_interaction.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/block_interaction.cpp.o
 .PHONY : src/game/block_interaction.cpp.o
 
 src/game/block_interaction.i: src/game/block_interaction.cpp.i
@@ -1571,6 +1717,7 @@ src/game/block_interaction.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/block_interaction.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/block_interaction.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/block_interaction.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/block_interaction.cpp.i
 .PHONY : src/game/block_interaction.cpp.i
 
 src/game/block_interaction.s: src/game/block_interaction.cpp.s
@@ -1583,6 +1730,7 @@ src/game/block_interaction.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/block_interaction.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/block_interaction.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/block_interaction.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/block_interaction.cpp.s
 .PHONY : src/game/block_interaction.cpp.s
 
 src/game/combat_system.o: src/game/combat_system.cpp.o
@@ -1595,6 +1743,7 @@ src/game/combat_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/combat_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/combat_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/combat_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/combat_system.cpp.o
 .PHONY : src/game/combat_system.cpp.o
 
 src/game/combat_system.i: src/game/combat_system.cpp.i
@@ -1607,6 +1756,7 @@ src/game/combat_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/combat_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/combat_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/combat_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/combat_system.cpp.i
 .PHONY : src/game/combat_system.cpp.i
 
 src/game/combat_system.s: src/game/combat_system.cpp.s
@@ -1619,6 +1769,7 @@ src/game/combat_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/combat_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/combat_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/combat_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/combat_system.cpp.s
 .PHONY : src/game/combat_system.cpp.s
 
 src/game/day_night_cycle.o: src/game/day_night_cycle.cpp.o
@@ -1631,6 +1782,7 @@ src/game/day_night_cycle.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/day_night_cycle.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/day_night_cycle.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/day_night_cycle.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/day_night_cycle.cpp.o
 .PHONY : src/game/day_night_cycle.cpp.o
 
 src/game/day_night_cycle.i: src/game/day_night_cycle.cpp.i
@@ -1643,6 +1795,7 @@ src/game/day_night_cycle.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/day_night_cycle.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/day_night_cycle.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/day_night_cycle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/day_night_cycle.cpp.i
 .PHONY : src/game/day_night_cycle.cpp.i
 
 src/game/day_night_cycle.s: src/game/day_night_cycle.cpp.s
@@ -1655,6 +1808,7 @@ src/game/day_night_cycle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/day_night_cycle.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/day_night_cycle.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/day_night_cycle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/day_night_cycle.cpp.s
 .PHONY : src/game/day_night_cycle.cpp.s
 
 src/game/player_stats.o: src/game/player_stats.cpp.o
@@ -1667,6 +1821,7 @@ src/game/player_stats.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/player_stats.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/player_stats.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/player_stats.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/player_stats.cpp.o
 .PHONY : src/game/player_stats.cpp.o
 
 src/game/player_stats.i: src/game/player_stats.cpp.i
@@ -1679,6 +1834,7 @@ src/game/player_stats.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/player_stats.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/player_stats.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/player_stats.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/player_stats.cpp.i
 .PHONY : src/game/player_stats.cpp.i
 
 src/game/player_stats.s: src/game/player_stats.cpp.s
@@ -1691,6 +1847,7 @@ src/game/player_stats.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/player_stats.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/player_stats.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/player_stats.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/player_stats.cpp.s
 .PHONY : src/game/player_stats.cpp.s
 
 src/game/sandbox_mode.o: src/game/sandbox_mode.cpp.o
@@ -1703,6 +1860,7 @@ src/game/sandbox_mode.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/sandbox_mode.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/sandbox_mode.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/sandbox_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/sandbox_mode.cpp.o
 .PHONY : src/game/sandbox_mode.cpp.o
 
 src/game/sandbox_mode.i: src/game/sandbox_mode.cpp.i
@@ -1715,6 +1873,7 @@ src/game/sandbox_mode.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/sandbox_mode.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/sandbox_mode.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/sandbox_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/sandbox_mode.cpp.i
 .PHONY : src/game/sandbox_mode.cpp.i
 
 src/game/sandbox_mode.s: src/game/sandbox_mode.cpp.s
@@ -1727,6 +1886,7 @@ src/game/sandbox_mode.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/sandbox_mode.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/sandbox_mode.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/sandbox_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/sandbox_mode.cpp.s
 .PHONY : src/game/sandbox_mode.cpp.s
 
 src/game/survival_mode.o: src/game/survival_mode.cpp.o
@@ -1739,6 +1899,7 @@ src/game/survival_mode.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/survival_mode.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/survival_mode.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/survival_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/survival_mode.cpp.o
 .PHONY : src/game/survival_mode.cpp.o
 
 src/game/survival_mode.i: src/game/survival_mode.cpp.i
@@ -1751,6 +1912,7 @@ src/game/survival_mode.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/survival_mode.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/survival_mode.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/survival_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/survival_mode.cpp.i
 .PHONY : src/game/survival_mode.cpp.i
 
 src/game/survival_mode.s: src/game/survival_mode.cpp.s
@@ -1763,6 +1925,7 @@ src/game/survival_mode.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/survival_mode.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/survival_mode.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/survival_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/survival_mode.cpp.s
 .PHONY : src/game/survival_mode.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -1799,6 +1962,7 @@ src/math/mat4.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/math/mat4.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/math/mat4.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/math/mat4.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/math/mat4.cpp.o
 .PHONY : src/math/mat4.cpp.o
 
 src/math/mat4.i: src/math/mat4.cpp.i
@@ -1811,6 +1975,7 @@ src/math/mat4.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/math/mat4.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/math/mat4.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/math/mat4.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/math/mat4.cpp.i
 .PHONY : src/math/mat4.cpp.i
 
 src/math/mat4.s: src/math/mat4.cpp.s
@@ -1823,6 +1988,7 @@ src/math/mat4.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/math/mat4.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/math/mat4.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/math/mat4.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/math/mat4.cpp.s
 .PHONY : src/math/mat4.cpp.s
 
 src/math/vec3.o: src/math/vec3.cpp.o
@@ -1835,6 +2001,7 @@ src/math/vec3.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/math/vec3.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/math/vec3.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/math/vec3.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/math/vec3.cpp.o
 .PHONY : src/math/vec3.cpp.o
 
 src/math/vec3.i: src/math/vec3.cpp.i
@@ -1847,6 +2014,7 @@ src/math/vec3.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/math/vec3.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/math/vec3.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/math/vec3.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/math/vec3.cpp.i
 .PHONY : src/math/vec3.cpp.i
 
 src/math/vec3.s: src/math/vec3.cpp.s
@@ -1859,6 +2027,7 @@ src/math/vec3.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/math/vec3.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/math/vec3.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/math/vec3.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/math/vec3.cpp.s
 .PHONY : src/math/vec3.cpp.s
 
 src/network/entity_replication.o: src/network/entity_replication.cpp.o
@@ -1871,6 +2040,7 @@ src/network/entity_replication.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/entity_replication.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/entity_replication.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/entity_replication.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/entity_replication.cpp.o
 .PHONY : src/network/entity_replication.cpp.o
 
 src/network/entity_replication.i: src/network/entity_replication.cpp.i
@@ -1883,6 +2053,7 @@ src/network/entity_replication.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/entity_replication.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/entity_replication.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/entity_replication.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/entity_replication.cpp.i
 .PHONY : src/network/entity_replication.cpp.i
 
 src/network/entity_replication.s: src/network/entity_replication.cpp.s
@@ -1895,7 +2066,125 @@ src/network/entity_replication.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/entity_replication.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/entity_replication.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/entity_replication.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/entity_replication.cpp.s
 .PHONY : src/network/entity_replication.cpp.s
+
+src/network/game_client.o: src/network/game_client.cpp.o
+.PHONY : src/network/game_client.o
+
+# target to build an object file
+src/network/game_client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/game_client.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/game_client.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/game_client.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/game_client.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/game_client.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/game_client.cpp.o
+.PHONY : src/network/game_client.cpp.o
+
+src/network/game_client.i: src/network/game_client.cpp.i
+.PHONY : src/network/game_client.i
+
+# target to preprocess a source file
+src/network/game_client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/game_client.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/game_client.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/game_client.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/game_client.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/game_client.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/game_client.cpp.i
+.PHONY : src/network/game_client.cpp.i
+
+src/network/game_client.s: src/network/game_client.cpp.s
+.PHONY : src/network/game_client.s
+
+# target to generate assembly for a file
+src/network/game_client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/game_client.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/game_client.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/game_client.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/game_client.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/game_client.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/game_client.cpp.s
+.PHONY : src/network/game_client.cpp.s
+
+src/network/game_server.o: src/network/game_server.cpp.o
+.PHONY : src/network/game_server.o
+
+# target to build an object file
+src/network/game_server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/game_server.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/game_server.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/game_server.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/game_server.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/game_server.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/game_server.cpp.o
+.PHONY : src/network/game_server.cpp.o
+
+src/network/game_server.i: src/network/game_server.cpp.i
+.PHONY : src/network/game_server.i
+
+# target to preprocess a source file
+src/network/game_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/game_server.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/game_server.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/game_server.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/game_server.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/game_server.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/game_server.cpp.i
+.PHONY : src/network/game_server.cpp.i
+
+src/network/game_server.s: src/network/game_server.cpp.s
+.PHONY : src/network/game_server.s
+
+# target to generate assembly for a file
+src/network/game_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/game_server.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/game_server.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/game_server.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/game_server.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/game_server.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/game_server.cpp.s
+.PHONY : src/network/game_server.cpp.s
+
+src/network/multiplayer_game.o: src/network/multiplayer_game.cpp.o
+.PHONY : src/network/multiplayer_game.o
+
+# target to build an object file
+src/network/multiplayer_game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/multiplayer_game.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/multiplayer_game.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/multiplayer_game.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/multiplayer_game.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/multiplayer_game.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/multiplayer_game.cpp.o
+.PHONY : src/network/multiplayer_game.cpp.o
+
+src/network/multiplayer_game.i: src/network/multiplayer_game.cpp.i
+.PHONY : src/network/multiplayer_game.i
+
+# target to preprocess a source file
+src/network/multiplayer_game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/multiplayer_game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/multiplayer_game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/multiplayer_game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/multiplayer_game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/multiplayer_game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/multiplayer_game.cpp.i
+.PHONY : src/network/multiplayer_game.cpp.i
+
+src/network/multiplayer_game.s: src/network/multiplayer_game.cpp.s
+.PHONY : src/network/multiplayer_game.s
+
+# target to generate assembly for a file
+src/network/multiplayer_game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/multiplayer_game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/multiplayer_game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/multiplayer_game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/multiplayer_game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/multiplayer_game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/multiplayer_game.cpp.s
+.PHONY : src/network/multiplayer_game.cpp.s
 
 src/network/network_architecture.o: src/network/network_architecture.cpp.o
 .PHONY : src/network/network_architecture.o
@@ -1907,6 +2196,7 @@ src/network/network_architecture.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/network_architecture.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/network_architecture.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/network_architecture.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/network_architecture.cpp.o
 .PHONY : src/network/network_architecture.cpp.o
 
 src/network/network_architecture.i: src/network/network_architecture.cpp.i
@@ -1919,6 +2209,7 @@ src/network/network_architecture.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/network_architecture.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/network_architecture.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/network_architecture.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/network_architecture.cpp.i
 .PHONY : src/network/network_architecture.cpp.i
 
 src/network/network_architecture.s: src/network/network_architecture.cpp.s
@@ -1931,6 +2222,7 @@ src/network/network_architecture.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/network_architecture.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/network_architecture.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/network_architecture.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/network_architecture.cpp.s
 .PHONY : src/network/network_architecture.cpp.s
 
 src/network/network_manager.o: src/network/network_manager.cpp.o
@@ -1943,6 +2235,7 @@ src/network/network_manager.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/network_manager.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/network_manager.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/network_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/network_manager.cpp.o
 .PHONY : src/network/network_manager.cpp.o
 
 src/network/network_manager.i: src/network/network_manager.cpp.i
@@ -1955,6 +2248,7 @@ src/network/network_manager.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/network_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/network_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/network_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/network_manager.cpp.i
 .PHONY : src/network/network_manager.cpp.i
 
 src/network/network_manager.s: src/network/network_manager.cpp.s
@@ -1967,6 +2261,7 @@ src/network/network_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/network_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/network_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/network_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/network_manager.cpp.s
 .PHONY : src/network/network_manager.cpp.s
 
 src/network/networked_game_mode.o: src/network/networked_game_mode.cpp.o
@@ -1979,6 +2274,7 @@ src/network/networked_game_mode.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/networked_game_mode.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/networked_game_mode.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/networked_game_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/networked_game_mode.cpp.o
 .PHONY : src/network/networked_game_mode.cpp.o
 
 src/network/networked_game_mode.i: src/network/networked_game_mode.cpp.i
@@ -1991,6 +2287,7 @@ src/network/networked_game_mode.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/networked_game_mode.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/networked_game_mode.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/networked_game_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/networked_game_mode.cpp.i
 .PHONY : src/network/networked_game_mode.cpp.i
 
 src/network/networked_game_mode.s: src/network/networked_game_mode.cpp.s
@@ -2003,6 +2300,7 @@ src/network/networked_game_mode.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/networked_game_mode.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/networked_game_mode.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/networked_game_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/networked_game_mode.cpp.s
 .PHONY : src/network/networked_game_mode.cpp.s
 
 src/network/packet.o: src/network/packet.cpp.o
@@ -2015,6 +2313,7 @@ src/network/packet.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/packet.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/packet.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/packet.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/packet.cpp.o
 .PHONY : src/network/packet.cpp.o
 
 src/network/packet.i: src/network/packet.cpp.i
@@ -2027,6 +2326,7 @@ src/network/packet.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/packet.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/packet.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/packet.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/packet.cpp.i
 .PHONY : src/network/packet.cpp.i
 
 src/network/packet.s: src/network/packet.cpp.s
@@ -2039,6 +2339,7 @@ src/network/packet.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/packet.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/packet.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/packet.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/packet.cpp.s
 .PHONY : src/network/packet.cpp.s
 
 src/network/server_authority.o: src/network/server_authority.cpp.o
@@ -2051,6 +2352,7 @@ src/network/server_authority.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/server_authority.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/server_authority.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/server_authority.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/server_authority.cpp.o
 .PHONY : src/network/server_authority.cpp.o
 
 src/network/server_authority.i: src/network/server_authority.cpp.i
@@ -2063,6 +2365,7 @@ src/network/server_authority.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/server_authority.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/server_authority.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/server_authority.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/server_authority.cpp.i
 .PHONY : src/network/server_authority.cpp.i
 
 src/network/server_authority.s: src/network/server_authority.cpp.s
@@ -2075,6 +2378,7 @@ src/network/server_authority.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/server_authority.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/server_authority.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/server_authority.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/server_authority.cpp.s
 .PHONY : src/network/server_authority.cpp.s
 
 src/physics/collision.o: src/physics/collision.cpp.o
@@ -2087,6 +2391,7 @@ src/physics/collision.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/physics/collision.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/collision.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/physics/collision.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/physics/collision.cpp.o
 .PHONY : src/physics/collision.cpp.o
 
 src/physics/collision.i: src/physics/collision.cpp.i
@@ -2099,6 +2404,7 @@ src/physics/collision.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/physics/collision.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/collision.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/physics/collision.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/physics/collision.cpp.i
 .PHONY : src/physics/collision.cpp.i
 
 src/physics/collision.s: src/physics/collision.cpp.s
@@ -2111,6 +2417,7 @@ src/physics/collision.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/physics/collision.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/collision.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/physics/collision.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/physics/collision.cpp.s
 .PHONY : src/physics/collision.cpp.s
 
 src/physics/physics_constraints.o: src/physics/physics_constraints.cpp.o
@@ -2123,6 +2430,7 @@ src/physics/physics_constraints.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/physics/physics_constraints.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/physics_constraints.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/physics/physics_constraints.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/physics/physics_constraints.cpp.o
 .PHONY : src/physics/physics_constraints.cpp.o
 
 src/physics/physics_constraints.i: src/physics/physics_constraints.cpp.i
@@ -2135,6 +2443,7 @@ src/physics/physics_constraints.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/physics/physics_constraints.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/physics_constraints.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/physics/physics_constraints.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/physics/physics_constraints.cpp.i
 .PHONY : src/physics/physics_constraints.cpp.i
 
 src/physics/physics_constraints.s: src/physics/physics_constraints.cpp.s
@@ -2147,6 +2456,7 @@ src/physics/physics_constraints.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/physics/physics_constraints.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/physics_constraints.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/physics/physics_constraints.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/physics/physics_constraints.cpp.s
 .PHONY : src/physics/physics_constraints.cpp.s
 
 src/physics/physics_system.o: src/physics/physics_system.cpp.o
@@ -2159,6 +2469,7 @@ src/physics/physics_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/physics/physics_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/physics_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/physics/physics_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/physics/physics_system.cpp.o
 .PHONY : src/physics/physics_system.cpp.o
 
 src/physics/physics_system.i: src/physics/physics_system.cpp.i
@@ -2171,6 +2482,7 @@ src/physics/physics_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/physics/physics_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/physics_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/physics/physics_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/physics/physics_system.cpp.i
 .PHONY : src/physics/physics_system.cpp.i
 
 src/physics/physics_system.s: src/physics/physics_system.cpp.s
@@ -2183,6 +2495,7 @@ src/physics/physics_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/physics/physics_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/physics_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/physics/physics_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/physics/physics_system.cpp.s
 .PHONY : src/physics/physics_system.cpp.s
 
 src/physics/rigidbody.o: src/physics/rigidbody.cpp.o
@@ -2195,6 +2508,7 @@ src/physics/rigidbody.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/physics/rigidbody.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/rigidbody.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/physics/rigidbody.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/physics/rigidbody.cpp.o
 .PHONY : src/physics/rigidbody.cpp.o
 
 src/physics/rigidbody.i: src/physics/rigidbody.cpp.i
@@ -2207,6 +2521,7 @@ src/physics/rigidbody.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/physics/rigidbody.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/rigidbody.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/physics/rigidbody.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/physics/rigidbody.cpp.i
 .PHONY : src/physics/rigidbody.cpp.i
 
 src/physics/rigidbody.s: src/physics/rigidbody.cpp.s
@@ -2219,6 +2534,7 @@ src/physics/rigidbody.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/physics/rigidbody.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/physics/rigidbody.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/physics/rigidbody.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/physics/rigidbody.cpp.s
 .PHONY : src/physics/rigidbody.cpp.s
 
 src/platform/file_system.o: src/platform/file_system.cpp.o
@@ -2231,6 +2547,7 @@ src/platform/file_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/file_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/file_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/platform/file_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/platform/file_system.cpp.o
 .PHONY : src/platform/file_system.cpp.o
 
 src/platform/file_system.i: src/platform/file_system.cpp.i
@@ -2243,6 +2560,7 @@ src/platform/file_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/file_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/file_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/platform/file_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/platform/file_system.cpp.i
 .PHONY : src/platform/file_system.cpp.i
 
 src/platform/file_system.s: src/platform/file_system.cpp.s
@@ -2255,6 +2573,7 @@ src/platform/file_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/file_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/file_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/platform/file_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/platform/file_system.cpp.s
 .PHONY : src/platform/file_system.cpp.s
 
 src/platform/gamepad.o: src/platform/gamepad.cpp.o
@@ -2267,6 +2586,7 @@ src/platform/gamepad.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/gamepad.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/gamepad.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/platform/gamepad.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/platform/gamepad.cpp.o
 .PHONY : src/platform/gamepad.cpp.o
 
 src/platform/gamepad.i: src/platform/gamepad.cpp.i
@@ -2279,6 +2599,7 @@ src/platform/gamepad.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/gamepad.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/gamepad.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/platform/gamepad.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/platform/gamepad.cpp.i
 .PHONY : src/platform/gamepad.cpp.i
 
 src/platform/gamepad.s: src/platform/gamepad.cpp.s
@@ -2291,6 +2612,7 @@ src/platform/gamepad.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/gamepad.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/gamepad.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/platform/gamepad.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/platform/gamepad.cpp.s
 .PHONY : src/platform/gamepad.cpp.s
 
 src/platform/input_manager.o: src/platform/input_manager.cpp.o
@@ -2303,6 +2625,7 @@ src/platform/input_manager.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/input_manager.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/input_manager.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/platform/input_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/platform/input_manager.cpp.o
 .PHONY : src/platform/input_manager.cpp.o
 
 src/platform/input_manager.i: src/platform/input_manager.cpp.i
@@ -2315,6 +2638,7 @@ src/platform/input_manager.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/input_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/input_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/platform/input_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/platform/input_manager.cpp.i
 .PHONY : src/platform/input_manager.cpp.i
 
 src/platform/input_manager.s: src/platform/input_manager.cpp.s
@@ -2327,6 +2651,7 @@ src/platform/input_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/input_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/input_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/platform/input_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/platform/input_manager.cpp.s
 .PHONY : src/platform/input_manager.cpp.s
 
 src/platform/platform_common.o: src/platform/platform_common.cpp.o
@@ -2339,6 +2664,7 @@ src/platform/platform_common.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/platform_common.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/platform_common.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/platform/platform_common.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/platform/platform_common.cpp.o
 .PHONY : src/platform/platform_common.cpp.o
 
 src/platform/platform_common.i: src/platform/platform_common.cpp.i
@@ -2351,6 +2677,7 @@ src/platform/platform_common.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/platform_common.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/platform_common.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/platform/platform_common.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/platform/platform_common.cpp.i
 .PHONY : src/platform/platform_common.cpp.i
 
 src/platform/platform_common.s: src/platform/platform_common.cpp.s
@@ -2363,6 +2690,7 @@ src/platform/platform_common.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/platform/platform_common.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/platform_common.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/platform/platform_common.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/platform/platform_common.cpp.s
 .PHONY : src/platform/platform_common.cpp.s
 
 src/platform/window.o: src/platform/window.cpp.o
@@ -2372,6 +2700,7 @@ src/platform/window.o: src/platform/window.cpp.o
 src/platform/window.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/window.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/platform/window.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/platform/window.cpp.o
 .PHONY : src/platform/window.cpp.o
 
 src/platform/window.i: src/platform/window.cpp.i
@@ -2381,6 +2710,7 @@ src/platform/window.i: src/platform/window.cpp.i
 src/platform/window.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/window.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/platform/window.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/platform/window.cpp.i
 .PHONY : src/platform/window.cpp.i
 
 src/platform/window.s: src/platform/window.cpp.s
@@ -2390,6 +2720,7 @@ src/platform/window.s: src/platform/window.cpp.s
 src/platform/window.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/platform/window.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/platform/window.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/platform/window.cpp.s
 .PHONY : src/platform/window.cpp.s
 
 src/rendering/camera.o: src/rendering/camera.cpp.o
@@ -2402,6 +2733,7 @@ src/rendering/camera.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/camera.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/camera.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/camera.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/camera.cpp.o
 .PHONY : src/rendering/camera.cpp.o
 
 src/rendering/camera.i: src/rendering/camera.cpp.i
@@ -2414,6 +2746,7 @@ src/rendering/camera.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/camera.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/camera.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/camera.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/camera.cpp.i
 .PHONY : src/rendering/camera.cpp.i
 
 src/rendering/camera.s: src/rendering/camera.cpp.s
@@ -2426,6 +2759,7 @@ src/rendering/camera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/camera.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/camera.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/camera.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/camera.cpp.s
 .PHONY : src/rendering/camera.cpp.s
 
 src/rendering/culling_system.o: src/rendering/culling_system.cpp.o
@@ -2438,6 +2772,7 @@ src/rendering/culling_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/culling_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/culling_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/culling_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/culling_system.cpp.o
 .PHONY : src/rendering/culling_system.cpp.o
 
 src/rendering/culling_system.i: src/rendering/culling_system.cpp.i
@@ -2450,6 +2785,7 @@ src/rendering/culling_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/culling_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/culling_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/culling_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/culling_system.cpp.i
 .PHONY : src/rendering/culling_system.cpp.i
 
 src/rendering/culling_system.s: src/rendering/culling_system.cpp.s
@@ -2462,6 +2798,7 @@ src/rendering/culling_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/culling_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/culling_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/culling_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/culling_system.cpp.s
 .PHONY : src/rendering/culling_system.cpp.s
 
 src/rendering/framebuffer_renderer.o: src/rendering/framebuffer_renderer.cpp.o
@@ -2474,6 +2811,7 @@ src/rendering/framebuffer_renderer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/framebuffer_renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/framebuffer_renderer.cpp.o
 .PHONY : src/rendering/framebuffer_renderer.cpp.o
 
 src/rendering/framebuffer_renderer.i: src/rendering/framebuffer_renderer.cpp.i
@@ -2486,6 +2824,7 @@ src/rendering/framebuffer_renderer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/framebuffer_renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/framebuffer_renderer.cpp.i
 .PHONY : src/rendering/framebuffer_renderer.cpp.i
 
 src/rendering/framebuffer_renderer.s: src/rendering/framebuffer_renderer.cpp.s
@@ -2498,6 +2837,7 @@ src/rendering/framebuffer_renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/framebuffer_renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/framebuffer_renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/framebuffer_renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/framebuffer_renderer.cpp.s
 .PHONY : src/rendering/framebuffer_renderer.cpp.s
 
 src/rendering/frustum.o: src/rendering/frustum.cpp.o
@@ -2510,6 +2850,7 @@ src/rendering/frustum.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/frustum.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/frustum.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/frustum.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/frustum.cpp.o
 .PHONY : src/rendering/frustum.cpp.o
 
 src/rendering/frustum.i: src/rendering/frustum.cpp.i
@@ -2522,6 +2863,7 @@ src/rendering/frustum.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/frustum.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/frustum.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/frustum.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/frustum.cpp.i
 .PHONY : src/rendering/frustum.cpp.i
 
 src/rendering/frustum.s: src/rendering/frustum.cpp.s
@@ -2534,6 +2876,7 @@ src/rendering/frustum.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/frustum.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/frustum.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/frustum.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/frustum.cpp.s
 .PHONY : src/rendering/frustum.cpp.s
 
 src/rendering/light_system.o: src/rendering/light_system.cpp.o
@@ -2546,6 +2889,7 @@ src/rendering/light_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/light_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/light_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/light_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/light_system.cpp.o
 .PHONY : src/rendering/light_system.cpp.o
 
 src/rendering/light_system.i: src/rendering/light_system.cpp.i
@@ -2558,6 +2902,7 @@ src/rendering/light_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/light_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/light_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/light_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/light_system.cpp.i
 .PHONY : src/rendering/light_system.cpp.i
 
 src/rendering/light_system.s: src/rendering/light_system.cpp.s
@@ -2570,6 +2915,7 @@ src/rendering/light_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/light_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/light_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/light_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/light_system.cpp.s
 .PHONY : src/rendering/light_system.cpp.s
 
 src/rendering/lighting.o: src/rendering/lighting.cpp.o
@@ -2582,6 +2928,7 @@ src/rendering/lighting.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/lighting.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/lighting.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/lighting.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/lighting.cpp.o
 .PHONY : src/rendering/lighting.cpp.o
 
 src/rendering/lighting.i: src/rendering/lighting.cpp.i
@@ -2594,6 +2941,7 @@ src/rendering/lighting.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/lighting.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/lighting.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/lighting.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/lighting.cpp.i
 .PHONY : src/rendering/lighting.cpp.i
 
 src/rendering/lighting.s: src/rendering/lighting.cpp.s
@@ -2606,6 +2954,7 @@ src/rendering/lighting.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/lighting.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/lighting.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/lighting.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/lighting.cpp.s
 .PHONY : src/rendering/lighting.cpp.s
 
 src/rendering/mesh.o: src/rendering/mesh.cpp.o
@@ -2618,6 +2967,7 @@ src/rendering/mesh.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/mesh.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/mesh.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/mesh.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/mesh.cpp.o
 .PHONY : src/rendering/mesh.cpp.o
 
 src/rendering/mesh.i: src/rendering/mesh.cpp.i
@@ -2630,6 +2980,7 @@ src/rendering/mesh.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/mesh.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/mesh.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/mesh.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/mesh.cpp.i
 .PHONY : src/rendering/mesh.cpp.i
 
 src/rendering/mesh.s: src/rendering/mesh.cpp.s
@@ -2642,6 +2993,7 @@ src/rendering/mesh.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/mesh.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/mesh.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/mesh.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/mesh.cpp.s
 .PHONY : src/rendering/mesh.cpp.s
 
 src/rendering/particles/particle_system.o: src/rendering/particles/particle_system.cpp.o
@@ -2654,6 +3006,7 @@ src/rendering/particles/particle_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/particles/particle_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/particles/particle_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/particles/particle_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/particles/particle_system.cpp.o
 .PHONY : src/rendering/particles/particle_system.cpp.o
 
 src/rendering/particles/particle_system.i: src/rendering/particles/particle_system.cpp.i
@@ -2666,6 +3019,7 @@ src/rendering/particles/particle_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/particles/particle_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/particles/particle_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/particles/particle_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/particles/particle_system.cpp.i
 .PHONY : src/rendering/particles/particle_system.cpp.i
 
 src/rendering/particles/particle_system.s: src/rendering/particles/particle_system.cpp.s
@@ -2678,6 +3032,7 @@ src/rendering/particles/particle_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/particles/particle_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/particles/particle_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/particles/particle_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/particles/particle_system.cpp.s
 .PHONY : src/rendering/particles/particle_system.cpp.s
 
 src/rendering/pbr_material.o: src/rendering/pbr_material.cpp.o
@@ -2690,6 +3045,7 @@ src/rendering/pbr_material.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/pbr_material.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/pbr_material.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/pbr_material.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/pbr_material.cpp.o
 .PHONY : src/rendering/pbr_material.cpp.o
 
 src/rendering/pbr_material.i: src/rendering/pbr_material.cpp.i
@@ -2702,6 +3058,7 @@ src/rendering/pbr_material.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/pbr_material.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/pbr_material.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/pbr_material.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/pbr_material.cpp.i
 .PHONY : src/rendering/pbr_material.cpp.i
 
 src/rendering/pbr_material.s: src/rendering/pbr_material.cpp.s
@@ -2714,6 +3071,7 @@ src/rendering/pbr_material.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/pbr_material.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/pbr_material.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/pbr_material.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/pbr_material.cpp.s
 .PHONY : src/rendering/pbr_material.cpp.s
 
 src/rendering/post_processing.o: src/rendering/post_processing.cpp.o
@@ -2726,6 +3084,7 @@ src/rendering/post_processing.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/post_processing.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/post_processing.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/post_processing.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/post_processing.cpp.o
 .PHONY : src/rendering/post_processing.cpp.o
 
 src/rendering/post_processing.i: src/rendering/post_processing.cpp.i
@@ -2738,6 +3097,7 @@ src/rendering/post_processing.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/post_processing.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/post_processing.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/post_processing.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/post_processing.cpp.i
 .PHONY : src/rendering/post_processing.cpp.i
 
 src/rendering/post_processing.s: src/rendering/post_processing.cpp.s
@@ -2750,6 +3110,7 @@ src/rendering/post_processing.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/post_processing.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/post_processing.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/post_processing.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/post_processing.cpp.s
 .PHONY : src/rendering/post_processing.cpp.s
 
 src/rendering/renderer.o: src/rendering/renderer.cpp.o
@@ -2762,6 +3123,7 @@ src/rendering/renderer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/renderer.cpp.o
 .PHONY : src/rendering/renderer.cpp.o
 
 src/rendering/renderer.i: src/rendering/renderer.cpp.i
@@ -2774,6 +3136,7 @@ src/rendering/renderer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/renderer.cpp.i
 .PHONY : src/rendering/renderer.cpp.i
 
 src/rendering/renderer.s: src/rendering/renderer.cpp.s
@@ -2786,6 +3149,7 @@ src/rendering/renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/renderer.cpp.s
 .PHONY : src/rendering/renderer.cpp.s
 
 src/rendering/shader.o: src/rendering/shader.cpp.o
@@ -2798,6 +3162,7 @@ src/rendering/shader.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/shader.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/shader.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/shader.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/shader.cpp.o
 .PHONY : src/rendering/shader.cpp.o
 
 src/rendering/shader.i: src/rendering/shader.cpp.i
@@ -2810,6 +3175,7 @@ src/rendering/shader.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/shader.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/shader.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/shader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/shader.cpp.i
 .PHONY : src/rendering/shader.cpp.i
 
 src/rendering/shader.s: src/rendering/shader.cpp.s
@@ -2822,6 +3188,7 @@ src/rendering/shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/shader.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/shader.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/shader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/shader.cpp.s
 .PHONY : src/rendering/shader.cpp.s
 
 src/rendering/shadow_system.o: src/rendering/shadow_system.cpp.o
@@ -2834,6 +3201,7 @@ src/rendering/shadow_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/shadow_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/shadow_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/shadow_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/shadow_system.cpp.o
 .PHONY : src/rendering/shadow_system.cpp.o
 
 src/rendering/shadow_system.i: src/rendering/shadow_system.cpp.i
@@ -2846,6 +3214,7 @@ src/rendering/shadow_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/shadow_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/shadow_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/shadow_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/shadow_system.cpp.i
 .PHONY : src/rendering/shadow_system.cpp.i
 
 src/rendering/shadow_system.s: src/rendering/shadow_system.cpp.s
@@ -2858,6 +3227,7 @@ src/rendering/shadow_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/shadow_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/shadow_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/shadow_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/shadow_system.cpp.s
 .PHONY : src/rendering/shadow_system.cpp.s
 
 src/rendering/sky/sky_renderer.o: src/rendering/sky/sky_renderer.cpp.o
@@ -2870,6 +3240,7 @@ src/rendering/sky/sky_renderer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/sky/sky_renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/sky/sky_renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/sky/sky_renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/sky/sky_renderer.cpp.o
 .PHONY : src/rendering/sky/sky_renderer.cpp.o
 
 src/rendering/sky/sky_renderer.i: src/rendering/sky/sky_renderer.cpp.i
@@ -2882,6 +3253,7 @@ src/rendering/sky/sky_renderer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/sky/sky_renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/sky/sky_renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/sky/sky_renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/sky/sky_renderer.cpp.i
 .PHONY : src/rendering/sky/sky_renderer.cpp.i
 
 src/rendering/sky/sky_renderer.s: src/rendering/sky/sky_renderer.cpp.s
@@ -2894,6 +3266,7 @@ src/rendering/sky/sky_renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/sky/sky_renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/sky/sky_renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/sky/sky_renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/sky/sky_renderer.cpp.s
 .PHONY : src/rendering/sky/sky_renderer.cpp.s
 
 src/rendering/texture.o: src/rendering/texture.cpp.o
@@ -2906,6 +3279,7 @@ src/rendering/texture.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/texture.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/texture.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/texture.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/texture.cpp.o
 .PHONY : src/rendering/texture.cpp.o
 
 src/rendering/texture.i: src/rendering/texture.cpp.i
@@ -2918,6 +3292,7 @@ src/rendering/texture.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/texture.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/texture.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/texture.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/texture.cpp.i
 .PHONY : src/rendering/texture.cpp.i
 
 src/rendering/texture.s: src/rendering/texture.cpp.s
@@ -2930,6 +3305,7 @@ src/rendering/texture.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/texture.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/texture.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/texture.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/texture.cpp.s
 .PHONY : src/rendering/texture.cpp.s
 
 src/rendering/weather/weather_effects_renderer.o: src/rendering/weather/weather_effects_renderer.cpp.o
@@ -2942,6 +3318,7 @@ src/rendering/weather/weather_effects_renderer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/weather/weather_effects_renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/weather/weather_effects_renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/weather/weather_effects_renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/weather/weather_effects_renderer.cpp.o
 .PHONY : src/rendering/weather/weather_effects_renderer.cpp.o
 
 src/rendering/weather/weather_effects_renderer.i: src/rendering/weather/weather_effects_renderer.cpp.i
@@ -2954,6 +3331,7 @@ src/rendering/weather/weather_effects_renderer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/weather/weather_effects_renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/weather/weather_effects_renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/weather/weather_effects_renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/weather/weather_effects_renderer.cpp.i
 .PHONY : src/rendering/weather/weather_effects_renderer.cpp.i
 
 src/rendering/weather/weather_effects_renderer.s: src/rendering/weather/weather_effects_renderer.cpp.s
@@ -2966,6 +3344,7 @@ src/rendering/weather/weather_effects_renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/rendering/weather/weather_effects_renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/rendering/weather/weather_effects_renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/rendering/weather/weather_effects_renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/rendering/weather/weather_effects_renderer.cpp.s
 .PHONY : src/rendering/weather/weather_effects_renderer.cpp.s
 
 src/save_test.o: src/save_test.cpp.o
@@ -3002,6 +3381,7 @@ src/scripting/lua_bindings.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/lua_bindings.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/scripting/lua_bindings.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/scripting/lua_bindings.cpp.o
 .PHONY : src/scripting/lua_bindings.cpp.o
 
 src/scripting/lua_bindings.i: src/scripting/lua_bindings.cpp.i
@@ -3014,6 +3394,7 @@ src/scripting/lua_bindings.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/lua_bindings.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/scripting/lua_bindings.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/scripting/lua_bindings.cpp.i
 .PHONY : src/scripting/lua_bindings.cpp.i
 
 src/scripting/lua_bindings.s: src/scripting/lua_bindings.cpp.s
@@ -3026,6 +3407,7 @@ src/scripting/lua_bindings.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/lua_bindings.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/lua_bindings.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/scripting/lua_bindings.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/scripting/lua_bindings.cpp.s
 .PHONY : src/scripting/lua_bindings.cpp.s
 
 src/scripting/lua_engine.o: src/scripting/lua_engine.cpp.o
@@ -3038,6 +3420,7 @@ src/scripting/lua_engine.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/lua_engine.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/scripting/lua_engine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/scripting/lua_engine.cpp.o
 .PHONY : src/scripting/lua_engine.cpp.o
 
 src/scripting/lua_engine.i: src/scripting/lua_engine.cpp.i
@@ -3050,6 +3433,7 @@ src/scripting/lua_engine.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/lua_engine.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/scripting/lua_engine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/scripting/lua_engine.cpp.i
 .PHONY : src/scripting/lua_engine.cpp.i
 
 src/scripting/lua_engine.s: src/scripting/lua_engine.cpp.s
@@ -3062,6 +3446,7 @@ src/scripting/lua_engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/lua_engine.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/lua_engine.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/scripting/lua_engine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/scripting/lua_engine.cpp.s
 .PHONY : src/scripting/lua_engine.cpp.s
 
 src/scripting/mod_system.o: src/scripting/mod_system.cpp.o
@@ -3074,6 +3459,7 @@ src/scripting/mod_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/mod_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/scripting/mod_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/scripting/mod_system.cpp.o
 .PHONY : src/scripting/mod_system.cpp.o
 
 src/scripting/mod_system.i: src/scripting/mod_system.cpp.i
@@ -3086,6 +3472,7 @@ src/scripting/mod_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/mod_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/scripting/mod_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/scripting/mod_system.cpp.i
 .PHONY : src/scripting/mod_system.cpp.i
 
 src/scripting/mod_system.s: src/scripting/mod_system.cpp.s
@@ -3098,6 +3485,7 @@ src/scripting/mod_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/mod_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/mod_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/scripting/mod_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/scripting/mod_system.cpp.s
 .PHONY : src/scripting/mod_system.cpp.s
 
 src/scripting/script_engine.o: src/scripting/script_engine.cpp.o
@@ -3110,6 +3498,7 @@ src/scripting/script_engine.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/script_engine.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/scripting/script_engine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/scripting/script_engine.cpp.o
 .PHONY : src/scripting/script_engine.cpp.o
 
 src/scripting/script_engine.i: src/scripting/script_engine.cpp.i
@@ -3122,6 +3511,7 @@ src/scripting/script_engine.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/script_engine.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/scripting/script_engine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/scripting/script_engine.cpp.i
 .PHONY : src/scripting/script_engine.cpp.i
 
 src/scripting/script_engine.s: src/scripting/script_engine.cpp.s
@@ -3134,6 +3524,7 @@ src/scripting/script_engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/scripting/script_engine.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/scripting/script_engine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/scripting/script_engine.cpp.s
 .PHONY : src/scripting/script_engine.cpp.s
 
 src/test_main.o: src/test_main.cpp.o
@@ -3167,6 +3558,7 @@ src/ui/console.o: src/ui/console.cpp.o
 src/ui/console.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/console.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/console.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/console.cpp.o
 .PHONY : src/ui/console.cpp.o
 
 src/ui/console.i: src/ui/console.cpp.i
@@ -3176,6 +3568,7 @@ src/ui/console.i: src/ui/console.cpp.i
 src/ui/console.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/console.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/console.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/console.cpp.i
 .PHONY : src/ui/console.cpp.i
 
 src/ui/console.s: src/ui/console.cpp.s
@@ -3185,6 +3578,7 @@ src/ui/console.s: src/ui/console.cpp.s
 src/ui/console.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/console.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/console.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/console.cpp.s
 .PHONY : src/ui/console.cpp.s
 
 src/ui/console_commands.o: src/ui/console_commands.cpp.o
@@ -3197,6 +3591,7 @@ src/ui/console_commands.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/console_commands.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/console_commands.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/console_commands.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/console_commands.cpp.o
 .PHONY : src/ui/console_commands.cpp.o
 
 src/ui/console_commands.i: src/ui/console_commands.cpp.i
@@ -3209,6 +3604,7 @@ src/ui/console_commands.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/console_commands.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/console_commands.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/console_commands.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/console_commands.cpp.i
 .PHONY : src/ui/console_commands.cpp.i
 
 src/ui/console_commands.s: src/ui/console_commands.cpp.s
@@ -3221,6 +3617,7 @@ src/ui/console_commands.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/console_commands.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/console_commands.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/console_commands.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/console_commands.cpp.s
 .PHONY : src/ui/console_commands.cpp.s
 
 src/ui/imgui_wrapper.o: src/ui/imgui_wrapper.cpp.o
@@ -3230,6 +3627,7 @@ src/ui/imgui_wrapper.o: src/ui/imgui_wrapper.cpp.o
 src/ui/imgui_wrapper.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/imgui_wrapper.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/imgui_wrapper.cpp.o
 .PHONY : src/ui/imgui_wrapper.cpp.o
 
 src/ui/imgui_wrapper.i: src/ui/imgui_wrapper.cpp.i
@@ -3239,6 +3637,7 @@ src/ui/imgui_wrapper.i: src/ui/imgui_wrapper.cpp.i
 src/ui/imgui_wrapper.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/imgui_wrapper.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/imgui_wrapper.cpp.i
 .PHONY : src/ui/imgui_wrapper.cpp.i
 
 src/ui/imgui_wrapper.s: src/ui/imgui_wrapper.cpp.s
@@ -3248,6 +3647,7 @@ src/ui/imgui_wrapper.s: src/ui/imgui_wrapper.cpp.s
 src/ui/imgui_wrapper.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/imgui_wrapper.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/imgui_wrapper.cpp.s
 .PHONY : src/ui/imgui_wrapper.cpp.s
 
 src/ui/menu_system.o: src/ui/menu_system.cpp.o
@@ -3257,6 +3657,7 @@ src/ui/menu_system.o: src/ui/menu_system.cpp.o
 src/ui/menu_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/menu_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/menu_system.cpp.o
 .PHONY : src/ui/menu_system.cpp.o
 
 src/ui/menu_system.i: src/ui/menu_system.cpp.i
@@ -3266,6 +3667,7 @@ src/ui/menu_system.i: src/ui/menu_system.cpp.i
 src/ui/menu_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/menu_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/menu_system.cpp.i
 .PHONY : src/ui/menu_system.cpp.i
 
 src/ui/menu_system.s: src/ui/menu_system.cpp.s
@@ -3275,6 +3677,7 @@ src/ui/menu_system.s: src/ui/menu_system.cpp.s
 src/ui/menu_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/menu_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/menu_system.cpp.s
 .PHONY : src/ui/menu_system.cpp.s
 
 src/ui/ui_element.o: src/ui/ui_element.cpp.o
@@ -3287,6 +3690,7 @@ src/ui/ui_element.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/ui_element.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_element.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/ui_element.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/ui_element.cpp.o
 .PHONY : src/ui/ui_element.cpp.o
 
 src/ui/ui_element.i: src/ui/ui_element.cpp.i
@@ -3299,6 +3703,7 @@ src/ui/ui_element.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/ui_element.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_element.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/ui_element.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/ui_element.cpp.i
 .PHONY : src/ui/ui_element.cpp.i
 
 src/ui/ui_element.s: src/ui/ui_element.cpp.s
@@ -3311,6 +3716,7 @@ src/ui/ui_element.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/ui_element.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_element.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/ui_element.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/ui_element.cpp.s
 .PHONY : src/ui/ui_element.cpp.s
 
 src/ui/ui_inventory.o: src/ui/ui_inventory.cpp.o
@@ -3323,6 +3729,7 @@ src/ui/ui_inventory.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/ui_inventory.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_inventory.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/ui_inventory.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/ui_inventory.cpp.o
 .PHONY : src/ui/ui_inventory.cpp.o
 
 src/ui/ui_inventory.i: src/ui/ui_inventory.cpp.i
@@ -3335,6 +3742,7 @@ src/ui/ui_inventory.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/ui_inventory.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_inventory.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/ui_inventory.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/ui_inventory.cpp.i
 .PHONY : src/ui/ui_inventory.cpp.i
 
 src/ui/ui_inventory.s: src/ui/ui_inventory.cpp.s
@@ -3347,6 +3755,7 @@ src/ui/ui_inventory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/ui_inventory.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_inventory.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/ui_inventory.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/ui_inventory.cpp.s
 .PHONY : src/ui/ui_inventory.cpp.s
 
 src/ui/ui_system.o: src/ui/ui_system.cpp.o
@@ -3359,6 +3768,7 @@ src/ui/ui_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/ui_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/ui_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/ui_system.cpp.o
 .PHONY : src/ui/ui_system.cpp.o
 
 src/ui/ui_system.i: src/ui/ui_system.cpp.i
@@ -3371,6 +3781,7 @@ src/ui/ui_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/ui_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/ui_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/ui_system.cpp.i
 .PHONY : src/ui/ui_system.cpp.i
 
 src/ui/ui_system.s: src/ui/ui_system.cpp.s
@@ -3383,6 +3794,7 @@ src/ui/ui_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/ui_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/ui_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/ui_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/ui_system.cpp.s
 .PHONY : src/ui/ui_system.cpp.s
 
 src/voxel/biome.o: src/voxel/biome.cpp.o
@@ -3395,6 +3807,7 @@ src/voxel/biome.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/biome.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/biome.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/biome.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/biome.cpp.o
 .PHONY : src/voxel/biome.cpp.o
 
 src/voxel/biome.i: src/voxel/biome.cpp.i
@@ -3407,6 +3820,7 @@ src/voxel/biome.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/biome.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/biome.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/biome.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/biome.cpp.i
 .PHONY : src/voxel/biome.cpp.i
 
 src/voxel/biome.s: src/voxel/biome.cpp.s
@@ -3419,6 +3833,7 @@ src/voxel/biome.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/biome.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/biome.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/biome.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/biome.cpp.s
 .PHONY : src/voxel/biome.cpp.s
 
 src/voxel/block.o: src/voxel/block.cpp.o
@@ -3431,6 +3846,7 @@ src/voxel/block.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/block.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/block.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/block.cpp.o
 .PHONY : src/voxel/block.cpp.o
 
 src/voxel/block.i: src/voxel/block.cpp.i
@@ -3443,6 +3859,7 @@ src/voxel/block.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/block.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/block.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/block.cpp.i
 .PHONY : src/voxel/block.cpp.i
 
 src/voxel/block.s: src/voxel/block.cpp.s
@@ -3455,6 +3872,7 @@ src/voxel/block.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/block.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/block.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/block.cpp.s
 .PHONY : src/voxel/block.cpp.s
 
 src/voxel/block_mesh_builder.o: src/voxel/block_mesh_builder.cpp.o
@@ -3467,6 +3885,7 @@ src/voxel/block_mesh_builder.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/block_mesh_builder.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_mesh_builder.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/block_mesh_builder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/block_mesh_builder.cpp.o
 .PHONY : src/voxel/block_mesh_builder.cpp.o
 
 src/voxel/block_mesh_builder.i: src/voxel/block_mesh_builder.cpp.i
@@ -3479,6 +3898,7 @@ src/voxel/block_mesh_builder.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/block_mesh_builder.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_mesh_builder.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/block_mesh_builder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/block_mesh_builder.cpp.i
 .PHONY : src/voxel/block_mesh_builder.cpp.i
 
 src/voxel/block_mesh_builder.s: src/voxel/block_mesh_builder.cpp.s
@@ -3491,6 +3911,7 @@ src/voxel/block_mesh_builder.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/block_mesh_builder.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_mesh_builder.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/block_mesh_builder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/block_mesh_builder.cpp.s
 .PHONY : src/voxel/block_mesh_builder.cpp.s
 
 src/voxel/block_registry.o: src/voxel/block_registry.cpp.o
@@ -3503,6 +3924,7 @@ src/voxel/block_registry.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/block_registry.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_registry.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/block_registry.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/block_registry.cpp.o
 .PHONY : src/voxel/block_registry.cpp.o
 
 src/voxel/block_registry.i: src/voxel/block_registry.cpp.i
@@ -3515,6 +3937,7 @@ src/voxel/block_registry.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/block_registry.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_registry.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/block_registry.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/block_registry.cpp.i
 .PHONY : src/voxel/block_registry.cpp.i
 
 src/voxel/block_registry.s: src/voxel/block_registry.cpp.s
@@ -3527,6 +3950,7 @@ src/voxel/block_registry.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/block_registry.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_registry.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/block_registry.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/block_registry.cpp.s
 .PHONY : src/voxel/block_registry.cpp.s
 
 src/voxel/block_types.o: src/voxel/block_types.cpp.o
@@ -3539,6 +3963,7 @@ src/voxel/block_types.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/block_types.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_types.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/block_types.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/block_types.cpp.o
 .PHONY : src/voxel/block_types.cpp.o
 
 src/voxel/block_types.i: src/voxel/block_types.cpp.i
@@ -3551,6 +3976,7 @@ src/voxel/block_types.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/block_types.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_types.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/block_types.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/block_types.cpp.i
 .PHONY : src/voxel/block_types.cpp.i
 
 src/voxel/block_types.s: src/voxel/block_types.cpp.s
@@ -3563,6 +3989,7 @@ src/voxel/block_types.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/block_types.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/block_types.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/block_types.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/block_types.cpp.s
 .PHONY : src/voxel/block_types.cpp.s
 
 src/voxel/chunk.o: src/voxel/chunk.cpp.o
@@ -3575,6 +4002,7 @@ src/voxel/chunk.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/chunk.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/chunk.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/chunk.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/chunk.cpp.o
 .PHONY : src/voxel/chunk.cpp.o
 
 src/voxel/chunk.i: src/voxel/chunk.cpp.i
@@ -3587,6 +4015,7 @@ src/voxel/chunk.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/chunk.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/chunk.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/chunk.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/chunk.cpp.i
 .PHONY : src/voxel/chunk.cpp.i
 
 src/voxel/chunk.s: src/voxel/chunk.cpp.s
@@ -3599,6 +4028,7 @@ src/voxel/chunk.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/chunk.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/chunk.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/chunk.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/chunk.cpp.s
 .PHONY : src/voxel/chunk.cpp.s
 
 src/voxel/chunk_manager.o: src/voxel/chunk_manager.cpp.o
@@ -3611,6 +4041,7 @@ src/voxel/chunk_manager.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/chunk_manager.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/chunk_manager.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/chunk_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/chunk_manager.cpp.o
 .PHONY : src/voxel/chunk_manager.cpp.o
 
 src/voxel/chunk_manager.i: src/voxel/chunk_manager.cpp.i
@@ -3623,6 +4054,7 @@ src/voxel/chunk_manager.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/chunk_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/chunk_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/chunk_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/chunk_manager.cpp.i
 .PHONY : src/voxel/chunk_manager.cpp.i
 
 src/voxel/chunk_manager.s: src/voxel/chunk_manager.cpp.s
@@ -3635,6 +4067,7 @@ src/voxel/chunk_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/chunk_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/chunk_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/chunk_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/chunk_manager.cpp.s
 .PHONY : src/voxel/chunk_manager.cpp.s
 
 src/voxel/terrain_system.o: src/voxel/terrain_system.cpp.o
@@ -3647,6 +4080,7 @@ src/voxel/terrain_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/terrain_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/terrain_system.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/terrain_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/terrain_system.cpp.o
 .PHONY : src/voxel/terrain_system.cpp.o
 
 src/voxel/terrain_system.i: src/voxel/terrain_system.cpp.i
@@ -3659,6 +4093,7 @@ src/voxel/terrain_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/terrain_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/terrain_system.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/terrain_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/terrain_system.cpp.i
 .PHONY : src/voxel/terrain_system.cpp.i
 
 src/voxel/terrain_system.s: src/voxel/terrain_system.cpp.s
@@ -3671,6 +4106,7 @@ src/voxel/terrain_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/terrain_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/terrain_system.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/terrain_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/terrain_system.cpp.s
 .PHONY : src/voxel/terrain_system.cpp.s
 
 src/voxel/voxel_editor.o: src/voxel/voxel_editor.cpp.o
@@ -3683,6 +4119,7 @@ src/voxel/voxel_editor.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/voxel_editor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/voxel_editor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/voxel_editor.cpp.o
 .PHONY : src/voxel/voxel_editor.cpp.o
 
 src/voxel/voxel_editor.i: src/voxel/voxel_editor.cpp.i
@@ -3695,6 +4132,7 @@ src/voxel/voxel_editor.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/voxel_editor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/voxel_editor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/voxel_editor.cpp.i
 .PHONY : src/voxel/voxel_editor.cpp.i
 
 src/voxel/voxel_editor.s: src/voxel/voxel_editor.cpp.s
@@ -3707,6 +4145,7 @@ src/voxel/voxel_editor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/voxel_editor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/voxel_editor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/voxel_editor.cpp.s
 .PHONY : src/voxel/voxel_editor.cpp.s
 
 src/voxel/world.o: src/voxel/world.cpp.o
@@ -3719,6 +4158,7 @@ src/voxel/world.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/world.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/world.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/world.cpp.o
 .PHONY : src/voxel/world.cpp.o
 
 src/voxel/world.i: src/voxel/world.cpp.i
@@ -3731,6 +4171,7 @@ src/voxel/world.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/world.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/world.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/world.cpp.i
 .PHONY : src/voxel/world.cpp.i
 
 src/voxel/world.s: src/voxel/world.cpp.s
@@ -3743,6 +4184,7 @@ src/voxel/world.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/world.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/world.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/world.cpp.s
 .PHONY : src/voxel/world.cpp.s
 
 src/voxel/world_generator.o: src/voxel/world_generator.cpp.o
@@ -3755,6 +4197,7 @@ src/voxel/world_generator.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/world_generator.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world_generator.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/world_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/world_generator.cpp.o
 .PHONY : src/voxel/world_generator.cpp.o
 
 src/voxel/world_generator.i: src/voxel/world_generator.cpp.i
@@ -3767,6 +4210,7 @@ src/voxel/world_generator.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/world_generator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world_generator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/world_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/world_generator.cpp.i
 .PHONY : src/voxel/world_generator.cpp.i
 
 src/voxel/world_generator.s: src/voxel/world_generator.cpp.s
@@ -3779,6 +4223,7 @@ src/voxel/world_generator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/world_generator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world_generator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/world_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/world_generator.cpp.s
 .PHONY : src/voxel/world_generator.cpp.s
 
 src/voxel/world_renderer.o: src/voxel/world_renderer.cpp.o
@@ -3791,6 +4236,7 @@ src/voxel/world_renderer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/world_renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/world_renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/world_renderer.cpp.o
 .PHONY : src/voxel/world_renderer.cpp.o
 
 src/voxel/world_renderer.i: src/voxel/world_renderer.cpp.i
@@ -3803,6 +4249,7 @@ src/voxel/world_renderer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/world_renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/world_renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/world_renderer.cpp.i
 .PHONY : src/voxel/world_renderer.cpp.i
 
 src/voxel/world_renderer.s: src/voxel/world_renderer.cpp.s
@@ -3815,6 +4262,7 @@ src/voxel/world_renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/world_renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world_renderer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/world_renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/world_renderer.cpp.s
 .PHONY : src/voxel/world_renderer.cpp.s
 
 src/voxel/world_serializer.o: src/voxel/world_serializer.cpp.o
@@ -3827,6 +4275,7 @@ src/voxel/world_serializer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/world_serializer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world_serializer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/world_serializer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/world_serializer.cpp.o
 .PHONY : src/voxel/world_serializer.cpp.o
 
 src/voxel/world_serializer.i: src/voxel/world_serializer.cpp.i
@@ -3839,6 +4288,7 @@ src/voxel/world_serializer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/world_serializer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world_serializer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/world_serializer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/world_serializer.cpp.i
 .PHONY : src/voxel/world_serializer.cpp.i
 
 src/voxel/world_serializer.s: src/voxel/world_serializer.cpp.s
@@ -3851,6 +4301,7 @@ src/voxel/world_serializer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/world_serializer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/world_serializer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/world_serializer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/world_serializer.cpp.s
 .PHONY : src/voxel/world_serializer.cpp.s
 
 src/world_test.o: src/world_test.cpp.o
@@ -3884,6 +4335,7 @@ third_party/imgui/backends/imgui_impl_glfw.o: third_party/imgui/backends/imgui_i
 third_party/imgui/backends/imgui_impl_glfw.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.o
 .PHONY : third_party/imgui/backends/imgui_impl_glfw.cpp.o
 
 third_party/imgui/backends/imgui_impl_glfw.i: third_party/imgui/backends/imgui_impl_glfw.cpp.i
@@ -3893,6 +4345,7 @@ third_party/imgui/backends/imgui_impl_glfw.i: third_party/imgui/backends/imgui_i
 third_party/imgui/backends/imgui_impl_glfw.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.i
 .PHONY : third_party/imgui/backends/imgui_impl_glfw.cpp.i
 
 third_party/imgui/backends/imgui_impl_glfw.s: third_party/imgui/backends/imgui_impl_glfw.cpp.s
@@ -3902,6 +4355,7 @@ third_party/imgui/backends/imgui_impl_glfw.s: third_party/imgui/backends/imgui_i
 third_party/imgui/backends/imgui_impl_glfw.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.s
 .PHONY : third_party/imgui/backends/imgui_impl_glfw.cpp.s
 
 third_party/imgui/backends/imgui_impl_opengl3.o: third_party/imgui/backends/imgui_impl_opengl3.cpp.o
@@ -3911,6 +4365,7 @@ third_party/imgui/backends/imgui_impl_opengl3.o: third_party/imgui/backends/imgu
 third_party/imgui/backends/imgui_impl_opengl3.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.o
 .PHONY : third_party/imgui/backends/imgui_impl_opengl3.cpp.o
 
 third_party/imgui/backends/imgui_impl_opengl3.i: third_party/imgui/backends/imgui_impl_opengl3.cpp.i
@@ -3920,6 +4375,7 @@ third_party/imgui/backends/imgui_impl_opengl3.i: third_party/imgui/backends/imgu
 third_party/imgui/backends/imgui_impl_opengl3.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.i
 .PHONY : third_party/imgui/backends/imgui_impl_opengl3.cpp.i
 
 third_party/imgui/backends/imgui_impl_opengl3.s: third_party/imgui/backends/imgui_impl_opengl3.cpp.s
@@ -3929,6 +4385,7 @@ third_party/imgui/backends/imgui_impl_opengl3.s: third_party/imgui/backends/imgu
 third_party/imgui/backends/imgui_impl_opengl3.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.s
 .PHONY : third_party/imgui/backends/imgui_impl_opengl3.cpp.s
 
 third_party/imgui/imgui.o: third_party/imgui/imgui.cpp.o
@@ -3938,6 +4395,7 @@ third_party/imgui/imgui.o: third_party/imgui/imgui.cpp.o
 third_party/imgui/imgui.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/imgui.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/imgui.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/imgui.cpp.o
 .PHONY : third_party/imgui/imgui.cpp.o
 
 third_party/imgui/imgui.i: third_party/imgui/imgui.cpp.i
@@ -3947,6 +4405,7 @@ third_party/imgui/imgui.i: third_party/imgui/imgui.cpp.i
 third_party/imgui/imgui.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/imgui.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/imgui.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/imgui.cpp.i
 .PHONY : third_party/imgui/imgui.cpp.i
 
 third_party/imgui/imgui.s: third_party/imgui/imgui.cpp.s
@@ -3956,6 +4415,7 @@ third_party/imgui/imgui.s: third_party/imgui/imgui.cpp.s
 third_party/imgui/imgui.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/imgui.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/imgui.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/imgui.cpp.s
 .PHONY : third_party/imgui/imgui.cpp.s
 
 third_party/imgui/imgui_demo.o: third_party/imgui/imgui_demo.cpp.o
@@ -3965,6 +4425,7 @@ third_party/imgui/imgui_demo.o: third_party/imgui/imgui_demo.cpp.o
 third_party/imgui/imgui_demo.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_demo.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/imgui_demo.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/imgui_demo.cpp.o
 .PHONY : third_party/imgui/imgui_demo.cpp.o
 
 third_party/imgui/imgui_demo.i: third_party/imgui/imgui_demo.cpp.i
@@ -3974,6 +4435,7 @@ third_party/imgui/imgui_demo.i: third_party/imgui/imgui_demo.cpp.i
 third_party/imgui/imgui_demo.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_demo.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/imgui_demo.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/imgui_demo.cpp.i
 .PHONY : third_party/imgui/imgui_demo.cpp.i
 
 third_party/imgui/imgui_demo.s: third_party/imgui/imgui_demo.cpp.s
@@ -3983,6 +4445,7 @@ third_party/imgui/imgui_demo.s: third_party/imgui/imgui_demo.cpp.s
 third_party/imgui/imgui_demo.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_demo.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/imgui_demo.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/imgui_demo.cpp.s
 .PHONY : third_party/imgui/imgui_demo.cpp.s
 
 third_party/imgui/imgui_draw.o: third_party/imgui/imgui_draw.cpp.o
@@ -3992,6 +4455,7 @@ third_party/imgui/imgui_draw.o: third_party/imgui/imgui_draw.cpp.o
 third_party/imgui/imgui_draw.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_draw.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/imgui_draw.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/imgui_draw.cpp.o
 .PHONY : third_party/imgui/imgui_draw.cpp.o
 
 third_party/imgui/imgui_draw.i: third_party/imgui/imgui_draw.cpp.i
@@ -4001,6 +4465,7 @@ third_party/imgui/imgui_draw.i: third_party/imgui/imgui_draw.cpp.i
 third_party/imgui/imgui_draw.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_draw.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/imgui_draw.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/imgui_draw.cpp.i
 .PHONY : third_party/imgui/imgui_draw.cpp.i
 
 third_party/imgui/imgui_draw.s: third_party/imgui/imgui_draw.cpp.s
@@ -4010,6 +4475,7 @@ third_party/imgui/imgui_draw.s: third_party/imgui/imgui_draw.cpp.s
 third_party/imgui/imgui_draw.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_draw.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/imgui_draw.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/imgui_draw.cpp.s
 .PHONY : third_party/imgui/imgui_draw.cpp.s
 
 third_party/imgui/imgui_tables.o: third_party/imgui/imgui_tables.cpp.o
@@ -4019,6 +4485,7 @@ third_party/imgui/imgui_tables.o: third_party/imgui/imgui_tables.cpp.o
 third_party/imgui/imgui_tables.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_tables.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/imgui_tables.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/imgui_tables.cpp.o
 .PHONY : third_party/imgui/imgui_tables.cpp.o
 
 third_party/imgui/imgui_tables.i: third_party/imgui/imgui_tables.cpp.i
@@ -4028,6 +4495,7 @@ third_party/imgui/imgui_tables.i: third_party/imgui/imgui_tables.cpp.i
 third_party/imgui/imgui_tables.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_tables.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/imgui_tables.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/imgui_tables.cpp.i
 .PHONY : third_party/imgui/imgui_tables.cpp.i
 
 third_party/imgui/imgui_tables.s: third_party/imgui/imgui_tables.cpp.s
@@ -4037,6 +4505,7 @@ third_party/imgui/imgui_tables.s: third_party/imgui/imgui_tables.cpp.s
 third_party/imgui/imgui_tables.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_tables.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/imgui_tables.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/imgui_tables.cpp.s
 .PHONY : third_party/imgui/imgui_tables.cpp.s
 
 third_party/imgui/imgui_widgets.o: third_party/imgui/imgui_widgets.cpp.o
@@ -4046,6 +4515,7 @@ third_party/imgui/imgui_widgets.o: third_party/imgui/imgui_widgets.cpp.o
 third_party/imgui/imgui_widgets.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_widgets.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/imgui_widgets.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/imgui_widgets.cpp.o
 .PHONY : third_party/imgui/imgui_widgets.cpp.o
 
 third_party/imgui/imgui_widgets.i: third_party/imgui/imgui_widgets.cpp.i
@@ -4055,6 +4525,7 @@ third_party/imgui/imgui_widgets.i: third_party/imgui/imgui_widgets.cpp.i
 third_party/imgui/imgui_widgets.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_widgets.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/imgui_widgets.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/imgui_widgets.cpp.i
 .PHONY : third_party/imgui/imgui_widgets.cpp.i
 
 third_party/imgui/imgui_widgets.s: third_party/imgui/imgui_widgets.cpp.s
@@ -4064,6 +4535,7 @@ third_party/imgui/imgui_widgets.s: third_party/imgui/imgui_widgets.cpp.s
 third_party/imgui/imgui_widgets.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/third_party/imgui/imgui_widgets.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/third_party/imgui/imgui_widgets.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/third_party/imgui/imgui_widgets.cpp.s
 .PHONY : third_party/imgui/imgui_widgets.cpp.s
 
 # Help Target
@@ -4074,11 +4546,15 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... multiplayer"
 	@echo "... my_game"
 	@echo "... save_test"
 	@echo "... voxel_engine"
 	@echo "... voxel_test"
 	@echo "... world_test"
+	@echo "... multiplayer_main.o"
+	@echo "... multiplayer_main.i"
+	@echo "... multiplayer_main.s"
 	@echo "... my_game.o"
 	@echo "... my_game.i"
 	@echo "... my_game.s"
@@ -4226,6 +4702,15 @@ help:
 	@echo "... src/network/entity_replication.o"
 	@echo "... src/network/entity_replication.i"
 	@echo "... src/network/entity_replication.s"
+	@echo "... src/network/game_client.o"
+	@echo "... src/network/game_client.i"
+	@echo "... src/network/game_client.s"
+	@echo "... src/network/game_server.o"
+	@echo "... src/network/game_server.i"
+	@echo "... src/network/game_server.s"
+	@echo "... src/network/multiplayer_game.o"
+	@echo "... src/network/multiplayer_game.i"
+	@echo "... src/network/multiplayer_game.s"
 	@echo "... src/network/network_architecture.o"
 	@echo "... src/network/network_architecture.i"
 	@echo "... src/network/network_architecture.s"

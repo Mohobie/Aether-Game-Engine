@@ -48,4 +48,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/save_test.dir/DependInfo.cmake"
   "CMakeFiles/voxel_engine.dir/DependInfo.cmake"
   "CMakeFiles/my_game.dir/DependInfo.cmake"
+  "CMakeFiles/multiplayer.dir/DependInfo.cmake"
   )

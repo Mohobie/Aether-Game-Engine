@@ -104,6 +104,9 @@ set(CORE_SOURCES
     src/network/server_authority.cpp
     src/network/entity_replication.cpp
     src/network/networked_game_mode.cpp
+    src/network/game_server.cpp
+    src/network/game_client.cpp
+    src/network/multiplayer_game.cpp
     src/scripting/lua_engine.cpp
     src/scripting/script_engine.cpp
     src/scripting/lua_bindings.cpp
@@ -363,6 +366,40 @@ if(EXISTS ${CMAKE_SOURCE_DIR}/my_game.cpp)
     message(STATUS "My Game: my_game.cpp found — building my_game executable")
 else()
     message(STATUS "My Game: my_game.cpp not found — skipping")
+endif()
+
+# ============================================
+# Multiplayer Executable
+# ============================================
+if(EXISTS ${CMAKE_SOURCE_DIR}/multiplayer_main.cpp)
+    set(MP_SOURCES ${ALL_SOURCES})
+    list(REMOVE_ITEM MP_SOURCES src/main.cpp src/core/engine.cpp src/core/application.cpp)
+    
+    set(MP_OPTIONAL ${COMPILABLE_OPTIONAL_SOURCES})
+    list(REMOVE_ITEM MP_OPTIONAL src/main.cpp src/core/engine.cpp src/core/application.cpp)
+    
+    add_executable(multiplayer multiplayer_main.cpp ${MP_SOURCES} ${MP_OPTIONAL})
+    target_include_directories(multiplayer PRIVATE ${COMMON_INCLUDES})
+    
+    if(OpenGL_FOUND)
+        target_link_libraries(multiplayer PRIVATE OpenGL::GL)
+    endif()
+    if(GLFW_FOUND)
+        target_include_directories(multiplayer PRIVATE ${GLFW_INCLUDE_DIRS})
+        target_link_libraries(multiplayer PRIVATE ${GLFW_LIBRARIES})
+    endif()
+    if(LUA_FOUND)
+        target_link_libraries(multiplayer PRIVATE ${LUA_LIBRARY})
+    endif()
+    if(PLATFORM_LINUX)
+        target_link_libraries(multiplayer PRIVATE pthread dl GL GLU GLX)
+    elseif(PLATFORM_WINDOWS)
+        target_link_libraries(multiplayer PRIVATE ws2_32 winmm opengl32 glu32)
+    endif()
+    
+    message(STATUS "Multiplayer: multiplayer_main.cpp found — building multiplayer executable")
+else()
+    message(STATUS "Multiplayer: multiplayer_main.cpp not found — skipping")
 endif()
 
 message(STATUS "Building VoxelEngine v${PROJECT_VERSION}")

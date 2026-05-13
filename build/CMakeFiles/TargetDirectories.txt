@@ -3,5 +3,6 @@
 /home/mohobie/projects/aether-game-test/build/CMakeFiles/save_test.dir
 /home/mohobie/projects/aether-game-test/build/CMakeFiles/voxel_engine.dir
 /home/mohobie/projects/aether-game-test/build/CMakeFiles/my_game.dir
+/home/mohobie/projects/aether-game-test/build/CMakeFiles/multiplayer.dir
 /home/mohobie/projects/aether-game-test/build/CMakeFiles/edit_cache.dir
 /home/mohobie/projects/aether-game-test/build/CMakeFiles/rebuild_cache.dir
