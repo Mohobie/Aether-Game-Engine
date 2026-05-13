@@ -27,11 +27,16 @@ void Camera::Rotate(float deltaYaw, float deltaPitch, float deltaRoll) {
 }
 
 Mat4 Camera::GetViewMatrix() const {
-    return Mat4::Identity();
+    // Use LookAt for proper view matrix
+    Vec3 forward = GetForward();
+    Vec3 center = position + forward;
+    Vec3 up = GetUp();
+    
+    return Mat4::LookAt(position, center, up);
 }
 
 Mat4 Camera::GetProjectionMatrix() const {
-    return Mat4::Identity();
+    return Mat4::Perspective(fov * 3.14159f / 180.0f, aspectRatio, nearPlane, farPlane);
 }
 
 Vec3 Camera::GetForward() const {

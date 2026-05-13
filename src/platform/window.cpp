@@ -1,5 +1,7 @@
 #include "platform/window.h"
 #include <GLFW/glfw3.h>
+#define GLFW_EXPOSE_NATIVE_X11
+#include <GLFW/glfw3native.h>
 #include <iostream>
 
 namespace vge {
@@ -19,10 +21,15 @@ bool Window::Initialize(int w, int h, const std::string& title) {
         return false;
     }
     
-    // OpenGL 3.3 Core Profile
+    // Default hints first
+    glfwDefaultWindowHints();
+    
+    // OpenGL 3.3 Compatibility Profile (for immediate mode)
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_COMPAT_PROFILE);
+    glfwWindowHint(GLFW_DOUBLEBUFFER, GLFW_TRUE);
+    glfwWindowHint(GLFW_VISIBLE, GLFW_TRUE);  // Ensure window is visible
     
     // Create window
     window = glfwCreateWindow(w, h, title.c_str(), nullptr, nullptr);
@@ -35,6 +42,19 @@ bool Window::Initialize(int w, int h, const std::string& title) {
     glfwMakeContextCurrent(window);
     glfwSetWindowUserPointer(window, this);
     
+    // Print OpenGL info
+    std::cout << "[Window] OpenGL version: " << glGetString(GL_VERSION) << std::endl;
+    std::cout << "[Window] OpenGL renderer: " << glGetString(GL_RENDERER) << std::endl;
+    
+    // Show window and bring to front
+    glfwShowWindow(window);
+    glfwFocusWindow(window);
+    
+    // Set swap interval
+    glfwSwapInterval(1);
+    
+    std::cout << "[Window] Window should be visible now" << std::endl;
+    
     // Set callbacks
     glfwSetKeyCallback(window, KeyCallback);
     glfwSetMouseButtonCallback(window, MouseButtonCallback);
@@ -42,6 +62,11 @@ bool Window::Initialize(int w, int h, const std::string& title) {
     glfwSetWindowCloseCallback(window, CloseCallback);
     
     std::cout << "[Window] Created " << w << "x" << h << " window" << std::endl;
+    
+    // Get native window handle for debugging
+    ::Window nativeWindow = glfwGetX11Window(window);
+    std::cout << "[Window] Native X11 window ID: " << nativeWindow << std::endl;
+    
     return true;
 }
 
@@ -60,6 +85,7 @@ void Window::PollEvents() {
 }
 
 void Window::SwapBuffers() {
+    std::cout << "[Window] Swapping buffers" << std::endl;
     glfwSwapBuffers(window);
 }
 

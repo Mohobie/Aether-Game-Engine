@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DPLATFORM_LINUX
 
-CXX_INCLUDES = -I/home/mohobie/projects/aether-game-engine/src -I/home/mohobie/projects/aether-game-engine/include -I/usr/include/lua5.4 -I/home/mohobie/projects/aether-game-engine/third_party/imgui -I/home/mohobie/projects/aether-game-engine/third_party/imgui/backends
+CXX_INCLUDES = -I/home/mohobie/projects/aether-game-test/src -I/home/mohobie/projects/aether-game-test/include -I/usr/include/lua5.4 -I/home/mohobie/projects/aether-game-test/third_party/imgui -I/home/mohobie/projects/aether-game-test/third_party/imgui/backends
 
 CXX_FLAGS = -Wall -Wextra -std=gnu++17
 

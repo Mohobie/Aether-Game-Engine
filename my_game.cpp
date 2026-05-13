@@ -1,0 +1,255 @@
+#include "voxel/world.h"
+#include "voxel/world_generator.h"
+#include "rendering/renderer.h"
+#include "rendering/camera.h"
+#include "platform/window.h"
+#include "platform/input_manager.h"
+#include "core/player_controller.h"
+#include "game/block_interaction.h"
+#include "debug/debug_renderer.h"
+#include "audio/audio_engine.h"
+#include "editor/in_game_editor.h"
+#include <iostream>
+#include <cmath>
+
+// Mouse tracking for camera
+static double lastMouseX = 0, lastMouseY = 0;
+static bool firstMouse = true;
+
+void MouseCallback(double x, double y, vge::Input& input, vge::Window& window) {
+    if (firstMouse) {
+        lastMouseX = x;
+        lastMouseY = y;
+        firstMouse = false;
+    }
+    
+    double dx = x - lastMouseX;
+    double dy = y - lastMouseY;
+    
+    lastMouseX = x;
+    lastMouseY = y;
+    
+    input.SetMouseDelta(static_cast<float>(dx), static_cast<float>(dy));
+}
+
+int main() {
+    // 1. Create window
+    vge::Window window;
+    if (!window.Initialize(1280, 720, "My Voxel Game - Large World")) {
+        std::cerr << "Failed to initialize window" << std::endl;
+        return 1;
+    }
+    
+    // 2. Create renderer
+    vge::Renderer renderer;
+    if (!renderer.Initialize()) {
+        std::cerr << "Failed to initialize renderer" << std::endl;
+        return 1;
+    }
+    renderer.SetViewport(0, 0, 1280, 720);
+    
+    // 3. Create camera
+    vge::Camera camera;
+    
+    // 4. Register blocks
+    vge::BlockRegistry& registry = vge::BlockRegistry::GetInstance();
+    
+    vge::BlockDef stoneDef;
+    stoneDef.id = "stone";
+    stoneDef.name = "Stone";
+    stoneDef.solid = true;
+    stoneDef.opaque = true;
+    stoneDef.hardness = 2.0f;
+    stoneDef.color = vge::Vec3(0.62f, 0.62f, 0.62f);
+    registry.RegisterBlock(stoneDef);
+    
+    vge::BlockDef dirtDef;
+    dirtDef.id = "dirt";
+    dirtDef.name = "Dirt";
+    dirtDef.solid = true;
+    dirtDef.opaque = true;
+    dirtDef.hardness = 1.0f;
+    dirtDef.color = vge::Vec3(0.47f, 0.33f, 0.27f);
+    registry.RegisterBlock(dirtDef);
+    
+    vge::BlockDef grassDef;
+    grassDef.id = "grass";
+    grassDef.name = "Grass";
+    grassDef.solid = true;
+    grassDef.opaque = true;
+    grassDef.hardness = 1.0f;
+    grassDef.color = vge::Vec3(0.30f, 0.69f, 0.31f);
+    registry.RegisterBlock(grassDef);
+    
+    vge::BlockDef woodDef;
+    woodDef.id = "wood";
+    woodDef.name = "Wood";
+    woodDef.solid = true;
+    woodDef.opaque = true;
+    woodDef.hardness = 1.5f;
+    woodDef.color = vge::Vec3(0.55f, 0.43f, 0.39f);
+    registry.RegisterBlock(woodDef);
+    
+    vge::BlockDef leavesDef;
+    leavesDef.id = "leaves";
+    leavesDef.name = "Leaves";
+    leavesDef.solid = true;
+    leavesDef.opaque = false;
+    leavesDef.hardness = 0.5f;
+    leavesDef.color = vge::Vec3(0.18f, 0.49f, 0.20f);
+    registry.RegisterBlock(leavesDef);
+    
+    vge::BlockDef sandDef;
+    sandDef.id = "sand";
+    sandDef.name = "Sand";
+    sandDef.solid = true;
+    sandDef.opaque = true;
+    sandDef.hardness = 1.0f;
+    sandDef.color = vge::Vec3(1.0f, 0.96f, 0.62f);
+    registry.RegisterBlock(sandDef);
+    
+    vge::BlockDef waterDef;
+    waterDef.id = "water";
+    waterDef.name = "Water";
+    waterDef.solid = false;
+    waterDef.opaque = false;
+    waterDef.hardness = 0.0f;
+    waterDef.color = vge::Vec3(0.13f, 0.53f, 0.95f);
+    registry.RegisterBlock(waterDef);
+    
+    vge::BlockDef bedrockDef;
+    bedrockDef.id = "bedrock";
+    bedrockDef.name = "Bedrock";
+    bedrockDef.solid = true;
+    bedrockDef.opaque = true;
+    bedrockDef.hardness = 10.0f;
+    bedrockDef.color = vge::Vec3(0.26f, 0.26f, 0.26f);
+    registry.RegisterBlock(bedrockDef);
+    
+    // 5. Create world and generate large terrain
+    vge::World world;
+    world.SetSeed(12345);
+    
+    std::cout << "[Game] Generating world..." << std::endl;
+    // Generate a large hilly world (size = 50 means 100x100 blocks)
+    vge::WorldGenerator::GenerateHillyWorld(world, 50);
+    std::cout << "[Game] World generation complete!" << std::endl;
+    
+    // 6. Create input
+    vge::Input input;
+    
+    // Set up mouse callback
+    window.SetCursorCallback([&input, &window](double x, double y) {
+        MouseCallback(x, y, input, window);
+    });
+    
+    // 7. Create player controller
+    vge::PlayerController player;
+    // Find a good starting position on top of terrain
+    player.SetPosition(vge::Vec3(0, 20, 0));
+    
+    // 8. Create block interaction
+    vge::BlockInteraction blockInteraction;
+    blockInteraction.Initialize(world);
+    
+    // 9. Create audio
+    vge::AudioEngine audio;
+    audio.Initialize();
+    
+    // 10. Create editor
+    vge::InGameEditor editor(&world, &camera, &input, &renderer);
+    editor.Initialize();
+    
+    // 11. Create debug renderer
+    vge::DebugRenderer& debug = vge::GetDebugRenderer();
+    debug.Initialize();
+    
+    // Lock cursor for first-person controls
+    window.SetCursorMode(true);
+    
+    // 12. Game loop
+    bool running = true;
+    float deltaTime = 1.0f / 60.0f;
+    
+    // Block selection for placing
+    int selectedBlock = 1; // Start with stone
+    std::string blockTypes[] = {"stone", "dirt", "grass", "wood", "leaves", "sand", "water"};
+    
+    while (running) {
+        // Handle window events
+        window.PollEvents();
+        if (window.ShouldClose()) {
+            running = false;
+        }
+        
+        // Update input
+        input.Update();
+        
+        // Toggle editor with Escape
+        if (input.IsKeyJustPressed(vge::KeyCode::Escape)) {
+            editor.Toggle();
+            window.SetCursorMode(!editor.IsActive());
+        }
+        
+        // Block selection with number keys
+        if (input.IsKeyJustPressed(vge::KeyCode::Key1)) selectedBlock = 0;
+        if (input.IsKeyJustPressed(vge::KeyCode::Key2)) selectedBlock = 1;
+        if (input.IsKeyJustPressed(vge::KeyCode::Key3)) selectedBlock = 2;
+        if (input.IsKeyJustPressed(vge::KeyCode::Key4)) selectedBlock = 3;
+        if (input.IsKeyJustPressed(vge::KeyCode::Key5)) selectedBlock = 4;
+        if (input.IsKeyJustPressed(vge::KeyCode::Key6)) selectedBlock = 5;
+        if (input.IsKeyJustPressed(vge::KeyCode::Key7)) selectedBlock = 6;
+        
+        if (editor.IsActive()) {
+            // Editor mode
+            editor.Update(deltaTime, input);
+        } else {
+            // Game mode - player movement
+            player.Update(deltaTime, input, world);
+            
+            // Update camera to follow player (first-person)
+            camera.SetPosition(player.GetPosition() + vge::Vec3(0, 1.6f, 0));
+            camera.SetRotation(player.GetYaw(), player.GetPitch(), 0);
+            
+            // Block breaking (left click - Q key for now)
+            if (input.IsKeyJustPressed(vge::KeyCode::Q)) {
+                player.BreakBlock(world);
+            }
+            
+            // Block placing (E key)
+            if (input.IsKeyJustPressed(vge::KeyCode::E)) {
+                player.PlaceBlock(world, registry.GetBlockId(blockTypes[selectedBlock]));
+            }
+        }
+        
+        // Render
+        renderer.SetClearColor(0.53f, 0.81f, 0.98f, 1.0f); // Sky blue
+        renderer.BeginFrame();
+        
+        renderer.RenderWorld(world, camera);
+        
+        // Render crosshair
+        renderer.RenderCrosshair(1280, 720);
+        
+        // Render editor visuals if active
+        if (editor.IsActive()) {
+            editor.Render();
+        }
+        
+        // Render debug visualization
+        debug.Render(camera);
+        debug.Update(deltaTime);
+        debug.Clear();
+        
+        renderer.EndFrame();
+        window.SwapBuffers();
+    }
+    
+    // Cleanup
+    editor.Shutdown();
+    audio.Shutdown();
+    renderer.Shutdown();
+    window.Shutdown();
+    
+    return 0;
+}

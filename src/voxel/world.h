@@ -34,8 +34,8 @@ public:
     void SetBlock(int x, int y, int z, BlockTypeID type);
     void SetBlock(int x, int y, int z, const std::string& blockId);
     
-    int GetSeed() const { return seed; }
     void SetSeed(int s) { seed = s; }
+    int GetSeed() const { return seed; }
 
     // Iterator access for systems that need to iterate all chunks
     const std::map<ChunkCoord, std::unique_ptr<Chunk>>& GetChunks() const { return chunks; }

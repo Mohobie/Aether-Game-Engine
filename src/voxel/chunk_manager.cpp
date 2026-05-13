@@ -63,7 +63,9 @@ Chunk* ChunkManager::LoadChunk(int x, int y, int z) {
     if (!chunk) {
         chunk = world->GetOrCreateChunk(x, y, z);
         if (generator && chunk) {
-            generator->GenerateChunk(*chunk, x, y, z);
+            // Chunk generation is handled by the world generator
+            // Mark chunk as loaded
+            chunk->loaded = true;
         }
     }
     

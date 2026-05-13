@@ -29,6 +29,7 @@ Chunk* World::GetOrCreateChunk(int x, int y, int z) {
     if (!chunk) {
         auto newChunk = std::make_unique<Chunk>(x, y, z);
         chunk = newChunk.get();
+        chunk->loaded = true;  // Mark as loaded when created
         chunks[{x, y, z}] = std::move(newChunk);
     }
     return chunk;
@@ -68,6 +69,7 @@ void World::SetBlock(int x, int y, int z, BlockTypeID type) {
     int localY = y - chunkY * CHUNK_SIZE;
     int localZ = z - chunkZ * CHUNK_SIZE;
     chunk->SetBlock(localX, localY, localZ, type);
+    chunk->loaded = true;  // Mark chunk as loaded when blocks are added
 }
 
 void World::SetBlock(int x, int y, int z, const std::string& blockId) {

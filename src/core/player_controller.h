@@ -19,6 +19,10 @@ private:
     bool onGround;
     
     Vec3 GetLookDirection() const;
+    Vec3 GetRightDirection() const;
+    
+    float mouseSensitivity;
+    float gravity;
     
 public:
     PlayerController();
