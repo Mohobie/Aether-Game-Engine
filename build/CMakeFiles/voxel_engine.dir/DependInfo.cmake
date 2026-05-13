@@ -100,6 +100,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-test/src/scripting/script_engine.cpp" "CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/scripting/script_engine.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/ui/console.cpp" "CMakeFiles/voxel_engine.dir/src/ui/console.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/ui/console.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/ui/console_commands.cpp" "CMakeFiles/voxel_engine.dir/src/ui/console_commands.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/ui/console_commands.cpp.o.d"
+  "/home/mohobie/projects/aether-game-test/src/ui/hud_system.cpp" "CMakeFiles/voxel_engine.dir/src/ui/hud_system.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/ui/hud_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/ui/imgui_wrapper.cpp" "CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/ui/menu_system.cpp" "CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/ui/settings_menu.cpp" "CMakeFiles/voxel_engine.dir/src/ui/settings_menu.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/ui/settings_menu.cpp.o.d"

@@ -183,6 +183,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_engine.dir/src/ui/console.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/ui/console_commands.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/ui/console_commands.cpp.o.d"
+  "CMakeFiles/voxel_engine.dir/src/ui/hud_system.cpp.o"
+  "CMakeFiles/voxel_engine.dir/src/ui/hud_system.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/ui/imgui_wrapper.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/ui/menu_system.cpp.o"

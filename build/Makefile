@@ -3815,6 +3815,45 @@ src/ui/console_commands.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/console_commands.cpp.s
 .PHONY : src/ui/console_commands.cpp.s
 
+src/ui/hud_system.o: src/ui/hud_system.cpp.o
+.PHONY : src/ui/hud_system.o
+
+# target to build an object file
+src/ui/hud_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ui/hud_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ui/hud_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/hud_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/hud_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/hud_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/hud_system.cpp.o
+.PHONY : src/ui/hud_system.cpp.o
+
+src/ui/hud_system.i: src/ui/hud_system.cpp.i
+.PHONY : src/ui/hud_system.i
+
+# target to preprocess a source file
+src/ui/hud_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ui/hud_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ui/hud_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/hud_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/hud_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/hud_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/hud_system.cpp.i
+.PHONY : src/ui/hud_system.cpp.i
+
+src/ui/hud_system.s: src/ui/hud_system.cpp.s
+.PHONY : src/ui/hud_system.s
+
+# target to generate assembly for a file
+src/ui/hud_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ui/hud_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ui/hud_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/hud_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/hud_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/hud_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/hud_system.cpp.s
+.PHONY : src/ui/hud_system.cpp.s
+
 src/ui/imgui_wrapper.o: src/ui/imgui_wrapper.cpp.o
 .PHONY : src/ui/imgui_wrapper.o
 
@@ -5152,6 +5191,9 @@ help:
 	@echo "... src/ui/console_commands.o"
 	@echo "... src/ui/console_commands.i"
 	@echo "... src/ui/console_commands.s"
+	@echo "... src/ui/hud_system.o"
+	@echo "... src/ui/hud_system.i"
+	@echo "... src/ui/hud_system.s"
 	@echo "... src/ui/imgui_wrapper.o"
 	@echo "... src/ui/imgui_wrapper.i"
 	@echo "... src/ui/imgui_wrapper.s"

@@ -36,7 +36,7 @@
 - [x] Experience/leveling system
 - [ ] Fall damage
 - [ ] Lava damage
-- [ ] Health/hunger UI (hearts/food bars)
+- [x] Health/hunger UI (hearts/food bars)
 
 ### 5. Inventory System
 - [x] Hotbar (9 slots)
