@@ -10,6 +10,7 @@
 #include "core/save_game.h"
 #include "core/crafting.h"
 #include "game/block_interaction.h"
+#include "game/mob_system.h"
 #include "debug/debug_renderer.h"
 #include "audio/audio_engine.h"
 #include "editor/in_game_editor.h"
@@ -311,7 +312,40 @@ int main() {
     stickRecipe.ingredients.push_back(vge::RecipeIngredient("wood", 2));
     craftingSystem.AddRecipe(stickRecipe);
     
-    // 13. Create save game manager
+    // 13. Create mob system
+    vge::MobSystem mobSystem;
+    
+    // Register passive mobs
+    vge::MobDef pigDef;
+    pigDef.id = "pig";
+    pigDef.name = "Pig";
+    pigDef.type = vge::MobType::Passive;
+    pigDef.maxHealth = 10.0f;
+    pigDef.speed = 2.0f;
+    pigDef.damage = 0.0f;
+    pigDef.color = vge::Vec3(1.0f, 0.7f, 0.7f); // Pink
+    pigDef.size = 1.0f;
+    pigDef.spawnsAtDay = true;
+    pigDef.spawnsAtNight = false;
+    pigDef.drops = {"porkchop"};
+    mobSystem.RegisterMob(pigDef);
+    
+    // Register hostile mobs
+    vge::MobDef zombieDef;
+    zombieDef.id = "zombie";
+    zombieDef.name = "Zombie";
+    zombieDef.type = vge::MobType::Hostile;
+    zombieDef.maxHealth = 20.0f;
+    zombieDef.speed = 2.5f;
+    zombieDef.damage = 3.0f;
+    zombieDef.color = vge::Vec3(0.2f, 0.5f, 0.2f); // Green
+    zombieDef.size = 1.0f;
+    zombieDef.spawnsAtDay = false;
+    zombieDef.spawnsAtNight = true;
+    zombieDef.drops = {"rotten_flesh"};
+    mobSystem.RegisterMob(zombieDef);
+    
+    // 14. Create save game manager
     vge::SaveGameManager saveManager;
     saveManager.Initialize("saves");
     
@@ -393,6 +427,9 @@ int main() {
         
         // Update day/night cycle
         dayNightCycle.Update(deltaTime);
+        
+        // Update mob system
+        mobSystem.Update(deltaTime, player.GetPosition(), dayNightCycle.GetDayNightBlend());
         
         // Render
         renderer.BeginFrame();

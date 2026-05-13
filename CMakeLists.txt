@@ -188,6 +188,7 @@ set(CORE_SOURCES
     src/game/day_night_cycle.cpp
     src/game/block_interaction.cpp
     src/game/tool_system.cpp
+    src/game/mob_system.cpp
     src/game/combat_system.cpp
     src/editor/entity_spawner.cpp
     src/editor/in_game_editor.cpp

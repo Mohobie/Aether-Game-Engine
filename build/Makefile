@@ -1889,6 +1889,45 @@ src/game/day_night_cycle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/day_night_cycle.cpp.s
 .PHONY : src/game/day_night_cycle.cpp.s
 
+src/game/mob_system.o: src/game/mob_system.cpp.o
+.PHONY : src/game/mob_system.o
+
+# target to build an object file
+src/game/mob_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/mob_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/mob_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/mob_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/mob_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/mob_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/mob_system.cpp.o
+.PHONY : src/game/mob_system.cpp.o
+
+src/game/mob_system.i: src/game/mob_system.cpp.i
+.PHONY : src/game/mob_system.i
+
+# target to preprocess a source file
+src/game/mob_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/mob_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/mob_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/mob_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/mob_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/mob_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/mob_system.cpp.i
+.PHONY : src/game/mob_system.cpp.i
+
+src/game/mob_system.s: src/game/mob_system.cpp.s
+.PHONY : src/game/mob_system.s
+
+# target to generate assembly for a file
+src/game/mob_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/mob_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/mob_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/mob_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/mob_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/mob_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/mob_system.cpp.s
+.PHONY : src/game/mob_system.cpp.s
+
 src/game/player_stats.o: src/game/player_stats.cpp.o
 .PHONY : src/game/player_stats.o
 
@@ -4843,6 +4882,9 @@ help:
 	@echo "... src/game/day_night_cycle.o"
 	@echo "... src/game/day_night_cycle.i"
 	@echo "... src/game/day_night_cycle.s"
+	@echo "... src/game/mob_system.o"
+	@echo "... src/game/mob_system.i"
+	@echo "... src/game/mob_system.s"
 	@echo "... src/game/player_stats.o"
 	@echo "... src/game/player_stats.i"
 	@echo "... src/game/player_stats.s"

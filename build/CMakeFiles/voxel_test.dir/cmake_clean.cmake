@@ -81,6 +81,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_test.dir/src/game/combat_system.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/game/day_night_cycle.cpp.o"
   "CMakeFiles/voxel_test.dir/src/game/day_night_cycle.cpp.o.d"
+  "CMakeFiles/voxel_test.dir/src/game/mob_system.cpp.o"
+  "CMakeFiles/voxel_test.dir/src/game/mob_system.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/game/player_stats.cpp.o"
   "CMakeFiles/voxel_test.dir/src/game/player_stats.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/game/sandbox_mode.cpp.o"
