@@ -39,11 +39,11 @@
 - [ ] Health/hunger UI (hearts/food bars)
 
 ### 5. Inventory System
-- [ ] Hotbar (9 slots)
-- [ ] Full inventory grid (3x9 or 4x9)
-- [ ] Item stacking
+- [x] Hotbar (9 slots)
+- [x] Full inventory grid (3x9)
+- [x] Item stacking
 - [ ] Tool durability
-- [ ] Item pickup/drop
+- [x] Item pickup/drop
 
 ### 6. Crafting
 - [ ] Crafting grid (2x2 inventory, 3x3 table)
