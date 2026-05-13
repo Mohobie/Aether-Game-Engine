@@ -28,6 +28,18 @@ Each document covers a specific system or topic:
 | `18-network-system.md` | Client-server multiplayer, entity replication, server authority | ~250 |
 | `19-editor-system.md` | In-game editor, ImGui, debug visualization, viewports, asset browser | ~350 |
 
+### New RAGs (2026-05-13)
+
+| Document | Description |
+|----------|-------------|
+| `NETWORKING.md` | Multiplayer system quick reference (client/server) |
+| `RENDERER_FIXES.md` | Face culling and transparency fixes |
+| `PLAYER_CONTROLLER.md` | Player controller usage guide |
+| `SURVIVAL_SYSTEM.md` | Health, hunger, drowning, death system |
+| `ORE_GENERATION.md` | Ore types, distribution, generation algorithm |
+| `TOOL_SYSTEM.md` | Tool types, materials, durability, mining |
+| `SAVE_SYSTEM.md` | Save/load, auto-save, quick save |
+
 ## How to Use This Documentation
 
 ### For AI Models
