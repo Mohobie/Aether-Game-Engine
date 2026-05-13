@@ -180,7 +180,6 @@ set(CORE_SOURCES
     src/core/save_system.cpp
     src/core/save_game.cpp
     src/core/survival_system.cpp
-    src/core/save_game.cpp
     src/voxel/voxel_editor.cpp
     src/game/sandbox_mode.cpp
     src/game/survival_mode.cpp
@@ -197,6 +196,7 @@ set(CORE_SOURCES
     src/ui/console_commands.cpp
     src/rendering/frustum.cpp
     src/rendering/culling_system.cpp
+    src/rendering/particles/particle_system.cpp
 )
 
 # ============================================

@@ -96,10 +96,10 @@
 - [ ] Crosshair, hotbar, hearts
 
 ### 13. Particles
-- [ ] Block break particles
-- [ ] Footstep particles
-- [ ] Torch smoke
-- [ ] Explosion particles
+- [x] Block break particles
+- [x] Footstep particles
+- [x] Torch smoke
+- [x] Explosion particles
 
 ### 14. Lighting
 - [ ] Torch placement with light radius
