@@ -1,85 +1,119 @@
 #include "ore_generator.h"
 #include "voxel/block_registry.h"
-#include <cstdlib>
 #include <cmath>
+#include <cstdlib>
 
 namespace vge {
 
 OreGenerator::OreGenerator() {
-    // Seed random
-    std::srand(12345);
+    srand(time(nullptr));
 }
 
 OreGenerator::~OreGenerator() {
 }
 
-void OreGenerator::RegisterOre(const OreType& ore) {
-    ores.push_back(ore);
-}
-
-float OreGenerator::RandomFloat() {
-    return static_cast<float>(std::rand()) / RAND_MAX;
+float OreGenerator::RandomFloat(float min, float max) {
+    return min + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (max - min)));
 }
 
 int OreGenerator::RandomInt(int min, int max) {
-    return min + std::rand() % (max - min + 1);
+    return min + rand() % (max - min + 1);
 }
 
-void OreGenerator::GenerateVein(World& world, int startX, int startY, int startZ, 
-                                const OreType& ore) {
-    // Simple vein generation - random walk from start point
-    int size = RandomInt(ore.veinSize / 2, ore.veinSize);
+std::string OreGenerator::GetOreBlockId(const std::string& oreType) {
+    if (oreType == "coal") return "coal_ore";
+    if (oreType == "iron") return "iron_ore";
+    if (oreType == "gold") return "gold_ore";
+    if (oreType == "diamond") return "diamond_ore";
+    if (oreType == "emerald") return "emerald_ore";
+    if (oreType == "redstone") return "redstone_ore";
+    if (oreType == "lapis") return "lapis_ore";
+    return "coal_ore"; // Default
+}
+
+void OreGenerator::GetOreDepthRange(const std::string& oreType, int& minY, int& maxY) {
+    if (oreType == "coal") { minY = 5; maxY = 128; }
+    else if (oreType == "iron") { minY = 5; maxY = 64; }
+    else if (oreType == "gold") { minY = 5; maxY = 32; }
+    else if (oreType == "diamond") { minY = 5; maxY = 16; }
+    else if (oreType == "emerald") { minY = 5; maxY = 32; }
+    else if (oreType == "redstone") { minY = 5; maxY = 16; }
+    else if (oreType == "lapis") { minY = 5; maxY = 32; }
+    else { minY = 5; maxY = 64; }
+}
+
+void OreGenerator::GenerateOreVein(World& world, const Vec3& center, const std::string& oreType,
+                                   int size, float density) {
+    BlockRegistry& registry = BlockRegistry::GetInstance();
+    std::string blockId = GetOreBlockId(oreType);
+    BlockTypeID oreBlock = registry.GetBlockId(blockId);
+    BlockTypeID stoneBlock = registry.GetBlockId("stone");
     
-    int x = startX;
-    int y = startY;
-    int z = startZ;
+    if (oreBlock == BLOCK_AIR) return;
+    if (stoneBlock == BLOCK_AIR) stoneBlock = 3; // Default stone
     
-    for (int i = 0; i < size; ++i) {
-        // Place ore block
-        BlockTypeID currentBlock = world.GetBlock(x, y, z);
-        if (currentBlock == BlockRegistry::GetInstance().GetBlockId("stone")) {
-            world.SetBlock(x, y, z, ore.blockType);
-        }
-        
-        // Random walk
-        int dir = RandomInt(0, 5);
-        switch (dir) {
-            case 0: x++; break;
-            case 1: x--; break;
-            case 2: y++; break;
-            case 3: y--; break;
-            case 4: z++; break;
-            case 5: z--; break;
+    int radius = size / 2;
+    int placed = 0;
+    int target = static_cast<int>(size * density);
+    
+    for (int x = -radius; x <= radius && placed < target; x++) {
+        for (int y = -radius; y <= radius && placed < target; y++) {
+            for (int z = -radius; z <= radius && placed < target; z++) {
+                float dist = std::sqrt(x*x + y*y + z*z);
+                if (dist > radius) continue;
+                
+                // Density falloff from center
+                float chance = 1.0f - (dist / radius);
+                if (RandomFloat(0, 1) > chance) continue;
+                
+                int wx = static_cast<int>(center.x) + x;
+                int wy = static_cast<int>(center.y) + y;
+                int wz = static_cast<int>(center.z) + z;
+                
+                // Only replace stone
+                if (world.GetBlock(wx, wy, wz) == stoneBlock) {
+                    world.SetBlock(wx, wy, wz, oreBlock);
+                    placed++;
+                }
+            }
         }
     }
 }
 
-void OreGenerator::GenerateOresInChunk(World& world, int chunkX, int chunkY, int chunkZ) {
-    for (const auto& ore : ores) {
-        // Check if this chunk is in the right height range
-        int chunkWorldY = chunkY * CHUNK_SIZE;
-        if (chunkWorldY + CHUNK_SIZE < ore.minHeight || chunkWorldY > ore.maxHeight) {
-            continue;
-        }
-        
-        // Generate veins
-        int veinsToGenerate = RandomInt(0, ore.veinsPerChunk * 2);
-        for (int v = 0; v < veinsToGenerate; ++v) {
-            // Random position within chunk
-            int x = chunkX * CHUNK_SIZE + RandomInt(0, CHUNK_SIZE - 1);
-            int y = RandomInt(ore.minHeight, ore.maxHeight);
-            int z = chunkZ * CHUNK_SIZE + RandomInt(0, CHUNK_SIZE - 1);
-            
-            GenerateVein(world, x, y, z, ore);
-        }
-    }
-}
-
-void OreGenerator::GenerateOresInWorld(World& world, int radius) {
-    for (int cx = -radius; cx <= radius; ++cx) {
-        for (int cy = -10; cy <= 5; ++cy) {
-            for (int cz = -radius; cz <= radius; ++cz) {
-                GenerateOresInChunk(world, cx, cy, cz);
+void OreGenerator::GenerateOres(World& world, int chunkRadius) {
+    // Ore types with their generation parameters
+    struct OreConfig {
+        std::string type;
+        int veinSize;
+        float density;
+        int veinsPerChunk;
+    };
+    
+    std::vector<OreConfig> ores = {
+        {"coal", 8, 0.7f, 20},
+        {"iron", 6, 0.6f, 15},
+        {"gold", 4, 0.5f, 4},
+        {"diamond", 3, 0.4f, 3},
+        {"emerald", 3, 0.3f, 2},
+        {"redstone", 5, 0.5f, 8},
+        {"lapis", 4, 0.5f, 3}
+    };
+    
+    for (int cx = -chunkRadius; cx < chunkRadius; cx++) {
+        for (int cz = -chunkRadius; cz < chunkRadius; cz++) {
+            for (const auto& ore : ores) {
+                int minY, maxY;
+                GetOreDepthRange(ore.type, minY, maxY);
+                
+                for (int v = 0; v < ore.veinsPerChunk; v++) {
+                    Vec3 center(
+                        cx * CHUNK_SIZE + RandomFloat(0, CHUNK_SIZE),
+                        RandomFloat(minY, maxY),
+                        cz * CHUNK_SIZE + RandomFloat(0, CHUNK_SIZE)
+                    );
+                    
+                    GenerateOreVein(world, center, ore.type, ore.veinSize, ore.density);
+                }
             }
         }
     }

@@ -2,49 +2,34 @@
 #include "voxel/world.h"
 #include "math/vec3.h"
 #include <vector>
+#include <string>
 
 namespace vge {
 
 // ============================================
-// Ore Type Definition
-// ============================================
-struct OreType {
-    std::string blockId;
-    BlockTypeID blockType;
-    float rarity;        // 0.0-1.0, lower = rarer
-    int minHeight;       // Minimum Y level
-    int maxHeight;       // Maximum Y level
-    int veinSize;        // Average vein size
-    int veinsPerChunk;   // Average veins per chunk
-};
-
-// ============================================
-// Ore Generator
+// Ore Vein Generator
 // ============================================
 class OreGenerator {
 public:
     OreGenerator();
     ~OreGenerator();
 
-    // Register ore types
-    void RegisterOre(const OreType& ore);
-    
-    // Generate ores in a chunk
-    void GenerateOresInChunk(World& world, int chunkX, int chunkY, int chunkZ);
-    
-    // Generate all ores in world (for existing terrain)
-    void GenerateOresInWorld(World& world, int radius);
-
-private:
-    std::vector<OreType> ores;
-    
-    // Random number generation
-    float RandomFloat();
-    int RandomInt(int min, int max);
+    // Generate ore veins in world
+    void GenerateOres(World& world, int chunkRadius);
     
     // Generate a single ore vein
-    void GenerateVein(World& world, int startX, int startY, int startZ, 
-                      const OreType& ore);
+    void GenerateOreVein(World& world, const Vec3& center, const std::string& oreType, 
+                         int size, float density);
+
+private:
+    float RandomFloat(float min, float max);
+    int RandomInt(int min, int max);
+    
+    // Get ore block ID from type name
+    std::string GetOreBlockId(const std::string& oreType);
+    
+    // Get valid Y range for ore type
+    void GetOreDepthRange(const std::string& oreType, int& minY, int& maxY);
 };
 
 } // namespace vge

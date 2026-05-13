@@ -217,47 +217,8 @@ int main() {
     std::cout << "[Game] Generating ores..." << std::endl;
     vge::OreGenerator oreGen;
     
-    vge::OreType coalOre;
-    coalOre.blockId = "coal_ore";
-    coalOre.blockType = registry.GetBlockId("coal_ore");
-    coalOre.rarity = 0.02f;
-    coalOre.minHeight = 5;
-    coalOre.maxHeight = 60;
-    coalOre.veinSize = 12;
-    coalOre.veinsPerChunk = 3;
-    oreGen.RegisterOre(coalOre);
-    
-    vge::OreType ironOre;
-    ironOre.blockId = "iron_ore";
-    ironOre.blockType = registry.GetBlockId("iron_ore");
-    ironOre.rarity = 0.015f;
-    ironOre.minHeight = 5;
-    ironOre.maxHeight = 45;
-    ironOre.veinSize = 8;
-    ironOre.veinsPerChunk = 2;
-    oreGen.RegisterOre(ironOre);
-    
-    vge::OreType goldOre;
-    goldOre.blockId = "gold_ore";
-    goldOre.blockType = registry.GetBlockId("gold_ore");
-    goldOre.rarity = 0.008f;
-    goldOre.minHeight = 5;
-    goldOre.maxHeight = 30;
-    goldOre.veinSize = 6;
-    goldOre.veinsPerChunk = 1;
-    oreGen.RegisterOre(goldOre);
-    
-    vge::OreType diamondOre;
-    diamondOre.blockId = "diamond_ore";
-    diamondOre.blockType = registry.GetBlockId("diamond_ore");
-    diamondOre.rarity = 0.005f;
-    diamondOre.minHeight = 5;
-    diamondOre.maxHeight = 16;
-    diamondOre.veinSize = 4;
-    diamondOre.veinsPerChunk = 1;
-    oreGen.RegisterOre(diamondOre);
-    
-    oreGen.GenerateOresInWorld(world, 50);
+    // Ore generation is now handled internally by OreGenerator
+    oreGen.GenerateOres(world, 5);
     std::cout << "[Game] World generation complete!" << std::endl;
     
     // 6. Create input

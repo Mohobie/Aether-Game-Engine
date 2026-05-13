@@ -19,7 +19,7 @@
 - [x] Perlin noise with octaves for realistic hills
 - [x] Biome system (plains, forest, desert, mountains, ocean)
 - [x] Cave generation with tunnel systems
-- [ ] Ore veins underground
+- [x] Ore veins underground
 - [ ] River/lake generation
 
 ### 3. Day/Night Cycle

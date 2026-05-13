@@ -895,10 +895,24 @@ CMakeFiles/voxel_test.dir/src/voxel/cave_generator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/voxel_test.dir/src/voxel/cave_generator.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-test/src/voxel/cave_generator.cpp -o CMakeFiles/voxel_test.dir/src/voxel/cave_generator.cpp.s
 
+CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.o: CMakeFiles/voxel_test.dir/flags.make
+CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.o: ../src/voxel/ore_generator.cpp
+CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.o: CMakeFiles/voxel_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.o -MF CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.o.d -o CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.o -c /home/mohobie/projects/aether-game-test/src/voxel/ore_generator.cpp
+
+CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-test/src/voxel/ore_generator.cpp > CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.i
+
+CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-test/src/voxel/ore_generator.cpp -o CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.s
+
 CMakeFiles/voxel_test.dir/src/voxel/block_mesh_builder.cpp.o: CMakeFiles/voxel_test.dir/flags.make
 CMakeFiles/voxel_test.dir/src/voxel/block_mesh_builder.cpp.o: ../src/voxel/block_mesh_builder.cpp
 CMakeFiles/voxel_test.dir/src/voxel/block_mesh_builder.cpp.o: CMakeFiles/voxel_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/voxel_test.dir/src/voxel/block_mesh_builder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/voxel_test.dir/src/voxel/block_mesh_builder.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_test.dir/src/voxel/block_mesh_builder.cpp.o -MF CMakeFiles/voxel_test.dir/src/voxel/block_mesh_builder.cpp.o.d -o CMakeFiles/voxel_test.dir/src/voxel/block_mesh_builder.cpp.o -c /home/mohobie/projects/aether-game-test/src/voxel/block_mesh_builder.cpp
 
 CMakeFiles/voxel_test.dir/src/voxel/block_mesh_builder.cpp.i: cmake_force
@@ -912,7 +926,7 @@ CMakeFiles/voxel_test.dir/src/voxel/block_mesh_builder.cpp.s: cmake_force
 CMakeFiles/voxel_test.dir/src/voxel/world_renderer.cpp.o: CMakeFiles/voxel_test.dir/flags.make
 CMakeFiles/voxel_test.dir/src/voxel/world_renderer.cpp.o: ../src/voxel/world_renderer.cpp
 CMakeFiles/voxel_test.dir/src/voxel/world_renderer.cpp.o: CMakeFiles/voxel_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/voxel_test.dir/src/voxel/world_renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/voxel_test.dir/src/voxel/world_renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_test.dir/src/voxel/world_renderer.cpp.o -MF CMakeFiles/voxel_test.dir/src/voxel/world_renderer.cpp.o.d -o CMakeFiles/voxel_test.dir/src/voxel/world_renderer.cpp.o -c /home/mohobie/projects/aether-game-test/src/voxel/world_renderer.cpp
 
 CMakeFiles/voxel_test.dir/src/voxel/world_renderer.cpp.i: cmake_force
@@ -926,7 +940,7 @@ CMakeFiles/voxel_test.dir/src/voxel/world_renderer.cpp.s: cmake_force
 CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.o: CMakeFiles/voxel_test.dir/flags.make
 CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.o: ../src/voxel/world_serializer.cpp
 CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.o: CMakeFiles/voxel_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.o -MF CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.o.d -o CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.o -c /home/mohobie/projects/aether-game-test/src/voxel/world_serializer.cpp
 
 CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.i: cmake_force
@@ -936,20 +950,6 @@ CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.i: cmake_force
 CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-test/src/voxel/world_serializer.cpp -o CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.s
-
-CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.o: CMakeFiles/voxel_test.dir/flags.make
-CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.o: ../src/voxel/ore_generator.cpp
-CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.o: CMakeFiles/voxel_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.o -MF CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.o.d -o CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.o -c /home/mohobie/projects/aether-game-test/src/voxel/ore_generator.cpp
-
-CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-test/src/voxel/ore_generator.cpp > CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.i
-
-CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-test/src/voxel/ore_generator.cpp -o CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.s
 
 CMakeFiles/voxel_test.dir/src/voxel/chunk_manager.cpp.o: CMakeFiles/voxel_test.dir/flags.make
 CMakeFiles/voxel_test.dir/src/voxel/chunk_manager.cpp.o: ../src/voxel/chunk_manager.cpp
@@ -1642,10 +1642,10 @@ voxel_test_OBJECTS = \
 "CMakeFiles/voxel_test.dir/src/voxel/biome.cpp.o" \
 "CMakeFiles/voxel_test.dir/src/voxel/world_generator.cpp.o" \
 "CMakeFiles/voxel_test.dir/src/voxel/cave_generator.cpp.o" \
+"CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.o" \
 "CMakeFiles/voxel_test.dir/src/voxel/block_mesh_builder.cpp.o" \
 "CMakeFiles/voxel_test.dir/src/voxel/world_renderer.cpp.o" \
 "CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.o" \
-"CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.o" \
 "CMakeFiles/voxel_test.dir/src/voxel/chunk_manager.cpp.o" \
 "CMakeFiles/voxel_test.dir/src/debug/debug_system.cpp.o" \
 "CMakeFiles/voxel_test.dir/src/debug/debug_renderer.cpp.o" \
@@ -1754,10 +1754,10 @@ voxel_test: CMakeFiles/voxel_test.dir/src/voxel/block_registry.cpp.o
 voxel_test: CMakeFiles/voxel_test.dir/src/voxel/biome.cpp.o
 voxel_test: CMakeFiles/voxel_test.dir/src/voxel/world_generator.cpp.o
 voxel_test: CMakeFiles/voxel_test.dir/src/voxel/cave_generator.cpp.o
+voxel_test: CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.o
 voxel_test: CMakeFiles/voxel_test.dir/src/voxel/block_mesh_builder.cpp.o
 voxel_test: CMakeFiles/voxel_test.dir/src/voxel/world_renderer.cpp.o
 voxel_test: CMakeFiles/voxel_test.dir/src/voxel/world_serializer.cpp.o
-voxel_test: CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.o
 voxel_test: CMakeFiles/voxel_test.dir/src/voxel/chunk_manager.cpp.o
 voxel_test: CMakeFiles/voxel_test.dir/src/debug/debug_system.cpp.o
 voxel_test: CMakeFiles/voxel_test.dir/src/debug/debug_renderer.cpp.o
