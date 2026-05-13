@@ -176,7 +176,12 @@
 - [ ] No damage
 - [ ] Instant break
 
-### 23. Adventure Mode
+### 23. Achievements
+- [x] Basic achievements (mine first block, etc.)
+- [x] Progress tracking
+- [x] Unlock notifications
+
+### 24. Adventure Mode
 - [ ] Story objectives
 - [ ] Quest system
 - [ ] NPCs with dialog
