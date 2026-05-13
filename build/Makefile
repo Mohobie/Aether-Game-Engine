@@ -1772,6 +1772,45 @@ src/entity/entity.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/entity/entity.cpp.s
 .PHONY : src/entity/entity.cpp.s
 
+src/game/block_drops.o: src/game/block_drops.cpp.o
+.PHONY : src/game/block_drops.o
+
+# target to build an object file
+src/game/block_drops.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/block_drops.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/block_drops.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/block_drops.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/block_drops.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/block_drops.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/block_drops.cpp.o
+.PHONY : src/game/block_drops.cpp.o
+
+src/game/block_drops.i: src/game/block_drops.cpp.i
+.PHONY : src/game/block_drops.i
+
+# target to preprocess a source file
+src/game/block_drops.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/block_drops.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/block_drops.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/block_drops.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/block_drops.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/block_drops.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/block_drops.cpp.i
+.PHONY : src/game/block_drops.cpp.i
+
+src/game/block_drops.s: src/game/block_drops.cpp.s
+.PHONY : src/game/block_drops.s
+
+# target to generate assembly for a file
+src/game/block_drops.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/block_drops.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/block_drops.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/block_drops.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/block_drops.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/block_drops.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/block_drops.cpp.s
+.PHONY : src/game/block_drops.cpp.s
+
 src/game/block_interaction.o: src/game/block_interaction.cpp.o
 .PHONY : src/game/block_interaction.o
 
@@ -4873,6 +4912,9 @@ help:
 	@echo "... src/entity/entity.o"
 	@echo "... src/entity/entity.i"
 	@echo "... src/entity/entity.s"
+	@echo "... src/game/block_drops.o"
+	@echo "... src/game/block_drops.i"
+	@echo "... src/game/block_drops.s"
 	@echo "... src/game/block_interaction.o"
 	@echo "... src/game/block_interaction.i"
 	@echo "... src/game/block_interaction.s"

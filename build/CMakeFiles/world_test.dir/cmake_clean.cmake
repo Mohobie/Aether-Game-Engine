@@ -75,6 +75,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/world_test.dir/src/entity/components.cpp.o.d"
   "CMakeFiles/world_test.dir/src/entity/entity.cpp.o"
   "CMakeFiles/world_test.dir/src/entity/entity.cpp.o.d"
+  "CMakeFiles/world_test.dir/src/game/block_drops.cpp.o"
+  "CMakeFiles/world_test.dir/src/game/block_drops.cpp.o.d"
   "CMakeFiles/world_test.dir/src/game/block_interaction.cpp.o"
   "CMakeFiles/world_test.dir/src/game/block_interaction.cpp.o.d"
   "CMakeFiles/world_test.dir/src/game/combat_system.cpp.o"

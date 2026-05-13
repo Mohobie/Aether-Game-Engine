@@ -46,6 +46,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-test/src/editor/scene_viewport.cpp" "CMakeFiles/world_test.dir/src/editor/scene_viewport.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/editor/scene_viewport.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/entity/components.cpp" "CMakeFiles/world_test.dir/src/entity/components.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/entity/components.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/entity/entity.cpp" "CMakeFiles/world_test.dir/src/entity/entity.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/entity/entity.cpp.o.d"
+  "/home/mohobie/projects/aether-game-test/src/game/block_drops.cpp" "CMakeFiles/world_test.dir/src/game/block_drops.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/game/block_drops.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/game/block_interaction.cpp" "CMakeFiles/world_test.dir/src/game/block_interaction.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/game/block_interaction.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/game/combat_system.cpp" "CMakeFiles/world_test.dir/src/game/combat_system.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/game/combat_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/game/day_night_cycle.cpp" "CMakeFiles/world_test.dir/src/game/day_night_cycle.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/game/day_night_cycle.cpp.o.d"

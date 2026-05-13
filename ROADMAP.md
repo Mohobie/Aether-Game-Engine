@@ -54,8 +54,8 @@
 ### 7. Block Variety
 - [x] 20+ block types (ores, gems, flowers, etc.)
 - [x] Block hardness/mining speed
-- [ ] Proper tool requirements (wood/stone/iron pickaxe)
-- [ ] Block drops (not always same block)
+- [x] Proper tool requirements (wood/stone/iron pickaxe)
+- [x] Block drops (not always same block)
 
 ### 8. Tools & Weapons
 - [x] Pickaxe, axe, shovel, sword

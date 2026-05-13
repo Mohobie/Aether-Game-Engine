@@ -79,6 +79,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_engine.dir/src/entity/components.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/entity/entity.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/entity/entity.cpp.o.d"
+  "CMakeFiles/voxel_engine.dir/src/game/block_drops.cpp.o"
+  "CMakeFiles/voxel_engine.dir/src/game/block_drops.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/game/block_interaction.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/game/block_interaction.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/game/combat_system.cpp.o"

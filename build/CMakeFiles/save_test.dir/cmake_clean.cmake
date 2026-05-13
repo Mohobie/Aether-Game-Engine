@@ -75,6 +75,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/save_test.dir/src/entity/components.cpp.o.d"
   "CMakeFiles/save_test.dir/src/entity/entity.cpp.o"
   "CMakeFiles/save_test.dir/src/entity/entity.cpp.o.d"
+  "CMakeFiles/save_test.dir/src/game/block_drops.cpp.o"
+  "CMakeFiles/save_test.dir/src/game/block_drops.cpp.o.d"
   "CMakeFiles/save_test.dir/src/game/block_interaction.cpp.o"
   "CMakeFiles/save_test.dir/src/game/block_interaction.cpp.o.d"
   "CMakeFiles/save_test.dir/src/game/combat_system.cpp.o"
