@@ -52,8 +52,8 @@
 - [ ] Tool/weapon crafting
 
 ### 7. Block Variety
-- [ ] 20+ block types (ores, gems, flowers, etc.)
-- [ ] Block hardness/mining speed
+- [x] 20+ block types (ores, gems, flowers, etc.)
+- [x] Block hardness/mining speed
 - [ ] Proper tool requirements (wood/stone/iron pickaxe)
 - [ ] Block drops (not always same block)
 

@@ -1,5 +1,6 @@
 #include "voxel/world.h"
 #include "voxel/world_generator.h"
+#include "voxel/ore_generator.h"
 #include "rendering/renderer.h"
 #include "rendering/camera.h"
 #include "rendering/sky/day_night_cycle.h"
@@ -128,6 +129,80 @@ int main() {
     bedrockDef.color = vge::Vec3(0.26f, 0.26f, 0.26f);
     registry.RegisterBlock(bedrockDef);
     
+    // Ore blocks
+    vge::BlockDef coalOreDef;
+    coalOreDef.id = "coal_ore";
+    coalOreDef.name = "Coal Ore";
+    coalOreDef.solid = true;
+    coalOreDef.opaque = true;
+    coalOreDef.hardness = 3.0f;
+    coalOreDef.color = vge::Vec3(0.15f, 0.15f, 0.15f);
+    registry.RegisterBlock(coalOreDef);
+    
+    vge::BlockDef ironOreDef;
+    ironOreDef.id = "iron_ore";
+    ironOreDef.name = "Iron Ore";
+    ironOreDef.solid = true;
+    ironOreDef.opaque = true;
+    ironOreDef.hardness = 3.0f;
+    ironOreDef.color = vge::Vec3(0.73f, 0.55f, 0.45f);
+    registry.RegisterBlock(ironOreDef);
+    
+    vge::BlockDef goldOreDef;
+    goldOreDef.id = "gold_ore";
+    goldOreDef.name = "Gold Ore";
+    goldOreDef.solid = true;
+    goldOreDef.opaque = true;
+    goldOreDef.hardness = 3.0f;
+    goldOreDef.color = vge::Vec3(1.0f, 0.84f, 0.0f);
+    registry.RegisterBlock(goldOreDef);
+    
+    vge::BlockDef diamondOreDef;
+    diamondOreDef.id = "diamond_ore";
+    diamondOreDef.name = "Diamond Ore";
+    diamondOreDef.solid = true;
+    diamondOreDef.opaque = true;
+    diamondOreDef.hardness = 3.0f;
+    diamondOreDef.color = vge::Vec3(0.0f, 0.8f, 0.8f);
+    registry.RegisterBlock(diamondOreDef);
+    
+    vge::BlockDef emeraldOreDef;
+    emeraldOreDef.id = "emerald_ore";
+    emeraldOreDef.name = "Emerald Ore";
+    emeraldOreDef.solid = true;
+    emeraldOreDef.opaque = true;
+    emeraldOreDef.hardness = 3.0f;
+    emeraldOreDef.color = vge::Vec3(0.0f, 0.9f, 0.3f);
+    registry.RegisterBlock(emeraldOreDef);
+    
+    // Decorative blocks
+    vge::BlockDef flowerDef;
+    flowerDef.id = "flower";
+    flowerDef.name = "Flower";
+    flowerDef.solid = false;
+    flowerDef.opaque = false;
+    flowerDef.hardness = 0.0f;
+    flowerDef.color = vge::Vec3(1.0f, 0.5f, 0.8f);
+    registry.RegisterBlock(flowerDef);
+    
+    vge::BlockDef tallGrassDef;
+    tallGrassDef.id = "tall_grass";
+    tallGrassDef.name = "Tall Grass";
+    tallGrassDef.solid = false;
+    tallGrassDef.opaque = false;
+    tallGrassDef.hardness = 0.0f;
+    tallGrassDef.color = vge::Vec3(0.4f, 0.7f, 0.3f);
+    registry.RegisterBlock(tallGrassDef);
+    
+    vge::BlockDef cactusDef;
+    cactusDef.id = "cactus";
+    cactusDef.name = "Cactus";
+    cactusDef.solid = true;
+    cactusDef.opaque = true;
+    cactusDef.hardness = 0.5f;
+    cactusDef.color = vge::Vec3(0.2f, 0.6f, 0.2f);
+    registry.RegisterBlock(cactusDef);
+    
     // 5. Create world and generate large terrain
     vge::World world;
     world.SetSeed(12345);
@@ -135,6 +210,52 @@ int main() {
     std::cout << "[Game] Generating world..." << std::endl;
     // Generate a large hilly world (size = 50 means 100x100 blocks)
     vge::WorldGenerator::GenerateHillyWorld(world, 50);
+    
+    // Generate ores
+    std::cout << "[Game] Generating ores..." << std::endl;
+    vge::OreGenerator oreGen;
+    
+    vge::OreType coalOre;
+    coalOre.blockId = "coal_ore";
+    coalOre.blockType = registry.GetBlockId("coal_ore");
+    coalOre.rarity = 0.02f;
+    coalOre.minHeight = 5;
+    coalOre.maxHeight = 60;
+    coalOre.veinSize = 12;
+    coalOre.veinsPerChunk = 3;
+    oreGen.RegisterOre(coalOre);
+    
+    vge::OreType ironOre;
+    ironOre.blockId = "iron_ore";
+    ironOre.blockType = registry.GetBlockId("iron_ore");
+    ironOre.rarity = 0.015f;
+    ironOre.minHeight = 5;
+    ironOre.maxHeight = 45;
+    ironOre.veinSize = 8;
+    ironOre.veinsPerChunk = 2;
+    oreGen.RegisterOre(ironOre);
+    
+    vge::OreType goldOre;
+    goldOre.blockId = "gold_ore";
+    goldOre.blockType = registry.GetBlockId("gold_ore");
+    goldOre.rarity = 0.008f;
+    goldOre.minHeight = 5;
+    goldOre.maxHeight = 30;
+    goldOre.veinSize = 6;
+    goldOre.veinsPerChunk = 1;
+    oreGen.RegisterOre(goldOre);
+    
+    vge::OreType diamondOre;
+    diamondOre.blockId = "diamond_ore";
+    diamondOre.blockType = registry.GetBlockId("diamond_ore");
+    diamondOre.rarity = 0.005f;
+    diamondOre.minHeight = 5;
+    diamondOre.maxHeight = 16;
+    diamondOre.veinSize = 4;
+    diamondOre.veinsPerChunk = 1;
+    oreGen.RegisterOre(diamondOre);
+    
+    oreGen.GenerateOresInWorld(world, 50);
     std::cout << "[Game] World generation complete!" << std::endl;
     
     // 6. Create input
@@ -184,7 +305,7 @@ int main() {
     
     // Block selection for placing
     int selectedBlock = 1; // Start with stone
-    std::string blockTypes[] = {"stone", "dirt", "grass", "wood", "leaves", "sand", "water"};
+    std::string blockTypes[] = {"stone", "dirt", "grass", "wood", "leaves", "sand", "water", "coal_ore", "iron_ore", "gold_ore", "diamond_ore", "flower", "tall_grass", "cactus"};
     
     while (running) {
         // Handle window events

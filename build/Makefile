@@ -4148,6 +4148,45 @@ src/voxel/chunk_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/chunk_manager.cpp.s
 .PHONY : src/voxel/chunk_manager.cpp.s
 
+src/voxel/ore_generator.o: src/voxel/ore_generator.cpp.o
+.PHONY : src/voxel/ore_generator.o
+
+# target to build an object file
+src/voxel/ore_generator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/ore_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/ore_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/ore_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/ore_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/ore_generator.cpp.o
+.PHONY : src/voxel/ore_generator.cpp.o
+
+src/voxel/ore_generator.i: src/voxel/ore_generator.cpp.i
+.PHONY : src/voxel/ore_generator.i
+
+# target to preprocess a source file
+src/voxel/ore_generator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/ore_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/ore_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/ore_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/ore_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/ore_generator.cpp.i
+.PHONY : src/voxel/ore_generator.cpp.i
+
+src/voxel/ore_generator.s: src/voxel/ore_generator.cpp.s
+.PHONY : src/voxel/ore_generator.s
+
+# target to generate assembly for a file
+src/voxel/ore_generator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/ore_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/ore_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/ore_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/ore_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/ore_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/ore_generator.cpp.s
+.PHONY : src/voxel/ore_generator.cpp.s
+
 src/voxel/terrain_system.o: src/voxel/terrain_system.cpp.o
 .PHONY : src/voxel/terrain_system.o
 
@@ -4945,6 +4984,9 @@ help:
 	@echo "... src/voxel/chunk_manager.o"
 	@echo "... src/voxel/chunk_manager.i"
 	@echo "... src/voxel/chunk_manager.s"
+	@echo "... src/voxel/ore_generator.o"
+	@echo "... src/voxel/ore_generator.i"
+	@echo "... src/voxel/ore_generator.s"
 	@echo "... src/voxel/terrain_system.o"
 	@echo "... src/voxel/terrain_system.i"
 	@echo "... src/voxel/terrain_system.s"

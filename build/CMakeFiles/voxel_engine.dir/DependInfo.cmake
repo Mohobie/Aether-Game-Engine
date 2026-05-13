@@ -109,6 +109,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-test/src/voxel/block_types.cpp" "CMakeFiles/voxel_engine.dir/src/voxel/block_types.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/voxel/block_types.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/voxel/chunk.cpp" "CMakeFiles/voxel_engine.dir/src/voxel/chunk.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/voxel/chunk.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/voxel/chunk_manager.cpp" "CMakeFiles/voxel_engine.dir/src/voxel/chunk_manager.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/voxel/chunk_manager.cpp.o.d"
+  "/home/mohobie/projects/aether-game-test/src/voxel/ore_generator.cpp" "CMakeFiles/voxel_engine.dir/src/voxel/ore_generator.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/voxel/ore_generator.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/voxel/terrain_system.cpp" "CMakeFiles/voxel_engine.dir/src/voxel/terrain_system.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/voxel/terrain_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/voxel/voxel_editor.cpp" "CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/voxel/world.cpp" "CMakeFiles/voxel_engine.dir/src/voxel/world.cpp.o" "gcc" "CMakeFiles/voxel_engine.dir/src/voxel/world.cpp.o.d"

@@ -152,6 +152,7 @@ set(CORE_SOURCES
     src/voxel/block_mesh_builder.cpp
     src/voxel/world_renderer.cpp
     src/voxel/world_serializer.cpp
+    src/voxel/ore_generator.cpp
     src/voxel/chunk_manager.cpp
     src/debug/debug_system.cpp
     src/debug/debug_renderer.cpp
