@@ -345,6 +345,76 @@ int main() {
     zombieDef.drops = {"rotten_flesh"};
     mobSystem.RegisterMob(zombieDef);
     
+    vge::MobDef skeletonDef;
+    skeletonDef.id = "skeleton";
+    skeletonDef.name = "Skeleton";
+    skeletonDef.type = vge::MobType::Hostile;
+    skeletonDef.maxHealth = 15.0f;
+    skeletonDef.speed = 3.0f;
+    skeletonDef.damage = 2.0f;
+    skeletonDef.color = vge::Vec3(0.9f, 0.9f, 0.9f); // White
+    skeletonDef.size = 1.0f;
+    skeletonDef.spawnsAtDay = false;
+    skeletonDef.spawnsAtNight = true;
+    skeletonDef.drops = {"bone", "arrow"};
+    mobSystem.RegisterMob(skeletonDef);
+    
+    vge::MobDef spiderDef;
+    spiderDef.id = "spider";
+    spiderDef.name = "Spider";
+    spiderDef.type = vge::MobType::Hostile;
+    spiderDef.maxHealth = 12.0f;
+    spiderDef.speed = 3.5f;
+    spiderDef.damage = 2.0f;
+    spiderDef.color = vge::Vec3(0.3f, 0.1f, 0.3f); // Dark purple
+    spiderDef.size = 0.8f;
+    spiderDef.spawnsAtDay = false;
+    spiderDef.spawnsAtNight = true;
+    spiderDef.drops = {"string"};
+    mobSystem.RegisterMob(spiderDef);
+    
+    vge::MobDef creeperDef;
+    creeperDef.id = "creeper";
+    creeperDef.name = "Creeper";
+    creeperDef.type = vge::MobType::Hostile;
+    creeperDef.maxHealth = 15.0f;
+    creeperDef.speed = 2.0f;
+    creeperDef.damage = 10.0f; // Explosion damage
+    creeperDef.color = vge::Vec3(0.2f, 0.8f, 0.2f); // Bright green
+    creeperDef.size = 0.9f;
+    creeperDef.spawnsAtDay = false;
+    creeperDef.spawnsAtNight = true;
+    creeperDef.drops = {"gunpowder"};
+    mobSystem.RegisterMob(creeperDef);
+    
+    vge::MobDef cowDef;
+    cowDef.id = "cow";
+    cowDef.name = "Cow";
+    cowDef.type = vge::MobType::Passive;
+    cowDef.maxHealth = 10.0f;
+    cowDef.speed = 1.5f;
+    cowDef.damage = 0.0f;
+    cowDef.color = vge::Vec3(0.4f, 0.2f, 0.1f); // Brown
+    cowDef.size = 1.2f;
+    cowDef.spawnsAtDay = true;
+    cowDef.spawnsAtNight = false;
+    cowDef.drops = {"beef", "leather"};
+    mobSystem.RegisterMob(cowDef);
+    
+    vge::MobDef chickenDef;
+    chickenDef.id = "chicken";
+    chickenDef.name = "Chicken";
+    chickenDef.type = vge::MobType::Passive;
+    chickenDef.maxHealth = 4.0f;
+    chickenDef.speed = 2.0f;
+    chickenDef.damage = 0.0f;
+    chickenDef.color = vge::Vec3(1.0f, 1.0f, 0.8f); // White/yellow
+    chickenDef.size = 0.5f;
+    chickenDef.spawnsAtDay = true;
+    chickenDef.spawnsAtNight = false;
+    chickenDef.drops = {"chicken", "feather"};
+    mobSystem.RegisterMob(chickenDef);
+    
     // 14. Create save game manager
     vge::SaveGameManager saveManager;
     saveManager.Initialize("saves");

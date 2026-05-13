@@ -70,14 +70,14 @@
 ### 9. Passive Mobs
 - [x] Mob system framework
 - [x] Pigs (wander, flee)
-- [ ] Cows, chickens
-- [ ] Drop meat/leather/feathers
+- [x] Cows, chickens
+- [x] Drop meat/leather/feathers
 
 ### 10. Hostile Mobs
 - [x] Zombies (night only)
-- [ ] Skeletons with bow shooting
-- [ ] Spiders (can climb walls)
-- [ ] Creepers (explode near player)
+- [x] Skeletons with bow shooting
+- [x] Spiders (can climb walls)
+- [x] Creepers (explode near player)
 
 ### 11. Mob AI
 - [ ] Pathfinding around obstacles
