@@ -102,9 +102,9 @@
 - [x] Explosion particles
 
 ### 14. Lighting
-- [ ] Torch placement with light radius
-- [ ] Smooth lighting between blocks
-- [ ] Ambient occlusion
+- [x] Torch placement with light radius
+- [x] Smooth lighting between blocks
+- [x] Ambient occlusion
 
 ### 15. Sky & Weather
 - [ ] Clouds
