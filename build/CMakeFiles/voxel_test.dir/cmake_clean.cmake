@@ -49,6 +49,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_test.dir/src/core/raycast.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/core/resource_pack.cpp.o"
   "CMakeFiles/voxel_test.dir/src/core/resource_pack.cpp.o.d"
+  "CMakeFiles/voxel_test.dir/src/core/save_game.cpp.o"
+  "CMakeFiles/voxel_test.dir/src/core/save_game.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/core/save_system.cpp.o"
   "CMakeFiles/voxel_test.dir/src/core/save_system.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/core/time_system.cpp.o"

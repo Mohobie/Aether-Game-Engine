@@ -9,10 +9,11 @@
 ## Core Gameplay Systems
 
 ### 1. World Persistence
-- [ ] Save/load world state to disk
-- [ ] Player position/inventory persistence
-- [ ] Multiple save slots
-- [ ] Auto-save on interval
+- [x] Save/load world state to disk
+- [x] Player position persistence
+- [x] Multiple save slots
+- [x] Auto-save on interval
+- [ ] Player inventory persistence
 
 ### 2. Proper Terrain Generation
 - [x] Perlin noise with octaves for realistic hills

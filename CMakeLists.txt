@@ -177,6 +177,7 @@ set(CORE_SOURCES
     src/core/asset_importer.cpp
     src/core/resource_pack.cpp
     src/core/save_system.cpp
+    src/core/save_game.cpp
     src/voxel/voxel_editor.cpp
     src/game/sandbox_mode.cpp
     src/game/survival_mode.cpp

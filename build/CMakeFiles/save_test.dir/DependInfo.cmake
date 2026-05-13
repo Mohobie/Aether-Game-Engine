@@ -33,6 +33,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-test/src/core/player_controller.cpp" "CMakeFiles/save_test.dir/src/core/player_controller.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/core/player_controller.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/core/raycast.cpp" "CMakeFiles/save_test.dir/src/core/raycast.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/core/raycast.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/core/resource_pack.cpp" "CMakeFiles/save_test.dir/src/core/resource_pack.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/core/resource_pack.cpp.o.d"
+  "/home/mohobie/projects/aether-game-test/src/core/save_game.cpp" "CMakeFiles/save_test.dir/src/core/save_game.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/core/save_game.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/core/save_system.cpp" "CMakeFiles/save_test.dir/src/core/save_system.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/core/save_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/core/time_system.cpp" "CMakeFiles/save_test.dir/src/core/time_system.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/core/time_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/core/weather_system.cpp" "CMakeFiles/save_test.dir/src/core/weather_system.cpp.o" "gcc" "CMakeFiles/save_test.dir/src/core/weather_system.cpp.o.d"

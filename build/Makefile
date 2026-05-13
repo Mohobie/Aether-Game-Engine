@@ -1265,6 +1265,45 @@ src/core/resource_pack.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/resource_pack.cpp.s
 .PHONY : src/core/resource_pack.cpp.s
 
+src/core/save_game.o: src/core/save_game.cpp.o
+.PHONY : src/core/save_game.o
+
+# target to build an object file
+src/core/save_game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/save_game.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/save_game.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/save_game.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/save_game.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/save_game.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/save_game.cpp.o
+.PHONY : src/core/save_game.cpp.o
+
+src/core/save_game.i: src/core/save_game.cpp.i
+.PHONY : src/core/save_game.i
+
+# target to preprocess a source file
+src/core/save_game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/save_game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/save_game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/save_game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/save_game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/save_game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/save_game.cpp.i
+.PHONY : src/core/save_game.cpp.i
+
+src/core/save_game.s: src/core/save_game.cpp.s
+.PHONY : src/core/save_game.s
+
+# target to generate assembly for a file
+src/core/save_game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/core/save_game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/core/save_game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/core/save_game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/core/save_game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/core/save_game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/core/save_game.cpp.s
+.PHONY : src/core/save_game.cpp.s
+
 src/core/save_system.o: src/core/save_system.cpp.o
 .PHONY : src/core/save_system.o
 
@@ -4639,6 +4678,9 @@ help:
 	@echo "... src/core/resource_pack.o"
 	@echo "... src/core/resource_pack.i"
 	@echo "... src/core/resource_pack.s"
+	@echo "... src/core/save_game.o"
+	@echo "... src/core/save_game.i"
+	@echo "... src/core/save_game.s"
 	@echo "... src/core/save_system.o"
 	@echo "... src/core/save_system.i"
 	@echo "... src/core/save_system.s"
