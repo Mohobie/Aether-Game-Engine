@@ -476,6 +476,45 @@ src/ai/entity_spawner.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/entity_spawner.cpp.s
 .PHONY : src/ai/entity_spawner.cpp.s
 
+src/ai/mob_ai.o: src/ai/mob_ai.cpp.o
+.PHONY : src/ai/mob_ai.o
+
+# target to build an object file
+src/ai/mob_ai.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/mob_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/mob_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/mob_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/mob_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/mob_ai.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/mob_ai.cpp.o
+.PHONY : src/ai/mob_ai.cpp.o
+
+src/ai/mob_ai.i: src/ai/mob_ai.cpp.i
+.PHONY : src/ai/mob_ai.i
+
+# target to preprocess a source file
+src/ai/mob_ai.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/mob_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/mob_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/mob_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/mob_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/mob_ai.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/mob_ai.cpp.i
+.PHONY : src/ai/mob_ai.cpp.i
+
+src/ai/mob_ai.s: src/ai/mob_ai.cpp.s
+.PHONY : src/ai/mob_ai.s
+
+# target to generate assembly for a file
+src/ai/mob_ai.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ai/mob_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ai/mob_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ai/mob_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ai/mob_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ai/mob_ai.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ai/mob_ai.cpp.s
+.PHONY : src/ai/mob_ai.cpp.s
+
 src/ai/mob_spawner.o: src/ai/mob_spawner.cpp.o
 .PHONY : src/ai/mob_spawner.o
 
@@ -5083,6 +5122,9 @@ help:
 	@echo "... src/ai/entity_spawner.o"
 	@echo "... src/ai/entity_spawner.i"
 	@echo "... src/ai/entity_spawner.s"
+	@echo "... src/ai/mob_ai.o"
+	@echo "... src/ai/mob_ai.i"
+	@echo "... src/ai/mob_ai.s"
 	@echo "... src/ai/mob_spawner.o"
 	@echo "... src/ai/mob_spawner.i"
 	@echo "... src/ai/mob_spawner.s"

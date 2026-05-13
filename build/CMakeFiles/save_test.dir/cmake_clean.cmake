@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/save_test.dir/src/ai/entity_ai.cpp.o.d"
   "CMakeFiles/save_test.dir/src/ai/entity_spawner.cpp.o"
   "CMakeFiles/save_test.dir/src/ai/entity_spawner.cpp.o.d"
+  "CMakeFiles/save_test.dir/src/ai/mob_ai.cpp.o"
+  "CMakeFiles/save_test.dir/src/ai/mob_ai.cpp.o.d"
   "CMakeFiles/save_test.dir/src/ai/mob_spawner.cpp.o"
   "CMakeFiles/save_test.dir/src/ai/mob_spawner.cpp.o.d"
   "CMakeFiles/save_test.dir/src/animation/animation.cpp.o"

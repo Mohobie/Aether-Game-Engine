@@ -80,9 +80,9 @@
 - [x] Creepers (explode near player)
 
 ### 11. Mob AI
-- [ ] Pathfinding around obstacles
-- [ ] Aggro/detection range
-- [ ] Day/night behavior changes
+- [x] Pathfinding around obstacles
+- [x] Aggro/detection range
+- [x] Day/night behavior changes
 - [ ] Spawning rules (light level, biome)
 
 ---
