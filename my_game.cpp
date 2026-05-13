@@ -8,6 +8,7 @@
 #include "platform/input_manager.h"
 #include "core/player_controller.h"
 #include "core/save_game.h"
+#include "core/crafting.h"
 #include "game/block_interaction.h"
 #include "debug/debug_renderer.h"
 #include "audio/audio_engine.h"
@@ -288,7 +289,29 @@ int main() {
     dayNightCycle.SetDayLength(1200.0f); // 20 minutes per day
     renderer.SetDayNightCycle(&dayNightCycle);
     
-    // 12. Create save game manager
+    // 12. Create crafting system
+    vge::CraftingSystem craftingSystem;
+    
+    // Add basic recipes
+    vge::CraftingRecipe plankRecipe;
+    plankRecipe.recipeID = "planks";
+    plankRecipe.displayName = "Wooden Planks";
+    plankRecipe.outputItemID = "wood";
+    plankRecipe.outputCount = 4;
+    plankRecipe.shapeless = true;
+    plankRecipe.ingredients.push_back(vge::RecipeIngredient("wood", 1));
+    craftingSystem.AddRecipe(plankRecipe);
+    
+    vge::CraftingRecipe stickRecipe;
+    stickRecipe.recipeID = "sticks";
+    stickRecipe.displayName = "Sticks";
+    stickRecipe.outputItemID = "stick";
+    stickRecipe.outputCount = 4;
+    stickRecipe.shapeless = true;
+    stickRecipe.ingredients.push_back(vge::RecipeIngredient("wood", 2));
+    craftingSystem.AddRecipe(stickRecipe);
+    
+    // 13. Create save game manager
     vge::SaveGameManager saveManager;
     saveManager.Initialize("saves");
     

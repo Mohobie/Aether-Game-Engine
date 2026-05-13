@@ -46,10 +46,10 @@
 - [x] Item pickup/drop
 
 ### 6. Crafting
-- [ ] Crafting grid (2x2 inventory, 3x3 table)
-- [ ] Recipe system
+- [x] Crafting grid (2x2 inventory, 3x3 table)
+- [x] Recipe system
 - [ ] Crafting table block
-- [ ] Tool/weapon crafting
+- [x] Tool/weapon crafting
 
 ### 7. Block Variety
 - [x] 20+ block types (ores, gems, flowers, etc.)
