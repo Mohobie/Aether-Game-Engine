@@ -53,6 +53,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/world_test.dir/src/core/save_game.cpp.o.d"
   "CMakeFiles/world_test.dir/src/core/save_system.cpp.o"
   "CMakeFiles/world_test.dir/src/core/save_system.cpp.o.d"
+  "CMakeFiles/world_test.dir/src/core/survival_system.cpp.o"
+  "CMakeFiles/world_test.dir/src/core/survival_system.cpp.o.d"
   "CMakeFiles/world_test.dir/src/core/time_system.cpp.o"
   "CMakeFiles/world_test.dir/src/core/time_system.cpp.o.d"
   "CMakeFiles/world_test.dir/src/core/weather_system.cpp.o"

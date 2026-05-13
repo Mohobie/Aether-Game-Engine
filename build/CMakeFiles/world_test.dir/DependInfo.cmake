@@ -35,6 +35,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-test/src/core/resource_pack.cpp" "CMakeFiles/world_test.dir/src/core/resource_pack.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/core/resource_pack.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/core/save_game.cpp" "CMakeFiles/world_test.dir/src/core/save_game.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/core/save_game.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/core/save_system.cpp" "CMakeFiles/world_test.dir/src/core/save_system.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/core/save_system.cpp.o.d"
+  "/home/mohobie/projects/aether-game-test/src/core/survival_system.cpp" "CMakeFiles/world_test.dir/src/core/survival_system.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/core/survival_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/core/time_system.cpp" "CMakeFiles/world_test.dir/src/core/time_system.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/core/time_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/core/weather_system.cpp" "CMakeFiles/world_test.dir/src/core/weather_system.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/core/weather_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/debug/debug_renderer.cpp" "CMakeFiles/world_test.dir/src/debug/debug_renderer.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/debug/debug_renderer.cpp.o.d"

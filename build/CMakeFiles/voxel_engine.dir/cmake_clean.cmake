@@ -57,6 +57,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_engine.dir/src/core/save_game.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/core/save_system.cpp.o.d"
+  "CMakeFiles/voxel_engine.dir/src/core/survival_system.cpp.o"
+  "CMakeFiles/voxel_engine.dir/src/core/survival_system.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/core/time_system.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/core/time_system.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/core/weather_system.cpp.o"

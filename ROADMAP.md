@@ -29,12 +29,14 @@
 - [ ] Bed/sleep mechanic to skip night
 
 ### 4. Health & Survival
-- [ ] Health bar (hearts)
-- [ ] Hunger bar (food meter)
+- [x] Health system (damage/healing)
+- [x] Hunger system (eating/starvation)
+- [x] Breathing/drowning system
+- [x] Death/respawn system
+- [x] Experience/leveling system
 - [ ] Fall damage
-- [ ] Drowning in water
 - [ ] Lava damage
-- [ ] Death/respawn system
+- [ ] Health/hunger UI (hearts/food bars)
 
 ### 5. Inventory System
 - [ ] Hotbar (9 slots)
