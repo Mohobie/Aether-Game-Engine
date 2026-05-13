@@ -149,6 +149,7 @@ set(CORE_SOURCES
     src/voxel/block_registry.cpp
     src/voxel/biome.cpp
     src/voxel/world_generator.cpp
+    src/voxel/cave_generator.cpp
     src/voxel/block_mesh_builder.cpp
     src/voxel/world_renderer.cpp
     src/voxel/world_serializer.cpp

@@ -203,6 +203,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_engine.dir/src/voxel/block_registry.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/voxel/block_types.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/voxel/block_types.cpp.o.d"
+  "CMakeFiles/voxel_engine.dir/src/voxel/cave_generator.cpp.o"
+  "CMakeFiles/voxel_engine.dir/src/voxel/cave_generator.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/voxel/chunk.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/voxel/chunk.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/voxel/chunk_manager.cpp.o"

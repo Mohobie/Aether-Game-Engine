@@ -18,7 +18,7 @@
 ### 2. Proper Terrain Generation
 - [x] Perlin noise with octaves for realistic hills
 - [x] Biome system (plains, forest, desert, mountains, ocean)
-- [ ] Cave generation with tunnel systems
+- [x] Cave generation with tunnel systems
 - [ ] Ore veins underground
 - [ ] River/lake generation
 

@@ -189,6 +189,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/world_test.dir/src/voxel/block_registry.cpp.o.d"
   "CMakeFiles/world_test.dir/src/voxel/block_types.cpp.o"
   "CMakeFiles/world_test.dir/src/voxel/block_types.cpp.o.d"
+  "CMakeFiles/world_test.dir/src/voxel/cave_generator.cpp.o"
+  "CMakeFiles/world_test.dir/src/voxel/cave_generator.cpp.o.d"
   "CMakeFiles/world_test.dir/src/voxel/chunk.cpp.o"
   "CMakeFiles/world_test.dir/src/voxel/chunk.cpp.o.d"
   "CMakeFiles/world_test.dir/src/voxel/chunk_manager.cpp.o"

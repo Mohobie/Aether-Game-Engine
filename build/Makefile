@@ -4187,6 +4187,45 @@ src/voxel/block_types.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/block_types.cpp.s
 .PHONY : src/voxel/block_types.cpp.s
 
+src/voxel/cave_generator.o: src/voxel/cave_generator.cpp.o
+.PHONY : src/voxel/cave_generator.o
+
+# target to build an object file
+src/voxel/cave_generator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/cave_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/cave_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/cave_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/cave_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/cave_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/cave_generator.cpp.o
+.PHONY : src/voxel/cave_generator.cpp.o
+
+src/voxel/cave_generator.i: src/voxel/cave_generator.cpp.i
+.PHONY : src/voxel/cave_generator.i
+
+# target to preprocess a source file
+src/voxel/cave_generator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/cave_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/cave_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/cave_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/cave_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/cave_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/cave_generator.cpp.i
+.PHONY : src/voxel/cave_generator.cpp.i
+
+src/voxel/cave_generator.s: src/voxel/cave_generator.cpp.s
+.PHONY : src/voxel/cave_generator.s
+
+# target to generate assembly for a file
+src/voxel/cave_generator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/cave_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/cave_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/cave_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/cave_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/cave_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/cave_generator.cpp.s
+.PHONY : src/voxel/cave_generator.cpp.s
+
 src/voxel/chunk.o: src/voxel/chunk.cpp.o
 .PHONY : src/voxel/chunk.o
 
@@ -5104,6 +5143,9 @@ help:
 	@echo "... src/voxel/block_types.o"
 	@echo "... src/voxel/block_types.i"
 	@echo "... src/voxel/block_types.s"
+	@echo "... src/voxel/cave_generator.o"
+	@echo "... src/voxel/cave_generator.i"
+	@echo "... src/voxel/cave_generator.s"
 	@echo "... src/voxel/chunk.o"
 	@echo "... src/voxel/chunk.i"
 	@echo "... src/voxel/chunk.s"
