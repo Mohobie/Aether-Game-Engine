@@ -153,6 +153,7 @@ set(CORE_SOURCES
     src/voxel/world_generator.cpp
     src/voxel/cave_generator.cpp
     src/voxel/ore_generator.cpp
+    src/voxel/water_generator.cpp
     src/voxel/block_mesh_builder.cpp
     src/voxel/world_renderer.cpp
     src/voxel/world_serializer.cpp

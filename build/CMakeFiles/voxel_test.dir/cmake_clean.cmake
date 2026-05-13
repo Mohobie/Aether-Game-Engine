@@ -207,6 +207,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_test.dir/src/voxel/terrain_system.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/voxel/voxel_editor.cpp.o"
   "CMakeFiles/voxel_test.dir/src/voxel/voxel_editor.cpp.o.d"
+  "CMakeFiles/voxel_test.dir/src/voxel/water_generator.cpp.o"
+  "CMakeFiles/voxel_test.dir/src/voxel/water_generator.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/voxel/world.cpp.o"
   "CMakeFiles/voxel_test.dir/src/voxel/world.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/voxel/world_generator.cpp.o"

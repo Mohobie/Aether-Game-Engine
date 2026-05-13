@@ -20,7 +20,7 @@
 - [x] Biome system (plains, forest, desert, mountains, ocean)
 - [x] Cave generation with tunnel systems
 - [x] Ore veins underground
-- [ ] River/lake generation
+- [x] River/lake generation
 
 ### 3. Day/Night Cycle
 - [ ] Sun/moon movement

@@ -4499,6 +4499,45 @@ src/voxel/voxel_editor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/voxel_editor.cpp.s
 .PHONY : src/voxel/voxel_editor.cpp.s
 
+src/voxel/water_generator.o: src/voxel/water_generator.cpp.o
+.PHONY : src/voxel/water_generator.o
+
+# target to build an object file
+src/voxel/water_generator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/water_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/water_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/water_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/water_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/water_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/water_generator.cpp.o
+.PHONY : src/voxel/water_generator.cpp.o
+
+src/voxel/water_generator.i: src/voxel/water_generator.cpp.i
+.PHONY : src/voxel/water_generator.i
+
+# target to preprocess a source file
+src/voxel/water_generator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/water_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/water_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/water_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/water_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/water_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/water_generator.cpp.i
+.PHONY : src/voxel/water_generator.cpp.i
+
+src/voxel/water_generator.s: src/voxel/water_generator.cpp.s
+.PHONY : src/voxel/water_generator.s
+
+# target to generate assembly for a file
+src/voxel/water_generator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/water_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/water_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/water_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/water_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/water_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/water_generator.cpp.s
+.PHONY : src/voxel/water_generator.cpp.s
+
 src/voxel/world.o: src/voxel/world.cpp.o
 .PHONY : src/voxel/world.o
 
@@ -5245,6 +5284,9 @@ help:
 	@echo "... src/voxel/voxel_editor.o"
 	@echo "... src/voxel/voxel_editor.i"
 	@echo "... src/voxel/voxel_editor.s"
+	@echo "... src/voxel/water_generator.o"
+	@echo "... src/voxel/water_generator.i"
+	@echo "... src/voxel/water_generator.s"
 	@echo "... src/voxel/world.o"
 	@echo "... src/voxel/world.i"
 	@echo "... src/voxel/world.s"
