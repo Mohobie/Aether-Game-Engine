@@ -136,11 +136,11 @@
 ## World Features
 
 ### 18. Structures
-- [ ] Trees (oak, birch, pine variants)
-- [ ] Villages with houses
-- [ ] Dungeons underground
+- [x] Trees (oak, birch, pine variants)
+- [x] Villages with houses
+- [x] Dungeons underground
 - [ ] Mineshafts
-- [ ] Caves with stalactites
+- [x] Caves with stalactites
 
 ### 19. Flora
 - [ ] Grass/flowers on surface

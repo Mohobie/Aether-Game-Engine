@@ -4421,6 +4421,45 @@ src/voxel/ore_generator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/ore_generator.cpp.s
 .PHONY : src/voxel/ore_generator.cpp.s
 
+src/voxel/structure_generator.o: src/voxel/structure_generator.cpp.o
+.PHONY : src/voxel/structure_generator.o
+
+# target to build an object file
+src/voxel/structure_generator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/structure_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/structure_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/structure_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/structure_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/structure_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/structure_generator.cpp.o
+.PHONY : src/voxel/structure_generator.cpp.o
+
+src/voxel/structure_generator.i: src/voxel/structure_generator.cpp.i
+.PHONY : src/voxel/structure_generator.i
+
+# target to preprocess a source file
+src/voxel/structure_generator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/structure_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/structure_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/structure_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/structure_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/structure_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/structure_generator.cpp.i
+.PHONY : src/voxel/structure_generator.cpp.i
+
+src/voxel/structure_generator.s: src/voxel/structure_generator.cpp.s
+.PHONY : src/voxel/structure_generator.s
+
+# target to generate assembly for a file
+src/voxel/structure_generator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/structure_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/structure_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/structure_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/structure_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/structure_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/structure_generator.cpp.s
+.PHONY : src/voxel/structure_generator.cpp.s
+
 src/voxel/terrain_system.o: src/voxel/terrain_system.cpp.o
 .PHONY : src/voxel/terrain_system.o
 
@@ -5278,6 +5317,9 @@ help:
 	@echo "... src/voxel/ore_generator.o"
 	@echo "... src/voxel/ore_generator.i"
 	@echo "... src/voxel/ore_generator.s"
+	@echo "... src/voxel/structure_generator.o"
+	@echo "... src/voxel/structure_generator.i"
+	@echo "... src/voxel/structure_generator.s"
 	@echo "... src/voxel/terrain_system.o"
 	@echo "... src/voxel/terrain_system.i"
 	@echo "... src/voxel/terrain_system.s"

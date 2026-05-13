@@ -215,6 +215,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_engine.dir/src/voxel/chunk_manager.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/voxel/ore_generator.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/voxel/ore_generator.cpp.o.d"
+  "CMakeFiles/voxel_engine.dir/src/voxel/structure_generator.cpp.o"
+  "CMakeFiles/voxel_engine.dir/src/voxel/structure_generator.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/voxel/terrain_system.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/voxel/terrain_system.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/voxel/voxel_editor.cpp.o"
