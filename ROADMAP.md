@@ -143,9 +143,9 @@
 - [x] Caves with stalactites
 
 ### 19. Flora
-- [ ] Grass/flowers on surface
-- [ ] Tall grass
-- [ ] Cacti in desert
+- [x] Grass/flowers on surface
+- [x] Tall grass
+- [x] Cacti in desert
 - [ ] Lily pads on water
 - [ ] Mushrooms in caves
 

@@ -4382,6 +4382,45 @@ src/voxel/chunk_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/chunk_manager.cpp.s
 .PHONY : src/voxel/chunk_manager.cpp.s
 
+src/voxel/flora_generator.o: src/voxel/flora_generator.cpp.o
+.PHONY : src/voxel/flora_generator.o
+
+# target to build an object file
+src/voxel/flora_generator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/flora_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/flora_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/flora_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/flora_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/flora_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/flora_generator.cpp.o
+.PHONY : src/voxel/flora_generator.cpp.o
+
+src/voxel/flora_generator.i: src/voxel/flora_generator.cpp.i
+.PHONY : src/voxel/flora_generator.i
+
+# target to preprocess a source file
+src/voxel/flora_generator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/flora_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/flora_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/flora_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/flora_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/flora_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/flora_generator.cpp.i
+.PHONY : src/voxel/flora_generator.cpp.i
+
+src/voxel/flora_generator.s: src/voxel/flora_generator.cpp.s
+.PHONY : src/voxel/flora_generator.s
+
+# target to generate assembly for a file
+src/voxel/flora_generator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/flora_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/flora_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/flora_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/flora_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/flora_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/flora_generator.cpp.s
+.PHONY : src/voxel/flora_generator.cpp.s
+
 src/voxel/ore_generator.o: src/voxel/ore_generator.cpp.o
 .PHONY : src/voxel/ore_generator.o
 
@@ -5314,6 +5353,9 @@ help:
 	@echo "... src/voxel/chunk_manager.o"
 	@echo "... src/voxel/chunk_manager.i"
 	@echo "... src/voxel/chunk_manager.s"
+	@echo "... src/voxel/flora_generator.o"
+	@echo "... src/voxel/flora_generator.i"
+	@echo "... src/voxel/flora_generator.s"
 	@echo "... src/voxel/ore_generator.o"
 	@echo "... src/voxel/ore_generator.i"
 	@echo "... src/voxel/ore_generator.s"

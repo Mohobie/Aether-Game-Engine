@@ -201,6 +201,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/save_test.dir/src/voxel/chunk.cpp.o.d"
   "CMakeFiles/save_test.dir/src/voxel/chunk_manager.cpp.o"
   "CMakeFiles/save_test.dir/src/voxel/chunk_manager.cpp.o.d"
+  "CMakeFiles/save_test.dir/src/voxel/flora_generator.cpp.o"
+  "CMakeFiles/save_test.dir/src/voxel/flora_generator.cpp.o.d"
   "CMakeFiles/save_test.dir/src/voxel/ore_generator.cpp.o"
   "CMakeFiles/save_test.dir/src/voxel/ore_generator.cpp.o.d"
   "CMakeFiles/save_test.dir/src/voxel/structure_generator.cpp.o"
