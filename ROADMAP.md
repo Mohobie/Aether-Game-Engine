@@ -117,6 +117,8 @@
 ## Audio
 
 ### 16. Sound Effects
+- [x] Audio engine with 3D positioning
+- [x] Volume groups (master, music, SFX)
 - [ ] Block break/place sounds
 - [ ] Footsteps (different per block)
 - [ ] Mob sounds
@@ -124,6 +126,7 @@
 - [ ] Damage sounds
 
 ### 17. Music
+- [x] Audio engine supports music playback
 - [ ] Ambient background music
 - [ ] Day/night music variations
 - [ ] Combat music when near mobs
