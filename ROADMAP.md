@@ -119,11 +119,11 @@
 ### 16. Sound Effects
 - [x] Audio engine with 3D positioning
 - [x] Volume groups (master, music, SFX)
-- [ ] Block break/place sounds
-- [ ] Footsteps (different per block)
-- [ ] Mob sounds
-- [ ] Tool swing sounds
-- [ ] Damage sounds
+- [x] Block break/place sounds
+- [x] Footsteps (different per block)
+- [x] Mob sounds
+- [x] Tool swing sounds
+- [x] Damage sounds
 
 ### 17. Music
 - [x] Audio engine supports music playback
