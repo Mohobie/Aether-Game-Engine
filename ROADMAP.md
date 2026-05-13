@@ -42,7 +42,7 @@
 - [x] Hotbar (9 slots)
 - [x] Full inventory grid (3x9)
 - [x] Item stacking
-- [ ] Tool durability
+- [x] Tool durability
 - [x] Item pickup/drop
 
 ### 6. Crafting

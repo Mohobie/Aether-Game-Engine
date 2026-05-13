@@ -3,76 +3,78 @@
 ## Quick Reference
 
 ```cpp
-// Create a diamond pickaxe
-vge::ToolStats pickaxe = vge::ToolSystem::CreateTool(
-    vge::ToolType::Pickaxe, 
-    vge::ToolMaterial::Diamond
-);
+// Create a tool
+vge::ToolStats pickaxe = vge::ToolSystem::CreateTool(vge::ToolType::Pickaxe, vge::ToolMaterial::Iron);
 
-// Check if can mine block
-if (vge::ToolSystem::CanMine(pickaxe, "diamond_ore")) {
-    float speed = vge::ToolSystem::GetMiningSpeed(pickaxe, "diamond_ore");
-    // Mine block...
-    vge::ToolSystem::UseTool(pickaxe); // Reduce durability
-}
+// Use tool (reduces durability)
+bool stillUsable = vge::ToolSystem::UseTool(pickaxe);
 
-// Combat damage
+// Check mining speed
+float speed = vge::ToolSystem::GetMiningSpeed(pickaxe, "stone");
+
+// Check if can mine
+bool canMine = vge::ToolSystem::CanMine(pickaxe, "diamond_ore");
+
+// Get damage
 float damage = vge::ToolSystem::GetDamage(pickaxe);
+
+// Repair tool
+vge::ToolSystem::RepairTool(pickaxe, 50);
 ```
 
-## Tool Types
+## Features
 
+### Tool Types
 | Type | Use | Blocks |
 |------|-----|--------|
-| Pickaxe | Mining stone/ores | Stone, coal, iron, gold, diamond, emerald, bedrock |
+| Pickaxe | Mining stone/ores | Stone, coal, iron, gold, diamond |
 | Axe | Chopping wood | Wood, leaves |
-| Shovel | Digging soft blocks | Dirt, grass, sand |
+| Shovel | Digging | Dirt, grass, sand |
 | Sword | Combat | Not for mining |
-| Hoe | Farming | Soil |
+| Hoe | Farming | - |
 
-## Material Tiers
+### Materials
+| Material | Tier | Durability | Speed | Damage |
+|----------|------|------------|-------|--------|
+| Wood | 0 | 60 | 2x | 2 |
+| Stone | 1 | 132 | 4x | 3 |
+| Iron | 2 | 251 | 6x | 4 |
+| Gold | 0 | 33 | 12x | 2 |
+| Diamond | 3 | 1562 | 8x | 5 |
 
-| Material | Mining Speed | Durability | Damage | Tier |
-|----------|-------------|------------|--------|------|
-| Wood | 2x | 60 | 2 | 0 |
-| Stone | 4x | 132 | 3 | 1 |
-| Iron | 6x | 251 | 4 | 2 |
-| Gold | 12x | 33 | 2 | 0 |
-| Diamond | 8x | 1562 | 5 | 3 |
-
-## Block Requirements
-
-| Block | Required Tool | Minimum Tier |
-|-------|--------------|--------------|
+### Mining Requirements
+| Block | Required Tool | Min Tier |
+|-------|--------------|----------|
 | Stone | Pickaxe | Wood (0) |
-| Coal Ore | Pickaxe | Wood (0) |
+| Coal | Pickaxe | Wood (0) |
 | Iron Ore | Pickaxe | Stone (1) |
 | Gold Ore | Pickaxe | Iron (2) |
 | Diamond Ore | Pickaxe | Iron (2) |
 | Emerald Ore | Pickaxe | Iron (2) |
-| Bedrock | Unbreakable | - |
+| Bedrock | - | Unbreakable |
 
-## Usage
+## Implementation
 
 ```cpp
 // Create tools
-auto woodPickaxe = vge::ToolSystem::CreateTool(ToolType::Pickaxe, ToolMaterial::Wood);
-auto ironSword = vge::ToolSystem::CreateTool(ToolType::Sword, ToolMaterial::Iron);
+vge::ToolStats woodenPick = vge::ToolSystem::CreateTool(vge::ToolType::Pickaxe, vge::ToolMaterial::Wood);
+vge::ToolStats ironSword = vge::ToolSystem::CreateTool(vge::ToolType::Sword, vge::ToolMaterial::Iron);
 
-// Mining
-std::string blockId = "iron_ore";
-if (vge::ToolSystem::CanMine(woodPickaxe, blockId)) {
-    // Can mine but slowly (1x speed, no bonus)
+// Use in game loop
+if (mining) {
+    float speed = vge::ToolSystem::GetMiningSpeed(tool, blockId);
+    if (vge::ToolSystem::CanMine(tool, blockId)) {
+        // Mine block
+        vge::ToolSystem::UseTool(tool);
+    }
 }
-if (vge::ToolSystem::CanMine(ironPickaxe, blockId)) {
-    // Can mine at 6x speed
+
+// Combat
+if (attacking) {
+    float damage = vge::ToolSystem::GetDamage(weapon);
+    enemy.TakeDamage(damage);
+    vge::ToolSystem::UseTool(weapon);
 }
-
-// Durability
-bool stillUsable = vge::ToolSystem::UseTool(pickaxe); // Returns false if broken
-
-// Repair
-vge::ToolSystem::RepairTool(pickaxe, 50); // Add 50 durability
 ```
 
 ## Files
