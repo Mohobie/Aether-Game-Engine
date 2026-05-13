@@ -1,7 +1,7 @@
 #pragma once
 #include "voxel/world.h"
 #include "core/player_controller.h"
-#include <string>
+#include <cstring>
 #include <vector>
 
 namespace vge {
