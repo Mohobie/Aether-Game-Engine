@@ -165,6 +165,12 @@
 - [x] Resource gathering
 
 ### 22. Creative Mode
+- [x] Flight mode
+- [x] Infinite blocks
+- [x] Instant break
+- [x] No damage/hunger
+
+### 22. Creative Mode
 - [ ] Infinite blocks
 - [ ] Flight
 - [ ] No damage
