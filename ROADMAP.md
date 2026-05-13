@@ -156,10 +156,10 @@
 ## Game Modes
 
 ### 21. Survival Mode
-- [ ] Health/hunger
-- [ ] Crafting required
-- [ ] Mob threats
-- [ ] Resource gathering
+- [x] Health/hunger
+- [x] Crafting required
+- [x] Mob threats
+- [x] Resource gathering
 
 ### 22. Creative Mode
 - [ ] Infinite blocks
