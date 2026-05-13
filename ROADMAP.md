@@ -90,10 +90,10 @@
 ## Visual Polish
 
 ### 12. Textures
-- [ ] Block texture atlas
-- [ ] Item textures
-- [ ] GUI elements
-- [ ] Crosshair, hotbar, hearts
+- [x] Block texture atlas
+- [x] Item textures
+- [x] GUI elements
+- [x] Crosshair, hotbar, hearts
 
 ### 13. Particles
 - [x] Block break particles
