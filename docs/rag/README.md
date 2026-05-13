@@ -39,6 +39,10 @@ Each document covers a specific system or topic:
 | `ORE_GENERATION.md` | Ore types, distribution, generation algorithm |
 | `TOOL_SYSTEM.md` | Tool types, materials, durability, mining |
 | `SAVE_SYSTEM.md` | Save/load, auto-save, quick save |
+| `WORLD_GENERATOR.md` | World generation types (flat/hilly/forest/desert) |
+| `INPUT_SYSTEM.md` | Keyboard, mouse, input callbacks |
+| `DAY_NIGHT_CYCLE.md` | Time system, sky colors, celestial bodies |
+| `CHUNK_SYSTEM.md` | Chunk loading, world accessors, fixes |
 
 ## How to Use This Documentation
 
