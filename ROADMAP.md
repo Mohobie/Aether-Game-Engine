@@ -58,10 +58,10 @@
 - [ ] Block drops (not always same block)
 
 ### 8. Tools & Weapons
-- [ ] Pickaxe, axe, shovel, sword
-- [ ] Wood/stone/iron/gold/diamond tiers
-- [ ] Attack damage
-- [ ] Durability system
+- [x] Pickaxe, axe, shovel, sword
+- [x] Wood/stone/iron/gold/diamond tiers
+- [x] Attack damage
+- [x] Durability system
 
 ---
 

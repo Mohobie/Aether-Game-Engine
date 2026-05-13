@@ -2006,6 +2006,45 @@ src/game/survival_mode.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/survival_mode.cpp.s
 .PHONY : src/game/survival_mode.cpp.s
 
+src/game/tool_system.o: src/game/tool_system.cpp.o
+.PHONY : src/game/tool_system.o
+
+# target to build an object file
+src/game/tool_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/tool_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/tool_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/tool_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/tool_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/tool_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/tool_system.cpp.o
+.PHONY : src/game/tool_system.cpp.o
+
+src/game/tool_system.i: src/game/tool_system.cpp.i
+.PHONY : src/game/tool_system.i
+
+# target to preprocess a source file
+src/game/tool_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/tool_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/tool_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/tool_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/tool_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/tool_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/tool_system.cpp.i
+.PHONY : src/game/tool_system.cpp.i
+
+src/game/tool_system.s: src/game/tool_system.cpp.s
+.PHONY : src/game/tool_system.s
+
+# target to generate assembly for a file
+src/game/tool_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/tool_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/tool_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/tool_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/tool_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/tool_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/tool_system.cpp.s
+.PHONY : src/game/tool_system.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -4813,6 +4852,9 @@ help:
 	@echo "... src/game/survival_mode.o"
 	@echo "... src/game/survival_mode.i"
 	@echo "... src/game/survival_mode.s"
+	@echo "... src/game/tool_system.o"
+	@echo "... src/game/tool_system.i"
+	@echo "... src/game/tool_system.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

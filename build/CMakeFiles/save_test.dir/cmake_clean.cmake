@@ -87,6 +87,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/save_test.dir/src/game/sandbox_mode.cpp.o.d"
   "CMakeFiles/save_test.dir/src/game/survival_mode.cpp.o"
   "CMakeFiles/save_test.dir/src/game/survival_mode.cpp.o.d"
+  "CMakeFiles/save_test.dir/src/game/tool_system.cpp.o"
+  "CMakeFiles/save_test.dir/src/game/tool_system.cpp.o.d"
   "CMakeFiles/save_test.dir/src/math/mat4.cpp.o"
   "CMakeFiles/save_test.dir/src/math/mat4.cpp.o.d"
   "CMakeFiles/save_test.dir/src/math/vec3.cpp.o"
