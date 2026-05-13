@@ -127,9 +127,9 @@
 
 ### 17. Music
 - [x] Audio engine supports music playback
-- [ ] Ambient background music
-- [ ] Day/night music variations
-- [ ] Combat music when near mobs
+- [x] Ambient background music
+- [x] Day/night music variations
+- [x] Combat music when near mobs
 
 ---
 
