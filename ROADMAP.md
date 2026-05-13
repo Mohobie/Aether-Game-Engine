@@ -214,11 +214,11 @@
 - [x] Pause menu
 
 ### 27. Settings
-- [ ] Graphics quality
-- [ ] Render distance
-- [ ] Mouse sensitivity
-- [ ] Volume controls
-- [ ] Fullscreen/windowed
+- [x] Graphics quality
+- [x] Render distance
+- [x] Mouse sensitivity
+- [x] Volume controls
+- [x] Fullscreen/windowed
 
 ---
 
