@@ -193,10 +193,10 @@
 - [ ] Key bindings config
 
 ### 26. In-Game UI
-- [ ] Hotbar with selected item highlight
-- [ ] Health/hunger bars
-- [ ] Crosshair
-- [ ] Debug info (F3)
+- [x] Hotbar with selected item highlight
+- [x] Health/hunger bars
+- [x] Crosshair
+- [x] Debug info (F3)
 - [ ] Pause menu
 
 ### 27. Settings
