@@ -107,10 +107,10 @@
 - [x] Ambient occlusion
 
 ### 15. Sky & Weather
-- [ ] Clouds
-- [ ] Rain/snow weather
-- [ ] Fog in distance
-- [ ] Stars at night
+- [x] Clouds
+- [x] Rain/snow weather
+- [x] Fog in distance
+- [x] Stars at night
 
 ---
 
