@@ -206,7 +206,7 @@
 - [x] Health/hunger bars
 - [x] Crosshair
 - [x] Debug info (F3)
-- [ ] Pause menu
+- [x] Pause menu
 
 ### 27. Settings
 - [ ] Graphics quality

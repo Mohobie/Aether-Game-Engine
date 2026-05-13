@@ -173,6 +173,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/world_test.dir/src/scripting/script_engine.cpp.o.d"
   "CMakeFiles/world_test.dir/src/ui/console_commands.cpp.o"
   "CMakeFiles/world_test.dir/src/ui/console_commands.cpp.o.d"
+  "CMakeFiles/world_test.dir/src/ui/settings_menu.cpp.o"
+  "CMakeFiles/world_test.dir/src/ui/settings_menu.cpp.o.d"
   "CMakeFiles/world_test.dir/src/ui/ui_element.cpp.o"
   "CMakeFiles/world_test.dir/src/ui/ui_element.cpp.o.d"
   "CMakeFiles/world_test.dir/src/ui/ui_inventory.cpp.o"

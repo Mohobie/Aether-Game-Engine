@@ -3875,6 +3875,45 @@ src/ui/menu_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/menu_system.cpp.s
 .PHONY : src/ui/menu_system.cpp.s
 
+src/ui/settings_menu.o: src/ui/settings_menu.cpp.o
+.PHONY : src/ui/settings_menu.o
+
+# target to build an object file
+src/ui/settings_menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ui/settings_menu.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ui/settings_menu.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/settings_menu.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/settings_menu.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/settings_menu.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/settings_menu.cpp.o
+.PHONY : src/ui/settings_menu.cpp.o
+
+src/ui/settings_menu.i: src/ui/settings_menu.cpp.i
+.PHONY : src/ui/settings_menu.i
+
+# target to preprocess a source file
+src/ui/settings_menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ui/settings_menu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ui/settings_menu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/settings_menu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/settings_menu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/settings_menu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/settings_menu.cpp.i
+.PHONY : src/ui/settings_menu.cpp.i
+
+src/ui/settings_menu.s: src/ui/settings_menu.cpp.s
+.PHONY : src/ui/settings_menu.s
+
+# target to generate assembly for a file
+src/ui/settings_menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ui/settings_menu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ui/settings_menu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/settings_menu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/settings_menu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/settings_menu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/settings_menu.cpp.s
+.PHONY : src/ui/settings_menu.cpp.s
+
 src/ui/ui_element.o: src/ui/ui_element.cpp.o
 .PHONY : src/ui/ui_element.o
 
@@ -5119,6 +5158,9 @@ help:
 	@echo "... src/ui/menu_system.o"
 	@echo "... src/ui/menu_system.i"
 	@echo "... src/ui/menu_system.s"
+	@echo "... src/ui/settings_menu.o"
+	@echo "... src/ui/settings_menu.i"
+	@echo "... src/ui/settings_menu.s"
 	@echo "... src/ui/ui_element.o"
 	@echo "... src/ui/ui_element.i"
 	@echo "... src/ui/ui_element.s"
