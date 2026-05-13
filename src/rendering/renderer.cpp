@@ -64,6 +64,11 @@ void Renderer::Shutdown() {
 }
 
 void Renderer::BeginFrame() {
+    // Use sky color from day/night cycle if available
+    if (day_night_cycle) {
+        Vec3 skyColor = day_night_cycle->GetSkyTopColor();
+        glClearColor(skyColor.x, skyColor.y, skyColor.z, 1.0f);
+    }
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 

@@ -2,9 +2,11 @@
 #include "voxel/world_generator.h"
 #include "rendering/renderer.h"
 #include "rendering/camera.h"
+#include "rendering/sky/day_night_cycle.h"
 #include "platform/window.h"
 #include "platform/input_manager.h"
 #include "core/player_controller.h"
+#include "core/save_game.h"
 #include "game/block_interaction.h"
 #include "debug/debug_renderer.h"
 #include "audio/audio_engine.h"
@@ -160,7 +162,16 @@ int main() {
     vge::InGameEditor editor(&world, &camera, &input, &renderer);
     editor.Initialize();
     
-    // 11. Create debug renderer
+    // 11. Create day/night cycle
+    vge::DayNightCycle dayNightCycle;
+    dayNightCycle.SetDayLength(1200.0f); // 20 minutes per day
+    renderer.SetDayNightCycle(&dayNightCycle);
+    
+    // 12. Create save game manager
+    vge::SaveGameManager saveManager;
+    saveManager.Initialize("saves");
+    
+    // 13. Create debug renderer
     vge::DebugRenderer& debug = vge::GetDebugRenderer();
     debug.Initialize();
     
@@ -220,10 +231,26 @@ int main() {
             if (input.IsKeyJustPressed(vge::KeyCode::E)) {
                 player.PlaceBlock(world, registry.GetBlockId(blockTypes[selectedBlock]));
             }
+            
+            // Day/night cycle controls (use number keys for now)
+            if (input.IsKeyJustPressed(vge::KeyCode::Key1)) {
+                dayNightCycle.SkipToDawn();
+            }
+            if (input.IsKeyJustPressed(vge::KeyCode::Key2)) {
+                dayNightCycle.SkipToNoon();
+            }
+            if (input.IsKeyJustPressed(vge::KeyCode::Key3)) {
+                dayNightCycle.SkipToDusk();
+            }
+            if (input.IsKeyJustPressed(vge::KeyCode::Key4)) {
+                dayNightCycle.SkipToMidnight();
+            }
         }
         
+        // Update day/night cycle
+        dayNightCycle.Update(deltaTime);
+        
         // Render
-        renderer.SetClearColor(0.53f, 0.81f, 0.98f, 1.0f); // Sky blue
         renderer.BeginFrame();
         
         renderer.RenderWorld(world, camera);
