@@ -99,6 +99,7 @@ set(CORE_SOURCES
     src/ui/ui_system.cpp
     src/ui/settings_menu.cpp
     src/ui/hud_system.cpp
+    src/ui/main_menu.cpp
     src/physics/physics_constraints.cpp
     src/network/network_architecture.cpp
     src/network/packet.cpp

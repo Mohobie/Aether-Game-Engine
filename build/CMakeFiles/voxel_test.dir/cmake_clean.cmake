@@ -177,6 +177,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_test.dir/src/ui/console_commands.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/ui/hud_system.cpp.o"
   "CMakeFiles/voxel_test.dir/src/ui/hud_system.cpp.o.d"
+  "CMakeFiles/voxel_test.dir/src/ui/main_menu.cpp.o"
+  "CMakeFiles/voxel_test.dir/src/ui/main_menu.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/ui/settings_menu.cpp.o"
   "CMakeFiles/voxel_test.dir/src/ui/settings_menu.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/ui/ui_element.cpp.o"

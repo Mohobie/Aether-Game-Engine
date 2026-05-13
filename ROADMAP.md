@@ -201,9 +201,9 @@
 ## UI/UX
 
 ### 25. Main Menu
-- [ ] Title screen with background
-- [ ] Singleplayer/Multiplayer options
-- [ ] Settings menu
+- [x] Title screen with background
+- [x] Singleplayer/Multiplayer options
+- [x] Settings menu
 - [ ] Key bindings config
 
 ### 26. In-Game UI

@@ -3884,6 +3884,45 @@ src/ui/imgui_wrapper.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/imgui_wrapper.cpp.s
 .PHONY : src/ui/imgui_wrapper.cpp.s
 
+src/ui/main_menu.o: src/ui/main_menu.cpp.o
+.PHONY : src/ui/main_menu.o
+
+# target to build an object file
+src/ui/main_menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ui/main_menu.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ui/main_menu.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/main_menu.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/main_menu.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/main_menu.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/main_menu.cpp.o
+.PHONY : src/ui/main_menu.cpp.o
+
+src/ui/main_menu.i: src/ui/main_menu.cpp.i
+.PHONY : src/ui/main_menu.i
+
+# target to preprocess a source file
+src/ui/main_menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ui/main_menu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ui/main_menu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/main_menu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/main_menu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/main_menu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/main_menu.cpp.i
+.PHONY : src/ui/main_menu.cpp.i
+
+src/ui/main_menu.s: src/ui/main_menu.cpp.s
+.PHONY : src/ui/main_menu.s
+
+# target to generate assembly for a file
+src/ui/main_menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/ui/main_menu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/ui/main_menu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/ui/main_menu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/ui/main_menu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/ui/main_menu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/ui/main_menu.cpp.s
+.PHONY : src/ui/main_menu.cpp.s
+
 src/ui/menu_system.o: src/ui/menu_system.cpp.o
 .PHONY : src/ui/menu_system.o
 
@@ -5314,6 +5353,9 @@ help:
 	@echo "... src/ui/imgui_wrapper.o"
 	@echo "... src/ui/imgui_wrapper.i"
 	@echo "... src/ui/imgui_wrapper.s"
+	@echo "... src/ui/main_menu.o"
+	@echo "... src/ui/main_menu.i"
+	@echo "... src/ui/main_menu.s"
 	@echo "... src/ui/menu_system.o"
 	@echo "... src/ui/menu_system.i"
 	@echo "... src/ui/menu_system.s"
