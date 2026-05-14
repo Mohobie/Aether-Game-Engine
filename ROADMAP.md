@@ -184,7 +184,7 @@
 ### 24. Adventure Mode
 - [x] Story objectives
 - [x] Quest system
-- [ ] NPCs with dialog
+- [x] NPCs with dialog
 
 ---
 

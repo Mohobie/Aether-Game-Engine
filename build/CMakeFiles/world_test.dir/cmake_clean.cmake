@@ -89,6 +89,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/world_test.dir/src/game/inventory_persistence.cpp.o.d"
   "CMakeFiles/world_test.dir/src/game/mob_system.cpp.o"
   "CMakeFiles/world_test.dir/src/game/mob_system.cpp.o.d"
+  "CMakeFiles/world_test.dir/src/game/npc_dialog.cpp.o"
+  "CMakeFiles/world_test.dir/src/game/npc_dialog.cpp.o.d"
   "CMakeFiles/world_test.dir/src/game/player_stats.cpp.o"
   "CMakeFiles/world_test.dir/src/game/player_stats.cpp.o.d"
   "CMakeFiles/world_test.dir/src/game/quest_system.cpp.o"

@@ -53,6 +53,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohobie/projects/aether-game-test/src/game/day_night_cycle.cpp" "CMakeFiles/world_test.dir/src/game/day_night_cycle.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/game/day_night_cycle.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/game/inventory_persistence.cpp" "CMakeFiles/world_test.dir/src/game/inventory_persistence.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/game/inventory_persistence.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/game/mob_system.cpp" "CMakeFiles/world_test.dir/src/game/mob_system.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/game/mob_system.cpp.o.d"
+  "/home/mohobie/projects/aether-game-test/src/game/npc_dialog.cpp" "CMakeFiles/world_test.dir/src/game/npc_dialog.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/game/npc_dialog.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/game/player_stats.cpp" "CMakeFiles/world_test.dir/src/game/player_stats.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/game/player_stats.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/game/quest_system.cpp" "CMakeFiles/world_test.dir/src/game/quest_system.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/game/quest_system.cpp.o.d"
   "/home/mohobie/projects/aether-game-test/src/game/sandbox_mode.cpp" "CMakeFiles/world_test.dir/src/game/sandbox_mode.cpp.o" "gcc" "CMakeFiles/world_test.dir/src/game/sandbox_mode.cpp.o.d"

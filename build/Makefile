@@ -2045,6 +2045,45 @@ src/game/mob_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/mob_system.cpp.s
 .PHONY : src/game/mob_system.cpp.s
 
+src/game/npc_dialog.o: src/game/npc_dialog.cpp.o
+.PHONY : src/game/npc_dialog.o
+
+# target to build an object file
+src/game/npc_dialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/npc_dialog.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/npc_dialog.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/npc_dialog.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/npc_dialog.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/npc_dialog.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/npc_dialog.cpp.o
+.PHONY : src/game/npc_dialog.cpp.o
+
+src/game/npc_dialog.i: src/game/npc_dialog.cpp.i
+.PHONY : src/game/npc_dialog.i
+
+# target to preprocess a source file
+src/game/npc_dialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/npc_dialog.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/npc_dialog.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/npc_dialog.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/npc_dialog.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/npc_dialog.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/npc_dialog.cpp.i
+.PHONY : src/game/npc_dialog.cpp.i
+
+src/game/npc_dialog.s: src/game/npc_dialog.cpp.s
+.PHONY : src/game/npc_dialog.s
+
+# target to generate assembly for a file
+src/game/npc_dialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/npc_dialog.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/npc_dialog.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/npc_dialog.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/npc_dialog.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/npc_dialog.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/npc_dialog.cpp.s
+.PHONY : src/game/npc_dialog.cpp.s
+
 src/game/player_stats.o: src/game/player_stats.cpp.o
 .PHONY : src/game/player_stats.o
 
@@ -5323,6 +5362,9 @@ help:
 	@echo "... src/game/mob_system.o"
 	@echo "... src/game/mob_system.i"
 	@echo "... src/game/mob_system.s"
+	@echo "... src/game/npc_dialog.o"
+	@echo "... src/game/npc_dialog.i"
+	@echo "... src/game/npc_dialog.s"
 	@echo "... src/game/player_stats.o"
 	@echo "... src/game/player_stats.i"
 	@echo "... src/game/player_stats.s"
