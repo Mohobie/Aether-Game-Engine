@@ -4,6 +4,7 @@
 #include "voxel/chunk.h"
 #include "voxel/block.h"
 #include "voxel/block_registry.h"
+#include <filesystem>
 #include <iostream>
 #include <cstdio>
 
@@ -46,9 +47,10 @@ int main() {
     }
     
     // Save
-    const char* savePath = "/tmp/voxel_test_save.bin";
+    const std::filesystem::path savePath =
+        std::filesystem::temp_directory_path() / "voxel_test_save.bin";
     std::cout << "\nSaving world..." << std::endl;
-    if (SaveSystem::SaveWorld(world, savePath)) {
+    if (SaveSystem::SaveWorld(world, savePath.string())) {
         std::cout << "Save successful!" << std::endl;
     } else {
         std::cout << "Save failed!" << std::endl;
@@ -58,7 +60,7 @@ int main() {
     // Create new world and load
     World world2;
     std::cout << "\nLoading world..." << std::endl;
-    if (SaveSystem::LoadWorld(world2, savePath)) {
+    if (SaveSystem::LoadWorld(world2, savePath.string())) {
         std::cout << "Load successful!" << std::endl;
     } else {
         std::cout << "Load failed!" << std::endl;
@@ -77,7 +79,7 @@ int main() {
     }
     
     // Cleanup
-    std::remove(savePath);
+    std::filesystem::remove(savePath);
     
     std::cout << "\n=== Save/Load Test Complete ===" << std::endl;
     return 0;

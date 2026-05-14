@@ -1,66 +1,95 @@
 #include "application.h"
-#include "core/utils.h"
-#include "platform/timer.h"
-#include <iostream>
+#include "core/logger.h"
+#include <chrono>
+
 namespace vge {
-Application::Application() {}
+
+Application::Application() = default;
+
 bool Application::initialize(int width, int height, const std::string& title) {
-    Logger::info("Initializing Aether Engine...");
+    Logger::Info("Initializing Aether Engine application facade...");
+
     window = std::make_unique<Window>();
-    if (!window->create(title, width, height)) {
-        Logger::error("Failed to create window");
+    if (!window->Initialize(width, height, title)) {
+        Logger::Error("Failed to create window");
         return false;
     }
+
     renderer = std::make_unique<Renderer>();
-    if (!renderer->initialize()) {
-        Logger::error("Failed to initialize renderer");
+    if (!renderer->Initialize()) {
+        Logger::Error("Failed to initialize renderer");
         return false;
     }
-    world = std::make_unique<World>(12345);
-    world->initialize();
+
+    camera = std::make_unique<Camera>();
+    camera->SetPosition(Vec3(0.0f, 41.6f, 0.0f));
+    camera->SetRotation(0.0f, -20.0f, 0.0f);
+
+    world = std::make_unique<World>();
+    world->SetSeed(12345);
+    world->Initialize();
+    world->GenerateTerrain(0, 0, 1);
+
     audio = std::make_unique<AudioEngine>();
-    audio->initialize();
-    input = std::make_unique<InputManager>();
+    audio->Initialize();
+
+    input = std::make_unique<Input>();
     entities = std::make_unique<EntityManager>();
     ui = std::make_unique<UIManager>();
     resources = std::make_unique<ResourceManager>();
     running = true;
-    Logger::info("Aether Engine initialized successfully");
+
+    Logger::Info("Aether Engine application facade initialized successfully");
     return true;
 }
+
 void Application::run() {
-    Timer timer;
+    using clock = std::chrono::high_resolution_clock;
+    auto lastFrame = clock::now();
+
     while (running) {
-        timer.start();
-        window->pollEvents();
-        if (window->shouldClose()) {
+        const auto now = clock::now();
+        deltaTime = std::chrono::duration<float>(now - lastFrame).count();
+        lastFrame = now;
+
+        window->PollEvents();
+        if (window->ShouldClose()) {
             running = false;
             break;
         }
-        input->update();
-        renderer->beginFrame();
-        // Render world, entities, UI here
-        renderer->endFrame();
-        window->swapBuffers();
-        timer.stop();
-        deltaTime = static_cast<float>(timer.elapsedSeconds());
+
+        input->Update(window->GetHandle());
+        world->Update(camera->GetPosition());
+        entities->Update(deltaTime);
+        audio->Update(deltaTime);
+
+        renderer->BeginFrame();
+        renderer->RenderWorld(*world, *camera);
+        renderer->EndFrame();
+        ui->render();
+        window->SwapBuffers();
     }
 }
+
 void Application::shutdown() {
-    Logger::info("Shutting down Aether Engine...");
-    if (audio) audio->shutdown();
-    if (renderer) renderer->shutdown();
-    if (window) window->destroy();
+    Logger::Info("Shutting down Aether Engine application facade...");
+
+    if (audio) audio->Shutdown();
+    if (renderer) renderer->Shutdown();
+    if (window) window->Shutdown();
+
     running = false;
-    Logger::info("Aether Engine shutdown complete");
+    Logger::Info("Aether Engine application facade shutdown complete");
 }
+
 bool Application::isRunning() const { return running; }
 float Application::getDeltaTime() const { return deltaTime; }
 Window& Application::getWindow() { return *window; }
 Renderer& Application::getRenderer() { return *renderer; }
+Camera& Application::getCamera() { return *camera; }
 World& Application::getWorld() { return *world; }
 AudioEngine& Application::getAudio() { return *audio; }
-InputManager& Application::getInput() { return *input; }
+Input& Application::getInput() { return *input; }
 EntityManager& Application::getEntities() { return *entities; }
 UIManager& Application::getUI() { return *ui; }
 ResourceManager& Application::getResources() { return *resources; }

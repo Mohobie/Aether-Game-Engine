@@ -212,16 +212,22 @@ set(CORE_SOURCES
     src/game/fall_damage.cpp
     src/game/lava_damage.cpp
     src/game/inventory_persistence.cpp
+    src/game/application.cpp
+    src/game/scene.cpp
+    src/game/serializer.cpp
     src/editor/entity_spawner.cpp
     src/editor/in_game_editor.cpp
     src/editor/scene_viewport.cpp
     src/editor/asset_browser.cpp
     src/ui/console_commands.cpp
+    src/ui/ui_manager.cpp
     src/rendering/frustum.cpp
     src/rendering/culling_system.cpp
     src/rendering/occlusion_culling.cpp
     src/rendering/particles/particle_system.cpp
     src/scripting/visual_script.cpp
+    src/resource/resource_manager.cpp
+    src/platform/window.cpp
 )
 
 # ============================================
@@ -268,7 +274,6 @@ set(IMGUI_SOURCES
 )
 
 set(OPTIONAL_SOURCES
-    src/platform/window.cpp
     src/rendering/camera.cpp
     src/rendering/mesh.cpp
     src/rendering/renderer.cpp
@@ -281,7 +286,6 @@ set(OPTIONAL_SOURCES
     src/voxel/world_renderer.cpp
     src/voxel/block_mesh_builder.cpp
     src/core/engine.cpp
-    src/core/application.cpp
     src/main.cpp
     ${IMGUI_SOURCES}
 )
@@ -325,6 +329,31 @@ endif()
 add_executable(voxel_engine ${COMPILABLE_OPTIONAL_SOURCES})
 target_include_directories(voxel_engine PRIVATE ${COMMON_INCLUDES})
 target_link_libraries(voxel_engine PRIVATE voxel_engine_lib)
+
+# Optional sample/test targets that the docs reference.
+if(EXISTS ${CMAKE_SOURCE_DIR}/src/save_test.cpp)
+    add_executable(save_test src/save_test.cpp)
+    target_include_directories(save_test PRIVATE ${COMMON_INCLUDES})
+    target_link_libraries(save_test PRIVATE voxel_engine_lib)
+endif()
+
+if(EXISTS ${CMAKE_SOURCE_DIR}/src/world_test.cpp)
+    add_executable(world_test src/world_test.cpp)
+    target_include_directories(world_test PRIVATE ${COMMON_INCLUDES})
+    target_link_libraries(world_test PRIVATE voxel_engine_lib)
+endif()
+
+if(EXISTS ${CMAKE_SOURCE_DIR}/src/voxel_test.cpp)
+    add_executable(voxel_test src/voxel_test.cpp)
+    target_include_directories(voxel_test PRIVATE ${COMMON_INCLUDES})
+    target_link_libraries(voxel_test PRIVATE voxel_engine_lib)
+endif()
+
+if(EXISTS ${CMAKE_SOURCE_DIR}/my_game.cpp)
+    add_executable(my_game my_game.cpp)
+    target_include_directories(my_game PRIVATE ${COMMON_INCLUDES})
+    target_link_libraries(my_game PRIVATE voxel_engine_lib)
+endif()
 
 # ============================================
 # Compiler Warnings

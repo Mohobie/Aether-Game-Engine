@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
+#include <vector>
 
 namespace vge {
 
@@ -12,39 +13,27 @@ bool SaveSystem::SaveWorld(const World& world, const std::string& path) {
         return false;
     }
     
-    // Count chunks
-    uint32_t chunkCount = 0;
-    for (int x = -100; x <= 100; x++) {
-        for (int y = -10; y <= 10; y++) {
-            for (int z = -100; z <= 100; z++) {
-                Chunk* chunk = const_cast<World&>(world).GetChunk(x, y, z);
-                if (chunk && chunk->loaded) {
-                    chunkCount++;
-                }
-            }
+    std::vector<const Chunk*> loadedChunks;
+    loadedChunks.reserve(world.GetChunks().size());
+    for (const auto& [coord, chunk] : world.GetChunks()) {
+        if (chunk && chunk->loaded) {
+            loadedChunks.push_back(chunk.get());
         }
     }
     
     // Write header
-    SaveHeader header;
+    SaveHeader header{};
     header.magic = SAVE_MAGIC;
     header.version = SAVE_VERSION;
-    header.chunkCount = chunkCount;
+    header.chunkCount = static_cast<uint32_t>(loadedChunks.size());
     
     file.write(reinterpret_cast<const char*>(&header), sizeof(header));
     
     // Write each chunk
     uint32_t savedChunks = 0;
-    for (int x = -100; x <= 100; x++) {
-        for (int y = -10; y <= 10; y++) {
-            for (int z = -100; z <= 100; z++) {
-                Chunk* chunk = const_cast<World&>(world).GetChunk(x, y, z);
-                if (chunk && chunk->loaded) {
-                    SaveChunk(*chunk, file);
-                    savedChunks++;
-                }
-            }
-        }
+    for (const Chunk* chunk : loadedChunks) {
+        SaveChunk(*chunk, file);
+        savedChunks++;
     }
     
     std::cout << "[Save] World saved to: " << path << " (" << savedChunks << " chunks)" << std::endl;
@@ -70,6 +59,8 @@ bool SaveSystem::LoadWorld(World& world, const std::string& path) {
         std::cerr << "[Save] Version mismatch: " << header.version << " vs " << SAVE_VERSION << std::endl;
         return false;
     }
+
+    world.Clear();
     
     // Load each chunk
     for (uint32_t i = 0; i < header.chunkCount; i++) {

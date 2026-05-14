@@ -11,7 +11,7 @@ class WorldGenerator;
 
 class ChunkManager {
 private:
-    std::unordered_map<uint64_t, std::unique_ptr<Chunk>> loadedChunks;
+    std::unordered_map<uint64_t, Chunk*> loadedChunks;
     int viewDistance;
     World* world;
     WorldGenerator* generator;

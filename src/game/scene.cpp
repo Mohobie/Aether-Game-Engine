@@ -1,13 +1,20 @@
 #include "scene.h"
-#include <iostream>
+
 namespace vge {
-Scene::Scene(const std::string& name) : name(name), world(12345) {}
+
+Scene::Scene(const std::string& name) : name(name) {}
+
 void Scene::initialize() {
-    std::cout << "[Scene] Initializing: " << name << std::endl;
-    world.initialize();
+    world.Initialize();
+    world.GenerateTerrain(0, 0);
 }
-void Scene::update(float deltaTime) {}
+
+void Scene::update(float deltaTime) {
+    entityManager.Update(deltaTime);
+}
+
 void Scene::render() {}
+
 EntityManager& Scene::getEntityManager() { return entityManager; }
 World& Scene::getWorld() { return world; }
 const std::string& Scene::getName() const { return name; }

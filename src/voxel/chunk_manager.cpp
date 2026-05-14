@@ -24,9 +24,9 @@ void ChunkManager::Initialize(World* world, WorldGenerator* generator) {
 }
 
 void ChunkManager::Update(const Vec3& playerPosition) {
-    int playerChunkX = (int)(playerPosition.x / CHUNK_SIZE);
-    int playerChunkY = (int)(playerPosition.y / CHUNK_SIZE);
-    int playerChunkZ = (int)(playerPosition.z / CHUNK_SIZE);
+    int playerChunkX = static_cast<int>(std::floor(playerPosition.x / CHUNK_SIZE));
+    int playerChunkY = static_cast<int>(std::floor(playerPosition.y / CHUNK_SIZE));
+    int playerChunkZ = static_cast<int>(std::floor(playerPosition.z / CHUNK_SIZE));
     
     // Load chunks within view distance
     for (int x = -viewDistance; x <= viewDistance; ++x) {
@@ -56,21 +56,24 @@ Chunk* ChunkManager::LoadChunk(int x, int y, int z) {
     uint64_t key = ((uint64_t)(x + 1000000) << 42) | ((uint64_t)(y + 1000000) << 21) | (uint64_t)(z + 1000000);
     auto it = loadedChunks.find(key);
     if (it != loadedChunks.end()) {
-        return it->second.get();
+        return it->second;
     }
     
     Chunk* chunk = world->GetChunk(x, y, z);
+    bool created = false;
     if (!chunk) {
         chunk = world->GetOrCreateChunk(x, y, z);
-        if (generator && chunk) {
-            // Chunk generation is handled by the world generator
-            // Mark chunk as loaded
-            chunk->loaded = true;
-        }
+        created = chunk != nullptr;
+    }
+
+    if (generator && chunk && created) {
+        generator->GenerateChunk(*chunk, x, y, z);
+    } else if (chunk) {
+        chunk->loaded = true;
     }
     
     if (chunk) {
-        loadedChunks[key] = std::unique_ptr<Chunk>(chunk);
+        loadedChunks[key] = chunk;
     }
     
     return chunk;
@@ -81,7 +84,7 @@ void ChunkManager::UnloadChunk(int x, int y, int z) {
     
     auto it = loadedChunks.find(key);
     if (it != loadedChunks.end()) {
-        Chunk* chunk = it->second.get();
+        Chunk* chunk = it->second;
         
         // Save modified chunks before unloading
         if (chunk && chunk->modified) {
@@ -105,7 +108,7 @@ void ChunkManager::UnloadDistantChunks(int centerX, int centerY, int centerZ, in
     std::vector<uint64_t> toUnload;
     
     for (auto& pair : loadedChunks) {
-        Chunk* chunk = pair.second.get();
+        Chunk* chunk = pair.second;
         if (!chunk) continue;
         
         int dx = chunk->GetChunkX() - centerX;
@@ -121,7 +124,7 @@ void ChunkManager::UnloadDistantChunks(int centerX, int centerY, int centerZ, in
     for (uint64_t key : toUnload) {
         auto it = loadedChunks.find(key);
         if (it != loadedChunks.end()) {
-            Chunk* chunk = it->second.get();
+            Chunk* chunk = it->second;
             if (chunk) {
                 // Extract coordinates from key
                 int x = (int)((key >> 42) & 0x1FFFFF) - 1000000;

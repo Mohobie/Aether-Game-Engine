@@ -1,7 +1,9 @@
 #include "platform/window.h"
 #include <GLFW/glfw3.h>
+#if defined(PLATFORM_LINUX)
 #define GLFW_EXPOSE_NATIVE_X11
 #include <GLFW/glfw3native.h>
+#endif
 #include <iostream>
 
 namespace vge {
@@ -63,9 +65,11 @@ bool Window::Initialize(int w, int h, const std::string& title) {
     
     std::cout << "[Window] Created " << w << "x" << h << " window" << std::endl;
     
+#if defined(PLATFORM_LINUX)
     // Get native window handle for debugging
     ::Window nativeWindow = glfwGetX11Window(window);
     std::cout << "[Window] Native X11 window ID: " << nativeWindow << std::endl;
+#endif
     
     return true;
 }
