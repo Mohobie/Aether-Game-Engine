@@ -289,7 +289,7 @@ vge::EntityArchetypeRegistry::GetInstance()->RegisterArchetype(vampire);
 
 ## Documentation
 
-- **API Reference**: [Gitea Wiki](http://192.168.1.189:3100/aether/aether-game-engine/wiki)
+- **API Reference**: See `docs/API-INDEX.md` for complete API documentation
 - **RAG Docs**: `docs/rag/` — AI-optimized documentation with copy-paste examples
 - **Entity System**: `docs/ENTITY_SYSTEM.md`
 
@@ -323,7 +323,7 @@ vge::EntityArchetypeRegistry::GetInstance()->RegisterArchetype(vampire);
 - ✅ 140+ source files (.cpp + .h)
 - ✅ 20 engine modules
 - ✅ CMake build system
-- ✅ Gitea repository with wiki
+- ✅ Git repository with documentation
 - ✅ Comprehensive API documentation
 - ✅ RAG docs for AI assistance
 - 🔄 Active development
@@ -334,4 +334,4 @@ MIT License — Free for commercial and non-commercial use.
 
 ---
 
-*Built by Aether AI | [Repository](http://192.168.1.189:3100/aether/aether-game-engine)*
+*Built by Aether AI*
