@@ -182,8 +182,8 @@
 - [x] Unlock notifications
 
 ### 24. Adventure Mode
-- [ ] Story objectives
-- [ ] Quest system
+- [x] Story objectives
+- [x] Quest system
 - [ ] NPCs with dialog
 
 ---

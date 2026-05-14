@@ -2084,6 +2084,45 @@ src/game/player_stats.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/player_stats.cpp.s
 .PHONY : src/game/player_stats.cpp.s
 
+src/game/quest_system.o: src/game/quest_system.cpp.o
+.PHONY : src/game/quest_system.o
+
+# target to build an object file
+src/game/quest_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/quest_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/quest_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/quest_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/quest_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/quest_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/quest_system.cpp.o
+.PHONY : src/game/quest_system.cpp.o
+
+src/game/quest_system.i: src/game/quest_system.cpp.i
+.PHONY : src/game/quest_system.i
+
+# target to preprocess a source file
+src/game/quest_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/quest_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/quest_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/quest_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/quest_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/quest_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/quest_system.cpp.i
+.PHONY : src/game/quest_system.cpp.i
+
+src/game/quest_system.s: src/game/quest_system.cpp.s
+.PHONY : src/game/quest_system.s
+
+# target to generate assembly for a file
+src/game/quest_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/quest_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/quest_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/quest_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/quest_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/quest_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/quest_system.cpp.s
+.PHONY : src/game/quest_system.cpp.s
+
 src/game/sandbox_mode.o: src/game/sandbox_mode.cpp.o
 .PHONY : src/game/sandbox_mode.o
 
@@ -5287,6 +5326,9 @@ help:
 	@echo "... src/game/player_stats.o"
 	@echo "... src/game/player_stats.i"
 	@echo "... src/game/player_stats.s"
+	@echo "... src/game/quest_system.o"
+	@echo "... src/game/quest_system.i"
+	@echo "... src/game/quest_system.s"
 	@echo "... src/game/sandbox_mode.o"
 	@echo "... src/game/sandbox_mode.i"
 	@echo "... src/game/sandbox_mode.s"

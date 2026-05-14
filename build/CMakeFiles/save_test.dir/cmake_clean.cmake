@@ -91,6 +91,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/save_test.dir/src/game/mob_system.cpp.o.d"
   "CMakeFiles/save_test.dir/src/game/player_stats.cpp.o"
   "CMakeFiles/save_test.dir/src/game/player_stats.cpp.o.d"
+  "CMakeFiles/save_test.dir/src/game/quest_system.cpp.o"
+  "CMakeFiles/save_test.dir/src/game/quest_system.cpp.o.d"
   "CMakeFiles/save_test.dir/src/game/sandbox_mode.cpp.o"
   "CMakeFiles/save_test.dir/src/game/sandbox_mode.cpp.o.d"
   "CMakeFiles/save_test.dir/src/game/survival_mode.cpp.o"

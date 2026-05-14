@@ -91,6 +91,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_test.dir/src/game/mob_system.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/game/player_stats.cpp.o"
   "CMakeFiles/voxel_test.dir/src/game/player_stats.cpp.o.d"
+  "CMakeFiles/voxel_test.dir/src/game/quest_system.cpp.o"
+  "CMakeFiles/voxel_test.dir/src/game/quest_system.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/game/sandbox_mode.cpp.o"
   "CMakeFiles/voxel_test.dir/src/game/sandbox_mode.cpp.o.d"
   "CMakeFiles/voxel_test.dir/src/game/survival_mode.cpp.o"
