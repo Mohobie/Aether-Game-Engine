@@ -141,12 +141,20 @@ void Renderer::RenderWorld(const World& world, const Camera& camera) {
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     
-    // Use gluLookAt for proper view matrix
+    // Build view matrix manually (no GLU dependency)
     Vec3 pos = camera.GetPosition();
-    Vec3 forward = camera.GetForward();
-    Vec3 center = pos + forward;
-    Vec3 up = camera.GetUp();
-    gluLookAt(pos.x, pos.y, pos.z, center.x, center.y, center.z, up.x, up.y, up.z);
+    Vec3 forward = camera.GetForward().normalize();
+    Vec3 up = camera.GetUp().normalize();
+    Vec3 right = forward.cross(up).normalize();
+    up = right.cross(forward);
+    
+    Mat4 view;
+    view.data[0] = right.x;  view.data[4] = right.y;  view.data[8] = right.z;   view.data[12] = -right.dot(pos);
+    view.data[1] = up.x;     view.data[5] = up.y;     view.data[9] = up.z;      view.data[13] = -up.dot(pos);
+    view.data[2] = -forward.x; view.data[6] = -forward.y; view.data[10] = -forward.z; view.data[14] = forward.dot(pos);
+    view.data[3] = 0;        view.data[7] = 0;        view.data[11] = 0;        view.data[15] = 1;
+    
+    glLoadMatrixf(view.data);
     
     // Enable depth test for proper rendering
     glEnable(GL_DEPTH_TEST);
