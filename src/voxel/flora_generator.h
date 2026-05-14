@@ -6,7 +6,7 @@
 namespace vge {
 
 // ============================================
-// Flora Generator (Grass, Flowers, Cacti)
+// Flora Generator (Grass, Flowers, Cacti, Lily Pads, Mushrooms)
 // ============================================
 class FloraGenerator {
 public:
@@ -21,6 +21,8 @@ public:
     void CreateFlower(World& world, const Vec3& position, const std::string& type);
     void CreateCactus(World& world, const Vec3& position);
     void CreateTallGrass(World& world, const Vec3& position);
+    void CreateLilyPad(World& world, const Vec3& position);
+    void CreateMushroom(World& world, const Vec3& position, const std::string& type);
 
 private:
     float RandomFloat(float min, float max);

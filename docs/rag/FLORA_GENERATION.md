@@ -11,7 +11,7 @@ flora.GenerateFlora(world, 5); // 5 chunk radius
 
 ### Grass
 - **Placement:** On grass blocks
-- **Density:** 60% of flora attempts
+- **Density:** 50% of flora attempts
 - **Type:** Short grass plant
 
 ### Flowers
@@ -21,13 +21,23 @@ flora.GenerateFlora(world, 5); // 5 chunk radius
 
 ### Tall Grass
 - **Placement:** On grass blocks
-- **Density:** 20% of flora attempts
+- **Density:** 15% of flora attempts
 - **Height:** 1-3 blocks
 
 ### Cactus
 - **Placement:** On sand blocks (desert)
 - **Density:** 30% of sand attempts
 - **Height:** 2-4 blocks
+
+### Lily Pads
+- **Placement:** On water blocks
+- **Density:** 40% of water attempts
+- **Type:** Floating plant
+
+### Mushrooms
+- **Brown Mushroom:** On grass (15% chance)
+- **Red Mushroom:** In caves on stone (20% chance)
+- **Placement:** Dark areas preferred
 
 ## Implementation
 
@@ -39,6 +49,8 @@ floraGen.GenerateFlora(world, 5);
 floraGen.CreateGrass(world, position);
 floraGen.CreateFlower(world, position, "red_flower");
 floraGen.CreateCactus(world, position);
+floraGen.CreateLilyPad(world, position);
+floraGen.CreateMushroom(world, position, "mushroom_red");
 ```
 
 ## Files

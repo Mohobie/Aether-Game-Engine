@@ -83,14 +83,40 @@ void FloraGenerator::CreateTallGrass(World& world, const Vec3& position) {
     }
 }
 
+void FloraGenerator::CreateLilyPad(World& world, const Vec3& position) {
+    BlockRegistry& registry = BlockRegistry::GetInstance();
+    BlockTypeID lilyPadId = registry.GetBlockId("lily_pad");
+    if (lilyPadId == BLOCK_AIR) lilyPadId = registry.GetBlockId("flower"); // Fallback
+    
+    int x = static_cast<int>(position.x);
+    int y = static_cast<int>(position.y);
+    int z = static_cast<int>(position.z);
+    
+    world.SetBlock(x, y, z, lilyPadId);
+}
+
+void FloraGenerator::CreateMushroom(World& world, const Vec3& position, const std::string& type) {
+    BlockRegistry& registry = BlockRegistry::GetInstance();
+    BlockTypeID mushroomId = registry.GetBlockId(type);
+    if (mushroomId == BLOCK_AIR) mushroomId = registry.GetBlockId("flower"); // Fallback
+    
+    int x = static_cast<int>(position.x);
+    int y = static_cast<int>(position.y);
+    int z = static_cast<int>(position.z);
+    
+    world.SetBlock(x, y, z, mushroomId);
+}
+
 void FloraGenerator::GenerateFlora(World& world, int chunkRadius) {
     BlockRegistry& registry = BlockRegistry::GetInstance();
     BlockTypeID grassBlockId = registry.GetBlockId("grass");
     BlockTypeID sandId = registry.GetBlockId("sand");
+    BlockTypeID waterId = registry.GetBlockId("water");
+    BlockTypeID stoneId = registry.GetBlockId("stone");
     
     for (int cx = -chunkRadius; cx < chunkRadius; cx++) {
         for (int cz = -chunkRadius; cz < chunkRadius; cz++) {
-            for (int i = 0; i < 10; i++) { // 10 flora attempts per chunk
+            for (int i = 0; i < 15; i++) { // 15 flora attempts per chunk
                 int x = cx * CHUNK_SIZE + RandomInt(0, CHUNK_SIZE - 1);
                 int z = cz * CHUNK_SIZE + RandomInt(0, CHUNK_SIZE - 1);
                 int y = FindSurfaceY(world, x, z);
@@ -101,17 +127,31 @@ void FloraGenerator::GenerateFlora(World& world, int chunkRadius) {
                 if (below == grassBlockId) {
                     // Grass or flowers on grass
                     float roll = RandomFloat(0, 1);
-                    if (roll < 0.6f) {
+                    if (roll < 0.5f) {
                         CreateGrass(world, Vec3(x, y, z));
-                    } else if (roll < 0.8f) {
+                    } else if (roll < 0.7f) {
                         CreateFlower(world, Vec3(x, y, z), "flower");
-                    } else {
+                    } else if (roll < 0.85f) {
                         CreateTallGrass(world, Vec3(x, y, z));
+                    } else {
+                        // Small chance for mushroom on grass
+                        CreateMushroom(world, Vec3(x, y, z), "mushroom_brown");
                     }
                 } else if (below == sandId) {
                     // Cactus on sand (desert)
                     if (RandomFloat(0, 1) < 0.3f) {
                         CreateCactus(world, Vec3(x, y, z));
+                    }
+                } else if (below == waterId) {
+                    // Lily pads on water
+                    if (RandomFloat(0, 1) < 0.4f) {
+                        CreateLilyPad(world, Vec3(x, y, z));
+                    }
+                } else if (below == stoneId && y < 30) {
+                    // Mushrooms in caves
+                    if (RandomFloat(0, 1) < 0.2f) {
+                        std::string mushroomType = (RandomFloat(0, 1) < 0.5f) ? "mushroom_red" : "mushroom_brown";
+                        CreateMushroom(world, Vec3(x, y, z), mushroomType);
                     }
                 }
             }

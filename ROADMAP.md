@@ -146,8 +146,8 @@
 - [x] Grass/flowers on surface
 - [x] Tall grass
 - [x] Cacti in desert
-- [ ] Lily pads on water
-- [ ] Mushrooms in caves
+- [x] Lily pads on water
+- [x] Mushrooms in caves
 
 ### 20. Ores & Resources
 - [ ] Coal, iron, gold, diamond, emerald
