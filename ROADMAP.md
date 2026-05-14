@@ -83,7 +83,7 @@
 - [x] Pathfinding around obstacles
 - [x] Aggro/detection range
 - [x] Day/night behavior changes
-- [ ] Spawning rules (light level, biome)
+- [x] Spawning rules (light level, biome)
 
 ---
 
@@ -150,9 +150,9 @@
 - [x] Mushrooms in caves
 
 ### 20. Ores & Resources
-- [ ] Coal, iron, gold, diamond, emerald
-- [ ] Ore distribution by depth
-- [ ] Smelting in furnace
+- [x] Coal, iron, gold, diamond, emerald
+- [x] Ore distribution by depth
+- [x] Smelting in furnace
 
 ---
 

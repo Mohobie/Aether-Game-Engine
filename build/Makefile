@@ -1811,6 +1811,45 @@ src/entity/entity.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/entity/entity.cpp.s
 .PHONY : src/entity/entity.cpp.s
 
+src/game/bed_system.o: src/game/bed_system.cpp.o
+.PHONY : src/game/bed_system.o
+
+# target to build an object file
+src/game/bed_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/bed_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/bed_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/bed_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/bed_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/bed_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/bed_system.cpp.o
+.PHONY : src/game/bed_system.cpp.o
+
+src/game/bed_system.i: src/game/bed_system.cpp.i
+.PHONY : src/game/bed_system.i
+
+# target to preprocess a source file
+src/game/bed_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/bed_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/bed_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/bed_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/bed_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/bed_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/bed_system.cpp.i
+.PHONY : src/game/bed_system.cpp.i
+
+src/game/bed_system.s: src/game/bed_system.cpp.s
+.PHONY : src/game/bed_system.s
+
+# target to generate assembly for a file
+src/game/bed_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/bed_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/bed_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/bed_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/bed_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/bed_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/bed_system.cpp.s
+.PHONY : src/game/bed_system.cpp.s
+
 src/game/block_drops.o: src/game/block_drops.cpp.o
 .PHONY : src/game/block_drops.o
 
@@ -1928,6 +1967,45 @@ src/game/combat_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/combat_system.cpp.s
 .PHONY : src/game/combat_system.cpp.s
 
+src/game/creative_mode.o: src/game/creative_mode.cpp.o
+.PHONY : src/game/creative_mode.o
+
+# target to build an object file
+src/game/creative_mode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/creative_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/creative_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/creative_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/creative_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/creative_mode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/creative_mode.cpp.o
+.PHONY : src/game/creative_mode.cpp.o
+
+src/game/creative_mode.i: src/game/creative_mode.cpp.i
+.PHONY : src/game/creative_mode.i
+
+# target to preprocess a source file
+src/game/creative_mode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/creative_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/creative_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/creative_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/creative_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/creative_mode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/creative_mode.cpp.i
+.PHONY : src/game/creative_mode.cpp.i
+
+src/game/creative_mode.s: src/game/creative_mode.cpp.s
+.PHONY : src/game/creative_mode.s
+
+# target to generate assembly for a file
+src/game/creative_mode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/creative_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/creative_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/creative_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/creative_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/creative_mode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/creative_mode.cpp.s
+.PHONY : src/game/creative_mode.cpp.s
+
 src/game/day_night_cycle.o: src/game/day_night_cycle.cpp.o
 .PHONY : src/game/day_night_cycle.o
 
@@ -2005,6 +2083,45 @@ src/game/fall_damage.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/fall_damage.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/fall_damage.cpp.s
 .PHONY : src/game/fall_damage.cpp.s
+
+src/game/furnace_system.o: src/game/furnace_system.cpp.o
+.PHONY : src/game/furnace_system.o
+
+# target to build an object file
+src/game/furnace_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/furnace_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/furnace_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/furnace_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/furnace_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/furnace_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/furnace_system.cpp.o
+.PHONY : src/game/furnace_system.cpp.o
+
+src/game/furnace_system.i: src/game/furnace_system.cpp.i
+.PHONY : src/game/furnace_system.i
+
+# target to preprocess a source file
+src/game/furnace_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/furnace_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/furnace_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/furnace_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/furnace_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/furnace_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/furnace_system.cpp.i
+.PHONY : src/game/furnace_system.cpp.i
+
+src/game/furnace_system.s: src/game/furnace_system.cpp.s
+.PHONY : src/game/furnace_system.s
+
+# target to generate assembly for a file
+src/game/furnace_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/furnace_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/furnace_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/furnace_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/furnace_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/furnace_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/furnace_system.cpp.s
+.PHONY : src/game/furnace_system.cpp.s
 
 src/game/inventory_persistence.o: src/game/inventory_persistence.cpp.o
 .PHONY : src/game/inventory_persistence.o
@@ -4733,6 +4850,45 @@ src/voxel/flora_generator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/flora_generator.cpp.s
 .PHONY : src/voxel/flora_generator.cpp.s
 
+src/voxel/mineshaft_generator.o: src/voxel/mineshaft_generator.cpp.o
+.PHONY : src/voxel/mineshaft_generator.o
+
+# target to build an object file
+src/voxel/mineshaft_generator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/mineshaft_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/mineshaft_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/mineshaft_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/mineshaft_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/mineshaft_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/mineshaft_generator.cpp.o
+.PHONY : src/voxel/mineshaft_generator.cpp.o
+
+src/voxel/mineshaft_generator.i: src/voxel/mineshaft_generator.cpp.i
+.PHONY : src/voxel/mineshaft_generator.i
+
+# target to preprocess a source file
+src/voxel/mineshaft_generator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/mineshaft_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/mineshaft_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/mineshaft_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/mineshaft_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/mineshaft_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/mineshaft_generator.cpp.i
+.PHONY : src/voxel/mineshaft_generator.cpp.i
+
+src/voxel/mineshaft_generator.s: src/voxel/mineshaft_generator.cpp.s
+.PHONY : src/voxel/mineshaft_generator.s
+
+# target to generate assembly for a file
+src/voxel/mineshaft_generator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/voxel/mineshaft_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/voxel/mineshaft_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/voxel/mineshaft_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/voxel/mineshaft_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/voxel/mineshaft_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/voxel/mineshaft_generator.cpp.s
+.PHONY : src/voxel/mineshaft_generator.cpp.s
+
 src/voxel/ore_generator.o: src/voxel/ore_generator.cpp.o
 .PHONY : src/voxel/ore_generator.o
 
@@ -5461,6 +5617,9 @@ help:
 	@echo "... src/entity/entity.o"
 	@echo "... src/entity/entity.i"
 	@echo "... src/entity/entity.s"
+	@echo "... src/game/bed_system.o"
+	@echo "... src/game/bed_system.i"
+	@echo "... src/game/bed_system.s"
 	@echo "... src/game/block_drops.o"
 	@echo "... src/game/block_drops.i"
 	@echo "... src/game/block_drops.s"
@@ -5470,12 +5629,18 @@ help:
 	@echo "... src/game/combat_system.o"
 	@echo "... src/game/combat_system.i"
 	@echo "... src/game/combat_system.s"
+	@echo "... src/game/creative_mode.o"
+	@echo "... src/game/creative_mode.i"
+	@echo "... src/game/creative_mode.s"
 	@echo "... src/game/day_night_cycle.o"
 	@echo "... src/game/day_night_cycle.i"
 	@echo "... src/game/day_night_cycle.s"
 	@echo "... src/game/fall_damage.o"
 	@echo "... src/game/fall_damage.i"
 	@echo "... src/game/fall_damage.s"
+	@echo "... src/game/furnace_system.o"
+	@echo "... src/game/furnace_system.i"
+	@echo "... src/game/furnace_system.s"
 	@echo "... src/game/inventory_persistence.o"
 	@echo "... src/game/inventory_persistence.i"
 	@echo "... src/game/inventory_persistence.s"
@@ -5692,6 +5857,9 @@ help:
 	@echo "... src/voxel/flora_generator.o"
 	@echo "... src/voxel/flora_generator.i"
 	@echo "... src/voxel/flora_generator.s"
+	@echo "... src/voxel/mineshaft_generator.o"
+	@echo "... src/voxel/mineshaft_generator.i"
+	@echo "... src/voxel/mineshaft_generator.s"
 	@echo "... src/voxel/ore_generator.o"
 	@echo "... src/voxel/ore_generator.i"
 	@echo "... src/voxel/ore_generator.s"
