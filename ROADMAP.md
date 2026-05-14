@@ -189,10 +189,10 @@
 ## Multiplayer (Future)
 
 ### 24. Network Play
-- [ ] LAN multiplayer
-- [ ] Server hosting
-- [ ] Player skins
-- [ ] Chat system
+- [x] LAN multiplayer
+- [x] Server hosting
+- [x] Player skins
+- [x] Chat system
 
 ---
 

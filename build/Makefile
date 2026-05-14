@@ -2576,6 +2576,45 @@ src/math/vec3.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/math/vec3.cpp.s
 .PHONY : src/math/vec3.cpp.s
 
+src/network/chat_system.o: src/network/chat_system.cpp.o
+.PHONY : src/network/chat_system.o
+
+# target to build an object file
+src/network/chat_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/chat_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/chat_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/chat_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/chat_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/chat_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/chat_system.cpp.o
+.PHONY : src/network/chat_system.cpp.o
+
+src/network/chat_system.i: src/network/chat_system.cpp.i
+.PHONY : src/network/chat_system.i
+
+# target to preprocess a source file
+src/network/chat_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/chat_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/chat_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/chat_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/chat_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/chat_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/chat_system.cpp.i
+.PHONY : src/network/chat_system.cpp.i
+
+src/network/chat_system.s: src/network/chat_system.cpp.s
+.PHONY : src/network/chat_system.s
+
+# target to generate assembly for a file
+src/network/chat_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/chat_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/chat_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/chat_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/chat_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/chat_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/chat_system.cpp.s
+.PHONY : src/network/chat_system.cpp.s
+
 src/network/entity_replication.o: src/network/entity_replication.cpp.o
 .PHONY : src/network/entity_replication.o
 
@@ -2692,6 +2731,45 @@ src/network/game_server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/game_server.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/game_server.cpp.s
 .PHONY : src/network/game_server.cpp.s
+
+src/network/lan_discovery.o: src/network/lan_discovery.cpp.o
+.PHONY : src/network/lan_discovery.o
+
+# target to build an object file
+src/network/lan_discovery.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/lan_discovery.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/lan_discovery.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/lan_discovery.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/lan_discovery.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/lan_discovery.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/lan_discovery.cpp.o
+.PHONY : src/network/lan_discovery.cpp.o
+
+src/network/lan_discovery.i: src/network/lan_discovery.cpp.i
+.PHONY : src/network/lan_discovery.i
+
+# target to preprocess a source file
+src/network/lan_discovery.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/lan_discovery.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/lan_discovery.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/lan_discovery.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/lan_discovery.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/lan_discovery.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/lan_discovery.cpp.i
+.PHONY : src/network/lan_discovery.cpp.i
+
+src/network/lan_discovery.s: src/network/lan_discovery.cpp.s
+.PHONY : src/network/lan_discovery.s
+
+# target to generate assembly for a file
+src/network/lan_discovery.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/lan_discovery.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/lan_discovery.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/lan_discovery.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/lan_discovery.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/lan_discovery.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/lan_discovery.cpp.s
+.PHONY : src/network/lan_discovery.cpp.s
 
 src/network/multiplayer_game.o: src/network/multiplayer_game.cpp.o
 .PHONY : src/network/multiplayer_game.o
@@ -2887,6 +2965,45 @@ src/network/packet.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/packet.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/packet.cpp.s
 .PHONY : src/network/packet.cpp.s
+
+src/network/player_skin.o: src/network/player_skin.cpp.o
+.PHONY : src/network/player_skin.o
+
+# target to build an object file
+src/network/player_skin.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/player_skin.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/player_skin.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/player_skin.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/player_skin.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/player_skin.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/player_skin.cpp.o
+.PHONY : src/network/player_skin.cpp.o
+
+src/network/player_skin.i: src/network/player_skin.cpp.i
+.PHONY : src/network/player_skin.i
+
+# target to preprocess a source file
+src/network/player_skin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/player_skin.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/player_skin.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/player_skin.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/player_skin.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/player_skin.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/player_skin.cpp.i
+.PHONY : src/network/player_skin.cpp.i
+
+src/network/player_skin.s: src/network/player_skin.cpp.s
+.PHONY : src/network/player_skin.s
+
+# target to generate assembly for a file
+src/network/player_skin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/network/player_skin.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/network/player_skin.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/network/player_skin.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/network/player_skin.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/network/player_skin.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/network/player_skin.cpp.s
+.PHONY : src/network/player_skin.cpp.s
 
 src/network/server_authority.o: src/network/server_authority.cpp.o
 .PHONY : src/network/server_authority.o
@@ -5677,6 +5794,9 @@ help:
 	@echo "... src/math/vec3.o"
 	@echo "... src/math/vec3.i"
 	@echo "... src/math/vec3.s"
+	@echo "... src/network/chat_system.o"
+	@echo "... src/network/chat_system.i"
+	@echo "... src/network/chat_system.s"
 	@echo "... src/network/entity_replication.o"
 	@echo "... src/network/entity_replication.i"
 	@echo "... src/network/entity_replication.s"
@@ -5686,6 +5806,9 @@ help:
 	@echo "... src/network/game_server.o"
 	@echo "... src/network/game_server.i"
 	@echo "... src/network/game_server.s"
+	@echo "... src/network/lan_discovery.o"
+	@echo "... src/network/lan_discovery.i"
+	@echo "... src/network/lan_discovery.s"
 	@echo "... src/network/multiplayer_game.o"
 	@echo "... src/network/multiplayer_game.i"
 	@echo "... src/network/multiplayer_game.s"
@@ -5701,6 +5824,9 @@ help:
 	@echo "... src/network/packet.o"
 	@echo "... src/network/packet.i"
 	@echo "... src/network/packet.s"
+	@echo "... src/network/player_skin.o"
+	@echo "... src/network/player_skin.i"
+	@echo "... src/network/player_skin.s"
 	@echo "... src/network/server_authority.o"
 	@echo "... src/network/server_authority.i"
 	@echo "... src/network/server_authority.s"
