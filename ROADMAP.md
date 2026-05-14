@@ -48,7 +48,7 @@
 ### 6. Crafting
 - [x] Crafting grid (2x2 inventory, 3x3 table)
 - [x] Recipe system
-- [ ] Crafting table block
+- [x] Crafting table block
 - [x] Tool/weapon crafting
 
 ### 7. Block Variety
