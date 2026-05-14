@@ -34,7 +34,7 @@
 - [x] Breathing/drowning system
 - [x] Death/respawn system
 - [x] Experience/leveling system
-- [ ] Fall damage
+- [x] Fall damage
 - [ ] Lava damage
 - [x] Health/hunger UI (hearts/food bars)
 

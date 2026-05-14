@@ -89,6 +89,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_engine.dir/src/game/combat_system.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/game/day_night_cycle.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/game/day_night_cycle.cpp.o.d"
+  "CMakeFiles/voxel_engine.dir/src/game/fall_damage.cpp.o"
+  "CMakeFiles/voxel_engine.dir/src/game/fall_damage.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/game/inventory_persistence.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/game/inventory_persistence.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/game/mob_system.cpp.o"
