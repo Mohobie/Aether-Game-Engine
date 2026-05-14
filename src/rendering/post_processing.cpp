@@ -1,15 +1,72 @@
 #include "post_processing.h"
 #include "rendering/shader.h"
-#include "rendering/texture.h"
 #include "core/logger.h"
-#include <glad/glad.h>
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
+#include <GL/gl.h>
+#include <GL/glext.h>
+#include <GL/glx.h>
 #include <algorithm>
 #include <cmath>
 #include <random>
 
 namespace vge {
+
+// OpenGL extension function pointers
+static PFNGLGENFRAMEBUFFERSPROC glGenFramebuffersPtr = nullptr;
+static PFNGLBINDFRAMEBUFFERPROC glBindFramebufferPtr = nullptr;
+static PFNGLDELETEFRAMEBUFFERSPROC glDeleteFramebuffersPtr = nullptr;
+static PFNGLFRAMEBUFFERTEXTURE2DPROC glFramebufferTexture2DPtr = nullptr;
+static PFNGLGENBUFFERSPROC glGenBuffersPtr = nullptr;
+static PFNGLBINDBUFFERPROC glBindBufferPtr = nullptr;
+static PFNGLBUFFERDATAPROC glBufferDataPtr = nullptr;
+static PFNGLBUFFERSUBDATAPROC glBufferSubDataPtr = nullptr;
+static PFNGLDELETEBUFFERSPROC glDeleteBuffersPtr = nullptr;
+static PFNGLGENVERTEXARRAYSPROC glGenVertexArraysPtr = nullptr;
+static PFNGLBINDVERTEXARRAYPROC glBindVertexArrayPtr = nullptr;
+static PFNGLDELETEVERTEXARRAYSPROC glDeleteVertexArraysPtr = nullptr;
+static PFNGLENABLEVERTEXATTRIBARRAYPROC glEnableVertexAttribArrayPtr = nullptr;
+static PFNGLVERTEXATTRIBPOINTERPROC glVertexAttribPointerPtr = nullptr;
+static PFNGLDRAWBUFFERSPROC glDrawBuffersPtr = nullptr;
+static PFNGLBLITFRAMEBUFFERPROC glBlitFramebufferPtr = nullptr;
+
+static void InitPostProcessGL() {
+    static bool initialized = false;
+    if (!initialized) {
+        glGenFramebuffersPtr = (PFNGLGENFRAMEBUFFERSPROC)glXGetProcAddress((const GLubyte*)"glGenFramebuffers");
+        glBindFramebufferPtr = (PFNGLBINDFRAMEBUFFERPROC)glXGetProcAddress((const GLubyte*)"glBindFramebuffer");
+        glDeleteFramebuffersPtr = (PFNGLDELETEFRAMEBUFFERSPROC)glXGetProcAddress((const GLubyte*)"glDeleteFramebuffers");
+        glFramebufferTexture2DPtr = (PFNGLFRAMEBUFFERTEXTURE2DPROC)glXGetProcAddress((const GLubyte*)"glFramebufferTexture2D");
+        glGenBuffersPtr = (PFNGLGENBUFFERSPROC)glXGetProcAddress((const GLubyte*)"glGenBuffers");
+        glBindBufferPtr = (PFNGLBINDBUFFERPROC)glXGetProcAddress((const GLubyte*)"glBindBuffer");
+        glBufferDataPtr = (PFNGLBUFFERDATAPROC)glXGetProcAddress((const GLubyte*)"glBufferData");
+        glBufferSubDataPtr = (PFNGLBUFFERSUBDATAPROC)glXGetProcAddress((const GLubyte*)"glBufferSubData");
+        glDeleteBuffersPtr = (PFNGLDELETEBUFFERSPROC)glXGetProcAddress((const GLubyte*)"glDeleteBuffers");
+        glGenVertexArraysPtr = (PFNGLGENVERTEXARRAYSPROC)glXGetProcAddress((const GLubyte*)"glGenVertexArrays");
+        glBindVertexArrayPtr = (PFNGLBINDVERTEXARRAYPROC)glXGetProcAddress((const GLubyte*)"glBindVertexArray");
+        glDeleteVertexArraysPtr = (PFNGLDELETEVERTEXARRAYSPROC)glXGetProcAddress((const GLubyte*)"glDeleteVertexArrays");
+        glEnableVertexAttribArrayPtr = (PFNGLENABLEVERTEXATTRIBARRAYPROC)glXGetProcAddress((const GLubyte*)"glEnableVertexAttribArray");
+        glVertexAttribPointerPtr = (PFNGLVERTEXATTRIBPOINTERPROC)glXGetProcAddress((const GLubyte*)"glVertexAttribPointer");
+        glDrawBuffersPtr = (PFNGLDRAWBUFFERSPROC)glXGetProcAddress((const GLubyte*)"glDrawBuffers");
+        glBlitFramebufferPtr = (PFNGLBLITFRAMEBUFFERPROC)glXGetProcAddress((const GLubyte*)"glBlitFramebuffer");
+        initialized = true;
+    }
+}
+
+#define glGenFramebuffers glGenFramebuffersPtr
+#define glBindFramebuffer glBindFramebufferPtr
+#define glDeleteFramebuffers glDeleteFramebuffersPtr
+#define glFramebufferTexture2D glFramebufferTexture2DPtr
+#define glGenBuffers glGenBuffersPtr
+#define glBindBuffer glBindBufferPtr
+#define glBufferData glBufferDataPtr
+#define glBufferSubData glBufferSubDataPtr
+#define glDeleteBuffers glDeleteBuffersPtr
+#define glGenVertexArrays glGenVertexArraysPtr
+#define glBindVertexArray glBindVertexArrayPtr
+#define glDeleteVertexArrays glDeleteVertexArraysPtr
+#define glEnableVertexAttribArray glEnableVertexAttribArrayPtr
+#define glVertexAttribPointer glVertexAttribPointerPtr
+#define glDrawBuffers glDrawBuffersPtr
+#define glBlitFramebuffer glBlitFramebufferPtr
 
 // ============================================
 // Full-Screen Quad Helpers
@@ -43,6 +100,7 @@ static void CreateFullscreenQuad(uint32_t& vao, uint32_t& vbo) {
 // ============================================
 
 void ToneMappingEffect::Initialize(uint32_t width, uint32_t height) {
+    InitPostProcessGL();
     CreateFullscreenQuad(vao, vbo);
     
     // ACES Filmic tone mapping shader
@@ -105,15 +163,13 @@ void ToneMappingEffect::Initialize(uint32_t width, uint32_t height) {
                 color = Uncharted2ToneMapping(color);
             }
             
-            // Gamma correction
             color = pow(color, vec3(1.0 / gamma));
-            
             FragColor = vec4(color, 1.0);
         }
     )";
     
     shader = std::make_unique<Shader>();
-    shader->Compile(vertexShader, fragmentShader);
+    shader->LoadFromSource(vertexShader, fragmentShader);
     
     Logger::Info("[PostProcess] Tone mapping initialized");
 }
@@ -131,7 +187,7 @@ void ToneMappingEffect::Render(uint32_t inputTexture, uint32_t outputFBO,
     glBindFramebuffer(GL_FRAMEBUFFER, outputFBO);
     glViewport(0, 0, width, height);
     
-    shader->Use();
+    shader->Bind();
     shader->SetInt("screenTexture", 0);
     shader->SetFloat("exposure", exposure);
     shader->SetFloat("gamma", gamma);
@@ -143,6 +199,8 @@ void ToneMappingEffect::Render(uint32_t inputTexture, uint32_t outputFBO,
     glBindVertexArray(vao);
     glDrawArrays(GL_TRIANGLES, 0, 6);
     glBindVertexArray(0);
+    
+    shader->Unbind();
 }
 
 // ============================================
@@ -150,6 +208,7 @@ void ToneMappingEffect::Render(uint32_t inputTexture, uint32_t outputFBO,
 // ============================================
 
 void BloomEffect::Initialize(uint32_t width, uint32_t height) {
+    InitPostProcessGL();
     CreateFullscreenQuad(vao, vbo);
     
     // Downsample shader
@@ -175,7 +234,6 @@ void BloomEffect::Initialize(uint32_t width, uint32_t height) {
             vec2 texelSize = 1.0 / srcResolution;
             vec3 result = vec3(0.0);
             
-            // 4-tap bilinear filter
             vec2 offset = texelSize * 0.5;
             result += texture(srcTexture, TexCoord + vec2(-offset.x, -offset.y)).rgb;
             result += texture(srcTexture, TexCoord + vec2( offset.x, -offset.y)).rgb;
@@ -187,7 +245,7 @@ void BloomEffect::Initialize(uint32_t width, uint32_t height) {
     )";
     
     downsampleShader = std::make_unique<Shader>();
-    downsampleShader->Compile(downsampleVert, downsampleFrag);
+    downsampleShader->LoadFromSource(downsampleVert, downsampleFrag);
     
     // Upsample shader
     const char* upsampleFrag = R"(
@@ -201,7 +259,6 @@ void BloomEffect::Initialize(uint32_t width, uint32_t height) {
             vec2 texelSize = 1.0 / vec2(textureSize(srcTexture, 0));
             vec3 result = vec3(0.0);
             
-            // 9-tap tent filter
             for (int x = -1; x <= 1; ++x) {
                 for (int y = -1; y <= 1; ++y) {
                     vec2 offset = vec2(float(x), float(y)) * texelSize * filterRadius;
@@ -214,7 +271,7 @@ void BloomEffect::Initialize(uint32_t width, uint32_t height) {
     )";
     
     upsampleShader = std::make_unique<Shader>();
-    upsampleShader->Compile(downsampleVert, upsampleFrag);
+    upsampleShader->LoadFromSource(downsampleVert, upsampleFrag);
     
     // Combine shader
     const char* combineFrag = R"(
@@ -233,7 +290,7 @@ void BloomEffect::Initialize(uint32_t width, uint32_t height) {
     )";
     
     combineShader = std::make_unique<Shader>();
-    combineShader->Compile(downsampleVert, combineFrag);
+    combineShader->LoadFromSource(downsampleVert, combineFrag);
     
     // Create mip chain
     uint32_t mipCount = 5;
@@ -286,17 +343,13 @@ void BloomEffect::Render(uint32_t inputTexture, uint32_t outputFBO,
                           uint32_t width, uint32_t height) {
     if (!enabled || mips.empty()) return;
     
-    // Downsample
     Downsample(inputTexture);
-    
-    // Upsample
     Upsample();
     
-    // Combine with scene
     glBindFramebuffer(GL_FRAMEBUFFER, outputFBO);
     glViewport(0, 0, width, height);
     
-    combineShader->Use();
+    combineShader->Bind();
     combineShader->SetInt("sceneTexture", 0);
     combineShader->SetInt("bloomTexture", 1);
     combineShader->SetFloat("intensity", intensity);
@@ -309,18 +362,28 @@ void BloomEffect::Render(uint32_t inputTexture, uint32_t outputFBO,
     glBindVertexArray(vao);
     glDrawArrays(GL_TRIANGLES, 0, 6);
     glBindVertexArray(0);
+    
+    combineShader->Unbind();
 }
 
 void BloomEffect::Downsample(uint32_t sourceTexture) {
-    downsampleShader->Use();
+    if (mips.empty()) return;
+    
+    uint32_t baseWidth = mips[0].width * 2;
+    uint32_t baseHeight = mips[0].height * 2;
+    
+    downsampleShader->Bind();
     
     for (size_t i = 0; i < mips.size(); ++i) {
         glBindFramebuffer(GL_FRAMEBUFFER, mips[i].fbo);
         glViewport(0, 0, mips[i].width, mips[i].height);
         
         downsampleShader->SetInt("srcTexture", 0);
+        uint32_t srcW = (i == 0) ? baseWidth : mips[i-1].width;
+        uint32_t srcH = (i == 0) ? baseHeight : mips[i-1].height;
         downsampleShader->SetVec2("srcResolution", 
-            glm::vec2(i == 0 ? width : mips[i-1].width, i == 0 ? height : mips[i-1].height));
+            static_cast<float>(srcW),
+            static_cast<float>(srcH));
         
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, i == 0 ? sourceTexture : mips[i-1].texture);
@@ -328,13 +391,15 @@ void BloomEffect::Downsample(uint32_t sourceTexture) {
         glBindVertexArray(vao);
         glDrawArrays(GL_TRIANGLES, 0, 6);
     }
+    
+    glBindVertexArray(0);
+    downsampleShader->Unbind();
 }
 
 void BloomEffect::Upsample() {
-    upsampleShader->Use();
+    upsampleShader->Bind();
     upsampleShader->SetFloat("filterRadius", radius);
     
-    // Enable additive blending for upsampling
     glEnable(GL_BLEND);
     glBlendFunc(GL_ONE, GL_ONE);
     glBlendEquation(GL_FUNC_ADD);
@@ -353,6 +418,8 @@ void BloomEffect::Upsample() {
     }
     
     glDisable(GL_BLEND);
+    glBindVertexArray(0);
+    upsampleShader->Unbind();
 }
 
 // ============================================
@@ -360,6 +427,7 @@ void BloomEffect::Upsample() {
 // ============================================
 
 void FXAAEffect::Initialize(uint32_t width, uint32_t height) {
+    InitPostProcessGL();
     CreateFullscreenQuad(vao, vbo);
     
     const char* vertexShader = R"(
@@ -386,13 +454,11 @@ void FXAAEffect::Initialize(uint32_t width, uint32_t height) {
             vec2 texelSize = inverseScreenSize;
             vec3 colorCenter = texture(screenTexture, TexCoord).rgb;
             
-            // Sample neighbors
             vec3 colorN = texture(screenTexture, TexCoord + vec2(0.0, texelSize.y)).rgb;
             vec3 colorS = texture(screenTexture, TexCoord + vec2(0.0, -texelSize.y)).rgb;
             vec3 colorE = texture(screenTexture, TexCoord + vec2(texelSize.x, 0.0)).rgb;
             vec3 colorW = texture(screenTexture, TexCoord + vec2(-texelSize.x, 0.0)).rgb;
             
-            // Luma
             float lumaCenter = dot(colorCenter, vec3(0.299, 0.587, 0.114));
             float lumaN = dot(colorN, vec3(0.299, 0.587, 0.114));
             float lumaS = dot(colorS, vec3(0.299, 0.587, 0.114));
@@ -408,14 +474,13 @@ void FXAAEffect::Initialize(uint32_t width, uint32_t height) {
                 return;
             }
             
-            // Simple 4-tap average for edges
             vec3 result = (colorCenter * 4.0 + colorN + colorS + colorE + colorW) / 8.0;
             FragColor = vec4(result, 1.0);
         }
     )";
     
     shader = std::make_unique<Shader>();
-    shader->Compile(vertexShader, fragmentShader);
+    shader->LoadFromSource(vertexShader, fragmentShader);
     
     Logger::Info("[PostProcess] FXAA initialized");
 }
@@ -433,9 +498,9 @@ void FXAAEffect::Render(uint32_t inputTexture, uint32_t outputFBO,
     glBindFramebuffer(GL_FRAMEBUFFER, outputFBO);
     glViewport(0, 0, width, height);
     
-    shader->Use();
+    shader->Bind();
     shader->SetInt("screenTexture", 0);
-    shader->SetVec2("inverseScreenSize", glm::vec2(1.0f / width, 1.0f / height));
+    shader->SetVec2("inverseScreenSize", 1.0f / width, 1.0f / height);
     shader->SetFloat("quality", quality);
     shader->SetFloat("edgeThreshold", edgeThreshold);
     
@@ -445,6 +510,8 @@ void FXAAEffect::Render(uint32_t inputTexture, uint32_t outputFBO,
     glBindVertexArray(vao);
     glDrawArrays(GL_TRIANGLES, 0, 6);
     glBindVertexArray(0);
+    
+    shader->Unbind();
 }
 
 // ============================================
@@ -452,6 +519,7 @@ void FXAAEffect::Render(uint32_t inputTexture, uint32_t outputFBO,
 // ============================================
 
 void SSAOEffect::Initialize(uint32_t width, uint32_t height) {
+    InitPostProcessGL();
     CreateFullscreenQuad(vao, vbo);
     
     const char* vertexShader = R"(
@@ -506,7 +574,7 @@ void SSAOEffect::Initialize(uint32_t width, uint32_t height) {
     )";
     
     ssaoShader = std::make_unique<Shader>();
-    ssaoShader->Compile(vertexShader, ssaoFragment);
+    ssaoShader->LoadFromSource(vertexShader, ssaoFragment);
     
     const char* blurFragment = R"(
         #version 330 core
@@ -530,7 +598,7 @@ void SSAOEffect::Initialize(uint32_t width, uint32_t height) {
     )";
     
     blurShader = std::make_unique<Shader>();
-    blurShader->Compile(vertexShader, blurFragment);
+    blurShader->LoadFromSource(vertexShader, blurFragment);
     
     // Create SSAO FBO
     glGenFramebuffers(1, &ssaoFBO);
@@ -584,14 +652,14 @@ void SSAOEffect::Render(uint32_t inputTexture, uint32_t outputFBO,
     glViewport(0, 0, width, height);
     glClear(GL_COLOR_BUFFER_BIT);
     
-    ssaoShader->Use();
+    ssaoShader->Bind();
     ssaoShader->SetInt("gPosition", 0);
     ssaoShader->SetInt("gNormal", 1);
     ssaoShader->SetInt("texNoise", 2);
     ssaoShader->SetFloat("radius", radius);
     ssaoShader->SetFloat("bias", bias);
-    ssaoShader->SetVec2("noiseScale", glm::vec2(width / 4.0f, height / 4.0f));
-    ssaoShader->SetMat4("projection", projMatrix);
+    ssaoShader->SetVec2("noiseScale", width / 4.0f, height / 4.0f);
+    ssaoShader->SetMat4("projection", projMatrix.data);
     
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, positionTexture);
@@ -602,8 +670,8 @@ void SSAOEffect::Render(uint32_t inputTexture, uint32_t outputFBO,
     
     // Upload kernel samples
     for (size_t i = 0; i < kernel.size() && i < 64; ++i) {
-        ssaoShader->SetVec3("samples[" + std::to_string(i) + "]", 
-            glm::vec3(kernel[i].x, kernel[i].y, kernel[i].z));
+        std::string name = "samples[" + std::to_string(i) + "]";
+        ssaoShader->SetVec3(name, kernel[i]);
     }
     
     glBindVertexArray(vao);
@@ -613,7 +681,7 @@ void SSAOEffect::Render(uint32_t inputTexture, uint32_t outputFBO,
     glBindFramebuffer(GL_FRAMEBUFFER, blurFBO);
     glViewport(0, 0, width, height);
     
-    blurShader->Use();
+    blurShader->Bind();
     blurShader->SetInt("ssaoInput", 0);
     
     glActiveTexture(GL_TEXTURE0);
@@ -622,9 +690,11 @@ void SSAOEffect::Render(uint32_t inputTexture, uint32_t outputFBO,
     glDrawArrays(GL_TRIANGLES, 0, 6);
     glBindVertexArray(0);
     
+    ssaoShader->Unbind();
+    blurShader->Unbind();
+    
     // Output is in blurTexture
     if (outputFBO != blurFBO) {
-        // Copy to output
         glBindFramebuffer(GL_READ_FRAMEBUFFER, blurFBO);
         glBindFramebuffer(GL_DRAW_FRAMEBUFFER, outputFBO);
         glBlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_COLOR_BUFFER_BIT, GL_NEAREST);
@@ -648,9 +718,8 @@ void SSAOEffect::GenerateKernel() {
             randomFloats(generator) * 2.0f - 1.0f,
             randomFloats(generator)
         );
-        sample = sample.Normalized() * randomFloats(generator);
+        sample = sample.normalize() * randomFloats(generator);
         
-        // Scale samples to be more aligned with center
         float scale = static_cast<float>(i) / 64.0f;
         scale = 0.1f + (scale * scale) * 0.9f;
         sample = sample * scale;
@@ -689,6 +758,7 @@ PostProcessStack::PostProcessStack() = default;
 PostProcessStack::~PostProcessStack() { Shutdown(); }
 
 void PostProcessStack::Initialize(uint32_t width, uint32_t height) {
+    InitPostProcessGL();
     CreateBuffers(width, height);
     
     // Add default effects
@@ -766,7 +836,6 @@ std::shared_ptr<PostProcessEffect> PostProcessStack::GetEffect(const std::string
 void PostProcessStack::Render(uint32_t inputTexture, uint32_t finalOutputFBO,
                                uint32_t width, uint32_t height) {
     if (effects.empty()) {
-        // No effects, just copy
         glBindFramebuffer(GL_READ_FRAMEBUFFER, 0);
         glBindFramebuffer(GL_DRAW_FRAMEBUFFER, finalOutputFBO);
         glBlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_COLOR_BUFFER_BIT, GL_LINEAR);
@@ -782,7 +851,7 @@ void PostProcessStack::Render(uint32_t inputTexture, uint32_t finalOutputFBO,
         if (!effect || !effect->IsEnabled()) continue;
         
         bool isLast = (i == effects.size() - 1);
-        uint32_t outputFBO = isLast ? finalOutputFBO : fbo[1 -        pingPong];
+        uint32_t outputFBO = isLast ? finalOutputFBO : fbo[1 - pingPong];
         
         effect->Render(readTex, outputFBO, width, height);
         

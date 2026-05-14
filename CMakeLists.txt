@@ -210,6 +210,8 @@ set(RENDER_RUNTIME_SOURCES
     src/rendering/sky/sky_renderer.cpp
     src/rendering/particles/particle_system.cpp
     src/rendering/weather/weather_effects_renderer.cpp
+    src/rendering/modern_renderer.cpp
+    src/rendering/post_processing.cpp
     src/voxel/block_mesh_builder.cpp
     src/voxel/world_renderer.cpp
 )
@@ -295,7 +297,7 @@ if(OpenGL_FOUND)
 endif()
 
 message(STATUS "Excluding experimental visual scripting sources from voxel_engine_lib until the API surface is reconciled")
-message(STATUS "Excluding post_processing and occlusion_culling from voxel_engine_lib until their rendering dependencies are reconciled")
+message(STATUS "Excluding occlusion_culling from voxel_engine_lib until rendering dependencies are reconciled")
 
 # ============================================
 # Dear ImGui Sources

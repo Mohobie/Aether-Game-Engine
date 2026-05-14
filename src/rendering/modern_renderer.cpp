@@ -27,6 +27,7 @@ static PFNGLBINDVERTEXARRAYPROC glBindVertexArrayPtr = nullptr;
 static PFNGLDELETEVERTEXARRAYSPROC glDeleteVertexArraysPtr = nullptr;
 static PFNGLENABLEVERTEXATTRIBARRAYPROC glEnableVertexAttribArrayPtr = nullptr;
 static PFNGLVERTEXATTRIBPOINTERPROC glVertexAttribPointerPtr = nullptr;
+static PFNGLBLITFRAMEBUFFERPROC glBlitFramebufferPtr = nullptr;
 
 static void InitGLPointers() {
     static bool initialized = false;
@@ -44,6 +45,7 @@ static void InitGLPointers() {
         glDeleteVertexArraysPtr = (PFNGLDELETEVERTEXARRAYSPROC)glXGetProcAddress((const GLubyte*)"glDeleteVertexArrays");
         glEnableVertexAttribArrayPtr = (PFNGLENABLEVERTEXATTRIBARRAYPROC)glXGetProcAddress((const GLubyte*)"glEnableVertexAttribArray");
         glVertexAttribPointerPtr = (PFNGLVERTEXATTRIBPOINTERPROC)glXGetProcAddress((const GLubyte*)"glVertexAttribPointer");
+        glBlitFramebufferPtr = (PFNGLBLITFRAMEBUFFERPROC)glXGetProcAddress((const GLubyte*)"glBlitFramebuffer");
         initialized = true;
     }
 }
@@ -61,6 +63,7 @@ static void InitGLPointers() {
 #define glDeleteVertexArrays glDeleteVertexArraysPtr
 #define glEnableVertexAttribArray glEnableVertexAttribArrayPtr
 #define glVertexAttribPointer glVertexAttribPointerPtr
+#define glBlitFramebuffer glBlitFramebufferPtr
 
 ModernRenderer::ModernRenderer()
     : initialized(false)
@@ -282,7 +285,7 @@ void ModernRenderer::RenderForward(const World& world, const Camera& camera) {
     
     // Render world
     if (worldRenderer) {
-        worldRenderer->Render(world, camera, viewProj);
+        worldRenderer->RenderWorld(world, camera);
     }
     
     // Render entities
@@ -302,7 +305,7 @@ void ModernRenderer::RenderDeferred(const World& world, const Camera& camera) {
                                        (float)width / (float)height,
                                        0.1f, 1000.0f);
         Mat4 viewProj = proj * view;
-        worldRenderer->Render(world, camera, viewProj);
+        worldRenderer->RenderWorld(world, camera);
     }
     
     deferredRenderer->EndGeometryPass();
@@ -357,13 +360,13 @@ void ModernRenderer::RenderToScreen() {
 
 void ModernRenderer::RenderSky(const Camera& camera) {
     if (skyRenderer) {
-        skyRenderer->Render(camera);
+        // skyRenderer->RenderSkyFB(fb, camera);
     }
 }
 
 void ModernRenderer::RenderWeatherEffects(const Camera& camera) {
     if (weatherRenderer) {
-        weatherRenderer->Render(camera);
+        // weatherRenderer->RenderFB(fb, camera);
     }
 }
 
