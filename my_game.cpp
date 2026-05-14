@@ -11,6 +11,8 @@
 #include "core/crafting.h"
 #include "game/block_interaction.h"
 #include "game/mob_system.h"
+#include "game/bed_system.h"
+#include "rendering/light_system.h"
 #include "debug/debug_renderer.h"
 #include "audio/audio_engine.h"
 #include "editor/in_game_editor.h"
@@ -205,6 +207,16 @@ int main() {
     cactusDef.color = vge::Vec3(0.2f, 0.6f, 0.2f);
     registry.RegisterBlock(cactusDef);
     
+    // Bed block
+    vge::BlockDef bedDef;
+    bedDef.id = "bed";
+    bedDef.name = "Bed";
+    bedDef.solid = true;
+    bedDef.opaque = true;
+    bedDef.hardness = 0.5f;
+    bedDef.color = vge::Vec3(0.8f, 0.2f, 0.2f); // Red bed
+    registry.RegisterBlock(bedDef);
+    
     // 5. Create world and generate large terrain
     vge::World world;
     world.SetSeed(12345);
@@ -250,6 +262,13 @@ int main() {
     vge::DayNightCycle dayNightCycle;
     dayNightCycle.SetDayLength(1200.0f); // 20 minutes per day
     renderer.SetDayNightCycle(&dayNightCycle);
+    
+    // 11b. Create light system and connect to day/night cycle
+    vge::LightSystem lightSystem(&world);
+    lightSystem.UpdateSkyLightForTime(dayNightCycle.GetDayNightBlend());
+    
+    // 11c. Create bed system
+    vge::BedSystem bedSystem(&world, &dayNightCycle, &lightSystem);
     
     // 12. Create crafting system
     vge::CraftingSystem craftingSystem;
@@ -380,6 +399,17 @@ int main() {
     vge::SaveGameManager saveManager;
     saveManager.Initialize("saves");
     
+    // Set callbacks for bed system
+    bedSystem.SetOnSleepStarted([]() {
+        std::cout << "[Game] Player went to sleep..." << std::endl;
+    });
+    bedSystem.SetOnSleepEnded([]() {
+        std::cout << "[Game] Player woke up! Good morning!" << std::endl;
+    });
+    bedSystem.SetOnRespawnPointSet([]() {
+        std::cout << "[Game] Respawn point set!" << std::endl;
+    });
+    
     // 13. Create debug renderer
     vge::DebugRenderer& debug = vge::GetDebugRenderer();
     debug.Initialize();
@@ -393,7 +423,7 @@ int main() {
     
     // Block selection for placing
     int selectedBlock = 1; // Start with stone
-    std::string blockTypes[] = {"stone", "dirt", "grass", "wood", "leaves", "sand", "water", "coal_ore", "iron_ore", "gold_ore", "diamond_ore", "flower", "tall_grass", "cactus"};
+    std::string blockTypes[] = {"stone", "dirt", "grass", "wood", "leaves", "sand", "water", "coal_ore", "iron_ore", "gold_ore", "diamond_ore", "flower", "tall_grass", "cactus", "bed"};
     
     while (running) {
         // Handle window events
@@ -423,6 +453,13 @@ int main() {
         if (editor.IsActive()) {
             // Editor mode
             editor.Update(deltaTime, input);
+        } else if (bedSystem.IsSleeping()) {
+            // Player is sleeping - minimal input
+            // Press Escape or E to wake up
+            if (input.IsKeyJustPressed(vge::KeyCode::Escape) ||
+                input.IsKeyJustPressed(vge::KeyCode::E)) {
+                bedSystem.WakeUp();
+            }
         } else {
             // Game mode - player movement
             player.Update(deltaTime, input, world);
@@ -438,26 +475,64 @@ int main() {
             
             // Block placing (E key)
             if (input.IsKeyJustPressed(vge::KeyCode::E)) {
-                player.PlaceBlock(world, registry.GetBlockId(blockTypes[selectedBlock]));
+                // Check if placing a bed
+                if (blockTypes[selectedBlock] == "bed") {
+                    // Place bed facing player's direction
+                    int bedDir = 0;
+                    float yaw = player.GetYaw();
+                    // Convert yaw to direction: 0=+X, 1=+Z, 2=-X, 3=-Z
+                    float yawRad = yaw * 3.14159f / 180.0f;
+                    float cosY = cosf(yawRad);
+                    float sinY = sinf(yawRad);
+                    if (std::abs(cosY) > std::abs(sinY)) {
+                        bedDir = (cosY > 0) ? 2 : 0; // -X or +X
+                    } else {
+                        bedDir = (sinY > 0) ? 3 : 1; // -Z or +Z
+                    }
+                    
+                    vge::Vec3 pos = player.GetPosition();
+                    int bx = static_cast<int>(std::floor(pos.x + cosY * 2.0f));
+                    int by = static_cast<int>(std::floor(pos.y));
+                    int bz = static_cast<int>(std::floor(pos.z - sinY * 2.0f));
+                    bedSystem.PlaceBed(bx, by, bz, bedDir);
+                } else {
+                    player.PlaceBlock(world, registry.GetBlockId(blockTypes[selectedBlock]));
+                }
             }
             
-            // Day/night cycle controls (use number keys for now)
-            if (input.IsKeyJustPressed(vge::KeyCode::Key1)) {
+            // Sleep in bed (F key)
+            if (input.IsKeyJustPressed(vge::KeyCode::F)) {
+                vge::SleepResult result = bedSystem.TrySleep(player.GetPosition());
+                if (result != vge::SleepResult::Success) {
+                    std::cout << "[Bed] " << vge::BedSystem::SleepResultToString(result) << std::endl;
+                }
+            }
+            
+            // Day/night cycle debug controls
+            if (input.IsKeyJustPressed(vge::KeyCode::Key0)) {
                 dayNightCycle.SkipToDawn();
+                lightSystem.UpdateSkyLightForTime(dayNightCycle.GetDayNightBlend());
             }
-            if (input.IsKeyJustPressed(vge::KeyCode::Key2)) {
-                dayNightCycle.SkipToNoon();
-            }
-            if (input.IsKeyJustPressed(vge::KeyCode::Key3)) {
+            if (input.IsKeyJustPressed(vge::KeyCode::Key8)) {
                 dayNightCycle.SkipToDusk();
+                lightSystem.UpdateSkyLightForTime(dayNightCycle.GetDayNightBlend());
             }
-            if (input.IsKeyJustPressed(vge::KeyCode::Key4)) {
+            if (input.IsKeyJustPressed(vge::KeyCode::Key9)) {
                 dayNightCycle.SkipToMidnight();
+                lightSystem.UpdateSkyLightForTime(dayNightCycle.GetDayNightBlend());
             }
         }
         
         // Update day/night cycle
         dayNightCycle.Update(deltaTime);
+        
+        // Update light system to match day/night cycle
+        if (!bedSystem.IsSkippingNight()) {
+            lightSystem.UpdateSkyLightForTime(dayNightCycle.GetDayNightBlend());
+        }
+        
+        // Update bed system
+        bedSystem.Update(deltaTime, player.GetPosition());
         
         // Update mob system
         mobSystem.Update(deltaTime, player.GetPosition(), dayNightCycle.GetDayNightBlend());
@@ -485,6 +560,7 @@ int main() {
     }
     
     // Cleanup
+    bedSystem.ClearAllBeds();
     editor.Shutdown();
     audio.Shutdown();
     renderer.Shutdown();

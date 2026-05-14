@@ -23,10 +23,10 @@
 - [x] River/lake generation
 
 ### 3. Day/Night Cycle
-- [ ] Sun/moon movement
-- [ ] Dynamic lighting changes
-- [ ] Mob spawning at night
-- [ ] Bed/sleep mechanic to skip night
+- [x] Sun/moon movement
+- [x] Dynamic lighting changes
+- [x] Mob spawning at night
+- [x] Bed/sleep mechanic to skip night
 
 ### 4. Health & Survival
 - [x] Health system (damage/healing)

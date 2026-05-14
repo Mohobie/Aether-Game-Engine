@@ -149,15 +149,20 @@
 **Date:** 2026-05-13
 **Files Modified:**
 - `src/rendering/renderer.cpp`
+- `src/rendering/light_system.h`
+- `src/rendering/light_system.cpp`
 - `my_game.cpp` (example integration)
 
 **Description:** Integrated existing day/night cycle into renderer:
 - Sky color changes based on time (dawn/day/dusk/night)
 - Clear color uses sky top color from cycle
 - Time skip controls
+- Dynamic sky light updates based on day/night blend
+- Light level checks for mob spawning
 
 **Engine Impact:** Rendering system
 **Breaking Change:** No
+**RAG Doc:** `docs/rag/DAY_NIGHT_CYCLE.md`
 
 ---
 
@@ -217,6 +222,47 @@
 
 ---
 
+## Change #14: Day/Night Cycle - Bed System
+**Date:** 2026-05-13
+**Files Modified:**
+- `src/game/bed_system.h` (new)
+- `src/game/bed_system.cpp` (new)
+- `src/platform/input_manager.h`
+- `src/platform/input_manager.cpp`
+- `my_game.cpp`
+- `CMakeLists.txt`
+
+**Description:** Complete bed/sleep system for night skipping:
+- Bed placement with directional orientation (head/foot)
+- Sleep mechanic with requirements (night time, proximity, no monsters)
+- Night skip with accelerated time (50x speed)
+- Respawn point setting
+- Monster proximity detection (8 block radius)
+- Sleep state callbacks (on sleep start/end)
+- Integration with DayNightCycle and LightSystem
+
+**Engine Impact:** Gameplay system
+**Breaking Change:** No
+**RAG Doc:** `docs/rag/DAY_NIGHT_CYCLE.md`
+
+---
+
+## Change #15: Input Manager Key Additions
+**Date:** 2026-05-13
+**Files Modified:**
+- `src/platform/input_manager.h`
+- `src/platform/input_manager.cpp`
+
+**Description:** Added missing key codes to input manager:
+- `F` key for bed interaction
+- `Key0` for debug time skip
+- Cross-platform support (Linux terminal + Windows)
+
+**Engine Impact:** Input system
+**Breaking Change:** No
+
+---
+
 ## Change #13: Mineshaft Generation System
 **Date:** 2026-05-13
 **Files Modified:**
@@ -252,7 +298,7 @@
 | Multiplayer | 0e3bd16 | ✅ NETWORKING.md | ✅ MULTIPLAYER_ARCHITECTURE.md | ✅ Complete |
 | Input Mouse | d2e0e67 | - | - | ⚠️ Missing RAG |
 | Save System | b285636 | ✅ SAVE_SYSTEM.md | - | ✅ Complete |
-| Day/Night | 19e8d66 | - | - | ⚠️ Missing RAG |
+| Day/Night | 19e8d66 | ✅ DAY_NIGHT_CYCLE.md | - | ✅ Complete |
 | Survival | 3ed4b79 | ✅ SURVIVAL_SYSTEM.md | - | ✅ Complete |
 | Ore Generator | cb2f93e | ✅ ORE_GENERATION.md | - | ✅ Complete |
 | Tool System | 12b6496 | ✅ TOOL_SYSTEM.md | - | ✅ Complete |

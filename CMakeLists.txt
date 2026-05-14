@@ -194,13 +194,12 @@ set(CORE_SOURCES
     src/voxel/voxel_editor.cpp
     src/game/sandbox_mode.cpp
     src/game/survival_mode.cpp
-    src/game/creative_mode.cpp
     src/game/player_stats.cpp
     src/game/day_night_cycle.cpp
     src/game/block_interaction.cpp
     src/game/tool_system.cpp
     src/game/mob_system.cpp
-    src/game/mob_spawn_rules.cpp
+    src/game/bed_system.cpp
     src/game/block_drops.cpp
     src/game/combat_system.cpp
     src/game/quest_system.cpp

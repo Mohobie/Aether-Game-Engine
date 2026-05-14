@@ -63,6 +63,8 @@ void Input::ProcessKeyboardInput() {
             case ' ': key = KeyCode::Space; break;
             case 'e': case 'E': key = KeyCode::E; break;
             case 'q': case 'Q': key = KeyCode::Q; break;
+            case 'f': case 'F': key = KeyCode::F; break;
+            case '0': key = KeyCode::Key0; break;
             case '1': key = KeyCode::Key1; break;
             case '2': key = KeyCode::Key2; break;
             case '3': key = KeyCode::Key3; break;
@@ -122,6 +124,7 @@ void Input::ProcessKeyboardInput() {
     checkKey(VK_RIGHT, KeyCode::Right);
     checkKey('E', KeyCode::E);
     checkKey('Q', KeyCode::Q);
+    checkKey('F', KeyCode::F);
     checkKey(VK_SHIFT, KeyCode::Shift);
     checkKey(VK_CONTROL, KeyCode::Ctrl);
     checkKey('1', KeyCode::Key1);
@@ -133,6 +136,7 @@ void Input::ProcessKeyboardInput() {
     checkKey('7', KeyCode::Key7);
     checkKey('8', KeyCode::Key8);
     checkKey('9', KeyCode::Key9);
+    checkKey('0', KeyCode::Key0);
 }
 #endif
 

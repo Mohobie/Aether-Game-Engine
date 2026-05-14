@@ -17,8 +17,8 @@ namespace vge {
 enum class KeyCode {
     W = 0, A, S, D, Space, Escape, Enter, 
     Up, Down, Left, Right,
-    E, Q, Shift, Ctrl,
-    Key1, Key2, Key3, Key4, Key5, Key6, Key7, Key8, Key9,
+    E, Q, F, Shift, Ctrl,
+    Key0, Key1, Key2, Key3, Key4, Key5, Key6, Key7, Key8, Key9,
     Count
 };
 
