@@ -27,6 +27,26 @@ Vec3 Vec3::operator*(const Vec3& other) const {
     return Vec3(x * other.x, y * other.y, z * other.z);
 }
 
+Vec3& Vec3::operator+=(const Vec3& other) {
+    x += other.x; y += other.y; z += other.z;
+    return *this;
+}
+
+Vec3& Vec3::operator-=(const Vec3& other) {
+    x -= other.x; y -= other.y; z -= other.z;
+    return *this;
+}
+
+Vec3& Vec3::operator*=(float scalar) {
+    x *= scalar; y *= scalar; z *= scalar;
+    return *this;
+}
+
+Vec3& Vec3::operator/=(float scalar) {
+    x /= scalar; y /= scalar; z /= scalar;
+    return *this;
+}
+
 float Vec3::dot(const Vec3& other) const {
     return x * other.x + y * other.y + z * other.z;
 }
@@ -41,6 +61,10 @@ Vec3 Vec3::cross(const Vec3& other) const {
 
 float Vec3::length() const {
     return std::sqrt(x * x + y * y + z * z);
+}
+
+float Vec3::lengthSquared() const {
+    return x * x + y * y + z * z;
 }
 
 Vec3 Vec3::normalize() const {

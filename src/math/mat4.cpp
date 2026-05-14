@@ -98,4 +98,57 @@ Vec3 Mat4::TransformPoint(const Vec3& point) const {
     return result;
 }
 
+Mat4 Mat4::Transpose() const {
+    Mat4 result;
+    for (int i = 0; i < 4; ++i) {
+        for (int j = 0; j < 4; ++j) {
+            result.data[i*4+j] = data[j*4+i];
+        }
+    }
+    return result;
+}
+
+Mat4 Mat4::Inverse() const {
+    Mat4 inv;
+    float invOut[16];
+    
+    float inv0 = data[5] * data[10] * data[15] - data[5] * data[11] * data[14] - data[9] * data[6] * data[15] + data[9] * data[7] * data[14] + data[13] * data[6] * data[11] - data[13] * data[7] * data[10];
+    float inv4 = -data[4] * data[10] * data[15] + data[4] * data[11] * data[14] + data[8] * data[6] * data[15] - data[8] * data[7] * data[14] - data[12] * data[6] * data[11] + data[12] * data[7] * data[10];
+    float inv8 = data[4] * data[9] * data[15] - data[4] * data[11] * data[13] - data[8] * data[5] * data[15] + data[8] * data[7] * data[13] + data[12] * data[5] * data[11] - data[12] * data[7] * data[9];
+    float inv12 = -data[4] * data[9] * data[14] + data[4] * data[10] * data[13] + data[8] * data[5] * data[14] - data[8] * data[6] * data[13] - data[12] * data[5] * data[10] + data[12] * data[6] * data[9];
+    float inv1 = -data[1] * data[10] * data[15] + data[1] * data[11] * data[14] + data[9] * data[2] * data[15] - data[9] * data[3] * data[14] - data[13] * data[2] * data[11] + data[13] * data[3] * data[10];
+    float inv5 = data[0] * data[10] * data[15] - data[0] * data[11] * data[14] - data[8] * data[2] * data[15] + data[8] * data[3] * data[14] + data[12] * data[2] * data[11] - data[12] * data[3] * data[10];
+    float inv9 = -data[0] * data[9] * data[15] + data[0] * data[11] * data[13] + data[8] * data[1] * data[15] - data[8] * data[3] * data[13] - data[12] * data[1] * data[11] + data[12] * data[3] * data[9];
+    float inv13 = data[0] * data[9] * data[14] - data[0] * data[10] * data[13] - data[8] * data[1] * data[14] + data[8] * data[2] * data[13] + data[12] * data[1] * data[10] - data[12] * data[2] * data[9];
+    float inv2 = data[1] * data[6] * data[15] - data[1] * data[7] * data[14] - data[5] * data[2] * data[15] + data[5] * data[3] * data[14] + data[13] * data[2] * data[7] - data[13] * data[3] * data[6];
+    float inv6 = -data[0] * data[6] * data[15] + data[0] * data[7] * data[14] + data[4] * data[2] * data[15] - data[4] * data[3] * data[14] - data[12] * data[2] * data[7] + data[12] * data[3] * data[6];
+    float inv10 = data[0] * data[5] * data[15] - data[0] * data[7] * data[13] - data[4] * data[1] * data[15] + data[4] * data[3] * data[13] + data[12] * data[1] * data[7] - data[12] * data[3] * data[5];
+    float inv14 = -data[0] * data[5] * data[14] + data[0] * data[6] * data[13] + data[4] * data[1] * data[14] - data[4] * data[2] * data[13] - data[12] * data[1] * data[6] + data[12] * data[2] * data[5];
+    float inv3 = -data[1] * data[6] * data[11] + data[1] * data[7] * data[10] + data[5] * data[2] * data[11] - data[5] * data[3] * data[10] - data[9] * data[2] * data[7] + data[9] * data[3] * data[6];
+    float inv7 = data[0] * data[6] * data[11] - data[0] * data[7] * data[10] - data[4] * data[2] * data[11] + data[4] * data[3] * data[10] + data[8] * data[2] * data[7] - data[8] * data[3] * data[6];
+    float inv11 = -data[0] * data[5] * data[11] + data[0] * data[7] * data[9] + data[4] * data[1] * data[11] - data[4] * data[3] * data[9] - data[8] * data[1] * data[7] + data[8] * data[3] * data[5];
+    float inv15 = data[0] * data[5] * data[10] - data[0] * data[6] * data[9] - data[4] * data[1] * data[10] + data[4] * data[2] * data[9] + data[8] * data[1] * data[6] - data[8] * data[2] * data[5];
+    
+    float det = data[0] * inv0 + data[1] * inv4 + data[2] * inv8 + data[3] * inv12;
+    if (det == 0) return Identity();
+    
+    det = 1.0f / det;
+    
+    invOut[0] = inv0 * det; invOut[1] = inv1 * det; invOut[2] = inv2 * det; invOut[3] = inv3 * det;
+    invOut[4] = inv4 * det; invOut[5] = inv5 * det; invOut[6] = inv6 * det; invOut[7] = inv7 * det;
+    invOut[8] = inv8 * det; invOut[9] = inv9 * det; invOut[10] = inv10 * det; invOut[11] = inv11 * det;
+    invOut[12] = inv12 * det; invOut[13] = inv13 * det; invOut[14] = inv14 * det; invOut[15] = inv15 * det;
+    
+    for (int i = 0; i < 16; ++i) inv.data[i] = invOut[i];
+    return inv;
+}
+
+Mat4 Mat4::operator*(const Mat4& other) const {
+    return Multiply(other);
+}
+
+Vec3 Mat4::operator*(const Vec3& vec) const {
+    return TransformPoint(vec);
+}
+
 } // namespace vge

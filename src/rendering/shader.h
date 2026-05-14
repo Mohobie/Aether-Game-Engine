@@ -30,7 +30,10 @@ public:
     // Set uniforms
     void SetFloat(const std::string& name, float value);
     void SetInt(const std::string& name, int value);
+    void SetBool(const std::string& name, bool value);
+    void SetVec2(const std::string& name, float x, float y);
     void SetVec3(const std::string& name, const Vec3& value);
+    void SetVec4(const std::string& name, float x, float y, float z, float w);
     void SetMat4(const std::string& name, const float* matrix);
     
     bool IsLoaded() const { return loaded; }

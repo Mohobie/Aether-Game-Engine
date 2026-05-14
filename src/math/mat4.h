@@ -16,5 +16,13 @@ namespace vge {
         
         Mat4 Multiply(const Mat4& other) const;
         Vec3 TransformPoint(const Vec3& point) const;
+        
+        // Matrix operations
+        Mat4 Transpose() const;
+        Mat4 Inverse() const;
+        
+        // Operators
+        Mat4 operator*(const Mat4& other) const;
+        Vec3 operator*(const Vec3& vec) const;
     };
 }

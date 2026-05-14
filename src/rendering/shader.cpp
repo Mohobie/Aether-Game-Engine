@@ -50,7 +50,19 @@ void Shader::SetInt(const std::string& name, int value) {
     // Would set uniform
 }
 
+void Shader::SetBool(const std::string& name, bool value) {
+    // Would set uniform
+}
+
+void Shader::SetVec2(const std::string& name, float x, float y) {
+    // Would set uniform
+}
+
 void Shader::SetVec3(const std::string& name, const Vec3& value) {
+    // Would set uniform
+}
+
+void Shader::SetVec4(const std::string& name, float x, float y, float z, float w) {
     // Would set uniform
 }
 
