@@ -42,6 +42,56 @@ The engine uses a **client-server** model with **authoritative server**:
 - `TimeSync` - Day/night cycle (reliable, 5s interval)
 - `ChatBroadcast` - Chat messages (reliable)
 
+## LAN Discovery
+
+```cpp
+vge::LANDiscovery discovery;
+
+// Host: Start broadcasting
+discovery.StartBroadcasting("My Server", 7777, 20);
+
+// Client: Discover servers
+discovery.StartDiscovery();
+auto servers = discovery.GetDiscoveredServers();
+
+for (const auto& server : servers) {
+    std::cout << server.name << " at " << server.address 
+              << " (" << server.playerCount << "/" << server.maxPlayers << ")" << std::endl;
+}
+```
+
+## Chat System
+
+```cpp
+vge::ChatSystem chat;
+
+// Send message
+chat.SendMessage("Hello world!", playerId, "PlayerName");
+
+// Receive messages
+chat.OnMessageReceived([](const vge::ChatMessage& msg) {
+    std::cout << msg.senderName << ": " << msg.message << std::endl;
+});
+
+// System messages
+chat.SendSystemMessage("Player joined the game");
+```
+
+## Player Skins
+
+```cpp
+vge::SkinManager skins;
+
+// Load custom skin
+skins.LoadSkin("custom", "path/to/skin.png");
+
+// Set player skin
+skins.SetPlayerSkin(playerId, "steve");
+
+// Get available skins
+auto skinNames = skins.GetSkinNames();
+```
+
 ## Anti-Cheat
 
 Server validates:
@@ -88,3 +138,6 @@ game.Run();
 - `src/network/game_client.h/cpp` - Client implementation
 - `src/network/multiplayer_game.h/cpp` - Wrapper class
 - `src/network/game_network_protocol.h` - Message types
+- `src/network/lan_discovery.h/cpp` - LAN discovery
+- `src/network/chat_system.h/cpp` - Chat system
+- `src/network/player_skin.h/cpp` - Skin management
