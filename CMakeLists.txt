@@ -100,7 +100,6 @@ set(CORE_SOURCES
     src/ui/settings_menu.cpp
     src/ui/hud_system.cpp
     src/ui/main_menu.cpp
-    src/ui/key_bindings.cpp
     src/physics/physics_constraints.cpp
     src/network/network_architecture.cpp
     src/network/packet.cpp
@@ -166,7 +165,6 @@ set(CORE_SOURCES
     src/voxel/block_mesh_builder.cpp
     src/voxel/world_renderer.cpp
     src/voxel/world_serializer.cpp
-    src/voxel/ore_generator.cpp
     src/voxel/chunk_manager.cpp
     src/debug/debug_system.cpp
     src/debug/debug_renderer.cpp
@@ -181,7 +179,6 @@ set(CORE_SOURCES
     src/core/crafting_inventory_bridge.cpp
     src/ui/ui_inventory.cpp
     src/ui/ui_element.cpp
-    src/core/entity.cpp
     src/platform/platform_common.cpp
     src/platform/file_system.cpp
     src/platform/input_manager.cpp
@@ -195,9 +192,6 @@ set(CORE_SOURCES
     src/core/save_game.cpp
     src/core/survival_system.cpp
     src/voxel/voxel_editor.cpp
-    src/game/sandbox_mode.cpp
-    src/game/survival_mode.cpp
-    src/game/creative_mode.cpp
     src/game/player_stats.cpp
     src/game/day_night_cycle.cpp
     src/game/block_interaction.cpp
@@ -214,7 +208,6 @@ set(CORE_SOURCES
     src/game/inventory_persistence.cpp
     src/game/application.cpp
     src/game/scene.cpp
-    src/game/serializer.cpp
     src/editor/entity_spawner.cpp
     src/editor/in_game_editor.cpp
     src/editor/scene_viewport.cpp
@@ -224,7 +217,6 @@ set(CORE_SOURCES
     src/rendering/frustum.cpp
     src/rendering/culling_system.cpp
     src/rendering/occlusion_culling.cpp
-    src/rendering/particles/particle_system.cpp
     src/scripting/visual_script.cpp
     src/resource/resource_manager.cpp
     src/platform/window.cpp
@@ -254,7 +246,13 @@ if(WIN32)
     endif()
 else()
     list(APPEND COMMON_INCLUDES /usr/include /usr/local/include /usr/include/lua5.4)
+endif()
+
+if(EXISTS ${CMAKE_SOURCE_DIR}/third_party/imgui)
     list(APPEND COMMON_INCLUDES ${CMAKE_SOURCE_DIR}/third_party/imgui)
+endif()
+
+if(EXISTS ${CMAKE_SOURCE_DIR}/third_party/imgui/backends)
     list(APPEND COMMON_INCLUDES ${CMAKE_SOURCE_DIR}/third_party/imgui/backends)
 endif()
 
@@ -273,29 +271,43 @@ set(IMGUI_SOURCES
     third_party/imgui/backends/imgui_impl_opengl3.cpp
 )
 
-set(OPTIONAL_SOURCES
-    src/rendering/camera.cpp
-    src/rendering/mesh.cpp
-    src/rendering/renderer.cpp
-    src/rendering/shader.cpp
-    src/rendering/texture.cpp
-    src/rendering/lighting.cpp
+set(VOXEL_ENGINE_SOURCES
+    src/main.cpp
+)
+
+set(IMGUI_OPTIONAL_SOURCES
+    src/core/engine.cpp
     src/ui/console.cpp
     src/ui/imgui_wrapper.cpp
     src/ui/menu_system.cpp
-    src/voxel/world_renderer.cpp
-    src/voxel/block_mesh_builder.cpp
-    src/core/engine.cpp
-    src/main.cpp
-    ${IMGUI_SOURCES}
 )
 
-set(COMPILABLE_OPTIONAL_SOURCES)
-foreach(src ${OPTIONAL_SOURCES})
-    if(EXISTS ${CMAKE_SOURCE_DIR}/${src})
-        list(APPEND COMPILABLE_OPTIONAL_SOURCES ${src})
+set(HAVE_BUNDLED_IMGUI TRUE)
+set(IMGUI_REQUIRED_FILES
+    third_party/imgui/imgui.h
+    third_party/imgui/imgui.cpp
+    third_party/imgui/imgui_draw.cpp
+    third_party/imgui/imgui_widgets.cpp
+    third_party/imgui/imgui_tables.cpp
+    third_party/imgui/imgui_demo.cpp
+    third_party/imgui/backends/imgui_impl_glfw.h
+    third_party/imgui/backends/imgui_impl_glfw.cpp
+    third_party/imgui/backends/imgui_impl_opengl3.h
+    third_party/imgui/backends/imgui_impl_opengl3.cpp
+)
+
+foreach(imgui_file ${IMGUI_REQUIRED_FILES})
+    if(NOT EXISTS ${CMAKE_SOURCE_DIR}/${imgui_file})
+        set(HAVE_BUNDLED_IMGUI FALSE)
+        break()
     endif()
 endforeach()
+
+if(HAVE_BUNDLED_IMGUI)
+    list(APPEND VOXEL_ENGINE_SOURCES ${IMGUI_OPTIONAL_SOURCES} ${IMGUI_SOURCES})
+else()
+    message(STATUS "Bundled ImGui sources not found; building voxel_engine without optional editor/menu stack")
+endif()
 
 # ============================================
 # Engine Library Target
@@ -326,7 +338,7 @@ endif()
 # ============================================
 # Engine Executable (for testing the engine itself)
 # ============================================
-add_executable(voxel_engine ${COMPILABLE_OPTIONAL_SOURCES})
+add_executable(voxel_engine ${VOXEL_ENGINE_SOURCES})
 target_include_directories(voxel_engine PRIVATE ${COMMON_INCLUDES})
 target_link_libraries(voxel_engine PRIVATE voxel_engine_lib)
 

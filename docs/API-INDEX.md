@@ -29,6 +29,26 @@
 
 ---
 
+## Canonical Module Map
+
+This table reflects the 2026-05-14 repo audit and the current CMake target layout.
+
+| Area | Canonical | Legacy / inactive |
+|------|-----------|-------------------|
+| Rendering | `src/rendering/*` | `src/render/*` |
+| Input | `src/platform/input_manager.*` | `src/input/*`, `src/platform/input.*` |
+| Application facade | `src/game/application.*` and `include/aether_engine.h` | `src/core/application.*` |
+| Entity layer | `src/entity/entity.*`, `src/entity/components.*` | `src/core/entity.*`, `src/entity/component.*`, `src/entity/system.*` |
+| Save and serialization | `src/core/save_system.*` for direct world save/load, with `src/voxel/world_serializer.*` as the active lower-level world serializer | `src/game/save_system.*`, `src/game/serializer.*`; `src/core/serializer.*` is a generic byte-buffer helper, not the active save API |
+
+### Build Truth Notes
+
+1. `voxel_engine_lib` now owns the canonical runtime sources; `voxel_engine` only adds `src/main.cpp` plus the optional ImGui/editor stack when bundled ImGui files are actually present.
+2. The legacy duplicate ownership paths above remain in the tree for reference, but they are not the supported build path for this session.
+3. This audit was static only in the current shell: `cmake` is not available on `PATH`, so configure/build/test execution was not revalidated here.
+
+---
+
 ## Namespaces Used
 
 | Namespace | Modules Using It |
@@ -39,10 +59,11 @@
 
 ## Key Observations
 
-1. **Unified namespace**: All code uses `vge` namespace consistently (fixed 2026-05-12)
-2. **Duplicate modules**: `render/` and `rendering/` both exist with similar classes - `render/` is legacy, prefer `rendering/`
-3. **Missing implementations**: Some headers have no corresponding .cpp files
-4. **Platform abstraction**: Window uses GLFW, FileSystem is minimal
+1. **Unified runtime namespace**: active code paths are `vge`, but several generated API pages still mention `aether`
+2. **Canonical rendering path**: `rendering/` is the supported renderer family; `render/` is legacy
+3. **Canonical input path**: `platform/input_manager.*` is the supported input path in the current build; `src/input/*` and `platform/input.*` are legacy
+4. **Layered save path**: `core/save_system.*` and `voxel/world_serializer.*` are the current build-backed save layers; `game/save_system.*` and `game/serializer.*` are inactive
+5. **Some module pages are stale**: use this index as the architecture source of truth until the per-module API pages are regenerated
 
 ---
 
