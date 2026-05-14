@@ -1,6 +1,6 @@
 #pragma once
 #include "platform/window.h"
-#include "rendering/renderer.h"
+#include "rendering/modern_renderer_integration.h"
 #include "rendering/camera.h"
 #include "voxel/world.h"
 #include "audio/audio_engine.h"

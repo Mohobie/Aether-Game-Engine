@@ -15,8 +15,8 @@ bool Application::initialize(int width, int height, const std::string& title) {
         return false;
     }
 
-    renderer = std::make_unique<Renderer>();
-    if (!renderer->Initialize()) {
+    renderer = std::make_unique<ModernRenderer>();
+    if (!renderer->Initialize(width, height)) {
         Logger::Error("Failed to initialize renderer");
         return false;
     }
