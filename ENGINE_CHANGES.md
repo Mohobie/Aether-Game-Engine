@@ -217,6 +217,29 @@
 
 ---
 
+## Change #13: Mineshaft Generation System
+**Date:** 2026-05-13
+**Files Modified:**
+- `src/voxel/mineshaft_generator.h` (new)
+- `src/voxel/mineshaft_generator.cpp` (new)
+- `CMakeLists.txt`
+
+**Description:** Underground mineshaft structure generation:
+- Corridor networks with wooden support beams
+- Rail tracks along corridors (60% chance)
+- Loot chests in rooms and corridors
+- Cave spider spawners (15% chance per segment)
+- Ladder shafts for vertical connections
+- Room/hub areas at junctions (20% chance)
+- Branching corridors (25% chance)
+- Integration with existing cave generation
+
+**Engine Impact:** World generation system
+**Breaking Change:** No
+**RAG Doc:** `docs/rag/MINESHAFTS.md`
+
+---
+
 ## Documentation Status
 
 | Change | Git Commit | RAG Doc | Wiki Doc | Status |
@@ -233,6 +256,7 @@
 | Survival | 3ed4b79 | ✅ SURVIVAL_SYSTEM.md | - | ✅ Complete |
 | Ore Generator | cb2f93e | ✅ ORE_GENERATION.md | - | ✅ Complete |
 | Tool System | 12b6496 | ✅ TOOL_SYSTEM.md | - | ✅ Complete |
+| Mineshaft Generator | - | ✅ MINESHAFTS.md | - | ✅ Complete |
 
 ---
 

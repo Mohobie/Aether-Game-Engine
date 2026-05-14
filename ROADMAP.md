@@ -139,7 +139,7 @@
 - [x] Trees (oak, birch, pine variants)
 - [x] Villages with houses
 - [x] Dungeons underground
-- [ ] Mineshafts
+- [x] Mineshafts
 - [x] Caves with stalactites
 
 ### 19. Flora
