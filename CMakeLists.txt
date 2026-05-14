@@ -219,7 +219,9 @@ set(CORE_SOURCES
     src/ui/console_commands.cpp
     src/rendering/frustum.cpp
     src/rendering/culling_system.cpp
+    src/rendering/occlusion_culling.cpp
     src/rendering/particles/particle_system.cpp
+    src/scripting/visual_script.cpp
 )
 
 # ============================================
