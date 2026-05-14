@@ -111,6 +111,9 @@ set(CORE_SOURCES
     src/network/game_server.cpp
     src/network/game_client.cpp
     src/network/multiplayer_game.cpp
+    src/network/lan_discovery.cpp
+    src/network/chat_system.cpp
+    src/network/player_skin.cpp
     src/scripting/lua_engine.cpp
     src/scripting/script_engine.cpp
     src/scripting/lua_bindings.cpp
