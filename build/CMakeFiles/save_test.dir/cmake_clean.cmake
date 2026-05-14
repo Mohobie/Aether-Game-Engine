@@ -85,6 +85,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/save_test.dir/src/game/combat_system.cpp.o.d"
   "CMakeFiles/save_test.dir/src/game/day_night_cycle.cpp.o"
   "CMakeFiles/save_test.dir/src/game/day_night_cycle.cpp.o.d"
+  "CMakeFiles/save_test.dir/src/game/inventory_persistence.cpp.o"
+  "CMakeFiles/save_test.dir/src/game/inventory_persistence.cpp.o.d"
   "CMakeFiles/save_test.dir/src/game/mob_system.cpp.o"
   "CMakeFiles/save_test.dir/src/game/mob_system.cpp.o.d"
   "CMakeFiles/save_test.dir/src/game/player_stats.cpp.o"

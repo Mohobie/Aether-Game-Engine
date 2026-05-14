@@ -199,6 +199,7 @@ set(CORE_SOURCES
     src/game/mob_system.cpp
     src/game/block_drops.cpp
     src/game/combat_system.cpp
+    src/game/inventory_persistence.cpp
     src/editor/entity_spawner.cpp
     src/editor/in_game_editor.cpp
     src/editor/scene_viewport.cpp

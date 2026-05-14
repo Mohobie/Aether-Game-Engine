@@ -1967,6 +1967,45 @@ src/game/day_night_cycle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/day_night_cycle.cpp.s
 .PHONY : src/game/day_night_cycle.cpp.s
 
+src/game/inventory_persistence.o: src/game/inventory_persistence.cpp.o
+.PHONY : src/game/inventory_persistence.o
+
+# target to build an object file
+src/game/inventory_persistence.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/inventory_persistence.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/inventory_persistence.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/inventory_persistence.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/inventory_persistence.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/inventory_persistence.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/inventory_persistence.cpp.o
+.PHONY : src/game/inventory_persistence.cpp.o
+
+src/game/inventory_persistence.i: src/game/inventory_persistence.cpp.i
+.PHONY : src/game/inventory_persistence.i
+
+# target to preprocess a source file
+src/game/inventory_persistence.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/inventory_persistence.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/inventory_persistence.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/inventory_persistence.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/inventory_persistence.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/inventory_persistence.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/inventory_persistence.cpp.i
+.PHONY : src/game/inventory_persistence.cpp.i
+
+src/game/inventory_persistence.s: src/game/inventory_persistence.cpp.s
+.PHONY : src/game/inventory_persistence.s
+
+# target to generate assembly for a file
+src/game/inventory_persistence.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/inventory_persistence.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/inventory_persistence.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/inventory_persistence.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/inventory_persistence.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/inventory_persistence.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/inventory_persistence.cpp.s
+.PHONY : src/game/inventory_persistence.cpp.s
+
 src/game/mob_system.o: src/game/mob_system.cpp.o
 .PHONY : src/game/mob_system.o
 
@@ -5239,6 +5278,9 @@ help:
 	@echo "... src/game/day_night_cycle.o"
 	@echo "... src/game/day_night_cycle.i"
 	@echo "... src/game/day_night_cycle.s"
+	@echo "... src/game/inventory_persistence.o"
+	@echo "... src/game/inventory_persistence.i"
+	@echo "... src/game/inventory_persistence.s"
 	@echo "... src/game/mob_system.o"
 	@echo "... src/game/mob_system.i"
 	@echo "... src/game/mob_system.s"

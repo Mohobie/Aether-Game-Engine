@@ -13,7 +13,7 @@
 - [x] Player position persistence
 - [x] Multiple save slots
 - [x] Auto-save on interval
-- [ ] Player inventory persistence
+- [x] Player inventory persistence
 
 ### 2. Proper Terrain Generation
 - [x] Perlin noise with octaves for realistic hills
