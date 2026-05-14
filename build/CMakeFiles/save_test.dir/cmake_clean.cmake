@@ -189,6 +189,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/save_test.dir/src/ui/console_commands.cpp.o.d"
   "CMakeFiles/save_test.dir/src/ui/hud_system.cpp.o"
   "CMakeFiles/save_test.dir/src/ui/hud_system.cpp.o.d"
+  "CMakeFiles/save_test.dir/src/ui/key_bindings.cpp.o"
+  "CMakeFiles/save_test.dir/src/ui/key_bindings.cpp.o.d"
   "CMakeFiles/save_test.dir/src/ui/main_menu.cpp.o"
   "CMakeFiles/save_test.dir/src/ui/main_menu.cpp.o.d"
   "CMakeFiles/save_test.dir/src/ui/settings_menu.cpp.o"

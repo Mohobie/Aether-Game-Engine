@@ -204,7 +204,7 @@
 - [x] Title screen with background
 - [x] Singleplayer/Multiplayer options
 - [x] Settings menu
-- [ ] Key bindings config
+- [x] Key bindings config
 
 ### 26. In-Game UI
 - [x] Hotbar with selected item highlight
