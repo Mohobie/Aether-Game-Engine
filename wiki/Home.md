@@ -406,7 +406,7 @@ Profiler::PrintResults();
 
 ## Resources
 
-- **Repository**: http://192.168.1.189:3100/aether/aether-game-engine
+- **Repository**: https://github.com/Mohobie/Aether-Game-Engine
 - **Issues**: Check `.gitea-issues.json` for known bugs
 - **Tests**: Run `./voxel_test`, `./world_test`, `./save_test`
 - **Build**: `cd build && cmake .. && make -j4`

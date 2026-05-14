@@ -339,7 +339,7 @@ endif()
 # Demo Game Note
 # ============================================
 # NOTE: Demo games have been moved to a separate repository:
-#   aether-game-demo (http://192.168.1.189:3100/aether/aether-game-demo)
+#   aether-game-demo (https://github.com/Mohobie/Aether-Game-Engine)
 #
 # This engine repo now contains ONLY reusable engine code.
 # Games that use the engine should be in their own repo.

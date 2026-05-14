@@ -4,7 +4,7 @@
 
 Aether Game Engine is a **C++ voxel game engine** designed for building Minecraft-like games. It features a modular architecture with systems for rendering, physics, audio, AI, animation, UI, and more.
 
-**Repository:** http://192.168.1.189:3100/aether/aether-game-engine  
+**Repository:** https://github.com/Mohobie/Aether-Game-Engine  
 **Language:** C++17  
 **Build System:** CMake  
 **License:** MIT
@@ -16,7 +16,7 @@ Aether Game Engine is a **C++ voxel game engine** designed for building Minecraf
 ### Building the Engine
 
 ```bash
-git clone http://192.168.1.189:3100/aether/aether-game-engine.git
+git clone https://github.com/Mohobie/Aether-Game-Engine.git
 cd aether-game-engine
 mkdir build && cd build
 cmake ..
@@ -1002,8 +1002,8 @@ MIT License - See LICENSE file for details
 
 ## Support
 
-- **Issues:** http://192.168.1.189:3100/aether/aether-game-engine/issues
-- **Wiki:** http://192.168.1.189:3100/aether/aether-game-engine/wiki
+- **Issues:** https://github.com/Mohobie/Aether-Game-Engine/issues
+- **Wiki:** https://github.com/Mohobie/Aether-Game-Engine/wiki
 - **Discord:** [Aether Discord Server]
 
 ---

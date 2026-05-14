@@ -109,7 +109,7 @@ A modern C++ voxel game engine with advanced rendering, physics, AI, networking,
 
 ```bash
 # Clone the repository
-git clone http://192.168.1.189:3100/aether/aether-game-engine.git
+git clone https://github.com/Mohobie/Aether-Game-Engine.git
 cd aether-game-engine
 
 # Clone Dear ImGui (required dependency)

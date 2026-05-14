@@ -46,7 +46,7 @@ brew install cmake git
 
 ### Clone the Repository
 ```bash
-git clone http://192.168.1.189:3100/aether/aether-game-engine.git
+git clone https://github.com/Mohobie/Aether-Game-Engine.git
 cd aether-game-engine
 
 # Clone Dear ImGui (required dependency)
@@ -820,7 +820,7 @@ world.SetUnloadDistance(32);  // chunks
 ## 15. Next Steps
 
 1. **Read the RAG docs:** `docs/rag/` — 19 documents covering every system
-2. **Check the wiki:** http://192.168.1.189:3100/aether/aether-game-engine/wiki
+2. **Check the wiki:** https://github.com/Mohobie/Aether-Game-Engine/wiki
 3. **Study examples:** Look at `src/main.cpp` for a complete game loop
 4. **Add mods:** Create Lua scripts in `mods/` folder
 5. **Customize:** Modify block types, entity archetypes, recipes in JSON
@@ -856,7 +856,7 @@ The engine uses a **modern OpenGL renderer** with:
 
 ## 16. Getting Help
 
-- **Check the wiki:** http://192.168.1.189:3100/aether/aether-game-engine/wiki
+- **Check the wiki:** https://github.com/Mohobie/Aether-Game-Engine/wiki
 - **Read RAG docs:** `docs/rag/` — AI-optimized with copy-paste examples
 - **Check tests:** `tests/` — Working examples of every system
 - **Git log:** `git log --oneline` — See recent changes
