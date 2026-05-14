@@ -1,8 +1,11 @@
 # Platform Module API
 
-**Files:** `platform/window.h`, `platform/platform_common.h`, `platform/file_system.h`, `platform/threading.h`, `platform/timer.h`, `platform/input_manager.h`
+This page was corrected during the 2026-05-14 architecture audit.
 
----
+**Canonical platform files for this audit:** `platform/window.h`, `platform/platform_common.h`, `platform/file_system.h`, `platform/threading.h`, `platform/timer.h`, `platform/input_manager.h`  
+**Legacy / inactive input path:** `platform/input.h`
+
+The important architecture decision here is that `platform/input_manager.h` is the supported input abstraction in the current build. `platform/input.h` remains a legacy parallel input implementation and is intentionally outside the canonical build path.
 
 ## `platform/platform_common.h`
 
@@ -10,46 +13,11 @@
 namespace vge {
 ```
 
-### Cross-Platform Detection
-| Define | Platform |
-|--------|----------|
-| `PLATFORM_WINDOWS` | Windows |
-| `PLATFORM_LINUX` | Linux |
-| `PLATFORM_MACOS` | macOS |
-| `PLATFORM_UNIX` | Generic Unix |
+### Cross-platform detection
 
-### `class Path`
-Cross-platform path utilities.
-
-| Method | Return Type | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `Join` | `std::string` | `const std::string& a, const std::string& b` | Join two paths |
-| `GetDirectory` | `std::string` | `const std::string& path` | Get parent directory |
-| `GetFilename` | `std::string` | `const std::string& path` | Get filename |
-| `GetExtension` | `std::string` | `const std::string& path` | Get file extension |
-| `Normalize` | `std::string` | `const std::string& path` | Normalize separators |
-| `IsAbsolute` | `bool` | `const std::string& path` | Check if absolute |
-
-### `class File`
-Cross-platform file operations.
-
-| Method | Return Type | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `Exists` | `bool` | `const std::string& path` | Check if file exists |
-| `IsDirectory` | `bool` | `const std::string& path` | Check if directory |
-| `CreateDirectory` | `bool` | `const std::string& path` | Create directory |
-| `Delete` | `bool` | `const std::string& path` | Delete file/directory |
-| `GetSize` | `size_t` | `const std::string& path` | Get file size |
-| `ReadText` | `std::string` | `const std::string& path` | Read text file |
-| `WriteText` | `bool` | `const std::string& path, const std::string& content` | Write text file |
-
-### Global Functions
-| Function | Return Type | Parameters | Description |
-|----------|-------------|------------|-------------|
-| `SleepMs` | `void` | `uint32_t milliseconds` | Sleep for milliseconds |
-| `GetCurrentThreadId` | `uint64_t` | `void` | Get current thread ID |
-
----
+- `PLATFORM_WINDOWS`
+- `PLATFORM_LINUX`
+- `PLATFORM_MACOS`
 
 ## `platform/window.h`
 
@@ -58,44 +26,41 @@ namespace vge {
 ```
 
 ### `class Window`
-GLFW-based window (cross-platform).
-
-| Method | Return Type | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `Window` | (ctor) | `void` | Constructor |
-| `~Window` | (dtor) | `void` | Destructor |
-| `Initialize` | `bool` | `int width, int height, const std::string& title` | Create window |
-| `Shutdown` | `void` | `void` | Destroy window |
-| `PollEvents` | `void` | `void` | Poll input events |
-| `SwapBuffers` | `void` | `void` | Swap buffers |
-| `ShouldClose` | `bool` | `void` | Check if should close |
-| `GetHandle` | `void*` | `void` | Get native handle |
-| `IsKeyPressed` | `bool` | `int key` | Check key pressed |
-| `GetMousePosition` | `void` | `double& x, double& y` | Get mouse position |
-| `IsMouseButtonPressed` | `bool` | `int button` | Check mouse button |
-| `SetCursorMode` | `void` | `bool locked` | Lock/unlock cursor |
-| `GetWidth` | `int` | `void` | Get window width |
-| `GetHeight` | `int` | `void` | Get window height |
-
----
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `Window` | ctor | `` |
+| `~Window` | dtor | `` |
+| `Initialize` | `bool` | `int width, int height, const std::string& title` |
+| `Shutdown` | `void` | `` |
+| `PollEvents` | `void` | `` |
+| `SwapBuffers` | `void` | `` |
+| `ShouldClose` | `bool` | `` |
+| `GetHandle` | `void*` | `` |
+| `IsKeyPressed` | `bool` | `int key` |
+| `GetMousePosition` | `void` | `double& x, double& y` |
+| `IsMouseButtonPressed` | `bool` | `int button` |
+| `SetCursorMode` | `void` | `bool locked` |
+| `GetWidth` | `int` | `` |
+| `GetHeight` | `int` | `` |
+| `SetInputCallback` | `void` | `std::function<void(int, int)> cb` |
+| `SetMouseCallback` | `void` | `std::function<void(int, int, double, double)> cb` |
+| `SetCursorCallback` | `void` | `std::function<void(double, double)> cb` |
 
 ## `platform/file_system.h`
 
 ```cpp
-namespace aether {
+namespace vge {
 ```
 
 ### `class FileSystem`
-| Method | Return Type | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `exists` | `bool` | `const std::string& path` | Check exists |
-| `readText` | `std::string` | `const std::string& path` | Read text |
-| `writeText` | `bool` | `const std::string& path, const std::string& text` | Write text |
-| `createDirectory` | `bool` | `const std::string& path` | Create directory |
-| `deleteFile` | `bool` | `const std::string& path` | Delete file |
-| `listDirectory` | `std::vector<std::string>` | `const std::string& path` | List contents |
-
----
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `exists` | `static bool` | `const std::string& path` |
+| `readText` | `static std::string` | `const std::string& path` |
+| `writeText` | `static bool` | `const std::string& path, const std::string& text` |
+| `createDirectory` | `static bool` | `const std::string& path` |
+| `deleteFile` | `static bool` | `const std::string& path` |
+| `listDirectory` | `static std::vector<std::string>` | `const std::string& path` |
 
 ## `platform/input_manager.h`
 
@@ -104,103 +69,37 @@ namespace vge {
 ```
 
 ### `enum class KeyCode`
-| Value | Description |
-|-------|-------------|
-| `W` | W key |
-| `A` | A key |
-| `S` | S key |
-| `D` | D key |
-| `Space` | Spacebar |
-| `Escape` | Escape |
-| `Enter` | Enter |
-| `Up` | Up arrow |
-| `Down` | Down arrow |
-| `Left` | Left arrow |
-| `Right` | Right arrow |
-| `E` | E key |
-| `Q` | Q key |
-| `Shift` | Shift |
-| `Ctrl` | Control |
-| `Count` | Total key count |
+| Value |
+|-------|
+| `W`, `A`, `S`, `D` |
+| `Space`, `Escape`, `Enter` |
+| `Up`, `Down`, `Left`, `Right` |
+| `E`, `Q`, `F`, `Shift`, `Ctrl` |
+| `Key0` through `Key9` |
+| `Count` |
 
 ### `class Input`
-Cross-platform input manager.
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `Input` | ctor | `` |
+| `~Input` | dtor | `` |
+| `Update` | `void` | `void* windowHandle = nullptr` |
+| `IsKeyPressed` | `bool` | `KeyCode key` |
+| `IsKeyJustPressed` | `bool` | `KeyCode key` |
+| `IsKeyReleased` | `bool` | `KeyCode key` |
+| `SetMouseDelta` | `void` | `float dx, float dy` |
+| `GetMouseDelta` | `void` | `float& dx, float& dy` |
+| `SetScrollDelta` | `void` | `float delta` |
+| `GetScrollDelta` | `float` | `` |
+| `ResetMouseDelta` | `void` | `` |
+| `IsKeyPressed` | `bool` | `int key` |
+| `IsKeyJustPressed` | `bool` | `int key` |
+| `IsKeyReleased` | `bool` | `int key` |
 
-| Method | Return Type | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `Input` | (ctor) | `void` | Constructor |
-| `~Input` | (dtor) | `void` | Destructor |
-| `Update` | `void` | `void` | Update input state |
-| `IsKeyPressed` | `bool` | `KeyCode key` | Check key held |
-| `IsKeyJustPressed` | `bool` | `KeyCode key` | Check key just pressed |
-| `IsKeyReleased` | `bool` | `KeyCode key` | Check key released |
-| `IsKeyPressed` | `bool` | `int key` | Legacy: check by int |
-| `IsKeyJustPressed` | `bool` | `int key` | Legacy: check by int |
-| `IsKeyReleased` | `bool` | `int key` | Legacy: check by int |
+## Build note
 
-**Platform Notes:**
-- **Windows**: Uses `GetAsyncKeyState()` for real-time key detection
-- **Linux**: Uses terminal raw mode for keyboard input
+The current shell still does not have `cmake` on `PATH`, so the Windows and Linux build instructions referenced elsewhere in the docs have not been revalidated in this session.
 
----
+## Legacy note
 
-## `platform/threading.h`
-
-```cpp
-namespace aether {
-```
-
-### `class ThreadPool`
-| Method | Return Type | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `ThreadPool` | (ctor) | `size_t numThreads = 4` | Constructor |
-| `~ThreadPool` | (dtor) | `void` | Destructor |
-| `enqueue` | `void` | `std::function<void()> task` | Add task |
-
----
-
-## `platform/timer.h`
-
-```cpp
-namespace aether {
-```
-
-### `class Timer`
-| Method | Return Type | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `Timer` | (ctor) | `void` | Constructor |
-| `start` | `void` | `void` | Start timer |
-| `elapsed` | `float` | `void` | Get elapsed seconds |
-| `elapsed_ms` | `float` | `void` | Get elapsed milliseconds |
-
----
-
-## Cross-Platform Build Instructions
-
-### Linux
-```bash
-mkdir build && cd build
-cmake ..
-make
-```
-
-### Windows
-```cmd
-mkdir build && cd build
-cmake .. -G "Visual Studio 17 2022"
-cmake --build . --config Release
-```
-
-### Dependencies
-- **GLFW3**: Window and input (optional, for graphical mode)
-- **OpenGL**: Graphics rendering (optional)
-- **Lua 5.3+**: Scripting support (optional)
-
-**Windows Setup:**
-1. Install GLFW to `C:\glfw` or set `GLFW_DIR` environment variable
-2. Install Lua to `C:\lua` or set `LUA_DIR` environment variable
-3. Or place libraries in `third_party/` directory
-
----
-
-*Cross-platform support added 2026-05-10*
+If an older page or example references `platform/input.h`, treat it as a legacy input path rather than the supported API.

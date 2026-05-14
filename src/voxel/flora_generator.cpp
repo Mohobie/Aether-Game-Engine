@@ -1,6 +1,7 @@
 #include "flora_generator.h"
 #include "voxel/block_registry.h"
 #include <cstdlib>
+#include <ctime>
 
 namespace vge {
 

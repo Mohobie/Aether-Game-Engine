@@ -1,274 +1,31 @@
 # Core Module API
-**Files:** src/core/achievements.h, src/core/application.h, src/core/config.h, src/core/crafting.h, src/core/engine.h, src/core/entity.h, src/core/event_system.h, src/core/inventory.h, src/core/job_system.h, src/core/logger.h, src/core/math.h, src/core/memory.h, src/core/player_controller.h, src/core/profiler.h, src/core/raycast.h, src/core/save_system.h, src/core/serializer.h, src/core/time_system.h, src/core/types.h, src/core/utils.h
 
-## `core/achievements.h`
-```cpp
-namespace vge {
-```
+This page was corrected during the 2026-05-14 architecture audit.
 
-### `enum class AchievementType`
-| Value | Description |
-|-------|-------------|
-| `MineBlock` | |
-| `PlaceBlock` | |
-| `Walk` | |
-| `SurviveDays` | |
-| `ReachDepth` | |
-| `ReachHeight` | |
-| `FindDiamond` | |
-| `CraftItem` | |
-| `KillEnemy` | |
-| `Custom` | |
+**Canonical core-facing files for the audited architecture split:** `src/core/save_system.h`, `src/core/save_game.h`, `src/core/serializer.h`, `src/core/player_controller.h`, `src/core/logger.h`, `src/core/time_system.h`, `src/core/config.h`, `src/core/types.h`  
+**Legacy / inactive for this audit:** `src/core/application.h`, `src/core/entity.h`
 
-### `class AchievementType`
+The key point for this module is that not every header under `src/core/` is part of the canonical public architecture. `core/application.h` and `core/entity.h` are legacy parallel stacks; the supported application facade is `game/application.h`, and the supported entity layer is `entity/entity.h`.
 
-### `class Achievement`
-| Method | Return Type | Parameters |
-|--------|-------------|------------|
-| `UpdateProgress` | `bool` | `int value` |
-| `Increment` | `bool` | `int amount = 1` |
+## Canonical notes
 
-### `class AchievementManager`
-| Method | Return Type | Parameters |
-|--------|-------------|------------|
-| `RegisterDefaultAchievements` | `void` | `` |
-| `Initialize` | `void` | `` |
-| `UpdateProgress` | `bool` | `AchievementType type, int value` |
-| `Increment` | `bool` | `AchievementType type, int amount = 1` |
-| `GetAchievement` | `const Achievement*` | `const std::string& id` |
-
-## `core/application.h`
-```cpp
-namespace vge {
-```
-
-### `class Application`
-| Method | Return Type | Parameters |
-|--------|-------------|------------|
-| `Initialize` | `bool` | `` |
-| `Run` | `void` | `` |
-| `Shutdown` | `void` | `` |
-
-## `core/config.h`
-```cpp
-namespace vge {
-```
-
-### `class Config`
-| Method | Return Type | Parameters |
-|--------|-------------|------------|
-| `Load` | `bool` | `const std::string& path` |
-| `Save` | `bool` | `const std::string& path` |
-| `SetDefaultKeybinds` | `void` | `` |
-
-## `core/crafting.h`
-```cpp
-namespace vge {
-```
-
-### `struct CraftingRecipe`
-| Member | Type |
-|--------|------|
-| `outputType` | `BlockType` |
-| `outputCount` | `int` |
-
-### `struct CraftingResult`
-| Member | Type |
-|--------|------|
-| `success` | `bool` |
-| `outputType` | `BlockType` |
-| `outputCount` | `int` |
-
-### `class CraftingGrid`
-| Method | Return Type | Parameters |
-|--------|-------------|------------|
-| `SetItem` | `void` | `int x, int y, BlockType type` |
-| `GetItem` | `BlockType` | `int x, int y` |
-| `Clear` | `void` | `` |
-| `IsEmpty` | `bool` | `` |
-
-### `class CraftingSystem`
-| Method | Return Type | Parameters |
-|--------|-------------|------------|
-| `InitializeRecipes` | `void` | `` |
-| `TryCraft` | `CraftingResult` | `const CraftingGrid& grid` |
-| `PrintRecipes` | `void` | `` |
-
-## `core/engine.h`
-```cpp
-namespace vge {
-```
-
-### `class Engine`
-| Method | Return Type | Parameters |
-|--------|-------------|------------|
-| `Update` | `void` | `float dt` |
-| `Render` | `void` | `` |
-| `Initialize` | `bool` | `` |
-| `Run` | `void` | `` |
-| `Shutdown` | `void` | `` |
-
-## `core/entity.h`
-```cpp
-namespace vge {
-```
-
-### `class Component`
-
-### `class Entity`
-
-## `core/event_system.h`
-```cpp
-namespace aether {
-```
-
-### `class EventSystem`
-
-## `core/inventory.h`
-```cpp
-namespace vge {
-```
-
-### `struct InventorySlot`
-| Member | Type |
-|--------|------|
-| `type` | `BlockType` |
-| `count` | `int` |
-
-### `class Inventory`
-| Method | Return Type | Parameters |
-|--------|-------------|------------|
-| `AddItem` | `bool` | `BlockType type, int amount = 1` |
-| `RemoveItem` | `bool` | `int slotIndex, int amount = 1` |
-| `HasItem` | `bool` | `BlockType type, int amount = 1` |
-| `GetItemCount` | `int` | `BlockType type` |
-| `SelectSlot` | `void` | `int index` |
-
-## `core/job_system.h`
-```cpp
-namespace aether {
-```
-
-### `class JobSystem`
-
-## `core/logger.h`
-```cpp
-namespace vge {
-```
-
-### `enum class LogLevel`
-| Value | Description |
-|-------|-------------|
-| `Debug` | |
-| `Info` | |
-| `Warning` | |
-| `Error` | |
-| `Fatal` | |
-
-### `class LogLevel`
-
-### `class Logger`
-| Method | Return Type | Parameters |
-|--------|-------------|------------|
-| `SetLogLevel` | `void` | `LogLevel level` |
-| `Log` | `void` | `LogLevel level, const std::string& message` |
-| `Info` | `static void` | `const std::string& msg` |
-| `Error` | `static void` | `const std::string& msg` |
-| `Debug` | `static void` | `const std::string& msg` |
-
-## `core/math.h`
-```cpp
-namespace aether {
-```
-
-### `struct Vec2`
-
-### `struct Vec3`
-
-### `struct Mat4`
-
-## `core/memory.h`
-```cpp
-namespace aether {
-```
-
-### `struct FreeNode`
-| Member | Type |
-|--------|------|
-| `next` | `FreeNode*` |
-
-### `class PoolAllocator`
-| Method | Return Type | Parameters |
-|--------|-------------|------------|
-| `allocate` | `void*` | `` |
-| `deallocate` | `void` | `void* ptr` |
-
-## `core/player_controller.h`
-```cpp
-namespace vge {
-```
-
-### `class PlayerController`
-| Method | Return Type | Parameters |
-|--------|-------------|------------|
-| `GetLookDirection` | `Vec3` | `` |
-| `Update` | `void` | `float deltaTime, Input& input, World& world` |
-| `CheckCollision` | `bool` | `const Vec3& pos, World& world` |
-| `PlaceBlock` | `bool` | `World& world, BlockType type` |
-| `BreakBlock` | `bool` | `World& world` |
-| `GetPosition` | `Vec3` | `` |
-| `SetPosition` | `void` | `const Vec3& pos` |
-| `GetYaw` | `float` | `` |
-| `GetPitch` | `float` | `` |
-
-## `core/profiler.h`
-```cpp
-namespace aether {
-```
-
-### `struct ProfileResult`
-| Member | Type |
-|--------|------|
-| `threadID` | `size_t` |
-
-### `class Profiler`
-| Method | Return Type | Parameters |
-|--------|-------------|------------|
-| `beginSession` | `void` | `const std::string& name` |
-| `endSession` | `void` | `` |
-| `writeProfile` | `void` | `const ProfileResult& result` |
-
-### `class Timer`
-| Method | Return Type | Parameters |
-|--------|-------------|------------|
-| `stop` | `void` | `` |
-
-## `core/raycast.h`
-```cpp
-namespace vge {
-```
-
-### `struct RaycastHit`
-| Member | Type |
-|--------|------|
-| `hit` | `bool` |
-| `position` | `Vec3` |
-| `blockPosition` | `Vec3` |
-| `normal` | `Vec3` |
-| `distance` | `float` |
-| `blockType` | `BlockType` |
-
-### `class Raycast`
-| Method | Return Type | Parameters |
-|--------|-------------|------------|
-| `Cast` | `RaycastHit` | `const Vec3& origin, const Vec3& direction, World& world` |
-| `PlaceBlock` | `bool` | `const Vec3& origin, const Vec3& direction, World& world, BlockType type` |
-| `RemoveBlock` | `bool` | `const Vec3& origin, const Vec3& direction, World& world` |
+- `core/save_system.h` is the active direct world/chunk binary save API in the current build.
+- `core/save_game.h` is also active in the build and wraps `voxel/world_serializer.h` for named save files and quick-save behavior.
+- `core/serializer.h` is a generic byte-buffer helper, not the top-level save pipeline.
+- `core/player_controller.h` is built against the canonical `platform/input_manager.h` input path.
+- `core/application.h` is not the supported application facade for this session.
+- `core/entity.h` is not the supported entity layer for this session.
 
 ## `core/save_system.h`
+
 ```cpp
 namespace vge {
 ```
+
+### Constants
+
+- `SAVE_MAGIC`
+- `SAVE_VERSION`
 
 ### `struct SaveHeader`
 | Member | Type |
@@ -276,8 +33,22 @@ namespace vge {
 | `magic` | `uint32_t` |
 | `version` | `uint32_t` |
 | `chunkCount` | `uint32_t` |
+| `blockPaletteSize` | `uint32_t` |
+| `reserved` | `uint32_t[4]` |
+
+### `struct BlockPaletteEntry`
+| Member | Type |
+|--------|------|
+| `blockId` | `char[64]` |
+| `typeId` | `uint16_t` |
 
 ### `struct ChunkData`
+| Member | Type |
+|--------|------|
+| `chunkX` | `int` |
+| `chunkY` | `int` |
+| `chunkZ` | `int` |
+| `blocks` | `uint16_t[CHUNK_SIZE][CHUNK_SIZE][CHUNK_SIZE]` |
 
 ### `class SaveSystem`
 | Method | Return Type | Parameters |
@@ -287,9 +58,43 @@ namespace vge {
 | `SaveChunk` | `static bool` | `const Chunk& chunk, std::ofstream& file` |
 | `LoadChunk` | `static bool` | `Chunk& chunk, std::ifstream& file` |
 
-## `core/serializer.h`
+## `core/save_game.h`
+
 ```cpp
-namespace aether {
+namespace vge {
+```
+
+### `struct SaveGameInfo`
+| Member | Type |
+|--------|------|
+| `name` | `std::string` |
+| `filePath` | `std::string` |
+| `createdDate` | `std::string` |
+| `lastPlayedDate` | `std::string` |
+| `playTimeMinutes` | `int` |
+| `playerPosition` | `Vec3` |
+| `worldSeed` | `int` |
+| `fileSize` | `int64_t` |
+
+### `class SaveGameManager`
+| Method | Return Type | Parameters |
+|--------|-------------|------------|
+| `Initialize` | `void` | `const std::string& saveDir` |
+| `SaveGame` | `bool` | `const std::string& saveName, const World& world, const PlayerController& player, float dayTime, int dayCount` |
+| `LoadGame` | `bool` | `const std::string& saveName, World& world, PlayerController& player, float& outDayTime, int& outDayCount` |
+| `GetSaveList` | `std::vector<SaveGameInfo>` | `` |
+| `DeleteSave` | `bool` | `const std::string& saveName` |
+| `SaveExists` | `bool` | `const std::string& saveName` |
+| `EnableAutoSave` | `void` | `bool enable` |
+| `SetAutoSaveInterval` | `void` | `float minutes` |
+| `UpdateAutoSave` | `void` | `float deltaTime, const World& world, const PlayerController& player, float dayTime, int dayCount` |
+| `QuickSave` | `bool` | `const World& world, const PlayerController& player, float dayTime, int dayCount` |
+| `QuickLoad` | `bool` | `World& world, PlayerController& player, float& outDayTime, int& outDayCount` |
+
+## `core/serializer.h`
+
+```cpp
+namespace vge {
 ```
 
 ### `class Serializer`
@@ -305,42 +110,34 @@ namespace aether {
 | `readInt64` | `int64_t` | `` |
 | `readFloat` | `float` | `` |
 | `readDouble` | `double` | `` |
+| `readString` | `std::string` | `` |
+| `readBytes` | `std::vector<uint8_t>` | `size_t length` |
+| `getData` | `const std::vector<uint8_t>&` | `` |
+| `setData` | `void` | `const std::vector<uint8_t>& d` |
+| `getPosition` | `size_t` | `` |
+| `getSize` | `size_t` | `` |
 
-## `core/time_system.h`
+## `core/player_controller.h`
+
 ```cpp
 namespace vge {
 ```
 
-### `enum class WeatherType`
-| Value | Description |
-|-------|-------------|
-| `Clear` | |
-| `Rain` | |
-| `Storm` | |
-| `Snow` | |
-
-### `class WeatherType`
-
-### `class TimeSystem`
+### `class PlayerController`
 | Method | Return Type | Parameters |
 |--------|-------------|------------|
-| `ChangeWeather` | `void` | `` |
-| `Update` | `void` | `float deltaTime` |
-| `GetSunIntensity` | `float` | `` |
-| `GetSunColor` | `Vec3` | `` |
+| `Update` | `void` | `float deltaTime, Input& input, World& world` |
+| `CheckCollision` | `bool` | `const Vec3& pos, World& world` |
+| `PlaceBlock` | `bool` | `World& world, BlockTypeID type` |
+| `BreakBlock` | `bool` | `World& world` |
+| `GetPosition` | `Vec3` | `` |
+| `SetPosition` | `void` | `const Vec3& pos` |
+| `GetYaw` | `float` | `` |
+| `GetPitch` | `float` | `` |
+| `GetLookDirection` | `Vec3` | `` |
 
-## `core/types.h`
-```cpp
-namespace vge {
-```
+## Legacy note
 
-## `core/utils.h`
-```cpp
-namespace aether {
-```
-
-### `class Logger`
-| Method | Return Type | Parameters |
-|--------|-------------|------------|
-| `info` | `static void` | `const std::string& msg` |
-| `error` | `static void` | `const std::string& msg` |
+- `core/application.h` remains in the tree, but `game/application.h` is the canonical application facade.
+- `core/entity.h` remains in the tree, but `entity/entity.h` plus `entity/components.h` is the canonical entity path.
+- `game/save_system.h` remains in the tree, but the audited build-backed save path is `core/save_system.h` + `voxel/world_serializer.h` + `core/save_game.h`.

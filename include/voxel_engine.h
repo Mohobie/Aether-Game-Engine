@@ -1,7 +1,7 @@
 #pragma once
 
-// Iteration 7
-namespace VoxelEngine {
-    int Run(int argc, char** argv);
-    const char* GetVersion();
-}
+#include "aether_engine.h"
+
+// Legacy public include kept for compatibility with older docs and examples.
+// Prefer including aether_engine.h directly for the canonical public surface.
+namespace VoxelEngine = vge;

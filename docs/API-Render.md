@@ -1,71 +1,20 @@
 # Render Module API
-**Files:** src/render/camera.h, src/render/mesh.h, src/render/renderer.h, src/render/shader.h, src/render/texture.h
 
-## `render/camera.h`
-```cpp
-namespace aether {
-```
+This module family is **legacy**.
 
-### `class Camera`
-| Method | Return Type | Parameters |
-|--------|-------------|------------|
-| `getViewMatrix` | `Mat4` | `` |
-| `getProjectionMatrix` | `Mat4` | `` |
+**Legacy files:** `src/render/camera.h`, `src/render/mesh.h`, `src/render/renderer.h`, `src/render/shader.h`, `src/render/texture.h`  
+**Canonical replacement:** `src/rendering/*` documented in [API-Rendering](API-Rendering)
 
-## `render/mesh.h`
-```cpp
-namespace aether {
-```
+The 2026-05-14 architecture audit keeps `rendering/` as the supported renderer path. This page remains only as a pointer for older references that still mention `render/`.
 
-### `struct Vertex`
-| Member | Type |
-|--------|------|
-| `position` | `Vec3` |
-| `texCoord` | `Vec2` |
-| `color` | `uint32_t` |
+## Legacy note
 
-### `class Mesh`
-| Method | Return Type | Parameters |
-|--------|-------------|------------|
-| `addVertex` | `void` | `const Vertex& v` |
-| `addTriangle` | `void` | `uint32_t a, uint32_t b, uint32_t c` |
-| `clear` | `void` | `` |
-| `isEmpty` | `bool` | `` |
+- Prefer `rendering/camera.h` over `render/camera.h`
+- Prefer `rendering/mesh.h` over `render/mesh.h`
+- Prefer `rendering/renderer.h` over `render/renderer.h`
+- Prefer `rendering/shader.h` over `render/shader.h`
+- Prefer `rendering/texture.h` over `render/texture.h`
 
-## `render/renderer.h`
-```cpp
-namespace aether {
-```
+## Namespace
 
-### `class Renderer`
-| Method | Return Type | Parameters |
-|--------|-------------|------------|
-| `init` | `void` | `` |
-| `shutdown` | `void` | `` |
-| `beginFrame` | `void` | `` |
-| `endFrame` | `void` | `` |
-| `renderMesh` | `void` | `const Mesh& mesh, const Mat4& transform` |
-| `setCamera` | `void` | `const Camera& camera` |
-
-## `render/shader.h`
-```cpp
-namespace aether {
-```
-
-### `class Shader`
-| Method | Return Type | Parameters |
-|--------|-------------|------------|
-| `load` | `bool` | `const std::string& vertexSource, const std::string& fragmentSource` |
-| `bind` | `void` | `` |
-| `setUniform` | `void` | `const std::string& name, float value` |
-
-## `render/texture.h`
-```cpp
-namespace aether {
-```
-
-### `class Texture2D`
-| Method | Return Type | Parameters |
-|--------|-------------|------------|
-| `loadFromFile` | `bool` | `const std::string& path` |
-| `bind` | `void` | `uint32_t slot = 0` |
+Older generated docs for this module often show `namespace aether`, but the active codebase uses `namespace vge`.

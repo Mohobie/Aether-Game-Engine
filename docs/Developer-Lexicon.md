@@ -199,17 +199,11 @@ audio.SetMasterVolume(0.8f);
 ### Save System
 
 ```cpp
-SaveSystem save;
-
-// Save world
-save.SaveWorld(world, "worlds/my_world.dat");
-
-// Load world
-save.LoadWorld(world, "worlds/my_world.dat");
-
-// Player data
-save.SavePlayer(player, "saves/player.dat");
+vge::SaveSystem::SaveWorld(world, "worlds/my_world.bin");
+vge::SaveSystem::LoadWorld(world, "worlds/my_world.bin");
 ```
+
+`vge::SaveSystem` is the direct world/chunk binary API. The current higher-level save wrapper is `vge::SaveGameManager` in `core/save_game.h`, backed by `voxel/world_serializer.h`.
 
 ## Scripting with Lua
 
@@ -328,7 +322,7 @@ if (noiseValue > 0.7f && y < 32) {
 ```cpp
 // MyComponent.h
 #pragma once
-#include "core/entity.h"
+#include "entity/entity.h"
 
 class MyComponent : public Component {
 public:

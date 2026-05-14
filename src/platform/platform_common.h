@@ -16,8 +16,8 @@
     #ifndef NOMINMAX
         #define NOMINMAX  // Prevent Windows.h from defining min/max macros
     #endif
-    #include <windows.h>
     #include <winsock2.h>
+    #include <windows.h>
     #include <direct.h>
     #include <io.h>
     

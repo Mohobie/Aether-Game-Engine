@@ -1135,15 +1135,15 @@ add_library(voxel_engine STATIC
     src/voxel/chunk_manager.cpp
     src/voxel/mesh_builder.cpp
     src/voxel/world_generator.cpp
-    src/render/renderer.cpp
-    src/render/shader.cpp
-    src/render/texture.cpp
-    src/render/post_process.cpp
+    src/rendering/renderer.cpp
+    src/rendering/shader.cpp
+    src/rendering/texture.cpp
+    src/rendering/post_processing.cpp
     src/network/network_manager.cpp
     src/network/replication.cpp
     src/audio/audio_engine.cpp
     src/audio/voice_chat.cpp
-    src/input/input_system.cpp
+    src/platform/input_manager.cpp
     src/physics/voxel_physics.cpp
     src/entity/entity_manager.cpp
     src/script/script_engine.cpp

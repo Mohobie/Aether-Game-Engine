@@ -13,12 +13,9 @@ This guide gets you from zero to a running voxel game as fast as possible. Follo
 | CMake | 3.14+ | `cmake --version` |
 | OpenGL | 3.3+ | `glxinfo | grep "OpenGL version"` (Linux) |
 | Git | Any | `git --version` |
-| Dear ImGui | Latest | Auto-cloned during build |
+| Dear ImGui | Bundled in `third_party/imgui` | Verify sources are present |
 
-> **Note:** Dear ImGui is required for the UI system. It will be auto-cloned during build, or you can manually clone it:
-> ```bash
-> git clone https://github.com/ocornut/imgui.git third_party/imgui
-> ```
+> **Note:** Dear ImGui is expected to be present under `third_party/imgui` in this repository checkout.
 
 ### Linux (Ubuntu/Debian)
 ```bash
@@ -49,8 +46,6 @@ brew install cmake git
 git clone https://github.com/Mohobie/Aether-Game-Engine.git
 cd aether-game-engine
 
-# Clone Dear ImGui (required dependency)
-git clone https://github.com/ocornut/imgui.git third_party/imgui
 ```
 
 ### Build (Linux/macOS)
@@ -112,7 +107,7 @@ aether-game-engine/
 │   ├── ai/                 # Behavior trees, pathfinding, archetypes
 │   ├── audio/              # 3D audio, sound packs, music
 │   ├── ui/                 # ImGui, buttons, inventory UI, console
-│   ├── input/              # Keyboard, mouse, gamepad
+│   ├── input/              # Legacy input APIs retained in-tree
 │   ├── platform/           # Window, file system, threading
 │   ├── game/               # Game modes, player data, quests
 │   ├── network/            # Multiplayer, replication, server
@@ -546,21 +541,13 @@ if (crafting.CanCraft(pickaxeRecipe, playerInventory)) {
 vge::AudioEngine audio;
 audio.Initialize();
 
-// Load sound pack
-vge::SoundPack soundPack;
-soundPack.LoadFromDirectory("assets/sounds/");
-audio.RegisterSoundPack("default", soundPack);
+// Load sound assets directly
+int footstep = audio.LoadSound("assets/sounds/step.wav");
+int dig = audio.LoadSound("assets/sounds/dig.wav");
 
-// Play event
-audio.PlayEvent("footstep_grass");
-audio.PlayEvent("block_break_stone");
-
-// 3D positional audio
-audio.PlayEventAtPosition("zombie_groan", vge::Vec3(10, 20, 10));
-
-// Music
-audio.PlayMusic("ambient_day", true);  // Loop
-audio.FadeMusic(2.0f);  // Fade out over 2 seconds
+// Play simple 2D events
+audio.Play2D(footstep);
+audio.Play2D(dig);
 ```
 
 ---
@@ -568,26 +555,16 @@ audio.FadeMusic(2.0f);  // Fade out over 2 seconds
 ## 10. Save & Load
 
 ```cpp
-#include "voxel/save_system.h"
-
-vge::SaveSystem saveSystem;
+#include "core/save_system.h"
 
 // Save world
-saveSystem.SaveWorld(world, "saves/world1.dat");
-
-// Save player
-saveSystem.SavePlayer(player, "saves/player1.dat");
+vge::SaveSystem::SaveWorld(world, "saves/world1.bin");
 
 // Load world
-saveSystem.LoadWorld(world, "saves/world1.dat");
-
-// Load player
-saveSystem.LoadPlayer(player, "saves/player1.dat");
-
-// Auto-save every 5 minutes
-saveSystem.SetAutoSaveInterval(300.0f);  // seconds
-saveSystem.EnableAutoSave(true);
+vge::SaveSystem::LoadWorld(world, "saves/world1.bin");
 ```
+
+For the current audited build, this is the direct world/chunk API. Higher-level named-save flow lives in `core/save_game.h`, which wraps `voxel/world_serializer.h`.
 
 ---
 
@@ -785,10 +762,7 @@ sudo apt install libglfw3-dev
 - Ensure blocks are placed above ground level (y >= 0)
 
 **Error:** `Dear ImGui not found`
-```bash
-# Clone Dear ImGui manually
-git clone https://github.com/ocornut/imgui.git third_party/imgui
-```
+Verify that the repository checkout includes the bundled files under `third_party/imgui/`.
 
 ### Performance Issues
 

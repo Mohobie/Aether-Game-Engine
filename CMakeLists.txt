@@ -109,14 +109,9 @@ set(CORE_SOURCES
     src/network/networked_game_mode.cpp
     src/network/game_server.cpp
     src/network/game_client.cpp
-    src/network/multiplayer_game.cpp
     src/network/lan_discovery.cpp
     src/network/chat_system.cpp
     src/network/player_skin.cpp
-    src/scripting/lua_engine.cpp
-    src/scripting/script_engine.cpp
-    src/scripting/lua_bindings.cpp
-    src/scripting/mod_system.cpp
     src/ai/behavior_tree.cpp
     src/ai/enemy_ai.cpp
     src/ai/enemy_spawner.cpp
@@ -125,24 +120,11 @@ set(CORE_SOURCES
     src/ai/mob_ai.cpp
     src/ai/entity_spawner.cpp
     src/animation/animation_state_machine.cpp
-    src/rendering/sky/sky_renderer.cpp
-    src/rendering/particles/particle_system.cpp
-    src/rendering/weather/weather_effects_renderer.cpp
     src/core/weather_system.cpp
-    src/rendering/post_processing.cpp
-    src/rendering/camera.cpp
-    src/rendering/renderer.cpp
-    src/rendering/shader.cpp
-    src/rendering/texture.cpp
-    src/rendering/lighting.cpp
-    src/rendering/light_system.cpp
     src/ai/ai_system.cpp
     src/animation/animation.cpp
     src/entity/entity.cpp
     src/entity/components.cpp
-    src/rendering/mesh.cpp
-    src/rendering/shadow_system.cpp
-    src/rendering/pbr_material.cpp
     src/audio/audio_system.cpp
     src/audio/audio_events.cpp
     src/audio/sound_manager.cpp
@@ -162,12 +144,8 @@ set(CORE_SOURCES
     src/voxel/structure_generator.cpp
     src/voxel/flora_generator.cpp
     src/voxel/mineshaft_generator.cpp
-    src/voxel/block_mesh_builder.cpp
-    src/voxel/world_renderer.cpp
     src/voxel/world_serializer.cpp
     src/voxel/chunk_manager.cpp
-    src/debug/debug_system.cpp
-    src/debug/debug_renderer.cpp
     src/physics/collision.cpp
     src/physics/rigidbody.cpp
     src/core/logger.cpp
@@ -206,20 +184,56 @@ set(CORE_SOURCES
     src/game/fall_damage.cpp
     src/game/lava_damage.cpp
     src/game/inventory_persistence.cpp
-    src/game/application.cpp
     src/game/scene.cpp
+    src/ui/ui_manager.cpp
+    src/resource/resource_manager.cpp
+)
+
+set(GLFW_SOURCES
+    src/platform/window.cpp
+    src/game/application.cpp
+    src/network/multiplayer_game.cpp
+)
+
+set(RENDER_RUNTIME_SOURCES
+    src/rendering/camera.cpp
+    src/rendering/renderer.cpp
+    src/rendering/shader.cpp
+    src/rendering/texture.cpp
+    src/rendering/lighting.cpp
+    src/rendering/light_system.cpp
+    src/rendering/mesh.cpp
+    src/rendering/shadow_system.cpp
+    src/rendering/pbr_material.cpp
+    src/rendering/frustum.cpp
+    src/rendering/culling_system.cpp
+    src/rendering/sky/sky_renderer.cpp
+    src/rendering/particles/particle_system.cpp
+    src/rendering/weather/weather_effects_renderer.cpp
+    src/voxel/block_mesh_builder.cpp
+    src/voxel/world_renderer.cpp
+)
+
+set(EDITOR_RUNTIME_SOURCES
+    src/debug/debug_system.cpp
     src/editor/entity_spawner.cpp
     src/editor/in_game_editor.cpp
     src/editor/scene_viewport.cpp
     src/editor/asset_browser.cpp
     src/ui/console_commands.cpp
-    src/ui/ui_manager.cpp
-    src/rendering/frustum.cpp
-    src/rendering/culling_system.cpp
-    src/rendering/occlusion_culling.cpp
+)
+
+set(LUA_SOURCES
+    src/scripting/lua_engine.cpp
+    src/scripting/script_engine.cpp
+    src/scripting/lua_bindings.cpp
+    src/scripting/mod_system.cpp
+)
+
+set(OPENGL_OPTIONAL_SOURCES)
+
+set(EXPERIMENTAL_SOURCES
     src/scripting/visual_script.cpp
-    src/resource/resource_manager.cpp
-    src/platform/window.cpp
 )
 
 # ============================================
@@ -258,6 +272,31 @@ endif()
 
 set(ALL_SOURCES ${CORE_SOURCES})
 
+if(GLFW_FOUND)
+    list(APPEND ALL_SOURCES ${GLFW_SOURCES})
+else()
+    message(STATUS "GLFW not found; excluding windowed application sources from voxel_engine_lib")
+endif()
+
+if(GLFW_FOUND AND OpenGL_FOUND)
+    list(APPEND ALL_SOURCES ${RENDER_RUNTIME_SOURCES} ${EDITOR_RUNTIME_SOURCES})
+else()
+    message(STATUS "Windowed render/editor runtime dependencies unavailable; excluding render runtime and editor sources from voxel_engine_lib")
+endif()
+
+if(LUA_FOUND)
+    list(APPEND ALL_SOURCES ${LUA_SOURCES})
+else()
+    message(STATUS "Lua not found; excluding Lua-backed scripting sources from voxel_engine_lib")
+endif()
+
+if(OpenGL_FOUND)
+    list(APPEND ALL_SOURCES ${OPENGL_OPTIONAL_SOURCES})
+endif()
+
+message(STATUS "Excluding experimental visual scripting sources from voxel_engine_lib until the API surface is reconciled")
+message(STATUS "Excluding post_processing and occlusion_culling from voxel_engine_lib until their rendering dependencies are reconciled")
+
 # ============================================
 # Dear ImGui Sources
 # ============================================
@@ -271,9 +310,13 @@ set(IMGUI_SOURCES
     third_party/imgui/backends/imgui_impl_opengl3.cpp
 )
 
-set(VOXEL_ENGINE_SOURCES
-    src/main.cpp
-)
+set(VOXEL_ENGINE_SOURCES)
+
+if(GLFW_FOUND)
+    list(APPEND VOXEL_ENGINE_SOURCES src/main.cpp)
+else()
+    message(STATUS "GLFW not found; skipping voxel_engine executable")
+endif()
 
 set(IMGUI_OPTIONAL_SOURCES
     src/ui/console.cpp
@@ -308,8 +351,10 @@ foreach(imgui_file ${IMGUI_REQUIRED_FILES})
     endif()
 endforeach()
 
-if(HAVE_BUNDLED_IMGUI)
+if(HAVE_BUNDLED_IMGUI AND GLFW_FOUND)
     list(APPEND VOXEL_ENGINE_SOURCES ${IMGUI_OPTIONAL_SOURCES} ${IMGUI_SOURCES})
+elseif(HAVE_BUNDLED_IMGUI)
+    message(STATUS "Bundled ImGui sources found, but GLFW is unavailable; skipping optional editor/menu stack")
 else()
     message(STATUS "Bundled ImGui sources not found; building voxel_engine without optional editor/menu stack")
 endif()
@@ -343,9 +388,11 @@ endif()
 # ============================================
 # Engine Executable (for testing the engine itself)
 # ============================================
-add_executable(voxel_engine ${VOXEL_ENGINE_SOURCES})
-target_include_directories(voxel_engine PRIVATE ${COMMON_INCLUDES})
-target_link_libraries(voxel_engine PRIVATE voxel_engine_lib)
+if(VOXEL_ENGINE_SOURCES)
+    add_executable(voxel_engine ${VOXEL_ENGINE_SOURCES})
+    target_include_directories(voxel_engine PRIVATE ${COMMON_INCLUDES})
+    target_link_libraries(voxel_engine PRIVATE voxel_engine_lib)
+endif()
 
 # Optional sample/test targets that the docs reference.
 if(EXISTS ${CMAKE_SOURCE_DIR}/src/save_test.cpp)
@@ -376,11 +423,15 @@ endif()
 # Compiler Warnings
 # ============================================
 if(MSVC)
-    target_compile_options(voxel_engine PRIVATE /W4)
     target_compile_options(voxel_engine_lib PRIVATE /W4)
+    if(TARGET voxel_engine)
+        target_compile_options(voxel_engine PRIVATE /W4)
+    endif()
 else()
-    target_compile_options(voxel_engine PRIVATE -Wall -Wextra)
     target_compile_options(voxel_engine_lib PRIVATE -Wall -Wextra)
+    if(TARGET voxel_engine)
+        target_compile_options(voxel_engine PRIVATE -Wall -Wextra)
+    endif()
 endif()
 
 # ============================================

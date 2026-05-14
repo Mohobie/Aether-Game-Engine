@@ -2,6 +2,7 @@
 #include "voxel/block_registry.h"
 #include <cmath>
 #include <cstdlib>
+#include <ctime>
 
 namespace vge {
 

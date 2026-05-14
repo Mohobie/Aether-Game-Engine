@@ -481,9 +481,9 @@ ui.Render();
 ### Input Mapping
 
 ```cpp
-#include "input/input_manager.h"
+#include "platform/input_manager.h"
 
-vge::InputManager input;
+vge::Input input;
 
 // Map keys to actions
 input.MapKey("move_forward", GLFW_KEY_W);
@@ -631,27 +631,22 @@ vge::Chunk* chunk = generator.GenerateChunk(0, 0, 0, biomes);
 ### Saving Worlds
 
 ```cpp
-#include "core/save_manager.h"
-
-vge::SaveManager save;
+#include "core/save_system.h"
 
 // Save world
-save.SaveWorld(&world, "saves/world1");
+vge::SaveSystem::SaveWorld(world, "saves/world1.bin");
 
 // Load world
-save.LoadWorld(&world, "saves/world1");
-
-// Auto-save every 5 minutes
-save.SetAutoSaveInterval(300.0f);
+vge::SaveSystem::LoadWorld(world, "saves/world1.bin");
 ```
 
 ### Save Format
 
-Worlds are saved in a compressed binary format:
-- `world.dat` - World metadata (seed, time, player pos)
-- `chunks/` - Individual chunk files (compressed)
-- `entities/` - Entity data
-- `player.dat` - Player inventory, health, position
+For the current audited build:
+- `core/save_system.h` is the direct single-file world/chunk binary API.
+- `voxel/world_serializer.h` is the richer world snapshot serializer used by the active higher-level save wrapper.
+- `core/save_game.h` is the active higher-level save wrapper for named saves and quick saves.
+- `game/save_system.h` and `game/serializer.h` are legacy/inactive for this session.
 
 ---
 
@@ -876,7 +871,7 @@ int main() {
 | `BlockRegistry` | Block type definitions |
 | `Entity` | Game object |
 | `Component` | Base component class |
-| `SaveManager` | Save/load system |
+| `SaveSystem` | Direct world save/load system |
 
 ### Rendering
 
@@ -963,7 +958,7 @@ aether-game-engine/
 │   ├── animation/      # Skeletal animation
 │   ├── ai/             # AI and pathfinding
 │   ├── ui/             # User interface
-│   ├── input/          # Input handling
+│   ├── input/          # Legacy input APIs retained in-tree
 │   ├── scripting/      # Lua scripting
 │   ├── network/        # Multiplayer networking
 │   ├── asset/          # Asset management
