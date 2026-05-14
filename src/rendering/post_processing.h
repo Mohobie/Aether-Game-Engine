@@ -1,458 +1,225 @@
 #pragma once
-#include "math/vec3.h"
+
 #include "math/vec2.h"
-#include "math/mat4.h"
 #include <vector>
 #include <memory>
-#include <string>
 
 namespace vge {
 
-// ============================================
-// Post-Processing Effects
-// ============================================
+// Forward declarations
+class Shader;
+class Texture;
 
-// Bloom Effect - Glow around bright areas
-class BloomEffect {
-private:
-    int iterations;
-    float threshold;
-    float intensity;
-    float spread;
-    
-    // Ping-pong buffers for blur
-    std::vector<unsigned int> blurTextures;
-    std::vector<unsigned int> blurFBOs;
-    
+// ============================================
+// Post-Processing Effect Base
+// ============================================
+class PostProcessEffect {
 public:
-    BloomEffect();
-    ~BloomEffect();
+    virtual ~PostProcessEffect() = default;
     
-    void Initialize(int width, int height);
-    void Shutdown();
+    virtual void Initialize(uint32_t width, uint32_t height) = 0;
+    virtual void Shutdown() = 0;
     
-    // Parameters
-    void SetThreshold(float thresh) { threshold = thresh; }
-    void SetIntensity(float intens) { intensity = intens; }
-    void SetIterations(int iter) { iterations = iter; }
-    void SetSpread(float spread) { this->spread = spread; }
+    // Process input texture, write to output
+    virtual void Render(uint32_t inputTexture, uint32_t outputFBO, 
+                       uint32_t width, uint32_t height) = 0;
     
-    float GetThreshold() const { return threshold; }
-    float GetIntensity() const { return intensity; }
-    int GetIterations() const { return iterations; }
+    virtual const char* GetName() const = 0;
+    virtual bool IsEnabled() const { return enabled; }
+    virtual void SetEnabled(bool value) { enabled = value; }
     
-    // Rendering
-    void Render(unsigned int sourceTexture, unsigned int targetFBO, int width, int height);
-    
-    // Extract bright areas
-    void ExtractBright(unsigned int sourceTexture, int width, int height);
-    
-    // Blur the bright areas
-    void BlurBrightAreas(int width, int height);
-    
-    // Combine bloom with original
-    void Combine(unsigned int sourceTexture, unsigned int targetFBO, int width, int height);
+protected:
+    bool enabled = true;
 };
 
-// SSAO - Screen Space Ambient Occlusion
-class SSAOEffect {
-private:
-    int kernelSize;
-    float radius;
-    float bias;
-    float intensity;
-    
-    std::vector<Vec3> kernelSamples;
-    std::vector<Vec3> noiseTexture;
-    
-    unsigned int ssaoFBO;
-    unsigned int ssaoTexture;
-    unsigned int blurFBO;
-    unsigned int blurTexture;
-    unsigned int noiseTextureID;
-    
-    bool initialized;
-    
+// ============================================
+// Tone Mapping (ACES Filmic)
+// ============================================
+class ToneMappingEffect : public PostProcessEffect {
 public:
-    SSAOEffect();
-    ~SSAOEffect();
-    
-    void Initialize(int width, int height);
-    void Shutdown();
-    
-    // Parameters
-    void SetKernelSize(int size) { kernelSize = size; GenerateKernel(); }
-    void SetRadius(float r) { radius = r; }
-    void SetBias(float b) { bias = b; }
-    void SetIntensity(float i) { intensity = i; }
-    
-    int GetKernelSize() const { return kernelSize; }
-    float GetRadius() const { return radius; }
-    float GetBias() const { return bias; }
-    
-    // Generate sample kernel
-    void GenerateKernel();
-    void GenerateNoiseTexture();
-    
-    // Render SSAO
-    void Render(
-        unsigned int positionTexture,    // View-space positions
-        unsigned int normalTexture,      // View-space normals
-        const Mat4& projection,
-        int width, int height
-    );
-    
-    // Blur SSAO result
-    void Blur(int width, int height);
-    
-    // Get output texture
-    unsigned int GetSSAOTexture() const { return blurTexture; }
-    unsigned int GetRawSSAOTexture() const { return ssaoTexture; }
-};
-
-// Tone Mapping - HDR to LDR conversion
-class ToneMappingEffect {
-public:
-    enum class Algorithm {
+    enum class Operator {
+        ACES,           // ACES Filmic
         Reinhard,       // Simple Reinhard
-        ReinhardExtended, // Extended Reinhard with white point
-        ACES,           // Academy Color Encoding System
         Uncharted2,     // Uncharted 2 style
-        Filmic          // Filmic tone mapping
+        Exposure        // Simple exposure
     };
     
-private:
-    Algorithm algorithm;
-    float exposure;
-    float whitePoint;
-    float contrast;
-    float saturation;
+    void Initialize(uint32_t width, uint32_t height) override;
+    void Shutdown() override;
+    void Render(uint32_t inputTexture, uint32_t outputFBO,
+               uint32_t width, uint32_t height) override;
     
-public:
-    ToneMappingEffect();
+    const char* GetName() const override { return "Tone Mapping"; }
     
-    // Parameters
-    void SetAlgorithm(Algorithm algo) { algorithm = algo; }
+    void SetOperator(Operator op) { toneOperator = op; }
     void SetExposure(float exp) { exposure = exp; }
-    void SetWhitePoint(float wp) { whitePoint = wp; }
-    void SetContrast(float c) { contrast = c; }
-    void SetSaturation(float s) { saturation = s; }
+    void SetGamma(float g) { gamma = g; }
     
-    Algorithm GetAlgorithm() const { return algorithm; }
-    float GetExposure() const { return exposure; }
-    float GetWhitePoint() const { return whitePoint; }
+private:
+    Operator toneOperator = Operator::ACES;
+    float exposure = 1.0f;
+    float gamma = 2.2f;
     
-    // Render tone mapping
-    void Render(
-        unsigned int hdrTexture,
-        unsigned int targetFBO,
-        int width, int height,
-        float deltaTime = 0.016f  // For auto-exposure adaptation
-    );
-    
-    // Get shader define for algorithm
-    static const char* GetAlgorithmDefine(Algorithm algo);
+    std::unique_ptr<Shader> shader;
+    uint32_t vao = 0;
+    uint32_t vbo = 0;
 };
 
-// FXAA - Fast Approximate Anti-Aliasing
-class FXAAEffect {
-private:
-    float quality;
-    float threshold;
-    float thresholdMin;
-    
+// ============================================
+// Bloom
+// ============================================
+class BloomEffect : public PostProcessEffect {
 public:
-    FXAAEffect();
+    void Initialize(uint32_t width, uint32_t height) override;
+    void Shutdown() override;
+    void Render(uint32_t inputTexture, uint32_t outputFBO,
+               uint32_t width, uint32_t height) override;
+    
+    const char* GetName() const override { return "Bloom"; }
+    
+    void SetIntensity(float i) { intensity = i; }
+    void SetThreshold(float t) { threshold = t; }
+    void SetRadius(float r) { radius = r; }
+    
+private:
+    float intensity = 0.5f;
+    float threshold = 1.0f;
+    float radius = 4.0f;
+    
+    struct BloomMip {
+        uint32_t fbo = 0;
+        uint32_t texture = 0;
+        uint32_t width = 0;
+        uint32_t height = 0;
+    };
+    
+    std::vector<BloomMip> mips;
+    std::unique_ptr<Shader> downsampleShader;
+    std::unique_ptr<Shader> upsampleShader;
+    std::unique_ptr<Shader> combineShader;
+    
+    uint32_t vao = 0;
+    uint32_t vbo = 0;
+    
+    void Downsample(uint32_t sourceTexture);
+    void Upsample();
+};
+
+// ============================================
+// FXAA Anti-Aliasing
+// ============================================
+class FXAAEffect : public PostProcessEffect {
+public:
+    void Initialize(uint32_t width, uint32_t height) override;
+    void Shutdown() override;
+    void Render(uint32_t inputTexture, uint32_t outputFBO,
+               uint32_t width, uint32_t height) override;
+    
+    const char* GetName() const override { return "FXAA"; }
     
     void SetQuality(float q) { quality = q; }
-    void SetThreshold(float t) { threshold = t; }
-    void SetThresholdMin(float t) { thresholdMin = t; }
+    void SetEdgeThreshold(float t) { edgeThreshold = t; }
     
-    float GetQuality() const { return quality; }
-    float GetThreshold() const { return threshold; }
+private:
+    float quality = 0.75f;
+    float edgeThreshold = 0.166f;
     
-    // Render FXAA
-    void Render(
-        unsigned int sourceTexture,
-        unsigned int targetFBO,
-        int width, int height
-    );
+    std::unique_ptr<Shader> shader;
+    uint32_t vao = 0;
+    uint32_t vbo = 0;
 };
 
-// Color Grading - LUT-based color correction
-class ColorGradingEffect {
-private:
-    unsigned int lutTexture;
-    float lutSize;
-    float intensity;
-    bool useLUT;
-    
-    // Color adjustments
-    float brightness;
-    float contrast;
-    float saturation;
-    float hueShift;
-    Vec3 tint;
-    float tintIntensity;
-    
-    // Channel mixer
-    Vec3 redChannel;
-    Vec3 greenChannel;
-    Vec3 blueChannel;
-    
+// ============================================
+// SSAO (Screen-Space Ambient Occlusion)
+// ============================================
+class SSAOEffect : public PostProcessEffect {
 public:
-    ColorGradingEffect();
-    ~ColorGradingEffect();
+    void Initialize(uint32_t width, uint32_t height) override;
+    void Shutdown() override;
+    void Render(uint32_t inputTexture, uint32_t outputFBO,
+               uint32_t width, uint32_t height) override;
     
-    void Initialize();
-    void Shutdown();
+    // SSAO needs G-Buffer
+    void SetGBuffer(uint32_t positionTex, uint32_t normalTex, uint32_t depthTex);
+    void SetViewMatrix(const Mat4& view) { viewMatrix = view; }
+    void SetProjectionMatrix(const Mat4& proj) { projMatrix = proj; }
     
-    // LUT
-    void LoadLUT(const std::string& filepath);
-    void SetLUTIntensity(float i) { intensity = i; }
-    void EnableLUT(bool enable) { useLUT = enable; }
+    const char* GetName() const override { return "SSAO"; }
     
-    // Color adjustments
-    void SetBrightness(float b) { brightness = b; }
-    void SetContrast(float c) { contrast = c; }
-    void SetSaturation(float s) { saturation = s; }
-    void SetHueShift(float h) { hueShift = h; }
-    void SetTint(const Vec3& color, float intensity);
-    
-    // Channel mixer
-    void SetRedChannel(const Vec3& mix) { redChannel = mix; }
-    void SetGreenChannel(const Vec3& mix) { greenChannel = mix; }
-    void SetBlueChannel(const Vec3& mix) { blueChannel = mix; }
-    
-    // Render color grading
-    void Render(
-        unsigned int sourceTexture,
-        unsigned int targetFBO,
-        int width, int height
-    );
-    
-    // Generate neutral LUT
-    void GenerateNeutralLUT(int size = 32);
-};
-
-// Chromatic Aberration - Lens color fringing
-class ChromaticAberrationEffect {
-private:
-    float intensity;
-    Vec2 direction;
-    
-public:
-    ChromaticAberrationEffect();
-    
+    void SetRadius(float r) { radius = r; }
     void SetIntensity(float i) { intensity = i; }
-    void SetDirection(const Vec2& dir) { direction = dir; }
-    
-    float GetIntensity() const { return intensity; }
-    
-    void Render(
-        unsigned int sourceTexture,
-        unsigned int targetFBO,
-        int width, int height
-    );
-};
-
-// Vignette - Darkened edges
-class VignetteEffect {
-private:
-    float intensity;
-    float smoothness;
-    Vec2 center;
-    Vec3 color;
-    bool rounded;
-    
-public:
-    VignetteEffect();
-    
-    void SetIntensity(float i) { intensity = i; }
-    void SetSmoothness(float s) { smoothness = s; }
-    void SetCenter(const Vec2& c) { center = c; }
-    void SetColor(const Vec3& c) { color = c; }
-    void SetRounded(bool r) { rounded = r; }
-    
-    void Render(
-        unsigned int sourceTexture,
-        unsigned int targetFBO,
-        int width, int height
-    );
-};
-
-// Motion Blur - Camera movement blur
-class MotionBlurEffect {
-private:
-    float intensity;
-    int sampleCount;
-    float maxVelocity;
-    
-    Mat4 previousViewProjection;
-    bool firstFrame;
-    
-public:
-    MotionBlurEffect();
-    
-    void SetIntensity(float i) { intensity = i; }
-    void SetSampleCount(int count) { sampleCount = count; }
-    void SetMaxVelocity(float max) { maxVelocity = max; }
-    
-    void Initialize();
-    void Shutdown();
-    
-    void Render(
-        unsigned int sourceTexture,
-        unsigned int depthTexture,
-        unsigned int velocityTexture,  // Optional: object velocity
-        const Mat4& view,
-        const Mat4& projection,
-        unsigned int targetFBO,
-        int width, int height
-    );
-    
-    void UpdateViewProjection(const Mat4& viewProj);
-};
-
-// Depth of Field - Focus blur
-class DepthOfFieldEffect {
-public:
-    enum class BokehShape {
-        Circular,
-        Hexagonal,
-        Octagonal
-    };
+    void SetBias(float b) { bias = b; }
     
 private:
-    float focalDistance;
-    float focalLength;
-    float aperture;
-    float blurSize;
-    BokehShape bokehShape;
+    float radius = 0.5f;
+    float intensity = 1.0f;
+    float bias = 0.025f;
     
-    // Bokeh textures for different shapes
-    unsigned int bokehTexture;
+    Mat4 viewMatrix;
+    Mat4 projMatrix;
     
-public:
-    DepthOfFieldEffect();
-    ~DepthOfFieldEffect();
+    uint32_t positionTexture = 0;
+    uint32_t normalTexture = 0;
+    uint32_t depthTexture = 0;
     
-    void Initialize();
-    void Shutdown();
+    uint32_t ssaoFBO = 0;
+    uint32_t ssaoTexture = 0;
+    uint32_t blurFBO = 0;
+    uint32_t blurTexture = 0;
     
-    void SetFocalDistance(float dist) { focalDistance = dist; }
-    void SetFocalLength(float length) { focalLength = length; }
-    void SetAperture(float aperture) { this->aperture = aperture; }
-    void SetBlurSize(float size) { blurSize = size; }
-    void SetBokehShape(BokehShape shape) { bokehShape = shape; }
+    std::unique_ptr<Shader> ssaoShader;
+    std::unique_ptr<Shader> blurShader;
     
-    float GetFocalDistance() const { return focalDistance; }
-    float GetFocalLength() const { return focalLength; }
+    std::vector<Vec3> kernel;
+    uint32_t noiseTexture = 0;
     
-    void Render(
-        unsigned int sourceTexture,
-        unsigned int depthTexture,
-        const Mat4& projection,
-        unsigned int targetFBO,
-        int width, int height
-    );
+    uint32_t vao = 0;
+    uint32_t vbo = 0;
     
-    // Auto-focus on point
-    void AutoFocus(unsigned int depthTexture, const Vec2& screenPoint, 
-                   const Mat4& invProjection, int width, int height);
+    void GenerateKernel();
+    void GenerateNoise();
 };
 
 // ============================================
 // Post-Processing Stack
 // ============================================
 class PostProcessStack {
-private:
-    // Effects
-    std::unique_ptr<BloomEffect> bloom;
-    std::unique_ptr<SSAOEffect> ssao;
-    std::unique_ptr<ToneMappingEffect> toneMapping;
-    std::unique_ptr<FXAAEffect> fxaa;
-    std::unique_ptr<ColorGradingEffect> colorGrading;
-    std::unique_ptr<ChromaticAberrationEffect> chromaticAberration;
-    std::unique_ptr<VignetteEffect> vignette;
-    std::unique_ptr<MotionBlurEffect> motionBlur;
-    std::unique_ptr<DepthOfFieldEffect> depthOfField;
-    
-    // Framebuffers
-    unsigned int hdrFBO;
-    unsigned int hdrTexture;
-    unsigned int depthTexture;
-    
-    unsigned int intermediateFBO;
-    unsigned int intermediateTexture;
-    
-    // Settings
-    bool enableBloom;
-    bool enableSSAO;
-    bool enableToneMapping;
-    bool enableFXAA;
-    bool enableColorGrading;
-    bool enableChromaticAberration;
-    bool enableVignette;
-    bool enableMotionBlur;
-    bool enableDepthOfField;
-    
-    int width;
-    int height;
-    bool initialized;
-    
 public:
     PostProcessStack();
     ~PostProcessStack();
     
-    // Initialize with screen size
-    void Initialize(int w, int h);
+    void Initialize(uint32_t width, uint32_t height);
     void Shutdown();
-    void Resize(int w, int h);
     
-    // Toggle effects
-    void EnableBloom(bool enable) { enableBloom = enable; }
-    void EnableSSAO(bool enable) { enableSSAO = enable; }
-    void EnableToneMapping(bool enable) { enableToneMapping = enable; }
-    void EnableFXAA(bool enable) { enableFXAA = enable; }
-    void EnableColorGrading(bool enable) { enableColorGrading = enable; }
-    void EnableChromaticAberration(bool enable) { enableChromaticAberration = enable; }
-    void EnableVignette(bool enable) { enableVignette = enable; }
-    void EnableMotionBlur(bool enable) { enableMotionBlur = enable; }
-    void EnableDepthOfField(bool enable) { enableDepthOfField = enable; }
+    // Add effects
+    void AddEffect(std::shared_ptr<PostProcessEffect> effect);
+    void RemoveEffect(const std::string& name);
     
-    bool IsBloomEnabled() const { return enableBloom; }
-    bool IsSSAOEnabled() const { return enableSSAO; }
-    bool IsToneMappingEnabled() const { return enableToneMapping; }
-    bool IsFXAAEnabled() const { return enableFXAA; }
+    // Get effect by name
+    std::shared_ptr<PostProcessEffect> GetEffect(const std::string& name);
     
-    // Get effect instances for configuration
-    BloomEffect* GetBloom() { return bloom.get(); }
-    SSAOEffect* GetSSAO() { return ssao.get(); }
-    ToneMappingEffect* GetToneMapping() { return toneMapping.get(); }
-    FXAAEffect* GetFXAA() { return fxaa.get(); }
-    ColorGradingEffect* GetColorGrading() { return colorGrading.get(); }
-    ChromaticAberrationEffect* GetChromaticAberration() { return chromaticAberration.get(); }
-    VignetteEffect* GetVignette() { return vignette.get(); }
-    MotionBlurEffect* GetMotionBlur() { return motionBlur.get(); }
-    DepthOfFieldEffect* GetDepthOfField() { return depthOfField.get(); }
+    // Render the stack
+    void Render(uint32_t inputTexture, uint32_t finalOutputFBO,
+               uint32_t width, uint32_t height);
     
-    // Begin scene rendering (renders to HDR buffer)
-    void BeginScene();
+    // Resize
+    void Resize(uint32_t width, uint32_t height);
     
-    // End scene rendering, apply post-processing
-    void EndScene();
+    // Get statistics
+    uint32_t GetEffectCount() const { return static_cast<uint32_t>(effects.size()); }
+    std::vector<std::string> GetEffectNames() const;
     
-    // Get HDR framebuffer for scene rendering
-    unsigned int GetHDRFBO() const { return hdrFBO; }
-    unsigned int GetHDRTexture() const { return hdrTexture; }
-    unsigned int GetDepthTexture() const { return depthTexture; }
+private:
+    std::vector<std::shared_ptr<PostProcessEffect>> effects;
     
-    // Full pipeline render (for external use)
-    void Render(unsigned int sourceTexture, unsigned int targetFBO);
+    // Ping-pong buffers
+    uint32_t fbo[2] = {0, 0};
+    uint32_t texture[2] = {0, 0};
+    uint32_t currentWidth = 0;
+    uint32_t currentHeight = 0;
     
-    // Debug
-    void PrintSettings() const;
+    void CreateBuffers(uint32_t width, uint32_t height);
+    void DestroyBuffers();
 };
 
 } // namespace vge
