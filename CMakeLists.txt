@@ -276,7 +276,6 @@ set(VOXEL_ENGINE_SOURCES
 )
 
 set(IMGUI_OPTIONAL_SOURCES
-    src/core/engine.cpp
     src/ui/console.cpp
     src/ui/imgui_wrapper.cpp
     src/ui/menu_system.cpp
@@ -285,15 +284,21 @@ set(IMGUI_OPTIONAL_SOURCES
 set(HAVE_BUNDLED_IMGUI TRUE)
 set(IMGUI_REQUIRED_FILES
     third_party/imgui/imgui.h
+    third_party/imgui/imgui_internal.h
     third_party/imgui/imgui.cpp
     third_party/imgui/imgui_draw.cpp
     third_party/imgui/imgui_widgets.cpp
     third_party/imgui/imgui_tables.cpp
     third_party/imgui/imgui_demo.cpp
+    third_party/imgui/imconfig.h
+    third_party/imgui/imstb_rectpack.h
+    third_party/imgui/imstb_textedit.h
+    third_party/imgui/imstb_truetype.h
     third_party/imgui/backends/imgui_impl_glfw.h
     third_party/imgui/backends/imgui_impl_glfw.cpp
     third_party/imgui/backends/imgui_impl_opengl3.h
     third_party/imgui/backends/imgui_impl_opengl3.cpp
+    third_party/imgui/backends/imgui_impl_opengl3_loader.h
 )
 
 foreach(imgui_file ${IMGUI_REQUIRED_FILES})
