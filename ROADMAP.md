@@ -35,7 +35,7 @@
 - [x] Death/respawn system
 - [x] Experience/leveling system
 - [x] Fall damage
-- [ ] Lava damage
+- [x] Lava damage
 - [x] Health/hunger UI (hearts/food bars)
 
 ### 5. Inventory System

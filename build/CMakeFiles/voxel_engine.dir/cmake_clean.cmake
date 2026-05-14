@@ -93,6 +93,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxel_engine.dir/src/game/fall_damage.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/game/inventory_persistence.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/game/inventory_persistence.cpp.o.d"
+  "CMakeFiles/voxel_engine.dir/src/game/lava_damage.cpp.o"
+  "CMakeFiles/voxel_engine.dir/src/game/lava_damage.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/game/mob_system.cpp.o"
   "CMakeFiles/voxel_engine.dir/src/game/mob_system.cpp.o.d"
   "CMakeFiles/voxel_engine.dir/src/game/npc_dialog.cpp.o"

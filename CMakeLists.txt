@@ -202,6 +202,7 @@ set(CORE_SOURCES
     src/game/quest_system.cpp
     src/game/npc_dialog.cpp
     src/game/fall_damage.cpp
+    src/game/lava_damage.cpp
     src/game/inventory_persistence.cpp
     src/editor/entity_spawner.cpp
     src/editor/in_game_editor.cpp

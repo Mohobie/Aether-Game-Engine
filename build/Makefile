@@ -2045,6 +2045,45 @@ src/game/inventory_persistence.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/inventory_persistence.cpp.s
 .PHONY : src/game/inventory_persistence.cpp.s
 
+src/game/lava_damage.o: src/game/lava_damage.cpp.o
+.PHONY : src/game/lava_damage.o
+
+# target to build an object file
+src/game/lava_damage.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/lava_damage.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/lava_damage.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/lava_damage.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/lava_damage.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/lava_damage.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/lava_damage.cpp.o
+.PHONY : src/game/lava_damage.cpp.o
+
+src/game/lava_damage.i: src/game/lava_damage.cpp.i
+.PHONY : src/game/lava_damage.i
+
+# target to preprocess a source file
+src/game/lava_damage.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/lava_damage.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/lava_damage.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/lava_damage.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/lava_damage.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/lava_damage.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/lava_damage.cpp.i
+.PHONY : src/game/lava_damage.cpp.i
+
+src/game/lava_damage.s: src/game/lava_damage.cpp.s
+.PHONY : src/game/lava_damage.s
+
+# target to generate assembly for a file
+src/game/lava_damage.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_test.dir/build.make CMakeFiles/voxel_test.dir/src/game/lava_damage.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/world_test.dir/build.make CMakeFiles/world_test.dir/src/game/lava_damage.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/save_test.dir/build.make CMakeFiles/save_test.dir/src/game/lava_damage.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/voxel_engine.dir/build.make CMakeFiles/voxel_engine.dir/src/game/lava_damage.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/src/game/lava_damage.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/multiplayer.dir/build.make CMakeFiles/multiplayer.dir/src/game/lava_damage.cpp.s
+.PHONY : src/game/lava_damage.cpp.s
+
 src/game/mob_system.o: src/game/mob_system.cpp.o
 .PHONY : src/game/mob_system.o
 
@@ -5401,6 +5440,9 @@ help:
 	@echo "... src/game/inventory_persistence.o"
 	@echo "... src/game/inventory_persistence.i"
 	@echo "... src/game/inventory_persistence.s"
+	@echo "... src/game/lava_damage.o"
+	@echo "... src/game/lava_damage.i"
+	@echo "... src/game/lava_damage.s"
 	@echo "... src/game/mob_system.o"
 	@echo "... src/game/mob_system.i"
 	@echo "... src/game/mob_system.s"

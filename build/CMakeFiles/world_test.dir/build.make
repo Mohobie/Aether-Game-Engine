@@ -1581,10 +1581,24 @@ CMakeFiles/world_test.dir/src/game/fall_damage.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/world_test.dir/src/game/fall_damage.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-test/src/game/fall_damage.cpp -o CMakeFiles/world_test.dir/src/game/fall_damage.cpp.s
 
+CMakeFiles/world_test.dir/src/game/lava_damage.cpp.o: CMakeFiles/world_test.dir/flags.make
+CMakeFiles/world_test.dir/src/game/lava_damage.cpp.o: ../src/game/lava_damage.cpp
+CMakeFiles/world_test.dir/src/game/lava_damage.cpp.o: CMakeFiles/world_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building CXX object CMakeFiles/world_test.dir/src/game/lava_damage.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/world_test.dir/src/game/lava_damage.cpp.o -MF CMakeFiles/world_test.dir/src/game/lava_damage.cpp.o.d -o CMakeFiles/world_test.dir/src/game/lava_damage.cpp.o -c /home/mohobie/projects/aether-game-test/src/game/lava_damage.cpp
+
+CMakeFiles/world_test.dir/src/game/lava_damage.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/world_test.dir/src/game/lava_damage.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohobie/projects/aether-game-test/src/game/lava_damage.cpp > CMakeFiles/world_test.dir/src/game/lava_damage.cpp.i
+
+CMakeFiles/world_test.dir/src/game/lava_damage.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/world_test.dir/src/game/lava_damage.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohobie/projects/aether-game-test/src/game/lava_damage.cpp -o CMakeFiles/world_test.dir/src/game/lava_damage.cpp.s
+
 CMakeFiles/world_test.dir/src/game/inventory_persistence.cpp.o: CMakeFiles/world_test.dir/flags.make
 CMakeFiles/world_test.dir/src/game/inventory_persistence.cpp.o: ../src/game/inventory_persistence.cpp
 CMakeFiles/world_test.dir/src/game/inventory_persistence.cpp.o: CMakeFiles/world_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building CXX object CMakeFiles/world_test.dir/src/game/inventory_persistence.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building CXX object CMakeFiles/world_test.dir/src/game/inventory_persistence.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/world_test.dir/src/game/inventory_persistence.cpp.o -MF CMakeFiles/world_test.dir/src/game/inventory_persistence.cpp.o.d -o CMakeFiles/world_test.dir/src/game/inventory_persistence.cpp.o -c /home/mohobie/projects/aether-game-test/src/game/inventory_persistence.cpp
 
 CMakeFiles/world_test.dir/src/game/inventory_persistence.cpp.i: cmake_force
@@ -1598,7 +1612,7 @@ CMakeFiles/world_test.dir/src/game/inventory_persistence.cpp.s: cmake_force
 CMakeFiles/world_test.dir/src/editor/entity_spawner.cpp.o: CMakeFiles/world_test.dir/flags.make
 CMakeFiles/world_test.dir/src/editor/entity_spawner.cpp.o: ../src/editor/entity_spawner.cpp
 CMakeFiles/world_test.dir/src/editor/entity_spawner.cpp.o: CMakeFiles/world_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building CXX object CMakeFiles/world_test.dir/src/editor/entity_spawner.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building CXX object CMakeFiles/world_test.dir/src/editor/entity_spawner.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/world_test.dir/src/editor/entity_spawner.cpp.o -MF CMakeFiles/world_test.dir/src/editor/entity_spawner.cpp.o.d -o CMakeFiles/world_test.dir/src/editor/entity_spawner.cpp.o -c /home/mohobie/projects/aether-game-test/src/editor/entity_spawner.cpp
 
 CMakeFiles/world_test.dir/src/editor/entity_spawner.cpp.i: cmake_force
@@ -1612,7 +1626,7 @@ CMakeFiles/world_test.dir/src/editor/entity_spawner.cpp.s: cmake_force
 CMakeFiles/world_test.dir/src/editor/in_game_editor.cpp.o: CMakeFiles/world_test.dir/flags.make
 CMakeFiles/world_test.dir/src/editor/in_game_editor.cpp.o: ../src/editor/in_game_editor.cpp
 CMakeFiles/world_test.dir/src/editor/in_game_editor.cpp.o: CMakeFiles/world_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building CXX object CMakeFiles/world_test.dir/src/editor/in_game_editor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building CXX object CMakeFiles/world_test.dir/src/editor/in_game_editor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/world_test.dir/src/editor/in_game_editor.cpp.o -MF CMakeFiles/world_test.dir/src/editor/in_game_editor.cpp.o.d -o CMakeFiles/world_test.dir/src/editor/in_game_editor.cpp.o -c /home/mohobie/projects/aether-game-test/src/editor/in_game_editor.cpp
 
 CMakeFiles/world_test.dir/src/editor/in_game_editor.cpp.i: cmake_force
@@ -1626,7 +1640,7 @@ CMakeFiles/world_test.dir/src/editor/in_game_editor.cpp.s: cmake_force
 CMakeFiles/world_test.dir/src/editor/scene_viewport.cpp.o: CMakeFiles/world_test.dir/flags.make
 CMakeFiles/world_test.dir/src/editor/scene_viewport.cpp.o: ../src/editor/scene_viewport.cpp
 CMakeFiles/world_test.dir/src/editor/scene_viewport.cpp.o: CMakeFiles/world_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building CXX object CMakeFiles/world_test.dir/src/editor/scene_viewport.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building CXX object CMakeFiles/world_test.dir/src/editor/scene_viewport.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/world_test.dir/src/editor/scene_viewport.cpp.o -MF CMakeFiles/world_test.dir/src/editor/scene_viewport.cpp.o.d -o CMakeFiles/world_test.dir/src/editor/scene_viewport.cpp.o -c /home/mohobie/projects/aether-game-test/src/editor/scene_viewport.cpp
 
 CMakeFiles/world_test.dir/src/editor/scene_viewport.cpp.i: cmake_force
@@ -1640,7 +1654,7 @@ CMakeFiles/world_test.dir/src/editor/scene_viewport.cpp.s: cmake_force
 CMakeFiles/world_test.dir/src/editor/asset_browser.cpp.o: CMakeFiles/world_test.dir/flags.make
 CMakeFiles/world_test.dir/src/editor/asset_browser.cpp.o: ../src/editor/asset_browser.cpp
 CMakeFiles/world_test.dir/src/editor/asset_browser.cpp.o: CMakeFiles/world_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building CXX object CMakeFiles/world_test.dir/src/editor/asset_browser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building CXX object CMakeFiles/world_test.dir/src/editor/asset_browser.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/world_test.dir/src/editor/asset_browser.cpp.o -MF CMakeFiles/world_test.dir/src/editor/asset_browser.cpp.o.d -o CMakeFiles/world_test.dir/src/editor/asset_browser.cpp.o -c /home/mohobie/projects/aether-game-test/src/editor/asset_browser.cpp
 
 CMakeFiles/world_test.dir/src/editor/asset_browser.cpp.i: cmake_force
@@ -1654,7 +1668,7 @@ CMakeFiles/world_test.dir/src/editor/asset_browser.cpp.s: cmake_force
 CMakeFiles/world_test.dir/src/ui/console_commands.cpp.o: CMakeFiles/world_test.dir/flags.make
 CMakeFiles/world_test.dir/src/ui/console_commands.cpp.o: ../src/ui/console_commands.cpp
 CMakeFiles/world_test.dir/src/ui/console_commands.cpp.o: CMakeFiles/world_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building CXX object CMakeFiles/world_test.dir/src/ui/console_commands.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building CXX object CMakeFiles/world_test.dir/src/ui/console_commands.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/world_test.dir/src/ui/console_commands.cpp.o -MF CMakeFiles/world_test.dir/src/ui/console_commands.cpp.o.d -o CMakeFiles/world_test.dir/src/ui/console_commands.cpp.o -c /home/mohobie/projects/aether-game-test/src/ui/console_commands.cpp
 
 CMakeFiles/world_test.dir/src/ui/console_commands.cpp.i: cmake_force
@@ -1668,7 +1682,7 @@ CMakeFiles/world_test.dir/src/ui/console_commands.cpp.s: cmake_force
 CMakeFiles/world_test.dir/src/rendering/frustum.cpp.o: CMakeFiles/world_test.dir/flags.make
 CMakeFiles/world_test.dir/src/rendering/frustum.cpp.o: ../src/rendering/frustum.cpp
 CMakeFiles/world_test.dir/src/rendering/frustum.cpp.o: CMakeFiles/world_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building CXX object CMakeFiles/world_test.dir/src/rendering/frustum.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building CXX object CMakeFiles/world_test.dir/src/rendering/frustum.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/world_test.dir/src/rendering/frustum.cpp.o -MF CMakeFiles/world_test.dir/src/rendering/frustum.cpp.o.d -o CMakeFiles/world_test.dir/src/rendering/frustum.cpp.o -c /home/mohobie/projects/aether-game-test/src/rendering/frustum.cpp
 
 CMakeFiles/world_test.dir/src/rendering/frustum.cpp.i: cmake_force
@@ -1682,7 +1696,7 @@ CMakeFiles/world_test.dir/src/rendering/frustum.cpp.s: cmake_force
 CMakeFiles/world_test.dir/src/rendering/culling_system.cpp.o: CMakeFiles/world_test.dir/flags.make
 CMakeFiles/world_test.dir/src/rendering/culling_system.cpp.o: ../src/rendering/culling_system.cpp
 CMakeFiles/world_test.dir/src/rendering/culling_system.cpp.o: CMakeFiles/world_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building CXX object CMakeFiles/world_test.dir/src/rendering/culling_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building CXX object CMakeFiles/world_test.dir/src/rendering/culling_system.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/world_test.dir/src/rendering/culling_system.cpp.o -MF CMakeFiles/world_test.dir/src/rendering/culling_system.cpp.o.d -o CMakeFiles/world_test.dir/src/rendering/culling_system.cpp.o -c /home/mohobie/projects/aether-game-test/src/rendering/culling_system.cpp
 
 CMakeFiles/world_test.dir/src/rendering/culling_system.cpp.i: cmake_force
@@ -1696,7 +1710,7 @@ CMakeFiles/world_test.dir/src/rendering/culling_system.cpp.s: cmake_force
 CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o: CMakeFiles/world_test.dir/flags.make
 CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o: ../src/rendering/framebuffer_renderer.cpp
 CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o: CMakeFiles/world_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building CXX object CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building CXX object CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o -MF CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o.d -o CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o -c /home/mohobie/projects/aether-game-test/src/rendering/framebuffer_renderer.cpp
 
 CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.i: cmake_force
@@ -1817,6 +1831,7 @@ world_test_OBJECTS = \
 "CMakeFiles/world_test.dir/src/game/quest_system.cpp.o" \
 "CMakeFiles/world_test.dir/src/game/npc_dialog.cpp.o" \
 "CMakeFiles/world_test.dir/src/game/fall_damage.cpp.o" \
+"CMakeFiles/world_test.dir/src/game/lava_damage.cpp.o" \
 "CMakeFiles/world_test.dir/src/game/inventory_persistence.cpp.o" \
 "CMakeFiles/world_test.dir/src/editor/entity_spawner.cpp.o" \
 "CMakeFiles/world_test.dir/src/editor/in_game_editor.cpp.o" \
@@ -1938,6 +1953,7 @@ world_test: CMakeFiles/world_test.dir/src/game/combat_system.cpp.o
 world_test: CMakeFiles/world_test.dir/src/game/quest_system.cpp.o
 world_test: CMakeFiles/world_test.dir/src/game/npc_dialog.cpp.o
 world_test: CMakeFiles/world_test.dir/src/game/fall_damage.cpp.o
+world_test: CMakeFiles/world_test.dir/src/game/lava_damage.cpp.o
 world_test: CMakeFiles/world_test.dir/src/game/inventory_persistence.cpp.o
 world_test: CMakeFiles/world_test.dir/src/editor/entity_spawner.cpp.o
 world_test: CMakeFiles/world_test.dir/src/editor/in_game_editor.cpp.o
@@ -1950,7 +1966,7 @@ world_test: CMakeFiles/world_test.dir/src/rendering/framebuffer_renderer.cpp.o
 world_test: CMakeFiles/world_test.dir/build.make
 world_test: /usr/lib/x86_64-linux-gnu/liblua5.4.so
 world_test: CMakeFiles/world_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Linking CXX executable world_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mohobie/projects/aether-game-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Linking CXX executable world_test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/world_test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

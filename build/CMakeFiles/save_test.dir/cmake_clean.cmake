@@ -89,6 +89,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/save_test.dir/src/game/fall_damage.cpp.o.d"
   "CMakeFiles/save_test.dir/src/game/inventory_persistence.cpp.o"
   "CMakeFiles/save_test.dir/src/game/inventory_persistence.cpp.o.d"
+  "CMakeFiles/save_test.dir/src/game/lava_damage.cpp.o"
+  "CMakeFiles/save_test.dir/src/game/lava_damage.cpp.o.d"
   "CMakeFiles/save_test.dir/src/game/mob_system.cpp.o"
   "CMakeFiles/save_test.dir/src/game/mob_system.cpp.o.d"
   "CMakeFiles/save_test.dir/src/game/npc_dialog.cpp.o"
