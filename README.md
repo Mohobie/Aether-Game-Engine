@@ -124,67 +124,43 @@ cmake ..
 # Build (parallel)
 cmake --build . --parallel
 
-# Run tests
-./voxel_test
-
 # Run the engine
 ./voxel_engine
 ```
 
 ### Building Your Own Game
 
-Create a `my_game.cpp` file in the project root:
+Create a separate project and link against the engine:
 
 ```cpp
+// your_project/main.cpp
 #include "voxel/world.h"
 #include "rendering/renderer.h"
 #include "rendering/camera.h"
 #include "platform/window.h"
 #include "platform/input_manager.h"
 #include "core/player_controller.h"
-#include "game/block_interaction.h"
-#include "debug/debug_renderer.h"
-#include "audio/audio_engine.h"
-#include "editor/in_game_editor.h"
 
 int main() {
-    // 1. Create window
+    // Create window
     vge::Window window;
     window.Initialize(1280, 720, "My Voxel Game");
     
-    // 2. Create renderer (OpenGL 3.3+)
+    // Create renderer (OpenGL 3.3+)
     vge::Renderer renderer;
     renderer.Initialize();
     renderer.SetViewport(0, 0, 1280, 720);
     
-    // 3. Create camera
-    vge::Camera camera;
-    camera.SetPosition(vge::Vec3(0, 50, 0));
-    camera.SetRotation(-90, -30, 0);
-    
-    // 4. Create world
+    // Create world
     vge::World world;
     world.SetSeed(12345);
     
-    // 5. Create player
-    vge::PlayerController player;
-    player.SetPosition(vge::Vec3(0, 50, 0));
-    
-    // 6. Game loop
+    // Game loop
     bool running = true;
-    vge::Input input;
-    
     while (running) {
         window.PollEvents();
         if (window.ShouldClose()) running = false;
         
-        input.Update();
-        player.Update(1.0f/60.0f, input, world);
-        
-        camera.SetPosition(player.GetPosition() + vge::Vec3(0, 1.8f, 0));
-        camera.SetRotation(player.GetYaw(), player.GetPitch(), 0);
-        
-        renderer.SetClearColor(0.5f, 0.7f, 1.0f, 1.0f);
         renderer.BeginFrame();
         renderer.RenderWorld(world, camera);
         renderer.EndFrame();
@@ -198,11 +174,11 @@ int main() {
 }
 ```
 
-Build your game:
-```bash
-cmake ..
-make -j4 my_game
-./my_game
+CMakeLists.txt for your game:
+```cmake
+add_subdirectory(aether-game-engine)
+add_executable(my_game main.cpp)
+target_link_libraries(my_game PRIVATE voxel_engine_lib)
 ```
 
 ### Windows
@@ -244,7 +220,6 @@ aether-game-engine/
 │   ├── WIKI.md               # Wiki home
 │   └── rag/                  # RAG docs for AI (18 documents)
 ├── assets/                   # Default assets
-├── tests/                    # Unit tests
 ├── CMakeLists.txt           # CMake configuration
 └── README.md                # This file
 ```
@@ -351,7 +326,6 @@ vge::EntityArchetypeRegistry::GetInstance()->RegisterArchetype(vampire);
 - ✅ Gitea repository with wiki
 - ✅ Comprehensive API documentation
 - ✅ RAG docs for AI assistance
-- ✅ Unit tests (voxel_test)
 - 🔄 Active development
 
 ## License
