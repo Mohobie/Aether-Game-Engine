@@ -169,12 +169,10 @@
 - [x] Infinite blocks
 - [x] Instant break
 - [x] No damage/hunger
-
-### 22. Creative Mode
-- [ ] Infinite blocks
-- [ ] Flight
-- [ ] No damage
-- [ ] Instant break
+- [x] Creative inventory (all blocks)
+- [x] Fast flight (Ctrl sprint)
+- [x] Debug overlay (F3)
+- [x] Day/night cycle (visual only)
 
 ### 23. Achievements
 - [x] Basic achievements (mine first block, etc.)

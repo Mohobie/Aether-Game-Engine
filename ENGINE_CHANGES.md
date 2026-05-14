@@ -306,6 +306,47 @@
 
 ---
 
+## Change #16: Creative Mode System
+**Date:** 2026-05-13
+**Files Modified:**
+- `src/game/creative_mode.h` (new)
+- `src/game/creative_mode.cpp` (new)
+- `src/game/block_interaction.h` (modified)
+- `src/game/block_interaction.cpp` (modified)
+- `CMakeLists.txt`
+
+**Description:** Complete creative mode gameplay system:
+- Flight mode with free movement (WASD + Space/Shift)
+- Fast flight with Ctrl sprint (25 blocks/sec)
+- Instant block break (Q key, no mining time)
+- Infinite block placement (E key, no resource cost)
+- Creative inventory with all registered blocks
+- 9-slot hotbar with number key selection
+- Invincibility (no damage, hunger, or fall damage)
+- Debug overlay (F3) with position, FPS, chunk info
+- Day/night cycle integration (visual only)
+- Block picker with raycast selection
+
+**Engine Impact:** Gameplay system
+**Breaking Change:** No
+**RAG Doc:** `docs/rag/CREATIVE_MODE.md`
+
+## Change #17: WorldGenerator API Fix
+**Date:** 2026-05-13
+**Files Modified:**
+- `src/voxel/world_generator.h` (modified)
+- `src/voxel/world_generator.cpp` (modified)
+
+**Description:** Added missing instance methods to WorldGenerator:
+- `SetSeed()` / `GetSeed()` for deterministic generation
+- `GenerateChunk()` for single-chunk generation
+- Constructor with default seed initialization
+
+These methods were referenced by existing code (engine.cpp, tests) but were missing from the class definition.
+
+**Engine Impact:** World generation system
+**Breaking Change:** No
+
 ## Pending Engine Changes
 
 ### Block Registry Extensions

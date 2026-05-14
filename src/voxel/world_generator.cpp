@@ -25,6 +25,53 @@ float WorldGenerator::Interpolate(float a, float b, float t) {
     return a + (b - a) * t;
 }
 
+void WorldGenerator::GenerateChunk(Chunk& chunk, int chunkX, int chunkY, int chunkZ) {
+    BlockRegistry& registry = BlockRegistry::GetInstance();
+    BlockTypeID grass = registry.GetBlockId("grass");
+    BlockTypeID dirt = registry.GetBlockId("dirt");
+    BlockTypeID stone = registry.GetBlockId("stone");
+    BlockTypeID bedrock = registry.GetBlockId("bedrock");
+    BlockTypeID air = registry.GetBlockId("air");
+
+    if (grass == BLOCK_AIR) grass = 1;
+    if (dirt == BLOCK_AIR) dirt = 2;
+    if (stone == BLOCK_AIR) stone = 3;
+    if (bedrock == BLOCK_AIR) bedrock = stone;
+
+    // Simple terrain generation for a single chunk
+    for (int x = 0; x < CHUNK_SIZE; x++) {
+        for (int z = 0; z < CHUNK_SIZE; z++) {
+            int worldX = chunkX * CHUNK_SIZE + x;
+            int worldZ = chunkZ * CHUNK_SIZE + z;
+
+            // Use noise for height variation
+            float noise1 = SmoothNoise(worldX, worldZ, seed);
+            float noise2 = SmoothNoise(worldX / 2, worldZ / 2, seed + 1) * 0.5f;
+            float heightValue = (noise1 + noise2) / 1.5f;
+            int terrainHeight = static_cast<int>(heightValue * 4) + 2;
+
+            for (int y = 0; y < CHUNK_SIZE; y++) {
+                int worldY = chunkY * CHUNK_SIZE + y;
+
+                if (worldY < 0) {
+                    chunk.SetBlock(x, y, z, bedrock);
+                } else if (worldY < terrainHeight - 2) {
+                    chunk.SetBlock(x, y, z, stone);
+                } else if (worldY < terrainHeight) {
+                    chunk.SetBlock(x, y, z, dirt);
+                } else if (worldY == terrainHeight) {
+                    chunk.SetBlock(x, y, z, grass);
+                } else {
+                    chunk.SetBlock(x, y, z, air);
+                }
+            }
+        }
+    }
+
+    chunk.loaded = true;
+    chunk.SetDirty(true);
+}
+
 void WorldGenerator::GenerateTree(World& world, int x, int y, int z) {
     BlockRegistry& registry = BlockRegistry::GetInstance();
     BlockTypeID wood = registry.GetBlockId("wood");

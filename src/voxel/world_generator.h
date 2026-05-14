@@ -4,7 +4,18 @@
 namespace vge {
 
 class WorldGenerator {
+private:
+    int seed;
+
 public:
+    WorldGenerator() : seed(12345) {}
+
+    void SetSeed(int s) { seed = s; }
+    int GetSeed() const { return seed; }
+
+    // Generate a single chunk
+    void GenerateChunk(Chunk& chunk, int chunkX, int chunkY, int chunkZ);
+
     // Generate a large flat world with terrain features
     static void GenerateFlatWorld(World& world, int size);
     
