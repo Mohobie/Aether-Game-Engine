@@ -212,7 +212,7 @@ void SleepMs(uint32_t milliseconds) {
 // ============================================
 uint64_t GetCurrentThreadId() {
 #ifdef PLATFORM_WINDOWS
-    return GetCurrentThreadId();
+    return static_cast<uint64_t>(::GetCurrentThreadId());
 #else
     return static_cast<uint64_t>(pthread_self());
 #endif
