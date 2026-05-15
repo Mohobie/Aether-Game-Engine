@@ -1,5 +1,10 @@
 # Rendering Module API
-**Files:** src/rendering/camera.h, src/rendering/framebuffer_renderer.h, src/rendering/lighting.h, src/rendering/material.h, src/rendering/mesh.h, src/rendering/renderer.h, src/rendering/shader.h, src/rendering/texture.h
+
+This page is only a partial reference for the canonical `src/rendering/*` tree.
+
+**Canonical runtime note:** the active windowed renderer path is dependency-gated behind `GLFW + OpenGL` in `CMakeLists.txt`, and `game/application.h` includes `rendering/modern_renderer_integration.h` so `vge::Renderer` resolves through the modern renderer integration layer in the current public runtime path.
+
+**Representative files:** `src/rendering/camera.h`, `src/rendering/framebuffer_renderer.h`, `src/rendering/lighting.h`, `src/rendering/material.h`, `src/rendering/mesh.h`, `src/rendering/renderer.h`, `src/rendering/modern_renderer_integration.h`, `src/rendering/shader.h`, `src/rendering/texture.h`
 
 ## `rendering/camera.h`
 ```cpp
@@ -89,6 +94,8 @@ namespace vge {
 namespace vge {
 ```
 
+`rendering/renderer.h` still exists in-tree, but the active application-facing runtime alias also flows through `rendering/modern_renderer_integration.h`.
+
 ### `class Renderer`
 | Method | Return Type | Parameters |
 |--------|-------------|------------|
@@ -103,6 +110,15 @@ namespace vge {
 | `SetViewport` | `void` | `int x, int y, int w, int h` |
 | `RenderMesh` | `void` | `const Mesh& mesh, const Shader& shader, const Camera& camera` |
 | `RenderWorld` | `void` | `const World& world, const Camera& camera` |
+
+## `rendering/modern_renderer_integration.h`
+```cpp
+namespace vge {
+```
+
+### Runtime alias
+
+- `using Renderer = ModernRenderer`
 
 ## `rendering/shader.h`
 ```cpp

@@ -98,7 +98,7 @@ namespace vge {
 
 ## Build note
 
-The current shell still does not have `cmake` on `PATH`, so the Windows and Linux build instructions referenced elsewhere in the docs have not been revalidated in this session.
+The current audited Windows pass was revalidated on 2026-05-15 using `C:/Program Files/CMake/bin/cmake.exe`. In this shell, `voxel_engine_lib`, `save_test`, `world_test`, and `voxel_test` are verified; `voxel_engine` remains dependency-gated because `GLFW` is unavailable.
 
 ## Legacy note
 

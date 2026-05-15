@@ -1,8 +1,18 @@
 # Aether Game Engine
 
-A C++17 voxel-engine codebase under audit. The current verified path in this repository is the core library plus a small set of test executables; the windowed runtime remains dependency-gated on machines where `GLFW` is unavailable.
+Aether Game Engine is a modular C++17 voxel-engine codebase for building sandbox, survival, and other world-driven games. It combines voxel world systems, gameplay modules, rendering paths, UI, audio, physics, AI, networking, and scripting-oriented infrastructure in a single repository.
 
-## Current Build Truth
+## Highlights
+
+- Voxel world foundation: blocks, chunks, world generation, block registry, chunk management, and save/load layers
+- Modular gameplay systems: crafting, inventory, combat, quests, NPC dialog, survival systems, tools, furnaces, and world interaction
+- Rendering stack in-tree: camera, meshes, shaders, lighting, sky, weather, particles, post-processing, and world rendering paths
+- Engine subsystems: audio, AI, networking, UI, resource management, platform abstractions, and editor-facing utilities
+- Public engine library target: `voxel_engine_lib`
+
+## Build Status
+
+The repository contains both always-built core systems and optional runtime/editor paths that depend on external libraries being available on the host machine.
 
 Verified in this workspace on 2026-05-15 with Visual Studio 2022 and `C:/Program Files/CMake/bin/cmake.exe`:
 
@@ -23,24 +33,23 @@ Current dependency state in this shell:
 - `GLFW=FALSE`
 - `Lua=FALSE`
 
-Result:
+What that means:
 
-- the headless/core library path is verified
-- `voxel_engine` is not currently verified in this shell because the GLFW-backed windowed runtime path is unavailable
+- the core engine library and the three verified tests build cleanly in this environment
+- the windowed runtime target `voxel_engine` remains optional and only builds when the GLFW-backed runtime dependency path is available
+- Lua-backed scripting sources are excluded when Lua is not available
 
 ## Canonical Module Map
 
+The current supported public architecture in the codebase is:
+
 - Rendering: `src/rendering/*`
-  Legacy: `src/render/*`
 - Input: `src/platform/input_manager.*`
-  Legacy: `src/input/*`
-  Compatibility-only outside the active library target: `src/platform/input.*`
 - Application facade: `src/game/application.*`
-  Legacy: `src/core/application.*`
 - Entity layer: `src/entity/entity.*`, `src/entity/components.*`
-  Legacy: `src/core/entity.*`
-- Save stack: `src/core/save_system.*` for direct world/chunk IO, `src/voxel/world_serializer.*` for richer world snapshots, and `src/core/save_game.*` as the active higher-level wrapper
-  Legacy: `src/game/save_system.*`, `src/game/serializer.*`
+- Save stack: `src/core/save_system.*`, `src/voxel/world_serializer.*`, `src/core/save_game.*`
+
+Legacy parallel paths still exist in-tree for some subsystems, but the paths above are the current source of truth for the active architecture.
 
 ## Building
 
@@ -54,24 +63,25 @@ build-vs\Debug\world_test.exe
 build-vs\Debug\voxel_test.exe
 ```
 
-### Notes
+If GLFW-backed window/runtime dependencies are available on your machine, you can also configure and build the executable target:
 
-- `voxel_engine` is only expected to build when the GLFW-backed windowed runtime dependency path is available.
-- Lua-backed scripting sources are excluded when Lua is not installed.
-- Bundled Dear ImGui is present in-tree, but the optional editor/menu executable stack is still gated on the same windowed runtime dependencies.
+```cmd
+C:\Program Files\CMake\bin\cmake.exe --build build-vs --config Debug --target voxel_engine
+```
 
 ## Public Entry Points
 
 - Public include: `include/aether_engine.h`
 - Compatibility include: `include/voxel_engine.h`
-- Library target: `voxel_engine_lib`
+- Primary library target: `voxel_engine_lib`
 
 ## Documentation
 
 - [docs/QUICKSTART.md](docs/QUICKSTART.md)
 - [docs/WIKI.md](docs/WIKI.md)
 - [docs/API-INDEX.md](docs/API-INDEX.md)
+- [REVIEW_REPORT.md](REVIEW_REPORT.md)
 
-## Status
+## Project Direction
 
-This repository still contains parallel legacy modules and partially implemented subsystems. Treat the verified build targets and the canonical module map above as the source of truth for the current audit state, not older feature claims elsewhere in the tree.
+The repository remains an active engine codebase rather than a minimal library skeleton. It includes both production-oriented core systems and parallel or partially integrated subsystems that are still being consolidated. The verified build targets and documented canonical module map above are the best guide to what is currently supported.
