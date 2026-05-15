@@ -63,15 +63,25 @@ cmake --build . --config Release
 ```
 
 ### Verify Build
-```bash
-# Run tests
-./voxel_test
+Current audited Windows build truth for this repo on 2026-05-15:
 
-# Run the engine
-./voxel_engine
+```cmd
+C:\Program Files\CMake\bin\cmake.exe -S . -B build-vs -G "Visual Studio 17 2022"
+C:\Program Files\CMake\bin\cmake.exe --build build-vs --config Debug --target voxel_engine_lib save_test world_test voxel_test
+build-vs\Debug\save_test.exe
+build-vs\Debug\world_test.exe
+build-vs\Debug\voxel_test.exe
 ```
 
-**Expected output:** A window opens showing a voxel world with colored blocks. Use WASD to move, mouse to look, Space to jump.
+This shell currently configures with `OpenGL=TRUE`, `GLFW=FALSE`, and `Lua=FALSE`. The verified path on this machine is therefore the core/headless library plus the three test executables above. `voxel_engine` is only expected to build once the GLFW-backed windowed runtime dependency path is restored on the machine.
+
+```bash
+# Generic validation once your local dependency set is complete
+./voxel_test
+
+# Run the engine when GLFW-backed windowed dependencies are available
+./voxel_engine
+```
 
 ### Build Your Own Game
 

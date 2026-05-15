@@ -9,13 +9,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # ============================================
 if(WIN32)
     set(PLATFORM_WINDOWS TRUE)
-    add_definitions(-DPLATFORM_WINDOWS)
 elseif(UNIX AND NOT APPLE)
     set(PLATFORM_LINUX TRUE)
-    add_definitions(-DPLATFORM_LINUX)
 elseif(APPLE)
     set(PLATFORM_MACOS TRUE)
-    add_definitions(-DPLATFORM_MACOS)
 endif()
 
 # ============================================
@@ -102,7 +99,6 @@ set(CORE_SOURCES
     src/ui/main_menu.cpp
     src/physics/physics_constraints.cpp
     src/network/network_architecture.cpp
-    src/network/packet.cpp
     src/network/network_manager.cpp
     src/network/server_authority.cpp
     src/network/entity_replication.cpp
@@ -185,7 +181,6 @@ set(CORE_SOURCES
     src/game/lava_damage.cpp
     src/game/inventory_persistence.cpp
     src/game/scene.cpp
-    src/ui/ui_manager.cpp
     src/resource/resource_manager.cpp
 )
 
@@ -298,6 +293,7 @@ endif()
 
 message(STATUS "Excluding experimental visual scripting sources from voxel_engine_lib until the API surface is reconciled")
 message(STATUS "Excluding occlusion_culling from voxel_engine_lib until rendering dependencies are reconciled")
+message(STATUS "Excluding legacy parallel Packet/UIManager implementations from voxel_engine_lib in favor of network_architecture.* and ui_system.*")
 
 # ============================================
 # Dear ImGui Sources
@@ -367,6 +363,11 @@ endif()
 # Create a static library for the engine
 add_library(voxel_engine_lib STATIC ${ALL_SOURCES})
 target_include_directories(voxel_engine_lib PUBLIC ${COMMON_INCLUDES})
+target_compile_definitions(voxel_engine_lib PUBLIC
+    $<$<BOOL:${PLATFORM_WINDOWS}>:PLATFORM_WINDOWS>
+    $<$<BOOL:${PLATFORM_LINUX}>:PLATFORM_LINUX>
+    $<$<BOOL:${PLATFORM_MACOS}>:PLATFORM_MACOS>
+)
 
 if(OpenGL_FOUND)
     target_link_libraries(voxel_engine_lib PUBLIC OpenGL::GL)

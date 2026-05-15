@@ -13,6 +13,15 @@ Aether Game Engine is a **C++ voxel game engine** designed for building Minecraf
 
 ## Quick Start
 
+### Build Truth For This Audit
+
+The currently revalidated Windows pass for this repository was run on 2026-05-15 with Visual Studio 2022 and `C:/Program Files/CMake/bin/cmake.exe`.
+
+- Verified targets: `voxel_engine_lib`, `save_test`, `world_test`, `voxel_test`
+- Verified executables run successfully: `build-vs/Debug/save_test.exe`, `build-vs/Debug/world_test.exe`, `build-vs/Debug/voxel_test.exe`
+- Current dependency state in this shell: `OpenGL=TRUE`, `GLFW=FALSE`, `Lua=FALSE`
+- Resulting policy for this machine: the headless/core library path is verified; `voxel_engine` remains gated on restoring the GLFW-backed windowed runtime path
+
 ### Building the Engine
 
 ```bash

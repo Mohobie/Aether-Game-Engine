@@ -66,7 +66,7 @@ void Application::run() {
         renderer->BeginFrame();
         renderer->RenderWorld(*world, *camera);
         renderer->EndFrame();
-        ui->render();
+        ui->Render();
         window->SwapBuffers();
     }
 }

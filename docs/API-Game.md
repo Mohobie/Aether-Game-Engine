@@ -3,7 +3,9 @@
 **Canonical files:** `src/game/application.h`, `src/game/scene.h`, `src/game/game_state.h`  
 **Legacy / inactive for this audit:** `src/game/save_system.h`, `src/game/serializer.h`
 
-This page was corrected during the 2026-05-14 architecture audit. The supported game-facing application facade is `game/application.h` in namespace `vge`.
+This page was corrected during the 2026-05-15 architecture audit. The supported game-facing application facade is `game/application.h` in namespace `vge`.
+
+The current `Application` facade composes the canonical `ui/ui_system.h` stack. The older `ui/ui_manager.h` API remains in-tree only as legacy source material and is not part of the active library target for this session.
 
 ## `game/application.h`
 

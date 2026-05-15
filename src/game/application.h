@@ -6,7 +6,7 @@
 #include "audio/audio_engine.h"
 #include "platform/input_manager.h"
 #include "entity/entity.h"
-#include "ui/ui_manager.h"
+#include "ui/ui_system.h"
 #include "resource/resource_manager.h"
 #include <memory>
 

@@ -31,7 +31,7 @@
 
 ## Canonical Module Map
 
-This table reflects the 2026-05-14 repo audit and the current CMake target layout.
+This table reflects the 2026-05-15 repo audit and the current CMake target layout.
 
 | Area | Canonical | Legacy / inactive |
 |------|-----------|-------------------|
@@ -43,9 +43,9 @@ This table reflects the 2026-05-14 repo audit and the current CMake target layou
 
 ### Build Truth Notes
 
-1. `voxel_engine_lib` now owns the canonical runtime sources; `voxel_engine` only adds `src/main.cpp` plus the optional ImGui/editor stack when bundled ImGui files are actually present.
+1. `voxel_engine_lib` owns the canonical runtime sources. Legacy parallel implementations such as `src/network/packet.cpp` and `src/ui/ui_manager.cpp` are intentionally excluded from the active library target in favor of `network_architecture.*` and `ui_system.*`.
 2. The legacy duplicate ownership paths above remain in the tree for reference, but they are not the supported build path for this session.
-3. Verified in this shell on 2026-05-14 using `C:/Program Files/CMake/bin/cmake.exe` from the existing `build-vs` cache: `voxel_engine_lib`, `save_test`, `world_test`, and `voxel_test` build and the three test executables pass. `voxel_engine` is still skipped here because `GLFW` is unavailable.
+3. Verified in this shell on 2026-05-15 using `C:/Program Files/CMake/bin/cmake.exe` from the existing `build-vs` cache: `voxel_engine_lib`, `save_test`, `world_test`, and `voxel_test` build and the three test executables pass. `voxel_engine` is still skipped here because `GLFW` is unavailable.
 
 ---
 

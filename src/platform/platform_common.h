@@ -2,13 +2,21 @@
 
 // Cross-platform detection
 #if defined(_WIN32) || defined(_WIN64)
-    #define PLATFORM_WINDOWS
+    #ifndef PLATFORM_WINDOWS
+        #define PLATFORM_WINDOWS
+    #endif
 #elif defined(__APPLE__) && defined(__MACH__)
-    #define PLATFORM_MACOS
+    #ifndef PLATFORM_MACOS
+        #define PLATFORM_MACOS
+    #endif
 #elif defined(__linux__)
-    #define PLATFORM_LINUX
+    #ifndef PLATFORM_LINUX
+        #define PLATFORM_LINUX
+    #endif
 #elif defined(__unix__)
-    #define PLATFORM_UNIX
+    #ifndef PLATFORM_UNIX
+        #define PLATFORM_UNIX
+    #endif
 #endif
 
 // Windows-specific includes and fixes
