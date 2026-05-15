@@ -119,7 +119,7 @@ void HUDSystem::CreateHotbar() {
     // Create 9 hotbar slots
     for (int i = 0; i < 9; i++) {
         auto* slot = ui->CreatePanel("hotbarSlot" + std::to_string(i));
-        slot->SetPosition(vge::Vec2(440 + i * 45, 650));
+        slot->SetPosition(vge::Vec2(440.0f + static_cast<float>(i) * 45.0f, 650.0f));
         slot->SetSize(vge::Vec2(40, 40));
         slot->SetBackgroundColor(vge::Vec3(0.3f, 0.3f, 0.3f));
         slot->SetAlpha(0.8f);
@@ -129,7 +129,7 @@ void HUDSystem::CreateHotbar() {
         hotbarSlots.push_back(slot);
 
         auto* label = ui->CreateLabel("hotbarLabel" + std::to_string(i), "");
-        label->SetPosition(vge::Vec2(450 + i * 45, 660));
+        label->SetPosition(vge::Vec2(450.0f + static_cast<float>(i) * 45.0f, 660.0f));
         label->SetFontSize(12.0f);
         ui->AddRootElement(std::unique_ptr<vge::UIElement>(label));
         hotbarLabels.push_back(label);
@@ -199,7 +199,7 @@ void HUDSystem::SetExperience(float current, float max) {
 void HUDSystem::SetHotbarSlot(int slot) {
     if (slot < 0 || slot >= 9 || !hotbarSelector) return;
 
-    hotbarSelector->SetPosition(vge::Vec2(440 + slot * 45, 650));
+    hotbarSelector->SetPosition(vge::Vec2(440.0f + static_cast<float>(slot) * 45.0f, 650.0f));
 }
 
 void HUDSystem::SetHotbarItem(int slot, const std::string& itemId, int count) {
