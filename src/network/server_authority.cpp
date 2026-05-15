@@ -71,6 +71,7 @@ void ServerAuthority::ClearClientInputs(ClientID clientId) {
 }
 
 void ServerAuthority::RecordStateSnapshot(EntityID entityId, uint32_t tick, const EntityStateSnapshot& snapshot) {
+    (void)tick;
     auto& history = stateHistory[entityId];
     history.push_back(snapshot);
     

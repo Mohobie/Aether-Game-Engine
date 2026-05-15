@@ -36,7 +36,7 @@ public:
     virtual void OnDetach() {}
     
     // Update called every frame
-    virtual void Update(float deltaTime) {}
+    virtual void Update(float deltaTime) { (void)deltaTime; }
     
     // Called when entity is initialized
     virtual void Init() {}

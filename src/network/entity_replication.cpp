@@ -73,6 +73,7 @@ Vec3 EntityReplicator::GetEntityPosition(EntityID entityId) const {
 }
 
 std::vector<uint8_t> EntityReplicator::SerializeEntityState(EntityID entityId, ClientID clientId) {
+    (void)clientId;
     NetBuffer buffer;
 
     auto typeIt = entityTypeMap.find(entityId);
@@ -115,7 +116,7 @@ void EntityReplicator::DeserializeEntityState(EntityID entityId, const std::vect
     }
 
     // Read type ID
-    int32_t typeId = buffer.ReadInt();
+    (void)buffer.ReadInt();
 
     // Read position
     Vec3 position = buffer.ReadVec3();
@@ -146,6 +147,7 @@ bool EntityReplicator::IsEntityRelevantForClient(EntityID entityId, ClientID cli
 }
 
 std::vector<uint8_t> EntityReplicator::SerializeDeltaState(EntityID entityId, const std::vector<uint8_t>& baseline) {
+    (void)baseline;
     // Simple delta: only include changed properties
     return SerializeEntityState(entityId, INVALID_CLIENT_ID);
 }

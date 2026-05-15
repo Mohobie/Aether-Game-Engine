@@ -71,6 +71,7 @@ void NetworkServer2::BroadcastUnreliable(const std::vector<uint8_t>& data) {
 }
 
 void NetworkServer2::Update(float deltaTime) {
+    (void)deltaTime;
     // Process simulated connections (in real impl, would accept new connections)
     // For testing, we simulate clients connecting via the Connect method
 }
@@ -115,20 +116,24 @@ void NetworkClient2::RegisterRPC(const std::string& name, ClientRPCCallback call
 }
 
 void NetworkClient2::CallRPC(const std::string& name, RPCArgs& args) {
+    (void)args;
     // In real impl, would serialize and send to server
     // For testing, we just log it
     std::cout << "[NetworkClient] Calling RPC: " << name << std::endl;
 }
 
 void NetworkClient2::SendReliable(const std::vector<uint8_t>& data) {
+    (void)data;
     // In real impl, would send over network
 }
 
 void NetworkClient2::SendUnreliable(const std::vector<uint8_t>& data) {
+    (void)data;
     // In real impl, would send over network
 }
 
 void NetworkClient2::Update(float deltaTime) {
+    (void)deltaTime;
     // Process incoming messages
 }
 
