@@ -8,6 +8,7 @@
 #include "rendering/post_processing.h"
 #include "rendering/deferred_rendering.h"
 #include "rendering/light_system.h"
+#include "rendering/culling_system.h"
 #include <GL/gl.h>
 #include <memory>
 #include <vector>
@@ -65,6 +66,13 @@ public:
     void SetDayNightCycle(DayNightCycle* cycle) { dayNightCycle = cycle; }
     void SetWeatherSystem(WeatherSystem* weather) { weatherSystem = weather; }
 
+    // Culling
+    void SetCullingSystem(CullingSystem* culling) { cullingSystem = culling; }
+    void EnableFrustumCulling(bool enable) { frustumCullingEnabled = enable; }
+    void EnableOcclusionCulling(bool enable) { occlusionCullingEnabled = enable; }
+    bool IsFrustumCullingEnabled() const { return frustumCullingEnabled; }
+    bool IsOcclusionCullingEnabled() const { return occlusionCullingEnabled; }
+
     // Render path
     void SetRenderPath(RenderPath path);
     RenderPath GetRenderPath() const { return currentPath; }
@@ -105,6 +113,11 @@ private:
     DayNightCycle* dayNightCycle;
     WeatherSystem* weatherSystem;
     LightingSystem* lightingSystem;
+    CullingSystem* cullingSystem;
+
+    // Culling state
+    bool frustumCullingEnabled;
+    bool occlusionCullingEnabled;
 
     // Shaders
     std::unique_ptr<Shader> forwardShader;

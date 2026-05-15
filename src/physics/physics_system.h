@@ -1,9 +1,12 @@
 #pragma once
 #include "math/vec3.h"
 #include "collision.h"
+#include "aabb.h"
 #include <vector>
 #include <memory>
 #include <functional>
+#include <unordered_map>
+#include <unordered_set>
 
 namespace vge {
 
@@ -185,11 +188,6 @@ public:
     void ResolveCollisions();
     void UpdateSpatialGrid();
     
-    // Queries
-    std::vector<Collider*> OverlapSphere(const Vec3& center, float radius);
-    std::vector<Collider*> OverlapBox(const Vec3& center, const Vec3& halfExtents);
-    bool Raycast(const Vec3& origin, const Vec3& direction, float maxDistance, Vec3& outHit, Vec3& outNormal);
-    
     // Settings
     void SetGravity(const Vec3& g) { gravity = g; }
     Vec3 GetGravity() const { return gravity; }
@@ -199,6 +197,11 @@ public:
     size_t GetColliderCount() const { return colliders.size(); }
     
     void Clear();
+    
+    // Queries
+    std::vector<Collider*> OverlapSphere(const Vec3& center, float radius);
+    std::vector<Collider*> OverlapBox(const Vec3& center, const Vec3& halfExtents);
+    bool Raycast(const Vec3& origin, const Vec3& direction, float maxDistance, Vec3& outHit, Vec3& outNormal);
     
 private:
     // Spatial hash key
@@ -218,5 +221,9 @@ struct Contact {
     float penetration;
     bool isTrigger;
 };
+
+// ============================================
+// PhysicsWorld (Forward Declaration)
+// ============================================
 
 } // namespace vge

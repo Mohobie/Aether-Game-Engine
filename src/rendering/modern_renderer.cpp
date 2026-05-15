@@ -79,6 +79,9 @@ ModernRenderer::ModernRenderer()
     , dayNightCycle(nullptr)
     , weatherSystem(nullptr)
     , lightingSystem(nullptr)
+    , cullingSystem(nullptr)
+    , frustumCullingEnabled(true)
+    , occlusionCullingEnabled(false)
     , screenQuadVAO(0)
     , screenQuadVBO(0)
     , wireframeMode(false)
@@ -283,6 +286,16 @@ void ModernRenderer::RenderForward(const World& world, const Camera& camera) {
                                    0.1f, 1000.0f);
     Mat4 viewProj = proj * view;
     
+    // Update culling system
+    if (cullingSystem && frustumCullingEnabled) {
+        cullingSystem->setCamera(camera.GetPosition(), viewProj);
+        cullingSystem->setViewDistance(1000.0f);
+        CullingResult result = cullingSystem->cullAll();
+        Logger::Debug("[ModernRenderer] Culled: " + 
+                     std::to_string(result.chunksCulledFrustum) + " chunks, " +
+                     std::to_string(result.entitiesCulledFrustum) + " entities");
+    }
+    
     // Render world
     if (worldRenderer) {
         worldRenderer->RenderWorld(world, camera);
@@ -298,13 +311,6 @@ void ModernRenderer::RenderDeferred(const World& world, const Camera& camera) {
     
     // Render opaque geometry to G-Buffer
     if (worldRenderer) {
-        Mat4 view = Mat4::LookAt(camera.GetPosition(),
-                                  camera.GetPosition() + camera.GetForward(),
-                                  Vec3(0, 1, 0));
-        Mat4 proj = Mat4::Perspective(70.0f * 3.14159f / 180.0f,
-                                       (float)width / (float)height,
-                                       0.1f, 1000.0f);
-        Mat4 viewProj = proj * view;
         worldRenderer->RenderWorld(world, camera);
     }
     
@@ -337,8 +343,11 @@ void ModernRenderer::RenderDeferred(const World& world, const Camera& camera) {
     deferredRenderer->EndLightingPass();
     
     // Copy result to HDR framebuffer
-    glBindFramebuffer(GL_READ_FRAMEBUFFER, deferredRenderer->GetLightingTexture());
+    glBindFramebuffer(GL_READ_FRAMEBUFFER, 0);  // Read from default (lighting FBO is bound during EndLightingPass)
     glBindFramebuffer(GL_DRAW_FRAMEBUFFER, hdrFBO);
+    
+    // Render fullscreen quad with lighting result
+    // TODO: Use proper blit or fullscreen pass
     glBlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_COLOR_BUFFER_BIT, GL_LINEAR);
 }
 
