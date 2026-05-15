@@ -1,0 +1,50 @@
+name: Sync Wiki
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'docs/rag/**'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Sync docs to wiki
+        run: |
+          # Create wiki directory
+          mkdir -p wiki
+          
+          # Copy RAG docs to wiki
+          for file in docs/rag/*.md; do
+            cp "$file" "wiki/$(basename "$file")"
+          done
+          
+          # Create Home page
+          cat > wiki/Home.md << 'WIKI_HOME'
+          # Aether Engine Wiki
+          
+          Welcome to the Aether Engine documentation wiki!
+          
+          ## Quick Links
+          
+          - [[Engine Status|ENGINE_STATUS]]
+          - [[Post Processing|POST_PROCESSING]]
+          - [[Deferred Rendering|DEFERRED_RENDERING]]
+          - [[Occlusion Culling|OCCLUSION_CULLING]]
+          - [[Physics System|PHYSICS_SYSTEM]]
+          
+          ## About
+          
+          Aether Engine is a voxel game engine targeting Unity-level quality.
+          
+          WIKI_HOME
+          
+      - name: Push to wiki
+        uses: SwiftDocOrg/github-wiki-publish-action@v1
+        with:
+          path: "wiki"
+        env:
+          GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
