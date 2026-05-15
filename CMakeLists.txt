@@ -184,7 +184,7 @@ set(CORE_SOURCES
     src/resource/resource_manager.cpp
 )
 
-set(GLFW_SOURCES
+set(WINDOWED_RUNTIME_SOURCES
     src/platform/window.cpp
     src/game/application.cpp
     src/network/multiplayer_game.cpp
@@ -267,18 +267,23 @@ if(EXISTS ${CMAKE_SOURCE_DIR}/third_party/imgui/backends)
     list(APPEND COMMON_INCLUDES ${CMAKE_SOURCE_DIR}/third_party/imgui/backends)
 endif()
 
-set(ALL_SOURCES ${CORE_SOURCES})
-
-if(GLFW_FOUND)
-    list(APPEND ALL_SOURCES ${GLFW_SOURCES})
-else()
-    message(STATUS "GLFW not found; excluding windowed application sources from voxel_engine_lib")
+set(HAVE_WINDOWED_RUNTIME FALSE)
+if(GLFW_FOUND AND OpenGL_FOUND)
+    set(HAVE_WINDOWED_RUNTIME TRUE)
 endif()
 
-if(GLFW_FOUND AND OpenGL_FOUND)
-    list(APPEND ALL_SOURCES ${RENDER_RUNTIME_SOURCES} ${EDITOR_RUNTIME_SOURCES})
+set(ALL_SOURCES ${CORE_SOURCES})
+
+if(HAVE_WINDOWED_RUNTIME)
+    list(APPEND ALL_SOURCES
+        ${WINDOWED_RUNTIME_SOURCES}
+        ${RENDER_RUNTIME_SOURCES}
+        ${EDITOR_RUNTIME_SOURCES}
+    )
+elseif(GLFW_FOUND)
+    message(STATUS "OpenGL not found; excluding windowed application/render/editor sources from voxel_engine_lib")
 else()
-    message(STATUS "Windowed render/editor runtime dependencies unavailable; excluding render runtime and editor sources from voxel_engine_lib")
+    message(STATUS "GLFW not found; excluding windowed application/render/editor sources from voxel_engine_lib")
 endif()
 
 if(LUA_FOUND)
@@ -310,10 +315,10 @@ set(IMGUI_SOURCES
 
 set(VOXEL_ENGINE_SOURCES)
 
-if(GLFW_FOUND)
+if(HAVE_WINDOWED_RUNTIME)
     list(APPEND VOXEL_ENGINE_SOURCES src/main.cpp)
 else()
-    message(STATUS "GLFW not found; skipping voxel_engine executable")
+    message(STATUS "Windowed runtime dependencies unavailable; skipping voxel_engine executable")
 endif()
 
 set(IMGUI_OPTIONAL_SOURCES
@@ -349,10 +354,10 @@ foreach(imgui_file ${IMGUI_REQUIRED_FILES})
     endif()
 endforeach()
 
-if(HAVE_BUNDLED_IMGUI AND GLFW_FOUND)
+if(HAVE_BUNDLED_IMGUI AND HAVE_WINDOWED_RUNTIME)
     list(APPEND VOXEL_ENGINE_SOURCES ${IMGUI_OPTIONAL_SOURCES} ${IMGUI_SOURCES})
 elseif(HAVE_BUNDLED_IMGUI)
-    message(STATUS "Bundled ImGui sources found, but GLFW is unavailable; skipping optional editor/menu stack")
+    message(STATUS "Bundled ImGui sources found, but windowed runtime dependencies are unavailable; skipping optional editor/menu stack")
 else()
     message(STATUS "Bundled ImGui sources not found; building voxel_engine without optional editor/menu stack")
 endif()
@@ -367,6 +372,9 @@ target_compile_definitions(voxel_engine_lib PUBLIC
     $<$<BOOL:${PLATFORM_WINDOWS}>:PLATFORM_WINDOWS>
     $<$<BOOL:${PLATFORM_LINUX}>:PLATFORM_LINUX>
     $<$<BOOL:${PLATFORM_MACOS}>:PLATFORM_MACOS>
+    $<$<BOOL:${GLFW_FOUND}>:VGE_HAS_GLFW>
+    $<$<BOOL:${OpenGL_FOUND}>:VGE_HAS_OPENGL>
+    $<$<BOOL:${LUA_FOUND}>:VGE_HAS_LUA>
 )
 
 if(OpenGL_FOUND)

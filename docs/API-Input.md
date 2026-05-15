@@ -1,7 +1,8 @@
 # Input Module API
 
 **Canonical input path:** `src/platform/input_manager.h`  
-**Legacy / inactive path:** `src/input/input_manager.h`, `src/input/key_bindings.h`
+**Legacy / inactive path:** `src/input/input_manager.h`, `src/input/key_bindings.h`  
+**Compatibility-only path outside the active library target:** `src/platform/input.h`
 
 This page reflects the 2026-05-14 architecture decision: the supported input API in the current build is `vge::Input` from `platform/input_manager.h`. The older `src/input/*` family is retained only as legacy source material.
 
@@ -44,4 +45,4 @@ namespace vge {
 If you are auditing older docs or examples:
 
 - `src/input/input_manager.h` is not the supported runtime input API.
-- `src/platform/input.h` is also legacy and intentionally excluded from the canonical build path after the audit.
+- `src/platform/input.h` is an older compatibility path used by inactive windowless/engine code, but it is intentionally excluded from the active `voxel_engine_lib` build path.

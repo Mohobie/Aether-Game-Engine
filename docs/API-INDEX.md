@@ -36,7 +36,7 @@ This table reflects the 2026-05-15 repo audit and the current CMake target layou
 | Area | Canonical | Legacy / inactive |
 |------|-----------|-------------------|
 | Rendering | `src/rendering/*` | `src/render/*` |
-| Input | `src/platform/input_manager.*` | `src/input/*`, `src/platform/input.*` |
+| Input | `src/platform/input_manager.*` for the active windowed/runtime build | `src/input/*`, plus `src/platform/input.*` retained only for older headless/engine paths that are not in the active library target |
 | Application facade | `src/game/application.*`, `include/aether_engine.h`, and compatibility include `include/voxel_engine.h` | `src/core/application.*` |
 | Entity layer | `src/entity/entity.*`, `src/entity/components.*` | `src/core/entity.*`, `src/entity/component.*`, `src/entity/system.*` |
 | Save and serialization | `src/core/save_system.*` for direct world/chunk binary IO, `src/voxel/world_serializer.*` for richer world snapshots, and `src/core/save_game.*` as the current higher-level save wrapper | `src/game/save_system.*`, `src/game/serializer.*`; `src/core/serializer.*` is a generic byte-buffer helper, not the active save API |
@@ -61,7 +61,7 @@ This table reflects the 2026-05-15 repo audit and the current CMake target layou
 
 1. **Unified runtime namespace**: active code paths are `vge`, but several generated API pages still mention `aether`
 2. **Canonical rendering path**: `rendering/` is the supported renderer family; `render/` is legacy
-3. **Canonical input path**: `platform/input_manager.*` is the supported input path in the current build; `src/input/*` and `platform/input.*` are legacy
+3. **Canonical input path**: `platform/input_manager.*` is the supported input path in the active audited build; `src/input/*` is legacy and `platform/input.*` remains only as an older compatibility path outside the active library target
 4. **Layered save path**: `core/save_system.*` handles direct world/chunk files, `voxel/world_serializer.*` handles richer world snapshots, and `core/save_game.*` is the active higher-level save wrapper; `game/save_system.*` and `game/serializer.*` are inactive
 5. **Some module pages are stale**: use this index as the architecture source of truth until the per-module API pages are regenerated
 

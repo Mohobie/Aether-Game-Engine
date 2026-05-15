@@ -22,6 +22,14 @@ The currently revalidated Windows pass for this repository was run on 2026-05-15
 - Current dependency state in this shell: `OpenGL=TRUE`, `GLFW=FALSE`, `Lua=FALSE`
 - Resulting policy for this machine: the headless/core library path is verified; `voxel_engine` remains gated on restoring the GLFW-backed windowed runtime path
 
+### Canonical Module Map For This Audit
+
+- Rendering: `src/rendering/*` is canonical; `src/render/*` is legacy.
+- Input: `src/platform/input_manager.*` is canonical for the active runtime build; `src/input/*` is legacy and `src/platform/input.*` is compatibility-only outside the active library target.
+- Application facade: `src/game/application.*` is canonical; `src/core/application.*` is legacy.
+- Entity layer: `src/entity/entity.*` and `src/entity/components.*` are canonical; `src/core/entity.*` is legacy.
+- Save stack: `src/core/save_system.*` handles direct world/chunk IO, `src/voxel/world_serializer.*` handles richer world snapshots, and `src/core/save_game.*` is the active higher-level wrapper; `src/game/save_system.*` and `src/game/serializer.*` are legacy for this session.
+
 ### Building the Engine
 
 ```bash
