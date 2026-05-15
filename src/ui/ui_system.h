@@ -168,7 +168,7 @@ public:
     
     void SetText(const std::string& t) { text = t; }
     std::string GetText() const { return text; }
-    void SetFontSize(float size) { fontSize = size; }
+    void SetFontSize(float newFontSize) { fontSize = newFontSize; }
     float GetFontSize() const { return fontSize; }
     void SetAutoSize(bool autoSz) { autoSize = autoSz; }
     void SetWordWrap(bool wrap) { wordWrap = wrap; }

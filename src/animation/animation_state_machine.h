@@ -107,7 +107,7 @@ public:
     float GetDuration() const override;
     bool IsLooping() const override;
     
-    int GetPointCount() const { return points.size(); }
+    int GetPointCount() const { return static_cast<int>(points.size()); }
 };
 
 // ============================================
@@ -136,7 +136,7 @@ public:
     float GetDuration() const override;
     bool IsLooping() const override;
     
-    int GetPointCount() const { return points.size(); }
+    int GetPointCount() const { return static_cast<int>(points.size()); }
 };
 
 // ============================================
@@ -298,7 +298,7 @@ public:
     AnimationState* GetState(const std::string& name) const;
     AnimationState* GetCurrentState() const { return currentState; }
     AnimationState* GetPreviousState() const { return previousState; }
-    int GetStateCount() const { return states.size(); }
+    int GetStateCount() const { return static_cast<int>(states.size()); }
     
     // Transitions
     StateTransition* AddTransition(const std::string& from, const std::string& to);
@@ -315,8 +315,8 @@ public:
     bool HasParameter(const std::string& name) const;
     
     // Playback
-    void Play(const std::string& stateName, float blendDuration = 0.25f);
-    void CrossFade(const std::string& stateName, float blendDuration);
+    void Play(const std::string& stateName, float blendDurationSeconds = 0.25f);
+    void CrossFade(const std::string& stateName, float blendDurationSeconds);
     void Update(float deltaTime);
     
     // State queries
@@ -325,7 +325,7 @@ public:
     float GetCurrentStateNormalizedTime() const;
     
     // Any state transitions
-    void SetAnyStateTransition(const std::string& toState, float blendDuration = 0.1f);
+    void SetAnyStateTransition(const std::string& toState, float blendDurationSeconds = 0.1f);
     
     // Debug
     void PrintStateMachine() const;
@@ -395,7 +395,7 @@ public:
     void RemoveLayer(const std::string& name);
     AnimationLayer* GetLayer(const std::string& name) const;
     AnimationLayer* GetLayer(int index) const;
-    int GetLayerCount() const { return layers.size(); }
+    int GetLayerCount() const { return static_cast<int>(layers.size()); }
     
     // Base layer
     AnimationLayer* GetBaseLayer() const { return baseLayer; }

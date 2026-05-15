@@ -128,7 +128,7 @@ public:
     HingeJoint(Rigidbody* bodyA, Rigidbody* bodyB);
     
     void SetAxis(const Vec3& axis) { axisA = axis; axisB = axis; }
-    void SetAxes(const Vec3& axisA, const Vec3& axisB) { this->axisA = axisA; this->axisB = axisB; }
+    void SetAxes(const Vec3& localAxisA, const Vec3& localAxisB) { axisA = localAxisA; axisB = localAxisB; }
     
     float GetAngle() const { return currentAngle; }
     float GetAngularVelocity() const;
@@ -205,7 +205,7 @@ public:
     
     void SetRestLength(float length) { restLength = length; }
     void SetDistanceRange(float min, float max) { minDistance = min; maxDistance = max; }
-    void SetSpringProperties(float stiffness, float damping) { this->stiffness = stiffness; this->damping = damping; }
+    void SetSpringProperties(float springStiffness, float springDamping) { stiffness = springStiffness; damping = springDamping; }
     
     float GetCurrentDistance() const;
     

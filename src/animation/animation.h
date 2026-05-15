@@ -44,7 +44,7 @@ public:
     Joint* GetJoint(int index);
     Joint* GetJoint(const std::string& name);
     int GetJointIndex(const std::string& name) const;
-    int GetJointCount() const { return joints.size(); }
+    int GetJointCount() const { return static_cast<int>(joints.size()); }
     
     // Calculate global transforms from local
     void UpdateTransforms();
@@ -141,14 +141,14 @@ public:
     Animator(Skeleton* skeleton = nullptr);
     
     // Playback control
-    void Play(AnimationClip* clip, bool loop = true, float speed = 1.0f);
+    void Play(AnimationClip* clip, bool shouldLoop = true, float speed = 1.0f);
     void Stop();
     void Pause();
     void Resume();
     void Update(float deltaTime);
     
     // Blending
-    void CrossFade(AnimationClip* clip, float blendDuration, bool loop = true);
+    void CrossFade(AnimationClip* clip, float blendDurationSeconds, bool shouldLoop = true);
     
     // State
     bool IsPlaying() const { return isPlaying; }

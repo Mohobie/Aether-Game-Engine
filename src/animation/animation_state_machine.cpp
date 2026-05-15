@@ -476,7 +476,7 @@ bool AnimationStateMachine::HasParameter(const std::string& name) const {
            intParameters.find(name) != intParameters.end();
 }
 
-void AnimationStateMachine::Play(const std::string& stateName, float blendDuration) {
+void AnimationStateMachine::Play(const std::string& stateName, float blendDurationSeconds) {
     AnimationState* state = GetState(stateName);
     if (!state) {
         std::cout << "[StateMachine] Error: State not found: " << stateName << std::endl;
@@ -498,12 +498,12 @@ void AnimationStateMachine::Play(const std::string& stateName, float blendDurati
     currentState->Enter();
     
     // Start blending
-    if (previousState && blendDuration > 0.0f) {
+    if (previousState && blendDurationSeconds > 0.0f) {
         isBlending = true;
         blendTime = 0.0f;
-        this->blendDuration = blendDuration;
+        blendDuration = blendDurationSeconds;
         blendWeight = 0.0f;
-        std::cout << "[StateMachine] Blending to " << stateName << " over " << blendDuration << "s" << std::endl;
+        std::cout << "[StateMachine] Blending to " << stateName << " over " << blendDurationSeconds << "s" << std::endl;
     } else {
         isBlending = false;
         blendWeight = 1.0f;
@@ -512,8 +512,8 @@ void AnimationStateMachine::Play(const std::string& stateName, float blendDurati
     std::cout << "[StateMachine] Now playing: " << stateName << std::endl;
 }
 
-void AnimationStateMachine::CrossFade(const std::string& stateName, float blendDuration) {
-    Play(stateName, blendDuration);
+void AnimationStateMachine::CrossFade(const std::string& stateName, float blendDurationSeconds) {
+    Play(stateName, blendDurationSeconds);
 }
 
 void AnimationStateMachine::Update(float deltaTime) {
@@ -663,7 +663,7 @@ MultiLayerAnimator::~MultiLayerAnimator() {
 }
 
 AnimationLayer* MultiLayerAnimator::CreateLayer(const std::string& name) {
-    auto layer = std::make_unique<AnimationLayer>(name, layers.size());
+    auto layer = std::make_unique<AnimationLayer>(name, static_cast<int>(layers.size()));
     
     // Create state machine for layer
     auto* sm = new AnimationStateMachine(skeleton);

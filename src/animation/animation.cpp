@@ -15,7 +15,7 @@ int Skeleton::AddJoint(const std::string& name, int parentIndex) {
     joint.name = name;
     joint.parentIndex = parentIndex;
     
-    int index = joints.size();
+    int index = static_cast<int>(joints.size());
     joints.push_back(joint);
     
     if (parentIndex == -1) {
@@ -26,7 +26,7 @@ int Skeleton::AddJoint(const std::string& name, int parentIndex) {
 }
 
 Joint* Skeleton::GetJoint(int index) {
-    if (index >= 0 && index < joints.size()) {
+    if (index >= 0 && index < static_cast<int>(joints.size())) {
         return &joints[index];
     }
     return nullptr;
@@ -42,7 +42,7 @@ Joint* Skeleton::GetJoint(const std::string& name) {
 }
 
 int Skeleton::GetJointIndex(const std::string& name) const {
-    for (int i = 0; i < joints.size(); ++i) {
+    for (int i = 0; i < static_cast<int>(joints.size()); ++i) {
         if (joints[i].name == name) {
             return i;
         }
@@ -73,7 +73,7 @@ void Skeleton::UpdateTransforms(int jointIndex) {
     }
     
     // Update children
-    for (int i = 0; i < joints.size(); ++i) {
+    for (int i = 0; i < static_cast<int>(joints.size()); ++i) {
         if (joints[i].parentIndex == jointIndex) {
             UpdateTransforms(i);
         }
@@ -97,7 +97,7 @@ void Skeleton::CalculateSkinningMatrices() {
 
 void Skeleton::PrintHierarchy() const {
     std::cout << "=== Skeleton Hierarchy ===" << std::endl;
-    for (int i = 0; i < joints.size(); ++i) {
+    for (int i = 0; i < static_cast<int>(joints.size()); ++i) {
         const Joint& joint = joints[i];
         std::cout << "[" << i << "] " << joint.name;
         if (joint.parentIndex >= 0) {
@@ -128,7 +128,7 @@ void AnimationTrack::Sample(float time, Vec3& outPos, Vec3& outRot, Vec3& outSca
     
     // Find keyframes to interpolate between
     int frameIndex = 0;
-    for (int i = 0; i < keyframes.size() - 1; ++i) {
+    for (int i = 0; i < static_cast<int>(keyframes.size()) - 1; ++i) {
         if (time >= keyframes[i].time && time <= keyframes[i + 1].time) {
             frameIndex = i;
             break;
@@ -218,9 +218,9 @@ Animator::Animator(Skeleton* skeleton)
     , loop(true)
     , playbackSpeed(1.0f) {}
 
-void Animator::Play(AnimationClip* clip, bool loop, float speed) {
+void Animator::Play(AnimationClip* clip, bool shouldLoop, float speed) {
     currentClip = clip;
-    this->loop = loop;
+    loop = shouldLoop;
     playbackSpeed = speed;
     currentTime = 0;
     isPlaying = true;
@@ -269,16 +269,16 @@ void Animator::Update(float deltaTime) {
     skeleton->CalculateSkinningMatrices();
 }
 
-void Animator::CrossFade(AnimationClip* clip, float duration, bool loop) {
+void Animator::CrossFade(AnimationClip* clip, float duration, bool shouldLoop) {
     if (!currentClip) {
-        Play(clip, loop);
+        Play(clip, shouldLoop);
         return;
     }
     
     nextClip = clip;
     blendDuration = duration;
     blendTime = 0;
-    this->loop = loop;
+    loop = shouldLoop;
     
     std::cout << "[Animator] Cross-fading to: " << clip->GetName() << " (" << duration << "s)" << std::endl;
 }
